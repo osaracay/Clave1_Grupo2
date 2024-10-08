@@ -55,7 +55,7 @@ namespace Clave1_Grupo2
             c.GetIdUsuario();
             Usuario a = new Cliente();
             Cliente b = (Cliente)a;
-            Administrador d = (Administrador)a;
+            //Administrador d = (Administrador)a;
         }
     }
 }
