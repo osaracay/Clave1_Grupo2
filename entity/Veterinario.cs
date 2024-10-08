@@ -8,5 +8,6 @@ namespace Clave1_Grupo2.entity
 {
     class Veterinario : Usuario
     {
+        public List<Cita> citas;
     }
 }

@@ -16,7 +16,7 @@ namespace Clave1_Grupo2.entity
         private int edad;
         private char generoMascota;
         private int idPropietario;
-        //public ArrayList<Cita> citas;
+        public List<Cita> citas;
 
 
         public int GetIdMascota() { return idMascota; }

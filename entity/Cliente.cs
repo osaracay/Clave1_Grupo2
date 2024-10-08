@@ -8,5 +8,6 @@ namespace Clave1_Grupo2.entity
 {
     class Cliente : Usuario
     {
+        List<Mascota> mascotas;
     }
 }

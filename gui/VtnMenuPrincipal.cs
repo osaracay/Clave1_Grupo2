@@ -32,6 +32,10 @@ namespace Clave1_Grupo2
             vtnRegistrar.Show();
             vtnRegistrar.Focus();
         }
+        /// <summary>
+        /// Metodo que muestra una sola ventana de Iniciar Sesion cuando lo solicite el usuario 
+        /// o cuando se desea utilizar una funcion disponible solo para usuarios registrados
+        /// </summary>
         private void SolicitarInicioSesion()
         {
             //SI NO EXISTE EL OBJETO SESION GLOBAL
