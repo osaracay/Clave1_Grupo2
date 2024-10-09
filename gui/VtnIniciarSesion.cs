@@ -13,5 +13,20 @@ namespace Clave1_Grupo2.gui
         {
             
         }
+
+        private void textBox1_TextChanged(object sender, System.EventArgs e)
+        {
+
+        }
+
+        private void textBox2_TextChanged(object sender, System.EventArgs e)
+        {
+
+        }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+
+        }
     }
 }
