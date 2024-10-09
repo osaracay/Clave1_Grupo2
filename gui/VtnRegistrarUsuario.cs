@@ -16,5 +16,10 @@ namespace Clave1_Grupo2.gui
         {
             InitializeComponent();
         }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
