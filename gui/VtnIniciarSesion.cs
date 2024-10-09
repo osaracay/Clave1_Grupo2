@@ -9,24 +9,9 @@ namespace Clave1_Grupo2.gui
             InitializeComponent();
         }
 
-        private void VtnIniciarSesion_FormClosed(object sender, FormClosedEventArgs e)
+        private void lblSignUp_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            
-        }
-
-        private void textBox1_TextChanged(object sender, System.EventArgs e)
-        {
-
-        }
-
-        private void textBox2_TextChanged(object sender, System.EventArgs e)
-        {
-
-        }
-
-        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-
+            //ABRIR FORMULARIO DE REGISTRO
         }
     }
 }

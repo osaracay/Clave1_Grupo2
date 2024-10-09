@@ -56,10 +56,10 @@ namespace Clave1_Grupo2
             // 
             this.lblSesion.AutoSize = true;
             this.lblSesion.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lblSesion.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.2F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSesion.Location = new System.Drawing.Point(727, 9);
+            this.lblSesion.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSesion.Location = new System.Drawing.Point(8, 215);
             this.lblSesion.Name = "lblSesion";
-            this.lblSesion.Size = new System.Drawing.Size(143, 26);
+            this.lblSesion.Size = new System.Drawing.Size(122, 24);
             this.lblSesion.TabIndex = 0;
             this.lblSesion.Text = "Iniciar Sesion";
             this.lblSesion.Click += new System.EventHandler(this.lblSesion_Click);
@@ -90,10 +90,10 @@ namespace Clave1_Grupo2
             // 
             this.lblRegistrarUsuario.AutoSize = true;
             this.lblRegistrarUsuario.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lblRegistrarUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.2F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRegistrarUsuario.Location = new System.Drawing.Point(521, 9);
+            this.lblRegistrarUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRegistrarUsuario.Location = new System.Drawing.Point(8, 250);
             this.lblRegistrarUsuario.Name = "lblRegistrarUsuario";
-            this.lblRegistrarUsuario.Size = new System.Drawing.Size(181, 26);
+            this.lblRegistrarUsuario.Size = new System.Drawing.Size(153, 24);
             this.lblRegistrarUsuario.TabIndex = 3;
             this.lblRegistrarUsuario.Text = "Registrar Usuario";
             this.lblRegistrarUsuario.Click += new System.EventHandler(this.lblRegistrarUsuario_Click);
@@ -178,6 +178,7 @@ namespace Clave1_Grupo2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(897, 648);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);

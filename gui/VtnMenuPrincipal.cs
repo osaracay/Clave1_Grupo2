@@ -1,5 +1,6 @@
 ﻿using Clave1_Grupo2.entity;
 using Clave1_Grupo2.gui;
+using Clave1_Grupo2.util;
 using System;
 using System.Windows.Forms;
 
@@ -7,8 +8,7 @@ namespace Clave1_Grupo2
 {
     public partial class VtnMenuPrincipal : Form
     {
-        VtnIniciarSesion vtnIniciarSesion;
-        VtnRegistrarUsuario vtnRegistrar;
+
         public VtnMenuPrincipal()
         {
             InitializeComponent();
@@ -16,41 +16,21 @@ namespace Clave1_Grupo2
 
         private void lblRegistrarUsuario_Click(object sender, EventArgs e)
         {
-            SolicitarRegistroUsuario();
+            GestorVentanas.SolicitarRegistroUsuario();
         }
         private void lblSesion_Click(object sender, EventArgs e)
         {
-            SolicitarInicioSesion();
-        }
-        private void SolicitarRegistroUsuario()
-        {
-            if (vtnRegistrar == null || vtnRegistrar.IsDisposed)
-            {
-                vtnRegistrar = null;
-                vtnRegistrar = new VtnRegistrarUsuario();
-            }
-            vtnRegistrar.Show();
-            vtnRegistrar.Focus();
-        }
-        /// <summary>
-        /// Metodo que muestra una sola ventana de Iniciar Sesion cuando lo solicite el usuario 
-        /// o cuando se desea utilizar una funcion disponible solo para usuarios registrados
-        /// </summary>
-        private void SolicitarInicioSesion()
-        {
-            //SI NO EXISTE EL OBJETO SESION GLOBAL
-            if (vtnIniciarSesion == null || vtnIniciarSesion.IsDisposed)
-            {
-                vtnIniciarSesion = null;
-                vtnIniciarSesion = new VtnIniciarSesion();
-            }
-            vtnIniciarSesion.Show();
-            vtnIniciarSesion.Focus();
+            GestorVentanas.SolicitarInicioSesion();
         }
 
+        private void btnAgregarMascota_Click(object sender, EventArgs e)
+        {
+            GestorVentanas.AbrirAgregarMascota();
+        }
         private void btnAgendar_Click(object sender, EventArgs e)
         {
-            //Ejemplo de usuarios
+            GestorVentanas.AbrirAgendarCita();
+            /*Ejemplo de usuarios
             Usuario u = new Usuario();
             u.SetIdUsuario(1);
             MessageBox.Show(u.GetIdUsuario().ToString());
@@ -60,11 +40,7 @@ namespace Clave1_Grupo2
             Usuario a = new Cliente();
             Cliente b = (Cliente)a;
             //Administrador d = (Administrador)a;
-        }
-
-        private void btnAgregarMascota_Click(object sender, EventArgs e)
-        {
-
+            */
         }
     }
 }
