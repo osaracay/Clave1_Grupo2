@@ -38,7 +38,7 @@ namespace Clave1_Grupo2
             this.picLogo = new System.Windows.Forms.PictureBox();
             this.lblVetCatDog = new System.Windows.Forms.Label();
             this.btnMisMascotas = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnCitas = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -59,7 +59,7 @@ namespace Clave1_Grupo2
             this.lblSesion.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.2F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSesion.Location = new System.Drawing.Point(727, 9);
             this.lblSesion.Name = "lblSesion";
-            this.lblSesion.Size = new System.Drawing.Size(117, 22);
+            this.lblSesion.Size = new System.Drawing.Size(143, 26);
             this.lblSesion.TabIndex = 0;
             this.lblSesion.Text = "Iniciar Sesion";
             this.lblSesion.Click += new System.EventHandler(this.lblSesion_Click);
@@ -84,6 +84,7 @@ namespace Clave1_Grupo2
             this.btnAgregarMascota.Size = new System.Drawing.Size(130, 130);
             this.btnAgregarMascota.TabIndex = 2;
             this.btnAgregarMascota.UseVisualStyleBackColor = true;
+            this.btnAgregarMascota.Click += new System.EventHandler(this.btnAgregarMascota_Click);
             // 
             // lblRegistrarUsuario
             // 
@@ -92,7 +93,7 @@ namespace Clave1_Grupo2
             this.lblRegistrarUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.2F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblRegistrarUsuario.Location = new System.Drawing.Point(521, 9);
             this.lblRegistrarUsuario.Name = "lblRegistrarUsuario";
-            this.lblRegistrarUsuario.Size = new System.Drawing.Size(150, 22);
+            this.lblRegistrarUsuario.Size = new System.Drawing.Size(181, 26);
             this.lblRegistrarUsuario.TabIndex = 3;
             this.lblRegistrarUsuario.Text = "Registrar Usuario";
             this.lblRegistrarUsuario.Click += new System.EventHandler(this.lblRegistrarUsuario_Click);
@@ -113,7 +114,7 @@ namespace Clave1_Grupo2
             this.lblVetCatDog.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblVetCatDog.Location = new System.Drawing.Point(6, 142);
             this.lblVetCatDog.Name = "lblVetCatDog";
-            this.lblVetCatDog.Size = new System.Drawing.Size(128, 52);
+            this.lblVetCatDog.Size = new System.Drawing.Size(165, 64);
             this.lblVetCatDog.TabIndex = 5;
             this.lblVetCatDog.Text = "Veterinaria\r\nCat-Dog";
             // 
@@ -127,22 +128,22 @@ namespace Clave1_Grupo2
             this.btnMisMascotas.TabIndex = 6;
             this.btnMisMascotas.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // btnCitas
             // 
-            this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button1.Location = new System.Drawing.Point(334, 176);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(130, 130);
-            this.button1.TabIndex = 7;
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnCitas.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnCitas.BackgroundImage")));
+            this.btnCitas.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnCitas.Location = new System.Drawing.Point(334, 176);
+            this.btnCitas.Name = "btnCitas";
+            this.btnCitas.Size = new System.Drawing.Size(130, 130);
+            this.btnCitas.TabIndex = 7;
+            this.btnCitas.UseVisualStyleBackColor = true;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(207, 145);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(112, 16);
+            this.label1.Size = new System.Drawing.Size(116, 17);
             this.label1.TabIndex = 8;
             this.label1.Text = "Agregar Mascota";
             // 
@@ -151,7 +152,7 @@ namespace Clave1_Grupo2
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(356, 145);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(91, 16);
+            this.label2.Size = new System.Drawing.Size(93, 17);
             this.label2.TabIndex = 9;
             this.label2.Text = "Mis Mascotas";
             // 
@@ -160,7 +161,7 @@ namespace Clave1_Grupo2
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(221, 309);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(86, 16);
+            this.label3.Size = new System.Drawing.Size(90, 17);
             this.label3.TabIndex = 10;
             this.label3.Text = "Agendar Cita";
             // 
@@ -169,7 +170,7 @@ namespace Clave1_Grupo2
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(380, 309);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(38, 16);
+            this.label4.Size = new System.Drawing.Size(39, 17);
             this.label4.TabIndex = 11;
             this.label4.Text = "Citas";
             // 
@@ -182,7 +183,7 @@ namespace Clave1_Grupo2
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnCitas);
             this.Controls.Add(this.btnAgendar);
             this.Controls.Add(this.lblVetCatDog);
             this.Controls.Add(this.btnMisMascotas);
@@ -212,7 +213,7 @@ namespace Clave1_Grupo2
         private System.Windows.Forms.PictureBox picLogo;
         private System.Windows.Forms.Label lblVetCatDog;
         private System.Windows.Forms.Button btnMisMascotas;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnCitas;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;

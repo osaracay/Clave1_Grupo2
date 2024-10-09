@@ -34,6 +34,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -46,6 +47,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="c1g2ds.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>c1g2ds.xsd</DependentUpon>
+    </Compile>
     <Compile Include="dao\ConexionBD.cs" />
     <Compile Include="entity\Administrador.cs" />
     <Compile Include="entity\Cita.cs" />
@@ -94,6 +100,17 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="c1g2ds.xsc">
+      <DependentUpon>c1g2ds.xsd</DependentUpon>
+    </None>
+    <None Include="c1g2ds.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>c1g2ds.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="c1g2ds.xss">
+      <DependentUpon>c1g2ds.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

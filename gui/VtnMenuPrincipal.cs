@@ -61,5 +61,10 @@ namespace Clave1_Grupo2
             Cliente b = (Cliente)a;
             //Administrador d = (Administrador)a;
         }
+
+        private void btnAgregarMascota_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
