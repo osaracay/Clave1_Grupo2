@@ -19,7 +19,10 @@ namespace Clave1_Grupo2.entity
         public List<Cita> citas;
 
 
-        public int GetIdMascota() { return idMascota; }
+        public int GetIdMascota() 
+        { 
+            return idMascota;
+        }
         public void SetIdmascota(int idMascota)
         {
             this.idMascota = idMascota;
