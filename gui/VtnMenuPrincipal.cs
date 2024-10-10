@@ -48,5 +48,15 @@ namespace Clave1_Grupo2
         {
             //ConexionBD.GetConexionBD();
         }
+
+        private void btnCitas_Click(object sender, EventArgs e)
+        {
+            GestorVentanas.AbrirInsumo();
+        }
+
+        private void btnInsumos_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

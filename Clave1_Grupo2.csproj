@@ -80,6 +80,12 @@
     <Compile Include="gui\VtnIniciarSesion.Designer.cs">
       <DependentUpon>VtnIniciarSesion.cs</DependentUpon>
     </Compile>
+    <Compile Include="gui\VtnInsumo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="gui\VtnInsumo.Designer.cs">
+      <DependentUpon>VtnInsumo.cs</DependentUpon>
+    </Compile>
     <Compile Include="gui\VtnMenuPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -104,6 +110,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="gui\VtnIniciarSesion.resx">
       <DependentUpon>VtnIniciarSesion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="gui\VtnInsumo.resx">
+      <DependentUpon>VtnInsumo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="gui\VtnMenuPrincipal.resx">
       <DependentUpon>VtnMenuPrincipal.cs</DependentUpon>

@@ -13,6 +13,7 @@ namespace Clave1_Grupo2.util
         private static VtnRegistrarUsuario vtnRegistrar;
         private static VtnAgregarMascota vtnAgregarMascota;
         private static VtnAgendarCita vtnAgendar;
+        private static VtnInsumo vtnInsumo;
 
         public static void SolicitarRegistroUsuario()
         {
@@ -62,6 +63,17 @@ namespace Clave1_Grupo2.util
             }
             vtnAgendar.Show();
             vtnAgendar.Focus();
+        }
+        public static void AbrirInsumo()
+        {
+            //SI NO EXISTE EL OBJETO SESION GLOBAL
+            if (vtnInsumo == null || vtnInsumo.IsDisposed)
+            {
+                vtnInsumo = null;
+                vtnInsumo = new VtnInsumo();
+            }
+            vtnInsumo.Show();
+            vtnInsumo.Focus();
         }
 
     }
