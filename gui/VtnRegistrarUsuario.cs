@@ -16,6 +16,9 @@ namespace Clave1_Grupo2.gui
 
         }
 
+        private void txtUsrPw_TextChanged(object sender, EventArgs e)
+        {
 
+        }
     }
 }
