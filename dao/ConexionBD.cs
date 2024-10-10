@@ -17,6 +17,8 @@ namespace Clave1_Grupo2.dao
         private static OdbcDataAdapter adaptador;
         private static OdbcDataReader lectorDatos; //recordar abrir al usar y cerrar terminar
 
+        //Pruebaaaaa hola amiguitos 
+
         private static DataSet c1g2db; //DataSet simboliza la base de datos en tiempo de ejecucion. 
         //c1g2db stands  for clave1_grupo2db
         public static OdbcConnection GetConexionBD()
