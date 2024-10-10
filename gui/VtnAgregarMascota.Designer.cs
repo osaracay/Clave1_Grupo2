@@ -169,6 +169,7 @@ namespace Clave1_Grupo2.gui
             this.btnAgregarMascota.TabIndex = 36;
             this.btnAgregarMascota.Text = "Agregar mascota";
             this.btnAgregarMascota.UseVisualStyleBackColor = false;
+            this.btnAgregarMascota.Click += new System.EventHandler(this.btnAgregarMascota_Click);
             // 
             // panel1
             // 

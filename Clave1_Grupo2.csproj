@@ -53,8 +53,13 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>c1g2ds.xsd</DependentUpon>
     </Compile>
+    <Compile Include="dao\CatDAO.cs" />
+    <Compile Include="dao\CitaDAO.cs" />
     <Compile Include="dao\ConexionBD.cs" />
+    <Compile Include="dao\MascotaDAO.cs" />
+    <Compile Include="dao\UsuarioDAO.cs" />
     <Compile Include="entity\Administrador.cs" />
+    <Compile Include="entity\CatItem.cs" />
     <Compile Include="entity\Cita.cs" />
     <Compile Include="entity\Cliente.cs" />
     <Compile Include="entity\Factura.cs" />
@@ -74,6 +79,12 @@
     <Compile Include="gui\VtnAgregarMascota.Designer.cs">
       <DependentUpon>VtnAgregarMascota.cs</DependentUpon>
     </Compile>
+    <Compile Include="gui\VtnCitas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="gui\VtnCitas.Designer.cs">
+      <DependentUpon>VtnCitas.cs</DependentUpon>
+    </Compile>
     <Compile Include="gui\VtnIniciarSesion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -85,6 +96,12 @@
     </Compile>
     <Compile Include="gui\VtnInsumo.Designer.cs">
       <DependentUpon>VtnInsumo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="gui\VtnMascotas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="gui\VtnMascotas.Designer.cs">
+      <DependentUpon>VtnMascotas.cs</DependentUpon>
     </Compile>
     <Compile Include="gui\VtnMenuPrincipal.cs">
       <SubType>Form</SubType>
@@ -101,6 +118,7 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="util\GestorVentanas.cs" />
+    <Compile Include="util\Rellenador.cs" />
     <Compile Include="util\Validacion.cs" />
     <EmbeddedResource Include="gui\VtnAgendarCita.resx">
       <DependentUpon>VtnAgendarCita.cs</DependentUpon>
@@ -108,11 +126,17 @@
     <EmbeddedResource Include="gui\VtnAgregarMascota.resx">
       <DependentUpon>VtnAgregarMascota.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="gui\VtnCitas.resx">
+      <DependentUpon>VtnCitas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="gui\VtnIniciarSesion.resx">
       <DependentUpon>VtnIniciarSesion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="gui\VtnInsumo.resx">
       <DependentUpon>VtnInsumo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="gui\VtnMascotas.resx">
+      <DependentUpon>VtnMascotas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="gui\VtnMenuPrincipal.resx">
       <DependentUpon>VtnMenuPrincipal.cs</DependentUpon>
