@@ -127,6 +127,7 @@ namespace Clave1_Grupo2
             this.btnMisMascotas.Size = new System.Drawing.Size(130, 130);
             this.btnMisMascotas.TabIndex = 6;
             this.btnMisMascotas.UseVisualStyleBackColor = true;
+            this.btnMisMascotas.Click += new System.EventHandler(this.btnMisMascotas_Click);
             // 
             // btnCitas
             // 

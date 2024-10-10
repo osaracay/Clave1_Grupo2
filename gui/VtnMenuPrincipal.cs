@@ -1,4 +1,5 @@
-﻿using Clave1_Grupo2.entity;
+﻿using Clave1_Grupo2.dao;
+using Clave1_Grupo2.entity;
 using Clave1_Grupo2.gui;
 using Clave1_Grupo2.util;
 using System;
@@ -41,6 +42,11 @@ namespace Clave1_Grupo2
             Cliente b = (Cliente)a;
             //Administrador d = (Administrador)a;
             */
+        }
+
+        private void btnMisMascotas_Click(object sender, EventArgs e)
+        {
+            //ConexionBD.GetConexionBD();
         }
     }
 }
