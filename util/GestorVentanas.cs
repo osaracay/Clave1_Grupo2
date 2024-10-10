@@ -14,6 +14,8 @@ namespace Clave1_Grupo2.util
         private static VtnAgregarMascota vtnAgregarMascota;
         private static VtnAgendarCita vtnAgendar;
         private static VtnInsumo vtnInsumo;
+        private static VtnCompra vntCompra;
+        private static VtnVenta vntVenta;
 
         public static void SolicitarRegistroUsuario()
         {
@@ -75,6 +77,27 @@ namespace Clave1_Grupo2.util
             vtnInsumo.Show();
             vtnInsumo.Focus();
         }
-
+        public static void AbrirCompra()
+        {
+            //SI NO EXISTE EL OBJETO SESION GLOBAL
+            if (vntCompra == null || vntCompra.IsDisposed)
+            {
+                vntCompra = null;
+                vntCompra = new VtnCompra();
+            }
+            vntCompra.Show();
+            vntCompra.Focus();
+        }
+        public static void AbrirVenta()
+        {
+            //SI NO EXISTE EL OBJETO SESION GLOBAL
+            if (vntVenta == null || vntVenta.IsDisposed)
+            {
+                vntVenta = null;
+                vntVenta = new VtnVenta();
+            }
+            vntVenta.Show();
+            vntVenta.Focus();
+        }
     }
 }

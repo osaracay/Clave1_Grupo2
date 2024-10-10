@@ -40,6 +40,7 @@ namespace Clave1_Grupo2.gui
             this.btnCancelar = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txtBuscarProd = new System.Windows.Forms.TextBox();
+            this.dgvLstProductos = new System.Windows.Forms.DataGridView();
             this.brnGuardar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
@@ -50,7 +51,6 @@ namespace Clave1_Grupo2.gui
             this.txtPrecio = new System.Windows.Forms.TextBox();
             this.txtDescripcion = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.dgvLstProductos = new System.Windows.Forms.DataGridView();
             this.txtCodigo = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -160,6 +160,18 @@ namespace Clave1_Grupo2.gui
             this.txtBuscarProd.Name = "txtBuscarProd";
             this.txtBuscarProd.Size = new System.Drawing.Size(217, 26);
             this.txtBuscarProd.TabIndex = 43;
+            // 
+            // dgvLstProductos
+            // 
+            this.dgvLstProductos.AllowUserToDeleteRows = false;
+            this.dgvLstProductos.BackgroundColor = System.Drawing.SystemColors.Window;
+            this.dgvLstProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvLstProductos.Location = new System.Drawing.Point(6, 53);
+            this.dgvLstProductos.Name = "dgvLstProductos";
+            this.dgvLstProductos.ReadOnly = true;
+            this.dgvLstProductos.RowHeadersWidth = 51;
+            this.dgvLstProductos.Size = new System.Drawing.Size(677, 257);
+            this.dgvLstProductos.TabIndex = 57;
             // 
             // brnGuardar
             // 
@@ -272,18 +284,6 @@ namespace Clave1_Grupo2.gui
             this.label3.TabIndex = 58;
             this.label3.Text = "Nombre del Insumo o Servicio :";
             // 
-            // dgvLstProductos
-            // 
-            this.dgvLstProductos.AllowUserToDeleteRows = false;
-            this.dgvLstProductos.BackgroundColor = System.Drawing.SystemColors.Window;
-            this.dgvLstProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvLstProductos.Location = new System.Drawing.Point(6, 53);
-            this.dgvLstProductos.Name = "dgvLstProductos";
-            this.dgvLstProductos.ReadOnly = true;
-            this.dgvLstProductos.RowHeadersWidth = 51;
-            this.dgvLstProductos.Size = new System.Drawing.Size(677, 257);
-            this.dgvLstProductos.TabIndex = 57;
-            // 
             // txtCodigo
             // 
             this.txtCodigo.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
@@ -370,6 +370,7 @@ namespace Clave1_Grupo2.gui
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "VtnInsumo";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Insumos";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

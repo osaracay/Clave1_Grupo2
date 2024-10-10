@@ -62,7 +62,7 @@ namespace Clave1_Grupo2.gui
         }
         private void btnSalir_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            this.Dispose();
         }
     }
 }

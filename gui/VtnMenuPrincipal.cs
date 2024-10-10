@@ -51,12 +51,21 @@ namespace Clave1_Grupo2
 
         private void btnCitas_Click(object sender, EventArgs e)
         {
-            GestorVentanas.AbrirInsumo();
         }
 
         private void btnInsumos_Click(object sender, EventArgs e)
         {
+            GestorVentanas.AbrirInsumo();
+        }
 
+        private void btnCompra_Click(object sender, EventArgs e)
+        {
+            GestorVentanas.AbrirCompra();
+        }
+
+        private void btnVenta_Click(object sender, EventArgs e)
+        {
+            GestorVentanas.AbrirVenta();
         }
     }
 }

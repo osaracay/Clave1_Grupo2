@@ -45,6 +45,10 @@ namespace Clave1_Grupo2
             this.label4 = new System.Windows.Forms.Label();
             this.btnInsumos = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
+            this.btnCompra = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
+            this.btnVenta = new System.Windows.Forms.Button();
+            this.label7 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
             this.SuspendLayout();
@@ -212,12 +216,60 @@ namespace Clave1_Grupo2
             this.label5.TabIndex = 13;
             this.label5.Text = "Insumos";
             // 
+            // btnCompra
+            // 
+            this.btnCompra.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnCompra.BackgroundImage")));
+            this.btnCompra.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnCompra.Location = new System.Drawing.Point(454, 11);
+            this.btnCompra.Margin = new System.Windows.Forms.Padding(2);
+            this.btnCompra.Name = "btnCompra";
+            this.btnCompra.Size = new System.Drawing.Size(98, 106);
+            this.btnCompra.TabIndex = 14;
+            this.btnCompra.UseVisualStyleBackColor = true;
+            this.btnCompra.Click += new System.EventHandler(this.btnCompra_Click);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(461, 125);
+            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(87, 13);
+            this.label6.TabIndex = 15;
+            this.label6.Text = "Ingresar Insumos";
+            // 
+            // btnVenta
+            // 
+            this.btnVenta.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnVenta.BackgroundImage")));
+            this.btnVenta.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnVenta.Location = new System.Drawing.Point(556, 11);
+            this.btnVenta.Margin = new System.Windows.Forms.Padding(2);
+            this.btnVenta.Name = "btnVenta";
+            this.btnVenta.Size = new System.Drawing.Size(98, 106);
+            this.btnVenta.TabIndex = 16;
+            this.btnVenta.UseVisualStyleBackColor = true;
+            this.btnVenta.Click += new System.EventHandler(this.btnVenta_Click);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(587, 125);
+            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(40, 13);
+            this.label7.TabIndex = 17;
+            this.label7.Text = "Ventas";
+            // 
             // VtnMenuPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(673, 526);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.btnVenta);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.btnCompra);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.btnInsumos);
             this.Controls.Add(this.label4);
@@ -262,6 +314,10 @@ namespace Clave1_Grupo2
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button btnInsumos;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Button btnCompra;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Button btnVenta;
     }
 }
 
