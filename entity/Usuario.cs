@@ -21,16 +21,11 @@ namespace Clave1_Grupo2.entity
 
         public Usuario() { }
 
+        //Revisar para que sirve etiqueta param
+
         /// <summary>
         /// Constructor para registrar usuario sin tipo ni estado
         /// </summary>
-        /// <param name="nombre"></param>
-        /// <param name="apellido"></param>
-        /// <param name="fechaNac"></param>
-        /// <param name="email"></param>
-        /// <param name="genero"></param>
-        /// <param name="username"></param>
-        /// <param name="pw"></param>
         public Usuario(string nombre, string apellido, DateTime fechaNac, string email, char genero, string username, string pw)
         {
             Nombre = nombre;

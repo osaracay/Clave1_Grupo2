@@ -61,6 +61,7 @@ namespace Clave1_Grupo2.dao
             }
         }
 
+        //Update mascotas por propietario en caso el usuario sea vet o admin
         public static DataTable GetMascotasPorPropietario(int idPropietario)
         {
             consulta = $"SELECT * FROM mascota WHERE id_propietario={idPropietario}"; // Actualizar este query usando Parametros

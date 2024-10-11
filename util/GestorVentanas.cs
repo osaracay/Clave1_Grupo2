@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Clave1_Grupo2.util
 {
@@ -39,7 +40,7 @@ namespace Clave1_Grupo2.util
                 vtnIniciarSesion = null;
                 vtnIniciarSesion = new VtnIniciarSesion();
             }
-            vtnIniciarSesion.Show();
+            vtnIniciarSesion.ShowDialog();
             vtnIniciarSesion.Focus();
         }
 

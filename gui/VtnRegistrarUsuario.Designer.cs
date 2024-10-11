@@ -50,9 +50,9 @@ namespace Clave1_Grupo2.gui
             this.txtUsrPw = new System.Windows.Forms.TextBox();
             this.lblUsrPw = new System.Windows.Forms.Label();
             this.grpGenero = new System.Windows.Forms.GroupBox();
-            this.chkFem = new System.Windows.Forms.RadioButton();
-            this.chkMsc = new System.Windows.Forms.RadioButton();
             this.chkIndef = new System.Windows.Forms.RadioButton();
+            this.chkMsc = new System.Windows.Forms.RadioButton();
+            this.chkFem = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.picRegistroUsuario)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
@@ -137,7 +137,7 @@ namespace Clave1_Grupo2.gui
             this.picLogo.Image = ((System.Drawing.Image)(resources.GetObject("picLogo.Image")));
             this.picLogo.InitialImage = ((System.Drawing.Image)(resources.GetObject("picLogo.InitialImage")));
             this.picLogo.Location = new System.Drawing.Point(5, 215);
-            this.picLogo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.picLogo.Margin = new System.Windows.Forms.Padding(4);
             this.picLogo.Name = "picLogo";
             this.picLogo.Size = new System.Drawing.Size(98, 93);
             this.picLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -164,13 +164,13 @@ namespace Clave1_Grupo2.gui
             this.campoFechaNac.CalendarMonthBackground = System.Drawing.SystemColors.InactiveCaptionText;
             this.campoFechaNac.CalendarTitleBackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.campoFechaNac.CalendarTrailingForeColor = System.Drawing.SystemColors.InactiveCaptionText;
-            this.campoFechaNac.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.campoFechaNac.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.campoFechaNac.Location = new System.Drawing.Point(460, 77);
             this.campoFechaNac.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.campoFechaNac.MaxDate = new System.DateTime(2100, 12, 31, 0, 0, 0, 0);
             this.campoFechaNac.MinDate = new System.DateTime(1925, 12, 31, 0, 0, 0, 0);
             this.campoFechaNac.Name = "campoFechaNac";
-            this.campoFechaNac.Size = new System.Drawing.Size(326, 27);
+            this.campoFechaNac.Size = new System.Drawing.Size(326, 24);
             this.campoFechaNac.TabIndex = 3;
             // 
             // chkVeterinario
@@ -303,16 +303,16 @@ namespace Clave1_Grupo2.gui
             this.grpGenero.TabStop = false;
             this.grpGenero.Text = "Genero";
             // 
-            // chkFem
+            // chkIndef
             // 
-            this.chkFem.AutoSize = true;
-            this.chkFem.Location = new System.Drawing.Point(11, 20);
-            this.chkFem.Name = "chkFem";
-            this.chkFem.Size = new System.Drawing.Size(91, 21);
-            this.chkFem.TabIndex = 0;
-            this.chkFem.TabStop = true;
-            this.chkFem.Text = "Femenino";
-            this.chkFem.UseVisualStyleBackColor = true;
+            this.chkIndef.AutoSize = true;
+            this.chkIndef.Location = new System.Drawing.Point(211, 17);
+            this.chkIndef.Name = "chkIndef";
+            this.chkIndef.Size = new System.Drawing.Size(92, 21);
+            this.chkIndef.TabIndex = 2;
+            this.chkIndef.TabStop = true;
+            this.chkIndef.Text = "Sin definir";
+            this.chkIndef.UseVisualStyleBackColor = true;
             // 
             // chkMsc
             // 
@@ -325,16 +325,16 @@ namespace Clave1_Grupo2.gui
             this.chkMsc.Text = "Masculino";
             this.chkMsc.UseVisualStyleBackColor = true;
             // 
-            // chkIndef
+            // chkFem
             // 
-            this.chkIndef.AutoSize = true;
-            this.chkIndef.Location = new System.Drawing.Point(211, 17);
-            this.chkIndef.Name = "chkIndef";
-            this.chkIndef.Size = new System.Drawing.Size(92, 21);
-            this.chkIndef.TabIndex = 2;
-            this.chkIndef.TabStop = true;
-            this.chkIndef.Text = "Sin definir";
-            this.chkIndef.UseVisualStyleBackColor = true;
+            this.chkFem.AutoSize = true;
+            this.chkFem.Location = new System.Drawing.Point(11, 20);
+            this.chkFem.Name = "chkFem";
+            this.chkFem.Size = new System.Drawing.Size(91, 21);
+            this.chkFem.TabIndex = 0;
+            this.chkFem.TabStop = true;
+            this.chkFem.Text = "Femenino";
+            this.chkFem.UseVisualStyleBackColor = true;
             // 
             // VtnRegistrarUsuario
             // 

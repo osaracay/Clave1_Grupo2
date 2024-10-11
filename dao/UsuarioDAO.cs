@@ -27,19 +27,20 @@ namespace Clave1_Grupo2.dao
 
         //PARA CREAR Y ACCEDER AL Colaborador Sesion
         /*
-         * Al parecer no utilizare este de momento
+         * Al parecer no utilizare este de momento*/
         public static void setSesion(Usuario c)
         {
             sesion = c;
         }
-        */
+        
         public static Usuario getSesion()
         {
             return sesion;
         }
 
-        public static bool AutenticarUsuario(string usuario, string pw)
+        public static bool AutenticarUsuario(string usuario, string haspw)
         {
+            //haspw es hashed pw
             //1 verificar usuario y pw existen en la bd
             consulta = "SELECT * FROM usuario WHERE usr_login=? AND usr_pw=?";
 
@@ -49,7 +50,7 @@ namespace Clave1_Grupo2.dao
             adaptador.SelectCommand.Parameters.Add(
                 "@usr", OdbcType.VarChar).Value = usuario;
             adaptador.SelectCommand.Parameters.Add(
-                "@pw", OdbcType.VarChar).Value = pw;
+                "@pw", OdbcType.VarChar).Value = haspw;
 
             try
             {
@@ -79,7 +80,7 @@ namespace Clave1_Grupo2.dao
             }
             finally
             {
-                lector.Close();
+                //lector.Close();
                 ConexionBD.GetConexionBD().Close();
             }
         }
@@ -90,7 +91,7 @@ namespace Clave1_Grupo2.dao
         }
         private static string OlvidePw(string usr)
         {
-            string pw = "";
+            string hashedpw = "";
             consulta = $"SELECT usr_pw FROM usuario WHERE usr_login=?";
             
             adaptador = new OdbcDataAdapter(consulta, ConexionBD.GetConexionBD());
@@ -104,20 +105,20 @@ namespace Clave1_Grupo2.dao
                 
                 while (lector.Read())
                 {
-                    pw = lector.GetString(0);                    
+                    hashedpw = lector.GetString(0);                    
                 }
-                if (pw == "")
+                if (hashedpw == "")
                 {
                     MessageBox.Show("El usuario no existe");
                 }
                 lector.Close();
-                return pw;
+                return hashedpw;
                 
             }
             catch (OdbcException)
             {
                 MessageBox.Show("El usuario no existe");
-                return pw;
+                return hashedpw;
             }
             finally
             {

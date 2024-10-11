@@ -9,6 +9,7 @@ namespace Clave1_Grupo2.gui
         public VtnIniciarSesion()
         {
             InitializeComponent();
+            txtUsuario.Focus();
         }
 
         private void lblSignUp_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
