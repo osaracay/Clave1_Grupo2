@@ -109,6 +109,12 @@
     <Compile Include="gui\VtnMenuPrincipal.Designer.cs">
       <DependentUpon>VtnMenuPrincipal.cs</DependentUpon>
     </Compile>
+    <Compile Include="gui\VtnPerfilUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="gui\VtnPerfilUsuario.Designer.cs">
+      <DependentUpon>VtnPerfilUsuario.cs</DependentUpon>
+    </Compile>
     <Compile Include="gui\VtnRegistrarUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -153,6 +159,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="gui\VtnMenuPrincipal.resx">
       <DependentUpon>VtnMenuPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="gui\VtnPerfilUsuario.resx">
+      <DependentUpon>VtnPerfilUsuario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="gui\VtnRegistrarUsuario.resx">
       <DependentUpon>VtnRegistrarUsuario.cs</DependentUpon>

@@ -12,8 +12,11 @@ namespace Clave1_Grupo2.util
     {
         private static VtnIniciarSesion vtnIniciarSesion;
         private static VtnRegistrarUsuario vtnRegistrar;
+        private static VtnPerfilUsuario vtnPerfil;
         private static VtnAgregarMascota vtnAgregarMascota;
+        private static VtnMascotas vtnMascotas;
         private static VtnAgendarCita vtnAgendar;
+        private static VtnCitas vtnCitas;
         private static VtnInsumo vtnInsumo;
         private static VtnCompra vntCompra;
         private static VtnVenta vntVenta;
@@ -99,6 +102,41 @@ namespace Clave1_Grupo2.util
             }
             vntVenta.Show();
             vntVenta.Focus();
+        }
+
+        public static void AbrirVtnMascotas()
+        {
+            //SI NO EXISTE EL OBJETO SESION GLOBAL
+            if (vtnMascotas == null || vtnMascotas.IsDisposed)
+            {
+                vtnMascotas = null;
+                vtnMascotas = new VtnMascotas();
+            }
+            vtnMascotas.Show();
+            vtnMascotas.Focus();
+        }
+        public static void AbrirVtnCitas()
+        {
+            //SI NO EXISTE EL OBJETO SESION GLOBAL
+            if (vtnCitas == null || vtnCitas.IsDisposed)
+            {
+                vtnCitas = null;
+                vtnCitas = new VtnCitas();
+            }
+            vtnCitas.Show();
+            vtnCitas.Focus();
+        }
+
+        public static void AbrirMiPerfil()
+        {
+            //SI NO EXISTE EL OBJETO SESION GLOBAL
+            if (vtnPerfil == null || vtnPerfil.IsDisposed)
+            {
+                vtnPerfil = null;
+                vtnPerfil = new VtnPerfilUsuario();
+            }
+            vtnPerfil.Show();
+            vtnPerfil.Focus();
         }
     }
 }

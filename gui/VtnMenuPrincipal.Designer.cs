@@ -254,12 +254,14 @@ namespace Clave1_Grupo2
             // lblMiPerfil
             // 
             this.lblMiPerfil.AutoSize = true;
+            this.lblMiPerfil.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblMiPerfil.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMiPerfil.Location = new System.Drawing.Point(12, 230);
             this.lblMiPerfil.Name = "lblMiPerfil";
             this.lblMiPerfil.Size = new System.Drawing.Size(71, 20);
             this.lblMiPerfil.TabIndex = 0;
             this.lblMiPerfil.Text = "Mi Perfil";
+            this.lblMiPerfil.Click += new System.EventHandler(this.lblMiPerfil_Click);
             // 
             // VtnMenuPrincipal
             // 

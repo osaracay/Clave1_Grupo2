@@ -1,7 +1,7 @@
 ﻿
 namespace Clave1_Grupo2.gui
 {
-    partial class VtnCitas
+    partial class VtnPerfilUsuario
     {
         /// <summary>
         /// Required designer variable.
@@ -29,19 +29,19 @@ namespace Clave1_Grupo2.gui
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(VtnCitas));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(VtnPerfilUsuario));
             this.SuspendLayout();
             // 
-            // VtnCitas
+            // VtnPerfilUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "VtnCitas";
+            this.Name = "VtnPerfilUsuario";
             this.Opacity = 0.95D;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Citas";
+            this.Text = "Mi Perfil";
             this.ResumeLayout(false);
 
         }

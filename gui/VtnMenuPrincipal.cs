@@ -60,7 +60,7 @@ namespace Clave1_Grupo2
         {
             if (UsuarioDAO.getSesion() != null)
             {
-                //GestorVentanas.AbrirVtnMascotas();
+                GestorVentanas.AbrirVtnMascotas();
             }
             else
             {
@@ -75,7 +75,7 @@ namespace Clave1_Grupo2
         {
             if (UsuarioDAO.getSesion() != null)
             {
-                //GestorVentanas.AbrirVtnCitas();
+                GestorVentanas.AbrirVtnCitas();
             }
             else
             {
@@ -148,6 +148,19 @@ namespace Clave1_Grupo2
         private void VtnMenuPrincipal_Load(object sender, EventArgs e)
         {
             GestorVentanas.SolicitarInicioSesion();
+        }
+
+        private void lblMiPerfil_Click(object sender, EventArgs e)
+        {
+            if (UsuarioDAO.getSesion() != null)
+            {
+                GestorVentanas.AbrirMiPerfil();
+            }
+            else
+            {
+                MessageBox.Show("Debes iniciar sesion para acceder a esta funcion");
+                GestorVentanas.SolicitarInicioSesion();
+            }
         }
     }
 }

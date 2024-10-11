@@ -45,7 +45,7 @@ namespace Clave1_Grupo2.dao
             if (c1g2db == null)
             {
                 c1g2db = new DataSet();
-                MessageBox.Show("se creo la bd para runtime");
+                MessageBox.Show("se creo la bd para tiempo de ejecucion");
             }
             return c1g2db;
         }

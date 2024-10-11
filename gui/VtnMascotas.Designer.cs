@@ -40,6 +40,7 @@ namespace Clave1_Grupo2.gui
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "VtnMascotas";
             this.Opacity = 0.95D;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Mascotas";
             this.ResumeLayout(false);
 
