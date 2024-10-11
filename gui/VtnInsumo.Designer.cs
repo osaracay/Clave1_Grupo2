@@ -126,6 +126,8 @@ namespace Clave1_Grupo2.gui
             this.cmbTipoInsumo.Name = "cmbTipoInsumo";
             this.cmbTipoInsumo.Size = new System.Drawing.Size(70, 26);
             this.cmbTipoInsumo.TabIndex = 70;
+            this.cmbTipoInsumo.SelectedIndexChanged += new System.EventHandler(this.cmbTipoInsumo_SelectedIndexChanged);
+            this.cmbTipoInsumo.TextChanged += new System.EventHandler(this.cmbTipoInsumo_TextChanged);
             // 
             // btnCancelar
             // 
@@ -140,6 +142,7 @@ namespace Clave1_Grupo2.gui
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnCancelar.UseVisualStyleBackColor = false;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // groupBox1
             // 
@@ -186,6 +189,7 @@ namespace Clave1_Grupo2.gui
             this.brnGuardar.Text = "Guardar";
             this.brnGuardar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.brnGuardar.UseVisualStyleBackColor = false;
+            this.brnGuardar.Click += new System.EventHandler(this.brnGuardar_Click);
             // 
             // btnEliminar
             // 
