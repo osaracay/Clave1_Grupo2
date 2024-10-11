@@ -129,6 +129,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="util\CyberSec.cs" />
     <Compile Include="util\GestorVentanas.cs" />
     <Compile Include="util\Rellenador.cs" />
     <Compile Include="util\Validacion.cs" />

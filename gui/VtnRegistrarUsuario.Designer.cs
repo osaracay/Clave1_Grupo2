@@ -46,21 +46,25 @@ namespace Clave1_Grupo2.gui
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.lblUsrLogin = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtUserName = new System.Windows.Forms.TextBox();
             this.txtUsrPw = new System.Windows.Forms.TextBox();
             this.lblUsrPw = new System.Windows.Forms.Label();
+            this.grpGenero = new System.Windows.Forms.GroupBox();
+            this.chkFem = new System.Windows.Forms.RadioButton();
+            this.chkMsc = new System.Windows.Forms.RadioButton();
+            this.chkIndef = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.picRegistroUsuario)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
+            this.grpGenero.SuspendLayout();
             this.SuspendLayout();
             // 
             // picRegistroUsuario
             // 
             this.picRegistroUsuario.Image = ((System.Drawing.Image)(resources.GetObject("picRegistroUsuario.Image")));
-            this.picRegistroUsuario.Location = new System.Drawing.Point(54, 42);
-            this.picRegistroUsuario.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.picRegistroUsuario.Location = new System.Drawing.Point(48, 34);
             this.picRegistroUsuario.Name = "picRegistroUsuario";
-            this.picRegistroUsuario.Size = new System.Drawing.Size(136, 151);
+            this.picRegistroUsuario.Size = new System.Drawing.Size(121, 121);
             this.picRegistroUsuario.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picRegistroUsuario.TabIndex = 0;
             this.picRegistroUsuario.TabStop = false;
@@ -71,10 +75,10 @@ namespace Clave1_Grupo2.gui
             this.btnRegistrar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnRegistrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRegistrar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnRegistrar.Location = new System.Drawing.Point(518, 330);
+            this.btnRegistrar.Location = new System.Drawing.Point(460, 264);
             this.btnRegistrar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnRegistrar.Name = "btnRegistrar";
-            this.btnRegistrar.Size = new System.Drawing.Size(367, 55);
+            this.btnRegistrar.Size = new System.Drawing.Size(326, 44);
             this.btnRegistrar.TabIndex = 20;
             this.btnRegistrar.Text = "Registrar";
             this.btnRegistrar.UseVisualStyleBackColor = false;
@@ -85,11 +89,11 @@ namespace Clave1_Grupo2.gui
             this.txtNombres.BackColor = System.Drawing.SystemColors.InactiveCaptionText;
             this.txtNombres.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNombres.ForeColor = System.Drawing.SystemColors.InactiveCaption;
-            this.txtNombres.Location = new System.Drawing.Point(518, 14);
+            this.txtNombres.Location = new System.Drawing.Point(460, 11);
             this.txtNombres.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtNombres.MaxLength = 30;
             this.txtNombres.Name = "txtNombres";
-            this.txtNombres.Size = new System.Drawing.Size(366, 33);
+            this.txtNombres.Size = new System.Drawing.Size(326, 29);
             this.txtNombres.TabIndex = 1;
             this.txtNombres.Text = "Ingrese sus nombres";
             // 
@@ -98,9 +102,9 @@ namespace Clave1_Grupo2.gui
             this.lblTitulo.AutoSize = true;
             this.lblTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitulo.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblTitulo.Location = new System.Drawing.Point(29, 209);
+            this.lblTitulo.Location = new System.Drawing.Point(26, 167);
             this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new System.Drawing.Size(217, 29);
+            this.lblTitulo.Size = new System.Drawing.Size(178, 25);
             this.lblTitulo.TabIndex = 7;
             this.lblTitulo.Text = "Registrar Usuario";
             // 
@@ -115,7 +119,7 @@ namespace Clave1_Grupo2.gui
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(264, 394);
+            this.panel1.Size = new System.Drawing.Size(235, 315);
             this.panel1.TabIndex = 6;
             // 
             // lblVetCatDog
@@ -123,9 +127,9 @@ namespace Clave1_Grupo2.gui
             this.lblVetCatDog.AutoSize = true;
             this.lblVetCatDog.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblVetCatDog.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblVetCatDog.Location = new System.Drawing.Point(117, 320);
+            this.lblVetCatDog.Location = new System.Drawing.Point(104, 256);
             this.lblVetCatDog.Name = "lblVetCatDog";
-            this.lblVetCatDog.Size = new System.Drawing.Size(140, 58);
+            this.lblVetCatDog.Size = new System.Drawing.Size(117, 50);
             this.lblVetCatDog.TabIndex = 6;
             this.lblVetCatDog.Text = "Veterinaria\r\nCat-Dog";
             // 
@@ -133,10 +137,10 @@ namespace Clave1_Grupo2.gui
             // 
             this.picLogo.Image = ((System.Drawing.Image)(resources.GetObject("picLogo.Image")));
             this.picLogo.InitialImage = ((System.Drawing.Image)(resources.GetObject("picLogo.InitialImage")));
-            this.picLogo.Location = new System.Drawing.Point(6, 269);
-            this.picLogo.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.picLogo.Location = new System.Drawing.Point(5, 215);
+            this.picLogo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.picLogo.Name = "picLogo";
-            this.picLogo.Size = new System.Drawing.Size(110, 116);
+            this.picLogo.Size = new System.Drawing.Size(98, 93);
             this.picLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picLogo.TabIndex = 0;
             this.picLogo.TabStop = false;
@@ -146,11 +150,11 @@ namespace Clave1_Grupo2.gui
             this.txtApellidos.BackColor = System.Drawing.SystemColors.InactiveCaptionText;
             this.txtApellidos.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtApellidos.ForeColor = System.Drawing.SystemColors.InactiveCaption;
-            this.txtApellidos.Location = new System.Drawing.Point(518, 55);
+            this.txtApellidos.Location = new System.Drawing.Point(460, 44);
             this.txtApellidos.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtApellidos.MaxLength = 30;
             this.txtApellidos.Name = "txtApellidos";
-            this.txtApellidos.Size = new System.Drawing.Size(366, 33);
+            this.txtApellidos.Size = new System.Drawing.Size(326, 29);
             this.txtApellidos.TabIndex = 2;
             this.txtApellidos.Text = "Ingrese sus apellidos";
             // 
@@ -162,22 +166,22 @@ namespace Clave1_Grupo2.gui
             this.campoFechaNac.CalendarTitleBackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.campoFechaNac.CalendarTrailingForeColor = System.Drawing.SystemColors.InactiveCaptionText;
             this.campoFechaNac.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.campoFechaNac.Location = new System.Drawing.Point(518, 96);
+            this.campoFechaNac.Location = new System.Drawing.Point(460, 77);
             this.campoFechaNac.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.campoFechaNac.MaxDate = new System.DateTime(2100, 12, 31, 0, 0, 0, 0);
             this.campoFechaNac.MinDate = new System.DateTime(1925, 12, 31, 0, 0, 0, 0);
             this.campoFechaNac.Name = "campoFechaNac";
-            this.campoFechaNac.Size = new System.Drawing.Size(366, 31);
+            this.campoFechaNac.Size = new System.Drawing.Size(326, 27);
             this.campoFechaNac.TabIndex = 3;
             // 
             // chkVeterinario
             // 
             this.chkVeterinario.AutoSize = true;
             this.chkVeterinario.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.chkVeterinario.Location = new System.Drawing.Point(318, 354);
+            this.chkVeterinario.Location = new System.Drawing.Point(283, 283);
             this.chkVeterinario.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.chkVeterinario.Name = "chkVeterinario";
-            this.chkVeterinario.Size = new System.Drawing.Size(149, 24);
+            this.chkVeterinario.Size = new System.Drawing.Size(135, 21);
             this.chkVeterinario.TabIndex = 19;
             this.chkVeterinario.Text = "soy veterinario/a";
             this.chkVeterinario.UseVisualStyleBackColor = true;
@@ -187,11 +191,11 @@ namespace Clave1_Grupo2.gui
             this.txtEmail.BackColor = System.Drawing.SystemColors.InactiveCaptionText;
             this.txtEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEmail.ForeColor = System.Drawing.SystemColors.InactiveCaption;
-            this.txtEmail.Location = new System.Drawing.Point(518, 129);
+            this.txtEmail.Location = new System.Drawing.Point(460, 103);
             this.txtEmail.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtEmail.MaxLength = 80;
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(366, 33);
+            this.txtEmail.Size = new System.Drawing.Size(326, 29);
             this.txtEmail.TabIndex = 4;
             this.txtEmail.Text = "e-mail";
             // 
@@ -200,9 +204,9 @@ namespace Clave1_Grupo2.gui
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label1.Location = new System.Drawing.Point(314, 21);
+            this.label1.Location = new System.Drawing.Point(279, 17);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(87, 25);
+            this.label1.Size = new System.Drawing.Size(68, 20);
             this.label1.TabIndex = 16;
             this.label1.Text = "Nombre";
             // 
@@ -211,9 +215,9 @@ namespace Clave1_Grupo2.gui
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label2.Location = new System.Drawing.Point(314, 62);
+            this.label2.Location = new System.Drawing.Point(279, 50);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(89, 25);
+            this.label2.Size = new System.Drawing.Size(68, 20);
             this.label2.TabIndex = 17;
             this.label2.Text = "Apellido";
             // 
@@ -222,9 +226,9 @@ namespace Clave1_Grupo2.gui
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label3.Location = new System.Drawing.Point(314, 99);
+            this.label3.Location = new System.Drawing.Point(279, 79);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(182, 25);
+            this.label3.Size = new System.Drawing.Size(141, 20);
             this.label3.TabIndex = 18;
             this.label3.Text = "Fecha nacimiento";
             // 
@@ -233,9 +237,9 @@ namespace Clave1_Grupo2.gui
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label4.Location = new System.Drawing.Point(314, 136);
+            this.label4.Location = new System.Drawing.Point(279, 109);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(188, 25);
+            this.label4.Size = new System.Drawing.Size(147, 20);
             this.label4.TabIndex = 19;
             this.label4.Text = "Correo electrónico";
             // 
@@ -244,60 +248,106 @@ namespace Clave1_Grupo2.gui
             this.lblUsrLogin.AutoSize = true;
             this.lblUsrLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUsrLogin.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblUsrLogin.Location = new System.Drawing.Point(314, 178);
+            this.lblUsrLogin.Location = new System.Drawing.Point(279, 142);
             this.lblUsrLogin.Name = "lblUsrLogin";
-            this.lblUsrLogin.Size = new System.Drawing.Size(86, 25);
+            this.lblUsrLogin.Size = new System.Drawing.Size(67, 20);
             this.lblUsrLogin.TabIndex = 21;
             this.lblUsrLogin.Text = "Usuario";
             // 
-            // textBox1
+            // txtUserName
             // 
-            this.textBox1.BackColor = System.Drawing.SystemColors.InactiveCaptionText;
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.ForeColor = System.Drawing.SystemColors.InactiveCaption;
-            this.textBox1.Location = new System.Drawing.Point(518, 170);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox1.MaxLength = 30;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(366, 33);
-            this.textBox1.TabIndex = 5;
-            this.textBox1.Text = "nombre de usuario";
+            this.txtUserName.BackColor = System.Drawing.SystemColors.InactiveCaptionText;
+            this.txtUserName.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUserName.ForeColor = System.Drawing.SystemColors.InactiveCaption;
+            this.txtUserName.Location = new System.Drawing.Point(460, 136);
+            this.txtUserName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtUserName.MaxLength = 30;
+            this.txtUserName.Name = "txtUserName";
+            this.txtUserName.Size = new System.Drawing.Size(326, 29);
+            this.txtUserName.TabIndex = 5;
+            this.txtUserName.Text = "nombre de usuario";
             // 
             // txtUsrPw
             // 
             this.txtUsrPw.BackColor = System.Drawing.SystemColors.InactiveCaptionText;
             this.txtUsrPw.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtUsrPw.ForeColor = System.Drawing.SystemColors.InactiveCaption;
-            this.txtUsrPw.Location = new System.Drawing.Point(518, 211);
+            this.txtUsrPw.Location = new System.Drawing.Point(460, 169);
             this.txtUsrPw.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtUsrPw.MaxLength = 60;
+            this.txtUsrPw.MaxLength = 30;
             this.txtUsrPw.Name = "txtUsrPw";
-            this.txtUsrPw.Size = new System.Drawing.Size(366, 33);
+            this.txtUsrPw.Size = new System.Drawing.Size(326, 29);
             this.txtUsrPw.TabIndex = 6;
             this.txtUsrPw.UseSystemPasswordChar = true;
-            this.txtUsrPw.TextChanged += new System.EventHandler(this.txtUsrPw_TextChanged);
             // 
             // lblUsrPw
             // 
             this.lblUsrPw.AutoSize = true;
             this.lblUsrPw.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUsrPw.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblUsrPw.Location = new System.Drawing.Point(314, 222);
+            this.lblUsrPw.Location = new System.Drawing.Point(279, 178);
             this.lblUsrPw.Name = "lblUsrPw";
-            this.lblUsrPw.Size = new System.Drawing.Size(123, 25);
+            this.lblUsrPw.Size = new System.Drawing.Size(95, 20);
             this.lblUsrPw.TabIndex = 23;
             this.lblUsrPw.Text = "Contraseña";
             // 
+            // grpGenero
+            // 
+            this.grpGenero.Controls.Add(this.chkIndef);
+            this.grpGenero.Controls.Add(this.chkMsc);
+            this.grpGenero.Controls.Add(this.chkFem);
+            this.grpGenero.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.grpGenero.Location = new System.Drawing.Point(460, 200);
+            this.grpGenero.Name = "grpGenero";
+            this.grpGenero.Size = new System.Drawing.Size(326, 49);
+            this.grpGenero.TabIndex = 24;
+            this.grpGenero.TabStop = false;
+            this.grpGenero.Text = "Genero";
+            // 
+            // chkFem
+            // 
+            this.chkFem.AutoSize = true;
+            this.chkFem.Location = new System.Drawing.Point(11, 20);
+            this.chkFem.Name = "chkFem";
+            this.chkFem.Size = new System.Drawing.Size(91, 21);
+            this.chkFem.TabIndex = 0;
+            this.chkFem.TabStop = true;
+            this.chkFem.Text = "Femenino";
+            this.chkFem.UseVisualStyleBackColor = true;
+            // 
+            // chkMsc
+            // 
+            this.chkMsc.AutoSize = true;
+            this.chkMsc.Location = new System.Drawing.Point(108, 20);
+            this.chkMsc.Name = "chkMsc";
+            this.chkMsc.Size = new System.Drawing.Size(92, 21);
+            this.chkMsc.TabIndex = 1;
+            this.chkMsc.TabStop = true;
+            this.chkMsc.Text = "Masculino";
+            this.chkMsc.UseVisualStyleBackColor = true;
+            // 
+            // chkIndef
+            // 
+            this.chkIndef.AutoSize = true;
+            this.chkIndef.Location = new System.Drawing.Point(211, 17);
+            this.chkIndef.Name = "chkIndef";
+            this.chkIndef.Size = new System.Drawing.Size(92, 21);
+            this.chkIndef.TabIndex = 2;
+            this.chkIndef.TabStop = true;
+            this.chkIndef.Text = "Sin definir";
+            this.chkIndef.UseVisualStyleBackColor = true;
+            // 
             // VtnRegistrarUsuario
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.ClientSize = new System.Drawing.Size(928, 394);
+            this.ClientSize = new System.Drawing.Size(825, 315);
+            this.Controls.Add(this.grpGenero);
             this.Controls.Add(this.lblUsrPw);
             this.Controls.Add(this.txtUsrPw);
             this.Controls.Add(this.lblUsrLogin);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtUserName);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -311,7 +361,6 @@ namespace Clave1_Grupo2.gui
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "VtnRegistrarUsuario";
@@ -323,6 +372,8 @@ namespace Clave1_Grupo2.gui
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).EndInit();
+            this.grpGenero.ResumeLayout(false);
+            this.grpGenero.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -346,8 +397,12 @@ namespace Clave1_Grupo2.gui
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label lblUsrLogin;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtUserName;
         private System.Windows.Forms.TextBox txtUsrPw;
         private System.Windows.Forms.Label lblUsrPw;
+        private System.Windows.Forms.GroupBox grpGenero;
+        private System.Windows.Forms.RadioButton chkIndef;
+        private System.Windows.Forms.RadioButton chkMsc;
+        private System.Windows.Forms.RadioButton chkFem;
     }
 }

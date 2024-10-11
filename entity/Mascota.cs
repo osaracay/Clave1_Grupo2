@@ -16,8 +16,47 @@ namespace Clave1_Grupo2.entity
         private int edad;
         private char generoMascota;
         private int idPropietario;
+        private string color;
         public List<Cita> citas;
 
+        public string Color { get => color; set => color = value; }
+
+        public Mascota()
+        {
+        }
+
+
+        //Constructor para consultas
+        public Mascota(int idMascota, string nomMascota, int especie, string raza, int edad, char generoMascota, int idPropietario, string color)
+        {
+            this.idMascota = idMascota;
+            this.nomMascota = nomMascota;
+            this.especie = especie;
+            this.raza = raza;
+            this.edad = edad;
+            this.generoMascota = generoMascota;
+            this.idPropietario = idPropietario;
+        }
+        //Constructor para nuevos registros
+        public Mascota(string nomMascota, int especie, string raza, int edad, char generoMascota, int idPropietario, string color)
+        {
+            this.nomMascota = nomMascota;
+            this.especie = especie;
+            this.raza = raza;
+            this.edad = edad;
+            this.generoMascota = generoMascota;
+            this.idPropietario = idPropietario;
+        }
+        //Constructor para nuevos registros sin color
+        public Mascota(string nomMascota, int especie, string raza, int edad, char generoMascota, int idPropietario)
+        {
+            this.nomMascota = nomMascota;
+            this.especie = especie;
+            this.raza = raza;
+            this.edad = edad;
+            this.generoMascota = generoMascota;
+            this.idPropietario = idPropietario;
+        }
 
         public int GetIdMascota() 
         { 

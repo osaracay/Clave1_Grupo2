@@ -49,9 +49,15 @@ namespace Clave1_Grupo2.gui
             this.cbxEspecie = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.txtColor = new System.Windows.Forms.TextBox();
+            this.grpGenero = new System.Windows.Forms.GroupBox();
+            this.chkIndef = new System.Windows.Forms.RadioButton();
+            this.chkMsc = new System.Windows.Forms.RadioButton();
+            this.chkFem = new System.Windows.Forms.RadioButton();
+            this.lblEdadValida = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picRegistroUsuario)).BeginInit();
+            this.grpGenero.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblUsrPw
@@ -85,8 +91,9 @@ namespace Clave1_Grupo2.gui
             this.txtEdadMascota.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtEdadMascota.MaxLength = 3;
             this.txtEdadMascota.Name = "txtEdadMascota";
-            this.txtEdadMascota.Size = new System.Drawing.Size(326, 29);
+            this.txtEdadMascota.Size = new System.Drawing.Size(102, 29);
             this.txtEdadMascota.TabIndex = 5;
+            this.txtEdadMascota.TextChanged += new System.EventHandler(this.txtEdadMascota_TextChanged);
             // 
             // label4
             // 
@@ -274,12 +281,70 @@ namespace Clave1_Grupo2.gui
             this.txtColor.Size = new System.Drawing.Size(326, 29);
             this.txtColor.TabIndex = 39;
             // 
+            // grpGenero
+            // 
+            this.grpGenero.Controls.Add(this.chkIndef);
+            this.grpGenero.Controls.Add(this.chkMsc);
+            this.grpGenero.Controls.Add(this.chkFem);
+            this.grpGenero.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.grpGenero.Location = new System.Drawing.Point(467, 209);
+            this.grpGenero.Name = "grpGenero";
+            this.grpGenero.Size = new System.Drawing.Size(326, 49);
+            this.grpGenero.TabIndex = 41;
+            this.grpGenero.TabStop = false;
+            this.grpGenero.Text = "Genero";
+            // 
+            // chkIndef
+            // 
+            this.chkIndef.AutoSize = true;
+            this.chkIndef.Location = new System.Drawing.Point(211, 17);
+            this.chkIndef.Name = "chkIndef";
+            this.chkIndef.Size = new System.Drawing.Size(92, 21);
+            this.chkIndef.TabIndex = 2;
+            this.chkIndef.TabStop = true;
+            this.chkIndef.Text = "Sin definir";
+            this.chkIndef.UseVisualStyleBackColor = true;
+            // 
+            // chkMsc
+            // 
+            this.chkMsc.AutoSize = true;
+            this.chkMsc.Location = new System.Drawing.Point(108, 20);
+            this.chkMsc.Name = "chkMsc";
+            this.chkMsc.Size = new System.Drawing.Size(92, 21);
+            this.chkMsc.TabIndex = 1;
+            this.chkMsc.TabStop = true;
+            this.chkMsc.Text = "Masculino";
+            this.chkMsc.UseVisualStyleBackColor = true;
+            // 
+            // chkFem
+            // 
+            this.chkFem.AutoSize = true;
+            this.chkFem.Location = new System.Drawing.Point(11, 20);
+            this.chkFem.Name = "chkFem";
+            this.chkFem.Size = new System.Drawing.Size(91, 21);
+            this.chkFem.TabIndex = 0;
+            this.chkFem.TabStop = true;
+            this.chkFem.Text = "Femenino";
+            this.chkFem.UseVisualStyleBackColor = true;
+            // 
+            // lblEdadValida
+            // 
+            this.lblEdadValida.AutoSize = true;
+            this.lblEdadValida.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lblEdadValida.Location = new System.Drawing.Point(575, 142);
+            this.lblEdadValida.Name = "lblEdadValida";
+            this.lblEdadValida.Size = new System.Drawing.Size(13, 17);
+            this.lblEdadValida.TabIndex = 42;
+            this.lblEdadValida.Text = "-";
+            // 
             // VtnAgregarMascota
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.ClientSize = new System.Drawing.Size(841, 324);
+            this.Controls.Add(this.lblEdadValida);
+            this.Controls.Add(this.grpGenero);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.txtColor);
             this.Controls.Add(this.cbxEspecie);
@@ -308,6 +373,8 @@ namespace Clave1_Grupo2.gui
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picRegistroUsuario)).EndInit();
+            this.grpGenero.ResumeLayout(false);
+            this.grpGenero.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -334,5 +401,10 @@ namespace Clave1_Grupo2.gui
         private System.Windows.Forms.ComboBox cbxEspecie;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtColor;
+        private System.Windows.Forms.GroupBox grpGenero;
+        private System.Windows.Forms.RadioButton chkIndef;
+        private System.Windows.Forms.RadioButton chkMsc;
+        private System.Windows.Forms.RadioButton chkFem;
+        private System.Windows.Forms.Label lblEdadValida;
     }
 }
