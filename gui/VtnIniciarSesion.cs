@@ -19,11 +19,17 @@ namespace Clave1_Grupo2.gui
 
         private void btnLogin_Click(object sender, System.EventArgs e)
         {
-            if(UsuarioDAO.AutenticarUsuario(txtUsuario.Text, CyberSec.HolaCosmos(txtPassword.Text))){
+            if(FormularioLleno() && UsuarioDAO.AutenticarUsuario(txtUsuario.Text, CyberSec.HolaCosmos(txtPassword.Text))){
+                if(UsuarioDAO.getSesion() != null) {
+                    //DA ERROR SI EL USUARIO NO EXISTE
+                    MessageBox.Show($"Bienvenido {UsuarioDAO.getSesion().Nombre} {UsuarioDAO.getSesion().Apellido}");
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Usuario o contraseña incorrectos");
+                }                                
                 
-                //DA ERROR SI EL USUARIO NO EXISTE
-                MessageBox.Show($"Bienvenido {UsuarioDAO.getSesion().Nombre} {UsuarioDAO.getSesion().Apellido}");
-                this.Close();                
                 //PENDIENTE
                 //Actualizar el menu de inicio para mostrar las funciones de acuerdo con el tipo de usuario
             }           
@@ -34,12 +40,23 @@ namespace Clave1_Grupo2.gui
             bool lleno = Validacion.CampoLleno(txtUsuario) && Validacion.CampoLleno(txtPassword);
             return lleno;
         }
-
+        int insistente;
         private void lblForgotPw_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-
-            //MessageBox.Show(CyberSec.Saracay(UsuarioDAO.OlvidePw(txtUsuario.Text.Trim())));
-            MessageBox.Show("Acuerdese");
+            insistente++;
+            if (insistente <= 5)
+            {
+                MessageBox.Show("Acuérdese");
+            }
+            else if (insistente==6)
+            {
+                MessageBox.Show(CyberSec.Saracay(UsuarioDAO.Olvidaste(txtUsuario.Text.Trim())));
+            }
+            else
+            {
+                MessageBox.Show("ignorando ...");
+            }
+            
         }
     }
 }

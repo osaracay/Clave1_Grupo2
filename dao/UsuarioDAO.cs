@@ -26,10 +26,13 @@ namespace Clave1_Grupo2.dao
         private static Usuario sesion; //Para gestionar la sesion.
 
         //PARA CREAR Y ACCEDER AL Colaborador Sesion
+        /*
+         * Al parecer no utilizare este de momento
         public static void setSesion(Usuario c)
         {
             sesion = c;
         }
+        */
         public static Usuario getSesion()
         {
             return sesion;
@@ -81,7 +84,11 @@ namespace Clave1_Grupo2.dao
             }
         }
 
-        public static string OlvidePw(string usuario)
+        public static string Olvidaste(string usuario)
+        {
+            return OlvidePw(usuario);
+        }
+        private static string OlvidePw(string usr)
         {
             string pw = "";
             consulta = $"SELECT usr_pw FROM usuario WHERE usr_login=?";
@@ -89,7 +96,7 @@ namespace Clave1_Grupo2.dao
             adaptador = new OdbcDataAdapter(consulta, ConexionBD.GetConexionBD());
             adaptador.SelectCommand = new OdbcCommand(consulta, ConexionBD.GetConexionBD());
 
-            adaptador.SelectCommand.Parameters.Add("@usr", OdbcType.VarChar).Value = usuario;
+            adaptador.SelectCommand.Parameters.Add("@usr", OdbcType.VarChar).Value = usr;
             try
             {
                 ConexionBD.GetConexionBD().Open();
@@ -116,8 +123,7 @@ namespace Clave1_Grupo2.dao
             {
                 //lector.Close();
                 ConexionBD.GetConexionBD().Close();
-            }
-            
+            }            
         }
 
         public static bool RegistrarCliente(Usuario c)
