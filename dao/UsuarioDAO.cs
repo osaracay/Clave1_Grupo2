@@ -17,11 +17,108 @@ namespace Clave1_Grupo2.dao
         /// </summary>
         private static string consulta;
         private static OdbcDataAdapter adaptador;
+        private static OdbcDataReader lector;
 
         private static DataTable clientes;
         private static DataTable vets;
         private static DataTable admins;
 
+        private static Usuario sesion; //Para gestionar la sesion.
+
+        //PARA CREAR Y ACCEDER AL Colaborador Sesion
+        public static void setSesion(Usuario c)
+        {
+            sesion = c;
+        }
+        public static Usuario getSesion()
+        {
+            return sesion;
+        }
+
+        public static bool AutenticarUsuario(string usuario, string pw)
+        {
+            //1 verificar usuario y pw existen en la bd
+            consulta = "SELECT * FROM usuario WHERE usr_login=? AND usr_pw=?";
+
+            adaptador = new OdbcDataAdapter(consulta,ConexionBD.GetConexionBD());
+            adaptador.SelectCommand = new OdbcCommand(consulta, ConexionBD.GetConexionBD());
+            // Set the parameters.
+            adaptador.SelectCommand.Parameters.Add(
+                "@usr", OdbcType.VarChar).Value = usuario;
+            adaptador.SelectCommand.Parameters.Add(
+                "@pw", OdbcType.VarChar).Value = pw;
+
+            try
+            {
+                ConexionBD.GetConexionBD().Open();
+                lector = adaptador.SelectCommand.ExecuteReader();
+                while (lector.Read())
+                {
+                    sesion = new Usuario();
+                    sesion.IdUsuario = lector.GetInt32(0);
+                    sesion.Nombre= lector.GetString(1);
+                    sesion.Apellido = lector.GetString(2);
+                    sesion.FechaNac = lector.GetDateTime(3);
+                    sesion.TipoUsuario = lector.GetInt32(4);
+                    sesion.EstadoUsuario = lector.GetInt32(5);
+                    sesion.Email = lector.GetString(6);
+                    sesion.Genero = lector.GetChar(7);
+                    sesion.Username = lector.GetString(8);
+                    return true;
+                }
+                MessageBox.Show("Informacion incorrecta");
+                return false;
+            }
+            catch (OdbcException)
+            {
+                MessageBox.Show("Informacion incorrecta");
+                return false;
+            }
+            finally
+            {
+                lector.Close();
+                ConexionBD.GetConexionBD().Close();
+            }
+        }
+
+        public static string OlvidePw(string usuario)
+        {
+            string pw = "";
+            consulta = $"SELECT usr_pw FROM usuario WHERE usr_login=?";
+            
+            adaptador = new OdbcDataAdapter(consulta, ConexionBD.GetConexionBD());
+            adaptador.SelectCommand = new OdbcCommand(consulta, ConexionBD.GetConexionBD());
+
+            adaptador.SelectCommand.Parameters.Add("@usr", OdbcType.VarChar).Value = usuario;
+            try
+            {
+                ConexionBD.GetConexionBD().Open();
+                lector = adaptador.SelectCommand.ExecuteReader();
+                
+                while (lector.Read())
+                {
+                    pw = lector.GetString(0);                    
+                }
+                if (pw == "")
+                {
+                    MessageBox.Show("El usuario no existe");
+                }
+                lector.Close();
+                return pw;
+                
+            }
+            catch (OdbcException)
+            {
+                MessageBox.Show("El usuario no existe");
+                return pw;
+            }
+            finally
+            {
+                //lector.Close();
+                ConexionBD.GetConexionBD().Close();
+            }
+            
+        }
 
         public static bool RegistrarCliente(Usuario c)
         {

@@ -148,6 +148,7 @@ namespace Clave1_Grupo2.gui
             this.btnLogin.TabIndex = 4;
             this.btnLogin.Text = "Iniciar Sesión\r\n";
             this.btnLogin.UseVisualStyleBackColor = false;
+            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
             // lblForgotPw
             // 
@@ -159,6 +160,7 @@ namespace Clave1_Grupo2.gui
             this.lblForgotPw.TabIndex = 5;
             this.lblForgotPw.TabStop = true;
             this.lblForgotPw.Text = "¿Ha olvidado su contraseña?";
+            this.lblForgotPw.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblForgotPw_LinkClicked);
             // 
             // label1
             // 

@@ -279,7 +279,7 @@ namespace Clave1_Grupo2.gui
             this.txtColor.MaxLength = 25;
             this.txtColor.Name = "txtColor";
             this.txtColor.Size = new System.Drawing.Size(326, 29);
-            this.txtColor.TabIndex = 39;
+            this.txtColor.TabIndex = 6;
             // 
             // grpGenero
             // 
@@ -300,7 +300,7 @@ namespace Clave1_Grupo2.gui
             this.chkIndef.Location = new System.Drawing.Point(211, 17);
             this.chkIndef.Name = "chkIndef";
             this.chkIndef.Size = new System.Drawing.Size(92, 21);
-            this.chkIndef.TabIndex = 2;
+            this.chkIndef.TabIndex = 9;
             this.chkIndef.TabStop = true;
             this.chkIndef.Text = "Sin definir";
             this.chkIndef.UseVisualStyleBackColor = true;
@@ -311,7 +311,7 @@ namespace Clave1_Grupo2.gui
             this.chkMsc.Location = new System.Drawing.Point(108, 20);
             this.chkMsc.Name = "chkMsc";
             this.chkMsc.Size = new System.Drawing.Size(92, 21);
-            this.chkMsc.TabIndex = 1;
+            this.chkMsc.TabIndex = 8;
             this.chkMsc.TabStop = true;
             this.chkMsc.Text = "Masculino";
             this.chkMsc.UseVisualStyleBackColor = true;
@@ -322,7 +322,7 @@ namespace Clave1_Grupo2.gui
             this.chkFem.Location = new System.Drawing.Point(11, 20);
             this.chkFem.Name = "chkFem";
             this.chkFem.Size = new System.Drawing.Size(91, 21);
-            this.chkFem.TabIndex = 0;
+            this.chkFem.TabIndex = 7;
             this.chkFem.TabStop = true;
             this.chkFem.Text = "Femenino";
             this.chkFem.UseVisualStyleBackColor = true;

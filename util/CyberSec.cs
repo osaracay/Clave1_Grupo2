@@ -50,10 +50,15 @@ namespace Clave1_Grupo2.util
             tripldes.Mode = CipherMode.ECB;
 
             ICryptoTransform transform = tripldes.CreateDecryptor();
-            byte[] result = transform.TransformFinalBlock(data, 0, data.Length);
-            //Debo asegurarme que el resultado no sea mayor a 60 caractares por la restriccion VARCHAR de la base de datos cg2bd
-
-            return UTF8Encoding.UTF8.GetString(result);
+            try
+            {
+                byte[] result = transform.TransformFinalBlock(data, 0, data.Length);
+                return UTF8Encoding.UTF8.GetString(result);
+            }
+            catch (CryptographicException)
+            {
+                return "no pudimos decriptar la contraseña. Tuvimos una excepcion al momento de transformar el resultado";
+            }                             
         }
 
         public static string Saracay(string saracay)
