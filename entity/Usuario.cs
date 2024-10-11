@@ -11,15 +11,71 @@ namespace Clave1_Grupo2.entity
         private int idUsuario;
         private string nombre;
         private string apellido;
-        
-        public void SetIdUsuario (int usuario)
+        private DateTime fechaNac;
+        private int tipoUsuario;
+        private int estadoUsuario;
+        private string email;
+        private char genero; //Debe ser M, F, o X
+        private string username;
+        private string pw; //Debe ser menor a 60; caracteres para que se acepte en la bd
+
+        public Usuario() { }
+
+        /// <summary>
+        /// Constructor para registrar usuario sin tipo ni estado
+        /// </summary>
+        /// <param name="nombre"></param>
+        /// <param name="apellido"></param>
+        /// <param name="fechaNac"></param>
+        /// <param name="email"></param>
+        /// <param name="genero"></param>
+        /// <param name="username"></param>
+        /// <param name="pw"></param>
+        public Usuario(string nombre, string apellido, DateTime fechaNac, string email, char genero, string username, string pw)
         {
-            this.idUsuario = usuario;
+            Nombre = nombre;
+            Apellido = apellido;
+            FechaNac = fechaNac;
+            Email = email;
+            Genero = genero;
+            Username = username;
+            Pw = pw;
+            IdUsuario = idUsuario;
+            Nombre = nombre;
+            Apellido = apellido;
+            FechaNac = fechaNac;
+            TipoUsuario = tipoUsuario;
+            EstadoUsuario = estadoUsuario;
+            Email = email;
+            Genero = genero;
+            Username = username;
+            Pw = pw;
         }
 
-        public int GetIdUsuario()
+        
+        public Usuario(int idUsuario, string nombre, string apellido, DateTime fechaNac, int tipoUsuario, int estadoUsuario, string email, char genero, string username)
         {
-            return idUsuario;
+            //Constructor para consultas SELECT. No deseamos la contrasena en tiempo de ejecucion
+            this.idUsuario = idUsuario;
+            this.nombre = nombre;
+            this.apellido = apellido;
+            this.fechaNac = fechaNac;
+            this.tipoUsuario = tipoUsuario;
+            this.estadoUsuario = estadoUsuario;
+            this.email = email;
+            this.genero = genero;
+            this.username = username;
         }
+
+        public int IdUsuario { get => idUsuario; set => idUsuario = value; }
+        public string Nombre { get => nombre; set => nombre = value; }
+        public string Apellido { get => apellido; set => apellido = value; }
+        public DateTime FechaNac { get => fechaNac; set => fechaNac = value; }
+        public int TipoUsuario { get => tipoUsuario; set => tipoUsuario = value; }
+        public int EstadoUsuario { get => estadoUsuario; set => estadoUsuario = value; }
+        public string Email { get => email; set => email = value; }
+        public char Genero { get => genero; set => genero = value; }
+        public string Username { get => username; set => username = value; }
+        public string Pw { get => pw; set => pw = value; }
     }
 }
