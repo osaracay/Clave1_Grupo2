@@ -9,16 +9,5 @@ namespace Clave1_Grupo2.gui
         {
             InitializeComponent();
         }
-
-
-        private void btnRegistrar_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtUsrPw_TextChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }

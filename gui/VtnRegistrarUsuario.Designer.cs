@@ -78,7 +78,6 @@ namespace Clave1_Grupo2.gui
             this.btnRegistrar.TabIndex = 20;
             this.btnRegistrar.Text = "Registrar";
             this.btnRegistrar.UseVisualStyleBackColor = false;
-            this.btnRegistrar.Click += new System.EventHandler(this.btnRegistrar_Click);
             // 
             // txtNombres
             // 
@@ -275,7 +274,6 @@ namespace Clave1_Grupo2.gui
             this.txtUsrPw.Size = new System.Drawing.Size(366, 33);
             this.txtUsrPw.TabIndex = 6;
             this.txtUsrPw.UseSystemPasswordChar = true;
-            this.txtUsrPw.TextChanged += new System.EventHandler(this.txtUsrPw_TextChanged);
             // 
             // lblUsrPw
             // 
