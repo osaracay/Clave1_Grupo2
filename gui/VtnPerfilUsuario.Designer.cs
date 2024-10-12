@@ -47,7 +47,7 @@ namespace Clave1_Grupo2.gui
             this.btnAgendar = new System.Windows.Forms.Button();
             this.btnCitas = new System.Windows.Forms.Button();
             this.btnModificar = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnHabilitarCambioPw = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.lblApellido = new System.Windows.Forms.Label();
             this.lblNombre = new System.Windows.Forms.Label();
@@ -268,20 +268,20 @@ namespace Clave1_Grupo2.gui
             this.btnModificar.UseVisualStyleBackColor = false;
             this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
-            // button1
+            // btnHabilitarCambioPw
             // 
-            this.button1.BackColor = System.Drawing.Color.White;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.Black;
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.Location = new System.Drawing.Point(485, 290);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(150, 29);
-            this.button1.TabIndex = 70;
-            this.button1.Text = "Actualizar contraseña";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnHabilitarCambioPw.BackColor = System.Drawing.Color.White;
+            this.btnHabilitarCambioPw.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHabilitarCambioPw.ForeColor = System.Drawing.Color.Black;
+            this.btnHabilitarCambioPw.Image = ((System.Drawing.Image)(resources.GetObject("btnHabilitarCambioPw.Image")));
+            this.btnHabilitarCambioPw.Location = new System.Drawing.Point(485, 290);
+            this.btnHabilitarCambioPw.Name = "btnHabilitarCambioPw";
+            this.btnHabilitarCambioPw.Size = new System.Drawing.Size(150, 29);
+            this.btnHabilitarCambioPw.TabIndex = 70;
+            this.btnHabilitarCambioPw.Text = "Actualizar contraseña";
+            this.btnHabilitarCambioPw.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnHabilitarCambioPw.UseVisualStyleBackColor = false;
+            this.btnHabilitarCambioPw.Click += new System.EventHandler(this.btnHabilitarCambioPw_Click);
             // 
             // btnGuardar
             // 
@@ -454,7 +454,7 @@ namespace Clave1_Grupo2.gui
             this.Controls.Add(this.txtApellidos);
             this.Controls.Add(this.txtNombres);
             this.Controls.Add(this.btnGuardar);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnHabilitarCambioPw);
             this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.btnCitas);
             this.Controls.Add(this.btnAgendar);
@@ -506,7 +506,7 @@ namespace Clave1_Grupo2.gui
         private System.Windows.Forms.Button btnAgendar;
         private System.Windows.Forms.Button btnCitas;
         private System.Windows.Forms.Button btnModificar;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnHabilitarCambioPw;
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.Label lblApellido;
         private System.Windows.Forms.Label lblNombre;

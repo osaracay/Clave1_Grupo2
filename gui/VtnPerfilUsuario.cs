@@ -84,30 +84,68 @@ namespace Clave1_Grupo2.gui
             txtApellidos.Enabled = true;
             txtEmail.Enabled = true;
             campoFechaNac.Enabled = true;
-
+            lblConfirmPw.Show();
+            txtConfirmPw.Show();
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             //HACER VALIDACIONES DE LOS CAMPOS AL IGUAL QUE EN REGISTRO DE USUARIOS
-            //Realizar un update usando la clase UsuarioDAO
+            bool camposValidos = Validacion.CampoLleno(txtNombres) && Validacion.CampoLleno(txtApellidos) && Validacion.CampoLleno(txtEmail)
+                && Validacion.CampoEmail(txtEmail) && Validacion.EsMayorDeEdad(campoFechaNac.Value); //AGREGAR VALIDACION PARA CONFIRMAR CONTASEna
+            if (camposValidos) {
+                //Realizar un update usando la clase UsuarioDAO
+                UsuarioDAO.ActualizarDatosUsuario(UsuarioDAO.getSesion(), txtNombres.Text, txtApellidos.Text, txtEmail.Text, campoFechaNac.Value);
+                
+                //!!! SOLICITAR CONTRASEñA
+                //Actualizar el usuario sesion con los nuevos datos
+                
+            }
+            else
+            {
+                MessageBox.Show("Revise que los campos sean correctos");
+            }            
+            
 
-            //Actualizar el usuario sesion con los nuevos datos
             //Volver a cargar datos de usuario al terminar el update
             CargarDatosUsuario();
 
         }
 
+        private bool NuevaPwCoincide()
+        {
+            //Validar que contrasenas coincidan
+            if (txtNewPw.Text.Equals(txtConfirmPw.Text))
+            {
+                return true;
+            }
+            else
+            {
+                MessageBox.Show("La nueva contraseña no coincide en el campo de confirmar");
+                txtConfirmPw.Focus();
+                return false;
+               
+            }
+        }
+
         private void btnActualizarPw_Click(object sender, EventArgs e)
         {
             //REALIZAR VALIDACIONES 
+            bool camposValidos = Validacion.CampoLleno(txtUsrPw) && Validacion.CampoLleno(txtNewPw) && Validacion.CampoLleno(txtConfirmPw);
 
+            camposValidos = camposValidos && NuevaPwCoincide();
+            camposValidos = camposValidos && CyberSec.HolaCosmos(txtUsrPw.Text).Equals(UsuarioDAO.Olvidaste(UsuarioDAO.getSesion().Username));
+            //Si la contrasena ingresada es igual a la registrada por el usuario activo
+            if (camposValidos)
+            {
+                UsuarioDAO.ActualizarLlaveCliente(UsuarioDAO.getSesion(), CyberSec.HolaCosmos(txtNewPw.Text));
+            }
             //AL TERMINAR EL UPDATE VOLVER A CARGAR DATOS DE USUARIO
             CargarDatosUsuario();
         }
         
         //BTN ACTUALIZAR PW
-        private void button1_Click(object sender, EventArgs e)
+        private void btnHabilitarCambioPw_Click(object sender, EventArgs e)
         {
             //Mostrar al actualizar contraseña y volver a ocultar al actualizar
             btnActualizarPw.Show();

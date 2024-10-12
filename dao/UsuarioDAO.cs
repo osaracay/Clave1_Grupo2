@@ -75,7 +75,7 @@ namespace Clave1_Grupo2.dao
             }
             catch (OdbcException)
             {
-                MessageBox.Show("Informacion incorrecta");
+                MessageBox.Show("Asegúrese que la base de datos esté activa y el puerto abierto.");
                 return false;
             }
             finally
@@ -84,7 +84,7 @@ namespace Clave1_Grupo2.dao
                 ConexionBD.GetConexionBD().Close();
             }
         }
-
+        //DEVUELVE LA . SEGUN EL NOMBRE DEL USUARIO. PUEDE UTILIZARSE PARA CONFIRMAR CAMBIO DE . TAMBIEN
         public static string Olvidaste(string usuario)
         {
             return OlvidePw(usuario);
@@ -160,6 +160,77 @@ namespace Clave1_Grupo2.dao
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);                
+                return false;
+            }
+            finally
+            {
+                ConexionBD.GetConexionBD().Close();
+            }
+        }
+        //Actualizar los datos del usuario desde la opcion de modificar perfil
+        public static bool ActualizarDatosUsuario(Usuario c, string nombre, string apellido, string email, DateTime fechaNac)
+        {
+
+            string sentenciaSQL = "UPDATE usuario SET nombre = ?, " +
+    "apellido = ?, fecha_nacimiento = ?, email = ? " +
+    "WHERE id_usuario = ?";
+            /*"VALUES (@nombre, @apellido, @fecha_nac, @tipo_usuario, @estado_usuario, @email, @genero, @usrlogin, @usrpw)";
+             Esta forma no funciona debo usar los ? como en Java*/
+            ConexionBD.GetConexionBD().Open();
+            adaptador = new OdbcDataAdapter();
+            adaptador.MissingSchemaAction = MissingSchemaAction.AddWithKey;
+            adaptador.InsertCommand = new OdbcCommand(sentenciaSQL, ConexionBD.GetConexionBD());
+            //OdbcCommand comando = new OdbcCommand(sentenciaSQL, ConexionBD.GetConexionBD()); El objeto OdbcComand se guarda en el Getter de adaptador InsertCommand
+            //comando.Parameters.AddWithValue("@nombre", c.Nombre);
+
+            adaptador.InsertCommand.Parameters.Add("@nombre", OdbcType.VarChar, 30).Value = nombre;
+            adaptador.InsertCommand.Parameters.Add("@apellido", OdbcType.VarChar, 30).Value = apellido;
+            adaptador.InsertCommand.Parameters.Add("@fecha_nac", OdbcType.DateTime).Value = fechaNac;                        
+            adaptador.InsertCommand.Parameters.Add("@email", OdbcType.VarChar).Value = email;
+            adaptador.InsertCommand.Parameters.Add("@id_usuario", OdbcType.Int).Value = c.IdUsuario;
+
+            try
+            {
+                adaptador.InsertCommand.ExecuteNonQuery();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+
+                return false;
+            }
+            finally
+            {
+                ConexionBD.GetConexionBD().Close();
+            }
+        }
+        public static bool ActualizarLlaveCliente(Usuario c, string haspw)
+        {
+            string sentenciaSQL = "UPDATE usuario SET usr_pw = ? " +
+"WHERE id_usuario = ?";
+            /*"VALUES (@nombre, @apellido, @fecha_nac, @tipo_usuario, @estado_usuario, @email, @genero, @usrlogin, @usrpw)";
+             Esta forma no funciona debo usar los ? como en Java*/
+            ConexionBD.GetConexionBD().Open();
+            adaptador = new OdbcDataAdapter();
+            adaptador.MissingSchemaAction = MissingSchemaAction.AddWithKey;
+            adaptador.InsertCommand = new OdbcCommand(sentenciaSQL, ConexionBD.GetConexionBD());
+            //OdbcCommand comando = new OdbcCommand(sentenciaSQL, ConexionBD.GetConexionBD()); El objeto OdbcComand se guarda en el Getter de adaptador InsertCommand
+            //comando.Parameters.AddWithValue("@nombre", c.Nombre);
+
+            adaptador.InsertCommand.Parameters.Add("@usrpw", OdbcType.VarChar, 30).Value = haspw;
+            adaptador.InsertCommand.Parameters.Add("@id_usuario", OdbcType.Int).Value = c.IdUsuario;
+
+            try
+            {
+                adaptador.InsertCommand.ExecuteNonQuery();
+                MessageBox.Show("La contraseña se actualizó exitosamente");
+                return true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+
                 return false;
             }
             finally
