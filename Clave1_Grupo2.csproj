@@ -111,7 +111,6 @@
       <DependentUpon>c1g2ds.xsd</DependentUpon>
     </Compile>
     <Compile Include="dao\CatDAO.cs" />
-    <Compile Include="dao\CatListas.cs" />
     <Compile Include="dao\CitaDAO.cs" />
     <Compile Include="dao\ConexionBD.cs" />
     <Compile Include="dao\ConexionMysql.cs" />
@@ -122,6 +121,7 @@
     <Compile Include="entity\Cita.cs" />
     <Compile Include="entity\Cliente.cs" />
     <Compile Include="entity\Factura.cs" />
+    <Compile Include="entity\Compra.cs" />
     <Compile Include="entity\Insumo.cs" />
     <Compile Include="entity\Mascota.cs" />
     <Compile Include="entity\Usuario.cs" />
