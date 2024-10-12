@@ -51,7 +51,7 @@ namespace Clave1_Grupo2.gui
         }
         private void btnSalir_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            this.Dispose();
         }
         private void txtBuscarProd_TextChanged(object sender, EventArgs e)
         {
@@ -316,7 +316,7 @@ namespace Clave1_Grupo2.gui
         }
         private void cargarMedidas()
         {
-            // Limpiar el ComboBox antes de agregar elementos.
+            // Limpiar el ComboBox antes de agregar las unidades.
             cmbMedida.Items.Clear();
 
             // Agregar las opciones de medida al ComboBox.
@@ -324,7 +324,7 @@ namespace Clave1_Grupo2.gui
             cmbMedida.Items.Add("SACO");
             cmbMedida.Items.Add("LIBRA");
 
-            // Si quieres que no haya ninguna opción seleccionada por defecto.
+            // Ninguna opción seleccionada por defecto.
             cmbMedida.SelectedIndex = -1;
         }
         private void cmbTipoInsumo_SelectedIndexChanged(object sender, EventArgs e)

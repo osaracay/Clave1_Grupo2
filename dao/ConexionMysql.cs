@@ -11,14 +11,14 @@ namespace Clave1_Grupo2.dao
     class conexion
     {
         protected string server = "localhost";
-        protected string database = "clave1_grupo2";
+        protected string database = "clave1_grupo2db";
         protected string user = "root";
         protected string password = "";
     }
     class ConexionMysql : conexion
     {
         protected new string server = "localhost";
-        protected new string database = "clave1_grupo2";
+        protected new string database = "clave1_grupo2db";
         protected new string user = "root";
         protected new string password = "";
 

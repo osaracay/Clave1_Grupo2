@@ -102,5 +102,10 @@ namespace Clave1_Grupo2.gui
         {
 
         }
+
+        private void cbxEspecie_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }
