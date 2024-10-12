@@ -257,7 +257,6 @@ namespace Clave1_Grupo2.gui
             this.cbxEspecie.Name = "cbxEspecie";
             this.cbxEspecie.Size = new System.Drawing.Size(326, 26);
             this.cbxEspecie.TabIndex = 3;
-            this.cbxEspecie.SelectedIndexChanged += new System.EventHandler(this.cbxEspecie_SelectedIndexChanged_1);
             // 
             // label5
             // 

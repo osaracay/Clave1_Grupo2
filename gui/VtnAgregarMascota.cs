@@ -97,15 +97,5 @@ namespace Clave1_Grupo2.gui
         {
             Validacion.CampoNumEntero(txtEdadMascota, lblEdadValida, 0, 200);
         }
-
-        private void cbxEspecie_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void cbxEspecie_SelectedIndexChanged_1(object sender, EventArgs e)
-        {
-
-        }
     }
 }
