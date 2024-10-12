@@ -16,5 +16,10 @@ namespace Clave1_Grupo2.gui
         {
             InitializeComponent();
         }
+
+        private void VtnPerfilUsuario_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
