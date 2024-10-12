@@ -35,8 +35,7 @@ namespace Clave1_Grupo2.gui
         }
 
         private void btnAgregarMascota_Click(object sender, EventArgs e)
-        {
-            
+        {            
             if (ValidarFormularioLleno() && Validacion.CampoNumEntero(txtEdadMascota, lblEdadValida, 0, 200))
             {
                 char genero;

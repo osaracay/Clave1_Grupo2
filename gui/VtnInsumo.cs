@@ -21,6 +21,8 @@ namespace Clave1_Grupo2.gui
         public VtnInsumo()
         {
             InitializeComponent();
+            Rellenador.CargarDataTableACombo(cmbTipoInsumo, CatDAO.GetTipoInsumo(), "nom_tipo_insumo", "id_tipo_insumo");
+
             mInsumos = new List<Insumo>();
             mConsultaInsumo = new ConsultaInsumo();
             mInsumo = new Insumo();
@@ -79,11 +81,11 @@ namespace Clave1_Grupo2.gui
             txtCantidad.Text = "";
             txtBuscarProd.Text = "";
             txtPuntoR.Text = "";
-            cmbTipoInsumo.SelectedIndex = -1;
-            cmbMedida.SelectedIndex = -1;
             txtDescripcion.Focus();
             btnModificar.Enabled = false;
             btnEliminar.Enabled = false;
+            cmbMedida.SelectedIndex = -1;
+            cmbTipoInsumo.SelectedIndex = -1;
         }
         private void cargarDatosProductos()
         {
@@ -312,7 +314,6 @@ namespace Clave1_Grupo2.gui
 
         private void Form_Productos_Load(object sender, EventArgs e)
         {
-            cargarTipoInsumo();
         }
         private void cargarMedidas()
         {
@@ -332,37 +333,16 @@ namespace Clave1_Grupo2.gui
             if (cmbTipoInsumo.SelectedIndex != -1)
             {
                 // Obtener el elemento seleccionado
-                KeyValuePair<string, string> selectedPair = (KeyValuePair<string, string>)cmbTipoInsumo.SelectedItem;
+                DataRowView selectedItem = (DataRowView)cmbTipoInsumo.SelectedItem;
 
                 // Mostrar el nom_tipo_insumo en el TextBox
-                txtDescripInsumo.Text = selectedPair.Value;
+                txtDescripInsumo.Text = selectedItem["nom_tipo_insumo"].ToString();
             }
             else
             {
-                // Si no hay selección, limpiar el TextBox
+                // Si no hay selección, limpio el TextBox
                 txtDescripInsumo.Clear();
             }
-        }
-        private void cargarTipoInsumo()
-        {
-            CatListas insumoConsultas = new CatListas();
-            DataTable dtInsumos = insumoConsultas.GetTipoInsumos();
-
-            // Limpiar el ComboBox antes de agregar nuevos elementos
-            cmbTipoInsumo.Items.Clear();
-
-            // Recorrer las filas de la tabla y cargar solo los IDs en el ComboBox
-            foreach (DataRow row in dtInsumos.Rows)
-            {
-                // Solo el id_tipo_insumo se muestra en el ComboBox
-                cmbTipoInsumo.Items.Add(new KeyValuePair<string, string>(
-                    row["id_tipo_insumo"].ToString(),
-                    row["nom_tipo_insumo"].ToString()));
-            }
-
-            // Mostrar solo el id_tipo_insumo en el ComboBox
-            cmbTipoInsumo.DisplayMember = "Key";
-            cmbTipoInsumo.ValueMember = "Key";
         }
         private void cmbTipoInsumo_TextChanged(object sender, EventArgs e)
         {
