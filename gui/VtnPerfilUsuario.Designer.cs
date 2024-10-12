@@ -37,9 +37,9 @@ namespace Clave1_Grupo2.gui
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.pbxFotoPerfil = new System.Windows.Forms.PictureBox();
+            this.txtNombre = new System.Windows.Forms.Label();
             this.lblVetCatDog = new System.Windows.Forms.Label();
             this.picLogo = new System.Windows.Forms.PictureBox();
-            this.txtNombre = new System.Windows.Forms.Label();
             this.campoFechaNac = new System.Windows.Forms.DateTimePicker();
             this.txtEdad = new System.Windows.Forms.Label();
             this.btnMisMascotas = new System.Windows.Forms.Button();
@@ -143,6 +143,17 @@ namespace Clave1_Grupo2.gui
             this.pbxFotoPerfil.TabIndex = 63;
             this.pbxFotoPerfil.TabStop = false;
             // 
+            // txtNombre
+            // 
+            this.txtNombre.AutoSize = true;
+            this.txtNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNombre.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.txtNombre.Location = new System.Drawing.Point(30, 138);
+            this.txtNombre.Name = "txtNombre";
+            this.txtNombre.Size = new System.Drawing.Size(74, 24);
+            this.txtNombre.TabIndex = 62;
+            this.txtNombre.Text = "Usuario";
+            // 
             // lblVetCatDog
             // 
             this.lblVetCatDog.AutoSize = true;
@@ -165,17 +176,6 @@ namespace Clave1_Grupo2.gui
             this.picLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picLogo.TabIndex = 0;
             this.picLogo.TabStop = false;
-            // 
-            // txtNombre
-            // 
-            this.txtNombre.AutoSize = true;
-            this.txtNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNombre.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.txtNombre.Location = new System.Drawing.Point(30, 138);
-            this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(74, 24);
-            this.txtNombre.TabIndex = 62;
-            this.txtNombre.Text = "Usuario";
             // 
             // campoFechaNac
             // 
@@ -333,7 +333,6 @@ namespace Clave1_Grupo2.gui
             this.txtApellidos.Name = "txtApellidos";
             this.txtApellidos.Size = new System.Drawing.Size(246, 24);
             this.txtApellidos.TabIndex = 73;
-            this.txtApellidos.Text = "Ingrese sus apellidos";
             // 
             // txtNombres
             // 
@@ -346,7 +345,6 @@ namespace Clave1_Grupo2.gui
             this.txtNombres.Name = "txtNombres";
             this.txtNombres.Size = new System.Drawing.Size(246, 24);
             this.txtNombres.TabIndex = 72;
-            this.txtNombres.Text = "Ingrese sus nombres";
             // 
             // lblActualPw
             // 

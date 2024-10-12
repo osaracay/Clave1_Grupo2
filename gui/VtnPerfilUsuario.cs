@@ -45,12 +45,12 @@ namespace Clave1_Grupo2.gui
             txtNombre.Text = $"{UsuarioDAO.getSesion().Username}";
             if (UsuarioDAO.getSesion().Genero == 'M')
             {
-                txtNombre.Text += "♀";
+                txtNombre.Text += "♂";
                 txtNombre.ForeColor = Color.Blue;
             }
             else if (UsuarioDAO.getSesion().Genero == 'F')
             {
-                txtNombre.Text += "♂";
+                txtNombre.Text += "♀";
                 txtNombre.ForeColor = Color.LightPink;
             }
             else
