@@ -18,7 +18,7 @@ namespace Clave1_Grupo2.gui
         {
             //PARA ACCEDER A ESTA VENTANA DEBE HABER INICIADO SESION ANTES
             InitializeComponent();
-            
+
         }
 
         private void VtnPerfilUsuario_Load(object sender, EventArgs e)
@@ -27,7 +27,7 @@ namespace Clave1_Grupo2.gui
             CargarDatosUsuario();
 
         }
-        
+
         private void CargarDatosUsuario()
         {
 
@@ -93,23 +93,22 @@ namespace Clave1_Grupo2.gui
             //HACER VALIDACIONES DE LOS CAMPOS AL IGUAL QUE EN REGISTRO DE USUARIOS
             bool camposValidos = Validacion.CampoLleno(txtNombres) && Validacion.CampoLleno(txtApellidos) && Validacion.CampoLleno(txtEmail)
                 && Validacion.CampoEmail(txtEmail) && Validacion.EsMayorDeEdad(campoFechaNac.Value); //AGREGAR VALIDACION PARA CONFIRMAR CONTASEna
+
+            //!!! SOLICITAR CONTRASEñA
             if (camposValidos) {
                 //Realizar un update usando la clase UsuarioDAO
                 UsuarioDAO.ActualizarDatosUsuario(UsuarioDAO.getSesion(), txtNombres.Text, txtApellidos.Text, txtEmail.Text, campoFechaNac.Value);
+
                 
-                //!!! SOLICITAR CONTRASEñA
                 //Actualizar el usuario sesion con los nuevos datos
-                
+                MessageBox.Show("Informacion de usuario actualizada exitosamente\nPara visualizar los cambios vuelva a iniciar sesion");
+                //Volver a cargar datos de usuario al terminar el update
+                CargarDatosUsuario();
             }
             else
             {
                 MessageBox.Show("Revise que los campos sean correctos");
-            }            
-            
-
-            //Volver a cargar datos de usuario al terminar el update
-            CargarDatosUsuario();
-
+            }                      
         }
 
         private bool NuevaPwCoincide()
@@ -124,7 +123,19 @@ namespace Clave1_Grupo2.gui
                 MessageBox.Show("La nueva contraseña no coincide en el campo de confirmar");
                 txtConfirmPw.Focus();
                 return false;
-               
+            }
+        }
+        private bool contraActualCoincide()
+        {
+            if (CyberSec.HolaCosmos(txtUsrPw.Text).Equals(UsuarioDAO.Olvidaste(UsuarioDAO.getSesion().Username)))
+            {
+                return true;
+            }
+            else
+            {
+                MessageBox.Show("La contraseña actual es incorrecta");
+                txtUsrPw.Focus();
+                return false;
             }
         }
 
@@ -134,14 +145,15 @@ namespace Clave1_Grupo2.gui
             bool camposValidos = Validacion.CampoLleno(txtUsrPw) && Validacion.CampoLleno(txtNewPw) && Validacion.CampoLleno(txtConfirmPw);
 
             camposValidos = camposValidos && NuevaPwCoincide();
-            camposValidos = camposValidos && CyberSec.HolaCosmos(txtUsrPw.Text).Equals(UsuarioDAO.Olvidaste(UsuarioDAO.getSesion().Username));
+            camposValidos = camposValidos && contraActualCoincide();
             //Si la contrasena ingresada es igual a la registrada por el usuario activo
             if (camposValidos)
             {
                 UsuarioDAO.ActualizarLlaveCliente(UsuarioDAO.getSesion(), CyberSec.HolaCosmos(txtNewPw.Text));
+                CargarDatosUsuario();
             }
             //AL TERMINAR EL UPDATE VOLVER A CARGAR DATOS DE USUARIO
-            CargarDatosUsuario();
+            
         }
         
         //BTN ACTUALIZAR PW
