@@ -45,15 +45,15 @@ namespace Clave1_Grupo2.gui
             this.txtPropietario = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.pbxFotoPerfil = new System.Windows.Forms.PictureBox();
             this.lblVetCatDog = new System.Windows.Forms.Label();
             this.picLogo = new System.Windows.Forms.PictureBox();
             this.txtGenero = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.txtEspecie = new System.Windows.Forms.TextBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxFotoPerfil)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -220,7 +220,7 @@ namespace Clave1_Grupo2.gui
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.DarkSlateBlue;
-            this.panel2.Controls.Add(this.pictureBox1);
+            this.panel2.Controls.Add(this.pbxFotoPerfil);
             this.panel2.Controls.Add(this.lblVetCatDog);
             this.panel2.Controls.Add(this.picLogo);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
@@ -229,6 +229,15 @@ namespace Clave1_Grupo2.gui
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(176, 302);
             this.panel2.TabIndex = 60;
+            // 
+            // pbxFotoPerfil
+            // 
+            this.pbxFotoPerfil.BackColor = System.Drawing.Color.Navy;
+            this.pbxFotoPerfil.Location = new System.Drawing.Point(30, 41);
+            this.pbxFotoPerfil.Name = "pbxFotoPerfil";
+            this.pbxFotoPerfil.Size = new System.Drawing.Size(111, 123);
+            this.pbxFotoPerfil.TabIndex = 63;
+            this.pbxFotoPerfil.TabStop = false;
             // 
             // lblVetCatDog
             // 
@@ -264,6 +273,7 @@ namespace Clave1_Grupo2.gui
             this.txtGenero.Name = "txtGenero";
             this.txtGenero.Size = new System.Drawing.Size(246, 24);
             this.txtGenero.TabIndex = 61;
+            this.txtGenero.UseWaitCursor = true;
             // 
             // label7
             // 
@@ -287,15 +297,6 @@ namespace Clave1_Grupo2.gui
             this.txtEspecie.Name = "txtEspecie";
             this.txtEspecie.Size = new System.Drawing.Size(246, 24);
             this.txtEspecie.TabIndex = 62;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Navy;
-            this.pictureBox1.Location = new System.Drawing.Point(30, 41);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(111, 123);
-            this.pictureBox1.TabIndex = 63;
-            this.pictureBox1.TabStop = false;
             // 
             // VtnPerfilUsuario
             // 
@@ -323,7 +324,7 @@ namespace Clave1_Grupo2.gui
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "VtnPerfilUsuario";
             this.Opacity = 0.95D;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -331,8 +332,8 @@ namespace Clave1_Grupo2.gui
             this.Load += new System.EventHandler(this.VtnPerfilUsuario_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxFotoPerfil)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -360,6 +361,6 @@ namespace Clave1_Grupo2.gui
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txtGenero;
         private System.Windows.Forms.TextBox txtEspecie;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pbxFotoPerfil;
     }
 }
