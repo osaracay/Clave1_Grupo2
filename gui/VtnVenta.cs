@@ -47,7 +47,7 @@ namespace Clave1_Grupo2.gui
             txtCantidad.Text = "";
             cmbMetPago.SelectedIndex = -1;
 
-            dgvLstProductos.Rows.Clear();
+            dgvRegistros.Rows.Clear();
             txtTotal.Text = "";
         }
         */
@@ -150,6 +150,22 @@ namespace Clave1_Grupo2.gui
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             LimpiarCampos();
+        }
+        private void LimpiarCampos()
+        {
+            cmbIdCliente.SelectedIndex = -1;
+            txtCliente.Text = "";
+            cmbIdInsumo.SelectedIndex = -1;
+            txtInsumo.Text = "";
+            txtMedida.Text = "";
+            cmbEstado.SelectedIndex = -1;
+            txtStock.Text = "";
+            txtPrecio.Text = "";
+            txtCantidad.Text = "";
+            cmbMetPago.SelectedIndex = -1;
+
+            dgvRegistros.Rows.Clear();
+            txtTotal.Text = "";
         }
     }
 }

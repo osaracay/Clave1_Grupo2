@@ -40,7 +40,7 @@ namespace Clave1_Grupo2.gui
             this.btnCancelar = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txtBuscarProd = new System.Windows.Forms.TextBox();
-            this.dgvLstProductos = new System.Windows.Forms.DataGridView();
+            this.dgvRegistros = new System.Windows.Forms.DataGridView();
             this.btnModificar = new System.Windows.Forms.Button();
             this.brnGuardar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
@@ -57,7 +57,7 @@ namespace Clave1_Grupo2.gui
             this.lblVetCatDog = new System.Windows.Forms.Label();
             this.picLogo = new System.Windows.Forms.PictureBox();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvLstProductos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvRegistros)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
             this.SuspendLayout();
             // 
@@ -148,7 +148,7 @@ namespace Clave1_Grupo2.gui
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.txtBuscarProd);
-            this.groupBox1.Controls.Add(this.dgvLstProductos);
+            this.groupBox1.Controls.Add(this.dgvRegistros);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(14, 193);
             this.groupBox1.Name = "groupBox1";
@@ -168,16 +168,16 @@ namespace Clave1_Grupo2.gui
             // 
             // dgvLstProductos
             // 
-            this.dgvLstProductos.AllowUserToDeleteRows = false;
-            this.dgvLstProductos.BackgroundColor = System.Drawing.SystemColors.Window;
-            this.dgvLstProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvLstProductos.Location = new System.Drawing.Point(6, 53);
-            this.dgvLstProductos.Name = "dgvLstProductos";
-            this.dgvLstProductos.ReadOnly = true;
-            this.dgvLstProductos.RowHeadersWidth = 51;
-            this.dgvLstProductos.Size = new System.Drawing.Size(677, 257);
-            this.dgvLstProductos.TabIndex = 57;
-            this.dgvLstProductos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvLstProductos_CellClick);
+            this.dgvRegistros.AllowUserToDeleteRows = false;
+            this.dgvRegistros.BackgroundColor = System.Drawing.SystemColors.Window;
+            this.dgvRegistros.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvRegistros.Location = new System.Drawing.Point(6, 53);
+            this.dgvRegistros.Name = "dgvRegistros";
+            this.dgvRegistros.ReadOnly = true;
+            this.dgvRegistros.RowHeadersWidth = 51;
+            this.dgvRegistros.Size = new System.Drawing.Size(677, 257);
+            this.dgvRegistros.TabIndex = 57;
+            this.dgvRegistros.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvLstProductos_CellClick);
             // 
             // btnModificar
             // 
@@ -386,7 +386,7 @@ namespace Clave1_Grupo2.gui
             this.Text = "Insumos";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvLstProductos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvRegistros)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -415,7 +415,7 @@ namespace Clave1_Grupo2.gui
         private System.Windows.Forms.TextBox txtPrecio;
         private System.Windows.Forms.TextBox txtDescripcion;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.DataGridView dgvLstProductos;
+        private System.Windows.Forms.DataGridView dgvRegistros;
         private System.Windows.Forms.TextBox txtCodigo;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
