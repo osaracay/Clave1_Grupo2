@@ -38,7 +38,7 @@ namespace Clave1_Grupo2.gui
             this.cmbIdInsumo = new System.Windows.Forms.ComboBox();
             this.txtStockFinal = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.cmbaaaa = new System.Windows.Forms.ComboBox();
+            this.cmbCondicion = new System.Windows.Forms.ComboBox();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.txtMedida = new System.Windows.Forms.TextBox();
             this.brnGuardar = new System.Windows.Forms.Button();
@@ -98,7 +98,7 @@ namespace Clave1_Grupo2.gui
             this.txtCantidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCantidad.Location = new System.Drawing.Point(114, 295);
             this.txtCantidad.Name = "txtCantidad";
-            this.txtCantidad.Size = new System.Drawing.Size(103, 26);
+            this.txtCantidad.Size = new System.Drawing.Size(114, 26);
             this.txtCantidad.TabIndex = 4;
             this.txtCantidad.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
@@ -106,7 +106,7 @@ namespace Clave1_Grupo2.gui
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(327, 220);
+            this.label8.Location = new System.Drawing.Point(312, 216);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(94, 18);
             this.label8.TabIndex = 98;
@@ -120,6 +120,8 @@ namespace Clave1_Grupo2.gui
             this.cmbIdInsumo.Name = "cmbIdInsumo";
             this.cmbIdInsumo.Size = new System.Drawing.Size(78, 26);
             this.cmbIdInsumo.TabIndex = 0;
+            this.cmbIdInsumo.SelectedIndexChanged += new System.EventHandler(this.cmbIdInsumo_SelectedIndexChanged);
+            this.cmbIdInsumo.TextChanged += new System.EventHandler(this.cmbIdInsumo_TextChanged);
             // 
             // txtStockFinal
             // 
@@ -127,30 +129,32 @@ namespace Clave1_Grupo2.gui
             this.txtStockFinal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtStockFinal.Location = new System.Drawing.Point(116, 330);
             this.txtStockFinal.Name = "txtStockFinal";
-            this.txtStockFinal.Size = new System.Drawing.Size(103, 26);
+            this.txtStockFinal.ReadOnly = true;
+            this.txtStockFinal.Size = new System.Drawing.Size(112, 26);
             this.txtStockFinal.TabIndex = 7;
+            this.txtStockFinal.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(327, 257);
+            this.label4.Location = new System.Drawing.Point(312, 253);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(94, 18);
             this.label4.TabIndex = 95;
             this.label4.Text = "Condición :";
             // 
-            // cmbaaaa
+            // cmbCondicion
             // 
-            this.cmbaaaa.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbaaaa.FormattingEnabled = true;
-            this.cmbaaaa.Items.AddRange(new object[] {
+            this.cmbCondicion.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbCondicion.FormattingEnabled = true;
+            this.cmbCondicion.Items.AddRange(new object[] {
             "CONTADO",
             "CREDITO"});
-            this.cmbaaaa.Location = new System.Drawing.Point(427, 254);
-            this.cmbaaaa.Name = "cmbaaaa";
-            this.cmbaaaa.Size = new System.Drawing.Size(98, 26);
-            this.cmbaaaa.TabIndex = 5;
+            this.cmbCondicion.Location = new System.Drawing.Point(412, 250);
+            this.cmbCondicion.Name = "cmbCondicion";
+            this.cmbCondicion.Size = new System.Drawing.Size(111, 26);
+            this.cmbCondicion.TabIndex = 5;
             // 
             // btnCancelar
             // 
@@ -171,9 +175,10 @@ namespace Clave1_Grupo2.gui
             // 
             this.txtMedida.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.txtMedida.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMedida.Location = new System.Drawing.Point(427, 220);
+            this.txtMedida.Location = new System.Drawing.Point(412, 216);
             this.txtMedida.Name = "txtMedida";
-            this.txtMedida.Size = new System.Drawing.Size(98, 26);
+            this.txtMedida.ReadOnly = true;
+            this.txtMedida.Size = new System.Drawing.Size(111, 26);
             this.txtMedida.TabIndex = 8;
             // 
             // brnGuardar
@@ -189,6 +194,7 @@ namespace Clave1_Grupo2.gui
             this.brnGuardar.Text = "Guardar";
             this.brnGuardar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.brnGuardar.UseVisualStyleBackColor = false;
+            this.brnGuardar.Click += new System.EventHandler(this.brnGuardar_Click);
             // 
             // btnSalir
             // 
@@ -219,7 +225,8 @@ namespace Clave1_Grupo2.gui
             this.txtExistencia.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtExistencia.Location = new System.Drawing.Point(114, 253);
             this.txtExistencia.Name = "txtExistencia";
-            this.txtExistencia.Size = new System.Drawing.Size(103, 26);
+            this.txtExistencia.ReadOnly = true;
+            this.txtExistencia.Size = new System.Drawing.Size(114, 26);
             this.txtExistencia.TabIndex = 6;
             this.txtExistencia.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
@@ -238,7 +245,7 @@ namespace Clave1_Grupo2.gui
             this.txtPrecio.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPrecio.Location = new System.Drawing.Point(114, 216);
             this.txtPrecio.Name = "txtPrecio";
-            this.txtPrecio.Size = new System.Drawing.Size(103, 26);
+            this.txtPrecio.Size = new System.Drawing.Size(114, 26);
             this.txtPrecio.TabIndex = 3;
             this.txtPrecio.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
@@ -248,6 +255,7 @@ namespace Clave1_Grupo2.gui
             this.txtDescripcion.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDescripcion.Location = new System.Drawing.Point(114, 137);
             this.txtDescripcion.Name = "txtDescripcion";
+            this.txtDescripcion.ReadOnly = true;
             this.txtDescripcion.Size = new System.Drawing.Size(411, 26);
             this.txtDescripcion.TabIndex = 1;
             // 
@@ -267,7 +275,6 @@ namespace Clave1_Grupo2.gui
             this.txtProveedor.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtProveedor.Location = new System.Drawing.Point(114, 169);
             this.txtProveedor.Name = "txtProveedor";
-            this.txtProveedor.ReadOnly = true;
             this.txtProveedor.Size = new System.Drawing.Size(409, 26);
             this.txtProveedor.TabIndex = 2;
             // 
@@ -325,11 +332,11 @@ namespace Clave1_Grupo2.gui
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(21, 173);
+            this.label11.Location = new System.Drawing.Point(12, 173);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(87, 18);
+            this.label11.Size = new System.Drawing.Size(96, 18);
             this.label11.TabIndex = 106;
-            this.label11.Text = "Provedor :";
+            this.label11.Text = "Proveedor :";
             // 
             // VtnCompra
             // 
@@ -350,7 +357,7 @@ namespace Clave1_Grupo2.gui
             this.Controls.Add(this.cmbIdInsumo);
             this.Controls.Add(this.txtStockFinal);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.cmbaaaa);
+            this.Controls.Add(this.cmbCondicion);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.brnGuardar);
             this.Controls.Add(this.btnSalir);
@@ -382,7 +389,7 @@ namespace Clave1_Grupo2.gui
         private System.Windows.Forms.ComboBox cmbIdInsumo;
         private System.Windows.Forms.TextBox txtStockFinal;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.ComboBox cmbaaaa;
+        private System.Windows.Forms.ComboBox cmbCondicion;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.TextBox txtMedida;
         private System.Windows.Forms.Button brnGuardar;

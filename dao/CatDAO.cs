@@ -22,8 +22,9 @@ namespace Clave1_Grupo2.dao
         private static DataTable estadoCita;
         private static DataTable estadoPago;
         private static DataTable metPago;
+        private static DataTable insumo;
+        private static DataTable usuario;
 
-        
         ///<summary>
         ///Clase de Acceso a Datos de las tablas cat_nombre_tabla
         ///Provee los datos a la clase Clave1_Grupo2.entity.CatItem
@@ -273,6 +274,67 @@ namespace Clave1_Grupo2.dao
             }
             return metPago;
         }
+        public static DataTable GetInsumos()
+        {
+            consulta = "SELECT * FROM insumo";
+            if (insumo == null)
+            {
+                try
+                {
+                    adaptador = new OdbcDataAdapter(consulta, ConexionBD.GetConexionBD());
+                    insumo = new DataTable();
+
+                    //PENDIENTE Definir campos de tabla y agregar tabla al DataSet
+                    ConexionBD.GetDataSetBD().Tables.Add(insumo); //Verificar si deberia agregarlo antes del fill o despues
+
+                    using (adaptador)
+                    {
+                        ConexionBD.GetConexionBD().Open();
+                        adaptador.Fill(insumo);
+                    }
+                }
+                catch (Exception e)
+                {
+                    MessageBox.Show($"Ocurrio un error: \n{e.Message}");
+                }
+                finally
+                {
+                    ConexionBD.GetConexionBD().Close();
+                }
+            }
+            return insumo;
+        }
+        public static DataTable GetUsuarios()
+        {
+            consulta = "SELECT * FROM usuario";
+            if (usuario == null)
+            {
+                try
+                {
+                    adaptador = new OdbcDataAdapter(consulta, ConexionBD.GetConexionBD());
+                    usuario = new DataTable();
+
+                    //PENDIENTE Definir campos de tabla y agregar tabla al DataSet
+                    ConexionBD.GetDataSetBD().Tables.Add(usuario); //Verificar si deberia agregarlo antes del fill o despues
+
+                    using (adaptador)
+                    {
+                        ConexionBD.GetConexionBD().Open();
+                        adaptador.Fill(usuario);
+                    }
+                }
+                catch (Exception e)
+                {
+                    MessageBox.Show($"Ocurrio un error: \n{e.Message}");
+                }
+                finally
+                {
+                    ConexionBD.GetConexionBD().Close();
+                }
+            }
+            return usuario;
+        }
+
 
     }
 }

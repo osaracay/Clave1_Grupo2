@@ -63,7 +63,7 @@ namespace Clave1_Grupo2.gui
             // 
             this.picRegistroUsuario.Image = ((System.Drawing.Image)(resources.GetObject("picRegistroUsuario.Image")));
             this.picRegistroUsuario.Location = new System.Drawing.Point(36, 28);
-            this.picRegistroUsuario.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.picRegistroUsuario.Margin = new System.Windows.Forms.Padding(2);
             this.picRegistroUsuario.Name = "picRegistroUsuario";
             this.picRegistroUsuario.Size = new System.Drawing.Size(91, 98);
             this.picRegistroUsuario.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -77,7 +77,7 @@ namespace Clave1_Grupo2.gui
             this.btnRegistrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRegistrar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnRegistrar.Location = new System.Drawing.Point(345, 214);
-            this.btnRegistrar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnRegistrar.Margin = new System.Windows.Forms.Padding(2);
             this.btnRegistrar.Name = "btnRegistrar";
             this.btnRegistrar.Size = new System.Drawing.Size(244, 36);
             this.btnRegistrar.TabIndex = 20;
@@ -91,12 +91,11 @@ namespace Clave1_Grupo2.gui
             this.txtNombres.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNombres.ForeColor = System.Drawing.SystemColors.InactiveCaption;
             this.txtNombres.Location = new System.Drawing.Point(345, 9);
-            this.txtNombres.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtNombres.Margin = new System.Windows.Forms.Padding(2);
             this.txtNombres.MaxLength = 30;
             this.txtNombres.Name = "txtNombres";
             this.txtNombres.Size = new System.Drawing.Size(246, 24);
             this.txtNombres.TabIndex = 1;
-            this.txtNombres.Text = "Ingrese sus nombres";
             // 
             // lblTitulo
             // 
@@ -119,7 +118,7 @@ namespace Clave1_Grupo2.gui
             this.panel1.Controls.Add(this.lblTitulo);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(176, 256);
             this.panel1.TabIndex = 6;
@@ -153,12 +152,11 @@ namespace Clave1_Grupo2.gui
             this.txtApellidos.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtApellidos.ForeColor = System.Drawing.SystemColors.InactiveCaption;
             this.txtApellidos.Location = new System.Drawing.Point(345, 36);
-            this.txtApellidos.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtApellidos.Margin = new System.Windows.Forms.Padding(2);
             this.txtApellidos.MaxLength = 30;
             this.txtApellidos.Name = "txtApellidos";
             this.txtApellidos.Size = new System.Drawing.Size(246, 24);
             this.txtApellidos.TabIndex = 2;
-            this.txtApellidos.Text = "Ingrese sus apellidos";
             // 
             // campoFechaNac
             // 
@@ -169,7 +167,7 @@ namespace Clave1_Grupo2.gui
             this.campoFechaNac.CalendarTrailingForeColor = System.Drawing.SystemColors.InactiveCaptionText;
             this.campoFechaNac.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.campoFechaNac.Location = new System.Drawing.Point(345, 63);
-            this.campoFechaNac.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.campoFechaNac.Margin = new System.Windows.Forms.Padding(2);
             this.campoFechaNac.MaxDate = new System.DateTime(2100, 12, 31, 0, 0, 0, 0);
             this.campoFechaNac.MinDate = new System.DateTime(1925, 12, 31, 0, 0, 0, 0);
             this.campoFechaNac.Name = "campoFechaNac";
@@ -181,7 +179,7 @@ namespace Clave1_Grupo2.gui
             this.chkVeterinario.AutoSize = true;
             this.chkVeterinario.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.chkVeterinario.Location = new System.Drawing.Point(212, 230);
-            this.chkVeterinario.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.chkVeterinario.Margin = new System.Windows.Forms.Padding(2);
             this.chkVeterinario.Name = "chkVeterinario";
             this.chkVeterinario.Size = new System.Drawing.Size(105, 17);
             this.chkVeterinario.TabIndex = 19;
@@ -194,12 +192,11 @@ namespace Clave1_Grupo2.gui
             this.txtEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEmail.ForeColor = System.Drawing.SystemColors.InactiveCaption;
             this.txtEmail.Location = new System.Drawing.Point(345, 84);
-            this.txtEmail.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtEmail.Margin = new System.Windows.Forms.Padding(2);
             this.txtEmail.MaxLength = 80;
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(246, 24);
             this.txtEmail.TabIndex = 4;
-            this.txtEmail.Text = "e-mail";
             // 
             // label1
             // 
@@ -267,12 +264,11 @@ namespace Clave1_Grupo2.gui
             this.txtUserName.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtUserName.ForeColor = System.Drawing.SystemColors.InactiveCaption;
             this.txtUserName.Location = new System.Drawing.Point(345, 110);
-            this.txtUserName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtUserName.Margin = new System.Windows.Forms.Padding(2);
             this.txtUserName.MaxLength = 30;
             this.txtUserName.Name = "txtUserName";
             this.txtUserName.Size = new System.Drawing.Size(246, 24);
             this.txtUserName.TabIndex = 5;
-            this.txtUserName.Text = "nombre de usuario";
             // 
             // txtUsrPw
             // 
@@ -280,7 +276,7 @@ namespace Clave1_Grupo2.gui
             this.txtUsrPw.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtUsrPw.ForeColor = System.Drawing.SystemColors.InactiveCaption;
             this.txtUsrPw.Location = new System.Drawing.Point(345, 137);
-            this.txtUsrPw.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtUsrPw.Margin = new System.Windows.Forms.Padding(2);
             this.txtUsrPw.MaxLength = 30;
             this.txtUsrPw.Name = "txtUsrPw";
             this.txtUsrPw.Size = new System.Drawing.Size(246, 24);
@@ -306,9 +302,9 @@ namespace Clave1_Grupo2.gui
             this.grpGenero.Controls.Add(this.chkFem);
             this.grpGenero.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.grpGenero.Location = new System.Drawing.Point(345, 162);
-            this.grpGenero.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.grpGenero.Margin = new System.Windows.Forms.Padding(2);
             this.grpGenero.Name = "grpGenero";
-            this.grpGenero.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.grpGenero.Padding = new System.Windows.Forms.Padding(2);
             this.grpGenero.Size = new System.Drawing.Size(244, 40);
             this.grpGenero.TabIndex = 24;
             this.grpGenero.TabStop = false;
@@ -318,7 +314,7 @@ namespace Clave1_Grupo2.gui
             // 
             this.chkIndef.AutoSize = true;
             this.chkIndef.Location = new System.Drawing.Point(158, 14);
-            this.chkIndef.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.chkIndef.Margin = new System.Windows.Forms.Padding(2);
             this.chkIndef.Name = "chkIndef";
             this.chkIndef.Size = new System.Drawing.Size(71, 17);
             this.chkIndef.TabIndex = 2;
@@ -330,7 +326,7 @@ namespace Clave1_Grupo2.gui
             // 
             this.chkMsc.AutoSize = true;
             this.chkMsc.Location = new System.Drawing.Point(81, 16);
-            this.chkMsc.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.chkMsc.Margin = new System.Windows.Forms.Padding(2);
             this.chkMsc.Name = "chkMsc";
             this.chkMsc.Size = new System.Drawing.Size(73, 17);
             this.chkMsc.TabIndex = 1;
@@ -342,7 +338,7 @@ namespace Clave1_Grupo2.gui
             // 
             this.chkFem.AutoSize = true;
             this.chkFem.Location = new System.Drawing.Point(8, 16);
-            this.chkFem.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.chkFem.Margin = new System.Windows.Forms.Padding(2);
             this.chkFem.Name = "chkFem";
             this.chkFem.Size = new System.Drawing.Size(71, 17);
             this.chkFem.TabIndex = 0;
@@ -374,7 +370,7 @@ namespace Clave1_Grupo2.gui
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "VtnRegistrarUsuario";

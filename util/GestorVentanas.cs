@@ -135,7 +135,8 @@ namespace Clave1_Grupo2.util
                 vtnPerfil = null;
                 vtnPerfil = new VtnPerfilUsuario();
             }
-            vtnPerfil.Show();
+            //No quiero que el usuario pueda cerrar sesion mientras se encuentre abierta esta ventana a no ser que agregue un boton desde aqui y cierre la ventana en su evento click
+            vtnPerfil.ShowDialog(); 
             vtnPerfil.Focus();
         }
     }

@@ -35,8 +35,7 @@ namespace Clave1_Grupo2.gui
         }
 
         private void btnAgregarMascota_Click(object sender, EventArgs e)
-        {
-            
+        {            
             if (ValidarFormularioLleno() && Validacion.CampoNumEntero(txtEdadMascota, lblEdadValida, 0, 200))
             {
                 char genero;
@@ -96,16 +95,6 @@ namespace Clave1_Grupo2.gui
         private void txtEdadMascota_TextChanged(object sender, EventArgs e)
         {
             Validacion.CampoNumEntero(txtEdadMascota, lblEdadValida, 0, 200);
-        }
-
-        private void cbxEspecie_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void cbxEspecie_SelectedIndexChanged_1(object sender, EventArgs e)
-        {
-
         }
     }
 }
