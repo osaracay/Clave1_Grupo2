@@ -40,7 +40,7 @@ namespace Clave1_Grupo2.gui
             txtCantidad.Text = "";
             cmbMetPago.SelectedIndex = -1;
 
-            dgvLstProductos.Rows.Clear();
+            dgvRegistros.Rows.Clear();
             txtTotal.Text = "";
         }
 
@@ -157,7 +157,7 @@ namespace Clave1_Grupo2.gui
             txtCantidad.Text = "";
             cmbMetPago.SelectedIndex = -1;
 
-            dgvLstProductos.Rows.Clear();
+            dgvRegistros.Rows.Clear();
             txtTotal.Text = "";
         }
     }

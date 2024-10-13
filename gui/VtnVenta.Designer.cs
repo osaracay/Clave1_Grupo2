@@ -41,7 +41,7 @@ namespace Clave1_Grupo2.gui
             this.cmbIdCliente = new System.Windows.Forms.ComboBox();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.dgvLstProductos = new System.Windows.Forms.DataGridView();
+            this.dgvRegistros = new System.Windows.Forms.DataGridView();
             this.brnGuardar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
@@ -61,11 +61,9 @@ namespace Clave1_Grupo2.gui
             this.cmbMetPago = new System.Windows.Forms.ComboBox();
             this.cmbEstado = new System.Windows.Forms.ComboBox();
             this.label11 = new System.Windows.Forms.Label();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvLstProductos)).BeginInit();
-            this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvRegistros)).BeginInit();
             this.SuspendLayout();
             // 
             // lblVetCatDog
@@ -73,7 +71,7 @@ namespace Clave1_Grupo2.gui
             this.lblVetCatDog.AutoSize = true;
             this.lblVetCatDog.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblVetCatDog.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lblVetCatDog.Location = new System.Drawing.Point(716, 142);
+            this.lblVetCatDog.Location = new System.Drawing.Point(699, 108);
             this.lblVetCatDog.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblVetCatDog.Name = "lblVetCatDog";
             this.lblVetCatDog.Size = new System.Drawing.Size(97, 40);
@@ -85,7 +83,7 @@ namespace Clave1_Grupo2.gui
             // 
             this.picLogo.Image = ((System.Drawing.Image)(resources.GetObject("picLogo.Image")));
             this.picLogo.InitialImage = ((System.Drawing.Image)(resources.GetObject("picLogo.InitialImage")));
-            this.picLogo.Location = new System.Drawing.Point(716, 43);
+            this.picLogo.Location = new System.Drawing.Point(699, 9);
             this.picLogo.Name = "picLogo";
             this.picLogo.Size = new System.Drawing.Size(97, 96);
             this.picLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -130,7 +128,7 @@ namespace Clave1_Grupo2.gui
             this.cmbIdInsumo.FormattingEnabled = true;
             this.cmbIdInsumo.Location = new System.Drawing.Point(5, 142);
             this.cmbIdInsumo.Name = "cmbIdInsumo";
-            this.cmbIdInsumo.Size = new System.Drawing.Size(90, 26);
+            this.cmbIdInsumo.Size = new System.Drawing.Size(95, 26);
             this.cmbIdInsumo.TabIndex = 97;
             // 
             // txtCliente
@@ -175,11 +173,10 @@ namespace Clave1_Grupo2.gui
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnCancelar.UseVisualStyleBackColor = false;
-            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.dgvLstProductos);
+            this.groupBox1.Controls.Add(this.dgvRegistros);
             this.groupBox1.Controls.Add(this.txtTotal);
             this.groupBox1.Controls.Add(this.label9);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -189,17 +186,17 @@ namespace Clave1_Grupo2.gui
             this.groupBox1.TabIndex = 92;
             this.groupBox1.TabStop = false;
             // 
-            // dgvLstProductos
+            // dgvRegistros
             // 
-            this.dgvLstProductos.AllowUserToDeleteRows = false;
-            this.dgvLstProductos.BackgroundColor = System.Drawing.SystemColors.Window;
-            this.dgvLstProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvLstProductos.Location = new System.Drawing.Point(10, 12);
-            this.dgvLstProductos.Name = "dgvLstProductos";
-            this.dgvLstProductos.ReadOnly = true;
-            this.dgvLstProductos.RowHeadersWidth = 51;
-            this.dgvLstProductos.Size = new System.Drawing.Size(677, 257);
-            this.dgvLstProductos.TabIndex = 57;
+            this.dgvRegistros.AllowUserToDeleteRows = false;
+            this.dgvRegistros.BackgroundColor = System.Drawing.SystemColors.Window;
+            this.dgvRegistros.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvRegistros.Location = new System.Drawing.Point(10, 12);
+            this.dgvRegistros.Name = "dgvRegistros";
+            this.dgvRegistros.ReadOnly = true;
+            this.dgvRegistros.RowHeadersWidth = 51;
+            this.dgvRegistros.Size = new System.Drawing.Size(677, 257);
+            this.dgvRegistros.TabIndex = 57;
             // 
             // brnGuardar
             // 
@@ -324,11 +321,12 @@ namespace Clave1_Grupo2.gui
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(360, 12);
+            this.label1.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Maroon;
+            this.label1.Location = new System.Drawing.Point(5, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(90, 31);
+            this.label1.Size = new System.Drawing.Size(95, 33);
             this.label1.TabIndex = 79;
             this.label1.Text = "Venta";
             // 
@@ -355,7 +353,7 @@ namespace Clave1_Grupo2.gui
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(223, 182);
+            this.label10.Location = new System.Drawing.Point(220, 182);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(84, 18);
             this.label10.TabIndex = 108;
@@ -398,23 +396,13 @@ namespace Clave1_Grupo2.gui
             this.label11.TabIndex = 111;
             this.label11.Text = "Estado :";
             // 
-            // groupBox2
-            // 
-            this.groupBox2.BackColor = System.Drawing.Color.Teal;
-            this.groupBox2.Controls.Add(this.label1);
-            this.groupBox2.Location = new System.Drawing.Point(-10, -7);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(834, 51);
-            this.groupBox2.TabIndex = 112;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "groupBox2";
-            // 
             // VtnVenta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.ClientSize = new System.Drawing.Size(812, 581);
+            this.ClientSize = new System.Drawing.Size(800, 581);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.cmbEstado);
             this.Controls.Add(this.cmbMetPago);
@@ -442,7 +430,6 @@ namespace Clave1_Grupo2.gui
             this.Controls.Add(this.label3);
             this.Controls.Add(this.txtInsumo);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.groupBox2);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "VtnVenta";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -450,9 +437,7 @@ namespace Clave1_Grupo2.gui
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvLstProductos)).EndInit();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvRegistros)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -471,7 +456,7 @@ namespace Clave1_Grupo2.gui
         private System.Windows.Forms.ComboBox cmbIdCliente;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.DataGridView dgvLstProductos;
+        private System.Windows.Forms.DataGridView dgvRegistros;
         private System.Windows.Forms.Button brnGuardar;
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Button btnSalir;
@@ -491,6 +476,5 @@ namespace Clave1_Grupo2.gui
         private System.Windows.Forms.ComboBox cmbMetPago;
         private System.Windows.Forms.ComboBox cmbEstado;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.GroupBox groupBox2;
     }
 }
