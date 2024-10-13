@@ -33,15 +33,15 @@ namespace Clave1_Grupo2.gui
         }
         private void cargarProductos(string filtro = "")
         {
-            dgvLstProductos.Rows.Clear();
-            dgvLstProductos.Refresh();
+            dgvRegistros.Rows.Clear();
+            dgvRegistros.Refresh();
             mInsumos.Clear();
             mInsumos = mConsultaInsumo.getProductos(filtro);
 
             for (int i = 0; i < mInsumos.Count(); i++)
             {
 
-                dgvLstProductos.Rows.Add(
+                dgvRegistros.Rows.Add(
                     mInsumos[i].id_insumo,
                     mInsumos[i].nom_insumo,
                     mInsumos[i].id_tipo_insumo,
@@ -131,43 +131,43 @@ namespace Clave1_Grupo2.gui
         }
         private void ConfigurarDGV()
         {
-            dgvLstProductos.Columns.Clear();
-            dgvLstProductos.Columns.Add("Id", "Id");
-            dgvLstProductos.Columns.Add("nombre", "Nombre de Insumo");
-            dgvLstProductos.Columns.Add("tipo", "TP");
-            dgvLstProductos.Columns.Add("precio", "Precio");
-            dgvLstProductos.Columns.Add("medida", "U-Medida");
-            dgvLstProductos.Columns.Add("cantidad", "Existencia");
-            dgvLstProductos.Columns.Add("stockm", "ROP");
+            dgvRegistros.Columns.Clear();
+            dgvRegistros.Columns.Add("Id", "Id");
+            dgvRegistros.Columns.Add("nombre", "Nombre de Insumo");
+            dgvRegistros.Columns.Add("tipo", "TP");
+            dgvRegistros.Columns.Add("precio", "Precio");
+            dgvRegistros.Columns.Add("medida", "U-Medida");
+            dgvRegistros.Columns.Add("cantidad", "Existencia");
+            dgvRegistros.Columns.Add("stockm", "ROP");
 
-            dgvLstProductos.AllowUserToAddRows = false;
-            dgvLstProductos.Columns["Id"].Width = 70;
-            dgvLstProductos.Columns["nombre"].Width = 340;
-            dgvLstProductos.Columns["tipo"].Width = 0;
-            dgvLstProductos.Columns["precio"].Width = 100;
-            dgvLstProductos.Columns["medida"].Width = 80;
-            dgvLstProductos.Columns["cantidad"].Width = 100;
-            dgvLstProductos.Columns["stockm"].Width = 100;
+            dgvRegistros.AllowUserToAddRows = false;
+            dgvRegistros.Columns["Id"].Width = 70;
+            dgvRegistros.Columns["nombre"].Width = 340;
+            dgvRegistros.Columns["tipo"].Width = 0;
+            dgvRegistros.Columns["precio"].Width = 100;
+            dgvRegistros.Columns["medida"].Width = 80;
+            dgvRegistros.Columns["cantidad"].Width = 100;
+            dgvRegistros.Columns["stockm"].Width = 100;
 
-            dgvLstProductos.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dgvLstProductos.DefaultCellStyle.SelectionBackColor = Color.DarkOrange;
-            dgvLstProductos.DefaultCellStyle.SelectionForeColor = Color.Black;
-            dgvLstProductos.Cursor = Cursors.Hand;
+            dgvRegistros.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dgvRegistros.DefaultCellStyle.SelectionBackColor = Color.DarkOrange;
+            dgvRegistros.DefaultCellStyle.SelectionForeColor = Color.Black;
+            dgvRegistros.Cursor = Cursors.Hand;
 
-            dgvLstProductos.Columns["Id"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dgvLstProductos.Columns["nombre"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dgvLstProductos.Columns["tipo"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
-            dgvLstProductos.Columns["precio"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
-            dgvLstProductos.Columns["medida"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dgvLstProductos.Columns["cantidad"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
-            dgvLstProductos.Columns["stockm"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+            dgvRegistros.Columns["Id"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dgvRegistros.Columns["nombre"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dgvRegistros.Columns["tipo"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+            dgvRegistros.Columns["precio"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+            dgvRegistros.Columns["medida"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dgvRegistros.Columns["cantidad"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+            dgvRegistros.Columns["stockm"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
 
-            dgvLstProductos.DefaultCellStyle.Font = new Font("Arial", 12F, FontStyle.Regular);
-            dgvLstProductos.ColumnHeadersDefaultCellStyle.Font = new Font("Arial", 12F, FontStyle.Bold);
+            dgvRegistros.DefaultCellStyle.Font = new Font("Arial", 12F, FontStyle.Regular);
+            dgvRegistros.ColumnHeadersDefaultCellStyle.Font = new Font("Arial", 12F, FontStyle.Bold);
 
-            dgvLstProductos.Columns["precio"].DefaultCellStyle.Format = "N2"; // N2 Aplicar formato con 2 decimales
-            dgvLstProductos.Columns["cantidad"].DefaultCellStyle.Format = "N0";
-            dgvLstProductos.Columns["stockm"].DefaultCellStyle.Format = "N0";
+            dgvRegistros.Columns["precio"].DefaultCellStyle.Format = "N2"; // N2 Aplicar formato con 2 decimales
+            dgvRegistros.Columns["cantidad"].DefaultCellStyle.Format = "N0";
+            dgvRegistros.Columns["stockm"].DefaultCellStyle.Format = "N0";
 
             btnModificar.Enabled = false;
             btnEliminar.Enabled = false;
@@ -203,7 +203,7 @@ namespace Clave1_Grupo2.gui
             if (e.RowIndex >= 0)
             {
                 // Obtener la fila seleccionada
-                DataGridViewRow row = dgvLstProductos.Rows[e.RowIndex];
+                DataGridViewRow row = dgvRegistros.Rows[e.RowIndex];
 
                 // Pasar los datos a los TextBox
                 txtCodigo.Text = row.Cells["Id"].Value.ToString();

@@ -20,7 +20,7 @@ namespace Clave1_Grupo2.gui
             Rellenador.CargarDataTableACombo(cmbMetPago, CatDAO.GetMetPago(), "id_met_pago", "nom_met_pago");
             Rellenador.CargarDataTableACombo(cmbEstado, CatDAO.GetEstadoPago(), "id_estado_pago", "nom_estado_pago");
             Rellenador.CargarDataTableACombo(cmbIdCliente, CatDAO.GetUsuarios(), "nombre", "id_usuario");
-            Rellenador.CargarDataTableACombo(cmbIdInsumo, CatDAO.GetInsumos(), "nombre", "id_usuario");
+            Rellenador.CargarDataTableACombo(cmbIdInsumo, CatDAO.GetInsumos(), "nom_insumo", "id_insumo");
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -42,11 +42,6 @@ namespace Clave1_Grupo2.gui
 
             dgvRegistros.Rows.Clear();
             txtTotal.Text = "";
-        }
-
-        private void brnGuardar_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void btnSalir_Click(object sender, EventArgs e)
@@ -89,9 +84,9 @@ namespace Clave1_Grupo2.gui
 
                 // Mostrar el nom_tipo_insumo en el TextBox
                 txtInsumo.Text = selectedItem["nom_insumo"].ToString();
+                txtPrecio.Text = selectedItem["precio_unit"].ToString();
                 txtMedida.Text = selectedItem["unit_medida"].ToString();
                 txtStock.Text = selectedItem["existencias_insumo"].ToString();
-                txtMedida.Text = selectedItem["unit_medida"].ToString();
             }
             else
             {
@@ -138,27 +133,6 @@ namespace Clave1_Grupo2.gui
                 //cmbIdCliente.SelectedIndex = -1;
                 txtCliente.Text = "";
             }
-        }
-
-        private void btnCancelar_Click(object sender, EventArgs e)
-        {
-            LimpiarCampos();
-        }
-        private void LimpiarCampos()
-        {
-            cmbIdCliente.SelectedIndex = -1;
-            txtCliente.Text = "";
-            cmbIdInsumo.SelectedIndex = -1;
-            txtInsumo.Text = "";
-            txtMedida.Text = "";
-            cmbEstado.SelectedIndex = -1;
-            txtStock.Text = "";
-            txtPrecio.Text = "";
-            txtCantidad.Text = "";
-            cmbMetPago.SelectedIndex = -1;
-
-            dgvRegistros.Rows.Clear();
-            txtTotal.Text = "";
         }
     }
 }
