@@ -2,6 +2,7 @@
 using Clave1_Grupo2.util;
 using System;
 using System.Data;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace Clave1_Grupo2.gui
@@ -15,8 +16,8 @@ namespace Clave1_Grupo2.gui
             Rellenador.CargarDataTableACombo(cmbEstado, CatDAO.GetEstadoPago(), "id_estado_pago", "nom_estado_pago");
             Rellenador.CargarDataTableACombo(cmbIdCliente, CatDAO.GetUsuarios(), "nombre", "id_usuario");
             Rellenador.CargarDataTableACombo(cmbIdInsumo, CatDAO.GetInsumos(), "nom_insumo", "id_insumo");
+            ConfigurarDGV();
         }
-
         private void LimpiarCampos()
         {
             cmbIdCliente.SelectedIndex = -1;
@@ -32,8 +33,8 @@ namespace Clave1_Grupo2.gui
 
             dgvRegistros.Rows.Clear();
             txtTotal.Text = "";
+            btnEliminar.Enabled = false;
         }
-
         private void btnSalir_Click(object sender, EventArgs e)
         {
             this.Dispose();
@@ -64,7 +65,6 @@ namespace Clave1_Grupo2.gui
                 e.Handled = true;
             }
         }
-
         private void cmbIdInsumo_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (cmbIdInsumo.SelectedIndex != -1)
@@ -91,7 +91,6 @@ namespace Clave1_Grupo2.gui
                 cmbMetPago.SelectedIndex = -1;
             }
         }
-
         private void cmbIdInsumo_TextChanged(object sender, EventArgs e)
         {
             // Si el ComboBox se limpia manualmente, también limpiar txtDescripcion
@@ -106,7 +105,6 @@ namespace Clave1_Grupo2.gui
                 cmbMetPago.SelectedIndex = -1;
             }
         }
-
         private void cmbIdCliente_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (cmbIdCliente.SelectedIndex != -1)
@@ -124,10 +122,128 @@ namespace Clave1_Grupo2.gui
                 txtCliente.Text = "";
             }
         }
-
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             LimpiarCampos();
+        }
+        private void btnAgregar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int n = dgvRegistros.Rows.Count + 1;
+                string id = cmbIdInsumo.Text;
+                string nombre = txtInsumo.Text;
+                string unidad = txtMedida.Text;
+                decimal precio = decimal.Parse(txtPrecio.Text);
+                int cantidad = int.Parse(txtCantidad.Text);
+                decimal subtotal = precio * cantidad;
+
+                dgvRegistros.Rows.Add(n, id, nombre, unidad, precio, cantidad, subtotal);
+
+                ActualizarTotales();
+                cmbIdInsumo.SelectedIndex = -1;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al Agregar el Insumo: " + ex.Message);
+            }
+        }
+        private void ActualizarTotales()
+        {
+            int items = dgvRegistros.Rows.Count;
+            decimal Total = 0;
+
+            // si la ultima fila es la fila nueva vacia, restamos 1 del conteo de otems
+            if (dgvRegistros.AllowUserToAddRows && dgvRegistros.Rows[items - 1].IsNewRow)
+            {
+                items--;
+            }
+            foreach (DataGridViewRow row in dgvRegistros.Rows)
+            {
+                Total += Convert.ToDecimal(row.Cells["total"].Value);
+            }
+            //lblItems.Text = $"Items: {items}"; //Activar solo si deseamos ver el numero de items agregados
+            txtTotal.Text = $" {Total:C2}";
+        }
+        private void ConfigurarDGV()
+        {
+            dgvRegistros.Columns.Clear();
+            dgvRegistros.Columns.Add("N", "N°");
+            dgvRegistros.Columns.Add("Id", "Id");
+            dgvRegistros.Columns.Add("nombre", "Nombre de Insumo");
+            dgvRegistros.Columns.Add("medida", "Und");
+            dgvRegistros.Columns.Add("precio", "Precio");
+            dgvRegistros.Columns.Add("cantidad", "Cant.");
+            dgvRegistros.Columns.Add("total", "SubTotal");
+
+            dgvRegistros.AllowUserToAddRows = false;
+            dgvRegistros.Columns["N"].Width = 30;
+            dgvRegistros.Columns["Id"].Width = 70;
+            dgvRegistros.Columns["nombre"].Width = 290;
+            dgvRegistros.Columns["medida"].Width = 60;
+            dgvRegistros.Columns["precio"].Width = 90;
+            dgvRegistros.Columns["cantidad"].Width = 70;
+            dgvRegistros.Columns["total"].Width = 120;
+
+            dgvRegistros.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dgvRegistros.DefaultCellStyle.SelectionBackColor = Color.Aquamarine;
+            dgvRegistros.DefaultCellStyle.SelectionForeColor = Color.Black;
+            dgvRegistros.Cursor = Cursors.Hand;
+
+            dgvRegistros.Columns["Id"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dgvRegistros.Columns["nombre"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dgvRegistros.Columns["medida"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dgvRegistros.Columns["precio"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+            dgvRegistros.Columns["cantidad"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+            dgvRegistros.Columns["total"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+
+            dgvRegistros.DefaultCellStyle.Font = new Font("Arial", 12F, FontStyle.Regular);
+            dgvRegistros.ColumnHeadersDefaultCellStyle.Font = new Font("Arial", 12F, FontStyle.Bold);
+
+            dgvRegistros.Columns["precio"].DefaultCellStyle.Format = "N2"; // N2 Aplicar formato con 2 decimales
+            dgvRegistros.Columns["cantidad"].DefaultCellStyle.Format = "N0";
+            dgvRegistros.Columns["total"].DefaultCellStyle.Format = "N2";
+
+            cmbIdCliente.Focus();
+            btnEliminar.Enabled = false;
+        }
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            if (dgvRegistros.SelectedRows.Count > 0)
+            {
+                int rowIndex = dgvRegistros.SelectedRows[0].Index;
+                // Actualizar números de filas antes de eliminar
+                ActualizarNumerosDeFilas();
+                try
+                {
+                    // Eliminar la fila
+                    dgvRegistros.Rows.RemoveAt(rowIndex);
+
+                    // Actualizar los totales
+                    ActualizarTotales();
+                    MessageBox.Show("Items Eliminado con Exito.", "Venta", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                catch (Exception ex)
+                {
+                    // Manejar la excepción
+                    MessageBox.Show("Ha ocurrido un Error al eliminar el items: " + ex.Message, "Venta", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Por favor, Seleccionar un Items para Eliminar.", "Venta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+        private void ActualizarNumerosDeFilas()
+        {
+            for (int i = 0; i < dgvRegistros.Rows.Count; i++)
+            {
+                dgvRegistros.Rows[i].Cells["N"].Value = i + 1;
+            }
+        }
+        private void dgvRegistros_Click(object sender, EventArgs e)
+        {
+            btnEliminar.Enabled = true;
         }
     }
 }
