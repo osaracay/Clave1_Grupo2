@@ -125,6 +125,7 @@
     <Compile Include="entity\Insumo.cs" />
     <Compile Include="entity\Mascota.cs" />
     <Compile Include="entity\Usuario.cs" />
+    <Compile Include="entity\Venta.cs" />
     <Compile Include="entity\Veterinario.cs" />
     <Compile Include="gui\VtnAgendarCita.cs">
       <SubType>Form</SubType>

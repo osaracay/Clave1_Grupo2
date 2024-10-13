@@ -61,6 +61,7 @@ namespace Clave1_Grupo2.gui
             if (mConsultaCompra.agregarCompra(cInsumo))
             {
                 MessageBox.Show("Datos Guardado con exito.", "Datos", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                LimpiarCampos();
             }
 
         }

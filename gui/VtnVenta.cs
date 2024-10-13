@@ -1,6 +1,8 @@
 ﻿using Clave1_Grupo2.dao;
+using Clave1_Grupo2.entity;
 using Clave1_Grupo2.util;
 using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Drawing;
 using System.Windows.Forms;
@@ -9,6 +11,9 @@ namespace Clave1_Grupo2.gui
 {
     public partial class VtnVenta : Form
     {
+        private List<Venta> vInsumos;
+        private Venta vInsumo;
+        private ConsultaVenta mConsultaVenta;
         public VtnVenta()
         {
             InitializeComponent();
@@ -17,6 +22,10 @@ namespace Clave1_Grupo2.gui
             Rellenador.CargarDataTableACombo(cmbIdCliente, CatDAO.GetUsuarios(), "nombre", "id_usuario");
             Rellenador.CargarDataTableACombo(cmbIdInsumo, CatDAO.GetInsumos(), "nom_insumo", "id_insumo");
             ConfigurarDGV();
+
+            vInsumos = new List<Venta>();
+            mConsultaVenta = new ConsultaVenta();
+            vInsumo = new Venta();
         }
         private void LimpiarCampos()
         {
@@ -34,6 +43,7 @@ namespace Clave1_Grupo2.gui
             dgvRegistros.Rows.Clear();
             txtTotal.Text = "";
             btnEliminar.Enabled = false;
+            cmbIdCliente.Focus();
         }
         private void btnSalir_Click(object sender, EventArgs e)
         {
@@ -87,8 +97,6 @@ namespace Clave1_Grupo2.gui
                 txtStock.Text = "";
                 txtPrecio.Text = "";
                 txtCantidad.Text = "";
-                cmbEstado.SelectedIndex = -1;
-                cmbMetPago.SelectedIndex = -1;
             }
         }
         private void cmbIdInsumo_TextChanged(object sender, EventArgs e)
@@ -101,8 +109,6 @@ namespace Clave1_Grupo2.gui
                 txtStock.Text = "";
                 txtPrecio.Text = "";
                 txtCantidad.Text = "";
-                cmbEstado.SelectedIndex = -1;
-                cmbMetPago.SelectedIndex = -1;
             }
         }
         private void cmbIdCliente_SelectedIndexChanged(object sender, EventArgs e)
@@ -163,7 +169,7 @@ namespace Clave1_Grupo2.gui
                 Total += Convert.ToDecimal(row.Cells["total"].Value);
             }
             //lblItems.Text = $"Items: {items}"; //Activar solo si deseamos ver el numero de items agregados
-            txtTotal.Text = $" {Total:C2}";
+            txtTotal.Text = Total.ToString("N2");
         }
         private void ConfigurarDGV()
         {
@@ -245,5 +251,47 @@ namespace Clave1_Grupo2.gui
         {
             btnEliminar.Enabled = true;
         }
+
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+            if (!validarCampos())
+            {
+                return;
+            }
+            cargarDatosProductos();
+            if (mConsultaVenta.agregarVenta(vInsumo))
+            {
+                MessageBox.Show("Datos Guardado con exito.", "Datos", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                LimpiarCampos();
+            }
+        }
+        private void cargarDatosProductos()
+        {
+            vInsumo.fecha = dateTimePicker1.Text;
+            vInsumo.monto_total = Convert.ToDecimal(txtTotal.Text);
+            vInsumo.id_met_pago = cmbMetPago.Text;
+            vInsumo.estado_factura = cmbEstado.Text;
+        }
+        private bool validarCampos()
+        {
+            if (cmbIdCliente.Text.Trim().Equals(""))
+            {
+                MessageBox.Show("Debe Seleccionar un Cliente.", "Datos", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            if (cmbMetPago.Text.Trim().Equals(""))
+            {
+                MessageBox.Show("Seleccione una Forma de Pago.", "Datos", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            if (cmbEstado.Text.Trim().Equals(""))
+            {
+                MessageBox.Show("Seleccione una Condicion.", "Datos", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            return true;
+        }
+
+
     }
 }
