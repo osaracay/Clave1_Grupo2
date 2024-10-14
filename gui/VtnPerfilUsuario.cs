@@ -1,13 +1,7 @@
 ﻿using Clave1_Grupo2.dao;
 using Clave1_Grupo2.util;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Clave1_Grupo2.gui
@@ -95,13 +89,18 @@ namespace Clave1_Grupo2.gui
                 && Validacion.CampoEmail(txtEmail) && Validacion.EsMayorDeEdad(campoFechaNac.Value); //AGREGAR VALIDACION PARA CONFIRMAR CONTASEna
 
             //!!! SOLICITAR CONTRASEñA
+            camposValidos = camposValidos && contraCoincide(txtConfirmPw);
             if (camposValidos) {
                 //Realizar un update usando la clase UsuarioDAO
                 UsuarioDAO.ActualizarDatosUsuario(UsuarioDAO.getSesion(), txtNombres.Text, txtApellidos.Text, txtEmail.Text, campoFechaNac.Value);
 
-                
+
                 //Actualizar el usuario sesion con los nuevos datos
-                MessageBox.Show("Informacion de usuario actualizada exitosamente\nPara visualizar los cambios vuelva a iniciar sesion");
+                //MessageBox.Show("Informacion de usuario actualizada exitosamente\nPara visualizar los cambios vuelva a iniciar sesion");                
+                //Aprovechando que tengo la . del usuario en txtConfirmPw y que el metodo autenticar usuario actualiza las propiedades del Usuario
+                //ya no hace falta cerrar sesion y volverla a abrir
+                UsuarioDAO.AutenticarUsuario(UsuarioDAO.getSesion().Username,CyberSec.HolaCosmos(txtConfirmPw.Text));                 
+                txtConfirmPw.Clear(); //Luego limpio el campo
                 //Volver a cargar datos de usuario al terminar el update
                 CargarDatosUsuario();
             }
@@ -120,21 +119,22 @@ namespace Clave1_Grupo2.gui
             }
             else
             {
-                MessageBox.Show("La nueva contraseña no coincide en el campo de confirmar");
+                MessageBox.Show("La contraseña no coincide en el campo de confirmar");
                 txtConfirmPw.Focus();
                 return false;
             }
         }
-        private bool contraActualCoincide()
+        //RECIBE el textbox con . a evaluar 
+        private bool contraCoincide(TextBox tbpw)
         {
-            if (CyberSec.HolaCosmos(txtUsrPw.Text).Equals(UsuarioDAO.Olvidaste(UsuarioDAO.getSesion().Username)))
-            {
+            if (CyberSec.HolaCosmos(tbpw.Text).Equals(UsuarioDAO.Olvidaste(UsuarioDAO.getSesion().Username)))
+            { //El metodo olvidaste le pasas el nombre de usuario como argumento y te devuelve la pw en la BD, por eso la llamamos desde UsuarioDAO
                 return true;
             }
             else
             {
                 MessageBox.Show("La contraseña actual es incorrecta");
-                txtUsrPw.Focus();
+                tbpw.Focus();
                 return false;
             }
         }
@@ -143,16 +143,19 @@ namespace Clave1_Grupo2.gui
         {
             //REALIZAR VALIDACIONES 
             bool camposValidos = Validacion.CampoLleno(txtUsrPw) && Validacion.CampoLleno(txtNewPw) && Validacion.CampoLleno(txtConfirmPw);
-
-            camposValidos = camposValidos && NuevaPwCoincide();
-            camposValidos = camposValidos && contraActualCoincide();
+            camposValidos = camposValidos && contraCoincide(txtUsrPw);
+            camposValidos = camposValidos && NuevaPwCoincide();            
             //Si la contrasena ingresada es igual a la registrada por el usuario activo
             if (camposValidos)
             {
                 UsuarioDAO.ActualizarLlaveCliente(UsuarioDAO.getSesion(), CyberSec.HolaCosmos(txtNewPw.Text));
+                //AL TERMINAR EL UPDATE VOLVER A CARGAR DATOS DE USUARIO
+                txtUsrPw.Clear();
+                txtNewPw.Clear();
+                txtConfirmPw.Clear();
                 CargarDatosUsuario();
             }
-            //AL TERMINAR EL UPDATE VOLVER A CARGAR DATOS DE USUARIO
+            
             
         }
         

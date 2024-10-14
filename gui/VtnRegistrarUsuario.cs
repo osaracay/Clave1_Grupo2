@@ -23,7 +23,7 @@ namespace Clave1_Grupo2.gui
 
             //Validar que el username e email sean unicos De por si la BD no va permitir que estos campos sean duplicados porque llevan UNIQUE constraint.
             string pw = CyberSec.HolaCosmos(txtUsrPw.Text);
-            MessageBox.Show($"Cantidad de caracteres encrypted: { pw.Length}"); //Necesito saber la cantidad de caracteres antes de hacer el insert
+            //MessageBox.Show($"Cantidad de caracteres encrypted: { pw.Length}"); //Necesito saber la cantidad de caracteres antes de hacer el insert
             if (ValidarFormularioLleno() && Validacion.EsMayorDeEdad((DateTime)campoFechaNac.Value) && Validacion.CampoEmail(txtEmail) && pw.Length<=60){
                 char genero;
                 if (chkFem.Checked)
@@ -40,12 +40,11 @@ namespace Clave1_Grupo2.gui
                 /*MessageBox.Show($"Se creo el usuario: \n{nuevoUsuario.Nombre} {nuevoUsuario.Apellido} \nFecha Nacimiento {nuevoUsuario.FechaNac.ToString()}\n" +
                     $"Email: \n {nuevoUsuario.Email} \nGenero {genero} User: {nuevoUsuario.Username} \nPw:{nuevoUsuario.Pw}");*/
                 UsuarioDAO.RegistrarCliente(nuevoUsuario);
-                MessageBox.Show("Se ha registrado el usuario exitosamente");
                 //Limpiar campos
                 LimpiarCampos();
 
                 //EN EL MOMENTO QUE SE CREA UN USUARIO EXITOSAMENTE QUIERO ACTUALIZAR LA TABLA RUNTIME DE CLIENTES
-                UsuarioDAO.UpdateTblClientes();
+                UsuarioDAO.UpdateTblClientes(); //Reflexionar para que se usa la tabla de clientes en tiempo de ejecucion: para que se muestre a la hora de registrar mascotas los dueños
                 //en lugar de limpiar campos cerrar la ventana.
                 this.Close();
             }

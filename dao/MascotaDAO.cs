@@ -17,12 +17,12 @@ namespace Clave1_Grupo2.dao
         /// </summary>
 
         private static DataTable pets;
-
+        private static string sentenciaSQL;
         private static string consulta;
         private static OdbcDataAdapter adaptador;
         public static bool RegistrarMascota(Mascota pet)
         {
-            string sentenciaSQL = "INSERT INTO mascota (nom_mascota, " +
+            sentenciaSQL = "INSERT INTO mascota (nom_mascota, " +
                 "especie, raza, edad, genero_mascota, id_propietario, estado_mascota)" +//, color) " +
                 "VALUES (?, ?, ?, ?, ?, ?, ?)"; //, ?)";
             /*"VALUES (@nombre, @apellido, @fecha_nac, @tipo_usuario, @estado_usuario, @email, @genero, @usrlogin, @usrpw)";
@@ -62,35 +62,34 @@ namespace Clave1_Grupo2.dao
         }
 
         //Update mascotas por propietario en caso el usuario sea vet o admin
-        public static DataTable GetMascotasPorPropietario(int idPropietario)
+        public static DataTable GetMascotasPorPropietario(int propietario)
         {
-            consulta = $"SELECT * FROM mascota WHERE id_propietario={idPropietario}"; // Actualizar este query usando Parametros
-            if (pets == null)
+            //ASEGURARARME QUE EL Usuario sea tipo cliente
+            sentenciaSQL = "SELECT * FROM mascota WHERE id_propietario = ?";
+            pets = new DataTable();
+            adaptador = new OdbcDataAdapter(sentenciaSQL, ConexionBD.GetConexionBD());
+            adaptador.MissingSchemaAction = MissingSchemaAction.AddWithKey;
+            adaptador.SelectCommand = new OdbcCommand(sentenciaSQL, ConexionBD.GetConexionBD());
+
+            //MessageBox.Show("Id de propietario es " + propietario); Se ejecuta dos veces por el listbox y el combobox
+            adaptador.SelectCommand.Parameters.Add("@id_usuario", OdbcType.Int).Value = propietario;
+
+            try
             {
-                try
-                {
-                    adaptador = new OdbcDataAdapter(consulta, ConexionBD.GetConexionBD());
-                    pets = new DataTable();
-
-                    //PENDIENTE Definir campos de tabla y agregar tabla al DataSet
-                    ConexionBD.GetDataSetBD().Tables.Add(pets);
-
-                    using (adaptador)
-                    {
-                        ConexionBD.GetConexionBD().Open();
-                        adaptador.Fill(pets);
-                    }
-                }
-                catch (Exception e)
-                {
-                    MessageBox.Show($"Ocurrio un error: \n{e.Message}");
-                }
-                finally
-                {
-                    ConexionBD.GetConexionBD().Close();
-                }
+                ConexionBD.GetConexionBD().Open();
+                adaptador.SelectCommand.ExecuteNonQuery(); //Execute nonquery requiere una conexion valida y activa por eso se abre. Para fill no se requiere se abre y cierra sola
+                adaptador.Fill(pets);
+                return pets;
             }
-            return pets;
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);            
+                return pets;
+            }
+            finally
+            {
+                ConexionBD.GetConexionBD().Close();
+            }            
         }
     }
 }

@@ -154,7 +154,8 @@ namespace Clave1_Grupo2.dao
             //MessageBox.Show($"No se cual es el problema {adaptador.InsertCommand.CommandText}");
             try
             {                
-                adaptador.InsertCommand.ExecuteNonQuery();                
+                adaptador.InsertCommand.ExecuteNonQuery();
+                MessageBox.Show("Se ha registrado el usuario exitosamente");
                 return true;
             }
             catch (Exception ex)

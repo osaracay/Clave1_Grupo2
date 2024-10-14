@@ -16,10 +16,13 @@ namespace Clave1_Grupo2.entity
         private int edad;
         private char generoMascota;
         private int idPropietario;
+        private int estadoMascota;
+        //ESTADO COMO QUE FALTA
         private string color;
         public List<Cita> citas;
 
         public string Color { get => color; set => color = value; }
+        public int EstadoMascota { get => estadoMascota; set => estadoMascota = value; }
 
         public Mascota()
         {
