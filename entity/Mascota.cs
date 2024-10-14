@@ -124,5 +124,10 @@ namespace Clave1_Grupo2.entity
             this.idPropietario = idPropietario;
         }
 
+        public override string ToString()
+        {
+            string stringMascota = this.GetNomMascota() + " - " + this.GetEspecie();
+            return stringMascota;
+        }
     }
 }

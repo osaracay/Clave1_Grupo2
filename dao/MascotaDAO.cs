@@ -15,10 +15,11 @@ namespace Clave1_Grupo2.dao
         ///<summary>
         ///Clase de Acceso a Datos de la tabla Mascota
         /// </summary>
-
         private static DataTable pets;
         private static string sentenciaSQL;
         private static OdbcDataAdapter adaptador;
+        private static OdbcDataReader lector;
+        private static List<Mascota> mascotasDueno;
         public static bool RegistrarMascota(Mascota pet)
         {
             sentenciaSQL = "INSERT INTO mascota (nom_mascota, " +
@@ -89,6 +90,106 @@ namespace Clave1_Grupo2.dao
             {
                 ConexionBD.GetConexionBD().Close();
             }            
+        }
+
+        public static List<Mascota> GetListaMascotasOwner(Usuario owner)
+        {
+            //ASEGURARARME QUE EL Usuario sea tipo cliente
+            if (owner.TipoUsuario == 3) //Aqui 
+            {
+
+            }
+            else
+            {
+                MessageBox.Show("El tipo de usuario no posee mascotas");
+            }
+
+
+            sentenciaSQL = "SELECT * FROM mascota WHERE id_propietario = ?";
+            mascotasDueno = new List<Mascota>();
+            adaptador = new OdbcDataAdapter(sentenciaSQL, ConexionBD.GetConexionBD());
+            adaptador.MissingSchemaAction = MissingSchemaAction.AddWithKey;
+            adaptador.SelectCommand = new OdbcCommand(sentenciaSQL, ConexionBD.GetConexionBD());
+
+            
+            adaptador.SelectCommand.Parameters.Add("@id_usuario", OdbcType.Int).Value = owner.IdUsuario;
+            
+            try
+            {
+                ConexionBD.GetConexionBD().Open();
+                lector = adaptador.SelectCommand.ExecuteReader(); //Execute nonquery requiere una conexion valida y activa por eso se abre. Para fill no se requiere se abre y cierra sola
+                while (lector.Read())
+                {
+                    Mascota m = new Mascota();
+                    m.SetIdmascota(lector.GetInt32(0)); //int
+                    m.SetNomMascota(lector.GetString(1));
+                    m.SetEspecie(lector.GetInt32(2)); //int. Ver si puedo ocupar un JOIN y agregar propiedad con el texto especie
+                    m.SetRaza(lector.GetString(3)); //String
+                    m.SetEdad(lector.GetInt32(4)); //
+                    m.SetGeneroMascota(lector.GetChar(5)); //CHAR
+                    m.SetIdPropietario(lector.GetInt32(6)); //int
+                    m.EstadoMascota = lector.GetInt32(7); //int
+                    //COLOR FALTA
+                    mascotasDueno.Add(m);
+                }
+                MessageBox.Show($"Cantidad de mascotas {mascotasDueno.Count}");
+                return mascotasDueno;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return mascotasDueno;
+            }
+            finally
+            {
+                lector.Close();
+                ConexionBD.GetConexionBD().Close();
+            }
+        }
+
+        public static List<Mascota> GetListaMascotasPropietario(int owner)
+        {
+            //ASEGURARARME QUE EL Usuario sea tipo cliente
+            sentenciaSQL = "SELECT * FROM mascota WHERE id_propietario = ?";
+            mascotasDueno = new List<Mascota>();
+            adaptador = new OdbcDataAdapter(sentenciaSQL, ConexionBD.GetConexionBD());
+            adaptador.MissingSchemaAction = MissingSchemaAction.AddWithKey;
+            adaptador.SelectCommand = new OdbcCommand(sentenciaSQL, ConexionBD.GetConexionBD());
+
+
+            adaptador.SelectCommand.Parameters.Add("@id_usuario", OdbcType.Int).Value = owner;
+
+            try
+            {
+                ConexionBD.GetConexionBD().Open();
+                lector = adaptador.SelectCommand.ExecuteReader(); //Execute nonquery requiere una conexion valida y activa por eso se abre. Para fill no se requiere se abre y cierra sola
+                while (lector.Read())
+                {
+                    Mascota m = new Mascota();
+                    m.SetIdmascota(lector.GetInt32(0)); //int
+                    m.SetNomMascota(lector.GetString(1));
+                    m.SetEspecie(lector.GetInt32(2)); //int. Ver si puedo ocupar un JOIN y agregar propiedad con el texto especie
+                    m.SetRaza(lector.GetString(3)); //String
+                    m.SetEdad(lector.GetInt32(4)); //
+                    m.SetGeneroMascota(lector.GetChar(5)); //CHAR
+                    m.SetIdPropietario(lector.GetInt32(6)); //int
+                    m.EstadoMascota = lector.GetInt32(7); //int
+                    //COLOR FALTA
+                    mascotasDueno.Add(m);
+                }
+                MessageBox.Show($"Cantidad de mascotas {mascotasDueno.Count}");
+                return mascotasDueno;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return mascotasDueno;
+            }
+            finally
+            {
+                lector.Close();
+                ConexionBD.GetConexionBD().Close();
+            }
         }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using Clave1_Grupo2.dao;
+using Clave1_Grupo2.entity;
 using Clave1_Grupo2.util;
 using System;
 using System.Collections.Generic;
@@ -14,22 +15,27 @@ namespace Clave1_Grupo2.gui
 {
     public partial class VtnMascotas : Form
     {
-        
+
+        private Mascota mascotaSeleccionada;
         public VtnMascotas()
         {
-            InitializeComponent();
-            CargarDatos();        
+            InitializeComponent();                    
         }
         
         private void listaMascotas_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
+            mascotaSeleccionada = (Mascota)listaMascotas.SelectedItem;
+            txtNombres.Text = mascotaSeleccionada.GetNomMascota();
+            cbxEspecie.SelectedValue = mascotaSeleccionada.GetEspecie();
+            txtRaza.Text = mascotaSeleccionada.GetRaza();
+            txtEdad.Text = mascotaSeleccionada.GetEdad().ToString();
+            txtGenero.Text = mascotaSeleccionada.GetGeneroMascota().ToString();
+
         }
 
         private void VtnMascotas_Load(object sender, EventArgs e)
         {
-
-
+            CargarDatos();
         }
 
         private void CargarDatos()
@@ -40,8 +46,8 @@ namespace Clave1_Grupo2.gui
             {
                 cbxPropietario.Enabled = false;
                 cbxPropietario.SelectedValue = UsuarioDAO.GetSesion().IdUsuario;
-                Rellenador.CargarDataTableAListBox(listaMascotas, MascotaDAO.GetMascotasPorPropietario(UsuarioDAO.GetSesion().IdUsuario));
-                Rellenador.CargarDataTableACombo(cbxMascotas, MascotaDAO.GetMascotasPorPropietario(UsuarioDAO.GetSesion().IdUsuario), "id_mascota", "nom_mascota");
+                Rellenador.CargarListaPetAListBox(listaMascotas, MascotaDAO.GetListaMascotasOwner(UsuarioDAO.GetSesion()));
+                //Rellenador.CargarListaPetAComboBox(cbxMascotas, MascotaDAO.GetListaMascotasOwner(UsuarioDAO.GetSesion()));
 
             }
             else
@@ -58,8 +64,8 @@ namespace Clave1_Grupo2.gui
 
         private void cbxPropietario_SelectedValueChanged(object sender, EventArgs e)
         {
-            
-            //Rellenador.CargarDataTableAListBox(listaMascotas, MascotaDAO.GetMascotasPorPropietario((int)cbxPropietario.SelectedValue));
+            //ACA ME DA ERROR EL SELECTED VALUE TIPO ENTERO 
+            //Rellenador.CargarListaPetAListBox(listaMascotas, MascotaDAO.GetListaMascotasPropietario((int)cbxPropietario.SelectedValue));
         }
     }
 }

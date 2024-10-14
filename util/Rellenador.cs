@@ -26,47 +26,18 @@ namespace Clave1_Grupo2.util
         }
 
         public static void CargarDataTableAListBox(ListBox lb, DataTable dataTable)
+        {           
+            lb.DataSource = dataTable;            
+        }
+
+        public static void CargarListaPetAListBox(ListBox lb, List<Mascota> lista)
         {
-            //mascotas = new List<Mascota>();
-            /*try
-            {
-
-                lector = new DataTableReader(dataTable);
-                while (lector.Read())
-                {
-                    Mascota mascota = new Mascota();
-                    mascota.SetIdmascota(lector.GetInt32(0));
-                    mascota.SetNomMascota(lector.GetString(1));
-                    mascota.SetEspecie(lector.GetInt32(2)); // Aqui pudiera ocupar el Join para mostrar la especie
-                    mascota.SetRaza(lector.GetString(3));
-                    mascota.SetEdad(lector.GetInt32(4));
-                    mascota.SetGeneroMascota(lector.GetChar(5));
-                    mascota.SetIdPropietario(lector.GetInt32(6));
-                    mascota.EstadoMascota = lector.GetInt32(7);
-                    //FALTARIA EL COLOR                    
-                    mascotas.Add(mascota);
-                }
-                
-
+            lb.DataSource = lista;
         }
-            catch (OdbcException)
-            {
-                MessageBox.Show("Ocurrio un error al leer los datos.");
-            }
-            catch (ArgumentNullException)
-            {
-                MessageBox.Show("El datatable es nulo");
-            }
-            /*finally
-            {
-                //lector.Close();
-                //ConexionBD.GetConexionBD().Close();
-            }*/
-
-            lb.DataSource = dataTable;
-            //cb.DisplayMember = mostrarCampo;
-            //cb.ValueMember = campoId;
-            //cb.SelectedIndex = -1; //0 o -1
+        public static void CargarListaPetAComboBox(ComboBox cb, List<Mascota> lista)
+        {
+            cb.DataSource = lista;
         }
+
     }
 }
