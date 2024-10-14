@@ -258,20 +258,55 @@ namespace Clave1_Grupo2.gui
             {
                 return;
             }
-            cargarDatosProductos();
-            if (mConsultaVenta.agregarVenta(vInsumo))
+            //cargarDatosProductos();
+            //if (mConsultaVenta.agregarVenta(vInsumo))
+            //{
+            //    MessageBox.Show("Datos Guardado con exito.", "Datos", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            //    LimpiarCampos();
+            //}
+
+            // Fragmento guarda el Detalle de Ventas en otra Tabla
+            Venta nuevaVenta = new Venta
             {
-                MessageBox.Show("Datos Guardado con exito.", "Datos", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                fecha = DateTime.Now.ToString("yyyy-MM-dd"),
+                monto_total = Convert.ToDecimal(txtTotal.Text),
+                id_met_pago = cmbMetPago.Text,
+                estado_factura = cmbEstado.Text,
+            };
+
+            if (mConsultaVenta.agregarDetalleVenta(nuevaVenta, dgvRegistros))
+            {
+                MessageBox.Show("Venta Guardada con éxito.", "Venta", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                ActualizarInventarioPorVenta();
                 LimpiarCampos();
             }
+            else
+            {
+                MessageBox.Show("Error al guardar la venta.", "Venta", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
-        private void cargarDatosProductos()
+        private void ActualizarInventarioPorVenta()
         {
-            vInsumo.fecha = dateTimePicker1.Text;
-            vInsumo.monto_total = Convert.ToDecimal(txtTotal.Text);
-            vInsumo.id_met_pago = cmbMetPago.Text;
-            vInsumo.estado_factura = cmbEstado.Text;
+            for (int i = 0; i < dgvRegistros.Rows.Count; i++)
+            {
+                int idInsumo = Convert.ToInt32(dgvRegistros.Rows[i].Cells["Id"].Value);
+                int cantidadVendida = Convert.ToInt32(dgvRegistros.Rows[i].Cells["cantidad"].Value);
+
+                if (!mConsultaVenta.ActualizarStockVenta(idInsumo, cantidadVendida))
+                {
+                    MessageBox.Show("Error al actualizar el inventario del insumo con ID: " + idInsumo, "Ventas", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+
+            MessageBox.Show("Inventario Actualizado con éxito.", "Ventas", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
+        //private void cargarDatosProductos()
+        //{
+        //    vInsumo.fecha = dateTimePicker1.Text;
+        //    vInsumo.monto_total = Convert.ToDecimal(txtTotal.Text);
+        //    vInsumo.id_met_pago = cmbMetPago.Text;
+        //    vInsumo.estado_factura = cmbEstado.Text;
+        //}
         private bool validarCampos()
         {
             if (cmbIdCliente.Text.Trim().Equals(""))

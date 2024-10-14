@@ -63,7 +63,29 @@ namespace Clave1_Grupo2.entity
                 MessageBox.Show($"Error al guardar en la base de datos: {ex.Message}");
                 return false;
             }
-        }       
+        }
+
+        // Actualizar el Inventario de los Insumos
+        internal bool ActualizarStockCompra(int idInsumo, int cantidadComprada)
+        {
+            string UPDATE = "UPDATE insumo SET existencias_insumo = existencias_insumo + @cantidadComprada WHERE id_insumo = @idInsumo";
+
+            try
+            {
+                MySqlCommand mCommand = new MySqlCommand(UPDATE, cConexion.GetConexion());
+                mCommand.Parameters.AddWithValue("@cantidadComprada", cantidadComprada);
+                mCommand.Parameters.AddWithValue("@idInsumo", idInsumo);
+
+                return mCommand.ExecuteNonQuery() > 0;
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show($"Error al actualizar el inventario por compra: {ex.Message}");
+                return false;
+            }
+        }
+        // Fin......
+
     }
 }
 

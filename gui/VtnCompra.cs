@@ -58,10 +58,25 @@ namespace Clave1_Grupo2.gui
                 return;
             }
             cargarDatosProductos();
+            // Guarda la Compra
             if (mConsultaCompra.agregarCompra(cInsumo))
             {
-                MessageBox.Show("Datos Guardado con exito.", "Datos", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                LimpiarCampos();
+                MessageBox.Show("Compra Guardada con éxito.", "Datos", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                // Actualizar el Inventario despues de la Compra
+                if (mConsultaCompra.ActualizarStockCompra(cInsumo.id_insumo, cInsumo.cantidad))
+                {
+                    MessageBox.Show("Stock actualizado con éxito.", "Datos", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    LimpiarCampos();
+                }
+                else
+                {
+                    MessageBox.Show("Error al actualizar el stock.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Error al Guardar la Compra.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
         }
