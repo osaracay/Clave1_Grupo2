@@ -22,16 +22,16 @@ namespace Clave1_Grupo2
         }
         private void lblSesion_Click(object sender, EventArgs e)
         {
-            if (UsuarioDAO.getSesion() != null)
+            if (UsuarioDAO.GetSesion() != null)
             {
-                UsuarioDAO.setSesion(null);
+                UsuarioDAO.SetSesion(null);
                 GestorVentanas.SolicitarInicioSesion();
             }                       
         }
 
         private void btnAgregarMascota_Click(object sender, EventArgs e)
         {
-            if (UsuarioDAO.getSesion() != null)
+            if (UsuarioDAO.GetSesion() != null)
             {
                 GestorVentanas.AbrirAgregarMascota();
             }
@@ -44,7 +44,7 @@ namespace Clave1_Grupo2
         }
         private void btnAgendar_Click(object sender, EventArgs e)
         {
-            if (UsuarioDAO.getSesion() != null)
+            if (UsuarioDAO.GetSesion() != null)
             {
                 GestorVentanas.AbrirAgendarCita();
             }
@@ -58,7 +58,7 @@ namespace Clave1_Grupo2
 
         private void btnMisMascotas_Click(object sender, EventArgs e)
         {
-            if (UsuarioDAO.getSesion() != null)
+            if (UsuarioDAO.GetSesion() != null)
             {
                 GestorVentanas.AbrirVtnMascotas();
             }
@@ -73,7 +73,7 @@ namespace Clave1_Grupo2
 
         private void btnCitas_Click(object sender, EventArgs e)
         {
-            if (UsuarioDAO.getSesion() != null)
+            if (UsuarioDAO.GetSesion() != null)
             {
                 GestorVentanas.AbrirVtnCitas();
             }
@@ -88,7 +88,7 @@ namespace Clave1_Grupo2
         private void btnInsumos_Click(object sender, EventArgs e)
         {
             ////DEBES SER USUARIO VET o ADMINISTRADOR PARA ACCEDER
-            if (UsuarioDAO.getSesion() != null)
+            if (UsuarioDAO.GetSesion() != null)
             {
                 GestorVentanas.AbrirInsumo();
             }
@@ -104,7 +104,7 @@ namespace Clave1_Grupo2
         private void btnCompra_Click(object sender, EventArgs e)
         {
             //DEBES SER USUARIO VET o ADMINISTRADOR PARA ACCEDER
-            if (UsuarioDAO.getSesion() != null)
+            if (UsuarioDAO.GetSesion() != null)
             {
                 GestorVentanas.AbrirCompra();
             }
@@ -119,7 +119,7 @@ namespace Clave1_Grupo2
         private void btnVenta_Click(object sender, EventArgs e)
         {
             //DEBES SER USUARIO VET o ADMINISTRADOR PARA ACCEDER
-            if (UsuarioDAO.getSesion() != null)
+            if (UsuarioDAO.GetSesion() != null)
             {
                 GestorVentanas.AbrirVenta();
             }
@@ -152,7 +152,7 @@ namespace Clave1_Grupo2
 
         private void lblMiPerfil_Click(object sender, EventArgs e)
         {
-            if (UsuarioDAO.getSesion() != null)
+            if (UsuarioDAO.GetSesion() != null)
             {
                 GestorVentanas.AbrirMiPerfil();
             }

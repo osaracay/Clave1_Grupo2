@@ -21,9 +21,9 @@ namespace Clave1_Grupo2.gui
         private void btnLogin_Click(object sender, System.EventArgs e)
         {
             if(FormularioLleno() && UsuarioDAO.AutenticarUsuario(txtUsuario.Text, CyberSec.HolaCosmos(txtPassword.Text))){
-                if(UsuarioDAO.getSesion() != null) {
+                if(UsuarioDAO.GetSesion() != null) {
                     //DA ERROR SI EL USUARIO NO EXISTE
-                    MessageBox.Show($"Bienvenido {UsuarioDAO.getSesion().Nombre} {UsuarioDAO.getSesion().Apellido}");
+                    MessageBox.Show($"Bienvenido {UsuarioDAO.GetSesion().Nombre} {UsuarioDAO.GetSesion().Apellido}");
                     this.Close();
                 }
                 else

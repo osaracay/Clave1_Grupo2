@@ -18,7 +18,6 @@ namespace Clave1_Grupo2.dao
 
         private static DataTable pets;
         private static string sentenciaSQL;
-        private static string consulta;
         private static OdbcDataAdapter adaptador;
         public static bool RegistrarMascota(Mascota pet)
         {

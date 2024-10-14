@@ -21,10 +21,10 @@ namespace Clave1_Grupo2.gui
             Rellenador.CargarDataTableACombo(cbxEspecie, CatDAO.GetEspecie(), "id_especie", "nom_especie");
             Rellenador.CargarDataTableACombo(cbxPropietario, UsuarioDAO.GetTblClientes(), "id_usuario", "nombre");
             //Si el usuario es Cliente el cbxPropietario quedara deshabilitado y el cliente seleccionado
-            if (UsuarioDAO.getSesion().TipoUsuario == 3)
+            if (UsuarioDAO.GetSesion().TipoUsuario == 3)
             {
                 cbxPropietario.Enabled = false;
-                cbxPropietario.SelectedValue = UsuarioDAO.getSesion().IdUsuario;
+                cbxPropietario.SelectedValue = UsuarioDAO.GetSesion().IdUsuario;
             } else {
                 //si el usuario es vet o admin el cbxPropietario estara habilitados
                 cbxPropietario.Enabled = true;

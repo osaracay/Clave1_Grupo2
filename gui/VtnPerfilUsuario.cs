@@ -36,13 +36,13 @@ namespace Clave1_Grupo2.gui
             txtNewPw.Hide();
             txtConfirmPw.Hide();
             //Cargar nombre usuario
-            txtNombre.Text = $"{UsuarioDAO.getSesion().Username}";
-            if (UsuarioDAO.getSesion().Genero == 'M')
+            txtNombre.Text = $"{UsuarioDAO.GetSesion().Username}";
+            if (UsuarioDAO.GetSesion().Genero == 'M')
             {
                 txtNombre.Text += "♂";
                 txtNombre.ForeColor = Color.Blue;
             }
-            else if (UsuarioDAO.getSesion().Genero == 'F')
+            else if (UsuarioDAO.GetSesion().Genero == 'F')
             {
                 txtNombre.Text += "♀";
                 txtNombre.ForeColor = Color.LightPink;
@@ -53,17 +53,17 @@ namespace Clave1_Grupo2.gui
             }
 
             //Cargar nombre
-            txtNombres.Text = UsuarioDAO.getSesion().Nombre;
+            txtNombres.Text = UsuarioDAO.GetSesion().Nombre;
             txtNombres.Enabled = false;
             //Cargar apellido
-            txtApellidos.Text = UsuarioDAO.getSesion().Apellido;
+            txtApellidos.Text = UsuarioDAO.GetSesion().Apellido;
             txtApellidos.Enabled = false;
             //Cargar email
-            txtEmail.Text = UsuarioDAO.getSesion().Email;
+            txtEmail.Text = UsuarioDAO.GetSesion().Email;
             txtEmail.Enabled = false; //Activar al editar perfil
             //Cargar Fecha nacimiento
-            campoFechaNac.Value = UsuarioDAO.getSesion().FechaNac;
-            txtEdad.Text = $"Edad {Validacion.CalcularEdad(UsuarioDAO.getSesion().FechaNac)}";
+            campoFechaNac.Value = UsuarioDAO.GetSesion().FechaNac;
+            txtEdad.Text = $"Edad {Validacion.CalcularEdad(UsuarioDAO.GetSesion().FechaNac)}";
             campoFechaNac.Enabled = false;
         }
         private void btnMisMascotas_Click(object sender, EventArgs e)
@@ -92,14 +92,14 @@ namespace Clave1_Grupo2.gui
             camposValidos = camposValidos && contraCoincide(txtConfirmPw);
             if (camposValidos) {
                 //Realizar un update usando la clase UsuarioDAO
-                UsuarioDAO.ActualizarDatosUsuario(UsuarioDAO.getSesion(), txtNombres.Text, txtApellidos.Text, txtEmail.Text, campoFechaNac.Value);
+                UsuarioDAO.ActualizarDatosUsuario(UsuarioDAO.GetSesion(), txtNombres.Text, txtApellidos.Text, txtEmail.Text, campoFechaNac.Value);
 
 
                 //Actualizar el usuario sesion con los nuevos datos
                 //MessageBox.Show("Informacion de usuario actualizada exitosamente\nPara visualizar los cambios vuelva a iniciar sesion");                
                 //Aprovechando que tengo la . del usuario en txtConfirmPw y que el metodo autenticar usuario actualiza las propiedades del Usuario
                 //ya no hace falta cerrar sesion y volverla a abrir
-                UsuarioDAO.AutenticarUsuario(UsuarioDAO.getSesion().Username,CyberSec.HolaCosmos(txtConfirmPw.Text));                 
+                UsuarioDAO.AutenticarUsuario(UsuarioDAO.GetSesion().Username,CyberSec.HolaCosmos(txtConfirmPw.Text));                 
                 txtConfirmPw.Clear(); //Luego limpio el campo
                 //Volver a cargar datos de usuario al terminar el update
                 CargarDatosUsuario();
@@ -127,7 +127,7 @@ namespace Clave1_Grupo2.gui
         //RECIBE el textbox con . a evaluar 
         private bool contraCoincide(TextBox tbpw)
         {
-            if (CyberSec.HolaCosmos(tbpw.Text).Equals(UsuarioDAO.Olvidaste(UsuarioDAO.getSesion().Username)))
+            if (CyberSec.HolaCosmos(tbpw.Text).Equals(UsuarioDAO.Olvidaste(UsuarioDAO.GetSesion().Username)))
             { //El metodo olvidaste le pasas el nombre de usuario como argumento y te devuelve la pw en la BD, por eso la llamamos desde UsuarioDAO
                 return true;
             }
@@ -148,7 +148,7 @@ namespace Clave1_Grupo2.gui
             //Si la contrasena ingresada es igual a la registrada por el usuario activo
             if (camposValidos)
             {
-                UsuarioDAO.ActualizarLlaveCliente(UsuarioDAO.getSesion(), CyberSec.HolaCosmos(txtNewPw.Text));
+                UsuarioDAO.ActualizarLlaveCliente(UsuarioDAO.GetSesion(), CyberSec.HolaCosmos(txtNewPw.Text));
                 //AL TERMINAR EL UPDATE VOLVER A CARGAR DATOS DE USUARIO
                 txtUsrPw.Clear();
                 txtNewPw.Clear();

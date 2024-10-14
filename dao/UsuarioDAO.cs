@@ -28,12 +28,12 @@ namespace Clave1_Grupo2.dao
         //PARA CREAR Y ACCEDER AL Colaborador Sesion
         /*
          * Al parecer no utilizare este de momento*/
-        public static void setSesion(Usuario c)
+        public static void SetSesion(Usuario c)
         {
             sesion = c;
         }
         
-        public static Usuario getSesion()
+        public static Usuario GetSesion()
         {
             return sesion;
         }

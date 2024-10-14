@@ -36,12 +36,12 @@ namespace Clave1_Grupo2.gui
         {
             Rellenador.CargarDataTableACombo(cbxEspecie, CatDAO.GetEspecie(), "id_especie", "nom_especie");
             Rellenador.CargarDataTableACombo(cbxPropietario, UsuarioDAO.GetTblClientes(), "id_usuario", "nombre");
-            if (UsuarioDAO.getSesion().TipoUsuario == 3)
+            if (UsuarioDAO.GetSesion().TipoUsuario == 3)
             {
                 cbxPropietario.Enabled = false;
-                cbxPropietario.SelectedValue = UsuarioDAO.getSesion().IdUsuario;
-                Rellenador.CargarDataTableAListBox(listaMascotas, MascotaDAO.GetMascotasPorPropietario(UsuarioDAO.getSesion().IdUsuario));
-                Rellenador.CargarDataTableACombo(cbxMascotas, MascotaDAO.GetMascotasPorPropietario(UsuarioDAO.getSesion().IdUsuario), "id_mascota", "nom_mascota");
+                cbxPropietario.SelectedValue = UsuarioDAO.GetSesion().IdUsuario;
+                Rellenador.CargarDataTableAListBox(listaMascotas, MascotaDAO.GetMascotasPorPropietario(UsuarioDAO.GetSesion().IdUsuario));
+                Rellenador.CargarDataTableACombo(cbxMascotas, MascotaDAO.GetMascotasPorPropietario(UsuarioDAO.GetSesion().IdUsuario), "id_mascota", "nom_mascota");
 
             }
             else
