@@ -88,7 +88,6 @@ namespace Clave1_Grupo2.gui
             txtColor.Clear();
             txtEdadMascota.Clear();
             txtRaza.Clear();
-            cbxPropietario.SelectedIndex = -1;
             cbxEspecie.SelectedIndex = -1;
         }
 
