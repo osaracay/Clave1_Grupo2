@@ -95,14 +95,13 @@ namespace Clave1_Grupo2.dao
         public static List<Mascota> GetListaMascotasOwner(Usuario owner)
         {
             //ASEGURARARME QUE EL Usuario sea tipo cliente
-            if (owner.TipoUsuario == 3) //Aqui 
+            if (owner.TipoUsuario == 3) //Aqui puede suceder un relajo si le paso un Usuario de tipo distinto de 3
             {           
             sentenciaSQL = "SELECT * FROM mascota WHERE id_propietario = ?";
             mascotasDueno = new List<Mascota>();
             adaptador = new OdbcDataAdapter(sentenciaSQL, ConexionBD.GetConexionBD());
             adaptador.MissingSchemaAction = MissingSchemaAction.AddWithKey;
             adaptador.SelectCommand = new OdbcCommand(sentenciaSQL, ConexionBD.GetConexionBD());
-
             
             adaptador.SelectCommand.Parameters.Add("@id_usuario", OdbcType.Int).Value = owner.IdUsuario;
             }
@@ -140,14 +139,13 @@ namespace Clave1_Grupo2.dao
             {
                 if (lector != null)
                 {
-                }
-                lector.Close();
-                                
+                    lector.Close();
+                }                                                
                 ConexionBD.GetConexionBD().Close();
             }
         }
 
-        public static List<Mascota> GetListaMascotasPropietario(int owner)
+        public static List<Mascota> GetListaMascotasOwner(int owner)
         {
             //ASEGURARARME QUE EL Usuario sea tipo cliente
             sentenciaSQL = "SELECT * FROM mascota WHERE id_propietario = ?";
@@ -174,13 +172,14 @@ namespace Clave1_Grupo2.dao
                     //COLOR FALTA
                     mascotasDueno.Add(m);
                 }
-                MessageBox.Show($"Cantidad de mascotas {mascotasDueno.Count}");
-                //Colocandolo aqui porque al llamarlo desde VtnMascotas en selected index changed
+                ConexionBD.GetConexionBD().Close();
+                //MessageBox.Show($"Cantidad de mascotas {mascotasDueno.Count}");
+                //Colocandolo aqui el cerrar conexion porque al llamarlo desde VtnMascotas en selected index changed
                 //la primera vez que se selecciona un indice desde cuenta administrador dice que
                 //la base de datos no se cierra pero la ejecucion continua
                 //A pesar que hay un bloque Finally pero la excepcion ocurre antes del mensaje anterior
                 //Y aqui lo pongo despues del mensaje 
-                ConexionBD.GetConexionBD().Close();
+                
                 return mascotasDueno;
             }
             catch (Exception ex)

@@ -65,7 +65,7 @@ namespace Clave1_Grupo2.gui
                 if (UsuarioDAO.GetSesion().TipoUsuario != 3 && cbxPropietario.SelectedValue != null && cbxPropietario.SelectedIndex >=0 && cbxPropietario.SelectedValue.GetType() != Type.GetType("System.Data.DataRowView"))
                 {
                     //MessageBox.Show($"El texto seleccionado es {cbxPropietario.Text} - el valor o id Usuario {cbxPropietario.SelectedValue} y el index en el que se encuentra {cbxPropietario.SelectedIndex}");
-                    Rellenador.CargarListaPetAListBox(listaMascotas, MascotaDAO.GetListaMascotasPropietario((int)cbxPropietario.SelectedValue));
+                    Rellenador.CargarListaPetAListBox(listaMascotas, MascotaDAO.GetListaMascotasOwner((int)cbxPropietario.SelectedValue));
                 }
             }
             catch (Exception)

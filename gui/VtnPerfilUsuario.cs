@@ -35,6 +35,7 @@ namespace Clave1_Grupo2.gui
             txtUsrPw.Hide();
             txtNewPw.Hide();
             txtConfirmPw.Hide();
+            btnCancelar.Hide();
             //Cargar nombre usuario
             txtNombre.Text = $"{UsuarioDAO.GetSesion().Username}";
             if (UsuarioDAO.GetSesion().Genero == 'M')
@@ -80,6 +81,7 @@ namespace Clave1_Grupo2.gui
             campoFechaNac.Enabled = true;
             lblConfirmPw.Show();
             txtConfirmPw.Show();
+            btnCancelar.Show();
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
@@ -170,6 +172,7 @@ namespace Clave1_Grupo2.gui
             txtUsrPw.Show();
             txtNewPw.Show();
             txtConfirmPw.Show();
+            btnCancelar.Show();
         }
 
         private void btnAgregarMascota_Click(object sender, EventArgs e)
@@ -185,6 +188,11 @@ namespace Clave1_Grupo2.gui
         private void btnCitas_Click(object sender, EventArgs e)
         {
             GestorVentanas.AbrirVtnCitas();
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            CargarDatosUsuario();
         }
     }
 }

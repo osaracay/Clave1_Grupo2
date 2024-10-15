@@ -86,7 +86,7 @@ namespace Clave1_Grupo2.gui
             // 
             this.txtEdadMascota.BackColor = System.Drawing.SystemColors.InactiveCaptionText;
             this.txtEdadMascota.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEdadMascota.ForeColor = System.Drawing.SystemColors.InactiveCaption;
+            this.txtEdadMascota.ForeColor = System.Drawing.Color.White;
             this.txtEdadMascota.Location = new System.Drawing.Point(467, 136);
             this.txtEdadMascota.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtEdadMascota.MaxLength = 3;
@@ -143,7 +143,7 @@ namespace Clave1_Grupo2.gui
             // 
             this.txtRaza.BackColor = System.Drawing.SystemColors.InactiveCaptionText;
             this.txtRaza.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtRaza.ForeColor = System.Drawing.SystemColors.InactiveCaption;
+            this.txtRaza.ForeColor = System.Drawing.Color.White;
             this.txtRaza.Location = new System.Drawing.Point(467, 103);
             this.txtRaza.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtRaza.MaxLength = 20;
@@ -155,7 +155,7 @@ namespace Clave1_Grupo2.gui
             // 
             this.txtNombreMascota.BackColor = System.Drawing.SystemColors.InactiveCaptionText;
             this.txtNombreMascota.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNombreMascota.ForeColor = System.Drawing.SystemColors.InactiveCaption;
+            this.txtNombreMascota.ForeColor = System.Drawing.Color.White;
             this.txtNombreMascota.Location = new System.Drawing.Point(467, 44);
             this.txtNombreMascota.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtNombreMascota.MaxLength = 25;
@@ -240,7 +240,7 @@ namespace Clave1_Grupo2.gui
             // 
             this.cbxPropietario.BackColor = System.Drawing.SystemColors.InactiveCaptionText;
             this.cbxPropietario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbxPropietario.ForeColor = System.Drawing.SystemColors.InactiveCaption;
+            this.cbxPropietario.ForeColor = System.Drawing.Color.White;
             this.cbxPropietario.FormattingEnabled = true;
             this.cbxPropietario.Location = new System.Drawing.Point(467, 17);
             this.cbxPropietario.Name = "cbxPropietario";
@@ -251,7 +251,7 @@ namespace Clave1_Grupo2.gui
             // 
             this.cbxEspecie.BackColor = System.Drawing.SystemColors.InactiveCaptionText;
             this.cbxEspecie.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbxEspecie.ForeColor = System.Drawing.SystemColors.InactiveCaption;
+            this.cbxEspecie.ForeColor = System.Drawing.Color.White;
             this.cbxEspecie.FormattingEnabled = true;
             this.cbxEspecie.Location = new System.Drawing.Point(467, 75);
             this.cbxEspecie.Name = "cbxEspecie";
@@ -273,7 +273,7 @@ namespace Clave1_Grupo2.gui
             // 
             this.txtColor.BackColor = System.Drawing.SystemColors.InactiveCaptionText;
             this.txtColor.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtColor.ForeColor = System.Drawing.SystemColors.InactiveCaption;
+            this.txtColor.ForeColor = System.Drawing.Color.White;
             this.txtColor.Location = new System.Drawing.Point(467, 169);
             this.txtColor.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtColor.MaxLength = 25;
