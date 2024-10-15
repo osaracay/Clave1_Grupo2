@@ -305,7 +305,7 @@ namespace Clave1_Grupo2.gui
             {
                 fecha = DateTime.Now.ToString("yyyy-MM-dd"),
                 monto_total = Convert.ToDecimal(txtTotal.Text),
-                id_met_pago = cmbMetPago.Text,
+                id_met_pago = (int)cmbMetPago.SelectedValue,
                 estado_factura = cmbEstado.Text,
             };
 

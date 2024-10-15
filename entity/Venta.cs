@@ -15,7 +15,7 @@ namespace Clave1_Grupo2.entity
         public int id_factura { get; set; } // Mismo para Detalle de Venta // Quitar
         public string fecha { get; set; }
         public decimal monto_total { get; set; }
-        public string id_met_pago { get; set; } // Falta que sea por Id, actual se carga el nombre
+        public int id_met_pago { get; set; } // Falta que sea por Id, actual se carga el nombre
         public string estado_factura { get; set; }
 
         // Detalle de Venta
