@@ -187,7 +187,7 @@ namespace Clave1_Grupo2.gui
                 MessageBox.Show($"Stock Insuficiente. Solo hay {double.Parse(txtStock.Text)} unidades disponibles.", "Venta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
-            return false;
+            return true;
         }
         private void ActualizarTotales()
         {
