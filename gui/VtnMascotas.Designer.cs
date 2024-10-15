@@ -51,7 +51,6 @@ namespace Clave1_Grupo2.gui
             this.cbxEspecie = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.cbxMascotas = new System.Windows.Forms.ComboBox();
             this.txtGenero = new System.Windows.Forms.TextBox();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbxFotoPerfil)).BeginInit();
@@ -164,7 +163,7 @@ namespace Clave1_Grupo2.gui
             this.txtNombres.MaxLength = 30;
             this.txtNombres.Name = "txtNombres";
             this.txtNombres.Size = new System.Drawing.Size(308, 29);
-            this.txtNombres.TabIndex = 79;
+            this.txtNombres.TabIndex = 3;
             // 
             // lblEdad
             // 
@@ -187,7 +186,7 @@ namespace Clave1_Grupo2.gui
             this.txtRaza.MaxLength = 25;
             this.txtRaza.Name = "txtRaza";
             this.txtRaza.Size = new System.Drawing.Size(308, 29);
-            this.txtRaza.TabIndex = 76;
+            this.txtRaza.TabIndex = 5;
             // 
             // label1
             // 
@@ -232,7 +231,7 @@ namespace Clave1_Grupo2.gui
             this.txtEdad.MaxLength = 30;
             this.txtEdad.Name = "txtEdad";
             this.txtEdad.Size = new System.Drawing.Size(107, 29);
-            this.txtEdad.TabIndex = 87;
+            this.txtEdad.TabIndex = 6;
             // 
             // txtColorMascota
             // 
@@ -244,7 +243,7 @@ namespace Clave1_Grupo2.gui
             this.txtColorMascota.MaxLength = 25;
             this.txtColorMascota.Name = "txtColorMascota";
             this.txtColorMascota.Size = new System.Drawing.Size(308, 29);
-            this.txtColorMascota.TabIndex = 86;
+            this.txtColorMascota.TabIndex = 8;
             // 
             // cbxPropietario
             // 
@@ -255,9 +254,8 @@ namespace Clave1_Grupo2.gui
             this.cbxPropietario.Location = new System.Drawing.Point(324, 15);
             this.cbxPropietario.Name = "cbxPropietario";
             this.cbxPropietario.Size = new System.Drawing.Size(308, 26);
-            this.cbxPropietario.TabIndex = 89;
+            this.cbxPropietario.TabIndex = 1;
             this.cbxPropietario.SelectedIndexChanged += new System.EventHandler(this.cbxPropietario_SelectedIndexChanged);
-            this.cbxPropietario.SelectedValueChanged += new System.EventHandler(this.cbxPropietario_SelectedValueChanged);
             // 
             // label4
             // 
@@ -273,13 +271,13 @@ namespace Clave1_Grupo2.gui
             // cbxEspecie
             // 
             this.cbxEspecie.BackColor = System.Drawing.SystemColors.InactiveCaptionText;
-            this.cbxEspecie.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbxEspecie.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbxEspecie.ForeColor = System.Drawing.SystemColors.InactiveCaption;
             this.cbxEspecie.FormattingEnabled = true;
             this.cbxEspecie.Location = new System.Drawing.Point(324, 92);
             this.cbxEspecie.Name = "cbxEspecie";
-            this.cbxEspecie.Size = new System.Drawing.Size(308, 26);
-            this.cbxEspecie.TabIndex = 91;
+            this.cbxEspecie.Size = new System.Drawing.Size(308, 30);
+            this.cbxEspecie.TabIndex = 4;
             // 
             // label5
             // 
@@ -303,17 +301,6 @@ namespace Clave1_Grupo2.gui
             this.dataGridView1.Size = new System.Drawing.Size(388, 150);
             this.dataGridView1.TabIndex = 93;
             // 
-            // cbxMascotas
-            // 
-            this.cbxMascotas.BackColor = System.Drawing.SystemColors.InactiveCaptionText;
-            this.cbxMascotas.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbxMascotas.ForeColor = System.Drawing.SystemColors.InactiveCaption;
-            this.cbxMascotas.FormattingEnabled = true;
-            this.cbxMascotas.Location = new System.Drawing.Point(324, 251);
-            this.cbxMascotas.Name = "cbxMascotas";
-            this.cbxMascotas.Size = new System.Drawing.Size(308, 26);
-            this.cbxMascotas.TabIndex = 94;
-            // 
             // txtGenero
             // 
             this.txtGenero.BackColor = System.Drawing.SystemColors.InactiveCaptionText;
@@ -324,7 +311,7 @@ namespace Clave1_Grupo2.gui
             this.txtGenero.MaxLength = 30;
             this.txtGenero.Name = "txtGenero";
             this.txtGenero.Size = new System.Drawing.Size(107, 29);
-            this.txtGenero.TabIndex = 95;
+            this.txtGenero.TabIndex = 7;
             // 
             // VtnMascotas
             // 
@@ -333,7 +320,6 @@ namespace Clave1_Grupo2.gui
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.txtGenero);
-            this.Controls.Add(this.cbxMascotas);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.cbxEspecie);
@@ -392,7 +378,6 @@ namespace Clave1_Grupo2.gui
         private System.Windows.Forms.ComboBox cbxEspecie;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.ComboBox cbxMascotas;
         private System.Windows.Forms.TextBox txtGenero;
     }
 }

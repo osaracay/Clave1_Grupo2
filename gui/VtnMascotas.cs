@@ -59,13 +59,21 @@ namespace Clave1_Grupo2.gui
 
         private void cbxPropietario_SelectedIndexChanged(object sender, EventArgs e)
         {
-            //Rellenador.CargarDataTableAListBox(listaMascotas, MascotaDAO.GetMascotasPorPropietario((int)cbxPropietario.SelectedValue));
-        }
 
-        private void cbxPropietario_SelectedValueChanged(object sender, EventArgs e)
-        {
-            //ACA ME DA ERROR EL SELECTED VALUE TIPO ENTERO 
-            //Rellenador.CargarListaPetAListBox(listaMascotas, MascotaDAO.GetListaMascotasPropietario((int)cbxPropietario.SelectedValue));
+            try
+            {
+                if (UsuarioDAO.GetSesion().TipoUsuario != 3 && cbxPropietario.SelectedValue != null && cbxPropietario.SelectedIndex >=0 && cbxPropietario.SelectedValue.GetType() != Type.GetType("System.Data.DataRowView"))
+                {
+                    //MessageBox.Show($"El texto seleccionado es {cbxPropietario.Text} - el valor o id Usuario {cbxPropietario.SelectedValue} y el index en el que se encuentra {cbxPropietario.SelectedIndex}");
+                    Rellenador.CargarListaPetAListBox(listaMascotas, MascotaDAO.GetListaMascotasPropietario((int)cbxPropietario.SelectedValue));
+                }
+            }
+            catch (Exception)
+            {
+                //ACA ME DA ERROR EL SELECTED VALUE TIPO ENTERO 
+                //Rellenador.CargarListaPetAListBox(listaMascotas, MascotaDAO.GetListaMascotasPropietario((int)cbxPropietario.SelectedValue));
+                //Rellenador.CargarDataTableAListBox(listaMascotas, MascotaDAO.GetMascotasPorPropietario((int)cbxPropietario.SelectedValue));
+            }
         }
     }
 }

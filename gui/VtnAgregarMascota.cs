@@ -61,7 +61,7 @@ namespace Clave1_Grupo2.gui
                     $"propietario {pet.GetIdPropietario()}\n");
                 MascotaDAO.RegistrarMascota(pet);
                 
-
+                //TAMBIEN QUIERO VOLVER A CARGAR LA LISTA DE MASCOTAS DEL DUENO
                 LimpiarCampos();
 
                 //this.Close();
