@@ -159,6 +159,7 @@ namespace Clave1_Grupo2.gui
                 MessageBox.Show("Error al Agregar el Insumo: " + ex.Message);
             }
         }
+        //Ejecuta validacion de stock actual by MiltonAgDev
         private bool ValidarStockActual()
         {
             // Validar si el campo esta vacio
