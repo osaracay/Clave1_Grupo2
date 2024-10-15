@@ -134,6 +134,11 @@ namespace Clave1_Grupo2.gui
         }
         private void btnAgregar_Click(object sender, EventArgs e)
         {
+            if (!ValidarStockActual())
+            {
+                return;
+            }
+
             try
             {
                 int n = dgvRegistros.Rows.Count + 1;
@@ -153,6 +158,35 @@ namespace Clave1_Grupo2.gui
             {
                 MessageBox.Show("Error al Agregar el Insumo: " + ex.Message);
             }
+        }
+        private bool ValidarStockActual()
+        {
+            // Validar si el campo esta vacio
+            if (txtCantidad.Text.Trim().Equals(""))
+            {
+                MessageBox.Show("Debe ingresar una Cantidad válida.", "Venta", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            // Validar si la cantidad solicitada es negativa
+            if (double.Parse(txtStock.Text) < 0)
+            {
+                MessageBox.Show("Cantidad no puede ser negativa. Por favor, ingrese un valor válido.", "Venta", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            // Validar si no hay stock suficiente
+            if (double.Parse(txtStock.Text) == 0)
+            {
+                MessageBox.Show("No hay stock disponible para este Items.", "Venta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+
+            // Validar si la cantidad solicitada supera el stock disponible
+            if (double.Parse(txtCantidad.Text) > double.Parse(txtStock.Text))
+            {
+                MessageBox.Show($"Stock Insuficiente. Solo hay {double.Parse(txtStock.Text)} unidades disponibles.", "Venta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+            return false;
         }
         private void ActualizarTotales()
         {
