@@ -37,7 +37,7 @@ namespace Clave1_Grupo2.dao
         {
             return sesion;
         }
-
+        //POLIMORFISMO: Aqui es donde se decidira si crear un cliente, vet, o admin segun el tipo de usuario
         public static bool AutenticarUsuario(string usuario, string haspw)
         {
             //haspw es hashed pw
@@ -58,7 +58,7 @@ namespace Clave1_Grupo2.dao
                 lector = adaptador.SelectCommand.ExecuteReader();
                 while (lector.Read())
                 {
-                    sesion = new Usuario();
+                    sesion = new Usuario(); 
                     sesion.IdUsuario = lector.GetInt32(0);
                     sesion.Nombre= lector.GetString(1);
                     sesion.Apellido = lector.GetString(2);
@@ -126,7 +126,7 @@ namespace Clave1_Grupo2.dao
                 ConexionBD.GetConexionBD().Close();
             }            
         }
-
+        //RENOMBRAR CLIENTE A USUARIO
         public static bool RegistrarCliente(Usuario c, int tipoUsuario)
         {
             string sentenciaSQL = "INSERT INTO usuario (nombre, " +
@@ -242,6 +242,8 @@ namespace Clave1_Grupo2.dao
 
         public static DataTable GetTblClientes()
         {
+            //CONSIDERAR QUE ESTE METODO REGRESE UNA LISTA DE CLIENTES O CREAR UN NUEVO METODO GetListaClientes
+            //O UTILIZAR LINQ PARA HACER CONSULTAS A LOS DATATABLE
             consulta = "SELECT * FROM usuario WHERE tipo_usuario=3"; // El tipo de usuario clientes corresponde al tipo 3
             if (clientes == null)
             {

@@ -122,7 +122,7 @@ namespace Clave1_Grupo2.gui
         {
             //Realizar update con MascotaDAO
             MascotaDAO.ActualizarDatosMascota(mascotaSeleccionada,txtNombres.Text,cbxEspecie.SelectedIndex,
-                txtRaza.Text,int.Parse(txtEdad.Text),char.Parse(txtGenero.Text),txtColorMascota.Text);
+                txtRaza.Text,int.Parse(txtEdad.Text),char.Parse(txtGenero.Text.ToUpper()),txtColorMascota.Text);
             //LimpiarCampos(); de momento si cambio el item seleccionado y selecciono el que modifique no muestra los cambios hasta reabrir la ventana
             Rellenador.CargarListaPetAListBox(listaMascotas, MascotaDAO.GetListaMascotasOwner((int)cbxPropietario.SelectedValue)); //Ahora si
             InhabilitarCampos();
@@ -131,6 +131,18 @@ namespace Clave1_Grupo2.gui
         private void txtEdad_TextChanged(object sender, EventArgs e)
         {
             Validacion.CampoNumEntero(txtEdad, lblEdadValida);
+        }
+
+        private void txtGenero_TextChanged(object sender, EventArgs e)
+        {
+            if(txtGenero.Text.ToUpper() == "M" || txtGenero.Text.ToUpper() == "F" || txtGenero.Text.ToUpper() == "X")
+            {
+
+            }
+            else
+            {
+                txtGenero.Clear();
+            }
         }
     }
 }
