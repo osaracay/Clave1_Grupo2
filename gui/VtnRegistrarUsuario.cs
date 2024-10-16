@@ -9,9 +9,19 @@ namespace Clave1_Grupo2.gui
     public partial class VtnRegistrarUsuario : Form
     {
         private Usuario nuevoUsuario;
+        private int tipoNvoUsuario;
         public VtnRegistrarUsuario()
         {
             InitializeComponent();
+            if (UsuarioDAO.GetSesion() != null && UsuarioDAO.GetSesion().TipoUsuario == 1)
+            {
+                //Habilitar registro de admins y veterinarios
+                grpTipoUsuario.Show();
+            }
+            else
+            {
+                grpTipoUsuario.Hide();
+            }
         }
 
 
@@ -35,11 +45,22 @@ namespace Clave1_Grupo2.gui
                 }else
                 {
                     genero = 'X';
-                }                                
+                }
+                if (chkAdmin.Checked)
+                {
+                    tipoNvoUsuario = 1;
+                }else if (chkVet.Checked) 
+                {
+                    tipoNvoUsuario = 2;
+                }
+                else
+                {
+                    tipoNvoUsuario = 3;
+                }
                 nuevoUsuario = new Usuario(txtNombres.Text, txtApellidos.Text, (DateTime)campoFechaNac.Value, txtEmail.Text, genero, txtUserName.Text, pw);
                 /*MessageBox.Show($"Se creo el usuario: \n{nuevoUsuario.Nombre} {nuevoUsuario.Apellido} \nFecha Nacimiento {nuevoUsuario.FechaNac.ToString()}\n" +
                     $"Email: \n {nuevoUsuario.Email} \nGenero {genero} User: {nuevoUsuario.Username} \nPw:{nuevoUsuario.Pw}");*/
-                UsuarioDAO.RegistrarCliente(nuevoUsuario);
+                UsuarioDAO.RegistrarCliente(nuevoUsuario, tipoNvoUsuario);
                 //Limpiar campos
                 LimpiarCampos();
 
@@ -68,9 +89,11 @@ namespace Clave1_Grupo2.gui
             txtEmail.Clear();
             chkFem.Checked = false;
             chkMsc.Checked = false;
-            chkMsc.Checked = false;
+            chkIndef.Checked = false;
             txtUserName.Clear();
             txtUsrPw.Clear();
+            chkAdmin.Checked = false;
+            chkVet.Checked = false;            
         }
     }
 }

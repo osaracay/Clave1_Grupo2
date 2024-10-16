@@ -39,7 +39,6 @@ namespace Clave1_Grupo2.gui
             this.picLogo = new System.Windows.Forms.PictureBox();
             this.txtApellidos = new System.Windows.Forms.TextBox();
             this.campoFechaNac = new System.Windows.Forms.DateTimePicker();
-            this.chkVeterinario = new System.Windows.Forms.CheckBox();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -53,10 +52,15 @@ namespace Clave1_Grupo2.gui
             this.chkIndef = new System.Windows.Forms.RadioButton();
             this.chkMsc = new System.Windows.Forms.RadioButton();
             this.chkFem = new System.Windows.Forms.RadioButton();
+            this.grpTipoUsuario = new System.Windows.Forms.GroupBox();
+            this.chkAdmin = new System.Windows.Forms.RadioButton();
+            this.chkVet = new System.Windows.Forms.RadioButton();
+            this.chkCliente = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.picRegistroUsuario)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
             this.grpGenero.SuspendLayout();
+            this.grpTipoUsuario.SuspendLayout();
             this.SuspendLayout();
             // 
             // picRegistroUsuario
@@ -173,18 +177,6 @@ namespace Clave1_Grupo2.gui
             this.campoFechaNac.Name = "campoFechaNac";
             this.campoFechaNac.Size = new System.Drawing.Size(246, 21);
             this.campoFechaNac.TabIndex = 3;
-            // 
-            // chkVeterinario
-            // 
-            this.chkVeterinario.AutoSize = true;
-            this.chkVeterinario.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.chkVeterinario.Location = new System.Drawing.Point(212, 230);
-            this.chkVeterinario.Margin = new System.Windows.Forms.Padding(2);
-            this.chkVeterinario.Name = "chkVeterinario";
-            this.chkVeterinario.Size = new System.Drawing.Size(105, 17);
-            this.chkVeterinario.TabIndex = 19;
-            this.chkVeterinario.Text = "soy veterinario/a";
-            this.chkVeterinario.UseVisualStyleBackColor = true;
             // 
             // txtEmail
             // 
@@ -346,12 +338,59 @@ namespace Clave1_Grupo2.gui
             this.chkFem.Text = "Femenino";
             this.chkFem.UseVisualStyleBackColor = true;
             // 
+            // grpTipoUsuario
+            // 
+            this.grpTipoUsuario.Controls.Add(this.chkCliente);
+            this.grpTipoUsuario.Controls.Add(this.chkVet);
+            this.grpTipoUsuario.Controls.Add(this.chkAdmin);
+            this.grpTipoUsuario.ForeColor = System.Drawing.Color.White;
+            this.grpTipoUsuario.Location = new System.Drawing.Point(181, 165);
+            this.grpTipoUsuario.Name = "grpTipoUsuario";
+            this.grpTipoUsuario.Size = new System.Drawing.Size(159, 85);
+            this.grpTipoUsuario.TabIndex = 25;
+            this.grpTipoUsuario.TabStop = false;
+            this.grpTipoUsuario.Text = "tipo de usuario";
+            // 
+            // chkAdmin
+            // 
+            this.chkAdmin.AutoSize = true;
+            this.chkAdmin.Location = new System.Drawing.Point(6, 20);
+            this.chkAdmin.Name = "chkAdmin";
+            this.chkAdmin.Size = new System.Drawing.Size(88, 17);
+            this.chkAdmin.TabIndex = 0;
+            this.chkAdmin.TabStop = true;
+            this.chkAdmin.Text = "Administrador";
+            this.chkAdmin.UseVisualStyleBackColor = true;
+            // 
+            // chkVet
+            // 
+            this.chkVet.AutoSize = true;
+            this.chkVet.Location = new System.Drawing.Point(6, 43);
+            this.chkVet.Name = "chkVet";
+            this.chkVet.Size = new System.Drawing.Size(75, 17);
+            this.chkVet.TabIndex = 1;
+            this.chkVet.TabStop = true;
+            this.chkVet.Text = "Veterinario";
+            this.chkVet.UseVisualStyleBackColor = true;
+            // 
+            // chkCliente
+            // 
+            this.chkCliente.AutoSize = true;
+            this.chkCliente.Location = new System.Drawing.Point(6, 62);
+            this.chkCliente.Name = "chkCliente";
+            this.chkCliente.Size = new System.Drawing.Size(57, 17);
+            this.chkCliente.TabIndex = 2;
+            this.chkCliente.TabStop = true;
+            this.chkCliente.Text = "Cliente";
+            this.chkCliente.UseVisualStyleBackColor = true;
+            // 
             // VtnRegistrarUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.ClientSize = new System.Drawing.Size(619, 256);
+            this.Controls.Add(this.grpTipoUsuario);
             this.Controls.Add(this.grpGenero);
             this.Controls.Add(this.lblUsrPw);
             this.Controls.Add(this.txtUsrPw);
@@ -362,7 +401,6 @@ namespace Clave1_Grupo2.gui
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtEmail);
-            this.Controls.Add(this.chkVeterinario);
             this.Controls.Add(this.campoFechaNac);
             this.Controls.Add(this.txtApellidos);
             this.Controls.Add(this.btnRegistrar);
@@ -384,6 +422,8 @@ namespace Clave1_Grupo2.gui
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).EndInit();
             this.grpGenero.ResumeLayout(false);
             this.grpGenero.PerformLayout();
+            this.grpTipoUsuario.ResumeLayout(false);
+            this.grpTipoUsuario.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -398,7 +438,6 @@ namespace Clave1_Grupo2.gui
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TextBox txtApellidos;
         private System.Windows.Forms.DateTimePicker campoFechaNac;
-        private System.Windows.Forms.CheckBox chkVeterinario;
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.Label lblVetCatDog;
         private System.Windows.Forms.PictureBox picLogo;
@@ -414,5 +453,9 @@ namespace Clave1_Grupo2.gui
         private System.Windows.Forms.RadioButton chkIndef;
         private System.Windows.Forms.RadioButton chkMsc;
         private System.Windows.Forms.RadioButton chkFem;
+        private System.Windows.Forms.GroupBox grpTipoUsuario;
+        private System.Windows.Forms.RadioButton chkCliente;
+        private System.Windows.Forms.RadioButton chkVet;
+        private System.Windows.Forms.RadioButton chkAdmin;
     }
 }
