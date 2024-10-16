@@ -52,12 +52,13 @@ namespace Clave1_Grupo2.gui
                     genero = 'X';
                 }
                 Mascota pet = new Mascota(txtNombreMascota.Text, (int)cbxEspecie.SelectedValue, txtRaza.Text, int.Parse(txtEdadMascota.Text), genero, (int)cbxPropietario.SelectedValue);//,txtColor.Text);
+                pet.Color = txtColor.Text;
                 MessageBox.Show($"Se creo una nueva mascota: {pet.GetNomMascota()}\n" +
                     $"especie {pet.GetEspecie()}\n" +
                     $"raza {pet.GetRaza()}\n" +
                     $"edad {pet.GetEdad()}\n" +
                     $"genero {pet.GetGeneroMascota()}\n" +
-                    //$"color  {pet.Color}\n" +
+                    $"color  {pet.Color}\n" + //
                     $"propietario {pet.GetIdPropietario()}\n");
                 MascotaDAO.RegistrarMascota(pet);
                 
@@ -89,6 +90,9 @@ namespace Clave1_Grupo2.gui
             txtEdadMascota.Clear();
             txtRaza.Clear();
             cbxEspecie.SelectedIndex = -1;
+            chkFem.Checked = false;
+            chkMsc.Checked = false;
+            chkIndef.Checked = false;
         }
 
         private void txtEdadMascota_TextChanged(object sender, EventArgs e)

@@ -23,8 +23,8 @@ namespace Clave1_Grupo2.dao
         public static bool RegistrarMascota(Mascota pet)
         {
             sentenciaSQL = "INSERT INTO mascota (nom_mascota, " +
-                "especie, raza, edad, genero_mascota, id_propietario, estado_mascota)" +//, color) " +
-                "VALUES (?, ?, ?, ?, ?, ?, ?)"; //, ?)";
+                "especie, raza, edad, genero_mascota, id_propietario, estado_mascota, color)" +//, color) " +
+                "VALUES (?, ?, ?, ?, ?, ?, ?, ?)"; //)"; //
             /*"VALUES (@nombre, @apellido, @fecha_nac, @tipo_usuario, @estado_usuario, @email, @genero, @usrlogin, @usrpw)";
              Esta forma no funciona debo usar los ? como en Java*/
             ConexionBD.GetConexionBD().Open();
@@ -41,7 +41,7 @@ namespace Clave1_Grupo2.dao
             adaptador.InsertCommand.Parameters.Add("@genero", OdbcType.Char).Value = pet.GetGeneroMascota();            
             adaptador.InsertCommand.Parameters.Add("@id_propietario", OdbcType.Int).Value = pet.GetIdPropietario(); //El cbxPropietario se popula solo con clientes                        
             adaptador.InsertCommand.Parameters.Add("@estado", OdbcType.Int).Value = 2; // Activa por default al momento de agregar
-            //adaptador.InsertCommand.Parameters.Add("@color", OdbcType.VarChar).Value = pet.Color;
+            adaptador.InsertCommand.Parameters.Add("@color", OdbcType.VarChar).Value = pet.Color;
             try
             {
                 adaptador.InsertCommand.ExecuteNonQuery();
@@ -91,7 +91,6 @@ namespace Clave1_Grupo2.dao
                 ConexionBD.GetConexionBD().Close();
             }            
         }
-
         public static List<Mascota> GetListaMascotasOwner(Usuario owner)
         {
             //ASEGURARARME QUE EL Usuario sea tipo cliente
@@ -125,6 +124,7 @@ namespace Clave1_Grupo2.dao
                     m.SetIdPropietario(lector.GetInt32(6)); //int
                     m.EstadoMascota = lector.GetInt32(7); //int
                     //COLOR FALTA
+                    m.Color = lector.GetString(8);
                     mascotasDueno.Add(m);
                 }
                 MessageBox.Show($"Cantidad de mascotas {mascotasDueno.Count}");
@@ -144,7 +144,6 @@ namespace Clave1_Grupo2.dao
                 ConexionBD.GetConexionBD().Close();
             }
         }
-
         public static List<Mascota> GetListaMascotasOwner(int owner)
         {
             //ASEGURARARME QUE EL Usuario sea tipo cliente
@@ -167,9 +166,10 @@ namespace Clave1_Grupo2.dao
                     m.SetRaza(lector.GetString(3)); //String
                     m.SetEdad(lector.GetInt32(4)); //
                     m.SetGeneroMascota(lector.GetChar(5)); //CHAR
-                    m.SetIdPropietario(lector.GetInt32(6)); //int
+                    m.SetIdPropietario(lector.GetInt32(6)); //int                    
                     m.EstadoMascota = lector.GetInt32(7); //int
                     //COLOR FALTA
+                    m.Color = lector.GetString(8);
                     mascotasDueno.Add(m);
                 }
                 ConexionBD.GetConexionBD().Close();
@@ -191,6 +191,44 @@ namespace Clave1_Grupo2.dao
             {
                 lector.Close();
                 
+                ConexionBD.GetConexionBD().Close();
+            }
+        }
+        public static bool ActualizarDatosMascota(Mascota m, string nombre, int especie, string raza, int edad, char genero, string color)
+        {
+
+            string sentenciaSQL = "UPDATE mascota SET nom_mascota = ?, " +
+    "especie = ?, raza = ?, edad = ?, genero_mascota = ?, color = ? " + //color pudiera dar excepcion
+                "WHERE id_mascota = ?"; //, ?)";
+            /*"VALUES (@nombre, @apellido, @fecha_nac, @tipo_usuario, @estado_usuario, @email, @genero, @usrlogin, @usrpw)";
+             Esta forma no funciona debo usar los ? como en Java*/
+            ConexionBD.GetConexionBD().Open();
+            adaptador = new OdbcDataAdapter();
+            adaptador.MissingSchemaAction = MissingSchemaAction.AddWithKey;
+            adaptador.InsertCommand = new OdbcCommand(sentenciaSQL, ConexionBD.GetConexionBD());
+            //OdbcCommand comando = new OdbcCommand(sentenciaSQL, ConexionBD.GetConexionBD()); El objeto OdbcComand se guarda en el Getter de adaptador InsertCommand
+            //comando.Parameters.AddWithValue("@nombre", c.Nombre);
+
+            adaptador.InsertCommand.Parameters.Add("@nombre", OdbcType.VarChar, 30).Value = nombre;
+            adaptador.InsertCommand.Parameters.Add("@especie", OdbcType.Int).Value = especie;
+            adaptador.InsertCommand.Parameters.Add("@raza", OdbcType.VarChar).Value = raza;
+            adaptador.InsertCommand.Parameters.Add("@edad", OdbcType.Int).Value = edad;
+            adaptador.InsertCommand.Parameters.Add("@genero", OdbcType.Char).Value = genero;
+            adaptador.InsertCommand.Parameters.Add("@color", OdbcType.VarChar).Value = color;
+            adaptador.InsertCommand.Parameters.Add("@idmascota", OdbcType.Int).Value = m.GetIdMascota(); // Activa por default al momento de agregar            
+            try
+            {
+                adaptador.InsertCommand.ExecuteNonQuery();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+
+                return false;
+            }
+            finally
+            {
                 ConexionBD.GetConexionBD().Close();
             }
         }

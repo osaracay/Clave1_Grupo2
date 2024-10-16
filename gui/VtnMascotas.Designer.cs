@@ -49,13 +49,18 @@ namespace Clave1_Grupo2.gui
             this.cbxPropietario = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.cbxEspecie = new System.Windows.Forms.ComboBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.lblMascotas = new System.Windows.Forms.Label();
+            this.dgvCitas = new System.Windows.Forms.DataGridView();
             this.txtGenero = new System.Windows.Forms.TextBox();
+            this.lblCitas = new System.Windows.Forms.Label();
+            this.btnCancelar = new System.Windows.Forms.Button();
+            this.btnGuardar = new System.Windows.Forms.Button();
+            this.btnModificar = new System.Windows.Forms.Button();
+            this.lblEdadValida = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbxFotoPerfil)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCitas)).BeginInit();
             this.SuspendLayout();
             // 
             // panel2
@@ -92,7 +97,7 @@ namespace Clave1_Grupo2.gui
             this.txtNombre.Location = new System.Drawing.Point(81, 170);
             this.txtNombre.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(96, 29);
+            this.txtNombre.Size = new System.Drawing.Size(74, 24);
             this.txtNombre.TabIndex = 62;
             this.txtNombre.Text = "Usuario";
             // 
@@ -103,7 +108,7 @@ namespace Clave1_Grupo2.gui
             this.lblVetCatDog.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.lblVetCatDog.Location = new System.Drawing.Point(96, 390);
             this.lblVetCatDog.Name = "lblVetCatDog";
-            this.lblVetCatDog.Size = new System.Drawing.Size(117, 50);
+            this.lblVetCatDog.Size = new System.Drawing.Size(97, 40);
             this.lblVetCatDog.TabIndex = 6;
             this.lblVetCatDog.Text = "Veterinaria\r\nCat-Dog";
             // 
@@ -125,9 +130,9 @@ namespace Clave1_Grupo2.gui
             this.listaMascotas.ForeColor = System.Drawing.Color.White;
             this.listaMascotas.FormattingEnabled = true;
             this.listaMascotas.ItemHeight = 16;
-            this.listaMascotas.Location = new System.Drawing.Point(638, 58);
+            this.listaMascotas.Location = new System.Drawing.Point(638, 42);
             this.listaMascotas.Name = "listaMascotas";
-            this.listaMascotas.Size = new System.Drawing.Size(150, 372);
+            this.listaMascotas.Size = new System.Drawing.Size(150, 196);
             this.listaMascotas.TabIndex = 2;
             this.listaMascotas.SelectedIndexChanged += new System.EventHandler(this.listaMascotas_SelectedIndexChanged);
             // 
@@ -138,7 +143,7 @@ namespace Clave1_Grupo2.gui
             this.lblApellido.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.lblApellido.Location = new System.Drawing.Point(238, 98);
             this.lblApellido.Name = "lblApellido";
-            this.lblApellido.Size = new System.Drawing.Size(69, 20);
+            this.lblApellido.Size = new System.Drawing.Size(58, 17);
             this.lblApellido.TabIndex = 82;
             this.lblApellido.Text = "Especie";
             // 
@@ -149,7 +154,7 @@ namespace Clave1_Grupo2.gui
             this.lblNombre.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.lblNombre.Location = new System.Drawing.Point(238, 58);
             this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(68, 20);
+            this.lblNombre.Size = new System.Drawing.Size(58, 17);
             this.lblNombre.TabIndex = 81;
             this.lblNombre.Text = "Nombre";
             // 
@@ -158,11 +163,11 @@ namespace Clave1_Grupo2.gui
             this.txtNombres.BackColor = System.Drawing.SystemColors.InactiveCaptionText;
             this.txtNombres.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNombres.ForeColor = System.Drawing.SystemColors.InactiveCaption;
-            this.txtNombres.Location = new System.Drawing.Point(324, 58);
+            this.txtNombres.Location = new System.Drawing.Point(324, 51);
             this.txtNombres.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtNombres.MaxLength = 30;
             this.txtNombres.Name = "txtNombres";
-            this.txtNombres.Size = new System.Drawing.Size(308, 29);
+            this.txtNombres.Size = new System.Drawing.Size(308, 24);
             this.txtNombres.TabIndex = 3;
             // 
             // lblEdad
@@ -172,7 +177,7 @@ namespace Clave1_Grupo2.gui
             this.lblEdad.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.lblEdad.Location = new System.Drawing.Point(238, 177);
             this.lblEdad.Name = "lblEdad";
-            this.lblEdad.Size = new System.Drawing.Size(47, 20);
+            this.lblEdad.Size = new System.Drawing.Size(41, 17);
             this.lblEdad.TabIndex = 78;
             this.lblEdad.Text = "Edad";
             // 
@@ -185,7 +190,7 @@ namespace Clave1_Grupo2.gui
             this.txtRaza.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtRaza.MaxLength = 25;
             this.txtRaza.Name = "txtRaza";
-            this.txtRaza.Size = new System.Drawing.Size(308, 29);
+            this.txtRaza.Size = new System.Drawing.Size(308, 24);
             this.txtRaza.TabIndex = 5;
             // 
             // label1
@@ -195,7 +200,7 @@ namespace Clave1_Grupo2.gui
             this.label1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.label1.Location = new System.Drawing.Point(238, 139);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(48, 20);
+            this.label1.Size = new System.Drawing.Size(41, 17);
             this.label1.TabIndex = 83;
             this.label1.Text = "Raza";
             // 
@@ -206,7 +211,7 @@ namespace Clave1_Grupo2.gui
             this.label2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.label2.Location = new System.Drawing.Point(455, 174);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(64, 20);
+            this.label2.Size = new System.Drawing.Size(56, 17);
             this.label2.TabIndex = 84;
             this.label2.Text = "Género";
             // 
@@ -217,7 +222,7 @@ namespace Clave1_Grupo2.gui
             this.label3.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.label3.Location = new System.Drawing.Point(238, 215);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(49, 20);
+            this.label3.Size = new System.Drawing.Size(41, 17);
             this.label3.TabIndex = 85;
             this.label3.Text = "Color";
             // 
@@ -230,8 +235,9 @@ namespace Clave1_Grupo2.gui
             this.txtEdad.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtEdad.MaxLength = 30;
             this.txtEdad.Name = "txtEdad";
-            this.txtEdad.Size = new System.Drawing.Size(107, 29);
+            this.txtEdad.Size = new System.Drawing.Size(107, 24);
             this.txtEdad.TabIndex = 6;
+            this.txtEdad.TextChanged += new System.EventHandler(this.txtEdad_TextChanged);
             // 
             // txtColorMascota
             // 
@@ -242,7 +248,7 @@ namespace Clave1_Grupo2.gui
             this.txtColorMascota.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtColorMascota.MaxLength = 25;
             this.txtColorMascota.Name = "txtColorMascota";
-            this.txtColorMascota.Size = new System.Drawing.Size(308, 29);
+            this.txtColorMascota.Size = new System.Drawing.Size(308, 24);
             this.txtColorMascota.TabIndex = 8;
             // 
             // cbxPropietario
@@ -253,7 +259,7 @@ namespace Clave1_Grupo2.gui
             this.cbxPropietario.FormattingEnabled = true;
             this.cbxPropietario.Location = new System.Drawing.Point(324, 15);
             this.cbxPropietario.Name = "cbxPropietario";
-            this.cbxPropietario.Size = new System.Drawing.Size(308, 26);
+            this.cbxPropietario.Size = new System.Drawing.Size(308, 23);
             this.cbxPropietario.TabIndex = 1;
             this.cbxPropietario.SelectedIndexChanged += new System.EventHandler(this.cbxPropietario_SelectedIndexChanged);
             // 
@@ -262,9 +268,9 @@ namespace Clave1_Grupo2.gui
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label4.Location = new System.Drawing.Point(236, 15);
+            this.label4.Location = new System.Drawing.Point(238, 15);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(90, 20);
+            this.label4.Size = new System.Drawing.Size(77, 17);
             this.label4.TabIndex = 90;
             this.label4.Text = "Propietario";
             // 
@@ -276,30 +282,30 @@ namespace Clave1_Grupo2.gui
             this.cbxEspecie.FormattingEnabled = true;
             this.cbxEspecie.Location = new System.Drawing.Point(324, 92);
             this.cbxEspecie.Name = "cbxEspecie";
-            this.cbxEspecie.Size = new System.Drawing.Size(308, 30);
+            this.cbxEspecie.Size = new System.Drawing.Size(308, 25);
             this.cbxEspecie.TabIndex = 4;
             // 
-            // label5
+            // lblMascotas
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label5.Location = new System.Drawing.Point(639, 15);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(115, 29);
-            this.label5.TabIndex = 64;
-            this.label5.Text = "Mascotas";
+            this.lblMascotas.AutoSize = true;
+            this.lblMascotas.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMascotas.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lblMascotas.Location = new System.Drawing.Point(639, 12);
+            this.lblMascotas.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblMascotas.Name = "lblMascotas";
+            this.lblMascotas.Size = new System.Drawing.Size(89, 24);
+            this.lblMascotas.TabIndex = 64;
+            this.lblMascotas.Text = "Mascotas";
             // 
-            // dataGridView1
+            // dgvCitas
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(244, 280);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(388, 150);
-            this.dataGridView1.TabIndex = 93;
+            this.dgvCitas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvCitas.Location = new System.Drawing.Point(241, 280);
+            this.dgvCitas.Name = "dgvCitas";
+            this.dgvCitas.RowHeadersWidth = 51;
+            this.dgvCitas.RowTemplate.Height = 24;
+            this.dgvCitas.Size = new System.Drawing.Size(547, 150);
+            this.dgvCitas.TabIndex = 93;
             // 
             // txtGenero
             // 
@@ -310,8 +316,78 @@ namespace Clave1_Grupo2.gui
             this.txtGenero.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtGenero.MaxLength = 30;
             this.txtGenero.Name = "txtGenero";
-            this.txtGenero.Size = new System.Drawing.Size(107, 29);
+            this.txtGenero.Size = new System.Drawing.Size(107, 24);
             this.txtGenero.TabIndex = 7;
+            // 
+            // lblCitas
+            // 
+            this.lblCitas.AutoSize = true;
+            this.lblCitas.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCitas.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lblCitas.Location = new System.Drawing.Point(237, 253);
+            this.lblCitas.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblCitas.Name = "lblCitas";
+            this.lblCitas.Size = new System.Drawing.Size(50, 24);
+            this.lblCitas.TabIndex = 94;
+            this.lblCitas.Text = "Citas";
+            // 
+            // btnCancelar
+            // 
+            this.btnCancelar.BackColor = System.Drawing.Color.White;
+            this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelar.ForeColor = System.Drawing.Color.Black;
+            this.btnCancelar.Image = ((System.Drawing.Image)(resources.GetObject("btnCancelar.Image")));
+            this.btnCancelar.Location = new System.Drawing.Point(555, 242);
+            this.btnCancelar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(115, 35);
+            this.btnCancelar.TabIndex = 97;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnCancelar.UseVisualStyleBackColor = false;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            // 
+            // btnGuardar
+            // 
+            this.btnGuardar.BackColor = System.Drawing.Color.White;
+            this.btnGuardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGuardar.ForeColor = System.Drawing.Color.Black;
+            this.btnGuardar.Image = ((System.Drawing.Image)(resources.GetObject("btnGuardar.Image")));
+            this.btnGuardar.Location = new System.Drawing.Point(437, 242);
+            this.btnGuardar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.Size = new System.Drawing.Size(115, 35);
+            this.btnGuardar.TabIndex = 96;
+            this.btnGuardar.Text = "Guardar";
+            this.btnGuardar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnGuardar.UseVisualStyleBackColor = false;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
+            // 
+            // btnModificar
+            // 
+            this.btnModificar.BackColor = System.Drawing.Color.White;
+            this.btnModificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnModificar.ForeColor = System.Drawing.Color.Black;
+            this.btnModificar.Image = ((System.Drawing.Image)(resources.GetObject("btnModificar.Image")));
+            this.btnModificar.Location = new System.Drawing.Point(673, 241);
+            this.btnModificar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnModificar.Name = "btnModificar";
+            this.btnModificar.Size = new System.Drawing.Size(115, 36);
+            this.btnModificar.TabIndex = 95;
+            this.btnModificar.Text = "Editar";
+            this.btnModificar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnModificar.UseVisualStyleBackColor = false;
+            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
+            // 
+            // lblEdadValida
+            // 
+            this.lblEdadValida.AutoSize = true;
+            this.lblEdadValida.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lblEdadValida.Location = new System.Drawing.Point(321, 196);
+            this.lblEdadValida.Name = "lblEdadValida";
+            this.lblEdadValida.Size = new System.Drawing.Size(12, 16);
+            this.lblEdadValida.TabIndex = 98;
+            this.lblEdadValida.Text = "-";
             // 
             // VtnMascotas
             // 
@@ -319,9 +395,14 @@ namespace Clave1_Grupo2.gui
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.lblEdadValida);
+            this.Controls.Add(this.btnCancelar);
+            this.Controls.Add(this.btnGuardar);
+            this.Controls.Add(this.btnModificar);
+            this.Controls.Add(this.lblCitas);
             this.Controls.Add(this.txtGenero);
-            this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.label5);
+            this.Controls.Add(this.dgvCitas);
+            this.Controls.Add(this.lblMascotas);
             this.Controls.Add(this.cbxEspecie);
             this.Controls.Add(this.cbxPropietario);
             this.Controls.Add(this.label4);
@@ -349,7 +430,7 @@ namespace Clave1_Grupo2.gui
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbxFotoPerfil)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCitas)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -376,8 +457,13 @@ namespace Clave1_Grupo2.gui
         private System.Windows.Forms.ComboBox cbxPropietario;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox cbxEspecie;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Label lblMascotas;
+        private System.Windows.Forms.DataGridView dgvCitas;
         private System.Windows.Forms.TextBox txtGenero;
+        private System.Windows.Forms.Label lblCitas;
+        private System.Windows.Forms.Button btnCancelar;
+        private System.Windows.Forms.Button btnGuardar;
+        private System.Windows.Forms.Button btnModificar;
+        private System.Windows.Forms.Label lblEdadValida;
     }
 }

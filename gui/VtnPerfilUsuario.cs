@@ -37,7 +37,7 @@ namespace Clave1_Grupo2.gui
             txtConfirmPw.Hide();
             btnCancelar.Hide();
             //Cargar nombre usuario
-            txtNombre.Text = $"{UsuarioDAO.GetSesion().Username}";
+            txtNombre.Text = UsuarioDAO.GetSesion().Username;
             if (UsuarioDAO.GetSesion().Genero == 'M')
             {
                 txtNombre.Text += "♂";
