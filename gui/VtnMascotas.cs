@@ -41,7 +41,7 @@ namespace Clave1_Grupo2.gui
         private void CargarDatos()
         {            
             Rellenador.CargarDataTableACombo(cbxEspecie, CatDAO.GetEspecie(), "id_especie", "nom_especie");
-            Rellenador.CargarDataTableACombo(cbxPropietario, UsuarioDAO.GetTblClientes(), "id_usuario", "nombre");
+            Rellenador.CargarListaAComboBox(cbxPropietario, UsuarioDAO.GetListaUsuarios(3));
             txtNombre.Text = UsuarioDAO.GetSesion().Username;
             if (UsuarioDAO.GetSesion().TipoUsuario == 3)
             {
@@ -55,7 +55,8 @@ namespace Clave1_Grupo2.gui
             else
             {
                 cbxPropietario.Enabled = true;
-                cbxPropietario.SelectedIndex = -1;
+                //cbxPropietario.SelectedIndex = -1;
+                LimpiarCampos();                
             }
         }
         private void LimpiarCampos()
@@ -66,9 +67,11 @@ namespace Clave1_Grupo2.gui
             txtGenero.Clear();
             cbxEspecie.SelectedIndex = -1;
             txtColorMascota.Clear();
+            //listaMascotas.Items.Clear();
         }
         private void cbxPropietario_SelectedIndexChanged(object sender, EventArgs e)
         {
+            LimpiarCampos();
             try
             {
                 if (UsuarioDAO.GetSesion().TipoUsuario != 3 && cbxPropietario.SelectedValue != null && cbxPropietario.SelectedIndex >=0 && cbxPropietario.SelectedValue.GetType() != Type.GetType("System.Data.DataRowView"))
@@ -120,12 +123,22 @@ namespace Clave1_Grupo2.gui
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            //Realizar update con MascotaDAO
-            MascotaDAO.ActualizarDatosMascota(mascotaSeleccionada,txtNombres.Text,cbxEspecie.SelectedIndex,
-                txtRaza.Text,int.Parse(txtEdad.Text),char.Parse(txtGenero.Text.ToUpper()),txtColorMascota.Text);
-            //LimpiarCampos(); de momento si cambio el item seleccionado y selecciono el que modifique no muestra los cambios hasta reabrir la ventana
-            Rellenador.CargarListaPetAListBox(listaMascotas, MascotaDAO.GetListaMascotasOwner((int)cbxPropietario.SelectedValue)); //Ahora si
-            InhabilitarCampos();
+            //VALIDAR CAMPOS LLENOS
+            if(Validacion.CampoLleno(txtNombres) && Validacion.CampoLleno(txtRaza) 
+                && Validacion.CampoLleno(txtEdad) && Validacion.CampoLleno(txtGenero) 
+                && Validacion.CampoLleno(txtColorMascota) && cbxEspecie.SelectedIndex > -1)
+            {
+                //Realizar update con MascotaDAO
+                MascotaDAO.ActualizarDatosMascota(mascotaSeleccionada, txtNombres.Text, cbxEspecie.SelectedIndex,
+                    txtRaza.Text, int.Parse(txtEdad.Text), char.Parse(txtGenero.Text.ToUpper()), txtColorMascota.Text);
+                //LimpiarCampos(); de momento si cambio el item seleccionado y selecciono el que modifique no muestra los cambios hasta reabrir la ventana
+                Rellenador.CargarListaPetAListBox(listaMascotas, MascotaDAO.GetListaMascotasOwner((int)cbxPropietario.SelectedValue)); //Ahora si
+                InhabilitarCampos();
+            }
+            else
+            {
+                MessageBox.Show("Por favor, complete los campos");
+            }            
         }
 
         private void txtEdad_TextChanged(object sender, EventArgs e)
@@ -135,11 +148,7 @@ namespace Clave1_Grupo2.gui
 
         private void txtGenero_TextChanged(object sender, EventArgs e)
         {
-            if(txtGenero.Text.ToUpper() == "M" || txtGenero.Text.ToUpper() == "F" || txtGenero.Text.ToUpper() == "X")
-            {
-
-            }
-            else
+            if(txtGenero.Text.ToUpper() != "M" || txtGenero.Text.ToUpper() != "F" || txtGenero.Text.ToUpper() != "X")
             {
                 txtGenero.Clear();
             }

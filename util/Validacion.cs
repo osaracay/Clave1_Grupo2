@@ -33,7 +33,7 @@ namespace Clave1_Grupo2.util
             }
             catch (Exception)
             {
-                tb.Text = "";
+                tb.Clear();
                 valid.Text = "x inválido";
                 valid.ForeColor = System.Drawing.Color.Red;
                 return false;
@@ -52,7 +52,7 @@ namespace Clave1_Grupo2.util
             }
             catch (Exception)
             {
-                tb.Text = "";
+                tb.Clear();
                 valid.Text = "x inválido";
                 valid.ForeColor = System.Drawing.Color.Red;
                 return false;
@@ -68,7 +68,7 @@ namespace Clave1_Grupo2.util
                 valor = int.Parse(tb.Text = tb.Text.Trim());
                 if (valor < min || valor > max)
                 {
-                    tb.Text = "";
+                    tb.Clear();
                     valid.Text = "x inválido";
                     valid.ForeColor = System.Drawing.Color.Red;
                     return false;
@@ -79,7 +79,7 @@ namespace Clave1_Grupo2.util
             }
             catch (Exception)
             {
-                tb.Text = "";
+                tb.Clear();
                 valid.Text = "x inválido";
                 valid.ForeColor = System.Drawing.Color.Red;
                 return false;

@@ -140,7 +140,7 @@ namespace Clave1_Grupo2.gui
             this.cbxPropietario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbxPropietario.ForeColor = System.Drawing.SystemColors.InactiveCaption;
             this.cbxPropietario.FormattingEnabled = true;
-            this.cbxPropietario.Location = new System.Drawing.Point(327, 87);
+            this.cbxPropietario.Location = new System.Drawing.Point(342, 87);
             this.cbxPropietario.Name = "cbxPropietario";
             this.cbxPropietario.Size = new System.Drawing.Size(308, 26);
             this.cbxPropietario.TabIndex = 3;
@@ -164,7 +164,7 @@ namespace Clave1_Grupo2.gui
             this.cbxMascota.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbxMascota.ForeColor = System.Drawing.SystemColors.InactiveCaption;
             this.cbxMascota.FormattingEnabled = true;
-            this.cbxMascota.Location = new System.Drawing.Point(327, 119);
+            this.cbxMascota.Location = new System.Drawing.Point(342, 119);
             this.cbxMascota.Name = "cbxMascota";
             this.cbxMascota.Size = new System.Drawing.Size(308, 26);
             this.cbxMascota.TabIndex = 4;
@@ -187,10 +187,11 @@ namespace Clave1_Grupo2.gui
             this.cbxVeterinario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbxVeterinario.ForeColor = System.Drawing.SystemColors.InactiveCaption;
             this.cbxVeterinario.FormattingEnabled = true;
-            this.cbxVeterinario.Location = new System.Drawing.Point(327, 23);
+            this.cbxVeterinario.Location = new System.Drawing.Point(342, 23);
             this.cbxVeterinario.Name = "cbxVeterinario";
             this.cbxVeterinario.Size = new System.Drawing.Size(308, 26);
             this.cbxVeterinario.TabIndex = 1;
+            this.cbxVeterinario.SelectedIndexChanged += new System.EventHandler(this.cbxVeterinario_SelectedIndexChanged);
             // 
             // label1
             // 
@@ -210,7 +211,7 @@ namespace Clave1_Grupo2.gui
             this.cbxTipoCita.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbxTipoCita.ForeColor = System.Drawing.SystemColors.InactiveCaption;
             this.cbxTipoCita.FormattingEnabled = true;
-            this.cbxTipoCita.Location = new System.Drawing.Point(327, 55);
+            this.cbxTipoCita.Location = new System.Drawing.Point(342, 55);
             this.cbxTipoCita.Name = "cbxTipoCita";
             this.cbxTipoCita.Size = new System.Drawing.Size(308, 26);
             this.cbxTipoCita.TabIndex = 2;
@@ -229,10 +230,10 @@ namespace Clave1_Grupo2.gui
             // richTextBox1
             // 
             this.richTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.richTextBox1.Location = new System.Drawing.Point(327, 182);
+            this.richTextBox1.Location = new System.Drawing.Point(342, 182);
             this.richTextBox1.MaxLength = 250;
             this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(308, 143);
+            this.richTextBox1.Size = new System.Drawing.Size(308, 181);
             this.richTextBox1.TabIndex = 99;
             this.richTextBox1.Text = "";
             // 

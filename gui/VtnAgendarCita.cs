@@ -27,6 +27,10 @@ namespace Clave1_Grupo2.gui
         {                        
             Rellenador.CargarListaAComboBox(cbxPropietario, UsuarioDAO.GetListaUsuarios(3));
             Rellenador.CargarListaAComboBox(cbxVeterinario, UsuarioDAO.GetListaUsuarios(2));
+            cbxPropietario.Enabled = true;
+            cbxPropietario.SelectedIndex = -1;
+            cbxVeterinario.Enabled = true;
+            cbxVeterinario.SelectedIndex = -1;
             if (UsuarioDAO.GetSesion().TipoUsuario == 3)
             {
                 cbxPropietario.Enabled = false;
@@ -36,10 +40,10 @@ namespace Clave1_Grupo2.gui
                 //MI IDEA es que se cree una lista para el usuario si es nula y luego solo se llame la ya creada como con las ventanas
                 //Dicha lista se asiganra valor nulo al registrar una nueva mascota para que solo entonces se vuelva a ejecutar la consulta
             }
-            else
+            else if(UsuarioDAO.GetSesion().TipoUsuario == 2)
             {
-                cbxPropietario.Enabled = true;
-                cbxPropietario.SelectedIndex = -1;
+                cbxVeterinario.Enabled = false;
+                cbxVeterinario.SelectedValue = UsuarioDAO.GetSesion().IdUsuario;
             }
         }
 
@@ -62,6 +66,11 @@ namespace Clave1_Grupo2.gui
                 //Rellenador.CargarListaPetAListBox(listaMascotas, MascotaDAO.GetListaMascotasPropietario((int)cbxPropietario.SelectedValue));
                 //Rellenador.CargarDataTableAListBox(listaMascotas, MascotaDAO.GetMascotasPorPropietario((int)cbxPropietario.SelectedValue));
             }
+        }
+
+        private void cbxVeterinario_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //Cuando el vet cambie se actualizan los horarios o el tipo de cita los rangos
         }
     }
 }
