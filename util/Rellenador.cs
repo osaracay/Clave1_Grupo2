@@ -11,10 +11,7 @@ using System.Windows.Forms;
 namespace Clave1_Grupo2.util
 {
     class Rellenador
-    {
-        private static DataTableReader lector;
-        private static List<Mascota> mascotas; //Se lo pasare a la lista de mascotas del Usuario
-        
+    {        
         /*PARA DATATABLES OBTENIDOS DE LA BASE DE DATOS*/
         public static void CargarDataTableACombo(ComboBox cb, DataTable dataTable, string campoId, string mostrarCampo)
         {
@@ -25,14 +22,15 @@ namespace Clave1_Grupo2.util
             cb.SelectedIndex = -1; //0 o -1
         }
 
-        public static void CargarDataTableAListBox(ListBox lb, DataTable dataTable)
-        {           
-            lb.DataSource = dataTable;            
-        }
-
         public static void CargarListaPetAListBox(ListBox lb, List<Mascota> lista)
         {
             lb.DataSource = lista;
+        }
+        public static void CargarListaAComboBox(ComboBox cb, List<CatItem> lista)
+        {
+            cb.ValueMember = "IdCat";
+            cb.DisplayMember = "NomCat";
+            cb.DataSource = lista;
         }
         public static void CargarListaAComboBox(ComboBox cb, List<Mascota> lista)
         {
@@ -47,6 +45,16 @@ namespace Clave1_Grupo2.util
             cb.DisplayMember = "ToString"; //Wow, lo hice. Ocupe el metodo To String como DisplayMember y ahora hago uso de polimorfismo T.T
             cb.DataSource = lista;
         }
+        
+        /*
+         * SIN USAR
+         */
+        public static void CargarDataTableAListBox(ListBox lb, DataTable dataTable)
+        {
+            lb.DataSource = dataTable;
+        }
+
+        /*listas por tipo de usuario*/
         public static void CargarListaAComboBox(ComboBox cb, List<Cliente> lista)
         {
             cb.ValueMember = "IdUsuario";

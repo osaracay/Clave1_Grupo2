@@ -39,8 +39,9 @@ namespace Clave1_Grupo2.gui
             txtColorMascota.Enabled = false;
         }
         private void CargarDatos()
-        {            
-            Rellenador.CargarDataTableACombo(cbxEspecie, CatDAO.GetEspecie(), "id_especie", "nom_especie");
+        {
+            //Rellenador.CargarDataTableACombo(cbxEspecie, CatDAO.GetEspecie(), "id_especie", "nom_especie");
+            Rellenador.CargarListaAComboBox(cbxEspecie, CatDAO.GetEspecies());
             Rellenador.CargarListaAComboBox(cbxPropietario, UsuarioDAO.GetListaUsuarios(3));
             txtNombre.Text = UsuarioDAO.GetSesion().Username;
             if (UsuarioDAO.GetSesion().TipoUsuario == 3)

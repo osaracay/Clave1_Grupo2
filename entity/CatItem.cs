@@ -26,18 +26,23 @@ namespace Clave1_Grupo2.entity
 
         public CatItem(int idCat, string nomCat)
         {
-            this.idCat = idCat;
-            this.nomCat = nomCat;
+            this.IdCat = idCat;
+            this.NomCat = nomCat;
         }
 
         public CatItem(int idCat, string nomCat, string descCat) : this(idCat, nomCat)
         {
-            this.descCat = descCat;
+            this.DescCat = descCat;
         }
 
         public CatItem(int idCat, string nomCat, string descCat, double precioCat) : this(idCat, nomCat, descCat)
         {
-            this.precioCat = precioCat;
+            this.PrecioCat = precioCat;
         }
+
+        public int IdCat { get => idCat; set => idCat = value; }
+        public string NomCat { get => nomCat; set => nomCat = value; }
+        public string DescCat { get => descCat; set => descCat = value; }
+        public double PrecioCat { get => precioCat; set => precioCat = value; }
     }
 }
