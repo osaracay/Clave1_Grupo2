@@ -30,7 +30,7 @@ namespace Clave1_Grupo2.dao
                     mySqlCs = ConfigurationManager.ConnectionStrings["Clave1_Grupo2.Properties.Settings.MySQLConnectionString"].ConnectionString;
                     //Connect to MySQL using Connector/ODBC
                     conexionMySQL = new OdbcConnection(mySqlCs);
-                    MessageBox.Show($"Se creo 1 objeto conexion");
+                    //MessageBox.Show($"Se creo 1 objeto conexion");
                     // \nConn String: { mySqlCs}
                 }
             }            
@@ -46,7 +46,7 @@ namespace Clave1_Grupo2.dao
             if (c1g2db == null)
             {
                 c1g2db = new DataSet();
-                MessageBox.Show("se creo la bd para tiempo de ejecucion");
+                //MessageBox.Show("se creo la bd para tiempo de ejecucion");
             }
             return c1g2db;
         }

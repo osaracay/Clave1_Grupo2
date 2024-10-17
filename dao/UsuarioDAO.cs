@@ -337,7 +337,7 @@ namespace Clave1_Grupo2.dao
                         m.Username = lector.GetString(8);
                         listaClientes.Add(m);
                     }
-                    MessageBox.Show($"Cantidad de clientes {listaClientes.Count}");
+                    //MessageBox.Show($"Cantidad de clientes {listaClientes.Count}");
                     return listaClientes;
                 }
                 else if (tipoUsuario == 2)
@@ -358,7 +358,7 @@ namespace Clave1_Grupo2.dao
                         m.Username = lector.GetString(8);
                         listaVets.Add(m);
                     }
-                    MessageBox.Show($"Cantidad de Veterinarios {listaVets.Count}");
+                    //MessageBox.Show($"Cantidad de Veterinarios {listaVets.Count}");
                     return listaVets;
                 }
                 else
@@ -378,7 +378,7 @@ namespace Clave1_Grupo2.dao
                         m.Username = lector.GetString(8);
                         listaUsuarios.Add(m);
                     }
-                    MessageBox.Show($"Cantidad de Administradores {listaUsuarios.Count}");
+                    //MessageBox.Show($"Cantidad de Administradores {listaUsuarios.Count}");
                     return listaUsuarios;
                 }
             }

@@ -148,8 +148,11 @@ namespace Clave1_Grupo2.gui
 
         private void txtGenero_TextChanged(object sender, EventArgs e)
         {
-            if(txtGenero.Text.ToUpper() != "M" || txtGenero.Text.ToUpper() != "F" || txtGenero.Text.ToUpper() != "X")
+            if(txtGenero.Text.ToUpper() == "M" || txtGenero.Text.ToUpper() == "F" || txtGenero.Text.ToUpper() == "X")
             {
+                //Si ocupo condicional diferente de y el clear aca no me muestra el valor en el campo   
+            }
+            else {
                 txtGenero.Clear();
             }
         }

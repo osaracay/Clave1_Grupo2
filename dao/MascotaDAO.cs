@@ -127,7 +127,7 @@ namespace Clave1_Grupo2.dao
                     m.Color = lector.GetString(8);
                     mascotasDueno.Add(m);
                 }
-                MessageBox.Show($"Cantidad de mascotas {mascotasDueno.Count}");
+                //MessageBox.Show($"Cantidad de mascotas {mascotasDueno.Count}");
                 return mascotasDueno;
             }
             catch (Exception ex)
@@ -219,6 +219,7 @@ namespace Clave1_Grupo2.dao
             try
             {
                 adaptador.InsertCommand.ExecuteNonQuery();
+                MessageBox.Show($"Se actualizó la información de {nombre}");
                 return true;
             }
             catch (Exception ex)
