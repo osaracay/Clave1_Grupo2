@@ -22,6 +22,9 @@ namespace Clave1_Grupo2.dao
         private static DataTable clientes;
         private static DataTable vets;
         private static DataTable admins;
+        private static List<Usuario> listaUsuarios;
+        private static List<Usuario> listaClientes;
+        private static List<Usuario> listaVets;
 
         private static Usuario sesion; //Para gestionar la sesion.
 
@@ -299,6 +302,99 @@ namespace Clave1_Grupo2.dao
                     ConexionBD.GetConexionBD().Close();
                 }
             return clientes;
+        }
+
+        //QUIERO CREAR LISTAS DE USUARIOS PARA LLENAR COMBOBOXES O LISTBOXES
+        public static List<Usuario> GetListaUsuarios(int tipoUsuario)
+        {
+            consulta = "SELECT * FROM usuario WHERE tipo_usuario= ?";
+            adaptador = new OdbcDataAdapter(consulta, ConexionBD.GetConexionBD());
+            adaptador.MissingSchemaAction = MissingSchemaAction.AddWithKey;
+            adaptador.SelectCommand = new OdbcCommand(consulta, ConexionBD.GetConexionBD());
+            adaptador.SelectCommand.Parameters.Add("@tipo_usuario", OdbcType.Int).Value = tipoUsuario;
+            
+            try
+            {
+                ConexionBD.GetConexionBD().Open();
+                lector = adaptador.SelectCommand.ExecuteReader(); //Execute nonquery requiere una conexion valida y activa por eso se abre. Para fill no se requiere se abre y cierra sola
+                
+                //PODRIA HABER OCUPADO UN SWITCH CASE
+                if (tipoUsuario == 3) //Aqui puede suceder un relajo si le paso un Usuario de tipo distinto de 3
+                {
+                    listaClientes = new List<Usuario>();
+                    //listaClientes = new List<Cliente>();
+                    while (lector.Read())
+                    {
+                        Cliente m = new Cliente(); //Puede ser un cliente, Admin o Vet
+                        m.IdUsuario = lector.GetInt32(0); //int
+                        m.Nombre = lector.GetString(1);
+                        m.Apellido = lector.GetString(2);
+                        m.FechaNac = lector.GetDate(3); //Date
+                        m.TipoUsuario = lector.GetInt32(4);
+                        m.EstadoUsuario = lector.GetInt32(5);
+                        m.Email = lector.GetString(6);
+                        m.Genero = lector.GetChar(7);
+                        m.Username = lector.GetString(8);
+                        listaClientes.Add(m);
+                    }
+                    MessageBox.Show($"Cantidad de clientes {listaClientes.Count}");
+                    return listaClientes;
+                }
+                else if (tipoUsuario == 2)
+                {
+                    listaVets = new List<Usuario>(); // Suponiendo que esto limpia la lista
+                    while (lector.Read())
+                    {
+                        
+                        Veterinario m = new Veterinario(); //Puede ser un cliente, Admin o Vet
+                        m.IdUsuario = lector.GetInt32(0); //int
+                        m.Nombre = lector.GetString(1);
+                        m.Apellido = lector.GetString(2);
+                        m.FechaNac = lector.GetDate(3); //Date
+                        m.TipoUsuario = lector.GetInt32(4);
+                        m.EstadoUsuario = lector.GetInt32(5);
+                        m.Email = lector.GetString(6);
+                        m.Genero = lector.GetChar(7);
+                        m.Username = lector.GetString(8);
+                        listaVets.Add(m);
+                    }
+                    MessageBox.Show($"Cantidad de Veterinarios {listaVets.Count}");
+                    return listaVets;
+                }
+                else
+                {
+                    listaUsuarios = new List<Usuario>();
+                    while (lector.Read())
+                    {
+                        Administrador m = new Administrador(); //Puede ser un cliente, Admin o Vet
+                        m.IdUsuario = lector.GetInt32(0); //int
+                        m.Nombre = lector.GetString(1);
+                        m.Apellido = lector.GetString(2);
+                        m.FechaNac = lector.GetDate(3); //Date
+                        m.TipoUsuario = lector.GetInt32(4);
+                        m.EstadoUsuario = lector.GetInt32(5);
+                        m.Email = lector.GetString(6);
+                        m.Genero = lector.GetChar(7);
+                        m.Username = lector.GetString(8);
+                        listaUsuarios.Add(m);
+                    }
+                    MessageBox.Show($"Cantidad de Administradores {listaUsuarios.Count}");
+                    return listaUsuarios;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"No se encontraron usuarios del tipo indicado u otro error: \n{ex.Message}");                
+                return null;
+            }
+            finally
+            {
+                if (lector != null)
+                {
+                    lector.Close();
+                }
+                ConexionBD.GetConexionBD().Close();
+            }
         }
 
         public static DataTable GetTblVets()

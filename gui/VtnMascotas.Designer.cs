@@ -94,12 +94,13 @@ namespace Clave1_Grupo2.gui
             this.txtNombre.AutoSize = true;
             this.txtNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNombre.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.txtNombre.Location = new System.Drawing.Point(81, 170);
+            this.txtNombre.Location = new System.Drawing.Point(67, 169);
             this.txtNombre.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(96, 29);
             this.txtNombre.TabIndex = 62;
             this.txtNombre.Text = "Usuario";
+            this.txtNombre.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblVetCatDog
             // 

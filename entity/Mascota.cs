@@ -126,7 +126,7 @@ namespace Clave1_Grupo2.entity
 
         public override string ToString()
         {
-            string stringMascota = this.GetNomMascota() + " - " + this.GetEspecie();
+            string stringMascota = this.GetNomMascota(); //+ " - " + this.GetEspecie() quisiera que aqui me indicara la especie
             return stringMascota;
         }
     }

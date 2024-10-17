@@ -62,6 +62,12 @@ namespace Clave1_Grupo2.entity
             this.username = username;
         }
 
+        public override string ToString()
+        {
+            string stringCliente = $"{this.Username} - {this.Nombre} {this.Apellido}";
+            return stringCliente;
+        }
+
         public int IdUsuario { get => idUsuario; set => idUsuario = value; }
         public string Nombre { get => nombre; set => nombre = value; }
         public string Apellido { get => apellido; set => apellido = value; }

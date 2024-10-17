@@ -22,7 +22,12 @@ namespace Clave1_Grupo2.entity
         public Veterinario(int idUsuario, string nombre, string apellido, DateTime fechaNac, int tipoUsuario, int estadoUsuario, string email, char genero, string username) : base(idUsuario, nombre, apellido, fechaNac, tipoUsuario, estadoUsuario, email, genero, username)
         {
         }
-        
+
+        public override string ToString()
+        {
+            string stringVet= $"Dr. {this.Apellido}, {this.Nombre}";
+            return stringVet;
+        }
 
     }
 }

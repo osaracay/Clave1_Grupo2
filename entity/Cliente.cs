@@ -46,5 +46,11 @@ namespace Clave1_Grupo2.entity
             return mascotas;
         }
 
+        public override string ToString()
+        {
+            string stringCliente = $"{this.Nombre} {this.Apellido}";
+            return stringCliente;
+        }
+
     }
 }

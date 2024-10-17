@@ -34,10 +34,36 @@ namespace Clave1_Grupo2.util
         {
             lb.DataSource = lista;
         }
-        public static void CargarListaPetAComboBox(ComboBox cb, List<Mascota> lista)
+        public static void CargarListaAComboBox(ComboBox cb, List<Mascota> lista)
         {
+            cb.ValueMember = "idMascota";
+            cb.DisplayMember = "ToString";
             cb.DataSource = lista;
         }
-
+        public static void CargarListaAComboBox(ComboBox cb, List<Usuario> lista)
+        {
+            //Por lo que veo, es mejor crear metodos separados que devuelvan listas del tipo requerido
+            cb.ValueMember = "IdUsuario";
+            cb.DisplayMember = "ToString"; //Wow, lo hice. Ocupe el metodo To String como DisplayMember y ahora hago uso de polimorfismo T.T
+            cb.DataSource = lista;
+        }
+        public static void CargarListaAComboBox(ComboBox cb, List<Cliente> lista)
+        {
+            cb.ValueMember = "IdUsuario";
+            cb.DisplayMember = "ToString"; //Wow, lo hice. Ocupe el metodo To String como DisplayMember y ahora hago uso de polimorfismo T.T
+            cb.DataSource = lista;
+        }
+        public static void CargarListaAComboBox(ComboBox cb, List<Veterinario> lista)
+        {
+            cb.ValueMember = "IdUsuario";
+            cb.DisplayMember = "ToString"; //Wow, lo hice. Ocupe el metodo To String como DisplayMember y ahora hago uso de polimorfismo T.T
+            cb.DataSource = lista;
+        }
+        public static void CargarListaAComboBox(ComboBox cb, List<Administrador> lista)
+        {
+            cb.ValueMember = "IdUsuario";
+            cb.DisplayMember = "ToString"; //Wow, lo hice. Ocupe el metodo To String como DisplayMember y ahora hago uso de polimorfismo T.T
+            cb.DataSource = lista;
+        }
     }
 }
