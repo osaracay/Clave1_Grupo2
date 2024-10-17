@@ -127,6 +127,12 @@
     <Compile Include="entity\Usuario.cs" />
     <Compile Include="entity\Venta.cs" />
     <Compile Include="entity\Veterinario.cs" />
+    <Compile Include="gui\VntTipoInsumo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="gui\VntTipoInsumo.Designer.cs">
+      <DependentUpon>VntTipoInsumo.cs</DependentUpon>
+    </Compile>
     <Compile Include="gui\VtnAgendarCita.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -199,6 +205,9 @@
     <Compile Include="util\GestorVentanas.cs" />
     <Compile Include="util\Rellenador.cs" />
     <Compile Include="util\Validacion.cs" />
+    <EmbeddedResource Include="gui\VntTipoInsumo.resx">
+      <DependentUpon>VntTipoInsumo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="gui\VtnAgendarCita.resx">
       <DependentUpon>VtnAgendarCita.cs</DependentUpon>
     </EmbeddedResource>

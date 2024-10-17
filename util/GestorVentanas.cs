@@ -20,6 +20,7 @@ namespace Clave1_Grupo2.util
         private static VtnInsumo vtnInsumo;
         private static VtnCompra vntCompra;
         private static VtnVenta vntVenta;
+        private static VntTipoInsumo vntTpInsumo;
 
         public static void SolicitarRegistroUsuario()
         {
@@ -138,6 +139,17 @@ namespace Clave1_Grupo2.util
             //No quiero que el usuario pueda cerrar sesion mientras se encuentre abierta esta ventana a no ser que agregue un boton desde aqui y cierre la ventana en su evento click
             vtnPerfil.ShowDialog(); 
             vtnPerfil.Focus();
+        }
+        public static void AbrirTipoInsumo()
+        {
+            //SI NO EXISTE EL OBJETO SESION GLOBAL
+            if (vntTpInsumo == null || vntTpInsumo.IsDisposed)
+            {
+                vntTpInsumo = null;
+                vntTpInsumo = new VntTipoInsumo();
+            }
+            vntTpInsumo.Show();
+            vntTpInsumo.Focus();
         }
     }
 }

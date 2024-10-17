@@ -15,6 +15,7 @@ namespace Clave1_Grupo2.entity
     {
         public int id_insumo { get; set; }
         public string nom_insumo { get; set; }
+        public string nom_tipo_insumo { get; set; } //Tipo de Insumo
         public int id_tipo_insumo { get; set; }
         public string desc_insumo { get; set; }
         public decimal precio_unit { get; set; }
@@ -160,6 +161,27 @@ namespace Clave1_Grupo2.entity
                 return false;
             }
         }
+        internal bool agregarTipoInsumo(Insumo mProducto)
+        {
+            try
+            {
+                string INSERT = "INSERT INTO cat_tipo_insumo (nom_tipo_insumo) VALUES (@nombre);";
+
+                using (MySqlCommand mCommand = new MySqlCommand(INSERT, mConexion.GetConexion()))
+                {
+                    mCommand.Parameters.Add(new MySqlParameter("@nombre", mProducto.nom_tipo_insumo));
+
+                    return mCommand.ExecuteNonQuery() > 0;
+                }
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show($"Error al guardar en la base de datos: {ex.Message}");
+                return false;
+            }
+        }
+
+
     }
 }
 

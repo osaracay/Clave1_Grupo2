@@ -295,9 +295,9 @@ namespace Clave1_Grupo2.gui
             this.label1.ForeColor = System.Drawing.Color.Black;
             this.label1.Location = new System.Drawing.Point(12, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(274, 31);
+            this.label1.Size = new System.Drawing.Size(371, 31);
             this.label1.TabIndex = 79;
-            this.label1.Text = "Ingreso a Inventario";
+            this.label1.Text = "Actualizar Stock (Entradas)";
             // 
             // dateTimePicker1
             // 

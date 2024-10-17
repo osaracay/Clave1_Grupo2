@@ -353,9 +353,18 @@ namespace Clave1_Grupo2.gui
             }
         }
 
-        private void txtPrecio_TextChanged(object sender, EventArgs e)
+        private void btnTpInsumo_Click(object sender, EventArgs e)
         {
-
+            //DEBES SER USUARIO VET o ADMINISTRADOR PARA ACCEDER
+            if (UsuarioDAO.GetSesion() != null)
+            {
+                GestorVentanas.AbrirTipoInsumo();
+            }
+            else
+            {
+                MessageBox.Show("Debes iniciar sesion para acceder a esta funcion");
+                GestorVentanas.SolicitarInicioSesion();
+            }
         }
     }
 }
