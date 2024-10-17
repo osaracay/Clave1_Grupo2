@@ -120,6 +120,7 @@
     <Compile Include="entity\CatItem.cs" />
     <Compile Include="entity\Cita.cs" />
     <Compile Include="entity\Cliente.cs" />
+    <Compile Include="entity\Cupo.cs" />
     <Compile Include="entity\Factura.cs" />
     <Compile Include="entity\Compra.cs" />
     <Compile Include="entity\Insumo.cs" />

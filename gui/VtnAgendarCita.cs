@@ -21,6 +21,7 @@ namespace Clave1_Grupo2.gui
         {
             InitializeComponent();
             CargarDatosFormulario();
+            CitaDAO.GetCuposReservados();
         }
 
         private void CargarDatosFormulario()

@@ -29,7 +29,7 @@ namespace Clave1_Grupo2.util
         public static void CargarListaAComboBox(ComboBox cb, List<CatItem> lista)
         {
             cb.ValueMember = "IdCat";
-            cb.DisplayMember = "NomCat";
+            cb.DisplayMember = "ToString";
             cb.DataSource = lista;
         }
         public static void CargarListaAComboBox(ComboBox cb, List<Mascota> lista)

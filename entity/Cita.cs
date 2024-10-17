@@ -14,95 +14,25 @@ namespace Clave1_Grupo2.entity
         private int idMascota;
         private int idVet;
         private int idEstadoCita;
+        private int idCupo;
+        private Cupo cupo;
         private string motivoCita;
         private string sintomasMascota;
         private string diagnostico;
         private string tratamiento;
         private string observaciones;
 
-        public int GetIdCita()
-        {
-            return idCita;
-        }
-        public void SetIdCita(int idCita)
-        {
-            this.idCita = idCita;
-        }
-        public int GetIdTipoCita()
-        {
-            return idTipoCita;
-        }
-        public void SetIdTipoCita(int idTipoCita)
-        {
-            this.idTipoCita = idTipoCita;
-        }
-        public int GetIdMascota()
-        {
-            return idMascota;
-        }
-        public void SetIdMascota(int idMascota)
-        {
-            this.idMascota = idMascota;
-        }
-        public int GetIdVet()
-        {
-            return idVet;
-        }
-        public void SetIdVet(int idVet)
-        {
-            this.idVet = idVet;
-        }
-        public int GetIdEstadoCita()
-        {
-            return idEstadoCita;
-        }
-        public void SetIdEstadoCita(int idEstadoCita)
-        {
-            this.idEstadoCita = idEstadoCita;
-        }
-        public string GetMotivoCita()
-        {
-            return motivoCita;
-        }
-        public void SetMotivoCita(string motivoCita)
-        {
-            this.motivoCita = motivoCita;
-        }
-        public string GetSintomasMascota()
-        {
-            return sintomasMascota;
-        }
-        public void SetSintomasMascota(string sintomasMascota)
-        {
-            this.sintomasMascota = sintomasMascota;
-        }
-        public string GetDiagnostico()
-        {
-            return diagnostico;
-        }
-        public void SetDiagnostico(string diagnostico)
-        {
-            this.diagnostico = diagnostico;
-        }
-        public string GetTratamiento()
-        {
-            return tratamiento;
-        }
-        public void SetTratamiento(string tratamiento)
-        {
-            this.tratamiento = tratamiento;
-        }
-        public string GetObservaciones()
-        {
-            return observaciones;
-        }
-        public void SetObservaciones(string observaciones)
-        {
-            this.observaciones = observaciones;
-        }
-
-
-
-
+        public int IdCita { get => idCita; set => idCita = value; }
+        public int IdTipoCita { get => idTipoCita; set => idTipoCita = value; }
+        public int IdMascota { get => idMascota; set => idMascota = value; }
+        public int IdVet { get => idVet; set => idVet = value; }
+        public int IdEstadoCita { get => idEstadoCita; set => idEstadoCita = value; }
+        public int IdCupo { get => idCupo; set => idCupo = value; }
+        public string MotivoCita { get => motivoCita; set => motivoCita = value; }
+        public string SintomasMascota { get => sintomasMascota; set => sintomasMascota = value; }
+        public string Diagnostico { get => diagnostico; set => diagnostico = value; }
+        public string Tratamiento { get => tratamiento; set => tratamiento = value; }
+        public string Observaciones { get => observaciones; set => observaciones = value; }
+        internal Cupo Cupo { get => cupo; set => cupo = value; }
     }
 }

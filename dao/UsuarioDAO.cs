@@ -25,6 +25,7 @@ namespace Clave1_Grupo2.dao
         private static List<Usuario> listaUsuarios;
         private static List<Usuario> listaClientes;
         private static List<Usuario> listaVets;
+        //private static List<> detalleTurnos; //HACER UN JOIN
 
         private static Usuario sesion; //Para gestionar la sesion.
 

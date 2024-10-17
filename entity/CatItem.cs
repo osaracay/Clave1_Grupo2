@@ -44,5 +44,14 @@ namespace Clave1_Grupo2.entity
         public string NomCat { get => nomCat; set => nomCat = value; }
         public string DescCat { get => descCat; set => descCat = value; }
         public double PrecioCat { get => precioCat; set => precioCat = value; }
+
+        public override string ToString()
+        {
+            if (this.PrecioCat > 0)
+            {
+                return $"{this.NomCat} - ${this.PrecioCat}";
+            }
+            return this.NomCat;
+        }
     }
 }

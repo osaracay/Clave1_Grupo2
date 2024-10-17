@@ -62,13 +62,24 @@ namespace Clave1_Grupo2.dao
                     while (lector.Read())
                     {
                         CatItem tipoCita = new CatItem(lector.GetInt32(0), lector.GetString(1));
-                        tipoCita.DescCat = lector.GetString(2);
+                        /* Considerar descartar la columna descripcion ya que los nombres ya son descriptivos
+                        if (lector.GetString(2).GetType() == Type.GetType("System.DBNull"))
+                        {
+                            tipoCita.DescCat = "";
+                        }
+                        else
+                        {
+                            tipoCita.DescCat = lector.GetString(2); //cannot cast System.DBNull to System.String
+                        }
+                        //tipoCita.DescCat = lector.GetString(2); cannot cast System.DBNull to System.String
+                        //MessageBox.Show($"Desc cita {tipoCita.DescCat} y \nvalor del lector {lector.GetString(2)}");
+                        */
                         tipoCita.PrecioCat = (double)lector.GetDecimal(3);
                         //Falta duracion de cita para ocupar al momento de definir los intervalos de tiempo
                         listaTipoCitas.Add(tipoCita);
                     }
                 }
-                MessageBox.Show($"Número de ítems {listaTipoCitas.Count()}");
+                //MessageBox.Show($"Número de ítems {listaTipoCitas.Count()}");
                 ConexionBD.GetConexionBD().Close();                
                 //Colocandolo aqui el cerrar conexion porque al llamarlo desde VtnMascotas en selected index changed
                 //la primera vez que se selecciona un indice desde cuenta administrador dice que
@@ -160,7 +171,7 @@ namespace Clave1_Grupo2.dao
                         listaMetsPago.Add(metPago);
                     }
                 }
-                MessageBox.Show($"Número de ítems {listaMetsPago.Count()}");
+                //MessageBox.Show($"Número de ítems {listaMetsPago.Count()}");
                 ConexionBD.GetConexionBD().Close();
                 //Colocandolo aqui el cerrar conexion porque al llamarlo desde VtnMascotas en selected index changed
                 //la primera vez que se selecciona un indice desde cuenta administrador dice que
@@ -206,7 +217,7 @@ namespace Clave1_Grupo2.dao
                         listaEstadosPago.Add(estadoPago);
                     }
                 }
-                MessageBox.Show($"Número de ítems {listaEstadosPago.Count()}");
+                //MessageBox.Show($"Número de ítems {listaEstadosPago.Count()}");
                 ConexionBD.GetConexionBD().Close();
                 //Colocandolo aqui el cerrar conexion porque al llamarlo desde VtnMascotas en selected index changed
                 //la primera vez que se selecciona un indice desde cuenta administrador dice que
