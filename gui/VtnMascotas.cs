@@ -129,7 +129,7 @@ namespace Clave1_Grupo2.gui
                 && Validacion.CampoLleno(txtColorMascota) && cbxEspecie.SelectedIndex > -1)
             {
                 //Realizar update con MascotaDAO
-                MascotaDAO.ActualizarDatosMascota(mascotaSeleccionada, txtNombres.Text, cbxEspecie.SelectedIndex,
+                MascotaDAO.ActualizarDatosMascota(mascotaSeleccionada, txtNombres.Text, (int)cbxEspecie.SelectedValue,
                     txtRaza.Text, int.Parse(txtEdad.Text), char.Parse(txtGenero.Text.ToUpper()), txtColorMascota.Text);
                 //LimpiarCampos(); de momento si cambio el item seleccionado y selecciono el que modifique no muestra los cambios hasta reabrir la ventana
                 Rellenador.CargarListaPetAListBox(listaMascotas, MascotaDAO.GetListaMascotasOwner((int)cbxPropietario.SelectedValue)); //Ahora si
