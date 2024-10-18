@@ -13,7 +13,9 @@ namespace Clave1_Grupo2.entity
         private List<Mascota> mascotas; //Procurar que no sea estatica, en caso quiera implementar 
         //llamar listas de mascotas por cada instancia cliente en una lista de clientes consultada
         //desde una Clase Vet o Admin
-
+        private IEnumerable<Cita> citasMascotas;
+        //Mi intento > citasMascotas = from cita in citasMascotas where cita.IdMascota == 
+        //Ejemplos de uso de Linq > IEnumerble<Empleado> ceos = from empleado in listaEmpleados where empleado.Cargo == "CEO" select empleado;
         //A la hora de iniciar sesion la clase usuario DAO crea una instancia del tipo 
         //Cliente, Admin, o Veterinario, con base en el tipo de Usuario. Asi, al obtener la sesion
         //Podra hacerse un explicit casting a la clase que simbolice el tipo de usuario
