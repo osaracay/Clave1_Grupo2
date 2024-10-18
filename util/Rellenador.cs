@@ -73,5 +73,6 @@ namespace Clave1_Grupo2.util
             cb.DisplayMember = "ToString"; //Wow, lo hice. Ocupe el metodo To String como DisplayMember y ahora hago uso de polimorfismo T.T
             cb.DataSource = lista;
         }
+
     }
 }

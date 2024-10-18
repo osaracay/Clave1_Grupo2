@@ -35,7 +35,7 @@ namespace Clave1_Grupo2.entity
             mProductos = new List<Insumo>();
         }
 
-        public List<Insumo> getProductos(string filtro)
+        public List<Insumo> getInsumos(string filtro)
         {
             string QUERY = "SELECT * FROM insumo ";
             MySqlDataReader mReadaer = null;
@@ -80,7 +80,7 @@ namespace Clave1_Grupo2.entity
             return mProductos;
         }
         // Registrar los items a la Tabla de Insumos
-        internal bool agregarProducto(Insumo mProducto)
+        internal bool agregarInsumo(Insumo mProducto)
         {
             try
             {
@@ -106,7 +106,7 @@ namespace Clave1_Grupo2.entity
             }
         }
         // Modificar los items en la Tabla de Insumos
-        internal bool ActualizarProducto(Insumo mProducto)
+        internal bool ActualizarInsumo(Insumo mProducto)
         {
             string UPDATE = " UPDATE insumo " +
                 "SET nom_insumo = @nombre, " +
@@ -141,7 +141,7 @@ namespace Clave1_Grupo2.entity
         }
 
         // Eliminar items en la Tabla de Insumos
-        internal bool eliminarProducto(int id)
+        internal bool eliminarInsumo(int id)
         {
             string DELETE = "DELETE FROM insumo WHERE id_insumo = @id";
 

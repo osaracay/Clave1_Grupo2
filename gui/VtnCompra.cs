@@ -57,7 +57,7 @@ namespace Clave1_Grupo2.gui
             {
                 return;
             }
-            cargarDatosProductos();
+            cargarDatosInsumos();
             // Guarda la Compra
             if (mConsultaCompra.agregarCompra(cInsumo))
             {
@@ -80,7 +80,7 @@ namespace Clave1_Grupo2.gui
             }
 
         }
-        private void cargarDatosProductos()
+        private void cargarDatosInsumos()
         {
             cInsumo.fecha = dateTimePicker1.Text;
             cInsumo.nombre = txtProveedor.Text;

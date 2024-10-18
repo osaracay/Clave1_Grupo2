@@ -80,7 +80,7 @@ namespace Clave1_Grupo2.gui
             this.txtPuntoR.Margin = new System.Windows.Forms.Padding(4);
             this.txtPuntoR.Name = "txtPuntoR";
             this.txtPuntoR.Size = new System.Drawing.Size(200, 30);
-            this.txtPuntoR.TabIndex = 75;
+            this.txtPuntoR.TabIndex = 5;
             this.txtPuntoR.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label8
@@ -102,7 +102,7 @@ namespace Clave1_Grupo2.gui
             this.cmbMedida.Margin = new System.Windows.Forms.Padding(4);
             this.cmbMedida.Name = "cmbMedida";
             this.cmbMedida.Size = new System.Drawing.Size(119, 32);
-            this.cmbMedida.TabIndex = 73;
+            this.cmbMedida.TabIndex = 3;
             // 
             // txtDescripInsumo
             // 
@@ -134,7 +134,7 @@ namespace Clave1_Grupo2.gui
             this.cmbTipoInsumo.Margin = new System.Windows.Forms.Padding(4);
             this.cmbTipoInsumo.Name = "cmbTipoInsumo";
             this.cmbTipoInsumo.Size = new System.Drawing.Size(92, 32);
-            this.cmbTipoInsumo.TabIndex = 70;
+            this.cmbTipoInsumo.TabIndex = 1;
             this.cmbTipoInsumo.SelectedIndexChanged += new System.EventHandler(this.cmbTipoInsumo_SelectedIndexChanged);
             this.cmbTipoInsumo.TextChanged += new System.EventHandler(this.cmbTipoInsumo_TextChanged);
             // 
@@ -148,7 +148,7 @@ namespace Clave1_Grupo2.gui
             this.btnCancelar.Margin = new System.Windows.Forms.Padding(4);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(107, 80);
-            this.btnCancelar.TabIndex = 69;
+            this.btnCancelar.TabIndex = 9;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnCancelar.UseVisualStyleBackColor = false;
@@ -175,7 +175,7 @@ namespace Clave1_Grupo2.gui
             this.txtBuscarProd.Margin = new System.Windows.Forms.Padding(4);
             this.txtBuscarProd.Name = "txtBuscarProd";
             this.txtBuscarProd.Size = new System.Drawing.Size(288, 30);
-            this.txtBuscarProd.TabIndex = 43;
+            this.txtBuscarProd.TabIndex = 12;
             this.txtBuscarProd.TextChanged += new System.EventHandler(this.txtBuscarProd_TextChanged);
             // 
             // dgvRegistros
@@ -190,7 +190,7 @@ namespace Clave1_Grupo2.gui
             this.dgvRegistros.RowHeadersWidth = 51;
             this.dgvRegistros.Size = new System.Drawing.Size(903, 316);
             this.dgvRegistros.TabIndex = 57;
-            this.dgvRegistros.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvLstProductos_CellClick);
+            this.dgvRegistros.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvLstRegistros_CellClick);
             // 
             // btnModificar
             // 
@@ -202,7 +202,7 @@ namespace Clave1_Grupo2.gui
             this.btnModificar.Margin = new System.Windows.Forms.Padding(4);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(107, 86);
-            this.btnModificar.TabIndex = 64;
+            this.btnModificar.TabIndex = 7;
             this.btnModificar.Text = "Modificar";
             this.btnModificar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnModificar.UseVisualStyleBackColor = false;
@@ -218,7 +218,7 @@ namespace Clave1_Grupo2.gui
             this.brnGuardar.Margin = new System.Windows.Forms.Padding(4);
             this.brnGuardar.Name = "brnGuardar";
             this.brnGuardar.Size = new System.Drawing.Size(107, 86);
-            this.brnGuardar.TabIndex = 67;
+            this.brnGuardar.TabIndex = 6;
             this.brnGuardar.Text = "Guardar";
             this.brnGuardar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.brnGuardar.UseVisualStyleBackColor = false;
@@ -234,7 +234,7 @@ namespace Clave1_Grupo2.gui
             this.btnEliminar.Margin = new System.Windows.Forms.Padding(4);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(107, 80);
-            this.btnEliminar.TabIndex = 66;
+            this.btnEliminar.TabIndex = 8;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnEliminar.UseVisualStyleBackColor = false;
@@ -250,7 +250,7 @@ namespace Clave1_Grupo2.gui
             this.btnSalir.Margin = new System.Windows.Forms.Padding(4);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(107, 59);
-            this.btnSalir.TabIndex = 65;
+            this.btnSalir.TabIndex = 10;
             this.btnSalir.UseVisualStyleBackColor = false;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
@@ -272,7 +272,7 @@ namespace Clave1_Grupo2.gui
             this.txtCantidad.Margin = new System.Windows.Forms.Padding(4);
             this.txtCantidad.Name = "txtCantidad";
             this.txtCantidad.Size = new System.Drawing.Size(136, 30);
-            this.txtCantidad.TabIndex = 62;
+            this.txtCantidad.TabIndex = 4;
             this.txtCantidad.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtCantidad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCantidad_KeyPress);
             // 
@@ -294,7 +294,7 @@ namespace Clave1_Grupo2.gui
             this.txtPrecio.Margin = new System.Windows.Forms.Padding(4);
             this.txtPrecio.Name = "txtPrecio";
             this.txtPrecio.Size = new System.Drawing.Size(136, 30);
-            this.txtPrecio.TabIndex = 60;
+            this.txtPrecio.TabIndex = 2;
             this.txtPrecio.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtPrecio.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPrecio_KeyPress);
             // 
@@ -305,7 +305,7 @@ namespace Clave1_Grupo2.gui
             this.txtDescripcion.Margin = new System.Windows.Forms.Padding(4);
             this.txtDescripcion.Name = "txtDescripcion";
             this.txtDescripcion.Size = new System.Drawing.Size(415, 30);
-            this.txtDescripcion.TabIndex = 59;
+            this.txtDescripcion.TabIndex = 0;
             // 
             // label3
             // 
@@ -385,8 +385,8 @@ namespace Clave1_Grupo2.gui
             this.btnTpInsumo.Location = new System.Drawing.Point(873, 150);
             this.btnTpInsumo.Margin = new System.Windows.Forms.Padding(4);
             this.btnTpInsumo.Name = "btnTpInsumo";
-            this.btnTpInsumo.Size = new System.Drawing.Size(49, 33);
-            this.btnTpInsumo.TabIndex = 79;
+            this.btnTpInsumo.Size = new System.Drawing.Size(41, 33);
+            this.btnTpInsumo.TabIndex = 11;
             this.btnTpInsumo.UseVisualStyleBackColor = false;
             this.btnTpInsumo.Click += new System.EventHandler(this.btnTpInsumo_Click);
             // 

@@ -13,7 +13,7 @@ using System.Windows.Forms;
 
 namespace Clave1_Grupo2.gui
 {
-    public partial class VtnInsumo : Form
+      public partial class VtnInsumo : Form
     {
         private List<Insumo> mInsumos;
         private Insumo mInsumo;
@@ -28,15 +28,15 @@ namespace Clave1_Grupo2.gui
             mInsumo = new Insumo();
             txtDescripcion.Focus();
             ConfigurarDGV();
-            cargarProductos();
+            cargarInsumos();
             cargarMedidas();
         }
-        private void cargarProductos(string filtro = "")
+        private void cargarInsumos(string filtro = "")
         {
             dgvRegistros.Rows.Clear();
             dgvRegistros.Refresh();
             mInsumos.Clear();
-            mInsumos = mConsultaInsumo.getProductos(filtro);
+            mInsumos = mConsultaInsumo.getInsumos(filtro);
 
             for (int i = 0; i < mInsumos.Count(); i++)
             {
@@ -57,7 +57,7 @@ namespace Clave1_Grupo2.gui
         }
         private void txtBuscarProd_TextChanged(object sender, EventArgs e)
         {
-            cargarProductos(txtBuscarProd.Text.Trim());
+            cargarInsumos(txtBuscarProd.Text.Trim());
         }
         private void brnGuardar_Click(object sender, EventArgs e)
         {
@@ -65,11 +65,11 @@ namespace Clave1_Grupo2.gui
             {
                 return;
             }
-            cargarDatosProductos();
-            if (mConsultaInsumo.agregarProducto(mInsumo))
+            cargarDatosInsumos();
+            if (mConsultaInsumo.agregarInsumo(mInsumo))
             {
                 MessageBox.Show("Insumo Guardado con exito.", "Datos", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                cargarProductos();
+                cargarInsumos();
                 LimpiarCampos();
             }
         }
@@ -87,7 +87,7 @@ namespace Clave1_Grupo2.gui
             cmbMedida.SelectedIndex = -1;
             cmbTipoInsumo.SelectedIndex = -1;
         }
-        private void cargarDatosProductos()
+        private void cargarDatosInsumos()
         {
             mInsumo.nom_insumo = txtDescripcion.Text;
             mInsumo.id_tipo_insumo = int.Parse(cmbTipoInsumo.Text.Trim());
@@ -198,7 +198,7 @@ namespace Clave1_Grupo2.gui
                 e.Handled = true;
             }
         }
-        private void dgvLstProductos_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void dgvLstRegistros_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0)
             {
@@ -241,13 +241,13 @@ namespace Clave1_Grupo2.gui
                 mInsumo.id_insumo = int.Parse(txtCodigo.Text);
 
                 // Cargar otros datos del producto
-                cargarDatosProductos();
+                cargarDatosInsumos();
 
                 // Intentar actualizar el producto
-                if (mConsultaInsumo.ActualizarProducto(mInsumo))
+                if (mConsultaInsumo.ActualizarInsumo(mInsumo))
                 {
                     MessageBox.Show("Datos modificados con éxito.", "Datos", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    cargarProductos();  // Recargar la lista de productos
+                    cargarInsumos();  // Recargar la lista de productos
                     LimpiarCampos();    // Limpiar los campos del formulario
                 }
                 else
@@ -285,10 +285,10 @@ namespace Clave1_Grupo2.gui
                     int idProducto = int.Parse(txtCodigo.Text);
 
                     // Intentar eliminar de la base de datos
-                    if (mConsultaInsumo.eliminarProducto(idProducto))
+                    if (mConsultaInsumo.eliminarInsumo(idProducto))
                     {
                         MessageBox.Show($"El Producto: '{nombreProducto}' ha sido Eliminado con Exito.", "Datos", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        cargarProductos(); // Actualizar la lista en el DataGridView
+                        cargarInsumos(); // Actualizar la lista en el DataGridView
                         LimpiarCampos(); // Limpiar los campos
                     }
                     else
@@ -301,7 +301,7 @@ namespace Clave1_Grupo2.gui
                     MessageBox.Show($"Error al procesar la eliminación: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
-            cargarProductos(); // Actualizar la lista en el DataGridView
+            cargarInsumos(); // Actualizar la lista en el DataGridView
             LimpiarCampos(); // Limpiar los campos
         }
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -309,11 +309,7 @@ namespace Clave1_Grupo2.gui
             btnModificar.Enabled = false;
             btnEliminar.Enabled = false;
             LimpiarCampos();
-            cargarProductos();
-        }
-
-        private void Form_Productos_Load(object sender, EventArgs e)
-        {
+            cargarInsumos();
         }
         private void cargarMedidas()
         {
@@ -366,5 +362,6 @@ namespace Clave1_Grupo2.gui
                 GestorVentanas.SolicitarInicioSesion();
             }
         }
+
     }
 }
