@@ -34,14 +34,14 @@ namespace Clave1_Grupo2.gui
             {
                 return;
             }
-            cargarDatosProductos();
+            cargarDatosInsumos();
             if (mConsultaInsumo.agregarTipoInsumo(mInsumo))
             {
                 MessageBox.Show("Tipo de Insumo registrado.", "Datos", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 txtNombre.Text = "";
             }
         }
-        private void cargarDatosProductos()
+        private void cargarDatosInsumos()
         {
             mInsumo.nom_tipo_insumo = txtNombre.Text;
         }

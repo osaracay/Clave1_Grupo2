@@ -293,20 +293,14 @@ namespace Clave1_Grupo2.gui
             {
                 return;
             }
-            //cargarDatosProductos();
-            //if (mConsultaVenta.agregarVenta(vInsumo))
-            //{
-            //    MessageBox.Show("Datos Guardado con exito.", "Datos", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            //    LimpiarCampos();
-            //}
 
             // Fragmento guarda el Detalle de Ventas en otra Tabla
             Venta nuevaVenta = new Venta
             {
                 fecha = DateTime.Now.ToString("yyyy-MM-dd"),
                 monto_total = Convert.ToDecimal(txtTotal.Text),
+                estado_factura = (int)cmbEstado.SelectedValue,
                 id_met_pago = (int)cmbMetPago.SelectedValue,
-                estado_factura = cmbEstado.Text,
             };
 
             if (mConsultaVenta.agregarDetalleVenta(nuevaVenta, dgvRegistros))
@@ -335,13 +329,6 @@ namespace Clave1_Grupo2.gui
 
             MessageBox.Show("Inventario Actualizado con éxito.", "Ventas", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
-        //private void cargarDatosProductos()
-        //{
-        //    vInsumo.fecha = dateTimePicker1.Text;
-        //    vInsumo.monto_total = Convert.ToDecimal(txtTotal.Text);
-        //    vInsumo.id_met_pago = cmbMetPago.Text;
-        //    vInsumo.estado_factura = cmbEstado.Text;
-        //}
         private bool validarCampos()
         {
             if (cmbIdCliente.Text.Trim().Equals(""))
@@ -362,6 +349,13 @@ namespace Clave1_Grupo2.gui
             return true;
         }
 
+        private void cmbEstado_SelectedIndexChanged(object sender, EventArgs e)
+        {
+        }
 
+        private void cmbMetPago_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -49,6 +49,7 @@ namespace Clave1_Grupo2
             this.btnVenta = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.lblMiPerfil = new System.Windows.Forms.Label();
+            this.btnVntC = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
             this.SuspendLayout();
             // 
@@ -268,6 +269,18 @@ namespace Clave1_Grupo2
             this.lblMiPerfil.Text = "Mi Perfil";
             this.lblMiPerfil.Click += new System.EventHandler(this.lblMiPerfil_Click);
             // 
+            // btnVntC
+            // 
+            this.btnVntC.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnVntC.BackgroundImage")));
+            this.btnVntC.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnVntC.Location = new System.Drawing.Point(741, 198);
+            this.btnVntC.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnVntC.Name = "btnVntC";
+            this.btnVntC.Size = new System.Drawing.Size(131, 130);
+            this.btnVntC.TabIndex = 18;
+            this.btnVntC.UseVisualStyleBackColor = true;
+            this.btnVntC.Click += new System.EventHandler(this.btnVntC_Click);
+            // 
             // VtnMenuPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -277,6 +290,7 @@ namespace Clave1_Grupo2
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(897, 373);
+            this.Controls.Add(this.btnVntC);
             this.Controls.Add(this.lblMiPerfil);
             this.Controls.Add(this.lblRegistrarUsuario);
             this.Controls.Add(this.lblSesion);
@@ -331,6 +345,7 @@ namespace Clave1_Grupo2
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button btnVenta;
         private System.Windows.Forms.Label lblMiPerfil;
+        private System.Windows.Forms.Button btnVntC;
     }
 }
 

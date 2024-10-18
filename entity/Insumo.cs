@@ -27,12 +27,12 @@ namespace Clave1_Grupo2.entity
     class ConsultaInsumo
     {
         private ConexionMysql mConexion;
-        private List<Insumo> mProductos;
+        private List<Insumo> mInsumos;
 
         public ConsultaInsumo()
         {
             mConexion = new ConexionMysql();
-            mProductos = new List<Insumo>();
+            mInsumos = new List<Insumo>();
         }
 
         public List<Insumo> getInsumos(string filtro)
@@ -68,7 +68,7 @@ namespace Clave1_Grupo2.entity
                     mProducto.unit_medida = mReadaer.GetString("unit_medida");
                     mProducto.existencias_insumo = mReadaer.GetInt16("existencias_insumo");
                     mProducto.punto_reorden_insumo = mReadaer.GetInt16("punto_reorden_insumo");
-                    mProductos.Add(mProducto);
+                    mInsumos.Add(mProducto);
 
                 }
                 mReadaer.Close();
@@ -77,7 +77,7 @@ namespace Clave1_Grupo2.entity
             {
                 throw;
             }
-            return mProductos;
+            return mInsumos;
         }
         // Registrar los items a la Tabla de Insumos
         internal bool agregarInsumo(Insumo mProducto)

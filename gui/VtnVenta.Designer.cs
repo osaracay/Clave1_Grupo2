@@ -84,7 +84,7 @@ namespace Clave1_Grupo2.gui
             this.picLogo.Image = ((System.Drawing.Image)(resources.GetObject("picLogo.Image")));
             this.picLogo.InitialImage = ((System.Drawing.Image)(resources.GetObject("picLogo.InitialImage")));
             this.picLogo.Location = new System.Drawing.Point(941, 11);
-            this.picLogo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.picLogo.Margin = new System.Windows.Forms.Padding(4);
             this.picLogo.Name = "picLogo";
             this.picLogo.Size = new System.Drawing.Size(129, 118);
             this.picLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -107,7 +107,7 @@ namespace Clave1_Grupo2.gui
             this.txtTotal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.txtTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTotal.Location = new System.Drawing.Point(123, 362);
-            this.txtTotal.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtTotal.Margin = new System.Windows.Forms.Padding(4);
             this.txtTotal.Name = "txtTotal";
             this.txtTotal.ReadOnly = true;
             this.txtTotal.Size = new System.Drawing.Size(237, 49);
@@ -131,7 +131,7 @@ namespace Clave1_Grupo2.gui
             this.cmbIdInsumo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbIdInsumo.FormattingEnabled = true;
             this.cmbIdInsumo.Location = new System.Drawing.Point(16, 175);
-            this.cmbIdInsumo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmbIdInsumo.Margin = new System.Windows.Forms.Padding(4);
             this.cmbIdInsumo.Name = "cmbIdInsumo";
             this.cmbIdInsumo.Size = new System.Drawing.Size(125, 32);
             this.cmbIdInsumo.TabIndex = 1;
@@ -143,7 +143,7 @@ namespace Clave1_Grupo2.gui
             this.txtCliente.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.txtCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCliente.Location = new System.Drawing.Point(152, 101);
-            this.txtCliente.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtCliente.Margin = new System.Windows.Forms.Padding(4);
             this.txtCliente.Name = "txtCliente";
             this.txtCliente.ReadOnly = true;
             this.txtCliente.Size = new System.Drawing.Size(275, 30);
@@ -165,7 +165,7 @@ namespace Clave1_Grupo2.gui
             this.cmbIdCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbIdCliente.FormattingEnabled = true;
             this.cmbIdCliente.Location = new System.Drawing.Point(16, 101);
-            this.cmbIdCliente.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmbIdCliente.Margin = new System.Windows.Forms.Padding(4);
             this.cmbIdCliente.Name = "cmbIdCliente";
             this.cmbIdCliente.Size = new System.Drawing.Size(127, 32);
             this.cmbIdCliente.TabIndex = 0;
@@ -179,7 +179,7 @@ namespace Clave1_Grupo2.gui
             this.btnCancelar.Image = ((System.Drawing.Image)(resources.GetObject("btnCancelar.Image")));
             this.btnCancelar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnCancelar.Location = new System.Drawing.Point(936, 241);
-            this.btnCancelar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnCancelar.Margin = new System.Windows.Forms.Padding(4);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(136, 52);
             this.btnCancelar.TabIndex = 7;
@@ -199,9 +199,9 @@ namespace Clave1_Grupo2.gui
             this.groupBox1.Controls.Add(this.btnSalir);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(7, 289);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox1.Size = new System.Drawing.Size(1071, 422);
             this.groupBox1.TabIndex = 92;
             this.groupBox1.TabStop = false;
@@ -212,7 +212,7 @@ namespace Clave1_Grupo2.gui
             this.dgvRegistros.BackgroundColor = System.Drawing.SystemColors.Window;
             this.dgvRegistros.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvRegistros.Location = new System.Drawing.Point(13, 15);
-            this.dgvRegistros.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvRegistros.Margin = new System.Windows.Forms.Padding(4);
             this.dgvRegistros.Name = "dgvRegistros";
             this.dgvRegistros.ReadOnly = true;
             this.dgvRegistros.RowHeadersWidth = 51;
@@ -225,10 +225,11 @@ namespace Clave1_Grupo2.gui
             this.cmbMetPago.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbMetPago.FormattingEnabled = true;
             this.cmbMetPago.Location = new System.Drawing.Point(587, 358);
-            this.cmbMetPago.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmbMetPago.Margin = new System.Windows.Forms.Padding(4);
             this.cmbMetPago.Name = "cmbMetPago";
             this.cmbMetPago.Size = new System.Drawing.Size(199, 32);
             this.cmbMetPago.TabIndex = 8;
+            this.cmbMetPago.SelectedIndexChanged += new System.EventHandler(this.cmbMetPago_SelectedIndexChanged);
             // 
             // btnGuardar
             // 
@@ -237,7 +238,7 @@ namespace Clave1_Grupo2.gui
             this.btnGuardar.ForeColor = System.Drawing.Color.Black;
             this.btnGuardar.Image = ((System.Drawing.Image)(resources.GetObject("btnGuardar.Image")));
             this.btnGuardar.Location = new System.Drawing.Point(840, 338);
-            this.btnGuardar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnGuardar.Margin = new System.Windows.Forms.Padding(4);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(107, 76);
             this.btnGuardar.TabIndex = 9;
@@ -253,7 +254,7 @@ namespace Clave1_Grupo2.gui
             this.btnSalir.ForeColor = System.Drawing.Color.Black;
             this.btnSalir.Image = ((System.Drawing.Image)(resources.GetObject("btnSalir.Image")));
             this.btnSalir.Location = new System.Drawing.Point(959, 340);
-            this.btnSalir.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSalir.Margin = new System.Windows.Forms.Padding(4);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(107, 76);
             this.btnSalir.TabIndex = 10;
@@ -268,7 +269,7 @@ namespace Clave1_Grupo2.gui
             this.btnEliminar.Image = ((System.Drawing.Image)(resources.GetObject("btnEliminar.Image")));
             this.btnEliminar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnEliminar.Location = new System.Drawing.Point(792, 241);
-            this.btnEliminar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnEliminar.Margin = new System.Windows.Forms.Padding(4);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(136, 52);
             this.btnEliminar.TabIndex = 6;
@@ -293,7 +294,7 @@ namespace Clave1_Grupo2.gui
             this.txtStock.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.txtStock.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtStock.Location = new System.Drawing.Point(16, 250);
-            this.txtStock.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtStock.Margin = new System.Windows.Forms.Padding(4);
             this.txtStock.Name = "txtStock";
             this.txtStock.ReadOnly = true;
             this.txtStock.Size = new System.Drawing.Size(136, 30);
@@ -315,7 +316,7 @@ namespace Clave1_Grupo2.gui
             // 
             this.txtPrecio.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPrecio.Location = new System.Drawing.Point(161, 250);
-            this.txtPrecio.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtPrecio.Margin = new System.Windows.Forms.Padding(4);
             this.txtPrecio.Name = "txtPrecio";
             this.txtPrecio.Size = new System.Drawing.Size(136, 30);
             this.txtPrecio.TabIndex = 3;
@@ -327,7 +328,7 @@ namespace Clave1_Grupo2.gui
             this.txtMedida.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.txtMedida.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMedida.Location = new System.Drawing.Point(644, 175);
-            this.txtMedida.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtMedida.Margin = new System.Windows.Forms.Padding(4);
             this.txtMedida.Name = "txtMedida";
             this.txtMedida.ReadOnly = true;
             this.txtMedida.Size = new System.Drawing.Size(120, 30);
@@ -349,7 +350,7 @@ namespace Clave1_Grupo2.gui
             this.txtInsumo.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.txtInsumo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtInsumo.Location = new System.Drawing.Point(152, 175);
-            this.txtInsumo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtInsumo.Margin = new System.Windows.Forms.Padding(4);
             this.txtInsumo.Name = "txtInsumo";
             this.txtInsumo.ReadOnly = true;
             this.txtInsumo.Size = new System.Drawing.Size(483, 30);
@@ -395,7 +396,7 @@ namespace Clave1_Grupo2.gui
             this.dateTimePicker1.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dateTimePicker1.Location = new System.Drawing.Point(787, 101);
-            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(4);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(131, 22);
             this.dateTimePicker1.TabIndex = 0;
@@ -415,7 +416,7 @@ namespace Clave1_Grupo2.gui
             // 
             this.txtCantidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCantidad.Location = new System.Drawing.Point(307, 250);
-            this.txtCantidad.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtCantidad.Margin = new System.Windows.Forms.Padding(4);
             this.txtCantidad.Name = "txtCantidad";
             this.txtCantidad.Size = new System.Drawing.Size(153, 30);
             this.txtCantidad.TabIndex = 4;
@@ -427,10 +428,11 @@ namespace Clave1_Grupo2.gui
             this.cmbEstado.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbEstado.FormattingEnabled = true;
             this.cmbEstado.Location = new System.Drawing.Point(773, 176);
-            this.cmbEstado.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmbEstado.Margin = new System.Windows.Forms.Padding(4);
             this.cmbEstado.Name = "cmbEstado";
             this.cmbEstado.Size = new System.Drawing.Size(144, 32);
             this.cmbEstado.TabIndex = 2;
+            this.cmbEstado.SelectedIndexChanged += new System.EventHandler(this.cmbEstado_SelectedIndexChanged);
             // 
             // label11
             // 
@@ -451,7 +453,7 @@ namespace Clave1_Grupo2.gui
             this.btnAgregar.Image = ((System.Drawing.Image)(resources.GetObject("btnAgregar.Image")));
             this.btnAgregar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAgregar.Location = new System.Drawing.Point(648, 241);
-            this.btnAgregar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAgregar.Margin = new System.Windows.Forms.Padding(4);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(136, 52);
             this.btnAgregar.TabIndex = 5;
@@ -492,7 +494,7 @@ namespace Clave1_Grupo2.gui
             this.Controls.Add(this.txtInsumo);
             this.Controls.Add(this.label2);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "VtnVenta";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Venta";

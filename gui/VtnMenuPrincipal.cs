@@ -162,5 +162,19 @@ namespace Clave1_Grupo2
                 GestorVentanas.SolicitarInicioSesion();
             }
         }
+
+        private void btnVntC_Click(object sender, EventArgs e)
+        {
+            //DEBES SER USUARIO VET o ADMINISTRADOR PARA ACCEDER
+            if (UsuarioDAO.GetSesion() != null)
+            {
+                GestorVentanas.AbrirConsVenta();
+            }
+            else
+            {
+                MessageBox.Show("Debes iniciar sesion para acceder a esta funcion");
+                GestorVentanas.SolicitarInicioSesion();
+            }
+        }
     }
 }
