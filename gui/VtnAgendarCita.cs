@@ -21,12 +21,14 @@ namespace Clave1_Grupo2.gui
         {
             InitializeComponent();
             CargarDatosFormulario();
+            CitaDAO.GetCuposReservados();
         }
 
         private void CargarDatosFormulario()
         {                        
             Rellenador.CargarListaAComboBox(cbxPropietario, UsuarioDAO.GetListaUsuarios(3));
             Rellenador.CargarListaAComboBox(cbxVeterinario, UsuarioDAO.GetListaUsuarios(2));
+            Rellenador.CargarListaAComboBox(cbxTipoCita, CatDAO.GetTipoCitas());
             cbxPropietario.Enabled = true;
             cbxPropietario.SelectedIndex = -1;
             cbxVeterinario.Enabled = true;

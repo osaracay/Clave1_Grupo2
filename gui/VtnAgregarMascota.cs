@@ -18,7 +18,8 @@ namespace Clave1_Grupo2.gui
         public VtnAgregarMascota()
         {
             InitializeComponent();
-            Rellenador.CargarDataTableACombo(cbxEspecie, CatDAO.GetEspecie(), "id_especie", "nom_especie");
+            //Rellenador.CargarDataTableACombo(cbxEspecie, CatDAO.GetEspecie(), "id_especie", "nom_especie");
+            Rellenador.CargarListaAComboBox(cbxEspecie, CatDAO.GetEspecies());
             Rellenador.CargarDataTableACombo(cbxPropietario, UsuarioDAO.GetTblClientes(), "id_usuario", "nombre");
             //Si el usuario es Cliente el cbxPropietario quedara deshabilitado y el cliente seleccionado
             if (UsuarioDAO.GetSesion().TipoUsuario == 3)

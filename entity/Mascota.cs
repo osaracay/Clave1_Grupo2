@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Clave1_Grupo2.dao;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,6 +13,7 @@ namespace Clave1_Grupo2.entity
         private int idMascota;
         private string nomMascota;
         private int especie;
+        //private string especie; 
         private string raza;
         private int edad;
         private char generoMascota;
@@ -79,6 +81,15 @@ namespace Clave1_Grupo2.entity
             this.nomMascota= nomMascota;
         }
 
+        public string GetNomEspecie(int especie)
+        {
+            foreach (CatItem e in CatDAO.GetEspecies())
+            {
+                if (e.IdCat == especie) return e.NomCat;
+            }
+            return "especie desconocida";
+        }
+
         public int GetEspecie()
         {
             return especie;
@@ -126,7 +137,7 @@ namespace Clave1_Grupo2.entity
 
         public override string ToString()
         {
-            string stringMascota = this.GetNomMascota(); //+ " - " + this.GetEspecie() quisiera que aqui me indicara la especie
+            string stringMascota = $"{this.GetNomMascota()} - {this.GetNomEspecie(this.GetEspecie())}"; //+ " - " +  quisiera que aqui me indicara la especie
             return stringMascota;
         }
     }
