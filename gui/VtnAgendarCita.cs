@@ -74,5 +74,18 @@ namespace Clave1_Grupo2.gui
         {
             //Cuando el vet cambie se actualizan los horarios o el tipo de cita los rangos
         }
+
+        private void btnAgendar_Click(object sender, EventArgs e)
+        {
+
+            Cupo cupoApartado = new Cupo(campoFechaAgenda.Value, 
+                new DateTime(campoFechaAgenda.Value.Year, campoFechaAgenda.Value.Month, campoFechaAgenda.Value.Day, 
+                campoFechaAgenda.Value.Hour,0,0),
+                60);
+            MessageBox.Show($"la fecha seleccionada es : {cupoApartado.FechaCupo}\n" +
+                $"la hora de inicio es : {cupoApartado.HoraInicio}\n" +
+                $"la hora de finalizacion es : {cupoApartado.HoraFin}\n" +
+                $"la duracion es : {cupoApartado.DuracionMinutos}");
+        }
     }
 }

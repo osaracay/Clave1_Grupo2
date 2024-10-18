@@ -15,16 +15,22 @@ namespace Clave1_Grupo2.entity
         * Se generaran listas dinamicas de objetos cupo 
         *
          */
+        private static DateTime fechaMaxAgendable;
+        private static DateTime fechaMinAgendable; //Tendre que ir jugando con los limites
+
         private int idReservacion;
+        private DateTime horaFin;
         private DateTime fechaCupo; //Considerar crear listas por fecha
                                     //o una sola lista con este campo para filtrar
+        
         private DateTime horaInicio;
 
+        private int duracionMinutos;
         //El tipo de cita determina el precio y la duracion de una cita
-        private DateTime horaFin;
+        
         //private Veterinario vetAsignado;
         private int idVetAsignado;
-        private bool estaReservado;
+        private bool estaReservado;        
 
         public DateTime FechaCupo { get => fechaCupo; set => fechaCupo = value; }
         public DateTime HoraInicio { get => horaInicio; set => horaInicio = value; }
@@ -32,6 +38,24 @@ namespace Clave1_Grupo2.entity
         public int IdVetAsignado { get => idVetAsignado; set => idVetAsignado = value; }
         public bool EstaReservado { get => estaReservado; set => estaReservado = value; }
         public int IdReservacion { get => idReservacion; set => idReservacion = value; }
+        public int DuracionMinutos { get => duracionMinutos; set => duracionMinutos = value; }
+
+        public Cupo()
+        {
+            fechaMaxAgendable = DateTime.Today.AddDays(15);
+            fechaMinAgendable = DateTime.Now.AddHours(2);            
+        }
+
+        public Cupo(DateTime fechaCupo, DateTime horaInicio, int duracionMinutos)
+        {
+            this.fechaCupo = fechaCupo.Date;
+            this.horaInicio = horaInicio.ToUniversalTime(); //Cada vez que se cree, debe ser con el constructor y agregando, horas y minutos a 0 o 30 segun corresponda            
+            this.duracionMinutos = duracionMinutos;
+            this.HoraFin = horaInicio.AddMinutes(duracionMinutos).ToUniversalTime();
+        }
+
+
+
         /* Pseudocodigo o Caso de Uso
 * 1 : Consultar cantidad de cupos tomados en la fecha y hora inicial 
 * crear una COPIA LOCAL (RUNTIME) de la tabla de reservaciones
