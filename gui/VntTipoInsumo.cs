@@ -1,4 +1,6 @@
-﻿using Clave1_Grupo2.entity;
+﻿using Clave1_Grupo2.dao;
+using Clave1_Grupo2.entity;
+using Clave1_Grupo2.util;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
