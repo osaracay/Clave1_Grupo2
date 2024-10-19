@@ -75,12 +75,12 @@ namespace Clave1_Grupo2.entity
                     // Insertar la factura
                     string INSERT_FACTURA = "INSERT INTO factura (fecha, monto_total, id_met_pago, estado_factura) " +
                                             "VALUES (@fecha, @monto, @pago, @estado);";
-                    MySqlCommand mCommand = new MySqlCommand(INSERT_FACTURA, connection, transaction);
-                    mCommand.Parameters.AddWithValue("@fecha", DateTime.Parse(mProducto.fecha));
-                    mCommand.Parameters.AddWithValue("@monto", mProducto.monto_total);
-                    mCommand.Parameters.AddWithValue("@pago", mProducto.id_met_pago);
-                    mCommand.Parameters.AddWithValue("@estado", mProducto.estado_factura);
-                    mCommand.ExecuteNonQuery();
+                MySqlCommand mCommand = new MySqlCommand(INSERT_FACTURA, connection, transaction);
+                mCommand.Parameters.AddWithValue("@fecha", DateTime.Parse(mProducto.fecha));
+                mCommand.Parameters.AddWithValue("@monto", mProducto.monto_total);
+                mCommand.Parameters.AddWithValue("@pago", mProducto.id_met_pago);
+                mCommand.Parameters.AddWithValue("@estado", mProducto.estado_factura);
+                mCommand.ExecuteNonQuery();
 
                     // Obtener el ID de la factura insertada
                     long idFactura = mCommand.LastInsertedId;

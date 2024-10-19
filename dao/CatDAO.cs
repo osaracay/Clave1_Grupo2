@@ -1,4 +1,5 @@
 ﻿using Clave1_Grupo2.entity;
+using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.Data;
