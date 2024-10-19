@@ -22,6 +22,7 @@ namespace Clave1_Grupo2.util
         private static VtnVenta vntVenta;
         private static VntTipoInsumo vntTpInsumo;
         private static VtnConsultaVenta vntConsVenta;
+        private static VtnAsignarTurno vtnAsignar;
 
         public static void SolicitarRegistroUsuario()
         {
@@ -163,5 +164,18 @@ namespace Clave1_Grupo2.util
             vntConsVenta.Show();
             vntConsVenta.Focus();
         }
+
+        public static void AsignarTurno()
+        {
+            //SI NO EXISTE EL OBJETO SESION GLOBAL
+            if (vtnAsignar == null || vtnAsignar.IsDisposed)
+            {
+                vtnAsignar = null;
+                vtnAsignar = new VtnAsignarTurno();
+            }
+            vtnAsignar.Show();
+            vtnAsignar.Focus();
+        }
+    
     }
 }

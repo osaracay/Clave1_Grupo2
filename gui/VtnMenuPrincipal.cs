@@ -176,5 +176,19 @@ namespace Clave1_Grupo2
                 GestorVentanas.SolicitarInicioSesion();
             }
         }
+
+        private void btnAsignarTurno_Click(object sender, EventArgs e)
+        {
+            //DEBES SER USUARIO ADMINISTRADOR PARA ACCEDER
+            if (UsuarioDAO.GetSesion() != null && UsuarioDAO.GetSesion().TipoUsuario == 1)
+            {
+                GestorVentanas.AsignarTurno();
+            }
+            else
+            {
+                MessageBox.Show("Debes iniciar sesion como administrador para acceder a esta funcion");
+                GestorVentanas.SolicitarInicioSesion();
+            }
+        }
     }
 }

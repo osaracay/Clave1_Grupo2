@@ -129,6 +129,7 @@
     <Compile Include="dao\CitaDAO.cs" />
     <Compile Include="dao\ConexionBD.cs" />
     <Compile Include="dao\ConexionMysql.cs" />
+    <Compile Include="dao\CupoDAO.cs" />
     <Compile Include="dao\MascotaDAO.cs" />
     <Compile Include="dao\UsuarioDAO.cs" />
     <Compile Include="entity\Administrador.cs" />
@@ -160,6 +161,12 @@
     </Compile>
     <Compile Include="gui\VtnAgregarMascota.Designer.cs">
       <DependentUpon>VtnAgregarMascota.cs</DependentUpon>
+    </Compile>
+    <Compile Include="gui\VtnAsignarTurno.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="gui\VtnAsignarTurno.Designer.cs">
+      <DependentUpon>VtnAsignarTurno.cs</DependentUpon>
     </Compile>
     <Compile Include="gui\VtnCitas.cs">
       <SubType>Form</SubType>
@@ -235,6 +242,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="gui\VtnAgregarMascota.resx">
       <DependentUpon>VtnAgregarMascota.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="gui\VtnAsignarTurno.resx">
+      <DependentUpon>VtnAsignarTurno.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="gui\VtnCitas.resx">
       <DependentUpon>VtnCitas.cs</DependentUpon>

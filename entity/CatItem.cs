@@ -18,7 +18,7 @@ namespace Clave1_Grupo2.entity
         private string nomCat;
         private string descCat; //no todas las tablas Cat tienen desc
         private double precioCat; //Solo la tabla de tipo de cita tiene precio.
-
+        private int duracionMinutosCat; //Solo la tabla tipo de cita
         public CatItem()
         {
 
@@ -44,6 +44,7 @@ namespace Clave1_Grupo2.entity
         public string NomCat { get => nomCat; set => nomCat = value; }
         public string DescCat { get => descCat; set => descCat = value; }
         public double PrecioCat { get => precioCat; set => precioCat = value; }
+        public int DuracionMinutosCat { get => duracionMinutosCat; set => duracionMinutosCat = value; }
 
         public override string ToString()
         {
