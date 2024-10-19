@@ -21,11 +21,11 @@ namespace Clave1_Grupo2.gui
         {
             InitializeComponent();
             CargarDatosFormulario();
-            CitaDAO.GetCuposReservados();
+            CupoDAO.GetCuposReservados();
         }
 
         private void CargarDatosFormulario()
-        {                        
+        {   
             Rellenador.CargarListaAComboBox(cbxPropietario, UsuarioDAO.GetListaUsuarios(3));
             Rellenador.CargarListaAComboBox(cbxVeterinario, UsuarioDAO.GetListaUsuarios(2));
             Rellenador.CargarListaAComboBox(cbxTipoCita, CatDAO.GetTipoCitas());
@@ -76,16 +76,35 @@ namespace Clave1_Grupo2.gui
         }
 
         private void btnAgendar_Click(object sender, EventArgs e)
-        {
-
+        {            
+            CatItem tipoCita = (CatItem)cbxTipoCita.SelectedItem;
             Cupo cupoApartado = new Cupo(campoFechaAgenda.Value, 
                 new DateTime(campoFechaAgenda.Value.Year, campoFechaAgenda.Value.Month, campoFechaAgenda.Value.Day, 
                 campoFechaAgenda.Value.Hour,0,0),
-                60);
+                90);
             MessageBox.Show($"la fecha seleccionada es : {cupoApartado.FechaCupo}\n" +
                 $"la hora de inicio es : {cupoApartado.HoraInicio}\n" +
                 $"la hora de finalizacion es : {cupoApartado.HoraFin}\n" +
                 $"la duracion es : {cupoApartado.DuracionMinutos}");
+            Cupo cupoSiguiente = new Cupo(campoFechaAgenda.Value,
+                new DateTime(campoFechaAgenda.Value.Year, campoFechaAgenda.Value.Month, campoFechaAgenda.Value.Day,
+                cupoApartado.HoraFin.Hour, cupoApartado.HoraFin.Minute, 0),
+                tipoCita.DuracionMinutosCat);
+            MessageBox.Show($"2 - la fecha seleccionada es : {cupoSiguiente.FechaCupo}\n" +
+                $"la hora de inicio es : {cupoSiguiente.HoraInicio}\n" +
+                $"la hora de finalizacion es : {cupoSiguiente.HoraFin}\n" +
+                $"la duracion es : {cupoSiguiente.DuracionMinutos}");
+        }
+
+        private void VtnAgendarCita_Load(object sender, EventArgs e)
+        {
+            //POr si acaso le mueven en Initialize component o se restaura
+            //Cuando le agarre feo a vs, aqui lo setteo manualmente
+            //Asi no hay necesidad de una propiedad en Cupo que la establezca
+            //Y que tenga que averiguar como aplicarla a restricciones de cupo
+            this.campoFechaAgenda.MaxDate = DateTime.Today.AddMonths(3);
+            this.campoFechaAgenda.MinDate = DateTime.Today;
+            //Aunque este en _Load, prevalece sobre lo que esta en Initialize
         }
     }
 }

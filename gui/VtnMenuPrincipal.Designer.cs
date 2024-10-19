@@ -50,6 +50,8 @@ namespace Clave1_Grupo2
             this.label7 = new System.Windows.Forms.Label();
             this.lblMiPerfil = new System.Windows.Forms.Label();
             this.btnVntC = new System.Windows.Forms.Button();
+            this.btnAsignarTurno = new System.Windows.Forms.Button();
+            this.label8 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
             this.SuspendLayout();
             // 
@@ -281,6 +283,29 @@ namespace Clave1_Grupo2
             this.btnVntC.UseVisualStyleBackColor = true;
             this.btnVntC.Click += new System.EventHandler(this.btnVntC_Click);
             // 
+            // btnAsignarTurno
+            // 
+            this.btnAsignarTurno.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnAsignarTurno.BackgroundImage")));
+            this.btnAsignarTurno.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnAsignarTurno.Location = new System.Drawing.Point(469, 176);
+            this.btnAsignarTurno.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnAsignarTurno.Name = "btnAsignarTurno";
+            this.btnAsignarTurno.Size = new System.Drawing.Size(131, 130);
+            this.btnAsignarTurno.TabIndex = 19;
+            this.btnAsignarTurno.UseVisualStyleBackColor = true;
+            this.btnAsignarTurno.Click += new System.EventHandler(this.btnAsignarTurno_Click);
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.BackColor = System.Drawing.Color.Transparent;
+            this.label8.Location = new System.Drawing.Point(486, 309);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(97, 34);
+            this.label8.TabIndex = 20;
+            this.label8.Text = "Asignar turno \r\nveterinario";
+            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // VtnMenuPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -290,6 +315,8 @@ namespace Clave1_Grupo2
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(897, 373);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.btnAsignarTurno);
             this.Controls.Add(this.btnVntC);
             this.Controls.Add(this.lblMiPerfil);
             this.Controls.Add(this.lblRegistrarUsuario);
@@ -346,6 +373,8 @@ namespace Clave1_Grupo2
         private System.Windows.Forms.Button btnVenta;
         private System.Windows.Forms.Label lblMiPerfil;
         private System.Windows.Forms.Button btnVntC;
+        private System.Windows.Forms.Button btnAsignarTurno;
+        private System.Windows.Forms.Label label8;
     }
 }
 

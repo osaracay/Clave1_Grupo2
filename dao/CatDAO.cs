@@ -76,6 +76,7 @@ namespace Clave1_Grupo2.dao
                         //MessageBox.Show($"Desc cita {tipoCita.DescCat} y \nvalor del lector {lector.GetString(2)}");
                         */
                         tipoCita.PrecioCat = (double)lector.GetDecimal(3);
+                        tipoCita.DuracionMinutosCat = lector.GetInt32(4);
                         //Falta duracion de cita para ocupar al momento de definir los intervalos de tiempo
                         listaTipoCitas.Add(tipoCita);
                     }
