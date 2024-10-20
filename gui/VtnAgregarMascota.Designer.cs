@@ -173,7 +173,7 @@ namespace Clave1_Grupo2.gui
             this.btnAgregarMascota.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAgregarMascota.Name = "btnAgregarMascota";
             this.btnAgregarMascota.Size = new System.Drawing.Size(326, 44);
-            this.btnAgregarMascota.TabIndex = 36;
+            this.btnAgregarMascota.TabIndex = 11;
             this.btnAgregarMascota.Text = "Agregar mascota";
             this.btnAgregarMascota.UseVisualStyleBackColor = false;
             this.btnAgregarMascota.Click += new System.EventHandler(this.btnAgregarMascota_Click);
@@ -292,7 +292,7 @@ namespace Clave1_Grupo2.gui
             this.grpGenero.Location = new System.Drawing.Point(467, 209);
             this.grpGenero.Name = "grpGenero";
             this.grpGenero.Size = new System.Drawing.Size(326, 49);
-            this.grpGenero.TabIndex = 41;
+            this.grpGenero.TabIndex = 7;
             this.grpGenero.TabStop = false;
             this.grpGenero.Text = "Genero";
             // 
@@ -302,7 +302,7 @@ namespace Clave1_Grupo2.gui
             this.chkIndef.Location = new System.Drawing.Point(211, 17);
             this.chkIndef.Name = "chkIndef";
             this.chkIndef.Size = new System.Drawing.Size(92, 21);
-            this.chkIndef.TabIndex = 9;
+            this.chkIndef.TabIndex = 10;
             this.chkIndef.TabStop = true;
             this.chkIndef.Text = "Sin definir";
             this.chkIndef.UseVisualStyleBackColor = true;
@@ -313,7 +313,7 @@ namespace Clave1_Grupo2.gui
             this.chkMsc.Location = new System.Drawing.Point(108, 20);
             this.chkMsc.Name = "chkMsc";
             this.chkMsc.Size = new System.Drawing.Size(92, 21);
-            this.chkMsc.TabIndex = 8;
+            this.chkMsc.TabIndex = 9;
             this.chkMsc.TabStop = true;
             this.chkMsc.Text = "Masculino";
             this.chkMsc.UseVisualStyleBackColor = true;
@@ -324,7 +324,7 @@ namespace Clave1_Grupo2.gui
             this.chkFem.Location = new System.Drawing.Point(11, 20);
             this.chkFem.Name = "chkFem";
             this.chkFem.Size = new System.Drawing.Size(91, 21);
-            this.chkFem.TabIndex = 7;
+            this.chkFem.TabIndex = 8;
             this.chkFem.TabStop = true;
             this.chkFem.Text = "Femenino";
             this.chkFem.UseVisualStyleBackColor = true;

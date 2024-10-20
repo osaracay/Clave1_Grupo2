@@ -32,6 +32,12 @@ namespace Clave1_Grupo2.util
             cb.DisplayMember = "ToString";
             cb.DataSource = lista;
         }
+        public static void CargarListaAComboBox(ComboBox cb, List<Turno> lista)
+        {
+            cb.ValueMember = "IdTurno";
+            cb.DisplayMember = "ToString";
+            cb.DataSource = lista;
+        }
         public static void CargarListaAComboBox(ComboBox cb, List<Mascota> lista)
         {
             cb.ValueMember = "idMascota";

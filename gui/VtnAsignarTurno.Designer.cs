@@ -126,6 +126,7 @@ namespace Clave1_Grupo2.gui
             this.chkDom.TabIndex = 6;
             this.chkDom.Text = "domingo";
             this.chkDom.UseVisualStyleBackColor = true;
+            this.chkDom.CheckedChanged += new System.EventHandler(this.chk_CheckedChanged);
             // 
             // chkSab
             // 
@@ -136,56 +137,62 @@ namespace Clave1_Grupo2.gui
             this.chkSab.TabIndex = 5;
             this.chkSab.Text = "sábado";
             this.chkSab.UseVisualStyleBackColor = true;
+            this.chkSab.CheckedChanged += new System.EventHandler(this.chk_CheckedChanged);
             // 
             // chkVie
             // 
             this.chkVie.AutoSize = true;
-            this.chkVie.Location = new System.Drawing.Point(169, 102);
+            this.chkVie.Location = new System.Drawing.Point(47, 140);
             this.chkVie.Name = "chkVie";
             this.chkVie.Size = new System.Drawing.Size(85, 24);
             this.chkVie.TabIndex = 4;
             this.chkVie.Text = "viernes";
             this.chkVie.UseVisualStyleBackColor = true;
+            this.chkVie.CheckedChanged += new System.EventHandler(this.chk_CheckedChanged);
             // 
             // chkJue
             // 
             this.chkJue.AutoSize = true;
-            this.chkJue.Location = new System.Drawing.Point(169, 64);
+            this.chkJue.Location = new System.Drawing.Point(169, 103);
             this.chkJue.Name = "chkJue";
             this.chkJue.Size = new System.Drawing.Size(79, 24);
             this.chkJue.TabIndex = 3;
             this.chkJue.Text = "jueves";
             this.chkJue.UseVisualStyleBackColor = true;
+            this.chkJue.CheckedChanged += new System.EventHandler(this.chk_CheckedChanged);
             // 
             // chkMie
             // 
             this.chkMie.AutoSize = true;
-            this.chkMie.Location = new System.Drawing.Point(52, 140);
+            this.chkMie.Location = new System.Drawing.Point(47, 103);
             this.chkMie.Name = "chkMie";
             this.chkMie.Size = new System.Drawing.Size(104, 24);
             this.chkMie.TabIndex = 2;
             this.chkMie.Text = "miércoles";
             this.chkMie.UseVisualStyleBackColor = true;
+            this.chkMie.CheckedChanged += new System.EventHandler(this.chk_CheckedChanged);
             // 
             // chkMar
             // 
             this.chkMar.AutoSize = true;
-            this.chkMar.Location = new System.Drawing.Point(52, 102);
+            this.chkMar.Location = new System.Drawing.Point(169, 64);
             this.chkMar.Name = "chkMar";
             this.chkMar.Size = new System.Drawing.Size(83, 24);
             this.chkMar.TabIndex = 1;
             this.chkMar.Text = "martes";
             this.chkMar.UseVisualStyleBackColor = true;
+            this.chkMar.CheckedChanged += new System.EventHandler(this.chk_CheckedChanged);
             // 
             // chkLun
             // 
             this.chkLun.AutoSize = true;
-            this.chkLun.Location = new System.Drawing.Point(52, 64);
+            this.chkLun.Location = new System.Drawing.Point(47, 64);
             this.chkLun.Name = "chkLun";
             this.chkLun.Size = new System.Drawing.Size(71, 24);
             this.chkLun.TabIndex = 0;
             this.chkLun.Text = "lunes";
             this.chkLun.UseVisualStyleBackColor = true;
+            this.chkLun.CheckedChanged += new System.EventHandler(this.chk_CheckedChanged);
             // 
             // btnAsignar
             // 
@@ -202,7 +209,7 @@ namespace Clave1_Grupo2.gui
             // btnReasignar
             // 
             this.btnReasignar.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.btnReasignar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReasignar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnReasignar.Location = new System.Drawing.Point(167, 314);
             this.btnReasignar.Name = "btnReasignar";
             this.btnReasignar.Size = new System.Drawing.Size(136, 67);

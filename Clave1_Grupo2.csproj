@@ -131,6 +131,7 @@
     <Compile Include="dao\ConexionMysql.cs" />
     <Compile Include="dao\CupoDAO.cs" />
     <Compile Include="dao\MascotaDAO.cs" />
+    <Compile Include="dao\TurnoDAO.cs" />
     <Compile Include="dao\UsuarioDAO.cs" />
     <Compile Include="entity\Administrador.cs" />
     <Compile Include="entity\CatItem.cs" />
@@ -141,6 +142,7 @@
     <Compile Include="entity\Compra.cs" />
     <Compile Include="entity\Insumo.cs" />
     <Compile Include="entity\Mascota.cs" />
+    <Compile Include="entity\Turno.cs" />
     <Compile Include="entity\Usuario.cs" />
     <Compile Include="entity\Venta.cs" />
     <Compile Include="entity\Veterinario.cs" />

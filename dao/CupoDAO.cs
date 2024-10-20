@@ -91,6 +91,6 @@ namespace Clave1_Grupo2.dao
             //HASTA ENCONTRARME CON UNA HORA RESERVADA, HORA DE ALMUERZO U HORA FIN DE UN TURNO
             //PRIMERO DEBE CREARSE LA CITA PARA LUEGO CREAR Y ASIGNAR UN CUPO
             return cuposDisponibles;
-        }
+        }        
     }
 }
