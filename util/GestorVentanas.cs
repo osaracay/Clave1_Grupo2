@@ -23,6 +23,7 @@ namespace Clave1_Grupo2.util
         private static VntTipoInsumo vntTpInsumo;
         private static VtnConsultaVenta vntConsVenta;
         private static VtnAsignarTurno vtnAsignar;
+        private static VtnInsumoCons vtnInsumoCons;
 
         public static void SolicitarRegistroUsuario()
         {
@@ -176,6 +177,18 @@ namespace Clave1_Grupo2.util
             vtnAsignar.Show();
             vtnAsignar.Focus();
         }
-    
+
+        public static void AbrirConsInsumo()
+        {
+            //SI NO EXISTE EL OBJETO SESION GLOBAL
+            if (vtnInsumoCons == null || vtnInsumoCons.IsDisposed)
+            {
+                vtnInsumoCons = null;
+                vtnInsumoCons = new VtnInsumoCons();
+            }
+            vtnInsumoCons.Show();
+            vtnInsumoCons.Focus();
+        }
+
     }
 }

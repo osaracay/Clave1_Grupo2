@@ -216,5 +216,31 @@ namespace Clave1_Grupo2.gui
             }
         }
 
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            var consultaForm = new VtnInsumoCons();
+
+            if (consultaForm.ShowDialog() == DialogResult.OK)
+            {
+                cmbIdInsumo.Text = consultaForm.InsumoId;
+                txtDescripcion.Text = consultaForm.InsumoNombre;
+                txtPrecio.Text = consultaForm.InsumoPrecio;
+                txtExistencia.Text = consultaForm.InsumoCantidad;
+                txtMedida.Text = consultaForm.InsumoMedida;
+                txtStockFinal.Text = consultaForm.InsumoStockMinimo;
+                txtCantidad.Text = "0";
+            }
+            ////DEBES SER USUARIO VET o ADMINISTRADOR PARA ACCEDER
+            //if (UsuarioDAO.GetSesion() != null)
+            //{
+            //    GestorVentanas.AbrirConsInsumo();
+            //}
+            //else
+            //{
+            //    MessageBox.Show("Debes iniciar sesion para acceder a esta funcion");
+            //    GestorVentanas.SolicitarInicioSesion();
+            //}
+        }
+
     }
 }
