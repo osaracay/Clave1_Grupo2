@@ -194,6 +194,12 @@
     <Compile Include="gui\VtnInsumo.Designer.cs">
       <DependentUpon>VtnInsumo.cs</DependentUpon>
     </Compile>
+    <Compile Include="gui\VtnInsumoCons.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="gui\VtnInsumoCons.Designer.cs">
+      <DependentUpon>VtnInsumoCons.cs</DependentUpon>
+    </Compile>
     <Compile Include="gui\VtnMascotas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -259,6 +265,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="gui\VtnInsumo.resx">
       <DependentUpon>VtnInsumo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="gui\VtnInsumoCons.resx">
+      <DependentUpon>VtnInsumoCons.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="gui\VtnMascotas.resx">
       <DependentUpon>VtnMascotas.cs</DependentUpon>

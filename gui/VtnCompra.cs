@@ -41,11 +41,13 @@ namespace Clave1_Grupo2.gui
         }
         private void LimpiarCampos()
         {
+            Rellenador.CargarDataTableACombo(cmbIdInsumo, CatDAO.GetInsumos(), "nom_insumo", "id_insumo");
+
             cmbIdInsumo.SelectedIndex = -1;
             txtDescripcion.Text = "";
             txtProveedor.Text = "";
             txtPrecio.Text = "";
-            txtExistencia.Text ="";
+            txtExistencia.Text = "";
             txtCantidad.Text = "";
             txtMedida.Text = "";
             txtStockFinal.Text = "";
@@ -78,7 +80,6 @@ namespace Clave1_Grupo2.gui
             {
                 MessageBox.Show("Error al Guardar la Compra.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
         }
         private void cargarDatosInsumos()
         {
@@ -214,5 +215,32 @@ namespace Clave1_Grupo2.gui
                 e.Handled = true;
             }
         }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            var consultaForm = new VtnInsumoCons();
+
+            if (consultaForm.ShowDialog() == DialogResult.OK)
+            {
+                cmbIdInsumo.Text = consultaForm.InsumoId;
+                txtDescripcion.Text = consultaForm.InsumoNombre;
+                txtPrecio.Text = consultaForm.InsumoPrecio;
+                txtExistencia.Text = consultaForm.InsumoCantidad;
+                txtMedida.Text = consultaForm.InsumoMedida;
+                txtStockFinal.Text = consultaForm.InsumoStockMinimo;
+                txtCantidad.Text = "0";
+            }
+            ////DEBES SER USUARIO VET o ADMINISTRADOR PARA ACCEDER
+            //if (UsuarioDAO.GetSesion() != null)
+            //{
+            //    GestorVentanas.AbrirConsInsumo();
+            //}
+            //else
+            //{
+            //    MessageBox.Show("Debes iniciar sesion para acceder a esta funcion");
+            //    GestorVentanas.SolicitarInicioSesion();
+            //}
+        }
+
     }
 }

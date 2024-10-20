@@ -15,6 +15,7 @@ namespace Clave1_Grupo2.dao
         protected string user = "root";
         protected string password = "";
     }
+
     class ConexionMysql : conexion
     {
         protected new string server = "localhost";
