@@ -74,8 +74,7 @@ namespace Clave1_Grupo2.gui
                     mInsumos[i].id_tipo_insumo,
                     mInsumos[i].precio_unit.ToString("N2"),
                     mInsumos[i].unit_medida,
-                    mInsumos[i].existencias_insumo,
-                    mInsumos[i].punto_reorden_insumo);
+                    mInsumos[i].existencias_insumo);
             }
         }
          private void txtBuscar_TextChanged(object sender, EventArgs e)
@@ -92,7 +91,6 @@ namespace Clave1_Grupo2.gui
             dgvRegistros.Columns.Add("precio", "Precio");
             dgvRegistros.Columns.Add("medida", "U-Medida");
             dgvRegistros.Columns.Add("cantidad", "Existencia");
-            dgvRegistros.Columns.Add("stockm", "ROP");
 
             dgvRegistros.AllowUserToAddRows = false;
             dgvRegistros.Columns["Id"].Width = 70;
@@ -126,6 +124,25 @@ namespace Clave1_Grupo2.gui
         }
 
         private void dgvRegistros_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            //if (e.RowIndex >= 0)
+            //{
+            //    var row = dgvRegistros.Rows[e.RowIndex];
+
+            //    // Guardar los valores seleccionados en las propiedades
+            //    InsumoId = row.Cells["Id"].Value.ToString();
+            //    InsumoNombre = row.Cells["nombre"].Value.ToString();
+            //    InsumoPrecio = row.Cells["precio"].Value.ToString();
+            //    InsumoMedida = row.Cells["medida"].Value.ToString();
+            //    InsumoCantidad = row.Cells["cantidad"].Value.ToString();
+            //    InsumoStockMinimo = row.Cells["stockm"].Value.ToString();
+
+            //    DialogResult = DialogResult.OK;
+            //    this.Close();
+            //}
+        }
+
+        private void dgvRegistros_DoubleClick(object sender, EventArgs e)
         {
             if (e.RowIndex >= 0)
             {
