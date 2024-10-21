@@ -134,6 +134,7 @@ namespace Clave1_Grupo2.gui
             this.txtPassword.TabIndex = 3;
             this.txtPassword.Text = "Contraseña";
             this.txtPassword.UseSystemPasswordChar = true;
+            this.txtPassword.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPassword_KeyPress);
             // 
             // btnLogin
             // 

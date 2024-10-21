@@ -14,12 +14,20 @@ namespace Clave1_Grupo2.entity
         private DateTime horaInicio;
         private DateTime horaFin;
         private DateTime horaAlmuerzo;
+        private int idVet;
+        private int idDetalleTurno;
+        private char descanso1;
+        private char descanso2;
 
         public int IdTurno { get => idTurno; set => idTurno = value; }
         public string NombreTurno { get => nombreTurno; set => nombreTurno = value; }
         public DateTime HoraInicio { get => horaInicio; set => horaInicio = value; }
         public DateTime HoraFin { get => horaFin; set => horaFin = value; }
         public DateTime HoraAlmuerzo { get => horaAlmuerzo; set => horaAlmuerzo = value; }
+        public int IdVet { get => idVet; set => idVet = value; }
+        public int IdDetalleTurno { get => idDetalleTurno; set => idDetalleTurno = value; }
+        public char Descanso1 { get => descanso1; set => descanso1 = value; }
+        public char Descanso2 { get => descanso2; set => descanso2 = value; }
 
         public override string ToString()
         {

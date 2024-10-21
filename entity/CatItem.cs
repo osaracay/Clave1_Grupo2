@@ -50,7 +50,7 @@ namespace Clave1_Grupo2.entity
         {
             if (this.PrecioCat > 0)
             {
-                return $"{this.NomCat} - ${this.PrecioCat}";
+                return $"{this.NomCat} - ${this.PrecioCat} - {this.DuracionMinutosCat} min";
             }
             return this.NomCat;
         }

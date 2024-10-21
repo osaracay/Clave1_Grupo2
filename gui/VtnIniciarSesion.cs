@@ -18,10 +18,12 @@ namespace Clave1_Grupo2.gui
             GestorVentanas.SolicitarRegistroUsuario();
         }
 
-        private void btnLogin_Click(object sender, System.EventArgs e)
+        private void Autenticar()
         {
-            if(FormularioLleno() && UsuarioDAO.AutenticarUsuario(txtUsuario.Text, CyberSec.HolaCosmos(txtPassword.Text))){
-                if(UsuarioDAO.GetSesion() != null) {
+            if (FormularioLleno() && UsuarioDAO.AutenticarUsuario(txtUsuario.Text, CyberSec.HolaCosmos(txtPassword.Text)))
+            {
+                if (UsuarioDAO.GetSesion() != null)
+                {
                     //DA ERROR SI EL USUARIO NO EXISTE
                     MessageBox.Show($"Bienvenido {UsuarioDAO.GetSesion().Nombre} {UsuarioDAO.GetSesion().Apellido}");
                     this.Close();
@@ -29,11 +31,16 @@ namespace Clave1_Grupo2.gui
                 else
                 {
                     MessageBox.Show("Usuario o contraseña incorrectos");
-                }                                
-                
+                }
+
                 //PENDIENTE
                 //Actualizar el menu de inicio para mostrar las funciones de acuerdo con el tipo de usuario
-            }           
+            }
+        }
+
+        private void btnLogin_Click(object sender, System.EventArgs e)
+        {
+            Autenticar();
         }
 
         private bool FormularioLleno()
@@ -56,8 +63,11 @@ namespace Clave1_Grupo2.gui
             else
             {
                 MessageBox.Show("ignorando ...");
-            }
-            
+            }            
+        }
+        private void txtPassword_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter) Autenticar();
         }
     }
 }

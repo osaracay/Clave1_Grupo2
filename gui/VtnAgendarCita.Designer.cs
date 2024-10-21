@@ -36,7 +36,7 @@ namespace Clave1_Grupo2.gui
             this.lblVetCatDog = new System.Windows.Forms.Label();
             this.picLogo = new System.Windows.Forms.PictureBox();
             this.campoFechaAgenda = new System.Windows.Forms.DateTimePicker();
-            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.lbxCupos = new System.Windows.Forms.ListBox();
             this.cbxPropietario = new System.Windows.Forms.ComboBox();
             this.lblPropietario = new System.Windows.Forms.Label();
             this.cbxMascota = new System.Windows.Forms.ComboBox();
@@ -48,6 +48,7 @@ namespace Clave1_Grupo2.gui
             this.txtMotivo = new System.Windows.Forms.RichTextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.btnAgendar = new System.Windows.Forms.Button();
+            this.btnGetCupos = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbxFotoPerfil)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
@@ -87,7 +88,7 @@ namespace Clave1_Grupo2.gui
             this.lblTitulo.Location = new System.Drawing.Point(41, 170);
             this.lblTitulo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new System.Drawing.Size(152, 29);
+            this.lblTitulo.Size = new System.Drawing.Size(119, 24);
             this.lblTitulo.TabIndex = 62;
             this.lblTitulo.Text = "Agendar Cita";
             // 
@@ -98,7 +99,7 @@ namespace Clave1_Grupo2.gui
             this.lblVetCatDog.ForeColor = System.Drawing.Color.White;
             this.lblVetCatDog.Location = new System.Drawing.Point(96, 390);
             this.lblVetCatDog.Name = "lblVetCatDog";
-            this.lblVetCatDog.Size = new System.Drawing.Size(117, 50);
+            this.lblVetCatDog.Size = new System.Drawing.Size(97, 40);
             this.lblVetCatDog.TabIndex = 6;
             this.lblVetCatDog.Text = "Veterinaria\r\nCat-Dog";
             // 
@@ -123,15 +124,16 @@ namespace Clave1_Grupo2.gui
             this.campoFechaAgenda.Name = "campoFechaAgenda";
             this.campoFechaAgenda.Size = new System.Drawing.Size(131, 22);
             this.campoFechaAgenda.TabIndex = 63;
+            this.campoFechaAgenda.ValueChanged += new System.EventHandler(this.campoFechaAgenda_ValueChanged);
             // 
-            // listBox1
+            // lbxCupos
             // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 16;
-            this.listBox1.Location = new System.Drawing.Point(657, 55);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(131, 308);
-            this.listBox1.TabIndex = 64;
+            this.lbxCupos.FormattingEnabled = true;
+            this.lbxCupos.ItemHeight = 16;
+            this.lbxCupos.Location = new System.Drawing.Point(657, 55);
+            this.lbxCupos.Name = "lbxCupos";
+            this.lbxCupos.Size = new System.Drawing.Size(131, 308);
+            this.lbxCupos.TabIndex = 64;
             // 
             // cbxPropietario
             // 
@@ -142,7 +144,7 @@ namespace Clave1_Grupo2.gui
             this.cbxPropietario.FormattingEnabled = true;
             this.cbxPropietario.Location = new System.Drawing.Point(342, 87);
             this.cbxPropietario.Name = "cbxPropietario";
-            this.cbxPropietario.Size = new System.Drawing.Size(308, 26);
+            this.cbxPropietario.Size = new System.Drawing.Size(308, 23);
             this.cbxPropietario.TabIndex = 3;
             this.cbxPropietario.SelectedIndexChanged += new System.EventHandler(this.cbxPropietario_SelectedIndexChanged);
             // 
@@ -153,7 +155,7 @@ namespace Clave1_Grupo2.gui
             this.lblPropietario.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.lblPropietario.Location = new System.Drawing.Point(229, 87);
             this.lblPropietario.Name = "lblPropietario";
-            this.lblPropietario.Size = new System.Drawing.Size(90, 20);
+            this.lblPropietario.Size = new System.Drawing.Size(77, 17);
             this.lblPropietario.TabIndex = 92;
             this.lblPropietario.Text = "Propietario";
             // 
@@ -166,7 +168,7 @@ namespace Clave1_Grupo2.gui
             this.cbxMascota.FormattingEnabled = true;
             this.cbxMascota.Location = new System.Drawing.Point(342, 119);
             this.cbxMascota.Name = "cbxMascota";
-            this.cbxMascota.Size = new System.Drawing.Size(308, 26);
+            this.cbxMascota.Size = new System.Drawing.Size(308, 23);
             this.cbxMascota.TabIndex = 4;
             // 
             // lblMascota
@@ -176,7 +178,7 @@ namespace Clave1_Grupo2.gui
             this.lblMascota.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.lblMascota.Location = new System.Drawing.Point(229, 119);
             this.lblMascota.Name = "lblMascota";
-            this.lblMascota.Size = new System.Drawing.Size(73, 20);
+            this.lblMascota.Size = new System.Drawing.Size(61, 17);
             this.lblMascota.TabIndex = 94;
             this.lblMascota.Text = "Mascota";
             // 
@@ -189,7 +191,7 @@ namespace Clave1_Grupo2.gui
             this.cbxVeterinario.FormattingEnabled = true;
             this.cbxVeterinario.Location = new System.Drawing.Point(342, 23);
             this.cbxVeterinario.Name = "cbxVeterinario";
-            this.cbxVeterinario.Size = new System.Drawing.Size(308, 26);
+            this.cbxVeterinario.Size = new System.Drawing.Size(308, 23);
             this.cbxVeterinario.TabIndex = 1;
             this.cbxVeterinario.SelectedIndexChanged += new System.EventHandler(this.cbxVeterinario_SelectedIndexChanged);
             // 
@@ -200,7 +202,7 @@ namespace Clave1_Grupo2.gui
             this.label1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.label1.Location = new System.Drawing.Point(229, 23);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(90, 20);
+            this.label1.Size = new System.Drawing.Size(77, 17);
             this.label1.TabIndex = 96;
             this.label1.Text = "Veterinario";
             // 
@@ -213,8 +215,10 @@ namespace Clave1_Grupo2.gui
             this.cbxTipoCita.FormattingEnabled = true;
             this.cbxTipoCita.Location = new System.Drawing.Point(342, 55);
             this.cbxTipoCita.Name = "cbxTipoCita";
-            this.cbxTipoCita.Size = new System.Drawing.Size(308, 26);
+            this.cbxTipoCita.Size = new System.Drawing.Size(308, 23);
             this.cbxTipoCita.TabIndex = 2;
+            this.cbxTipoCita.SelectedIndexChanged += new System.EventHandler(this.cbxTipoCita_SelectedIndexChanged);
+            this.cbxTipoCita.SelectedValueChanged += new System.EventHandler(this.cbxTipoCita_SelectedValueChanged);
             // 
             // label2
             // 
@@ -223,7 +227,7 @@ namespace Clave1_Grupo2.gui
             this.label2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.label2.Location = new System.Drawing.Point(229, 55);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(96, 20);
+            this.label2.Size = new System.Drawing.Size(82, 17);
             this.label2.TabIndex = 98;
             this.label2.Text = "Tipo de cita";
             // 
@@ -244,7 +248,7 @@ namespace Clave1_Grupo2.gui
             this.label3.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.label3.Location = new System.Drawing.Point(229, 155);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(153, 20);
+            this.label3.Size = new System.Drawing.Size(128, 17);
             this.label3.TabIndex = 100;
             this.label3.Text = "Motivo de su visita:";
             // 
@@ -258,6 +262,16 @@ namespace Clave1_Grupo2.gui
             this.btnAgendar.UseVisualStyleBackColor = true;
             this.btnAgendar.Click += new System.EventHandler(this.btnAgendar_Click);
             // 
+            // btnGetCupos
+            // 
+            this.btnGetCupos.Location = new System.Drawing.Point(529, 149);
+            this.btnGetCupos.Name = "btnGetCupos";
+            this.btnGetCupos.Size = new System.Drawing.Size(121, 23);
+            this.btnGetCupos.TabIndex = 102;
+            this.btnGetCupos.Text = "Consultar Cupos";
+            this.btnGetCupos.UseVisualStyleBackColor = true;
+            this.btnGetCupos.Click += new System.EventHandler(this.btnGetCupos_Click);
+            // 
             // VtnAgendarCita
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -265,6 +279,7 @@ namespace Clave1_Grupo2.gui
             this.BackColor = System.Drawing.Color.Black;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnGetCupos);
             this.Controls.Add(this.btnAgendar);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.txtMotivo);
@@ -276,7 +291,7 @@ namespace Clave1_Grupo2.gui
             this.Controls.Add(this.lblMascota);
             this.Controls.Add(this.cbxPropietario);
             this.Controls.Add(this.lblPropietario);
-            this.Controls.Add(this.listBox1);
+            this.Controls.Add(this.lbxCupos);
             this.Controls.Add(this.campoFechaAgenda);
             this.Controls.Add(this.panel2);
             this.DoubleBuffered = true;
@@ -306,7 +321,7 @@ namespace Clave1_Grupo2.gui
         private System.Windows.Forms.Label lblVetCatDog;
         private System.Windows.Forms.PictureBox picLogo;
         private System.Windows.Forms.DateTimePicker campoFechaAgenda;
-        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.ListBox lbxCupos;
         private System.Windows.Forms.ComboBox cbxPropietario;
         private System.Windows.Forms.Label lblPropietario;
         private System.Windows.Forms.ComboBox cbxMascota;
@@ -318,5 +333,6 @@ namespace Clave1_Grupo2.gui
         private System.Windows.Forms.RichTextBox txtMotivo;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnAgendar;
+        private System.Windows.Forms.Button btnGetCupos;
     }
 }

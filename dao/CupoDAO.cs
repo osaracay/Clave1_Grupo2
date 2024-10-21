@@ -15,6 +15,12 @@ namespace Clave1_Grupo2.dao
         private static string consulta;
         private static OdbcDataAdapter adaptador;
         private static OdbcDataReader lector;
+        
+        //Variable para restringir horario de atencion de la clinica en un dia
+        private static DateTime inicioJornada;
+        private static DateTime finJornada;
+        private static DateTime inicioCupo;
+        private static DateTime finCupo;
         ///<summary>
         ///Clase de Acceso a Datos de la tabla reservaciones
         /// </summary>
@@ -48,7 +54,7 @@ namespace Clave1_Grupo2.dao
                         cupo.HoraInicio = lector.GetDateTime(3);
                         cupo.HoraFin = lector.GetDateTime(4);
                         cupo.EstaReservado = lector.GetBoolean(5);
-                        cupo.FechaCupo = lector.GetDate(6);                       
+                        cupo.FechaCupo = lector.GetDate(6);
                         cuposReservados.Add(cupo);
                     }
                 }
@@ -78,15 +84,47 @@ namespace Clave1_Grupo2.dao
             }
         }
 
-
         //REUBICAR SEGUN CONVENGA Y PUEDE QUE SEA NECESARIO PASARLE UNA FECHA
         //Y UN ID VETERINARIO O LISTA DE VETERINARIOS
-        private static List<Cupo> GetCuposDisponibles()
+        public static List<Cupo> GetCuposDisponibles(DateTime fecha, int duracionMinutos)
         {
-            cuposDisponibles = new List<Cupo>();
+            cuposDisponibles = new List<Cupo>(); 
             //CONSULTAR HORARIOS DE ATENCION MATUTINO Y VESPERTINO
+            inicioJornada = new DateTime(fecha.Year, fecha.Month, fecha.Day,
+                TurnoDAO.GetTurnosClinica().ElementAt(0).HoraInicio.Hour, 0, 0); //Estos incluyen los turnos de la clinica y todos los veterinarios            
+            //ElementAt(0) es porque yo se que el primer turno es el matutino. Tener cuidado con referencias
+            //estaticas de este tipo
+
+            finJornada = new DateTime(fecha.Year, fecha.Month, fecha.Day,
+                TurnoDAO.GetTurnosClinica().ElementAt(1).HoraFin.Hour, 0, 0); //Cuidado con lo que viene de turnos clinica por la fecha
+                                                                              //ElementAt(1) es porque yo se que el siguiente turno es el vespertino. Tener cuidado con referencias
+                                                                              //estaticas de este tipo
+
+            /*MessageBox.Show($"El inicio de la jornada es {inicioJornada.ToString("G")}\n" +
+                $"El fin de la jornada es {finJornada.ToString("G")}");
+            */
+
+            //hora inicio y hora fin se guardan en la base como hh:mm:ss. Al traerlo a codigo solo puede guardarse como DateTime. 
+            //La parte correspondiente a la fecha la asigna en tiempo de compilacion. para fechas futuras puede que
+            //necesite agregar los dias
+
+            //MessageBox.Show($"{inicioJornada.Date.ToString("G")}");
+
+            //Aqui obtengo las reservaciones de la fecha indicada en el parametro
+            IEnumerable<Cupo> reservacionesDia = from reservacion in GetCuposReservados() where reservacion.FechaCupo == fecha.Date select reservacion;
+            //se tomara en cuenta la hora de inicio y la hora de finalizacion de cada reservacion encontrada
+
             //OBTENER HORA DE INICIO, HORA FIN Y HORAS DE ALMUERZO
             //CONSTRUIR INTERVALOS DE ACUERDO CON LA DURACION DEL TIPO DE CITA SOLICITADO.
+            inicioCupo = inicioJornada;
+            while(inicioCupo >= inicioJornada && finCupo < finJornada)
+            {
+                //hora inicio se ira actualizando segun se vayan creando cupos
+                Cupo c = new Cupo(fecha.Date, inicioCupo, duracionMinutos);
+                finCupo = c.HoraFin;
+                inicioCupo = finCupo;
+                cuposDisponibles.Add(c);
+            }
             //TOMO LA HORA DE INICIO, LE SUMO LA DURACION Y LA HORA RESULTANDO LA ASIGNO A LA HORA DE FIN
             //HASTA ENCONTRARME CON UNA HORA RESERVADA, HORA DE ALMUERZO U HORA FIN DE UN TURNO
             //PRIMERO DEBE CREARSE LA CITA PARA LUEGO CREAR Y ASIGNAR UN CUPO

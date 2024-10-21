@@ -62,6 +62,7 @@ namespace Clave1_Grupo2.gui
             this.cbxVeterinario.Name = "cbxVeterinario";
             this.cbxVeterinario.Size = new System.Drawing.Size(308, 26);
             this.cbxVeterinario.TabIndex = 97;
+            this.cbxVeterinario.SelectedIndexChanged += new System.EventHandler(this.cbxVeterinario_SelectedIndexChanged);
             // 
             // lblVet
             // 
@@ -216,6 +217,7 @@ namespace Clave1_Grupo2.gui
             this.btnReasignar.TabIndex = 103;
             this.btnReasignar.Text = "REASIGNAR";
             this.btnReasignar.UseVisualStyleBackColor = false;
+            this.btnReasignar.Click += new System.EventHandler(this.btnReasignar_Click);
             // 
             // btnCancelar
             // 
@@ -227,6 +229,7 @@ namespace Clave1_Grupo2.gui
             this.btnCancelar.TabIndex = 104;
             this.btnCancelar.Text = "CANCELAR";
             this.btnCancelar.UseVisualStyleBackColor = false;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // lblVetCatDog
             // 

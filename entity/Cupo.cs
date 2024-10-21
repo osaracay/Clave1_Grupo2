@@ -29,18 +29,19 @@ namespace Clave1_Grupo2.entity
         private static DateTime fechaMinAgendable; //Tendre que ir jugando con los limites
 
         private int idReservacion;
+        //private Veterinario vetAsignado;
+        private int idVetAsignado;
+        private bool estaReservado;
+
         private DateTime horaFin;
         private DateTime fechaCupo; //Considerar crear listas por fecha
-                                    //o una sola lista con este campo para filtrar
-        
+                                    //o una sola lista con este campo para filtrar        
         private DateTime horaInicio;
 
         private int duracionMinutos;
         //El tipo de cita determina el precio y la duracion de una cita
         
-        //private Veterinario vetAsignado;
-        private int idVetAsignado;
-        private bool estaReservado;        
+ 
 
         public DateTime FechaCupo { get => fechaCupo; set => fechaCupo = value; }
         public DateTime HoraInicio { get => horaInicio; set => horaInicio = value; }
@@ -77,6 +78,10 @@ namespace Clave1_Grupo2.entity
             /*Ya resolvi limitar la fecha en el control DateTimePicker*/
         }
 
-       
+        public override string ToString()
+        {
+            return $"{this.HoraInicio.ToString("t")} - {this.HoraFin.ToString("t")}";
+        }
+
     }
 }

@@ -17,11 +17,25 @@ namespace Clave1_Grupo2.gui
     {
         private List<Cliente> clientes;
         private List<Veterinario> veterinarios;
+        private List<Cupo> cuposDisponibles;
+
+        private int duracionTipoCita;
         public VtnAgendarCita()
         {
             InitializeComponent();
             CargarDatosFormulario();
-            CupoDAO.GetCuposReservados();
+            //CupoDAO.GetCuposReservados();
+            duracionTipoCita = (int)((CatItem)cbxTipoCita.SelectedItem).DuracionMinutosCat;
+
+            /*CREAR UN METODO A PARTE YA QUE SE REPITE TRES VECES
+            lbxCupos.Items.Clear();
+            foreach (Cupo c in CupoDAO.GetCuposDisponibles(campoFechaAgenda.Value,
+                duracionTipoCita))
+            {
+                lbxCupos.Items.Add(c);
+            }
+            lbxCupos.Enabled = true;
+            */
         }
 
         private void CargarDatosFormulario()
@@ -94,8 +108,8 @@ namespace Clave1_Grupo2.gui
                 $"la hora de inicio es : {cupoSiguiente.HoraInicio}\n" +
                 $"la hora de finalizacion es : {cupoSiguiente.HoraFin}\n" +
                 $"la duracion es : {cupoSiguiente.DuracionMinutos}");
+            CupoDAO.GetCuposDisponibles(cupoApartado.FechaCupo, tipoCita.DuracionMinutosCat);
         }
-
         private void VtnAgendarCita_Load(object sender, EventArgs e)
         {
             //POr si acaso le mueven en Initialize component o se restaura
@@ -105,6 +119,68 @@ namespace Clave1_Grupo2.gui
             this.campoFechaAgenda.MaxDate = DateTime.Today.AddMonths(3);
             this.campoFechaAgenda.MinDate = DateTime.Today;
             //Aunque este en _Load, prevalece sobre lo que esta en Initialize
+        }
+
+        private void MostrarCuposDisponibles()
+        {
+            //Obtener horarios de atencion de la clinica de acuerdo con los turnos 
+
+            //Obtener los veterinarios y la cantidad disponible para cubrir ciertas horas
+
+            //Corroborar los cupos reservados por veterinarios para no duplicar cupos 
+        }
+
+        private void campoFechaAgenda_ValueChanged(object sender, EventArgs e)
+        {
+            
+            /*lbxCupos.DataSource = CupoDAO.GetCuposDisponibles(campoFechaAgenda.Value,
+                duracionTipoCita);*/
+        }
+
+        private void cbxTipoCita_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if ((int)((CatItem)cbxTipoCita.SelectedItem).DuracionMinutosCat != duracionTipoCita)
+            {
+                duracionTipoCita = (int)((CatItem)cbxTipoCita.SelectedItem).DuracionMinutosCat;
+                //lbxCupos.Enabled = false;
+                /*
+                try
+                {
+                    if (cbxTipoCita.SelectedValue != null && cbxTipoCita.SelectedIndex >= 0 && cbxTipoCita.SelectedValue.GetType() != Type.GetType("System.Data.DataRowView"))
+                    {
+                        //MessageBox.Show($"El texto seleccionado es {cbxPropietario.Text} - el valor o id Usuario {cbxPropietario.SelectedValue} y el index en el que se encuentra {cbxPropietario.SelectedIndex}");
+                        
+                        //GetListaMascotasOwner realiza consulta a la BD cada que se llama
+                        //MI IDEA es que se cree una lista para el usuario si es nula y luego solo se llame la ya creada como con las ventanas
+                        //Dicha lista se asiganra valor nulo al registrar una nueva mascota para que solo entonces se vuelva a ejecutar la consulta
+                    }
+                }
+                catch (Exception)
+                {
+                    //ACA ME DA ERROR EL SELECTED VALUE TIPO ENTERO 
+                    //Rellenador.CargarListaPetAListBox(listaMascotas, MascotaDAO.GetListaMascotasPropietario((int)cbxPropietario.SelectedValue));
+                    //Rellenador.CargarDataTableAListBox(listaMascotas, MascotaDAO.GetMascotasPorPropietario((int)cbxPropietario.SelectedValue));
+                }
+                */
+            }
+        }
+
+        private void cbxTipoCita_SelectedValueChanged(object sender, EventArgs e)
+        {
+                        
+        }
+
+        private void btnGetCupos_Click(object sender, EventArgs e)
+        {
+            //lbxCupos.DataSource = null;
+            //campoFechaAgenda.Value = new DateTime(campoFechaAgenda.Value.Year, campoFechaAgenda.Value.Month, campoFechaAgenda.Value.Day);
+            lbxCupos.Items.Clear();
+            foreach (Cupo c in CupoDAO.GetCuposDisponibles(campoFechaAgenda.Value,
+                duracionTipoCita))
+            {
+                lbxCupos.Items.Add(c);
+            }
+            lbxCupos.Enabled = true;
         }
     }
 }
