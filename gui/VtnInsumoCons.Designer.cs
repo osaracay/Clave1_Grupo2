@@ -56,6 +56,7 @@ namespace Clave1_Grupo2.gui
             this.dgvRegistros.Size = new System.Drawing.Size(677, 257);
             this.dgvRegistros.TabIndex = 59;
             this.dgvRegistros.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvRegistros_CellContentClick);
+            this.dgvRegistros.DoubleClick += new System.EventHandler(this.dgvRegistros_DoubleClick);
             // 
             // label6
             // 

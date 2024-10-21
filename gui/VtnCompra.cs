@@ -224,7 +224,7 @@ namespace Clave1_Grupo2.gui
             {
                 cmbIdInsumo.Text = consultaForm.InsumoId;
                 txtDescripcion.Text = consultaForm.InsumoNombre;
-                txtPrecio.Text = consultaForm.InsumoPrecio;
+                txtPrecio.Text = Convert.ToDecimal(consultaForm.InsumoPrecio).ToString("N2");
                 txtExistencia.Text = consultaForm.InsumoCantidad;
                 txtMedida.Text = consultaForm.InsumoMedida;
                 txtStockFinal.Text = consultaForm.InsumoStockMinimo;
