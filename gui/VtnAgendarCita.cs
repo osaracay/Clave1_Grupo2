@@ -132,9 +132,10 @@ namespace Clave1_Grupo2.gui
 
         private void campoFechaAgenda_ValueChanged(object sender, EventArgs e)
         {
-            
+
             /*lbxCupos.DataSource = CupoDAO.GetCuposDisponibles(campoFechaAgenda.Value,
                 duracionTipoCita);*/
+            PopularCuposDisponibles();
         }
 
         private void cbxTipoCita_SelectedIndexChanged(object sender, EventArgs e)
@@ -143,13 +144,13 @@ namespace Clave1_Grupo2.gui
             {
                 duracionTipoCita = (int)((CatItem)cbxTipoCita.SelectedItem).DuracionMinutosCat;
                 //lbxCupos.Enabled = false;
-                /*
+                
                 try
                 {
                     if (cbxTipoCita.SelectedValue != null && cbxTipoCita.SelectedIndex >= 0 && cbxTipoCita.SelectedValue.GetType() != Type.GetType("System.Data.DataRowView"))
                     {
                         //MessageBox.Show($"El texto seleccionado es {cbxPropietario.Text} - el valor o id Usuario {cbxPropietario.SelectedValue} y el index en el que se encuentra {cbxPropietario.SelectedIndex}");
-                        
+                        PopularCuposDisponibles();
                         //GetListaMascotasOwner realiza consulta a la BD cada que se llama
                         //MI IDEA es que se cree una lista para el usuario si es nula y luego solo se llame la ya creada como con las ventanas
                         //Dicha lista se asiganra valor nulo al registrar una nueva mascota para que solo entonces se vuelva a ejecutar la consulta
@@ -161,42 +162,42 @@ namespace Clave1_Grupo2.gui
                     //Rellenador.CargarListaPetAListBox(listaMascotas, MascotaDAO.GetListaMascotasPropietario((int)cbxPropietario.SelectedValue));
                     //Rellenador.CargarDataTableAListBox(listaMascotas, MascotaDAO.GetMascotasPorPropietario((int)cbxPropietario.SelectedValue));
                 }
-                */
+                /**/
             }
         }
 
         private void cbxTipoCita_SelectedValueChanged(object sender, EventArgs e)
         {
-                        
+            //PopularCuposDisponibles();
         }
 
-        private void btnGetCupos_Click(object sender, EventArgs e)
+        private void PopularCuposDisponibles()
         {
             //lbxCupos.DataSource = null;
             //campoFechaAgenda.Value = new DateTime(campoFechaAgenda.Value.Year, campoFechaAgenda.Value.Month, campoFechaAgenda.Value.Day);
             lbxCupos.Items.Clear();
 
-            
+
             foreach (Cupo c in CupoDAO.GetCuposDisponibles(campoFechaAgenda.Value,
                 (CatItem)cbxTipoCita.SelectedItem))
             {
-                
-                if(c.FechaCupo == new DateTime(campoFechaAgenda.Value.Year, campoFechaAgenda.Value.Month, campoFechaAgenda.Value.Day)
-                    && c.IdTipoCita == (int)cbxTipoCita.SelectedValue)
+
+                if (c.FechaCupo == new DateTime(campoFechaAgenda.Value.Year, campoFechaAgenda.Value.Month, campoFechaAgenda.Value.Day))
                 {
-                    lbxCupos.Items.Add(c);
-                }else if(c.FechaCupo == new DateTime(campoFechaAgenda.Value.Year, campoFechaAgenda.Value.Month, campoFechaAgenda.Value.Day))
-                {
-                    c.IdTipoCita = (int)cbxTipoCita.SelectedValue;
                     lbxCupos.Items.Add(c);
                 }
             }
-        /*
-        lbxCupos.DataSource = CupoDAO.GetCuposDisponibles(campoFechaAgenda.Value,
-            (CatItem)cbxTipoCita.SelectedItem);
-        */
+            /*
+            lbxCupos.DataSource = CupoDAO.GetCuposDisponibles(campoFechaAgenda.Value,
+                (CatItem)cbxTipoCita.SelectedItem);
+            */
             lbxCupos.Refresh();
             lbxCupos.Enabled = true;
+        }
+
+        private void btnGetCupos_Click(object sender, EventArgs e)
+        {
+            PopularCuposDisponibles();
         }
     }
 }
