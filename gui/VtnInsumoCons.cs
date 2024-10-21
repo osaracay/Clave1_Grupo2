@@ -143,7 +143,7 @@ namespace Clave1_Grupo2.gui
         }
 
         private void dgvRegistros_DoubleClick(object sender, EventArgs e)
-        {
+        {/*
             if (e.RowIndex >= 0)
             {
                 var row = dgvRegistros.Rows[e.RowIndex];
@@ -159,6 +159,7 @@ namespace Clave1_Grupo2.gui
                 DialogResult = DialogResult.OK;
                 this.Close();
             }
+            */
         }
     }
 }

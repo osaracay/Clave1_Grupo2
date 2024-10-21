@@ -30,7 +30,7 @@ namespace Clave1_Grupo2.entity
 
         private int idReservacion;
         //private Veterinario vetAsignado;
-        private int idVetAsignado;
+        private int idVetAsignado;        
         private bool estaReservado;
 
         private DateTime horaFin;
@@ -40,8 +40,8 @@ namespace Clave1_Grupo2.entity
 
         private int duracionMinutos;
         //El tipo de cita determina el precio y la duracion de una cita
-        
- 
+        private int idTipoCita;
+
 
         public DateTime FechaCupo { get => fechaCupo; set => fechaCupo = value; }
         public DateTime HoraInicio { get => horaInicio; set => horaInicio = value; }
@@ -50,6 +50,7 @@ namespace Clave1_Grupo2.entity
         public bool EstaReservado { get => estaReservado; set => estaReservado = value; }
         public int IdReservacion { get => idReservacion; set => idReservacion = value; }
         public int DuracionMinutos { get => duracionMinutos; set => duracionMinutos = value; }
+        public int IdTipoCita { get => idTipoCita; set => idTipoCita = value; }
 
         public Cupo()
         {

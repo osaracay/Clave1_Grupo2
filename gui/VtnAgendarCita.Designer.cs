@@ -264,9 +264,9 @@ namespace Clave1_Grupo2.gui
             // 
             // btnGetCupos
             // 
-            this.btnGetCupos.Location = new System.Drawing.Point(529, 149);
+            this.btnGetCupos.Location = new System.Drawing.Point(484, 149);
             this.btnGetCupos.Name = "btnGetCupos";
-            this.btnGetCupos.Size = new System.Drawing.Size(121, 23);
+            this.btnGetCupos.Size = new System.Drawing.Size(166, 23);
             this.btnGetCupos.TabIndex = 102;
             this.btnGetCupos.Text = "Consultar Cupos";
             this.btnGetCupos.UseVisualStyleBackColor = true;

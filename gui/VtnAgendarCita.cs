@@ -25,7 +25,7 @@ namespace Clave1_Grupo2.gui
             InitializeComponent();
             CargarDatosFormulario();
             //CupoDAO.GetCuposReservados();
-            duracionTipoCita = (int)((CatItem)cbxTipoCita.SelectedItem).DuracionMinutosCat;
+            duracionTipoCita = ((CatItem)cbxTipoCita.SelectedItem).DuracionMinutosCat;
 
             /*CREAR UN METODO A PARTE YA QUE SE REPITE TRES VECES
             lbxCupos.Items.Clear();
@@ -175,11 +175,27 @@ namespace Clave1_Grupo2.gui
             //lbxCupos.DataSource = null;
             //campoFechaAgenda.Value = new DateTime(campoFechaAgenda.Value.Year, campoFechaAgenda.Value.Month, campoFechaAgenda.Value.Day);
             lbxCupos.Items.Clear();
+
+            
             foreach (Cupo c in CupoDAO.GetCuposDisponibles(campoFechaAgenda.Value,
-                duracionTipoCita))
+                (CatItem)cbxTipoCita.SelectedItem))
             {
-                lbxCupos.Items.Add(c);
+                
+                if(c.FechaCupo == new DateTime(campoFechaAgenda.Value.Year, campoFechaAgenda.Value.Month, campoFechaAgenda.Value.Day)
+                    && c.IdTipoCita == (int)cbxTipoCita.SelectedValue)
+                {
+                    lbxCupos.Items.Add(c);
+                }else if(c.FechaCupo == new DateTime(campoFechaAgenda.Value.Year, campoFechaAgenda.Value.Month, campoFechaAgenda.Value.Day))
+                {
+                    c.IdTipoCita = (int)cbxTipoCita.SelectedValue;
+                    lbxCupos.Items.Add(c);
+                }
             }
+        /*
+        lbxCupos.DataSource = CupoDAO.GetCuposDisponibles(campoFechaAgenda.Value,
+            (CatItem)cbxTipoCita.SelectedItem);
+        */
+            lbxCupos.Refresh();
             lbxCupos.Enabled = true;
         }
     }

@@ -16,6 +16,7 @@ namespace Clave1_Grupo2.dao
         private static OdbcDataAdapter adaptador;
         private static OdbcDataReader lector;
         
+        
         //Variable para restringir horario de atencion de la clinica en un dia
         private static DateTime inicioJornada;
         private static DateTime finJornada;
@@ -129,6 +130,55 @@ namespace Clave1_Grupo2.dao
             //HASTA ENCONTRARME CON UNA HORA RESERVADA, HORA DE ALMUERZO U HORA FIN DE UN TURNO
             //PRIMERO DEBE CREARSE LA CITA PARA LUEGO CREAR Y ASIGNAR UN CUPO
             return cuposDisponibles;
-        }        
+        }
+        //Sobrecarga del metodo recibiendo un tipo de cita instead
+        public static List<Cupo> GetCuposDisponibles(DateTime fecha, CatItem tipoCita)
+        {
+            if(cuposDisponibles == null)
+            {
+                cuposDisponibles = new List<Cupo>();
+            }
+            cuposDisponibles.Clear();
+            //CONSULTAR HORARIOS DE ATENCION MATUTINO Y VESPERTINO
+            inicioJornada = new DateTime(fecha.Year, fecha.Month, fecha.Day,
+                TurnoDAO.GetTurnosClinica().ElementAt(0).HoraInicio.Hour, 0, 0); //Estos incluyen los turnos de la clinica y todos los veterinarios            
+            //ElementAt(0) es porque yo se que el primer turno es el matutino. Tener cuidado con referencias
+            //estaticas de este tipo
+
+            finJornada = new DateTime(fecha.Year, fecha.Month, fecha.Day,
+                TurnoDAO.GetTurnosClinica().ElementAt(1).HoraFin.Hour, 0, 0); //Cuidado con lo que viene de turnos clinica por la fecha
+                                                                              //ElementAt(1) es porque yo se que el siguiente turno es el vespertino. Tener cuidado con referencias
+                                                                              //estaticas de este tipo
+
+            /*MessageBox.Show($"El inicio de la jornada es {inicioJornada.ToString("G")}\n" +
+                $"El fin de la jornada es {finJornada.ToString("G")}");
+            */
+
+            //hora inicio y hora fin se guardan en la base como hh:mm:ss. Al traerlo a codigo solo puede guardarse como DateTime. 
+            //La parte correspondiente a la fecha la asigna en tiempo de compilacion. para fechas futuras puede que
+            //necesite agregar los dias
+
+            //MessageBox.Show($"{inicioJornada.Date.ToString("G")}");
+
+            //Aqui obtengo las reservaciones de la fecha indicada en el parametro
+            IEnumerable<Cupo> reservacionesDia = from reservacion in GetCuposReservados() where reservacion.FechaCupo == fecha.Date select reservacion;
+            //se tomara en cuenta la hora de inicio y la hora de finalizacion de cada reservacion encontrada
+
+            //OBTENER HORA DE INICIO, HORA FIN Y HORAS DE ALMUERZO
+            //CONSTRUIR INTERVALOS DE ACUERDO CON LA DURACION DEL TIPO DE CITA SOLICITADO.
+            inicioCupo = inicioJornada;
+            while (inicioCupo >= inicioJornada && inicioCupo < finJornada) //finCupo < finJornada)
+            {
+                //hora inicio se ira actualizando segun se vayan creando cupos
+                Cupo c = new Cupo(fecha.Date, inicioCupo, tipoCita.DuracionMinutosCat);
+                //finCupo = c.HoraFin;
+                inicioCupo = c.HoraFin; //finCupo;
+                cuposDisponibles.Add(c);
+            }
+            //TOMO LA HORA DE INICIO, LE SUMO LA DURACION Y LA HORA RESULTANDO LA ASIGNO A LA HORA DE FIN
+            //HASTA ENCONTRARME CON UNA HORA RESERVADA, HORA DE ALMUERZO U HORA FIN DE UN TURNO
+            //PRIMERO DEBE CREARSE LA CITA PARA LUEGO CREAR Y ASIGNAR UN CUPO
+            return cuposDisponibles;
+        }
     }
 }
