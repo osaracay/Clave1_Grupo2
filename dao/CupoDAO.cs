@@ -1,4 +1,5 @@
 ﻿using Clave1_Grupo2.entity;
+using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -15,8 +16,9 @@ namespace Clave1_Grupo2.dao
         private static string consulta;
         private static OdbcDataAdapter adaptador;
         private static OdbcDataReader lector;
-        
-        
+        private static MySqlCommand ComandoSQL;
+        private static int idInsert;
+
         //Variable para restringir horario de atencion de la clinica en un dia
         private static DateTime inicioJornada;
         private static DateTime finJornada;
@@ -179,6 +181,40 @@ namespace Clave1_Grupo2.dao
             //HASTA ENCONTRARME CON UNA HORA RESERVADA, HORA DE ALMUERZO U HORA FIN DE UN TURNO
             //PRIMERO DEBE CREARSE LA CITA PARA LUEGO CREAR Y ASIGNAR UN CUPO
             return cuposDisponibles;
+        }
+
+        public static bool RegistrarCupo(int idVeterinario, DateTime fechaCupo, DateTime horaInicio, DateTime horaFin )
+        {
+            //recordar que el id debe ser un usuario de tipo 2
+            //y la ventana asignar turnos llena el combo Veterinarios
+            //con usuarios tipo 2. Utilizando MySqlConnection
+            consulta = "INSERT INTO detalle_reservacion ( " +
+                "id_vet, dia_reservacion, h_ini, h_fin)" +
+                "VALUES (?,?, ?, ?, ?)";
+
+            ComandoSQL = new MySqlCommand(consulta, ConexionBD.GetConexionMySQL());
+
+            ComandoSQL.Parameters.Add("@idvet", MySqlDbType.Int32).Value = idVeterinario;
+            ComandoSQL.Parameters.Add("@fechacupo", MySqlDbType.Datetime).Value = fechaCupo;
+            ComandoSQL.Parameters.Add("@horainicio", MySqlDbType.DateTime).Value = horaInicio;
+            ComandoSQL.Parameters.Add("@horafin", MySqlDbType.DateTime).Value = horaFin;
+            try
+            {
+                ConexionBD.GetConexionMySQL().Open();
+                ComandoSQL.ExecuteNonQuery();
+                idInsert = (int)ComandoSQL.LastInsertedId; //Devuelve un Long
+                MessageBox.Show($"Asignación completada. Id del registro: {idInsert}");
+                return true;
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show($"Ocurrió un error al asignar turno:\n{e.Message}");
+                return false;
+            }
+            finally
+            {
+                ConexionBD.GetConexionMySQL().Close();
+            }
         }
     }
 }
