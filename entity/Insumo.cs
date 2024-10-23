@@ -64,7 +64,7 @@ namespace Clave1_Grupo2.entity
                     mProducto.id_insumo = mReadaer.GetInt16("id_insumo");
                     mProducto.nom_insumo = mReadaer.GetString("nom_insumo");
                     mProducto.id_tipo_insumo = mReadaer.GetInt16("id_tipo_insumo");
-                    mProducto.precio_unit = mReadaer.GetInt16("precio_unit");
+                    mProducto.precio_unit = mReadaer.GetDecimal(mReadaer.GetOrdinal("precio_unit"));
                     mProducto.unit_medida = mReadaer.GetString("unit_medida");
                     mProducto.existencias_insumo = mReadaer.GetInt16("existencias_insumo");
                     mProducto.punto_reorden_insumo = mReadaer.GetInt16("punto_reorden_insumo");

@@ -21,10 +21,10 @@ namespace Clave1_Grupo2.gui
         public VtnCompra()
         {
             InitializeComponent();
-            Rellenador.CargarDataTableACombo(cmbIdInsumo, CatDAO.GetInsumos(), "nom_insumo", "id_insumo");
+            //Rellenador.CargarDataTableACombo(cmbIdInsumo, CatDAO.GetInsumos(), "nom_insumo", "id_insumo");
             txtExistencia.TextChanged += (s, e) => calcularStockFinal();
             txtCantidad.TextChanged += (s, e) => calcularStockFinal();
-
+            cmbIdInsumo.Enabled = false;
             cInsumos = new List<Compra>();
             mConsultaCompra = new ConsultaCompra();
             cInsumo = new Compra();
@@ -98,6 +98,11 @@ namespace Clave1_Grupo2.gui
             if (txtDescripcion.Text.Trim().Equals(""))
             {
                 MessageBox.Show("Debe Seleccionar un Insumo.", "Datos", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            if (txtProveedor.Text.Trim().Equals(""))
+            {
+                MessageBox.Show("Debe Ingresar un Nombre de Proveedor.", "Datos", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
             if (txtPrecio.Text.Trim().Equals(""))
@@ -218,8 +223,9 @@ namespace Clave1_Grupo2.gui
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
+            cmbIdInsumo.SelectedIndex = -1;
             var consultaForm = new VtnInsumoCons();
-
+            
             if (consultaForm.ShowDialog() == DialogResult.OK)
             {
                 cmbIdInsumo.Text = consultaForm.InsumoId;
@@ -229,17 +235,8 @@ namespace Clave1_Grupo2.gui
                 txtMedida.Text = consultaForm.InsumoMedida;
                 txtStockFinal.Text = consultaForm.InsumoStockMinimo;
                 txtCantidad.Text = "0";
+                txtProveedor.Focus();
             }
-            ////DEBES SER USUARIO VET o ADMINISTRADOR PARA ACCEDER
-            //if (UsuarioDAO.GetSesion() != null)
-            //{
-            //    GestorVentanas.AbrirConsInsumo();
-            //}
-            //else
-            //{
-            //    MessageBox.Show("Debes iniciar sesion para acceder a esta funcion");
-            //    GestorVentanas.SolicitarInicioSesion();
-            //}
         }
 
     }

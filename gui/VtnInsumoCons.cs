@@ -50,7 +50,6 @@ namespace Clave1_Grupo2.gui
                 InsumoPrecio = row.Cells["precio"].Value.ToString();
                 InsumoMedida = row.Cells["medida"].Value.ToString();
                 InsumoCantidad = row.Cells["cantidad"].Value.ToString();
-                InsumoStockMinimo = row.Cells["stockm"].Value.ToString();
 
                 DialogResult = DialogResult.OK;
                 this.Close();
@@ -71,7 +70,7 @@ namespace Clave1_Grupo2.gui
                 dgvRegistros.Rows.Add(
                     mInsumos[i].id_insumo,
                     mInsumos[i].nom_insumo,
-                    mInsumos[i].id_tipo_insumo,
+                    //mInsumos[i].id_tipo_insumo,
                     mInsumos[i].precio_unit.ToString("N2"),
                     mInsumos[i].unit_medida,
                     mInsumos[i].existencias_insumo);
@@ -87,19 +86,18 @@ namespace Clave1_Grupo2.gui
             dgvRegistros.Columns.Clear();
             dgvRegistros.Columns.Add("Id", "Id");
             dgvRegistros.Columns.Add("nombre", "Nombre de Insumo");
-            dgvRegistros.Columns.Add("tipo", "TP");
+            //dgvRegistros.Columns.Add("tipo", "TP");
             dgvRegistros.Columns.Add("precio", "Precio");
-            dgvRegistros.Columns.Add("medida", "U-Medida");
+            dgvRegistros.Columns.Add("medida", "Med.");
             dgvRegistros.Columns.Add("cantidad", "Existencia");
 
             dgvRegistros.AllowUserToAddRows = false;
             dgvRegistros.Columns["Id"].Width = 70;
-            dgvRegistros.Columns["nombre"].Width = 340;
-            dgvRegistros.Columns["tipo"].Width = 0;
+            dgvRegistros.Columns["nombre"].Width = 275;
+            //dgvRegistros.Columns["tipo"].Width = 0;
             dgvRegistros.Columns["precio"].Width = 100;
-            dgvRegistros.Columns["medida"].Width = 80;
+            dgvRegistros.Columns["medida"].Width = 75;
             dgvRegistros.Columns["cantidad"].Width = 100;
-            dgvRegistros.Columns["stockm"].Width = 100;
 
             dgvRegistros.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dgvRegistros.DefaultCellStyle.SelectionBackColor = Color.DarkOrange;
@@ -108,58 +106,27 @@ namespace Clave1_Grupo2.gui
 
             dgvRegistros.Columns["Id"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dgvRegistros.Columns["nombre"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dgvRegistros.Columns["tipo"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+            //dgvRegistros.Columns["tipo"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
             dgvRegistros.Columns["precio"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
             dgvRegistros.Columns["medida"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dgvRegistros.Columns["cantidad"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
-            dgvRegistros.Columns["stockm"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
 
             dgvRegistros.DefaultCellStyle.Font = new Font("Arial", 12F, FontStyle.Regular);
             dgvRegistros.ColumnHeadersDefaultCellStyle.Font = new Font("Arial", 12F, FontStyle.Bold);
 
             dgvRegistros.Columns["precio"].DefaultCellStyle.Format = "N2"; // N2 Aplicar formato con 2 decimales
             dgvRegistros.Columns["cantidad"].DefaultCellStyle.Format = "N0";
-            dgvRegistros.Columns["stockm"].DefaultCellStyle.Format = "N0";
 
         }
 
         private void dgvRegistros_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            //if (e.RowIndex >= 0)
-            //{
-            //    var row = dgvRegistros.Rows[e.RowIndex];
-
-            //    // Guardar los valores seleccionados en las propiedades
-            //    InsumoId = row.Cells["Id"].Value.ToString();
-            //    InsumoNombre = row.Cells["nombre"].Value.ToString();
-            //    InsumoPrecio = row.Cells["precio"].Value.ToString();
-            //    InsumoMedida = row.Cells["medida"].Value.ToString();
-            //    InsumoCantidad = row.Cells["cantidad"].Value.ToString();
-            //    InsumoStockMinimo = row.Cells["stockm"].Value.ToString();
-
-            //    DialogResult = DialogResult.OK;
-            //    this.Close();
-            //}
+            //Conservado
         }
 
         private void dgvRegistros_DoubleClick(object sender, EventArgs e)
-        {/*
-            if (e.RowIndex >= 0)
-            {
-                var row = dgvRegistros.Rows[e.RowIndex];
-
-                // Guardar los valores seleccionados en las propiedades
-                InsumoId = row.Cells["Id"].Value.ToString();
-                InsumoNombre = row.Cells["nombre"].Value.ToString();
-                InsumoPrecio = row.Cells["precio"].Value.ToString();
-                InsumoMedida = row.Cells["medida"].Value.ToString();
-                InsumoCantidad = row.Cells["cantidad"].Value.ToString();
-                InsumoStockMinimo = row.Cells["stockm"].Value.ToString();
-
-                DialogResult = DialogResult.OK;
-                this.Close();
-            }
-            */
+        {
+            // Conservado
         }
     }
 }

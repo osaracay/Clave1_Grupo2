@@ -20,9 +20,9 @@ namespace Clave1_Grupo2.gui
             Rellenador.CargarDataTableACombo(cmbMetPago, CatDAO.GetMetPago(), "id_met_pago", "nom_met_pago");
             Rellenador.CargarDataTableACombo(cmbEstado, CatDAO.GetEstadoPago(), "id_estado_pago", "nom_estado_pago");
             Rellenador.CargarDataTableACombo(cmbIdCliente, CatDAO.GetUsuarios(), "nombre", "id_usuario");
-            Rellenador.CargarDataTableACombo(cmbIdInsumo, CatDAO.GetInsumos(), "nom_insumo", "id_insumo");
+            //Rellenador.CargarDataTableACombo(cmbIdInsumo, CatDAO.GetInsumos(), "nom_insumo", "id_insumo");
             ConfigurarDGV();
-
+            cmbIdInsumo.Enabled = false;
             vInsumos = new List<Venta>();
             mConsultaVenta = new ConsultaVenta();
             vInsumo = new Venta();
@@ -47,7 +47,17 @@ namespace Clave1_Grupo2.gui
         }
         private void btnSalir_Click(object sender, EventArgs e)
         {
-            this.Dispose();
+            DialogResult respuesta = MessageBox.Show("Desea salir de la Venta?", "Ventas", MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question);
+
+            if (respuesta == DialogResult.Yes)
+            {
+                this.Dispose();
+            }
+            //else
+            //{
+            //    LimpiarCampos();
+            //}
         }
         private void txtPrecio_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -356,6 +366,23 @@ namespace Clave1_Grupo2.gui
         private void cmbMetPago_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            cmbIdInsumo.SelectedIndex = -1;
+            var consultaForm = new VtnInsumoCons();
+
+            if (consultaForm.ShowDialog() == DialogResult.OK)
+            {
+                cmbIdInsumo.Text = consultaForm.InsumoId;
+                txtInsumo.Text = consultaForm.InsumoNombre;
+                txtPrecio.Text = Convert.ToDecimal(consultaForm.InsumoPrecio).ToString("N2");
+                txtStock.Text = consultaForm.InsumoCantidad;
+                txtMedida.Text = consultaForm.InsumoMedida;
+                txtCantidad.Text = "0";
+                txtCantidad.Focus();
+            }
         }
     }
 }

@@ -78,6 +78,7 @@ namespace Clave1_Grupo2.gui
             this.Controls.Add(this.txtBuscar);
             this.Controls.Add(this.dgvRegistros);
             this.Name = "VtnInsumoCons";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "VtnInsumoCons";
             ((System.ComponentModel.ISupportInitialize)(this.dgvRegistros)).EndInit();
             this.ResumeLayout(false);

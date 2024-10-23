@@ -39,20 +39,18 @@ namespace Clave1_Grupo2.gui
             // 
             this.txtNombre.BackColor = System.Drawing.Color.White;
             this.txtNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNombre.Location = new System.Drawing.Point(17, 53);
-            this.txtNombre.Margin = new System.Windows.Forms.Padding(4);
+            this.txtNombre.Location = new System.Drawing.Point(13, 43);
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(257, 30);
+            this.txtNombre.Size = new System.Drawing.Size(194, 26);
             this.txtNombre.TabIndex = 0;
             // 
             // label11
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(13, 25);
-            this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label11.Location = new System.Drawing.Point(10, 20);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(97, 24);
+            this.label11.Size = new System.Drawing.Size(78, 18);
             this.label11.TabIndex = 107;
             this.label11.Text = "Nombre :";
             // 
@@ -62,10 +60,9 @@ namespace Clave1_Grupo2.gui
             this.brnGuardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.brnGuardar.ForeColor = System.Drawing.Color.Black;
             this.brnGuardar.Image = ((System.Drawing.Image)(resources.GetObject("brnGuardar.Image")));
-            this.brnGuardar.Location = new System.Drawing.Point(167, 106);
-            this.brnGuardar.Margin = new System.Windows.Forms.Padding(4);
+            this.brnGuardar.Location = new System.Drawing.Point(125, 86);
             this.brnGuardar.Name = "brnGuardar";
-            this.brnGuardar.Size = new System.Drawing.Size(107, 80);
+            this.brnGuardar.Size = new System.Drawing.Size(80, 65);
             this.brnGuardar.TabIndex = 1;
             this.brnGuardar.Text = "Guardar";
             this.brnGuardar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -74,14 +71,16 @@ namespace Clave1_Grupo2.gui
             // 
             // VntTipoInsumo
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.ClientSize = new System.Drawing.Size(293, 197);
+            this.ClientSize = new System.Drawing.Size(220, 160);
             this.Controls.Add(this.brnGuardar);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.txtNombre);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "VntTipoInsumo";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Tipo de Insumo";
             this.ResumeLayout(false);
             this.PerformLayout();
