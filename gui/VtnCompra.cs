@@ -89,7 +89,7 @@ namespace Clave1_Grupo2.gui
             cInsumo.nom_insumo = txtDescripcion.Text;
             cInsumo.precio = Convert.ToDecimal(txtPrecio.Text);
             cInsumo.cantidad = int.Parse(txtCantidad.Text);
-            cInsumo.stock_final = int.Parse(txtStockFinal.Text);
+            cInsumo.stock_final = int.Parse(txtStockFinal.Text.Replace(",", ""));
             cInsumo.condicion = cmbCondicion.Text;
             cInsumo.tipo = "Entrada";
         }

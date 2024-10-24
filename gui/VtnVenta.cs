@@ -45,6 +45,19 @@ namespace Clave1_Grupo2.gui
             btnEliminar.Enabled = false;
             cmbIdCliente.Focus();
         }
+        // Limpiar lso campos despues de agregar los Insumos a la Venta (Opcional)
+        private void nuevoProducto()
+        {
+            cmbIdInsumo.ResetText();
+            txtInsumo.Text = "";
+            txtMedida.Text = "";
+            txtStock.Text = "";
+            txtPrecio.Text = "";
+            txtCantidad.Text = "";
+
+            btnEliminar.Enabled = false;
+            txtCantidad.Focus();
+        }
         private void btnSalir_Click(object sender, EventArgs e)
         {
             DialogResult respuesta = MessageBox.Show("Desea salir de la Venta?", "Ventas", MessageBoxButtons.YesNo,
@@ -162,7 +175,7 @@ namespace Clave1_Grupo2.gui
                 dgvRegistros.Rows.Add(n, id, nombre, unidad, precio, cantidad, subtotal);
 
                 ActualizarTotales();
-                cmbIdInsumo.SelectedIndex = -1;
+                nuevoProducto();
             }
             catch (Exception ex)
             {
