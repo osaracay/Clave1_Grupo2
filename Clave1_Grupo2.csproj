@@ -146,17 +146,17 @@
     <Compile Include="entity\Usuario.cs" />
     <Compile Include="entity\Venta.cs" />
     <Compile Include="entity\Veterinario.cs" />
-    <Compile Include="gui\Form1.cs">
+    <Compile Include="gui\VtnExpedienteClinico.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="gui\Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="gui\VtnExpedienteClinico.Designer.cs">
+      <DependentUpon>VtnExpedienteClinico.cs</DependentUpon>
     </Compile>
-    <Compile Include="gui\Form2.cs">
+    <Compile Include="gui\VtnCartillaVacunacion.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="gui\Form2.Designer.cs">
-      <DependentUpon>Form2.cs</DependentUpon>
+    <Compile Include="gui\VtnCartillaVacunacion.Designer.cs">
+      <DependentUpon>VtnCartillaVacunacion.cs</DependentUpon>
     </Compile>
     <Compile Include="gui\VntTipoInsumo.cs">
       <SubType>Form</SubType>
@@ -254,11 +254,11 @@
     <Compile Include="util\GestorVentanas.cs" />
     <Compile Include="util\Rellenador.cs" />
     <Compile Include="util\Validacion.cs" />
-    <EmbeddedResource Include="gui\Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="gui\VtnExpedienteClinico.resx">
+      <DependentUpon>VtnExpedienteClinico.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="gui\Form2.resx">
-      <DependentUpon>Form2.cs</DependentUpon>
+    <EmbeddedResource Include="gui\VtnCartillaVacunacion.resx">
+      <DependentUpon>VtnCartillaVacunacion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="gui\VntTipoInsumo.resx">
       <DependentUpon>VntTipoInsumo.cs</DependentUpon>

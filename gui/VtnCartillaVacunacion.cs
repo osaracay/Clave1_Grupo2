@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Clave1_Grupo2.gui
 {
-    public partial class Form2 : Form
+    public partial class VtnCartillaVacunacion : Form
     {
-        public Form2()
+        public VtnCartillaVacunacion()
         {
             InitializeComponent();
         }

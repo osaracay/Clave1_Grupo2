@@ -1,6 +1,6 @@
 ﻿namespace Clave1_Grupo2.gui
 {
-    partial class Form2
+    partial class VtnCartillaVacunacion
     {
         /// <summary>
         /// Required designer variable.
