@@ -75,7 +75,7 @@ namespace Clave1_Grupo2
             this.btnAgendar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnAgendar.BackgroundImage")));
             this.btnAgendar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnAgendar.Location = new System.Drawing.Point(148, 143);
-            this.btnAgendar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAgendar.Margin = new System.Windows.Forms.Padding(2);
             this.btnAgendar.Name = "btnAgendar";
             this.btnAgendar.Size = new System.Drawing.Size(98, 106);
             this.btnAgendar.TabIndex = 1;
@@ -87,7 +87,7 @@ namespace Clave1_Grupo2
             this.btnAgregarMascota.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnAgregarMascota.BackgroundImage")));
             this.btnAgregarMascota.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnAgregarMascota.Location = new System.Drawing.Point(148, 10);
-            this.btnAgregarMascota.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAgregarMascota.Margin = new System.Windows.Forms.Padding(2);
             this.btnAgregarMascota.Name = "btnAgregarMascota";
             this.btnAgregarMascota.Size = new System.Drawing.Size(98, 106);
             this.btnAgregarMascota.TabIndex = 2;
@@ -113,7 +113,7 @@ namespace Clave1_Grupo2
             this.picLogo.BackColor = System.Drawing.Color.Transparent;
             this.picLogo.Image = ((System.Drawing.Image)(resources.GetObject("picLogo.Image")));
             this.picLogo.Location = new System.Drawing.Point(9, 10);
-            this.picLogo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.picLogo.Margin = new System.Windows.Forms.Padding(2);
             this.picLogo.Name = "picLogo";
             this.picLogo.Size = new System.Drawing.Size(98, 106);
             this.picLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -137,7 +137,7 @@ namespace Clave1_Grupo2
             this.btnMisMascotas.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnMisMascotas.BackgroundImage")));
             this.btnMisMascotas.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnMisMascotas.Location = new System.Drawing.Point(250, 10);
-            this.btnMisMascotas.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnMisMascotas.Margin = new System.Windows.Forms.Padding(2);
             this.btnMisMascotas.Name = "btnMisMascotas";
             this.btnMisMascotas.Size = new System.Drawing.Size(98, 106);
             this.btnMisMascotas.TabIndex = 6;
@@ -149,7 +149,7 @@ namespace Clave1_Grupo2
             this.btnCitas.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnCitas.BackgroundImage")));
             this.btnCitas.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnCitas.Location = new System.Drawing.Point(250, 143);
-            this.btnCitas.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnCitas.Margin = new System.Windows.Forms.Padding(2);
             this.btnCitas.Name = "btnCitas";
             this.btnCitas.Size = new System.Drawing.Size(98, 106);
             this.btnCitas.TabIndex = 7;
@@ -205,7 +205,7 @@ namespace Clave1_Grupo2
             this.btnInsumos.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnInsumos.BackgroundImage")));
             this.btnInsumos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnInsumos.Location = new System.Drawing.Point(352, 11);
-            this.btnInsumos.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnInsumos.Margin = new System.Windows.Forms.Padding(2);
             this.btnInsumos.Name = "btnInsumos";
             this.btnInsumos.Size = new System.Drawing.Size(98, 106);
             this.btnInsumos.TabIndex = 12;
@@ -228,7 +228,7 @@ namespace Clave1_Grupo2
             this.btnCompra.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnCompra.BackgroundImage")));
             this.btnCompra.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnCompra.Location = new System.Drawing.Point(454, 11);
-            this.btnCompra.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnCompra.Margin = new System.Windows.Forms.Padding(2);
             this.btnCompra.Name = "btnCompra";
             this.btnCompra.Size = new System.Drawing.Size(98, 106);
             this.btnCompra.TabIndex = 14;
@@ -251,7 +251,7 @@ namespace Clave1_Grupo2
             this.btnVenta.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnVenta.BackgroundImage")));
             this.btnVenta.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnVenta.Location = new System.Drawing.Point(556, 11);
-            this.btnVenta.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnVenta.Margin = new System.Windows.Forms.Padding(2);
             this.btnVenta.Name = "btnVenta";
             this.btnVenta.Size = new System.Drawing.Size(98, 106);
             this.btnVenta.TabIndex = 16;
@@ -288,7 +288,7 @@ namespace Clave1_Grupo2
             this.btnVntC.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnVntC.BackgroundImage")));
             this.btnVntC.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnVntC.Location = new System.Drawing.Point(556, 143);
-            this.btnVntC.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnVntC.Margin = new System.Windows.Forms.Padding(2);
             this.btnVntC.Name = "btnVntC";
             this.btnVntC.Size = new System.Drawing.Size(98, 106);
             this.btnVntC.TabIndex = 18;
@@ -300,7 +300,7 @@ namespace Clave1_Grupo2
             this.btnAsignarTurno.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnAsignarTurno.BackgroundImage")));
             this.btnAsignarTurno.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnAsignarTurno.Location = new System.Drawing.Point(352, 143);
-            this.btnAsignarTurno.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAsignarTurno.Margin = new System.Windows.Forms.Padding(2);
             this.btnAsignarTurno.Name = "btnAsignarTurno";
             this.btnAsignarTurno.Size = new System.Drawing.Size(98, 106);
             this.btnAsignarTurno.TabIndex = 19;
@@ -365,7 +365,7 @@ namespace Clave1_Grupo2
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.Name = "VtnMenuPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

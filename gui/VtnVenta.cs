@@ -19,7 +19,10 @@ namespace Clave1_Grupo2.gui
             InitializeComponent();
             Rellenador.CargarDataTableACombo(cmbMetPago, CatDAO.GetMetPago(), "id_met_pago", "nom_met_pago");
             Rellenador.CargarDataTableACombo(cmbEstado, CatDAO.GetEstadoPago(), "id_estado_pago", "nom_estado_pago");
-            Rellenador.CargarDataTableACombo(cmbIdCliente, CatDAO.GetUsuarios(), "nombre", "id_usuario");
+            //Rellenador.CargarDataTableACombo(cmbIdCliente, CatDAO.GetUsuarios(), "nombre", "id_usuario");
+            Rellenador.CargarListaAComboBox(cmbIdCliente, UsuarioDAO.GetListaUsuarios(3));
+            cmbIdCliente.SelectedIndex = -1;
+            txtCliente.Hide(); //AAA
             //Rellenador.CargarDataTableACombo(cmbIdInsumo, CatDAO.GetInsumos(), "nom_insumo", "id_insumo");
             ConfigurarDGV();
             cmbIdInsumo.Enabled = false;
@@ -139,10 +142,10 @@ namespace Clave1_Grupo2.gui
             if (cmbIdCliente.SelectedIndex != -1)
             {
                 // Obtener el elemento seleccionado
-                DataRowView selectedItem = (DataRowView)cmbIdCliente.SelectedItem;
+                Cliente selectedItem = (Cliente)cmbIdCliente.SelectedItem;
 
                 // Mostrar el nom_tipo_insumo en el TextBox
-                txtCliente.Text = selectedItem["nombre"].ToString();
+                txtCliente.Text = selectedItem.ToString();
             }
             else
             {
