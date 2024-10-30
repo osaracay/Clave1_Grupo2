@@ -1,6 +1,6 @@
 ﻿namespace Clave1_Grupo2.gui
 {
-    partial class VtnCartillaVacunacion
+    partial class CartillaVacunacion
     {
         /// <summary>
         /// Required designer variable.
@@ -31,6 +31,8 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.apellido = new System.Windows.Forms.TextBox();
+            this.apellido1 = new System.Windows.Forms.Label();
             this.idPropietario = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.nombre = new System.Windows.Forms.TextBox();
@@ -52,8 +54,6 @@
             this.especie = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.apellido = new System.Windows.Forms.TextBox();
-            this.apellido1 = new System.Windows.Forms.Label();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -90,6 +90,22 @@
             this.groupBox2.TabIndex = 26;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Datos del cliente";
+            // 
+            // apellido
+            // 
+            this.apellido.Location = new System.Drawing.Point(204, 116);
+            this.apellido.Name = "apellido";
+            this.apellido.Size = new System.Drawing.Size(188, 26);
+            this.apellido.TabIndex = 11;
+            // 
+            // apellido1
+            // 
+            this.apellido1.AutoSize = true;
+            this.apellido1.Location = new System.Drawing.Point(37, 119);
+            this.apellido1.Name = "apellido1";
+            this.apellido1.Size = new System.Drawing.Size(65, 20);
+            this.apellido1.TabIndex = 10;
+            this.apellido1.Text = "Apellido";
             // 
             // idPropietario
             // 
@@ -280,23 +296,7 @@
             this.label1.Text = "Cartilla Vacunacion";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
-            // apellido
-            // 
-            this.apellido.Location = new System.Drawing.Point(204, 116);
-            this.apellido.Name = "apellido";
-            this.apellido.Size = new System.Drawing.Size(188, 26);
-            this.apellido.TabIndex = 11;
-            // 
-            // apellido1
-            // 
-            this.apellido1.AutoSize = true;
-            this.apellido1.Location = new System.Drawing.Point(37, 119);
-            this.apellido1.Name = "apellido1";
-            this.apellido1.Size = new System.Drawing.Size(65, 20);
-            this.apellido1.TabIndex = 10;
-            this.apellido1.Text = "Apellido";
-            // 
-            // Form2
+            // CartillaVacunacion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -307,7 +307,7 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Name = "Form2";
+            this.Name = "CartillaVacunacion";
             this.Text = "Form2";
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
