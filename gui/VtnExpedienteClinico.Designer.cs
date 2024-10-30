@@ -63,7 +63,7 @@
             this.txtEnfermedadesPrev = new System.Windows.Forms.TextBox();
             this.dietaAlimenticia = new System.Windows.Forms.Label();
             this.enfermedadesPrevias = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnGuardar = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
@@ -391,14 +391,15 @@
             this.enfermedadesPrevias.TabIndex = 10;
             this.enfermedadesPrevias.Text = "Enfermedades previas";
             // 
-            // button1
+            // btnGuardar
             // 
-            this.button1.Location = new System.Drawing.Point(570, 547);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(152, 44);
-            this.button1.TabIndex = 21;
-            this.button1.Text = "Guardar";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnGuardar.Location = new System.Drawing.Point(570, 547);
+            this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.Size = new System.Drawing.Size(152, 44);
+            this.btnGuardar.TabIndex = 21;
+            this.btnGuardar.Text = "Guardar";
+            this.btnGuardar.UseVisualStyleBackColor = true;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // button2
             // 
@@ -417,6 +418,7 @@
             this.btnCancelar.TabIndex = 23;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // ExpedienteClinico
             // 
@@ -425,7 +427,7 @@
             this.ClientSize = new System.Drawing.Size(1008, 651);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -480,7 +482,7 @@
         private System.Windows.Forms.TextBox txtEnfermedadesPrev;
         private System.Windows.Forms.Label dietaAlimenticia;
         private System.Windows.Forms.Label enfermedadesPrevias;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.ComboBox cbxMascota;
