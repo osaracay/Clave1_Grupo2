@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Clave1_Grupo2.dao;
+using Clave1_Grupo2.util;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -25,8 +27,16 @@ namespace Clave1_Grupo2.gui
 
         private void btnCartillaVacunacion_Click(object sender, EventArgs e)
         {
-            CartillaVacunacion cartilla = new CartillaVacunacion();
-            cartilla.Show();
+            if (UsuarioDAO.GetSesion() != null)
+            {
+                GestorVentanas.CartillaVacunacion();
+            }
+            else
+            {
+                MessageBox.Show("Debes iniciar sesion para acceder a esta funcion");
+                GestorVentanas.SolicitarInicioSesion();
+            }
+            
         }
     }
 }
