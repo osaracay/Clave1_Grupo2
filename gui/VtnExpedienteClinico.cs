@@ -21,11 +21,15 @@ namespace Clave1_Grupo2.gui
         }
         private void InhabilitarCampos()
         {
+            txtEmail.Enabled = false;
             txtRaza.Enabled = false;
             txtEdad.Enabled = false;
             txtGenero.Enabled = false;
             txtEspecie.Enabled = false;
             txtColorMascota.Enabled = false;
+            nomMascota.Enabled = false;
+
+
         }
 
         private void CargarDatos()
@@ -39,7 +43,7 @@ namespace Clave1_Grupo2.gui
                 cbxPropietario.SelectedValue = UsuarioDAO.GetSesion().IdUsuario;
 
                 // Asegúrate de que este método se llame para cargar un ComboBox
-                //Rellenador.CargarListaAPetAComboBox(cbxMascota, MascotaDAO.GetListaMascotasOwner(UsuarioDAO.GetSesion()));
+                Rellenador.CargarListaAComboBox(cbxMascota, MascotaDAO.GetListaMascotasOwner(UsuarioDAO.GetSesion()));
             }
             else
             {
@@ -55,6 +59,12 @@ namespace Clave1_Grupo2.gui
             txtGenero.Clear();
             txtEspecie.Clear();
             txtColorMascota.Clear();
+            txtFinZootec.Clear();
+            txtDietaALim.Clear();
+            txtEnfermedadesPrev.Clear();
+            txtEsteril.Clear();
+            txtNumeroPartos.Clear();
+            txtCirugiasPrev.Clear();
         }
 
         private void cbxMascota_SelectedIndexChanged(object sender, EventArgs e)
@@ -67,8 +77,6 @@ namespace Clave1_Grupo2.gui
             txtGenero.Text = mascotaSeleccionada.GetGeneroMascota().ToString();
             txtColorMascota.Text = mascotaSeleccionada.Color;
             InhabilitarCampos();
-            //Intente limpiar cuando no hubiera items en la lista con selecteditem distinto de null
-            //y lista items count mayor que 0 pero no se limpiaron los campos
         }
     }
 }

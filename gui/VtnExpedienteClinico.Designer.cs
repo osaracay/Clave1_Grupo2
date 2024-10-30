@@ -56,7 +56,7 @@
             this.txtNumeroPartos = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.txtDietaALim = new System.Windows.Forms.TextBox();
-            this.txtEststeril = new System.Windows.Forms.TextBox();
+            this.txtEsteril = new System.Windows.Forms.TextBox();
             this.finZootecnico = new System.Windows.Forms.Label();
             this.estirilizado = new System.Windows.Forms.Label();
             this.txtFinZootec = new System.Windows.Forms.TextBox();
@@ -281,7 +281,7 @@
             this.groupBox3.Controls.Add(this.txtNumeroPartos);
             this.groupBox3.Controls.Add(this.label10);
             this.groupBox3.Controls.Add(this.txtDietaALim);
-            this.groupBox3.Controls.Add(this.txtEststeril);
+            this.groupBox3.Controls.Add(this.txtEsteril);
             this.groupBox3.Controls.Add(this.finZootecnico);
             this.groupBox3.Controls.Add(this.estirilizado);
             this.groupBox3.Controls.Add(this.txtFinZootec);
@@ -334,12 +334,12 @@
             this.txtDietaALim.Size = new System.Drawing.Size(206, 26);
             this.txtDietaALim.TabIndex = 9;
             // 
-            // txtEststeril
+            // txtEsteril
             // 
-            this.txtEststeril.Location = new System.Drawing.Point(214, 161);
-            this.txtEststeril.Name = "txtEststeril";
-            this.txtEststeril.Size = new System.Drawing.Size(206, 26);
-            this.txtEststeril.TabIndex = 13;
+            this.txtEsteril.Location = new System.Drawing.Point(214, 161);
+            this.txtEsteril.Name = "txtEsteril";
+            this.txtEsteril.Size = new System.Drawing.Size(206, 26);
+            this.txtEsteril.TabIndex = 13;
             // 
             // finZootecnico
             // 
@@ -473,7 +473,7 @@
         private System.Windows.Forms.TextBox txtNumeroPartos;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox txtDietaALim;
-        private System.Windows.Forms.TextBox txtEststeril;
+        private System.Windows.Forms.TextBox txtEsteril;
         private System.Windows.Forms.Label finZootecnico;
         private System.Windows.Forms.Label estirilizado;
         private System.Windows.Forms.TextBox txtFinZootec;
