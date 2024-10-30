@@ -157,5 +157,19 @@ namespace Clave1_Grupo2.gui
                 txtGenero.Clear();
             }
         }
+
+        private void btnVacunas_Click(object sender, EventArgs e)
+        {
+            if (UsuarioDAO.GetSesion() != null)
+            {
+                //GestorVentanas.CartillaVacunacion(); Pasarle la mascota
+                GestorVentanas.CartillaVacunacion();
+            }
+            else
+            {
+                MessageBox.Show("Debes iniciar sesion para acceder a esta funcion");
+                GestorVentanas.SolicitarInicioSesion();
+            }
+        }
     }
 }

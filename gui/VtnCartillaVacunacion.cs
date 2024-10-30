@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Clave1_Grupo2.gui
 {
-    public partial class CartillaVacunacion : Form
+    public partial class VtnCartillaVacunacion : Form
     {
-        public CartillaVacunacion()
+        public VtnCartillaVacunacion()
         {
             InitializeComponent();
         }
@@ -23,6 +23,11 @@ namespace Clave1_Grupo2.gui
         }
 
         private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
         {
 
         }

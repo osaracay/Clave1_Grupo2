@@ -1,4 +1,5 @@
-﻿using Clave1_Grupo2.gui;
+﻿using Clave1_Grupo2.entity;
+using Clave1_Grupo2.gui;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,6 +25,7 @@ namespace Clave1_Grupo2.util
         private static VtnConsultaVenta vntConsVenta;
         private static VtnAsignarTurno vtnAsignar;
         private static VtnInsumoCons vtnInsumoCons;
+        private static VtnCartillaVacunacion vtnCartilla;
 
         public static void SolicitarRegistroUsuario()
         {
@@ -190,5 +192,28 @@ namespace Clave1_Grupo2.util
             vtnInsumoCons.Focus();
         }
 
+        public static void CartillaVacunacion(Mascota m)
+        {
+            //SI NO EXISTE EL OBJETO SESION GLOBAL
+            if (vtnCartilla == null || vtnCartilla.IsDisposed)
+            {
+                vtnCartilla = null;
+                vtnCartilla = new VtnCartillaVacunacion();
+            }
+            vtnCartilla.ShowDialog();
+            vtnCartilla.Focus();
+        }
+        
+        public static void CartillaVacunacion()
+        {
+            //SOBRECARGA MOMENTANEA
+            if (vtnCartilla == null || vtnCartilla.IsDisposed)
+            {
+                vtnCartilla = null;
+                vtnCartilla = new VtnCartillaVacunacion();
+            }
+            vtnCartilla.Show();
+            vtnCartilla.Focus();
+        }
     }
 }
