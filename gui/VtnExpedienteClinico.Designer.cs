@@ -30,15 +30,15 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.idMascota = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.txtMascota = new System.Windows.Forms.TextBox();
+            this.nomMascota = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.txtEspecie = new System.Windows.Forms.TextBox();
             this.especie = new System.Windows.Forms.Label();
             this.txtRaza = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cbxMascota = new System.Windows.Forms.ComboBox();
             this.txtColorMascota = new System.Windows.Forms.TextBox();
             this.color = new System.Windows.Forms.Label();
             this.txtGenero = new System.Windows.Forms.TextBox();
@@ -46,7 +46,7 @@
             this.txtEdad = new System.Windows.Forms.TextBox();
             this.edad = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.idPropietario = new System.Windows.Forms.TextBox();
+            this.cbxPropietario = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -91,13 +91,6 @@
             this.label2.TabIndex = 1;
             this.label2.Text = "Correlativo";
             // 
-            // idMascota
-            // 
-            this.idMascota.Location = new System.Drawing.Point(197, 25);
-            this.idMascota.Name = "idMascota";
-            this.idMascota.Size = new System.Drawing.Size(188, 26);
-            this.idMascota.TabIndex = 7;
-            // 
             // label5
             // 
             this.label5.AutoSize = true;
@@ -107,12 +100,12 @@
             this.label5.TabIndex = 6;
             this.label5.Text = "Mascota";
             // 
-            // txtMascota
+            // nomMascota
             // 
-            this.txtMascota.Location = new System.Drawing.Point(197, 67);
-            this.txtMascota.Name = "txtMascota";
-            this.txtMascota.Size = new System.Drawing.Size(188, 26);
-            this.txtMascota.TabIndex = 9;
+            this.nomMascota.Location = new System.Drawing.Point(197, 67);
+            this.nomMascota.Name = "nomMascota";
+            this.nomMascota.Size = new System.Drawing.Size(188, 26);
+            this.nomMascota.TabIndex = 9;
             // 
             // label6
             // 
@@ -157,17 +150,17 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.cbxMascota);
             this.groupBox1.Controls.Add(this.txtColorMascota);
             this.groupBox1.Controls.Add(this.color);
             this.groupBox1.Controls.Add(this.txtGenero);
             this.groupBox1.Controls.Add(this.generoMascota);
             this.groupBox1.Controls.Add(this.txtEdad);
             this.groupBox1.Controls.Add(this.edad);
-            this.groupBox1.Controls.Add(this.txtMascota);
+            this.groupBox1.Controls.Add(this.nomMascota);
             this.groupBox1.Controls.Add(this.txtRaza);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.label7);
-            this.groupBox1.Controls.Add(this.idMascota);
             this.groupBox1.Controls.Add(this.txtEspecie);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.especie);
@@ -177,6 +170,15 @@
             this.groupBox1.TabIndex = 14;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos de la Mascota";
+            // 
+            // cbxMascota
+            // 
+            this.cbxMascota.FormattingEnabled = true;
+            this.cbxMascota.Location = new System.Drawing.Point(197, 23);
+            this.cbxMascota.Name = "cbxMascota";
+            this.cbxMascota.Size = new System.Drawing.Size(187, 28);
+            this.cbxMascota.TabIndex = 20;
+            this.cbxMascota.SelectedIndexChanged += new System.EventHandler(this.cbxMascota_SelectedIndexChanged);
             // 
             // txtColorMascota
             // 
@@ -228,7 +230,7 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.idPropietario);
+            this.groupBox2.Controls.Add(this.cbxPropietario);
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Controls.Add(this.txtEmail);
             this.groupBox2.Controls.Add(this.label3);
@@ -239,12 +241,13 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Datos del cliente";
             // 
-            // idPropietario
+            // cbxPropietario
             // 
-            this.idPropietario.Location = new System.Drawing.Point(125, 47);
-            this.idPropietario.Name = "idPropietario";
-            this.idPropietario.Size = new System.Drawing.Size(260, 26);
-            this.idPropietario.TabIndex = 9;
+            this.cbxPropietario.FormattingEnabled = true;
+            this.cbxPropietario.Location = new System.Drawing.Point(122, 44);
+            this.cbxPropietario.Name = "cbxPropietario";
+            this.cbxPropietario.Size = new System.Drawing.Size(264, 28);
+            this.cbxPropietario.TabIndex = 21;
             // 
             // label4
             // 
@@ -430,6 +433,7 @@
             this.Controls.Add(this.label1);
             this.Name = "ExpedienteClinico";
             this.Text = "Expediente Clinico";
+            this.Load += new System.EventHandler(this.ExpedienteClinico_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
@@ -445,9 +449,8 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox idMascota;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox txtMascota;
+        private System.Windows.Forms.TextBox nomMascota;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtEspecie;
         private System.Windows.Forms.Label especie;
@@ -455,7 +458,6 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.TextBox idPropietario;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.Label label3;
@@ -481,5 +483,7 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button btnCancelar;
+        private System.Windows.Forms.ComboBox cbxMascota;
+        private System.Windows.Forms.ComboBox cbxPropietario;
     }
 }

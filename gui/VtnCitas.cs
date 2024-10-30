@@ -16,5 +16,17 @@ namespace Clave1_Grupo2.gui
         {
             InitializeComponent();
         }
+
+        private void btnExpedienteClinico_Click(object sender, EventArgs e)
+        {
+            ExpedienteClinico expediente = new ExpedienteClinico();
+            expediente.Show();
+        }
+
+        private void btnCartillaVacunacion_Click(object sender, EventArgs e)
+        {
+            CartillaVacunacion cartilla = new CartillaVacunacion();
+            cartilla.Show();
+        }
     }
 }
