@@ -63,6 +63,7 @@ namespace Clave1_Grupo2.gui
             // lblVetCatDog
             // 
             this.lblVetCatDog.AutoSize = true;
+            this.lblVetCatDog.BackColor = System.Drawing.Color.Transparent;
             this.lblVetCatDog.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblVetCatDog.ForeColor = System.Drawing.SystemColors.ControlText;
             this.lblVetCatDog.Location = new System.Drawing.Point(442, 87);
@@ -75,6 +76,8 @@ namespace Clave1_Grupo2.gui
             // 
             // picLogo
             // 
+            this.picLogo.BackColor = System.Drawing.Color.Transparent;
+            this.picLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.picLogo.Image = ((System.Drawing.Image)(resources.GetObject("picLogo.Image")));
             this.picLogo.InitialImage = ((System.Drawing.Image)(resources.GetObject("picLogo.InitialImage")));
             this.picLogo.Location = new System.Drawing.Point(450, 7);
@@ -87,6 +90,7 @@ namespace Clave1_Grupo2.gui
             // label9
             // 
             this.label9.AutoSize = true;
+            this.label9.BackColor = System.Drawing.Color.Transparent;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.Location = new System.Drawing.Point(26, 295);
             this.label9.Name = "label9";
@@ -106,6 +110,7 @@ namespace Clave1_Grupo2.gui
             // label8
             // 
             this.label8.AutoSize = true;
+            this.label8.BackColor = System.Drawing.Color.Transparent;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.Location = new System.Drawing.Point(312, 216);
             this.label8.Name = "label8";
@@ -126,7 +131,7 @@ namespace Clave1_Grupo2.gui
             // 
             // txtStockFinal
             // 
-            this.txtStockFinal.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.txtStockFinal.BackColor = System.Drawing.Color.LightGreen;
             this.txtStockFinal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtStockFinal.Location = new System.Drawing.Point(116, 330);
             this.txtStockFinal.Name = "txtStockFinal";
@@ -138,6 +143,7 @@ namespace Clave1_Grupo2.gui
             // label4
             // 
             this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(312, 253);
             this.label4.Name = "label4";
@@ -163,7 +169,7 @@ namespace Clave1_Grupo2.gui
             this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelar.ForeColor = System.Drawing.Color.Black;
             this.btnCancelar.Image = ((System.Drawing.Image)(resources.GetObject("btnCancelar.Image")));
-            this.btnCancelar.Location = new System.Drawing.Point(359, 318);
+            this.btnCancelar.Location = new System.Drawing.Point(357, 291);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(80, 65);
             this.btnCancelar.TabIndex = 6;
@@ -174,7 +180,7 @@ namespace Clave1_Grupo2.gui
             // 
             // txtMedida
             // 
-            this.txtMedida.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.txtMedida.BackColor = System.Drawing.Color.LightGreen;
             this.txtMedida.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMedida.Location = new System.Drawing.Point(412, 216);
             this.txtMedida.Name = "txtMedida";
@@ -188,7 +194,7 @@ namespace Clave1_Grupo2.gui
             this.brnGuardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.brnGuardar.ForeColor = System.Drawing.Color.Black;
             this.brnGuardar.Image = ((System.Drawing.Image)(resources.GetObject("brnGuardar.Image")));
-            this.brnGuardar.Location = new System.Drawing.Point(273, 318);
+            this.brnGuardar.Location = new System.Drawing.Point(271, 291);
             this.brnGuardar.Name = "brnGuardar";
             this.brnGuardar.Size = new System.Drawing.Size(80, 65);
             this.brnGuardar.TabIndex = 5;
@@ -203,7 +209,7 @@ namespace Clave1_Grupo2.gui
             this.btnSalir.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSalir.ForeColor = System.Drawing.Color.Black;
             this.btnSalir.Image = ((System.Drawing.Image)(resources.GetObject("btnSalir.Image")));
-            this.btnSalir.Location = new System.Drawing.Point(445, 318);
+            this.btnSalir.Location = new System.Drawing.Point(443, 291);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(80, 65);
             this.btnSalir.TabIndex = 7;
@@ -213,6 +219,7 @@ namespace Clave1_Grupo2.gui
             // label6
             // 
             this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(13, 253);
             this.label6.Name = "label6";
@@ -222,7 +229,7 @@ namespace Clave1_Grupo2.gui
             // 
             // txtExistencia
             // 
-            this.txtExistencia.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.txtExistencia.BackColor = System.Drawing.Color.LightGreen;
             this.txtExistencia.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtExistencia.Location = new System.Drawing.Point(114, 253);
             this.txtExistencia.Name = "txtExistencia";
@@ -234,6 +241,7 @@ namespace Clave1_Grupo2.gui
             // label5
             // 
             this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(41, 216);
             this.label5.Name = "label5";
@@ -252,7 +260,7 @@ namespace Clave1_Grupo2.gui
             // 
             // txtDescripcion
             // 
-            this.txtDescripcion.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.txtDescripcion.BackColor = System.Drawing.Color.LightGreen;
             this.txtDescripcion.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDescripcion.Location = new System.Drawing.Point(114, 137);
             this.txtDescripcion.Name = "txtDescripcion";
@@ -263,6 +271,7 @@ namespace Clave1_Grupo2.gui
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(30, 141);
             this.label3.Name = "label3";
@@ -282,6 +291,7 @@ namespace Clave1_Grupo2.gui
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(77, 105);
             this.label2.Name = "label2";
@@ -292,6 +302,7 @@ namespace Clave1_Grupo2.gui
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Black;
             this.label1.Location = new System.Drawing.Point(12, 9);
@@ -304,7 +315,7 @@ namespace Clave1_Grupo2.gui
             // 
             this.dateTimePicker1.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(90, 65);
+            this.dateTimePicker1.Location = new System.Drawing.Point(114, 75);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(99, 20);
             this.dateTimePicker1.TabIndex = 0;
@@ -312,8 +323,9 @@ namespace Clave1_Grupo2.gui
             // label7
             // 
             this.label7.AutoSize = true;
+            this.label7.BackColor = System.Drawing.Color.Transparent;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(23, 65);
+            this.label7.Location = new System.Drawing.Point(47, 75);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(64, 18);
             this.label7.TabIndex = 104;
@@ -322,6 +334,7 @@ namespace Clave1_Grupo2.gui
             // label10
             // 
             this.label10.AutoSize = true;
+            this.label10.BackColor = System.Drawing.Color.Transparent;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.Location = new System.Drawing.Point(7, 330);
             this.label10.Name = "label10";
@@ -332,6 +345,7 @@ namespace Clave1_Grupo2.gui
             // label11
             // 
             this.label11.AutoSize = true;
+            this.label11.BackColor = System.Drawing.Color.Transparent;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.Location = new System.Drawing.Point(12, 173);
             this.label11.Name = "label11";
@@ -345,9 +359,9 @@ namespace Clave1_Grupo2.gui
             this.btnBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBuscar.ForeColor = System.Drawing.Color.Black;
             this.btnBuscar.Image = ((System.Drawing.Image)(resources.GetObject("btnBuscar.Image")));
-            this.btnBuscar.Location = new System.Drawing.Point(198, 105);
+            this.btnBuscar.Location = new System.Drawing.Point(193, 101);
             this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(42, 26);
+            this.btnBuscar.Size = new System.Drawing.Size(42, 36);
             this.btnBuscar.TabIndex = 107;
             this.btnBuscar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnBuscar.UseVisualStyleBackColor = false;
@@ -358,7 +372,9 @@ namespace Clave1_Grupo2.gui
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.ClientSize = new System.Drawing.Size(540, 391);
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(540, 371);
             this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label10);
@@ -386,9 +402,11 @@ namespace Clave1_Grupo2.gui
             this.Controls.Add(this.txtProveedor);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.DoubleBuffered = true;
             this.Name = "VtnCompra";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Ingreso a Inventario";
+            this.Load += new System.EventHandler(this.VtnCompra_Load);
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

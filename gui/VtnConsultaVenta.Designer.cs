@@ -62,6 +62,7 @@ namespace Clave1_Grupo2.gui
             // label6
             // 
             this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(7, 72);
             this.label6.Name = "label6";
@@ -81,6 +82,7 @@ namespace Clave1_Grupo2.gui
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(134, 72);
             this.label1.Name = "label1";
@@ -115,7 +117,7 @@ namespace Clave1_Grupo2.gui
             // 
             // txtTotalVnt
             // 
-            this.txtTotalVnt.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.txtTotalVnt.BackColor = System.Drawing.Color.LightGreen;
             this.txtTotalVnt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTotalVnt.Location = new System.Drawing.Point(730, 401);
             this.txtTotalVnt.Name = "txtTotalVnt";
@@ -126,7 +128,7 @@ namespace Clave1_Grupo2.gui
             // 
             // txtRegistros
             // 
-            this.txtRegistros.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.txtRegistros.BackColor = System.Drawing.Color.LightGreen;
             this.txtRegistros.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtRegistros.Location = new System.Drawing.Point(104, 405);
             this.txtRegistros.Name = "txtRegistros";
@@ -138,6 +140,7 @@ namespace Clave1_Grupo2.gui
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Black;
             this.label2.Location = new System.Drawing.Point(4, 7);
@@ -149,6 +152,7 @@ namespace Clave1_Grupo2.gui
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(10, 405);
             this.label3.Name = "label3";
@@ -159,6 +163,7 @@ namespace Clave1_Grupo2.gui
             // label4
             // 
             this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(602, 401);
             this.label4.Name = "label4";
@@ -169,6 +174,7 @@ namespace Clave1_Grupo2.gui
             // lblVetCatDog
             // 
             this.lblVetCatDog.AutoSize = true;
+            this.lblVetCatDog.BackColor = System.Drawing.Color.Transparent;
             this.lblVetCatDog.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblVetCatDog.ForeColor = System.Drawing.SystemColors.ControlText;
             this.lblVetCatDog.Location = new System.Drawing.Point(777, 87);
@@ -181,6 +187,7 @@ namespace Clave1_Grupo2.gui
             // 
             // picLogo
             // 
+            this.picLogo.BackColor = System.Drawing.Color.Transparent;
             this.picLogo.Image = ((System.Drawing.Image)(resources.GetObject("picLogo.Image")));
             this.picLogo.InitialImage = ((System.Drawing.Image)(resources.GetObject("picLogo.InitialImage")));
             this.picLogo.Location = new System.Drawing.Point(785, 7);
@@ -195,6 +202,8 @@ namespace Clave1_Grupo2.gui
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(868, 438);
             this.Controls.Add(this.lblVetCatDog);
             this.Controls.Add(this.picLogo);
@@ -209,8 +218,12 @@ namespace Clave1_Grupo2.gui
             this.Controls.Add(this.label6);
             this.Controls.Add(this.txtFechaIni);
             this.Controls.Add(this.dgvRegistros);
+            this.DoubleBuffered = true;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "VtnConsultaVenta";
+            this.Opacity = 0.95D;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Consulta de Venta";
             ((System.ComponentModel.ISupportInitialize)(this.dgvRegistros)).EndInit();

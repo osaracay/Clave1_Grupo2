@@ -239,5 +239,9 @@ namespace Clave1_Grupo2.gui
             }
         }
 
+        private void VtnCompra_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
