@@ -95,5 +95,22 @@ namespace Clave1_Grupo2.gui
             chkAdmin.Checked = false;
             chkVet.Checked = false;            
         }
+
+        private void txtNombres_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Solo permite un espacio
+            if (e.KeyChar == ' ' && (sender as TextBox).Text.IndexOf(' ') > -1)
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtSinEspacio_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == ' ')
+            {
+                e.Handled = true;
+            }
+        }
     }
 }

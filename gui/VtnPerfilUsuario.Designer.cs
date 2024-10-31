@@ -212,7 +212,7 @@ namespace Clave1_Grupo2.gui
             // 
             this.btnMisMascotas.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnMisMascotas.BackgroundImage")));
             this.btnMisMascotas.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnMisMascotas.Location = new System.Drawing.Point(266, 286);
+            this.btnMisMascotas.Location = new System.Drawing.Point(251, 286);
             this.btnMisMascotas.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnMisMascotas.Name = "btnMisMascotas";
             this.btnMisMascotas.Size = new System.Drawing.Size(92, 89);
@@ -224,7 +224,7 @@ namespace Clave1_Grupo2.gui
             // 
             this.btnAgregarMascota.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnAgregarMascota.BackgroundImage")));
             this.btnAgregarMascota.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnAgregarMascota.Location = new System.Drawing.Point(363, 286);
+            this.btnAgregarMascota.Location = new System.Drawing.Point(348, 286);
             this.btnAgregarMascota.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAgregarMascota.Name = "btnAgregarMascota";
             this.btnAgregarMascota.Size = new System.Drawing.Size(92, 89);
@@ -236,7 +236,7 @@ namespace Clave1_Grupo2.gui
             // 
             this.btnAgendar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnAgendar.BackgroundImage")));
             this.btnAgendar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnAgendar.Location = new System.Drawing.Point(461, 286);
+            this.btnAgendar.Location = new System.Drawing.Point(454, 286);
             this.btnAgendar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAgendar.Name = "btnAgendar";
             this.btnAgendar.Size = new System.Drawing.Size(88, 90);
@@ -248,7 +248,7 @@ namespace Clave1_Grupo2.gui
             // 
             this.btnCitas.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnCitas.BackgroundImage")));
             this.btnCitas.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnCitas.Location = new System.Drawing.Point(554, 286);
+            this.btnCitas.Location = new System.Drawing.Point(547, 286);
             this.btnCitas.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnCitas.Name = "btnCitas";
             this.btnCitas.Size = new System.Drawing.Size(88, 90);
@@ -281,7 +281,7 @@ namespace Clave1_Grupo2.gui
             this.btnHabilitarCambioPw.Location = new System.Drawing.Point(745, 286);
             this.btnHabilitarCambioPw.Margin = new System.Windows.Forms.Padding(4);
             this.btnHabilitarCambioPw.Name = "btnHabilitarCambioPw";
-            this.btnHabilitarCambioPw.Size = new System.Drawing.Size(102, 89);
+            this.btnHabilitarCambioPw.Size = new System.Drawing.Size(115, 89);
             this.btnHabilitarCambioPw.TabIndex = 70;
             this.btnHabilitarCambioPw.Text = "Actualizar contraseña";
             this.btnHabilitarCambioPw.TextAlign = System.Drawing.ContentAlignment.BottomCenter;

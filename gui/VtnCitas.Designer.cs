@@ -95,8 +95,8 @@ namespace Clave1_Grupo2.gui
             // 
             this.pbxFotoPerfil.BackColor = System.Drawing.Color.Transparent;
             this.pbxFotoPerfil.Image = ((System.Drawing.Image)(resources.GetObject("pbxFotoPerfil.Image")));
-            this.pbxFotoPerfil.Location = new System.Drawing.Point(37, 23);
-            this.pbxFotoPerfil.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pbxFotoPerfil.Location = new System.Drawing.Point(25, 15);
+            this.pbxFotoPerfil.Margin = new System.Windows.Forms.Padding(4);
             this.pbxFotoPerfil.Name = "pbxFotoPerfil";
             this.pbxFotoPerfil.Size = new System.Drawing.Size(148, 151);
             this.pbxFotoPerfil.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -108,7 +108,7 @@ namespace Clave1_Grupo2.gui
             this.lblTitulo.AutoSize = true;
             this.lblTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitulo.ForeColor = System.Drawing.Color.White;
-            this.lblTitulo.Location = new System.Drawing.Point(57, 170);
+            this.lblTitulo.Location = new System.Drawing.Point(76, 159);
             this.lblTitulo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTitulo.Name = "lblTitulo";
             this.lblTitulo.Size = new System.Drawing.Size(67, 29);
@@ -131,7 +131,7 @@ namespace Clave1_Grupo2.gui
             this.picLogo.Image = ((System.Drawing.Image)(resources.GetObject("picLogo.Image")));
             this.picLogo.InitialImage = ((System.Drawing.Image)(resources.GetObject("picLogo.InitialImage")));
             this.picLogo.Location = new System.Drawing.Point(-3, 348);
-            this.picLogo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.picLogo.Margin = new System.Windows.Forms.Padding(4);
             this.picLogo.Name = "picLogo";
             this.picLogo.Size = new System.Drawing.Size(99, 95);
             this.picLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;

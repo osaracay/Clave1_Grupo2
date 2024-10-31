@@ -187,7 +187,7 @@ namespace Clave1_Grupo2
             else
             {
                 MessageBox.Show("Debes iniciar sesion como administrador para acceder a esta funcion");
-                GestorVentanas.SolicitarInicioSesion();
+                //GestorVentanas.SolicitarInicioSesion();
             }
         }
     }

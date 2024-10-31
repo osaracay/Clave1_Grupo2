@@ -100,6 +100,7 @@ namespace Clave1_Grupo2.gui
             this.txtNombres.Name = "txtNombres";
             this.txtNombres.Size = new System.Drawing.Size(327, 29);
             this.txtNombres.TabIndex = 1;
+            this.txtNombres.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombres_KeyPress);
             // 
             // lblTitulo
             // 
@@ -142,7 +143,7 @@ namespace Clave1_Grupo2.gui
             this.picLogo.Image = ((System.Drawing.Image)(resources.GetObject("picLogo.Image")));
             this.picLogo.InitialImage = ((System.Drawing.Image)(resources.GetObject("picLogo.InitialImage")));
             this.picLogo.Location = new System.Drawing.Point(5, 215);
-            this.picLogo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.picLogo.Margin = new System.Windows.Forms.Padding(4);
             this.picLogo.Name = "picLogo";
             this.picLogo.Size = new System.Drawing.Size(99, 94);
             this.picLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -160,6 +161,7 @@ namespace Clave1_Grupo2.gui
             this.txtApellidos.Name = "txtApellidos";
             this.txtApellidos.Size = new System.Drawing.Size(327, 29);
             this.txtApellidos.TabIndex = 2;
+            this.txtApellidos.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombres_KeyPress);
             // 
             // campoFechaNac
             // 
@@ -188,6 +190,7 @@ namespace Clave1_Grupo2.gui
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(327, 29);
             this.txtEmail.TabIndex = 4;
+            this.txtEmail.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSinEspacio_KeyPress);
             // 
             // label1
             // 
@@ -255,6 +258,7 @@ namespace Clave1_Grupo2.gui
             this.txtUserName.Name = "txtUserName";
             this.txtUserName.Size = new System.Drawing.Size(327, 29);
             this.txtUserName.TabIndex = 5;
+            this.txtUserName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSinEspacio_KeyPress);
             // 
             // txtUsrPw
             // 
@@ -268,6 +272,7 @@ namespace Clave1_Grupo2.gui
             this.txtUsrPw.Size = new System.Drawing.Size(327, 29);
             this.txtUsrPw.TabIndex = 6;
             this.txtUsrPw.UseSystemPasswordChar = true;
+            this.txtUsrPw.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSinEspacio_KeyPress);
             // 
             // lblUsrPw
             // 
@@ -338,9 +343,9 @@ namespace Clave1_Grupo2.gui
             this.grpTipoUsuario.Controls.Add(this.chkAdmin);
             this.grpTipoUsuario.ForeColor = System.Drawing.Color.White;
             this.grpTipoUsuario.Location = new System.Drawing.Point(241, 203);
-            this.grpTipoUsuario.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.grpTipoUsuario.Margin = new System.Windows.Forms.Padding(4);
             this.grpTipoUsuario.Name = "grpTipoUsuario";
-            this.grpTipoUsuario.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.grpTipoUsuario.Padding = new System.Windows.Forms.Padding(4);
             this.grpTipoUsuario.Size = new System.Drawing.Size(212, 105);
             this.grpTipoUsuario.TabIndex = 25;
             this.grpTipoUsuario.TabStop = false;
@@ -350,7 +355,7 @@ namespace Clave1_Grupo2.gui
             // 
             this.chkCliente.AutoSize = true;
             this.chkCliente.Location = new System.Drawing.Point(8, 76);
-            this.chkCliente.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.chkCliente.Margin = new System.Windows.Forms.Padding(4);
             this.chkCliente.Name = "chkCliente";
             this.chkCliente.Size = new System.Drawing.Size(72, 21);
             this.chkCliente.TabIndex = 2;
@@ -362,7 +367,7 @@ namespace Clave1_Grupo2.gui
             // 
             this.chkVet.AutoSize = true;
             this.chkVet.Location = new System.Drawing.Point(8, 53);
-            this.chkVet.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.chkVet.Margin = new System.Windows.Forms.Padding(4);
             this.chkVet.Name = "chkVet";
             this.chkVet.Size = new System.Drawing.Size(98, 21);
             this.chkVet.TabIndex = 1;
@@ -374,7 +379,7 @@ namespace Clave1_Grupo2.gui
             // 
             this.chkAdmin.AutoSize = true;
             this.chkAdmin.Location = new System.Drawing.Point(8, 25);
-            this.chkAdmin.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.chkAdmin.Margin = new System.Windows.Forms.Padding(4);
             this.chkAdmin.Name = "chkAdmin";
             this.chkAdmin.Size = new System.Drawing.Size(116, 21);
             this.chkAdmin.TabIndex = 0;
