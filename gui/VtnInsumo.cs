@@ -352,16 +352,28 @@ namespace Clave1_Grupo2.gui
         private void btnTpInsumo_Click(object sender, EventArgs e)
         {
             //DEBES SER USUARIO VET o ADMINISTRADOR PARA ACCEDER
-            if (UsuarioDAO.GetSesion() != null)
+            if (UsuarioDAO.GetSesion() != null && UsuarioDAO.GetSesion().TipoUsuario == 1)
             {
                 GestorVentanas.AbrirTipoInsumo();
             }
             else
             {
-                MessageBox.Show("Debes iniciar sesion para acceder a esta funcion");
-                GestorVentanas.SolicitarInicioSesion();
+                MessageBox.Show("Debes ser administrador para acceder a esta funcion");
+                //GestorVentanas.SolicitarInicioSesion();
             }
         }
 
+        private void txtCodigo_TextChanged(object sender, EventArgs e)
+        {
+            //El producto mostrado esta registrado en la base si muestra el id            
+            if (String.IsNullOrEmpty(txtCodigo.Text))
+            {
+                btnGuardar.Enabled = true;
+            }
+            else {
+                btnGuardar.Enabled = false;
+                //inhabilita la opcion guardar si el producto ya esta registrado
+            }
+        }
     }
 }

@@ -31,6 +31,7 @@ namespace Clave1_Grupo2.gui
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(VtnMascotas));
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnVacunas = new System.Windows.Forms.Button();
             this.pbxFotoPerfil = new System.Windows.Forms.PictureBox();
             this.txtNombre = new System.Windows.Forms.Label();
             this.lblVetCatDog = new System.Windows.Forms.Label();
@@ -50,42 +51,55 @@ namespace Clave1_Grupo2.gui
             this.label4 = new System.Windows.Forms.Label();
             this.cbxEspecie = new System.Windows.Forms.ComboBox();
             this.lblMascotas = new System.Windows.Forms.Label();
-            this.dgvCitas = new System.Windows.Forms.DataGridView();
             this.txtGenero = new System.Windows.Forms.TextBox();
-            this.lblCitas = new System.Windows.Forms.Label();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.btnModificar = new System.Windows.Forms.Button();
             this.lblEdadValida = new System.Windows.Forms.Label();
-            this.btnVacunas = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbxFotoPerfil)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCitas)).BeginInit();
             this.SuspendLayout();
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.DarkSlateBlue;
-            this.panel2.Controls.Add(this.btnVacunas);
             this.panel2.Controls.Add(this.pbxFotoPerfil);
             this.panel2.Controls.Add(this.txtNombre);
             this.panel2.Controls.Add(this.lblVetCatDog);
             this.panel2.Controls.Add(this.picLogo);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(168, 366);
+            this.panel2.Size = new System.Drawing.Size(224, 418);
             this.panel2.TabIndex = 61;
+            // 
+            // btnVacunas
+            // 
+            this.btnVacunas.BackColor = System.Drawing.Color.White;
+            this.btnVacunas.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnVacunas.BackgroundImage")));
+            this.btnVacunas.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnVacunas.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVacunas.ForeColor = System.Drawing.Color.Black;
+            this.btnVacunas.Location = new System.Drawing.Point(766, 312);
+            this.btnVacunas.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnVacunas.Name = "btnVacunas";
+            this.btnVacunas.Size = new System.Drawing.Size(102, 94);
+            this.btnVacunas.TabIndex = 99;
+            this.btnVacunas.Text = "Cartilla\r\nvacunación";
+            this.btnVacunas.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnVacunas.UseVisualStyleBackColor = false;
+            this.btnVacunas.Click += new System.EventHandler(this.btnVacunas_Click);
             // 
             // pbxFotoPerfil
             // 
             this.pbxFotoPerfil.BackColor = System.Drawing.Color.Transparent;
             this.pbxFotoPerfil.Image = ((System.Drawing.Image)(resources.GetObject("pbxFotoPerfil.Image")));
-            this.pbxFotoPerfil.Location = new System.Drawing.Point(34, 12);
+            this.pbxFotoPerfil.Location = new System.Drawing.Point(45, 15);
+            this.pbxFotoPerfil.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pbxFotoPerfil.Name = "pbxFotoPerfil";
-            this.pbxFotoPerfil.Size = new System.Drawing.Size(111, 123);
+            this.pbxFotoPerfil.Size = new System.Drawing.Size(148, 151);
             this.pbxFotoPerfil.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbxFotoPerfil.TabIndex = 63;
             this.pbxFotoPerfil.TabStop = false;
@@ -95,9 +109,10 @@ namespace Clave1_Grupo2.gui
             this.txtNombre.AutoSize = true;
             this.txtNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNombre.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.txtNombre.Location = new System.Drawing.Point(50, 137);
+            this.txtNombre.Location = new System.Drawing.Point(67, 169);
+            this.txtNombre.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(74, 24);
+            this.txtNombre.Size = new System.Drawing.Size(96, 29);
             this.txtNombre.TabIndex = 62;
             this.txtNombre.Text = "Usuario";
             this.txtNombre.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -107,10 +122,9 @@ namespace Clave1_Grupo2.gui
             this.lblVetCatDog.AutoSize = true;
             this.lblVetCatDog.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblVetCatDog.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblVetCatDog.Location = new System.Drawing.Point(72, 317);
-            this.lblVetCatDog.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblVetCatDog.Location = new System.Drawing.Point(97, 356);
             this.lblVetCatDog.Name = "lblVetCatDog";
-            this.lblVetCatDog.Size = new System.Drawing.Size(97, 40);
+            this.lblVetCatDog.Size = new System.Drawing.Size(117, 50);
             this.lblVetCatDog.TabIndex = 6;
             this.lblVetCatDog.Text = "Veterinaria\r\nCat-Dog";
             // 
@@ -118,9 +132,10 @@ namespace Clave1_Grupo2.gui
             // 
             this.picLogo.Image = ((System.Drawing.Image)(resources.GetObject("picLogo.Image")));
             this.picLogo.InitialImage = ((System.Drawing.Image)(resources.GetObject("picLogo.InitialImage")));
-            this.picLogo.Location = new System.Drawing.Point(-2, 284);
+            this.picLogo.Location = new System.Drawing.Point(-2, 316);
+            this.picLogo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.picLogo.Name = "picLogo";
-            this.picLogo.Size = new System.Drawing.Size(74, 76);
+            this.picLogo.Size = new System.Drawing.Size(99, 94);
             this.picLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picLogo.TabIndex = 0;
             this.picLogo.TabStop = false;
@@ -128,12 +143,14 @@ namespace Clave1_Grupo2.gui
             // listaMascotas
             // 
             this.listaMascotas.BackColor = System.Drawing.Color.Black;
+            this.listaMascotas.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listaMascotas.ForeColor = System.Drawing.Color.White;
             this.listaMascotas.FormattingEnabled = true;
-            this.listaMascotas.Location = new System.Drawing.Point(478, 34);
-            this.listaMascotas.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.listaMascotas.ItemHeight = 20;
+            this.listaMascotas.Location = new System.Drawing.Point(637, 42);
+            this.listaMascotas.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.listaMascotas.Name = "listaMascotas";
-            this.listaMascotas.Size = new System.Drawing.Size(114, 173);
+            this.listaMascotas.Size = new System.Drawing.Size(231, 264);
             this.listaMascotas.TabIndex = 2;
             this.listaMascotas.SelectedIndexChanged += new System.EventHandler(this.listaMascotas_SelectedIndexChanged);
             // 
@@ -142,10 +159,9 @@ namespace Clave1_Grupo2.gui
             this.lblApellido.AutoSize = true;
             this.lblApellido.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblApellido.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblApellido.Location = new System.Drawing.Point(170, 79);
-            this.lblApellido.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblApellido.Location = new System.Drawing.Point(227, 143);
             this.lblApellido.Name = "lblApellido";
-            this.lblApellido.Size = new System.Drawing.Size(58, 17);
+            this.lblApellido.Size = new System.Drawing.Size(69, 20);
             this.lblApellido.TabIndex = 82;
             this.lblApellido.Text = "Especie";
             // 
@@ -154,10 +170,9 @@ namespace Clave1_Grupo2.gui
             this.lblNombre.AutoSize = true;
             this.lblNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNombre.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblNombre.Location = new System.Drawing.Point(170, 46);
-            this.lblNombre.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblNombre.Location = new System.Drawing.Point(227, 104);
             this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(58, 17);
+            this.lblNombre.Size = new System.Drawing.Size(68, 20);
             this.lblNombre.TabIndex = 81;
             this.lblNombre.Text = "Nombre";
             // 
@@ -166,11 +181,11 @@ namespace Clave1_Grupo2.gui
             this.txtNombres.BackColor = System.Drawing.SystemColors.InactiveCaptionText;
             this.txtNombres.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNombres.ForeColor = System.Drawing.SystemColors.InactiveCaption;
-            this.txtNombres.Location = new System.Drawing.Point(243, 41);
-            this.txtNombres.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtNombres.Location = new System.Drawing.Point(324, 97);
+            this.txtNombres.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtNombres.MaxLength = 30;
             this.txtNombres.Name = "txtNombres";
-            this.txtNombres.Size = new System.Drawing.Size(232, 24);
+            this.txtNombres.Size = new System.Drawing.Size(308, 29);
             this.txtNombres.TabIndex = 3;
             // 
             // lblEdad
@@ -178,10 +193,9 @@ namespace Clave1_Grupo2.gui
             this.lblEdad.AutoSize = true;
             this.lblEdad.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEdad.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblEdad.Location = new System.Drawing.Point(170, 143);
-            this.lblEdad.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblEdad.Location = new System.Drawing.Point(227, 230);
             this.lblEdad.Name = "lblEdad";
-            this.lblEdad.Size = new System.Drawing.Size(41, 17);
+            this.lblEdad.Size = new System.Drawing.Size(47, 20);
             this.lblEdad.TabIndex = 78;
             this.lblEdad.Text = "Edad";
             // 
@@ -190,11 +204,11 @@ namespace Clave1_Grupo2.gui
             this.txtRaza.BackColor = System.Drawing.SystemColors.InactiveCaptionText;
             this.txtRaza.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtRaza.ForeColor = System.Drawing.SystemColors.InactiveCaption;
-            this.txtRaza.Location = new System.Drawing.Point(243, 107);
-            this.txtRaza.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtRaza.Location = new System.Drawing.Point(324, 181);
+            this.txtRaza.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtRaza.MaxLength = 25;
             this.txtRaza.Name = "txtRaza";
-            this.txtRaza.Size = new System.Drawing.Size(232, 24);
+            this.txtRaza.Size = new System.Drawing.Size(308, 29);
             this.txtRaza.TabIndex = 5;
             // 
             // label1
@@ -202,10 +216,9 @@ namespace Clave1_Grupo2.gui
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label1.Location = new System.Drawing.Point(170, 112);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(227, 187);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(41, 17);
+            this.label1.Size = new System.Drawing.Size(48, 20);
             this.label1.TabIndex = 83;
             this.label1.Text = "Raza";
             // 
@@ -214,10 +227,9 @@ namespace Clave1_Grupo2.gui
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label2.Location = new System.Drawing.Point(341, 141);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Location = new System.Drawing.Point(455, 228);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(56, 17);
+            this.label2.Size = new System.Drawing.Size(64, 20);
             this.label2.TabIndex = 84;
             this.label2.Text = "Género";
             // 
@@ -226,10 +238,9 @@ namespace Clave1_Grupo2.gui
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label3.Location = new System.Drawing.Point(170, 174);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label3.Location = new System.Drawing.Point(227, 269);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(41, 17);
+            this.label3.Size = new System.Drawing.Size(49, 20);
             this.label3.TabIndex = 85;
             this.label3.Text = "Color";
             // 
@@ -238,11 +249,11 @@ namespace Clave1_Grupo2.gui
             this.txtEdad.BackColor = System.Drawing.SystemColors.InactiveCaptionText;
             this.txtEdad.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEdad.ForeColor = System.Drawing.SystemColors.InactiveCaption;
-            this.txtEdad.Location = new System.Drawing.Point(243, 138);
-            this.txtEdad.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtEdad.Location = new System.Drawing.Point(324, 225);
+            this.txtEdad.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtEdad.MaxLength = 3;
             this.txtEdad.Name = "txtEdad";
-            this.txtEdad.Size = new System.Drawing.Size(81, 24);
+            this.txtEdad.Size = new System.Drawing.Size(107, 29);
             this.txtEdad.TabIndex = 6;
             this.txtEdad.TextChanged += new System.EventHandler(this.txtEdad_TextChanged);
             // 
@@ -251,11 +262,11 @@ namespace Clave1_Grupo2.gui
             this.txtColorMascota.BackColor = System.Drawing.SystemColors.InactiveCaptionText;
             this.txtColorMascota.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtColorMascota.ForeColor = System.Drawing.SystemColors.InactiveCaption;
-            this.txtColorMascota.Location = new System.Drawing.Point(243, 174);
-            this.txtColorMascota.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtColorMascota.Location = new System.Drawing.Point(323, 269);
+            this.txtColorMascota.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtColorMascota.MaxLength = 25;
             this.txtColorMascota.Name = "txtColorMascota";
-            this.txtColorMascota.Size = new System.Drawing.Size(232, 24);
+            this.txtColorMascota.Size = new System.Drawing.Size(308, 29);
             this.txtColorMascota.TabIndex = 8;
             // 
             // cbxPropietario
@@ -265,10 +276,10 @@ namespace Clave1_Grupo2.gui
             this.cbxPropietario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbxPropietario.ForeColor = System.Drawing.SystemColors.InactiveCaption;
             this.cbxPropietario.FormattingEnabled = true;
-            this.cbxPropietario.Location = new System.Drawing.Point(243, 12);
-            this.cbxPropietario.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbxPropietario.Location = new System.Drawing.Point(324, 54);
+            this.cbxPropietario.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbxPropietario.Name = "cbxPropietario";
-            this.cbxPropietario.Size = new System.Drawing.Size(232, 23);
+            this.cbxPropietario.Size = new System.Drawing.Size(308, 26);
             this.cbxPropietario.TabIndex = 1;
             this.cbxPropietario.SelectedIndexChanged += new System.EventHandler(this.cbxPropietario_SelectedIndexChanged);
             // 
@@ -277,10 +288,9 @@ namespace Clave1_Grupo2.gui
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label4.Location = new System.Drawing.Point(170, 12);
-            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label4.Location = new System.Drawing.Point(227, 54);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(77, 17);
+            this.label4.Size = new System.Drawing.Size(90, 20);
             this.label4.TabIndex = 90;
             this.label4.Text = "Propietario";
             // 
@@ -291,10 +301,10 @@ namespace Clave1_Grupo2.gui
             this.cbxEspecie.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbxEspecie.ForeColor = System.Drawing.SystemColors.InactiveCaption;
             this.cbxEspecie.FormattingEnabled = true;
-            this.cbxEspecie.Location = new System.Drawing.Point(243, 75);
-            this.cbxEspecie.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbxEspecie.Location = new System.Drawing.Point(324, 138);
+            this.cbxEspecie.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbxEspecie.Name = "cbxEspecie";
-            this.cbxEspecie.Size = new System.Drawing.Size(232, 25);
+            this.cbxEspecie.Size = new System.Drawing.Size(308, 30);
             this.cbxEspecie.TabIndex = 4;
             // 
             // lblMascotas
@@ -302,46 +312,25 @@ namespace Clave1_Grupo2.gui
             this.lblMascotas.AutoSize = true;
             this.lblMascotas.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMascotas.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblMascotas.Location = new System.Drawing.Point(479, 10);
+            this.lblMascotas.Location = new System.Drawing.Point(639, 12);
+            this.lblMascotas.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblMascotas.Name = "lblMascotas";
-            this.lblMascotas.Size = new System.Drawing.Size(89, 24);
+            this.lblMascotas.Size = new System.Drawing.Size(115, 29);
             this.lblMascotas.TabIndex = 64;
             this.lblMascotas.Text = "Mascotas";
-            // 
-            // dgvCitas
-            // 
-            this.dgvCitas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvCitas.Location = new System.Drawing.Point(172, 237);
-            this.dgvCitas.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.dgvCitas.Name = "dgvCitas";
-            this.dgvCitas.RowHeadersWidth = 51;
-            this.dgvCitas.RowTemplate.Height = 24;
-            this.dgvCitas.Size = new System.Drawing.Size(418, 122);
-            this.dgvCitas.TabIndex = 93;
             // 
             // txtGenero
             // 
             this.txtGenero.BackColor = System.Drawing.SystemColors.InactiveCaptionText;
             this.txtGenero.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtGenero.ForeColor = System.Drawing.SystemColors.InactiveCaption;
-            this.txtGenero.Location = new System.Drawing.Point(394, 139);
-            this.txtGenero.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtGenero.Location = new System.Drawing.Point(525, 225);
+            this.txtGenero.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtGenero.MaxLength = 1;
             this.txtGenero.Name = "txtGenero";
-            this.txtGenero.Size = new System.Drawing.Size(81, 24);
+            this.txtGenero.Size = new System.Drawing.Size(107, 29);
             this.txtGenero.TabIndex = 7;
             this.txtGenero.TextChanged += new System.EventHandler(this.txtGenero_TextChanged);
-            // 
-            // lblCitas
-            // 
-            this.lblCitas.AutoSize = true;
-            this.lblCitas.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCitas.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblCitas.Location = new System.Drawing.Point(169, 208);
-            this.lblCitas.Name = "lblCitas";
-            this.lblCitas.Size = new System.Drawing.Size(50, 24);
-            this.lblCitas.TabIndex = 94;
-            this.lblCitas.Text = "Citas";
             // 
             // btnCancelar
             // 
@@ -349,9 +338,10 @@ namespace Clave1_Grupo2.gui
             this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelar.ForeColor = System.Drawing.Color.Black;
             this.btnCancelar.Image = ((System.Drawing.Image)(resources.GetObject("btnCancelar.Image")));
-            this.btnCancelar.Location = new System.Drawing.Point(416, 208);
+            this.btnCancelar.Location = new System.Drawing.Point(425, 312);
+            this.btnCancelar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(86, 28);
+            this.btnCancelar.Size = new System.Drawing.Size(102, 94);
             this.btnCancelar.TabIndex = 97;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -364,9 +354,10 @@ namespace Clave1_Grupo2.gui
             this.btnGuardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGuardar.ForeColor = System.Drawing.Color.Black;
             this.btnGuardar.Image = ((System.Drawing.Image)(resources.GetObject("btnGuardar.Image")));
-            this.btnGuardar.Location = new System.Drawing.Point(328, 208);
+            this.btnGuardar.Location = new System.Drawing.Point(530, 312);
+            this.btnGuardar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(86, 28);
+            this.btnGuardar.Size = new System.Drawing.Size(102, 94);
             this.btnGuardar.TabIndex = 96;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -379,9 +370,10 @@ namespace Clave1_Grupo2.gui
             this.btnModificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnModificar.ForeColor = System.Drawing.Color.Black;
             this.btnModificar.Image = ((System.Drawing.Image)(resources.GetObject("btnModificar.Image")));
-            this.btnModificar.Location = new System.Drawing.Point(505, 208);
+            this.btnModificar.Location = new System.Drawing.Point(637, 312);
+            this.btnModificar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnModificar.Name = "btnModificar";
-            this.btnModificar.Size = new System.Drawing.Size(86, 29);
+            this.btnModificar.Size = new System.Drawing.Size(101, 94);
             this.btnModificar.TabIndex = 95;
             this.btnModificar.Text = "Editar";
             this.btnModificar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -392,42 +384,24 @@ namespace Clave1_Grupo2.gui
             // 
             this.lblEdadValida.AutoSize = true;
             this.lblEdadValida.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblEdadValida.Location = new System.Drawing.Point(275, 144);
-            this.lblEdadValida.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblEdadValida.Location = new System.Drawing.Point(367, 231);
             this.lblEdadValida.Name = "lblEdadValida";
-            this.lblEdadValida.Size = new System.Drawing.Size(10, 13);
+            this.lblEdadValida.Size = new System.Drawing.Size(13, 17);
             this.lblEdadValida.TabIndex = 98;
             this.lblEdadValida.Text = "-";
             // 
-            // btnVacunas
-            // 
-            this.btnVacunas.BackColor = System.Drawing.Color.White;
-            this.btnVacunas.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnVacunas.BackgroundImage")));
-            this.btnVacunas.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnVacunas.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVacunas.ForeColor = System.Drawing.Color.Black;
-            this.btnVacunas.Location = new System.Drawing.Point(48, 174);
-            this.btnVacunas.Name = "btnVacunas";
-            this.btnVacunas.Size = new System.Drawing.Size(87, 85);
-            this.btnVacunas.TabIndex = 99;
-            this.btnVacunas.Text = "Cartilla\r\nvacunación";
-            this.btnVacunas.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnVacunas.UseVisualStyleBackColor = false;
-            this.btnVacunas.Click += new System.EventHandler(this.btnVacunas_Click);
-            // 
             // VtnMascotas
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.ClientSize = new System.Drawing.Size(600, 366);
+            this.ClientSize = new System.Drawing.Size(877, 418);
+            this.Controls.Add(this.btnVacunas);
             this.Controls.Add(this.lblEdadValida);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.btnModificar);
-            this.Controls.Add(this.lblCitas);
             this.Controls.Add(this.txtGenero);
-            this.Controls.Add(this.dgvCitas);
             this.Controls.Add(this.lblMascotas);
             this.Controls.Add(this.cbxEspecie);
             this.Controls.Add(this.cbxPropietario);
@@ -446,7 +420,7 @@ namespace Clave1_Grupo2.gui
             this.Controls.Add(this.panel2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "VtnMascotas";
             this.Opacity = 0.95D;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -456,7 +430,6 @@ namespace Clave1_Grupo2.gui
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbxFotoPerfil)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCitas)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -484,9 +457,7 @@ namespace Clave1_Grupo2.gui
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox cbxEspecie;
         private System.Windows.Forms.Label lblMascotas;
-        private System.Windows.Forms.DataGridView dgvCitas;
         private System.Windows.Forms.TextBox txtGenero;
-        private System.Windows.Forms.Label lblCitas;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.Button btnModificar;

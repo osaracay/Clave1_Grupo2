@@ -39,9 +39,10 @@ namespace Clave1_Grupo2.gui
             // txtBuscar
             // 
             this.txtBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBuscar.Location = new System.Drawing.Point(12, 45);
+            this.txtBuscar.Location = new System.Drawing.Point(16, 55);
+            this.txtBuscar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtBuscar.Name = "txtBuscar";
-            this.txtBuscar.Size = new System.Drawing.Size(241, 26);
+            this.txtBuscar.Size = new System.Drawing.Size(320, 30);
             this.txtBuscar.TabIndex = 58;
             this.txtBuscar.TextChanged += new System.EventHandler(this.txtBuscar_TextChanged);
             // 
@@ -50,11 +51,12 @@ namespace Clave1_Grupo2.gui
             this.dgvRegistros.AllowUserToDeleteRows = false;
             this.dgvRegistros.BackgroundColor = System.Drawing.SystemColors.Window;
             this.dgvRegistros.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvRegistros.Location = new System.Drawing.Point(12, 77);
+            this.dgvRegistros.Location = new System.Drawing.Point(16, 95);
+            this.dgvRegistros.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dgvRegistros.Name = "dgvRegistros";
             this.dgvRegistros.ReadOnly = true;
             this.dgvRegistros.RowHeadersWidth = 51;
-            this.dgvRegistros.Size = new System.Drawing.Size(677, 257);
+            this.dgvRegistros.Size = new System.Drawing.Size(940, 316);
             this.dgvRegistros.TabIndex = 59;
             this.dgvRegistros.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvRegistros_CellContentClick);
             this.dgvRegistros.DoubleClick += new System.EventHandler(this.dgvRegistros_DoubleClick);
@@ -64,26 +66,28 @@ namespace Clave1_Grupo2.gui
             this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(11, 18);
+            this.label6.Location = new System.Drawing.Point(15, 22);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(227, 18);
+            this.label6.Size = new System.Drawing.Size(281, 24);
             this.label6.TabIndex = 64;
             this.label6.Text = "Consultar Insumo y Agregar :";
             // 
             // VtnInsumoCons
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(701, 344);
+            this.ClientSize = new System.Drawing.Size(962, 423);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.txtBuscar);
             this.Controls.Add(this.dgvRegistros);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.MaximizeBox = false;
             this.Name = "VtnInsumoCons";
             this.Opacity = 0.9D;

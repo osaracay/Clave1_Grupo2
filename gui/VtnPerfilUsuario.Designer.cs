@@ -40,8 +40,8 @@ namespace Clave1_Grupo2.gui
             this.txtNombre = new System.Windows.Forms.Label();
             this.lblVetCatDog = new System.Windows.Forms.Label();
             this.picLogo = new System.Windows.Forms.PictureBox();
-            this.campoFechaNac = new System.Windows.Forms.DateTimePicker();
             this.txtEdad = new System.Windows.Forms.Label();
+            this.campoFechaNac = new System.Windows.Forms.DateTimePicker();
             this.btnMisMascotas = new System.Windows.Forms.Button();
             this.btnAgregarMascota = new System.Windows.Forms.Button();
             this.btnAgendar = new System.Windows.Forms.Button();
@@ -181,6 +181,17 @@ namespace Clave1_Grupo2.gui
             this.picLogo.TabIndex = 0;
             this.picLogo.TabStop = false;
             // 
+            // txtEdad
+            // 
+            this.txtEdad.AutoSize = true;
+            this.txtEdad.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEdad.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.txtEdad.Location = new System.Drawing.Point(91, 204);
+            this.txtEdad.Name = "txtEdad";
+            this.txtEdad.Size = new System.Drawing.Size(47, 20);
+            this.txtEdad.TabIndex = 64;
+            this.txtEdad.Text = "Edad";
+            // 
             // campoFechaNac
             // 
             this.campoFechaNac.CalendarFont = new System.Drawing.Font("Calisto MT", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -196,17 +207,6 @@ namespace Clave1_Grupo2.gui
             this.campoFechaNac.Name = "campoFechaNac";
             this.campoFechaNac.Size = new System.Drawing.Size(327, 24);
             this.campoFechaNac.TabIndex = 63;
-            // 
-            // txtEdad
-            // 
-            this.txtEdad.AutoSize = true;
-            this.txtEdad.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEdad.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.txtEdad.Location = new System.Drawing.Point(91, 204);
-            this.txtEdad.Name = "txtEdad";
-            this.txtEdad.Size = new System.Drawing.Size(47, 20);
-            this.txtEdad.TabIndex = 64;
-            this.txtEdad.Text = "Edad";
             // 
             // btnMisMascotas
             // 
@@ -262,10 +262,10 @@ namespace Clave1_Grupo2.gui
             this.btnModificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnModificar.ForeColor = System.Drawing.Color.Black;
             this.btnModificar.Image = ((System.Drawing.Image)(resources.GetObject("btnModificar.Image")));
-            this.btnModificar.Location = new System.Drawing.Point(662, 286);
+            this.btnModificar.Location = new System.Drawing.Point(649, 286);
             this.btnModificar.Margin = new System.Windows.Forms.Padding(4);
             this.btnModificar.Name = "btnModificar";
-            this.btnModificar.Size = new System.Drawing.Size(200, 36);
+            this.btnModificar.Size = new System.Drawing.Size(88, 89);
             this.btnModificar.TabIndex = 69;
             this.btnModificar.Text = "Editar Perfil";
             this.btnModificar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -278,10 +278,10 @@ namespace Clave1_Grupo2.gui
             this.btnHabilitarCambioPw.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnHabilitarCambioPw.ForeColor = System.Drawing.Color.Black;
             this.btnHabilitarCambioPw.Image = ((System.Drawing.Image)(resources.GetObject("btnHabilitarCambioPw.Image")));
-            this.btnHabilitarCambioPw.Location = new System.Drawing.Point(662, 339);
+            this.btnHabilitarCambioPw.Location = new System.Drawing.Point(745, 286);
             this.btnHabilitarCambioPw.Margin = new System.Windows.Forms.Padding(4);
             this.btnHabilitarCambioPw.Name = "btnHabilitarCambioPw";
-            this.btnHabilitarCambioPw.Size = new System.Drawing.Size(200, 36);
+            this.btnHabilitarCambioPw.Size = new System.Drawing.Size(102, 89);
             this.btnHabilitarCambioPw.TabIndex = 70;
             this.btnHabilitarCambioPw.Text = "Actualizar contraseña";
             this.btnHabilitarCambioPw.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -428,10 +428,10 @@ namespace Clave1_Grupo2.gui
             this.btnActualizarPw.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnActualizarPw.ForeColor = System.Drawing.Color.Black;
             this.btnActualizarPw.Image = ((System.Drawing.Image)(resources.GetObject("btnActualizarPw.Image")));
-            this.btnActualizarPw.Location = new System.Drawing.Point(758, 133);
+            this.btnActualizarPw.Location = new System.Drawing.Point(759, 133);
             this.btnActualizarPw.Margin = new System.Windows.Forms.Padding(4);
             this.btnActualizarPw.Name = "btnActualizarPw";
-            this.btnActualizarPw.Size = new System.Drawing.Size(102, 65);
+            this.btnActualizarPw.Size = new System.Drawing.Size(101, 65);
             this.btnActualizarPw.TabIndex = 82;
             this.btnActualizarPw.Text = "Actualizar";
             this.btnActualizarPw.TextAlign = System.Drawing.ContentAlignment.BottomCenter;

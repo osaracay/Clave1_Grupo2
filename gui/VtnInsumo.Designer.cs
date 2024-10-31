@@ -42,7 +42,7 @@ namespace Clave1_Grupo2.gui
             this.txtBuscarProd = new System.Windows.Forms.TextBox();
             this.dgvRegistros = new System.Windows.Forms.DataGridView();
             this.btnModificar = new System.Windows.Forms.Button();
-            this.brnGuardar = new System.Windows.Forms.Button();
+            this.btnGuardar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
@@ -67,18 +67,20 @@ namespace Clave1_Grupo2.gui
             this.label9.AutoSize = true;
             this.label9.BackColor = System.Drawing.Color.Transparent;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(323, 162);
+            this.label9.Location = new System.Drawing.Point(431, 199);
+            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(154, 18);
+            this.label9.Size = new System.Drawing.Size(193, 24);
             this.label9.TabIndex = 76;
             this.label9.Text = "Punto de Reorden :";
             // 
             // txtPuntoR
             // 
             this.txtPuntoR.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPuntoR.Location = new System.Drawing.Point(326, 184);
+            this.txtPuntoR.Location = new System.Drawing.Point(435, 226);
+            this.txtPuntoR.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtPuntoR.Name = "txtPuntoR";
-            this.txtPuntoR.Size = new System.Drawing.Size(151, 26);
+            this.txtPuntoR.Size = new System.Drawing.Size(200, 30);
             this.txtPuntoR.TabIndex = 5;
             this.txtPuntoR.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
@@ -87,9 +89,10 @@ namespace Clave1_Grupo2.gui
             this.label8.AutoSize = true;
             this.label8.BackColor = System.Drawing.Color.Transparent;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(121, 163);
+            this.label8.Location = new System.Drawing.Point(161, 201);
+            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(70, 18);
+            this.label8.Size = new System.Drawing.Size(88, 24);
             this.label8.TabIndex = 74;
             this.label8.Text = "Unidad :";
             // 
@@ -98,9 +101,10 @@ namespace Clave1_Grupo2.gui
             this.cmbMedida.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbMedida.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbMedida.FormattingEnabled = true;
-            this.cmbMedida.Location = new System.Drawing.Point(121, 184);
+            this.cmbMedida.Location = new System.Drawing.Point(161, 226);
+            this.cmbMedida.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cmbMedida.Name = "cmbMedida";
-            this.cmbMedida.Size = new System.Drawing.Size(90, 26);
+            this.cmbMedida.Size = new System.Drawing.Size(119, 32);
             this.cmbMedida.TabIndex = 3;
             // 
             // txtDescripInsumo
@@ -108,10 +112,11 @@ namespace Clave1_Grupo2.gui
             this.txtDescripInsumo.BackColor = System.Drawing.Color.LightGreen;
             this.txtDescripInsumo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtDescripInsumo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDescripInsumo.Location = new System.Drawing.Point(492, 123);
+            this.txtDescripInsumo.Location = new System.Drawing.Point(656, 151);
+            this.txtDescripInsumo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtDescripInsumo.Name = "txtDescripInsumo";
             this.txtDescripInsumo.ReadOnly = true;
-            this.txtDescripInsumo.Size = new System.Drawing.Size(159, 26);
+            this.txtDescripInsumo.Size = new System.Drawing.Size(211, 30);
             this.txtDescripInsumo.TabIndex = 72;
             // 
             // label4
@@ -119,9 +124,10 @@ namespace Clave1_Grupo2.gui
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(413, 101);
+            this.label4.Location = new System.Drawing.Point(551, 124);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(134, 18);
+            this.label4.Size = new System.Drawing.Size(168, 24);
             this.label4.TabIndex = 71;
             this.label4.Text = "Tipo de Insumo :";
             // 
@@ -130,9 +136,10 @@ namespace Clave1_Grupo2.gui
             this.cmbTipoInsumo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbTipoInsumo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbTipoInsumo.FormattingEnabled = true;
-            this.cmbTipoInsumo.Location = new System.Drawing.Point(416, 123);
+            this.cmbTipoInsumo.Location = new System.Drawing.Point(555, 151);
+            this.cmbTipoInsumo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cmbTipoInsumo.Name = "cmbTipoInsumo";
-            this.cmbTipoInsumo.Size = new System.Drawing.Size(70, 26);
+            this.cmbTipoInsumo.Size = new System.Drawing.Size(92, 32);
             this.cmbTipoInsumo.TabIndex = 1;
             this.cmbTipoInsumo.SelectedIndexChanged += new System.EventHandler(this.cmbTipoInsumo_SelectedIndexChanged);
             this.cmbTipoInsumo.TextChanged += new System.EventHandler(this.cmbTipoInsumo_TextChanged);
@@ -143,9 +150,10 @@ namespace Clave1_Grupo2.gui
             this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelar.ForeColor = System.Drawing.Color.Black;
             this.btnCancelar.Image = ((System.Drawing.Image)(resources.GetObject("btnCancelar.Image")));
-            this.btnCancelar.Location = new System.Drawing.Point(726, 428);
+            this.btnCancelar.Location = new System.Drawing.Point(968, 527);
+            this.btnCancelar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(80, 65);
+            this.btnCancelar.Size = new System.Drawing.Size(107, 80);
             this.btnCancelar.TabIndex = 9;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -158,9 +166,11 @@ namespace Clave1_Grupo2.gui
             this.groupBox1.Controls.Add(this.txtBuscarProd);
             this.groupBox1.Controls.Add(this.dgvRegistros);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(8, 233);
+            this.groupBox1.Location = new System.Drawing.Point(11, 287);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(689, 320);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Size = new System.Drawing.Size(949, 394);
             this.groupBox1.TabIndex = 68;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Buscar Insumo :";
@@ -168,9 +178,10 @@ namespace Clave1_Grupo2.gui
             // txtBuscarProd
             // 
             this.txtBuscarProd.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBuscarProd.Location = new System.Drawing.Point(6, 21);
+            this.txtBuscarProd.Location = new System.Drawing.Point(8, 26);
+            this.txtBuscarProd.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtBuscarProd.Name = "txtBuscarProd";
-            this.txtBuscarProd.Size = new System.Drawing.Size(217, 26);
+            this.txtBuscarProd.Size = new System.Drawing.Size(288, 30);
             this.txtBuscarProd.TabIndex = 12;
             this.txtBuscarProd.TextChanged += new System.EventHandler(this.txtBuscarProd_TextChanged);
             // 
@@ -179,11 +190,12 @@ namespace Clave1_Grupo2.gui
             this.dgvRegistros.AllowUserToDeleteRows = false;
             this.dgvRegistros.BackgroundColor = System.Drawing.SystemColors.Window;
             this.dgvRegistros.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvRegistros.Location = new System.Drawing.Point(6, 53);
+            this.dgvRegistros.Location = new System.Drawing.Point(8, 65);
+            this.dgvRegistros.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dgvRegistros.Name = "dgvRegistros";
             this.dgvRegistros.ReadOnly = true;
             this.dgvRegistros.RowHeadersWidth = 51;
-            this.dgvRegistros.Size = new System.Drawing.Size(677, 257);
+            this.dgvRegistros.Size = new System.Drawing.Size(933, 316);
             this.dgvRegistros.TabIndex = 57;
             this.dgvRegistros.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvLstRegistros_CellClick);
             // 
@@ -193,29 +205,31 @@ namespace Clave1_Grupo2.gui
             this.btnModificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnModificar.ForeColor = System.Drawing.Color.Black;
             this.btnModificar.Image = ((System.Drawing.Image)(resources.GetObject("btnModificar.Image")));
-            this.btnModificar.Location = new System.Drawing.Point(726, 281);
+            this.btnModificar.Location = new System.Drawing.Point(968, 346);
+            this.btnModificar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnModificar.Name = "btnModificar";
-            this.btnModificar.Size = new System.Drawing.Size(80, 70);
+            this.btnModificar.Size = new System.Drawing.Size(107, 86);
             this.btnModificar.TabIndex = 7;
             this.btnModificar.Text = "Modificar";
             this.btnModificar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnModificar.UseVisualStyleBackColor = false;
             this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
-            // brnGuardar
+            // btnGuardar
             // 
-            this.brnGuardar.BackColor = System.Drawing.Color.White;
-            this.brnGuardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.brnGuardar.ForeColor = System.Drawing.Color.Black;
-            this.brnGuardar.Image = ((System.Drawing.Image)(resources.GetObject("brnGuardar.Image")));
-            this.brnGuardar.Location = new System.Drawing.Point(726, 205);
-            this.brnGuardar.Name = "brnGuardar";
-            this.brnGuardar.Size = new System.Drawing.Size(80, 70);
-            this.brnGuardar.TabIndex = 6;
-            this.brnGuardar.Text = "Guardar";
-            this.brnGuardar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.brnGuardar.UseVisualStyleBackColor = false;
-            this.brnGuardar.Click += new System.EventHandler(this.brnGuardar_Click);
+            this.btnGuardar.BackColor = System.Drawing.Color.White;
+            this.btnGuardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGuardar.ForeColor = System.Drawing.Color.Black;
+            this.btnGuardar.Image = ((System.Drawing.Image)(resources.GetObject("btnGuardar.Image")));
+            this.btnGuardar.Location = new System.Drawing.Point(968, 252);
+            this.btnGuardar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.Size = new System.Drawing.Size(107, 86);
+            this.btnGuardar.TabIndex = 6;
+            this.btnGuardar.Text = "Guardar";
+            this.btnGuardar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnGuardar.UseVisualStyleBackColor = false;
+            this.btnGuardar.Click += new System.EventHandler(this.brnGuardar_Click);
             // 
             // btnEliminar
             // 
@@ -223,9 +237,10 @@ namespace Clave1_Grupo2.gui
             this.btnEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEliminar.ForeColor = System.Drawing.Color.Black;
             this.btnEliminar.Image = ((System.Drawing.Image)(resources.GetObject("btnEliminar.Image")));
-            this.btnEliminar.Location = new System.Drawing.Point(726, 357);
+            this.btnEliminar.Location = new System.Drawing.Point(968, 439);
+            this.btnEliminar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(80, 65);
+            this.btnEliminar.Size = new System.Drawing.Size(107, 80);
             this.btnEliminar.TabIndex = 8;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -238,9 +253,10 @@ namespace Clave1_Grupo2.gui
             this.btnSalir.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSalir.ForeColor = System.Drawing.Color.Black;
             this.btnSalir.Image = ((System.Drawing.Image)(resources.GetObject("btnSalir.Image")));
-            this.btnSalir.Location = new System.Drawing.Point(726, 496);
+            this.btnSalir.Location = new System.Drawing.Point(968, 610);
+            this.btnSalir.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(80, 48);
+            this.btnSalir.Size = new System.Drawing.Size(107, 59);
             this.btnSalir.TabIndex = 10;
             this.btnSalir.UseVisualStyleBackColor = false;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
@@ -250,18 +266,20 @@ namespace Clave1_Grupo2.gui
             this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(214, 163);
+            this.label6.Location = new System.Drawing.Point(285, 201);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(95, 18);
+            this.label6.Size = new System.Drawing.Size(118, 24);
             this.label6.TabIndex = 63;
             this.label6.Text = "Existencia :";
             // 
             // txtCantidad
             // 
             this.txtCantidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCantidad.Location = new System.Drawing.Point(217, 184);
+            this.txtCantidad.Location = new System.Drawing.Point(289, 226);
+            this.txtCantidad.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtCantidad.Name = "txtCantidad";
-            this.txtCantidad.Size = new System.Drawing.Size(103, 26);
+            this.txtCantidad.Size = new System.Drawing.Size(136, 30);
             this.txtCantidad.TabIndex = 4;
             this.txtCantidad.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtCantidad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCantidad_KeyPress);
@@ -271,18 +289,20 @@ namespace Clave1_Grupo2.gui
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(9, 162);
+            this.label5.Location = new System.Drawing.Point(12, 199);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(67, 18);
+            this.label5.Size = new System.Drawing.Size(82, 24);
             this.label5.TabIndex = 61;
             this.label5.Text = "Precio :";
             // 
             // txtPrecio
             // 
             this.txtPrecio.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPrecio.Location = new System.Drawing.Point(12, 183);
+            this.txtPrecio.Location = new System.Drawing.Point(16, 225);
+            this.txtPrecio.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtPrecio.Name = "txtPrecio";
-            this.txtPrecio.Size = new System.Drawing.Size(103, 26);
+            this.txtPrecio.Size = new System.Drawing.Size(136, 30);
             this.txtPrecio.TabIndex = 2;
             this.txtPrecio.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtPrecio.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPrecio_KeyPress);
@@ -290,9 +310,10 @@ namespace Clave1_Grupo2.gui
             // txtDescripcion
             // 
             this.txtDescripcion.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDescripcion.Location = new System.Drawing.Point(98, 122);
+            this.txtDescripcion.Location = new System.Drawing.Point(131, 150);
+            this.txtDescripcion.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtDescripcion.Name = "txtDescripcion";
-            this.txtDescripcion.Size = new System.Drawing.Size(312, 26);
+            this.txtDescripcion.Size = new System.Drawing.Size(415, 30);
             this.txtDescripcion.TabIndex = 0;
             // 
             // label3
@@ -300,9 +321,10 @@ namespace Clave1_Grupo2.gui
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(97, 101);
+            this.label3.Location = new System.Drawing.Point(129, 124);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(246, 18);
+            this.label3.Size = new System.Drawing.Size(305, 24);
             this.label3.TabIndex = 58;
             this.label3.Text = "Nombre del Insumo o Servicio :";
             // 
@@ -310,20 +332,23 @@ namespace Clave1_Grupo2.gui
             // 
             this.txtCodigo.BackColor = System.Drawing.Color.Khaki;
             this.txtCodigo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCodigo.Location = new System.Drawing.Point(12, 122);
+            this.txtCodigo.Location = new System.Drawing.Point(16, 150);
+            this.txtCodigo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtCodigo.Name = "txtCodigo";
             this.txtCodigo.ReadOnly = true;
-            this.txtCodigo.Size = new System.Drawing.Size(80, 26);
+            this.txtCodigo.Size = new System.Drawing.Size(105, 30);
             this.txtCodigo.TabIndex = 56;
+            this.txtCodigo.TextChanged += new System.EventHandler(this.txtCodigo_TextChanged);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(11, 101);
+            this.label2.Location = new System.Drawing.Point(15, 124);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(31, 18);
+            this.label2.Size = new System.Drawing.Size(39, 24);
             this.label2.TabIndex = 55;
             this.label2.Text = "Id :";
             // 
@@ -333,9 +358,10 @@ namespace Clave1_Grupo2.gui
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(8, 18);
+            this.label1.Location = new System.Drawing.Point(11, 22);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(595, 31);
+            this.label1.Size = new System.Drawing.Size(733, 39);
             this.label1.TabIndex = 54;
             this.label1.Text = "Registrar Nuevos Insumos o Modificar Datos";
             // 
@@ -345,10 +371,9 @@ namespace Clave1_Grupo2.gui
             this.lblVetCatDog.BackColor = System.Drawing.Color.Transparent;
             this.lblVetCatDog.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblVetCatDog.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lblVetCatDog.Location = new System.Drawing.Point(722, 117);
-            this.lblVetCatDog.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblVetCatDog.Location = new System.Drawing.Point(963, 144);
             this.lblVetCatDog.Name = "lblVetCatDog";
-            this.lblVetCatDog.Size = new System.Drawing.Size(97, 40);
+            this.lblVetCatDog.Size = new System.Drawing.Size(117, 50);
             this.lblVetCatDog.TabIndex = 78;
             this.lblVetCatDog.Text = "Veterinaria\r\nCat-Dog";
             this.lblVetCatDog.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -358,9 +383,10 @@ namespace Clave1_Grupo2.gui
             this.picLogo.BackColor = System.Drawing.Color.Transparent;
             this.picLogo.Image = ((System.Drawing.Image)(resources.GetObject("picLogo.Image")));
             this.picLogo.InitialImage = ((System.Drawing.Image)(resources.GetObject("picLogo.InitialImage")));
-            this.picLogo.Location = new System.Drawing.Point(722, 18);
+            this.picLogo.Location = new System.Drawing.Point(963, 22);
+            this.picLogo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.picLogo.Name = "picLogo";
-            this.picLogo.Size = new System.Drawing.Size(97, 96);
+            this.picLogo.Size = new System.Drawing.Size(129, 118);
             this.picLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picLogo.TabIndex = 77;
             this.picLogo.TabStop = false;
@@ -371,21 +397,22 @@ namespace Clave1_Grupo2.gui
             this.btnTpInsumo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTpInsumo.ForeColor = System.Drawing.Color.Black;
             this.btnTpInsumo.Image = ((System.Drawing.Image)(resources.GetObject("btnTpInsumo.Image")));
-            this.btnTpInsumo.Location = new System.Drawing.Point(655, 122);
+            this.btnTpInsumo.Location = new System.Drawing.Point(873, 150);
+            this.btnTpInsumo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnTpInsumo.Name = "btnTpInsumo";
-            this.btnTpInsumo.Size = new System.Drawing.Size(31, 27);
+            this.btnTpInsumo.Size = new System.Drawing.Size(41, 33);
             this.btnTpInsumo.TabIndex = 11;
             this.btnTpInsumo.UseVisualStyleBackColor = false;
             this.btnTpInsumo.Click += new System.EventHandler(this.btnTpInsumo_Click);
             // 
             // VtnInsumo
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(831, 555);
+            this.ClientSize = new System.Drawing.Size(1108, 683);
             this.Controls.Add(this.btnTpInsumo);
             this.Controls.Add(this.lblVetCatDog);
             this.Controls.Add(this.picLogo);
@@ -399,7 +426,7 @@ namespace Clave1_Grupo2.gui
             this.Controls.Add(this.cmbTipoInsumo);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.brnGuardar);
+            this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.label6);
@@ -414,6 +441,7 @@ namespace Clave1_Grupo2.gui
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.MaximizeBox = false;
             this.Name = "VtnInsumo";
             this.Opacity = 0.95D;
@@ -440,7 +468,7 @@ namespace Clave1_Grupo2.gui
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TextBox txtBuscarProd;
-        private System.Windows.Forms.Button brnGuardar;
+        private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.Button btnModificar;
