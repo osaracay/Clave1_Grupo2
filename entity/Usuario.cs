@@ -18,6 +18,7 @@ namespace Clave1_Grupo2.entity
         private char genero; //Debe ser M, F, o X
         private string username;
         private string pw; //Debe ser menor a 60; caracteres para que se acepte en la bd
+        private byte[] picUsuario;
 
         public Usuario() { }
 
@@ -78,5 +79,6 @@ namespace Clave1_Grupo2.entity
         public char Genero { get => genero; set => genero = value; }
         public string Username { get => username; set => username = value; }
         public string Pw { get => pw; set => pw = value; }
+        public byte[] PicUsuario { get => picUsuario; set => picUsuario = value; }
     }
 }

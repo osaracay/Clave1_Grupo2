@@ -10,6 +10,7 @@ namespace Clave1_Grupo2.entity
 {
     class Mascota
     {
+        private byte[] imagen;
         private int idMascota;
         private string nomMascota;
         private int especie;
@@ -25,6 +26,7 @@ namespace Clave1_Grupo2.entity
 
         public string Color { get => color; set => color = value; }
         public int EstadoMascota { get => estadoMascota; set => estadoMascota = value; }
+        public byte[] Imagen { get => imagen; set => imagen = value; }
 
         public Mascota()
         {
