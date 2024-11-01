@@ -66,6 +66,17 @@ namespace Clave1_Grupo2.gui
             campoFechaNac.Value = UsuarioDAO.GetSesion().FechaNac;
             txtEdad.Text = $"Edad {Validacion.CalcularEdad(UsuarioDAO.GetSesion().FechaNac)}";
             campoFechaNac.Enabled = false;
+
+            //Cargar imagen SI EXISTE:
+            if(UsuarioDAO.CargarImagenAPictureBox(pbxFotoPerfil, UsuarioDAO.GetSesion().IdUsuario)){
+
+            }
+            else {
+                this.pbxFotoPerfil.Image = Image.FromFile("../../assets/Usuario.png");
+            }          
+            //Si no existe que carge por defecto
+            
+
         }
         private void btnMisMascotas_Click(object sender, EventArgs e)
         {
@@ -193,6 +204,17 @@ namespace Clave1_Grupo2.gui
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             CargarDatosUsuario();
+        }
+
+        private void pbxFotoPerfil_Click(object sender, EventArgs e)
+        {
+            Rellenador.SeleccionarImagen(pbxFotoPerfil);
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show(Rellenador.GetByteArrayDePicBox(pbxFotoPerfil).ToString());
+            UsuarioDAO.GuardarImagen(Rellenador.GetByteArrayDePicBox(pbxFotoPerfil),UsuarioDAO.GetSesion().IdUsuario);
         }
     }
 }

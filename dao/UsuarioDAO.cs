@@ -3,6 +3,8 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Odbc;
+using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -459,8 +461,80 @@ namespace Clave1_Grupo2.dao
             }
             return admins;
         }
+        /// <summary>
+        /// Recibe un arreglo de bytes correspondiente a una imagen y lo perpetua en una cuenta de usuario.
+        /// </summary>
+        /// <param name="imagen">Arreglo de bytes correspondiente a una imagen.</param>
+        /// <param name="idUsuario">Cuenta de usuario.</param>
+        /// <returns></returns>
+        public static bool GuardarImagen(byte[] imagen, int idUsuario)
+        {
+            consulta = "UPDATE usuario SET pic_usuario = ? " +
+                            " WHERE id_usuario=?";            
+            
+            adaptador = new OdbcDataAdapter();
+            adaptador.MissingSchemaAction = MissingSchemaAction.AddWithKey;
+            adaptador.InsertCommand = new OdbcCommand(consulta, ConexionBD.GetConexionBD());
+            
+            adaptador.InsertCommand.Parameters.Add("@pic", OdbcType.Binary).Value = imagen; //This types to an array of type byte.            
+            adaptador.InsertCommand.Parameters.Add("@usuario", OdbcType.Int).Value = idUsuario;
+            try
+            {
+                ConexionBD.GetConexionBD().Open();
+                adaptador.InsertCommand.ExecuteNonQuery();
+                MessageBox.Show("Se ha guardado la foto exitosamente.");
+                return true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return false;
+            }
+            finally
+            {
+                ConexionBD.GetConexionBD().Close();
+            }
+        }
 
+        public static bool CargarImagenAPictureBox(PictureBox pb, int idUsuario)
+        {
+            consulta = "SELECT pic_usuario FROM usuario WHERE id_usuario=?";
+            
+                //comando
+                adaptador = new OdbcDataAdapter(consulta, ConexionBD.GetConexionBD());
+                adaptador.MissingSchemaAction = MissingSchemaAction.AddWithKey;
+                adaptador.SelectCommand = new OdbcCommand(consulta, ConexionBD.GetConexionBD());
+                adaptador.SelectCommand.Parameters.Add("@id_usuario", OdbcType.Int).Value = idUsuario;
+            try
+            {
+                //Recuerdo que con el lector no se abria la bd pues lo hacia por su cuenta.
+                ConexionBD.GetConexionBD().Open();
+                lector = adaptador.SelectCommand.ExecuteReader();
+                //reader
+                if (lector.Read())
+                {                    
+                    byte[] imagen = (byte[])lector["pic_usuario"];
+                    MemoryStream flujoMemo = new MemoryStream(imagen);
+                    Bitmap bm = new Bitmap(flujoMemo);
+                    pb.Image = bm;
+                    return true;
+                }
+                else
+                {
+                    MessageBox.Show("No se encontraron registros");
+                    return false;
+                }
 
-
+            }catch(Exception e) {
+                MessageBox.Show($"Ocurrio un error :\n{e.Message}");
+                //Buscar excepciones en conexion con bd
+                //Y al convertir a byte
+                return false;
+            }
+            finally
+            {
+                ConexionBD.GetConexionBD().Close();
+            }
+        }
     }
 }
