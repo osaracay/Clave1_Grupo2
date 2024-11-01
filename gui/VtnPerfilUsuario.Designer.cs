@@ -36,6 +36,8 @@ namespace Clave1_Grupo2.gui
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnSelecPic = new System.Windows.Forms.Button();
+            this.btnActualizarPic = new System.Windows.Forms.Button();
             this.pbxFotoPerfil = new System.Windows.Forms.PictureBox();
             this.txtNombre = new System.Windows.Forms.Label();
             this.lblVetCatDog = new System.Windows.Forms.Label();
@@ -61,7 +63,6 @@ namespace Clave1_Grupo2.gui
             this.txtConfirmPw = new System.Windows.Forms.TextBox();
             this.btnActualizarPw = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbxFotoPerfil)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
@@ -123,7 +124,8 @@ namespace Clave1_Grupo2.gui
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.DarkSlateBlue;
-            this.panel2.Controls.Add(this.button1);
+            this.panel2.Controls.Add(this.btnSelecPic);
+            this.panel2.Controls.Add(this.btnActualizarPic);
             this.panel2.Controls.Add(this.pbxFotoPerfil);
             this.panel2.Controls.Add(this.txtNombre);
             this.panel2.Controls.Add(this.lblVetCatDog);
@@ -136,13 +138,43 @@ namespace Clave1_Grupo2.gui
             this.panel2.Size = new System.Drawing.Size(176, 313);
             this.panel2.TabIndex = 60;
             // 
+            // btnSelecPic
+            // 
+            this.btnSelecPic.BackColor = System.Drawing.Color.White;
+            this.btnSelecPic.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSelecPic.ForeColor = System.Drawing.Color.Black;
+            this.btnSelecPic.Image = ((System.Drawing.Image)(resources.GetObject("btnSelecPic.Image")));
+            this.btnSelecPic.Location = new System.Drawing.Point(7, 174);
+            this.btnSelecPic.Name = "btnSelecPic";
+            this.btnSelecPic.Size = new System.Drawing.Size(88, 55);
+            this.btnSelecPic.TabIndex = 84;
+            this.btnSelecPic.Text = "Seleccionar foto";
+            this.btnSelecPic.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnSelecPic.UseVisualStyleBackColor = false;
+            this.btnSelecPic.Click += new System.EventHandler(this.btnSelecPic_Click);
+            // 
+            // btnActualizarPic
+            // 
+            this.btnActualizarPic.BackColor = System.Drawing.Color.White;
+            this.btnActualizarPic.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnActualizarPic.ForeColor = System.Drawing.Color.Black;
+            this.btnActualizarPic.Image = ((System.Drawing.Image)(resources.GetObject("btnActualizarPic.Image")));
+            this.btnActualizarPic.Location = new System.Drawing.Point(97, 174);
+            this.btnActualizarPic.Name = "btnActualizarPic";
+            this.btnActualizarPic.Size = new System.Drawing.Size(76, 55);
+            this.btnActualizarPic.TabIndex = 83;
+            this.btnActualizarPic.Text = "Actualizar";
+            this.btnActualizarPic.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnActualizarPic.UseVisualStyleBackColor = false;
+            this.btnActualizarPic.Click += new System.EventHandler(this.btnActualizarPic_Click);
+            // 
             // pbxFotoPerfil
             // 
             this.pbxFotoPerfil.BackColor = System.Drawing.Color.Transparent;
             this.pbxFotoPerfil.Image = ((System.Drawing.Image)(resources.GetObject("pbxFotoPerfil.Image")));
-            this.pbxFotoPerfil.Location = new System.Drawing.Point(34, 12);
+            this.pbxFotoPerfil.Location = new System.Drawing.Point(7, 7);
             this.pbxFotoPerfil.Name = "pbxFotoPerfil";
-            this.pbxFotoPerfil.Size = new System.Drawing.Size(111, 123);
+            this.pbxFotoPerfil.Size = new System.Drawing.Size(166, 163);
             this.pbxFotoPerfil.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbxFotoPerfil.TabIndex = 63;
             this.pbxFotoPerfil.TabStop = false;
@@ -153,7 +185,7 @@ namespace Clave1_Grupo2.gui
             this.txtNombre.AutoSize = true;
             this.txtNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNombre.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.txtNombre.Location = new System.Drawing.Point(61, 138);
+            this.txtNombre.Location = new System.Drawing.Point(60, 174);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(74, 24);
             this.txtNombre.TabIndex = 62;
@@ -187,7 +219,7 @@ namespace Clave1_Grupo2.gui
             this.txtEdad.AutoSize = true;
             this.txtEdad.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEdad.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.txtEdad.Location = new System.Drawing.Point(68, 166);
+            this.txtEdad.Location = new System.Drawing.Point(77, 203);
             this.txtEdad.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.txtEdad.Name = "txtEdad";
             this.txtEdad.Size = new System.Drawing.Size(41, 17);
@@ -456,21 +488,6 @@ namespace Clave1_Grupo2.gui
             this.btnCancelar.UseVisualStyleBackColor = false;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.White;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.Black;
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.Location = new System.Drawing.Point(89, 186);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(76, 53);
-            this.button1.TabIndex = 83;
-            this.button1.Text = "Actualizar";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // VtnPerfilUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -509,7 +526,6 @@ namespace Clave1_Grupo2.gui
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "VtnPerfilUsuario";
-            this.Opacity = 0.95D;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Mi Perfil";
             this.Load += new System.EventHandler(this.VtnPerfilUsuario_Load);
@@ -555,6 +571,7 @@ namespace Clave1_Grupo2.gui
         private System.Windows.Forms.TextBox txtConfirmPw;
         private System.Windows.Forms.Button btnActualizarPw;
         private System.Windows.Forms.Button btnCancelar;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnActualizarPic;
+        private System.Windows.Forms.Button btnSelecPic;
     }
 }

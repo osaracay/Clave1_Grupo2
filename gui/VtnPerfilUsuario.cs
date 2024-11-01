@@ -36,6 +36,8 @@ namespace Clave1_Grupo2.gui
             txtNewPw.Hide();
             txtConfirmPw.Hide();
             btnCancelar.Hide();
+            btnActualizarPic.Hide();
+            btnSelecPic.Hide();
             //Cargar nombre usuario
             txtNombre.Text = UsuarioDAO.GetSesion().Username;
             if (UsuarioDAO.GetSesion().Genero == 'M')
@@ -93,6 +95,8 @@ namespace Clave1_Grupo2.gui
             lblConfirmPw.Show();
             txtConfirmPw.Show();
             btnCancelar.Show();
+            btnActualizarPic.Show();
+            btnSelecPic.Show();
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
@@ -208,13 +212,19 @@ namespace Clave1_Grupo2.gui
 
         private void pbxFotoPerfil_Click(object sender, EventArgs e)
         {
-            Rellenador.SeleccionarImagen(pbxFotoPerfil);
+            
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnActualizarPic_Click(object sender, EventArgs e)
         {
             MessageBox.Show(Rellenador.GetByteArrayDePicBox(pbxFotoPerfil).ToString());
             UsuarioDAO.GuardarImagen(Rellenador.GetByteArrayDePicBox(pbxFotoPerfil),UsuarioDAO.GetSesion().IdUsuario);
+            CargarDatosUsuario();
+        }
+
+        private void btnSelecPic_Click(object sender, EventArgs e)
+        {
+            Rellenador.SeleccionarImagen(pbxFotoPerfil);
         }
     }
 }

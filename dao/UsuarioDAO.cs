@@ -470,8 +470,7 @@ namespace Clave1_Grupo2.dao
         public static bool GuardarImagen(byte[] imagen, int idUsuario)
         {
             consulta = "UPDATE usuario SET pic_usuario = ? " +
-                            " WHERE id_usuario=?";            
-            
+                            " WHERE id_usuario=?";                        
             adaptador = new OdbcDataAdapter();
             adaptador.MissingSchemaAction = MissingSchemaAction.AddWithKey;
             adaptador.InsertCommand = new OdbcCommand(consulta, ConexionBD.GetConexionBD());
@@ -487,7 +486,7 @@ namespace Clave1_Grupo2.dao
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show($"{ex.Message}.\n{ex.StackTrace}");
                 return false;
             }
             finally

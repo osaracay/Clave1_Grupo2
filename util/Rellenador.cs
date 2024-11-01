@@ -109,6 +109,7 @@ namespace Clave1_Grupo2.util
             MemoryStream flujoMemo = new MemoryStream();
             pb.Image.Save(flujoMemo, ImageFormat.Jpeg);
             //byte[] aByte = flujoMemo.ToArray();
+            MessageBox.Show(flujoMemo.ToString());
             return flujoMemo.ToArray();
         }
     }
