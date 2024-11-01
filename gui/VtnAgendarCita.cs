@@ -86,11 +86,64 @@ namespace Clave1_Grupo2.gui
 
         private void cbxVeterinario_SelectedIndexChanged(object sender, EventArgs e)
         {
-            //Cuando el vet cambie se actualizan los horarios o el tipo de cita los rangos
+            //Cuando el vet cambie se actualizan los horarios o el tipo de cita los rangos           
+            try
+            {
+                if (UsuarioDAO.GetSesion().TipoUsuario != 3 && cbxVeterinario.SelectedValue != null && cbxVeterinario.SelectedIndex >= 0 && cbxVeterinario.SelectedValue.GetType() != Type.GetType("System.Data.DataRowView"))
+                {
+                    //Obtengo los cupos disponibles
+                    CupoDAO.GetCuposDisponibles(campoFechaAgenda.Value, (CatItem)cbxTipoCita.SelectedItem, (Veterinario)cbxVeterinario.SelectedItem);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Aqui ocurrio una excepcion\n{ex.Message}");
+                //ACA ME DA ERROR EL SELECTED VALUE TIPO ENTERO 
+                //Rellenador.CargarListaPetAListBox(listaMascotas, MascotaDAO.GetListaMascotasPropietario((int)cbxPropietario.SelectedValue));
+                //Rellenador.CargarDataTableAListBox(listaMascotas, MascotaDAO.GetMascotasPorPropietario((int)cbxPropietario.SelectedValue));
+            }
         }
 
         private void btnAgendar_Click(object sender, EventArgs e)
-        {            
+        {
+            
+            /*QUIERO VALIDAR QUE TODOS LOS CAMPOS ESTEN LLENOS INCLUYENDO EL DE VET*/
+            bool camposValidos;
+            camposValidos = cbxVeterinario.SelectedIndex > -1 && cbxMascota.SelectedIndex > -1 && cbxTipoCita.SelectedIndex > -1;
+            //No me interesa saber si esta seleccionado el prop. Si esta seleccionada la mascota esta seleccionado el propietario
+
+            if(cbxVeterinario.SelectedIndex == -1)
+            {
+                MessageBox.Show("Selecciona un veterinario");
+                //camposValidos = false; Que no incida aun.
+            }
+            if (lbxCupos.SelectedIndex == -1) { 
+                MessageBox.Show("No has seleccionado un cupo");
+                lbxCupos.Focus();
+                camposValidos = camposValidos && lbxCupos.SelectedIndex>-1;
+            }
+            if(txtMotivo.Text == "")
+            {
+                MessageBox.Show("indicanos el motivo de tu cita");
+                txtMotivo.Focus();
+                camposValidos = false;
+            }
+            if (camposValidos)
+            {
+                MessageBox.Show($"Los detalles de su cita son : \n" +
+                    $"{cbxTipoCita.SelectedItem}\n" +
+                    $"Fecha : {campoFechaAgenda.Value.ToString("d")}\n" +
+                    $"Cupo : {lbxCupos.SelectedItem}\n" +
+                    $"Veterinario : {cbxVeterinario.SelectedItem}\n" +
+                    $" \n" +
+                    $"Propietario : {cbxPropietario.SelectedItem}\n" +
+                    $"Mascota : {cbxMascota.SelectedItem}\n" +
+                    $"Motivo de su visita: \n{txtMotivo.Text}");
+
+                //A Partir de aqui ya toca hacer el insert a detalle_reservacion y a citas
+            }
+            
+            /*PRUEBAS: */
             CatItem tipoCita = (CatItem)cbxTipoCita.SelectedItem;
             Cupo cupoApartado = new Cupo(campoFechaAgenda.Value, 
                 new DateTime(campoFechaAgenda.Value.Year, campoFechaAgenda.Value.Month, campoFechaAgenda.Value.Day, 
@@ -108,7 +161,7 @@ namespace Clave1_Grupo2.gui
                 $"la hora de inicio es : {cupoSiguiente.HoraInicio}\n" +
                 $"la hora de finalizacion es : {cupoSiguiente.HoraFin}\n" +
                 $"la duracion es : {cupoSiguiente.DuracionMinutos}");
-            CupoDAO.GetCuposDisponibles(cupoApartado.FechaCupo, tipoCita.DuracionMinutosCat);
+            //CupoDAO.GetCuposDisponibles(cupoApartado.FechaCupo, tipoCita.DuracionMinutosCat); //Solo en el caso de ejemplo estaba ocupando con duracion en min
         }
         private void VtnAgendarCita_Load(object sender, EventArgs e)
         {
