@@ -26,6 +26,7 @@ namespace Clave1_Grupo2.util
         private static VtnAsignarTurno vtnAsignar;
         private static VtnInsumoCons vtnInsumoCons;
         private static VtnCartillaVacunacion vtnCartilla;
+        private static VerImagen verImagen;
 
         public static void SolicitarRegistroUsuario()
         {
@@ -214,6 +215,17 @@ namespace Clave1_Grupo2.util
             }
             vtnCartilla.Show();
             vtnCartilla.Focus();
+        }
+
+        public static void VerImagen()
+        {            
+                if (verImagen == null || verImagen.IsDisposed)
+                {
+                    verImagen = null;
+                    verImagen = new VerImagen();
+                }
+                verImagen.Show();
+                verImagen.Focus();            
         }
     }
 }

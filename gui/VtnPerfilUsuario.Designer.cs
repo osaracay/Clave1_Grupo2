@@ -174,7 +174,7 @@ namespace Clave1_Grupo2.gui
             this.pbxFotoPerfil.Image = ((System.Drawing.Image)(resources.GetObject("pbxFotoPerfil.Image")));
             this.pbxFotoPerfil.Location = new System.Drawing.Point(7, 7);
             this.pbxFotoPerfil.Name = "pbxFotoPerfil";
-            this.pbxFotoPerfil.Size = new System.Drawing.Size(166, 163);
+            this.pbxFotoPerfil.Size = new System.Drawing.Size(165, 165);
             this.pbxFotoPerfil.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbxFotoPerfil.TabIndex = 63;
             this.pbxFotoPerfil.TabStop = false;

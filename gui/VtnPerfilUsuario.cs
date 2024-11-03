@@ -212,7 +212,7 @@ namespace Clave1_Grupo2.gui
 
         private void pbxFotoPerfil_Click(object sender, EventArgs e)
         {
-            
+            GestorVentanas.VerImagen();
         }
 
         private void btnActualizarPic_Click(object sender, EventArgs e)
