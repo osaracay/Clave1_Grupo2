@@ -49,6 +49,7 @@ namespace Clave1_Grupo2.gui
             this.label3 = new System.Windows.Forms.Label();
             this.btnAgendar = new System.Windows.Forms.Button();
             this.btnGetCupos = new System.Windows.Forms.Button();
+            this.btnDeselect = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbxFotoPerfil)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
@@ -63,19 +64,18 @@ namespace Clave1_Grupo2.gui
             this.panel2.Controls.Add(this.picLogo);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(224, 459);
+            this.panel2.Size = new System.Drawing.Size(168, 373);
             this.panel2.TabIndex = 62;
             // 
             // pbxFotoPerfil
             // 
             this.pbxFotoPerfil.BackColor = System.Drawing.Color.Transparent;
             this.pbxFotoPerfil.Image = ((System.Drawing.Image)(resources.GetObject("pbxFotoPerfil.Image")));
-            this.pbxFotoPerfil.Location = new System.Drawing.Point(45, 15);
-            this.pbxFotoPerfil.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pbxFotoPerfil.Location = new System.Drawing.Point(34, 12);
             this.pbxFotoPerfil.Name = "pbxFotoPerfil";
-            this.pbxFotoPerfil.Size = new System.Drawing.Size(148, 151);
+            this.pbxFotoPerfil.Size = new System.Drawing.Size(111, 123);
             this.pbxFotoPerfil.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbxFotoPerfil.TabIndex = 63;
             this.pbxFotoPerfil.TabStop = false;
@@ -85,9 +85,10 @@ namespace Clave1_Grupo2.gui
             this.lblVetCatDog.AutoSize = true;
             this.lblVetCatDog.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblVetCatDog.ForeColor = System.Drawing.Color.White;
-            this.lblVetCatDog.Location = new System.Drawing.Point(96, 390);
+            this.lblVetCatDog.Location = new System.Drawing.Point(72, 317);
+            this.lblVetCatDog.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblVetCatDog.Name = "lblVetCatDog";
-            this.lblVetCatDog.Size = new System.Drawing.Size(117, 50);
+            this.lblVetCatDog.Size = new System.Drawing.Size(97, 40);
             this.lblVetCatDog.TabIndex = 6;
             this.lblVetCatDog.Text = "Veterinaria\r\nCat-Dog";
             // 
@@ -96,10 +97,9 @@ namespace Clave1_Grupo2.gui
             this.lblTitulo.AutoSize = true;
             this.lblTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitulo.ForeColor = System.Drawing.Color.White;
-            this.lblTitulo.Location = new System.Drawing.Point(40, 170);
-            this.lblTitulo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblTitulo.Location = new System.Drawing.Point(30, 138);
             this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new System.Drawing.Size(152, 29);
+            this.lblTitulo.Size = new System.Drawing.Size(119, 24);
             this.lblTitulo.TabIndex = 62;
             this.lblTitulo.Text = "Agendar Cita";
             // 
@@ -107,10 +107,9 @@ namespace Clave1_Grupo2.gui
             // 
             this.picLogo.Image = ((System.Drawing.Image)(resources.GetObject("picLogo.Image")));
             this.picLogo.InitialImage = ((System.Drawing.Image)(resources.GetObject("picLogo.InitialImage")));
-            this.picLogo.Location = new System.Drawing.Point(-3, 350);
-            this.picLogo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.picLogo.Location = new System.Drawing.Point(-2, 284);
             this.picLogo.Name = "picLogo";
-            this.picLogo.Size = new System.Drawing.Size(99, 94);
+            this.picLogo.Size = new System.Drawing.Size(74, 76);
             this.picLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picLogo.TabIndex = 0;
             this.picLogo.TabStop = false;
@@ -119,12 +118,12 @@ namespace Clave1_Grupo2.gui
             // 
             this.campoFechaAgenda.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.campoFechaAgenda.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.campoFechaAgenda.Location = new System.Drawing.Point(692, 9);
-            this.campoFechaAgenda.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.campoFechaAgenda.Location = new System.Drawing.Point(519, 7);
+            this.campoFechaAgenda.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.campoFechaAgenda.MaxDate = new System.DateTime(2025, 1, 18, 0, 0, 0, 0);
             this.campoFechaAgenda.MinDate = new System.DateTime(2024, 10, 18, 0, 0, 0, 0);
             this.campoFechaAgenda.Name = "campoFechaAgenda";
-            this.campoFechaAgenda.Size = new System.Drawing.Size(155, 26);
+            this.campoFechaAgenda.Size = new System.Drawing.Size(117, 22);
             this.campoFechaAgenda.TabIndex = 63;
             this.campoFechaAgenda.ValueChanged += new System.EventHandler(this.campoFechaAgenda_ValueChanged);
             // 
@@ -132,11 +131,11 @@ namespace Clave1_Grupo2.gui
             // 
             this.lbxCupos.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbxCupos.FormattingEnabled = true;
-            this.lbxCupos.ItemHeight = 20;
-            this.lbxCupos.Location = new System.Drawing.Point(692, 44);
-            this.lbxCupos.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.lbxCupos.ItemHeight = 16;
+            this.lbxCupos.Location = new System.Drawing.Point(519, 36);
+            this.lbxCupos.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.lbxCupos.Name = "lbxCupos";
-            this.lbxCupos.Size = new System.Drawing.Size(155, 324);
+            this.lbxCupos.Size = new System.Drawing.Size(117, 260);
             this.lbxCupos.TabIndex = 64;
             // 
             // cbxPropietario
@@ -146,10 +145,10 @@ namespace Clave1_Grupo2.gui
             this.cbxPropietario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbxPropietario.ForeColor = System.Drawing.SystemColors.InactiveCaption;
             this.cbxPropietario.FormattingEnabled = true;
-            this.cbxPropietario.Location = new System.Drawing.Point(373, 92);
-            this.cbxPropietario.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cbxPropietario.Location = new System.Drawing.Point(280, 75);
+            this.cbxPropietario.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cbxPropietario.Name = "cbxPropietario";
-            this.cbxPropietario.Size = new System.Drawing.Size(308, 26);
+            this.cbxPropietario.Size = new System.Drawing.Size(232, 23);
             this.cbxPropietario.TabIndex = 3;
             this.cbxPropietario.SelectedIndexChanged += new System.EventHandler(this.cbxPropietario_SelectedIndexChanged);
             // 
@@ -158,9 +157,10 @@ namespace Clave1_Grupo2.gui
             this.lblPropietario.AutoSize = true;
             this.lblPropietario.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPropietario.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblPropietario.Location = new System.Drawing.Point(254, 92);
+            this.lblPropietario.Location = new System.Drawing.Point(190, 75);
+            this.lblPropietario.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblPropietario.Name = "lblPropietario";
-            this.lblPropietario.Size = new System.Drawing.Size(90, 20);
+            this.lblPropietario.Size = new System.Drawing.Size(77, 17);
             this.lblPropietario.TabIndex = 92;
             this.lblPropietario.Text = "Propietario";
             // 
@@ -171,10 +171,10 @@ namespace Clave1_Grupo2.gui
             this.cbxMascota.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbxMascota.ForeColor = System.Drawing.SystemColors.InactiveCaption;
             this.cbxMascota.FormattingEnabled = true;
-            this.cbxMascota.Location = new System.Drawing.Point(373, 129);
-            this.cbxMascota.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cbxMascota.Location = new System.Drawing.Point(280, 105);
+            this.cbxMascota.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cbxMascota.Name = "cbxMascota";
-            this.cbxMascota.Size = new System.Drawing.Size(308, 26);
+            this.cbxMascota.Size = new System.Drawing.Size(232, 23);
             this.cbxMascota.TabIndex = 4;
             // 
             // lblMascota
@@ -182,9 +182,10 @@ namespace Clave1_Grupo2.gui
             this.lblMascota.AutoSize = true;
             this.lblMascota.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMascota.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblMascota.Location = new System.Drawing.Point(254, 129);
+            this.lblMascota.Location = new System.Drawing.Point(190, 105);
+            this.lblMascota.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblMascota.Name = "lblMascota";
-            this.lblMascota.Size = new System.Drawing.Size(73, 20);
+            this.lblMascota.Size = new System.Drawing.Size(61, 17);
             this.lblMascota.TabIndex = 94;
             this.lblMascota.Text = "Mascota";
             // 
@@ -195,10 +196,10 @@ namespace Clave1_Grupo2.gui
             this.cbxVeterinario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbxVeterinario.ForeColor = System.Drawing.SystemColors.InactiveCaption;
             this.cbxVeterinario.FormattingEnabled = true;
-            this.cbxVeterinario.Location = new System.Drawing.Point(373, 10);
-            this.cbxVeterinario.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cbxVeterinario.Location = new System.Drawing.Point(280, 8);
+            this.cbxVeterinario.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cbxVeterinario.Name = "cbxVeterinario";
-            this.cbxVeterinario.Size = new System.Drawing.Size(308, 26);
+            this.cbxVeterinario.Size = new System.Drawing.Size(232, 23);
             this.cbxVeterinario.TabIndex = 1;
             this.cbxVeterinario.SelectedIndexChanged += new System.EventHandler(this.cbxVeterinario_SelectedIndexChanged);
             // 
@@ -207,9 +208,10 @@ namespace Clave1_Grupo2.gui
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label1.Location = new System.Drawing.Point(254, 10);
+            this.label1.Location = new System.Drawing.Point(190, 8);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(90, 20);
+            this.label1.Size = new System.Drawing.Size(77, 17);
             this.label1.TabIndex = 96;
             this.label1.Text = "Veterinario";
             // 
@@ -220,10 +222,10 @@ namespace Clave1_Grupo2.gui
             this.cbxTipoCita.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbxTipoCita.ForeColor = System.Drawing.SystemColors.InactiveCaption;
             this.cbxTipoCita.FormattingEnabled = true;
-            this.cbxTipoCita.Location = new System.Drawing.Point(373, 46);
-            this.cbxTipoCita.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cbxTipoCita.Location = new System.Drawing.Point(280, 37);
+            this.cbxTipoCita.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cbxTipoCita.Name = "cbxTipoCita";
-            this.cbxTipoCita.Size = new System.Drawing.Size(308, 26);
+            this.cbxTipoCita.Size = new System.Drawing.Size(232, 23);
             this.cbxTipoCita.TabIndex = 2;
             this.cbxTipoCita.SelectedIndexChanged += new System.EventHandler(this.cbxTipoCita_SelectedIndexChanged);
             this.cbxTipoCita.SelectedValueChanged += new System.EventHandler(this.cbxTipoCita_SelectedValueChanged);
@@ -233,20 +235,21 @@ namespace Clave1_Grupo2.gui
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label2.Location = new System.Drawing.Point(254, 46);
+            this.label2.Location = new System.Drawing.Point(190, 37);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(96, 20);
+            this.label2.Size = new System.Drawing.Size(82, 17);
             this.label2.TabIndex = 98;
             this.label2.Text = "Tipo de cita";
             // 
             // txtMotivo
             // 
             this.txtMotivo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMotivo.Location = new System.Drawing.Point(373, 167);
-            this.txtMotivo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtMotivo.Location = new System.Drawing.Point(280, 136);
+            this.txtMotivo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtMotivo.MaxLength = 250;
             this.txtMotivo.Name = "txtMotivo";
-            this.txtMotivo.Size = new System.Drawing.Size(308, 196);
+            this.txtMotivo.Size = new System.Drawing.Size(232, 160);
             this.txtMotivo.TabIndex = 99;
             this.txtMotivo.Text = "";
             // 
@@ -255,9 +258,10 @@ namespace Clave1_Grupo2.gui
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label3.Location = new System.Drawing.Point(260, 171);
+            this.label3.Location = new System.Drawing.Point(195, 139);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(86, 40);
+            this.label3.Size = new System.Drawing.Size(73, 34);
             this.label3.TabIndex = 100;
             this.label3.Text = "Motivo de \r\nsu visita:";
             // 
@@ -266,10 +270,10 @@ namespace Clave1_Grupo2.gui
             this.btnAgendar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnAgendar.BackgroundImage")));
             this.btnAgendar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnAgendar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAgendar.Location = new System.Drawing.Point(719, 372);
-            this.btnAgendar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnAgendar.Location = new System.Drawing.Point(539, 302);
+            this.btnAgendar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnAgendar.Name = "btnAgendar";
-            this.btnAgendar.Size = new System.Drawing.Size(106, 79);
+            this.btnAgendar.Size = new System.Drawing.Size(80, 64);
             this.btnAgendar.TabIndex = 101;
             this.btnAgendar.Text = "AGENDAR";
             this.btnAgendar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -281,23 +285,34 @@ namespace Clave1_Grupo2.gui
             this.btnGetCupos.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnGetCupos.BackgroundImage")));
             this.btnGetCupos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnGetCupos.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGetCupos.Location = new System.Drawing.Point(588, 370);
-            this.btnGetCupos.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnGetCupos.Location = new System.Drawing.Point(441, 301);
+            this.btnGetCupos.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnGetCupos.Name = "btnGetCupos";
-            this.btnGetCupos.Size = new System.Drawing.Size(93, 78);
+            this.btnGetCupos.Size = new System.Drawing.Size(70, 63);
             this.btnGetCupos.TabIndex = 102;
             this.btnGetCupos.Text = "Consultar Cupos";
             this.btnGetCupos.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnGetCupos.UseVisualStyleBackColor = true;
             this.btnGetCupos.Click += new System.EventHandler(this.btnGetCupos_Click);
             // 
+            // btnDeselect
+            // 
+            this.btnDeselect.Location = new System.Drawing.Point(280, 302);
+            this.btnDeselect.Name = "btnDeselect";
+            this.btnDeselect.Size = new System.Drawing.Size(156, 23);
+            this.btnDeselect.TabIndex = 103;
+            this.btnDeselect.Text = "Deseleccionar veterinario";
+            this.btnDeselect.UseVisualStyleBackColor = true;
+            this.btnDeselect.Click += new System.EventHandler(this.btnDeselect_Click);
+            // 
             // VtnAgendarCita
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(854, 459);
+            this.ClientSize = new System.Drawing.Size(640, 373);
+            this.Controls.Add(this.btnDeselect);
             this.Controls.Add(this.btnGetCupos);
             this.Controls.Add(this.btnAgendar);
             this.Controls.Add(this.label3);
@@ -315,7 +330,7 @@ namespace Clave1_Grupo2.gui
             this.Controls.Add(this.panel2);
             this.DoubleBuffered = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "VtnAgendarCita";
@@ -353,5 +368,6 @@ namespace Clave1_Grupo2.gui
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnAgendar;
         private System.Windows.Forms.Button btnGetCupos;
+        private System.Windows.Forms.Button btnDeselect;
     }
 }

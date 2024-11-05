@@ -43,7 +43,7 @@ namespace Clave1_Grupo2.util
         }
         public static void CargarListaAComboBox(ComboBox cb, List<Mascota> lista)
         {
-            cb.ValueMember = "idMascota";
+            cb.ValueMember = "IdMascota";
             cb.DisplayMember = "ToString";
             cb.DataSource = lista;
         }

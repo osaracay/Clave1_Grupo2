@@ -9,6 +9,9 @@ using System.Windows.Forms;
 
 namespace Clave1_Grupo2.util
 {
+    /// <summary>
+    /// Gestiona la creación de ventanas y las provee donde las llamen.
+    /// </summary>
     class GestorVentanas
     {
         private static VtnIniciarSesion vtnIniciarSesion;

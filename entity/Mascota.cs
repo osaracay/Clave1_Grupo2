@@ -27,6 +27,7 @@ namespace Clave1_Grupo2.entity
         public string Color { get => color; set => color = value; }
         public int EstadoMascota { get => estadoMascota; set => estadoMascota = value; }
         public byte[] Imagen { get => imagen; set => imagen = value; }
+        public int IdMascota { get => idMascota; set => idMascota = value; }
 
         public Mascota()
         {
@@ -36,7 +37,7 @@ namespace Clave1_Grupo2.entity
         //Constructor para consultas
         public Mascota(int idMascota, string nomMascota, int especie, string raza, int edad, char generoMascota, int idPropietario, string color)
         {
-            this.idMascota = idMascota;
+            this.IdMascota = idMascota;
             this.nomMascota = nomMascota;
             this.especie = especie;
             this.raza = raza;
@@ -67,11 +68,11 @@ namespace Clave1_Grupo2.entity
 
         public int GetIdMascota() 
         { 
-            return idMascota;
+            return IdMascota;
         }
         public void SetIdmascota(int idMascota)
         {
-            this.idMascota = idMascota;
+            this.IdMascota = idMascota;
         }
 
         public string GetNomMascota()

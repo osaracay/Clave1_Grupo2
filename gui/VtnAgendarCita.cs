@@ -18,7 +18,7 @@ namespace Clave1_Grupo2.gui
         private List<Cliente> clientes;
         private List<Veterinario> veterinarios;
         private List<Cupo> cuposDisponibles;
-
+        private static Cupo seleccionado;
         private int duracionTipoCita;
         public VtnAgendarCita()
         {
@@ -89,10 +89,14 @@ namespace Clave1_Grupo2.gui
             //Cuando el vet cambie se actualizan los horarios o el tipo de cita los rangos           
             try
             {
-                if (UsuarioDAO.GetSesion().TipoUsuario != 3 && cbxVeterinario.SelectedValue != null && cbxVeterinario.SelectedIndex >= 0 && cbxVeterinario.SelectedValue.GetType() != Type.GetType("System.Data.DataRowView"))
+                if (cbxVeterinario.SelectedValue != null && cbxVeterinario.SelectedIndex >= 0 && cbxVeterinario.SelectedValue.GetType() != Type.GetType("System.Data.DataRowView"))
                 {
                     //Obtengo los cupos disponibles
-                    CupoDAO.GetCuposDisponibles(campoFechaAgenda.Value, (CatItem)cbxTipoCita.SelectedItem, (Veterinario)cbxVeterinario.SelectedItem);
+                    PopularCuposDisponibles();
+                }
+                else
+                {
+                    PopularCuposDisponibles();
                 }
             }
             catch (Exception ex)
@@ -139,11 +143,25 @@ namespace Clave1_Grupo2.gui
                     $"Propietario : {cbxPropietario.SelectedItem}\n" +
                     $"Mascota : {cbxMascota.SelectedItem}\n" +
                     $"Motivo de su visita: \n{txtMotivo.Text}");
+                Cita c = new Cita();
+                c.IdTipoCita = (int)cbxTipoCita.SelectedValue;
+                MessageBox.Show("El id de la mascota es "+ (int)cbxMascota.SelectedValue);
+                c.IdMascota = (int)cbxMascota.SelectedValue;
+                c.IdVet = (int)cbxVeterinario.SelectedValue;
+                c.MotivoCita = txtMotivo.Text;
+                
+                seleccionado = (Cupo)lbxCupos.SelectedItem;
+                if(CupoDAO.RegistrarCupo((int)cbxVeterinario.SelectedValue, new DateTime(campoFechaAgenda.Value.Year, campoFechaAgenda.Value.Month, campoFechaAgenda.Value.Day), seleccionado.HoraInicio, seleccionado.HoraFin))
+                {
+                    int idReservacion = CupoDAO.IdInsert;
+                    //REGISTRAR CITA
+                    CitaDAO.RegistrarCita(c, (CatItem)cbxTipoCita.SelectedItem, idReservacion);
+                }
 
                 //A Partir de aqui ya toca hacer el insert a detalle_reservacion y a citas
             }
-            
-            /*PRUEBAS: */
+
+            /*PRUEBAS: 
             CatItem tipoCita = (CatItem)cbxTipoCita.SelectedItem;
             Cupo cupoApartado = new Cupo(campoFechaAgenda.Value, 
                 new DateTime(campoFechaAgenda.Value.Year, campoFechaAgenda.Value.Month, campoFechaAgenda.Value.Day, 
@@ -160,7 +178,7 @@ namespace Clave1_Grupo2.gui
             MessageBox.Show($"2 - la fecha seleccionada es : {cupoSiguiente.FechaCupo}\n" +
                 $"la hora de inicio es : {cupoSiguiente.HoraInicio}\n" +
                 $"la hora de finalizacion es : {cupoSiguiente.HoraFin}\n" +
-                $"la duracion es : {cupoSiguiente.DuracionMinutos}");
+                $"la duracion es : {cupoSiguiente.DuracionMinutos}"); */
             //CupoDAO.GetCuposDisponibles(cupoApartado.FechaCupo, tipoCita.DuracionMinutosCat); //Solo en el caso de ejemplo estaba ocupando con duracion en min
         }
         private void VtnAgendarCita_Load(object sender, EventArgs e)
@@ -172,15 +190,6 @@ namespace Clave1_Grupo2.gui
             this.campoFechaAgenda.MaxDate = DateTime.Today.AddMonths(3);
             this.campoFechaAgenda.MinDate = DateTime.Today;
             //Aunque este en _Load, prevalece sobre lo que esta en Initialize
-        }
-
-        private void MostrarCuposDisponibles()
-        {
-            //Obtener horarios de atencion de la clinica de acuerdo con los turnos 
-
-            //Obtener los veterinarios y la cantidad disponible para cubrir ciertas horas
-
-            //Corroborar los cupos reservados por veterinarios para no duplicar cupos 
         }
 
         private void campoFechaAgenda_ValueChanged(object sender, EventArgs e)
@@ -230,27 +239,51 @@ namespace Clave1_Grupo2.gui
             //campoFechaAgenda.Value = new DateTime(campoFechaAgenda.Value.Year, campoFechaAgenda.Value.Month, campoFechaAgenda.Value.Day);
             lbxCupos.Items.Clear();
 
-
-            foreach (Cupo c in CupoDAO.GetCuposDisponibles(campoFechaAgenda.Value,
-                (CatItem)cbxTipoCita.SelectedItem))
+            if (cbxVeterinario.SelectedIndex > -1)
             {
-
-                if (c.FechaCupo == new DateTime(campoFechaAgenda.Value.Year, campoFechaAgenda.Value.Month, campoFechaAgenda.Value.Day))
+                foreach (Cupo c in CupoDAO.GetCuposDisponibles(campoFechaAgenda.Value, (CatItem)cbxTipoCita.SelectedItem, (Veterinario)cbxVeterinario.SelectedItem))
                 {
-                    lbxCupos.Items.Add(c);
+
+                    if (c.FechaCupo == new DateTime(campoFechaAgenda.Value.Year, campoFechaAgenda.Value.Month, campoFechaAgenda.Value.Day))
+                    {
+                        lbxCupos.Items.Add(c);
+                    }
                 }
+                /*
+                lbxCupos.DataSource = CupoDAO.GetCuposDisponibles(campoFechaAgenda.Value,
+                    (CatItem)cbxTipoCita.SelectedItem);
+                */
+                lbxCupos.Refresh();
+                lbxCupos.Enabled = true;
             }
-            /*
-            lbxCupos.DataSource = CupoDAO.GetCuposDisponibles(campoFechaAgenda.Value,
-                (CatItem)cbxTipoCita.SelectedItem);
-            */
-            lbxCupos.Refresh();
-            lbxCupos.Enabled = true;
+            else
+            {
+                foreach (Cupo c in CupoDAO.GetCuposDisponibles(campoFechaAgenda.Value,
+                (CatItem)cbxTipoCita.SelectedItem))
+                {
+
+                    if (c.FechaCupo == new DateTime(campoFechaAgenda.Value.Year, campoFechaAgenda.Value.Month, campoFechaAgenda.Value.Day))
+                    {
+                        lbxCupos.Items.Add(c);
+                    }
+                }
+                /*
+                lbxCupos.DataSource = CupoDAO.GetCuposDisponibles(campoFechaAgenda.Value,
+                    (CatItem)cbxTipoCita.SelectedItem);
+                */
+                lbxCupos.Refresh();
+                lbxCupos.Enabled = true;
+            }            
         }
 
         private void btnGetCupos_Click(object sender, EventArgs e)
         {
             PopularCuposDisponibles();
+        }
+
+        private void btnDeselect_Click(object sender, EventArgs e)
+        {
+            cbxVeterinario.SelectedIndex = -1;
         }
     }
 }

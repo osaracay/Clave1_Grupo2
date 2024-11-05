@@ -24,6 +24,7 @@ namespace Clave1_Grupo2.dao
         private static DateTime finJornada;
         private static DateTime inicioCupo;
         private static DateTime finCupo;
+        private static DateTime finTurno;
         ///<summary>
         ///Clase de Acceso a Datos de la tabla reservaciones
         /// </summary>
@@ -31,6 +32,9 @@ namespace Clave1_Grupo2.dao
         private static List<Cupo> cuposReservados; //Totalidad de cupos reservados en la base de datos
         //Esta lista se usara para definir los cupos disponibles
         private static List<Cupo> cuposDisponibles;
+
+        public static int IdInsert { get => idInsert; set => idInsert = value; }
+
         //Reubicar segun convenga        
 
         //Probablemente necesite pasarle fecha 
@@ -161,28 +165,26 @@ namespace Clave1_Grupo2.dao
         {
             try
             {                
-                    consulta = "SELECT dt.id_vet, tc.H_ini, tc.H_fin, tc.H_almuerzo, dt.d_descanso1, dt.d_descanso1 " +
-                        "FROM detalle_turno dt WHERE id_vet = ?";
-                    adaptador = new OdbcDataAdapter(consulta, ConexionBD.GetConexionBD());
-                    adaptador.MissingSchemaAction = MissingSchemaAction.AddWithKey;
-                    adaptador.SelectCommand = new OdbcCommand(consulta, ConexionBD.GetConexionBD());
-                    //adaptador.SelectCommand.Parameters.Add("@dia reservacion", OdbcType.Date).Value = fecha.ToString("d");
-                    adaptador.SelectCommand.Parameters.Add("@id_usuario", OdbcType.Int).Value = vet.IdUsuario;
+                consulta = "SELECT dt.id_vet, tc.H_ini, tc.H_fin, tc.H_almuerzo, dt.d_descanso1, dt.d_descanso2, tc.nom_turno " +
+                    "FROM detalle_turno dt JOIN cat_turno_clinica tc ON dt.id_turno = tc.id_turno WHERE dt.id_vet = ?";
+                adaptador = new OdbcDataAdapter(consulta, ConexionBD.GetConexionBD());
+                adaptador.MissingSchemaAction = MissingSchemaAction.AddWithKey;
+                adaptador.SelectCommand = new OdbcCommand(consulta, ConexionBD.GetConexionBD());
+                //adaptador.SelectCommand.Parameters.Add("@dia reservacion", OdbcType.Date).Value = fecha.ToString("d");
+                adaptador.SelectCommand.Parameters.Add("@id_usuario", OdbcType.Int).Value = vet.IdUsuario;
 
-                    ConexionBD.GetConexionBD().Open();
-                    lector = adaptador.SelectCommand.ExecuteReader(); //Execute nonquery requiere una conexion valida y activa por eso se abre. Para fill no se requiere se abre y cierra sola
-                    while (lector.Read())
-                    {
-                        Cupo cupo = new Cupo();
-                        cupo.IdReservacion = lector.GetInt32(0);
-                        cupo.IdVetAsignado = lector.GetInt32(1);
-                        cupo.HoraInicio = lector.GetDateTime(3);
-                        cupo.HoraFin = lector.GetDateTime(4);
-                        cupo.EstaReservado = lector.GetBoolean(5);
-                        cupo.FechaCupo = lector.GetDate(6);
-                        cuposReservados.Add(cupo);
-                    }
-                
+                ConexionBD.GetConexionBD().Open();
+                lector = adaptador.SelectCommand.ExecuteReader(); //Execute nonquery requiere una conexion valida y activa por eso se abre. Para fill no se requiere se abre y cierra sola
+                while (lector.Read())
+                {
+                    vet.HoraIniTurno = lector.GetDateTime(1);
+                    vet.HoraFinTurno = lector.GetDateTime(2);
+                    vet.HoraAlmuerzo = lector.GetDateTime(3);
+                    vet.DiaDescanso1 = lector.GetChar(4);
+                    vet.DiaDescanso2 = lector.GetChar(5);
+                    vet.NombreTurno = lector.GetString(6);
+
+                }                
                 MessageBox.Show($"Cantidad de reservaciones {cuposReservados.Count()}");
                 ConexionBD.GetConexionBD().Close();
                 //Colocandolo aqui el cerrar conexion porque al llamarlo desde VtnMascotas en selected index changed
@@ -338,6 +340,7 @@ namespace Clave1_Grupo2.dao
             //PRIMERO DEBE CREARSE LA CITA PARA LUEGO CREAR Y ASIGNAR UN CUPO
             return cuposDisponibles;
         }
+        
 
         //Sobrecarga del metodo recibiendo un tipo de cita instead
         /// <summary>
@@ -350,6 +353,7 @@ namespace Clave1_Grupo2.dao
         public static List<Cupo> GetCuposDisponibles(DateTime fecha, CatItem tipoCita, Veterinario vet)
         {
             //?Donde esta la informacion del vet respecto a turnos? detalle turnos.
+
             
             
             //De estos turnos reservados para un vet en x fecha
@@ -361,16 +365,24 @@ namespace Clave1_Grupo2.dao
                 cuposDisponibles = new List<Cupo>();
             }
             cuposDisponibles.Clear();
-            //CONSULTAR HORARIOS DE ATENCION MATUTINO Y VESPERTINO
-            inicioJornada = new DateTime(fecha.Year, fecha.Month, fecha.Day,
-                TurnoDAO.GetTurnosClinica().ElementAt(0).HoraInicio.Hour, 0, 0); //Estos incluyen los turnos de la clinica y todos los veterinarios            
-            //ElementAt(0) es porque yo se que el primer turno es el matutino. Tener cuidado con referencias
-            //estaticas de este tipo
+            if (GetDataVeterana(vet))
+            {
+                inicioJornada = new DateTime(fecha.Year, fecha.Month, fecha.Day,
+                vet.HoraIniTurno.Hour, 0, 0); //Estos incluyen los turnos de la clinica y todos los veterinarios            
+                                              //ElementAt(0) es porque yo se que el primer turno es el matutino. Tener cuidado con referencias
+                                              //estaticas de este tipo
 
-            finJornada = new DateTime(fecha.Year, fecha.Month, fecha.Day,
-                TurnoDAO.GetTurnosClinica().ElementAt(1).HoraFin.Hour, 0, 0); //Cuidado con lo que viene de turnos clinica por la fecha
-                                                                              //ElementAt(1) es porque yo se que el siguiente turno es el vespertino. Tener cuidado con referencias
-                                                                              //estaticas de este tipo
+                finTurno = new DateTime(fecha.Year, fecha.Month, fecha.Day,
+                    vet.HoraFinTurno.Hour, 0, 0); //Cuidado con lo que viene de turnos clinica por la fecha
+                                                  //ElementAt(1) es porque yo se que el siguiente turno es el vespertino. Tener cuidado con referencias
+                                                  //estaticas de este tipo
+            }
+            else
+            {
+                MessageBox.Show("Probablemente el veterinario no tenga un turno asignado");
+            }
+            //CONSULTAR HORARIOS DE ATENCION MATUTINO Y VESPERTINO
+
 
             /*MessageBox.Show($"El inicio de la jornada es {inicioJornada.ToString("G")}\n" +
                 $"El fin de la jornada es {finJornada.ToString("G")}");
@@ -389,7 +401,7 @@ namespace Clave1_Grupo2.dao
             //OBTENER HORA DE INICIO, HORA FIN Y HORAS DE ALMUERZO
             //CONSTRUIR INTERVALOS DE ACUERDO CON LA DURACION DEL TIPO DE CITA SOLICITADO.
             inicioCupo = inicioJornada;
-            while (inicioCupo >= inicioJornada && inicioCupo < finJornada) //finCupo < finJornada)
+            while (inicioCupo >= inicioJornada && inicioCupo < finTurno) //finCupo < finJornada)
             {
                 foreach (Cupo cupoReservado in reservacionesDia)
                 {
@@ -429,9 +441,8 @@ namespace Clave1_Grupo2.dao
             //recordar que el id debe ser un usuario de tipo 2
             //y la ventana asignar turnos llena el combo Veterinarios
             //con usuarios tipo 2. Utilizando MySqlConnection
-            consulta = "INSERT INTO detalle_reservacion ( " +
-                "id_vet, dia_reservacion, h_ini, h_fin)" +
-                "VALUES (?,?, ?, ?, ?)";
+            consulta = "INSERT INTO detalle_reservacion (id_vet, dia_reservacion, h_ini, h_fin, reservado)" +
+                "VALUES (?,?, ?, ?, TRUE)";
 
             ComandoSQL = new MySqlCommand(consulta, ConexionBD.GetConexionMySQL());
 
@@ -443,13 +454,13 @@ namespace Clave1_Grupo2.dao
             {
                 ConexionBD.GetConexionMySQL().Open();
                 ComandoSQL.ExecuteNonQuery();
-                idInsert = (int)ComandoSQL.LastInsertedId; //Devuelve un Long
-                MessageBox.Show($"Asignación completada. Id del registro: {idInsert}");
+                IdInsert = (int)ComandoSQL.LastInsertedId; //Devuelve un Long
+                MessageBox.Show($"Asignación completada. Id del registro: {IdInsert}");
                 return true;
             }
             catch (Exception e)
             {
-                MessageBox.Show($"Ocurrió un error al asignar turno:\n{e.Message}");
+                MessageBox.Show($"Ocurrió un error al asignar turno:\n{e.Message}\n{e.StackTrace}");
                 return false;
             }
             finally

@@ -11,6 +11,11 @@ namespace Clave1_Grupo2.util
 {
     class Validacion
     {
+        /// <summary>
+        /// Valida si una caja de texto tiene contenido.
+        /// </summary>
+        /// <param name="tb">Caja de texto a evaluar.</param>
+        /// <returns>True si hay contenido. False si no lo hay.</returns>
         public static bool CampoLleno(TextBox tb)
         {
             if (tb.Text == "")
@@ -58,7 +63,14 @@ namespace Clave1_Grupo2.util
                 return false;
             }
         }
-
+        /// <summary>
+        /// Valida si el valor en una caja de texto es un número entero contenido entre un min y un max.
+        /// </summary>
+        /// <param name="tb">Caja de texto que contiene el número entero</param>
+        /// <param name="valid">Etique en donde se actualizará si la entrada es válida o inválida.</param>
+        /// <param name="min">mínimo</param>
+        /// <param name="max">máximo</param>
+        /// <returns>True si es entero. False si no lo es.</returns>
         public static bool CampoNumEntero(TextBox tb, Label valid, int min, int max)
         {
             int valor;
@@ -85,6 +97,11 @@ namespace Clave1_Grupo2.util
                 return false;
             }
         }
+        /// <summary>
+        /// Valida que el contenido de una caja de texto sea un correo utilizando una librería especial para mapear los dominios registrados.
+        /// </summary>
+        /// <param name="tb">Caja de texto donde se encuentra el correo.</param>
+        /// <returns>True si cumple el formato de un correo. False si incumple.</returns>
         public static bool CampoEmail(TextBox tb)
         {
             //VALIDACION RECUPERADA DE: https://learn.microsoft.com/es-es/dotnet/standard/base-types/how-to-verify-that-strings-are-in-valid-email-format
@@ -92,6 +109,7 @@ namespace Clave1_Grupo2.util
             if (string.IsNullOrWhiteSpace(email))
             {
                 MessageBox.Show("Formato de correo inválido");
+                tb.Focus();
                 return false;
             }
                 
@@ -115,11 +133,13 @@ namespace Clave1_Grupo2.util
             }
             catch (RegexMatchTimeoutException)
             {
+
                 return false;
             }
             catch (ArgumentException)
             {
                 MessageBox.Show("Formato de correo inválido");
+                tb.Focus();
                 return false;
             }
 

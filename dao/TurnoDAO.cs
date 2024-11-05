@@ -157,15 +157,15 @@ namespace Clave1_Grupo2.dao
             //recordar que el id debe ser un usuario de tipo 2
             //y la ventana asignar turnos llena el combo Veterinarios
             //con usuarios tipo 2. Utilizando MySqlConnection
-            consulta = "UPDATE detalle_turno SET id_vet=?, " +
-                "id_turno=?, d_descanso1=?, d_descanso2=?";
+            consulta = "UPDATE detalle_turno SET id_turno=?, d_descanso1=?, d_descanso2=? " +
+                "WHERE id_vet=?";
 
             ComandoSQL = new MySqlCommand(consulta, ConexionBD.GetConexionMySQL());
-
-            ComandoSQL.Parameters.Add("@idvet", MySqlDbType.Int32).Value = idVeterinario;
+            
             ComandoSQL.Parameters.Add("@idturno", MySqlDbType.Int32).Value = idTurno;
             ComandoSQL.Parameters.Add("@d1", MySqlDbType.Enum).Value = d1;
             ComandoSQL.Parameters.Add("@d2", MySqlDbType.Enum).Value = d2;
+            ComandoSQL.Parameters.Add("@idvet", MySqlDbType.Int32).Value = idVeterinario;
             try
             {
                 ConexionBD.GetConexionMySQL().Open();
@@ -176,7 +176,7 @@ namespace Clave1_Grupo2.dao
             }
             catch (Exception e)
             {
-                MessageBox.Show($"Ocurrió un error al asignar turno:\n{e.Message}");
+                MessageBox.Show($"{e.Message}:\n{e.StackTrace}");
                 return false;
             }
             finally
