@@ -152,6 +152,12 @@
     <Compile Include="gui\VerImagen.Designer.cs">
       <DependentUpon>VerImagen.cs</DependentUpon>
     </Compile>
+    <Compile Include="gui\VtnAtenderCita.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="gui\VtnAtenderCita.Designer.cs">
+      <DependentUpon>VtnAtenderCita.cs</DependentUpon>
+    </Compile>
     <Compile Include="gui\VtnExpedienteClinico.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -262,6 +268,9 @@
     <Compile Include="util\Validacion.cs" />
     <EmbeddedResource Include="gui\VerImagen.resx">
       <DependentUpon>VerImagen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="gui\VtnAtenderCita.resx">
+      <DependentUpon>VtnAtenderCita.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="gui\VtnExpedienteClinico.resx">
       <DependentUpon>VtnExpedienteClinico.cs</DependentUpon>

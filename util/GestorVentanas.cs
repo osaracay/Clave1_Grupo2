@@ -18,6 +18,7 @@ namespace Clave1_Grupo2.util
         private static VtnMascotas vtnMascotas;
         private static VtnAgendarCita vtnAgendar;
         private static VtnCitas vtnCitas;
+        private static VtnAtenderCita vtnAtender;
         private static VtnInsumo vtnInsumo;
         private static VtnCompra vntCompra;
         private static VtnVenta vntVenta;
@@ -132,6 +133,16 @@ namespace Clave1_Grupo2.util
             }
             vtnCitas.Show();
             vtnCitas.Focus();
+        }
+        public static void AtenderCita()
+        {
+            if (vtnAtender == null || vtnAtender.IsDisposed)
+            {
+                vtnAtender = null;
+                vtnAtender = new VtnAtenderCita();
+            }
+            vtnAtender.Show();
+            vtnAtender.Focus();
         }
 
         public static void AbrirMiPerfil()
