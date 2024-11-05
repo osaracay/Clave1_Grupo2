@@ -65,7 +65,7 @@ namespace Clave1_Grupo2.dao
                         cuposReservados.Add(cupo);
                     }
                 }
-                MessageBox.Show($"Cantidad de reservaciones {cuposReservados.Count()}");
+                MessageBox.Show($"68 Cantidad de reservaciones {cuposReservados.Count()}");
                 ConexionBD.GetConexionBD().Close();
                 //Colocandolo aqui el cerrar conexion porque al llamarlo desde VtnMascotas en selected index changed
                 //la primera vez que se selecciona un indice desde cuenta administrador dice que
@@ -125,7 +125,7 @@ namespace Clave1_Grupo2.dao
                         cuposReservados.Add(cupo);
                     }
                 }
-                MessageBox.Show($"Cantidad de reservaciones {cuposReservados.Count()}");
+                MessageBox.Show($"128 Cantidad de reservaciones {cuposReservados.Count()}");
                 ConexionBD.GetConexionBD().Close();
                 //Colocandolo aqui el cerrar conexion porque al llamarlo desde VtnMascotas en selected index changed
                 //la primera vez que se selecciona un indice desde cuenta administrador dice que
@@ -183,9 +183,8 @@ namespace Clave1_Grupo2.dao
                     vet.DiaDescanso1 = lector.GetChar(4);
                     vet.DiaDescanso2 = lector.GetChar(5);
                     vet.NombreTurno = lector.GetString(6);
-
+                    MessageBox.Show(vet.NombreTurno);
                 }                
-                MessageBox.Show($"Cantidad de reservaciones {cuposReservados.Count()}");
                 ConexionBD.GetConexionBD().Close();
                 //Colocandolo aqui el cerrar conexion porque al llamarlo desde VtnMascotas en selected index changed
                 //la primera vez que se selecciona un indice desde cuenta administrador dice que
