@@ -65,7 +65,7 @@ namespace Clave1_Grupo2.dao
                         cuposReservados.Add(cupo);
                     }
                 }
-                MessageBox.Show($"68 Cantidad de reservaciones {cuposReservados.Count()}");
+                //MessageBox.Show($"68 Cantidad de reservaciones {cuposReservados.Count()}");
                 ConexionBD.GetConexionBD().Close();
                 /*En ciertos casos no se instancia el lector y queda nulo,
                  recien luego de abrir la conexion, y en el catch no se cierra la conexion

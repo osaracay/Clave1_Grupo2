@@ -38,5 +38,25 @@ namespace Clave1_Grupo2.gui
             }
             
         }
+
+        private void btnAtender_Click(object sender, EventArgs e)
+        {
+            if(UsuarioDAO.GetSesion().TipoUsuario == 2)
+            {
+                GestorVentanas.AtenderCita();
+            }
+        }
+
+        private void VtnCitas_Load(object sender, EventArgs e)
+        {
+            if (UsuarioDAO.GetSesion().TipoUsuario == 2)
+            {
+                btnAtender.Show();
+            }
+            else
+            {
+                btnAtender.Hide();
+            }
+        }
     }
 }
