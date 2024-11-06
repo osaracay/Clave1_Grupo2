@@ -45,7 +45,7 @@ namespace Clave1_Grupo2.dao
                 if (cuposReservados == null)
                 {
                     cuposReservados = new List<Cupo>();
-                    consulta = "SELECT * FROM detalle_reservacion";
+                    consulta = "SELECT * FROM detalle_reservacion WHERE reservado = 1";
                     adaptador = new OdbcDataAdapter(consulta, ConexionBD.GetConexionBD());
                     adaptador.MissingSchemaAction = MissingSchemaAction.AddWithKey;
                     adaptador.SelectCommand = new OdbcCommand(consulta, ConexionBD.GetConexionBD());
@@ -67,13 +67,7 @@ namespace Clave1_Grupo2.dao
                 }
                 MessageBox.Show($"68 Cantidad de reservaciones {cuposReservados.Count()}");
                 ConexionBD.GetConexionBD().Close();
-                //Colocandolo aqui el cerrar conexion porque al llamarlo desde VtnMascotas en selected index changed
-                //la primera vez que se selecciona un indice desde cuenta administrador dice que
-                //la base de datos no se cierra pero la ejecucion continua gracias al catch
-                //A pesar que hay un bloque Finally pero la excepcion ocurre antes del mensaje anterior
-                //Y aqui lo pongo despues del mensaje
-
-                /*Lo que ocurre es que en ciertos casos no se instancia el lector y queda nulo,
+                /*En ciertos casos no se instancia el lector y queda nulo,
                  recien luego de abrir la conexion, y en el catch no se cierra la conexion
                 y no se si deba cerrarla. Creo que si porque igual no recorre el bucle while*/
 
@@ -99,53 +93,56 @@ namespace Clave1_Grupo2.dao
         /// <returns></returns>
         public static List<Cupo> GetCuposReservados(DateTime fecha, Veterinario vet)
         {
+            DateTime fechacon = fecha.Date;
+            //string fechaMySql = $"'{fecha.Year}-{fecha.Month}-{fecha.Day}'";
+            //MessageBox.Show("98 " + fechaMySql);
             try
             {
+                consulta = "SELECT * FROM detalle_reservacion WHERE reservado = 1 AND id_vet = ? AND dia_reservacion BETWEEN ? AND ?"; // AND dia_reservacion BETWEEN ? AND ?
+                adaptador = new OdbcDataAdapter(consulta, ConexionBD.GetConexionBD());
+                adaptador.MissingSchemaAction = MissingSchemaAction.AddWithKey;
+                adaptador.SelectCommand = new OdbcCommand(consulta, ConexionBD.GetConexionBD());
+                adaptador.SelectCommand.Parameters.Add("@id_usuario", OdbcType.Int).Value = vet.IdUsuario;
+                adaptador.SelectCommand.Parameters.Add("@dia reservacion", OdbcType.VarChar).Value = fechacon;
+                adaptador.SelectCommand.Parameters.Add("@dia reservacion2", OdbcType.Date).Value = fechacon.AddDays(1);
                 if (cuposReservados == null)
                 {
                     cuposReservados = new List<Cupo>();
-                    consulta = "SELECT * FROM detalle_reservacion WHERE dia_reservacion = ? AND id_vet = ?";
-                    adaptador = new OdbcDataAdapter(consulta, ConexionBD.GetConexionBD());
-                    adaptador.MissingSchemaAction = MissingSchemaAction.AddWithKey;
-                    adaptador.SelectCommand = new OdbcCommand(consulta, ConexionBD.GetConexionBD());
-                    adaptador.SelectCommand.Parameters.Add("@dia reservacion", OdbcType.Date).Value = fecha.ToString("d");
-                    adaptador.SelectCommand.Parameters.Add("@id_usuario", OdbcType.Int).Value = vet.IdUsuario;
-
-                    ConexionBD.GetConexionBD().Open();
+                }
+                else
+                {
+                    cuposReservados.Clear();
+                }
+                ConexionBD.GetConexionBD().Open();
                     lector = adaptador.SelectCommand.ExecuteReader(); //Execute nonquery requiere una conexion valida y activa por eso se abre. Para fill no se requiere se abre y cierra sola
                     while (lector.Read())
                     {
                         Cupo cupo = new Cupo();
                         cupo.IdReservacion = lector.GetInt32(0);
                         cupo.IdVetAsignado = lector.GetInt32(1);
-                        cupo.HoraInicio = lector.GetDateTime(3);
-                        cupo.HoraFin = lector.GetDateTime(4);
-                        cupo.EstaReservado = lector.GetBoolean(5);
-                        cupo.FechaCupo = lector.GetDate(6);
+                        cupo.HoraInicio = lector.GetDateTime(2);
+                        cupo.HoraFin = lector.GetDateTime(3);
+                        cupo.EstaReservado = lector.GetBoolean(4);
+                        cupo.FechaCupo = lector.GetDate(5);
                         cuposReservados.Add(cupo);
                     }
-                }
-                MessageBox.Show($"128 Cantidad de reservaciones {cuposReservados.Count()}");
+                               
+                //MessageBox.Show(fechacon.Date+consulta +adaptador.SelectCommand.CommandText);
+                MessageBox.Show($"123 Cantidad de reservaciones {cuposReservados.Count()}");
                 ConexionBD.GetConexionBD().Close();
-                //Colocandolo aqui el cerrar conexion porque al llamarlo desde VtnMascotas en selected index changed
-                //la primera vez que se selecciona un indice desde cuenta administrador dice que
-                //la base de datos no se cierra pero la ejecucion continua gracias al catch
-                //A pesar que hay un bloque Finally pero la excepcion ocurre antes del mensaje anterior
-                //Y aqui lo pongo despues del mensaje
-
-                /*Lo que ocurre es que en ciertos casos no se instancia el lector y queda nulo,
+                /*En ciertos casos no se instancia el lector y queda nulo,
                  recien luego de abrir la conexion, y en el catch no se cierra la conexion
                 y no se si deba cerrarla. Creo que si porque igual no recorre el bucle while*/
 
                 return cuposReservados;
             } catch (NullReferenceException ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show($"{ex.Message}\n{ex.StackTrace}" );
                 return cuposReservados;
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show($"{ex.Message}\n{ex.StackTrace}");
                 return cuposReservados;
             }
             finally
@@ -183,7 +180,8 @@ namespace Clave1_Grupo2.dao
                     vet.DiaDescanso1 = lector.GetChar(4);
                     vet.DiaDescanso2 = lector.GetChar(5);
                     vet.NombreTurno = lector.GetString(6);
-                    MessageBox.Show(vet.NombreTurno);
+                    //MessageBox.Show(vet.NombreTurno);
+                    //El nombre del turno se obtiene pero no se actualiza el metodo ToString de la instancia de la clase Veterinario
                 }                
                 ConexionBD.GetConexionBD().Close();
                 //Colocandolo aqui el cerrar conexion porque al llamarlo desde VtnMascotas en selected index changed
@@ -353,10 +351,10 @@ namespace Clave1_Grupo2.dao
         {
             //?Donde esta la informacion del vet respecto a turnos? detalle turnos.
 
-            
-            
+
+            //MessageBox.Show($"Fecha en get Cupos disponibles 348 es{fecha.Date}. Utilizada para cupos reservados. Viene de agendar cita campoFecha");
             //De estos turnos reservados para un vet en x fecha
-            CupoDAO.GetCuposReservados(new DateTime(fecha.Year,fecha.Month,fecha.Day), vet);
+            //CupoDAO.GetCuposReservados(fecha.Date, vet);
             //Lo hago asi porque la fecha que se pasa en el argumento puede no estar 00:00:00 en hh:mm:ss
 
             if (cuposDisponibles == null)
@@ -394,31 +392,36 @@ namespace Clave1_Grupo2.dao
             //MessageBox.Show($"{inicioJornada.Date.ToString("G")}");
 
             //Aqui obtengo las reservaciones de la fecha indicada en el parametro
-            IEnumerable<Cupo> reservacionesDia = from reservacion in GetCuposReservados() where reservacion.FechaCupo == fecha.Date select reservacion;
+            IEnumerable<Cupo> reservacionesDia = from reservacion in GetCuposReservados(fecha, vet) where reservacion.FechaCupo == fecha.Date select reservacion;
             //se tomara en cuenta la hora de inicio y la hora de finalizacion de cada reservacion encontrada
 
             //OBTENER HORA DE INICIO, HORA FIN Y HORAS DE ALMUERZO
             //CONSTRUIR INTERVALOS DE ACUERDO CON LA DURACION DEL TIPO DE CITA SOLICITADO.
             inicioCupo = inicioJornada;
-            while (inicioCupo >= inicioJornada && inicioCupo < finTurno) //finCupo < finJornada)
+            while (inicioCupo >= inicioJornada && inicioCupo.AddMinutes(tipoCita.DuracionMinutosCat) <= finTurno) //finCupo < finJornada)
             {
                 foreach (Cupo cupoReservado in reservacionesDia)
                 {
+                    //MessageBox.Show($"el inicio del cupo a crear es {inicioCupo}\nel cupo reservado es {cupoReservado.HoraInicio}");
                     //Comparar INICIO CUPO con INICIO DE CUPO RESERVADO                   
-                    if (cupoReservado.HoraInicio == inicioCupo)
+                    while (cupoReservado.HoraInicio == inicioCupo || (inicioCupo > cupoReservado.HoraInicio && inicioCupo < cupoReservado.HoraFin) || (inicioCupo<cupoReservado.HoraInicio && inicioCupo.AddMinutes(tipoCita.DuracionMinutosCat)>cupoReservado.HoraInicio))
                     {
                         //Si esto encuentra un solo cupo reservado, lo va a saltar AUNQUE HAYAN MAS VETS QUE LO PUEDAN CUBRIR
                         //Considerar si hay un cupo apartado media hora antes si la duracion es de 60 min.
                         inicioCupo = inicioCupo.AddMinutes(tipoCita.DuracionMinutosCat);
-                        //Puedo contar a ver si se sale del foreach o algo
-                        break;
+                        //MessageBox.Show($"El inicio del cupo se actualizo a {inicioCupo}");                                                
                     }
                 }
                 //hora inicio se ira actualizando segun se vayan creando cupos
-                Cupo c = new Cupo(fecha.Date, inicioCupo, tipoCita.DuracionMinutosCat);
-                //finCupo = c.HoraFin;
-                inicioCupo = c.HoraFin; //finCupo;
-                cuposDisponibles.Add(c);
+                if (inicioCupo < finTurno && inicioCupo.AddMinutes(tipoCita.DuracionMinutosCat)<=finTurno)
+                {
+                    Cupo c = new Cupo(fecha.Date, inicioCupo, tipoCita.DuracionMinutosCat);
+                    //finCupo = c.HoraFin;
+                    inicioCupo = c.HoraFin; //finCupo;
+                    cuposDisponibles.Add(c);
+                }
+                
+
             }
             //TOMO LA HORA DE INICIO, LE SUMO LA DURACION Y LA HORA RESULTANDO LA ASIGNO A LA HORA DE FIN
             //HASTA ENCONTRARME CON UNA HORA RESERVADA, HORA DE ALMUERZO U HORA FIN DE UN TURNO
@@ -435,7 +438,7 @@ namespace Clave1_Grupo2.dao
         /// <param name="horaFin"></param>
         /// <returns></returns>
         /// <autor>Liss</autor>
-        public static bool RegistrarCupo(int idVeterinario, DateTime fechaCupo, DateTime horaInicio, DateTime horaFin )
+        public static bool ApartarCupo(int idVeterinario, DateTime fechaCupo, DateTime horaInicio, DateTime horaFin )
         {
             //recordar que el id debe ser un usuario de tipo 2
             //y la ventana asignar turnos llena el combo Veterinarios

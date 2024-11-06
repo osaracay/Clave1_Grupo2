@@ -151,11 +151,13 @@ namespace Clave1_Grupo2.gui
                 c.MotivoCita = txtMotivo.Text;
                 
                 seleccionado = (Cupo)lbxCupos.SelectedItem;
-                if(CupoDAO.RegistrarCupo((int)cbxVeterinario.SelectedValue, new DateTime(campoFechaAgenda.Value.Year, campoFechaAgenda.Value.Month, campoFechaAgenda.Value.Day), seleccionado.HoraInicio, seleccionado.HoraFin))
+                if(CupoDAO.ApartarCupo((int)cbxVeterinario.SelectedValue, new DateTime(campoFechaAgenda.Value.Year, campoFechaAgenda.Value.Month, campoFechaAgenda.Value.Day), seleccionado.HoraInicio, seleccionado.HoraFin))
                 {
                     int idReservacion = CupoDAO.IdInsert;
                     //REGISTRAR CITA
                     CitaDAO.RegistrarCita(c, (CatItem)cbxTipoCita.SelectedItem, idReservacion);
+                    cbxMascota.SelectedIndex = -1;
+                    cbxVeterinario.SelectedIndex = -1;                    
                 }
 
                 //A Partir de aqui ya toca hacer el insert a detalle_reservacion y a citas
