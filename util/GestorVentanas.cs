@@ -138,13 +138,10 @@ namespace Clave1_Grupo2.util
             vtnCitas.Focus();
         }
         public static void AtenderCita()
-        {
-            if (vtnAtender == null || vtnAtender.IsDisposed)
-            {
-                vtnAtender = null;
-                vtnAtender = new VtnAtenderCita();
-            }
-            vtnAtender.Show();
+        {            
+            vtnAtender = null;
+            vtnAtender = new VtnAtenderCita();                         
+            vtnAtender.ShowDialog();
             vtnAtender.Focus();
         }
 

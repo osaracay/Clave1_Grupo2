@@ -243,8 +243,12 @@ namespace Clave1_Grupo2.gui
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.DoubleBuffered = true;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "VtnAtenderCita";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Atender cita";
+            this.Load += new System.EventHandler(this.VtnAtenderCita_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

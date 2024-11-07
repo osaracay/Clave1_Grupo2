@@ -47,6 +47,7 @@ namespace Clave1_Grupo2.gui
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.btnAtender = new System.Windows.Forms.Button();
+            this.lbxCitas = new System.Windows.Forms.ListBox();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbxFotoPerfil)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
@@ -76,7 +77,7 @@ namespace Clave1_Grupo2.gui
             this.btnCartillaVacunacion.ForeColor = System.Drawing.Color.Black;
             this.btnCartillaVacunacion.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnCartillaVacunacion.Location = new System.Drawing.Point(83, 191);
-            this.btnCartillaVacunacion.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnCartillaVacunacion.Margin = new System.Windows.Forms.Padding(2);
             this.btnCartillaVacunacion.Name = "btnCartillaVacunacion";
             this.btnCartillaVacunacion.Size = new System.Drawing.Size(79, 81);
             this.btnCartillaVacunacion.TabIndex = 65;
@@ -92,7 +93,7 @@ namespace Clave1_Grupo2.gui
             this.btnExpedienteClinico.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnExpedienteClinico.ForeColor = System.Drawing.Color.Black;
             this.btnExpedienteClinico.Location = new System.Drawing.Point(2, 191);
-            this.btnExpedienteClinico.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnExpedienteClinico.Margin = new System.Windows.Forms.Padding(2);
             this.btnExpedienteClinico.Name = "btnExpedienteClinico";
             this.btnExpedienteClinico.Size = new System.Drawing.Size(79, 81);
             this.btnExpedienteClinico.TabIndex = 64;
@@ -183,6 +184,7 @@ namespace Clave1_Grupo2.gui
             this.cbxPropietario.Name = "cbxPropietario";
             this.cbxPropietario.Size = new System.Drawing.Size(232, 23);
             this.cbxPropietario.TabIndex = 101;
+            this.cbxPropietario.SelectedIndexChanged += new System.EventHandler(this.cbxPropietario_SelectedIndexChanged);
             // 
             // lblPropietario
             // 
@@ -208,6 +210,7 @@ namespace Clave1_Grupo2.gui
             this.cbxMascota.Name = "cbxMascota";
             this.cbxMascota.Size = new System.Drawing.Size(232, 23);
             this.cbxMascota.TabIndex = 103;
+            this.cbxMascota.SelectedIndexChanged += new System.EventHandler(this.cbxMascota_SelectedIndexChanged);
             // 
             // lblMascota
             // 
@@ -233,6 +236,7 @@ namespace Clave1_Grupo2.gui
             this.cbxVeterinario.Name = "cbxVeterinario";
             this.cbxVeterinario.Size = new System.Drawing.Size(232, 23);
             this.cbxVeterinario.TabIndex = 105;
+            this.cbxVeterinario.SelectedIndexChanged += new System.EventHandler(this.cbxVeterinario_SelectedIndexChanged);
             // 
             // label1
             // 
@@ -251,7 +255,7 @@ namespace Clave1_Grupo2.gui
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label3.Location = new System.Drawing.Point(204, 160);
+            this.label3.Location = new System.Drawing.Point(343, 129);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(221, 51);
@@ -275,12 +279,22 @@ namespace Clave1_Grupo2.gui
             this.btnAtender.UseVisualStyleBackColor = true;
             this.btnAtender.Click += new System.EventHandler(this.btnAtender_Click);
             // 
+            // lbxCitas
+            // 
+            this.lbxCitas.FormattingEnabled = true;
+            this.lbxCitas.Location = new System.Drawing.Point(265, 191);
+            this.lbxCitas.Name = "lbxCitas";
+            this.lbxCitas.Size = new System.Drawing.Size(232, 95);
+            this.lbxCitas.TabIndex = 108;
+            this.lbxCitas.SelectedIndexChanged += new System.EventHandler(this.lbxCitas_SelectedIndexChanged);
+            // 
             // VtnCitas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(600, 365);
+            this.Controls.Add(this.lbxCitas);
             this.Controls.Add(this.btnAtender);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.cbxVeterinario);
@@ -328,5 +342,6 @@ namespace Clave1_Grupo2.gui
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnAtender;
+        private System.Windows.Forms.ListBox lbxCitas;
     }
 }

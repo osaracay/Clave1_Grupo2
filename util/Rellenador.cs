@@ -14,7 +14,11 @@ using System.Windows.Forms;
 namespace Clave1_Grupo2.util
 {
     class Rellenador
-    {        
+    {
+        private static Cita cita;
+
+        internal static Cita Cita { get => cita; set => cita = value; }
+
         /*PARA DATATABLES OBTENIDOS DE LA BASE DE DATOS*/
         public static void CargarDataTableACombo(ComboBox cb, DataTable dataTable, string campoId, string mostrarCampo)
         {

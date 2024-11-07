@@ -21,6 +21,7 @@ namespace Clave1_Grupo2.entity
         private string diagnostico;
         private string tratamiento;
         private string observaciones;
+        private int idPropietario;
 
         public int IdCita { get => idCita; set => idCita = value; }
         public int IdTipoCita { get => idTipoCita; set => idTipoCita = value; }
@@ -33,6 +34,13 @@ namespace Clave1_Grupo2.entity
         public string Diagnostico { get => diagnostico; set => diagnostico = value; }
         public string Tratamiento { get => tratamiento; set => tratamiento = value; }
         public string Observaciones { get => observaciones; set => observaciones = value; }
+        public int IdPropietario { get => idPropietario; set => idPropietario = value; }
         internal Cupo Cupo { get => cupo; set => cupo = value; }
+
+        public override string ToString()
+        {
+            string citastring = $"{this.Cupo.FechaCupo.ToString("d")}: {this.Cupo.HoraInicio.ToString("t")} - {this.Cupo.HoraFin.ToString("t")}";
+            return citastring;
+        }
     }
 }
