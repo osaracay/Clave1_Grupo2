@@ -73,8 +73,11 @@ namespace Clave1_Grupo2.gui
                 cbxVeterinario.Enabled = false;
                 cbxVeterinario.SelectedValue = UsuarioDAO.GetSesion().IdUsuario;
                 listaCitas = CitaDAO.GetCitas(UsuarioDAO.GetSesion()); //Lista Citas
+
+                /* De todas formas */
                 cbxPropietario.Enabled = true;
                 
+
             }
             else if (UsuarioDAO.GetSesion().TipoUsuario == 3)
             {
@@ -82,16 +85,21 @@ namespace Clave1_Grupo2.gui
                 cbxVeterinario.Enabled = false;
                 cbxPropietario.Enabled = false;                
                 Rellenador.CargarListaAComboBox(cbxMascota, MascotaDAO.GetListaMascotasOwner((int)cbxPropietario.SelectedValue));
+                /*
                 cbxMascota.Enabled = true;
                 cbxMascota.SelectedIndex = -1;
+                */
             }
             else
             {
+                //Siento que no tiene caso con admins
+                /*
                 cbxPropietario.Enabled = true;
                 cbxMascota.Enabled = true;
                 cbxVeterinario.Enabled = true;
+                */
             }
-            
+
             listaCitas = CitaDAO.GetCitas(UsuarioDAO.GetSesion()); //Lista Citas
             //lbxCitas.Items.Clear();
             lbxCitas.DataSource = listaCitas;
@@ -139,7 +147,7 @@ namespace Clave1_Grupo2.gui
                 cbxTipoCita.SelectedValue = ((Cita)lbxCitas.SelectedItem).IdTipoCita;
                 cbxVeterinario.SelectedValue = ((Cita)lbxCitas.SelectedItem).IdVet;
                 Rellenador.Cita = (Cita)lbxCitas.SelectedItem;
-                //cbxMascota.Enabled = false;
+                cbxMascota.Enabled = false;
             }
             else
             {
