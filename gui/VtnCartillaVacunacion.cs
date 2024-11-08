@@ -100,7 +100,7 @@ namespace Clave1_Grupo2.gui
             }
             else
             {
-                LimpiarCampos();
+                //LimpiarCampos();
             }
         }
     

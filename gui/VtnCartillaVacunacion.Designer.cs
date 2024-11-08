@@ -491,7 +491,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(1726, 669);
+            this.ClientSize = new System.Drawing.Size(1720, 669);
             this.Controls.Add(this.btnAgendar);
             this.Controls.Add(this.lbxCupos);
             this.Controls.Add(this.btnCancelar);
