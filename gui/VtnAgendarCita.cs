@@ -68,6 +68,8 @@ namespace Clave1_Grupo2.gui
                 cbxPropietario.SelectedIndex = -1;
                 cbxVeterinario.Enabled = true;
                 cbxVeterinario.SelectedIndex = -1;
+                cbxTipoCita.Enabled = true;
+                //cbxTipoCita.SelectedIndex = -1;
                 txtMotivo.Enabled = true;
                 txtMotivo.Clear();
             }
@@ -75,7 +77,10 @@ namespace Clave1_Grupo2.gui
             {
                 //REAGENDAR CITA si existe un cupo y una cita seleccionada
                 cbxPropietario.Enabled = false;
+
                 cbxMascota.Enabled = true;
+                cbxVeterinario.Enabled = true;
+
                 cbxTipoCita.Enabled = true;
                 txtMotivo.Enabled = true;
                 cbxVeterinario.SelectedValue = Rellenador.Cita.IdVet;
