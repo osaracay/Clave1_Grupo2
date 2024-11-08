@@ -127,39 +127,6 @@ namespace Clave1_Grupo2.gui
             }
         }
 
-        private void SeleccionarCamposCita()
-        {
-            cbxMascota.Enabled = false;
-            cbxMascota.SelectedIndex = -1;
-            cbxTipoCita.SelectedIndex = -1;
-            txtMotivo.Clear();
-            if (lbxCitas.SelectedIndex > -1)
-            {
-                Rellenador.Cita = (Cita)lbxCitas.SelectedItem;
-                cbxPropietario.SelectedValue = ((Cita)lbxCitas.SelectedItem).IdPropietario;
-                cbxMascota.SelectedValue = ((Cita)lbxCitas.SelectedItem).IdMascota;
-                cbxTipoCita.SelectedValue = ((Cita)lbxCitas.SelectedItem).IdTipoCita;
-                cbxVeterinario.SelectedValue = ((Cita)lbxCitas.SelectedItem).IdVet;
-                txtMotivo.Text = ((Cita)lbxCitas.SelectedItem).MotivoCita;
-                //Puedo ocupar tambien Rellenador.Cita.MotivoCita;
-
-                cbxMascota.Enabled = false;
-            }
-            else if (UsuarioDAO.GetSesion().TipoUsuario == 3)
-            {                
-                cbxVeterinario.SelectedIndex = -1;
-            }
-            else if (UsuarioDAO.GetSesion().TipoUsuario == 2)
-            {
-                cbxPropietario.Enabled = false;
-                cbxPropietario.SelectedIndex = -1;
-            }
-            else
-            {
-                //Si fuese admin
-            }
-        }
-
         private void lbxCitas_SelectedIndexChanged(object sender, EventArgs e)
         {
             SeleccionarCamposCita();
@@ -213,7 +180,16 @@ namespace Clave1_Grupo2.gui
 
         private void btnReagendar_Click(object sender, EventArgs e)
         {
-            //lbxCitas.Enabled = false;
+            if (lbxCitas.SelectedIndex > -1)
+            {
+                //lbxCitas.Enabled = false;
+                Rellenador.Cita = (Cita)lbxCitas.SelectedItem;
+                //Reagendar requiere: popular los cupos disponibles por fecha y veterinario
+                //Creo que deberia abrir la ventana agendar citas y si hay un idCupo en Rellenador Cita
+                GestorVentanas.AbrirAgendarCita();
+                //Que inhabilite los campos y solo permita seleccionar otro cupo
+                //Al momento de agendar lo unico que hara es actualizar el cupo ya existente
+            }
         }
 
         private void lbxCitas_KeyUp(object sender, KeyEventArgs e)
@@ -221,12 +197,14 @@ namespace Clave1_Grupo2.gui
             if (e.KeyCode == Keys.Escape)
             {
                 lbxCitas.SelectedIndex = -1;
+                Rellenador.Cita = null;
             }
         }
 
         private void PopularCitas()
         {
             lbxCitas.Items.Clear();
+
             listaCitas = CitaDAO.GetCitas(UsuarioDAO.GetSesion(), campoFechaAgenda.Value.Date);
             foreach(Cita c in listaCitas)
             {
@@ -237,10 +215,55 @@ namespace Clave1_Grupo2.gui
             lbxCitas.SelectedIndex = -1; //No hace nada con selectedItem
             SeleccionarCamposCita();
         }
+        private void SeleccionarCamposCita()
+        {
+            Rellenador.Cita = null; //Para evitar que quede guardado y distorsione agendar y reagendar citas
+            cbxMascota.Enabled = false;
+            cbxMascota.SelectedIndex = -1;
+            cbxTipoCita.SelectedIndex = -1;
+            txtMotivo.Clear();
+            btnReagendar.Hide();
+            if (lbxCitas.SelectedIndex > -1)
+            {
+                btnReagendar.Show();
+                Rellenador.Cita = null;
+                Rellenador.Cita = (Cita)lbxCitas.SelectedItem;
+                cbxPropietario.SelectedValue = ((Cita)lbxCitas.SelectedItem).IdPropietario;
+                cbxMascota.SelectedValue = ((Cita)lbxCitas.SelectedItem).IdMascota;
+                cbxTipoCita.SelectedValue = ((Cita)lbxCitas.SelectedItem).IdTipoCita;
+                cbxVeterinario.SelectedValue = ((Cita)lbxCitas.SelectedItem).Cupo.IdVetAsignado; // NOTESE QUE EL VET ASIGNADO EN RESERVACION DEBE SER EL MISMO EN TABLA CITA
+                txtMotivo.Text = ((Cita)lbxCitas.SelectedItem).MotivoCita;
+                //Puedo ocupar tambien Rellenador.Cita.MotivoCita;
 
+                cbxMascota.Enabled = false;
+            }
+            else if (UsuarioDAO.GetSesion().TipoUsuario == 3)
+            {
+                cbxVeterinario.SelectedIndex = -1;
+            }
+            else if (UsuarioDAO.GetSesion().TipoUsuario == 2)
+            {
+                cbxPropietario.Enabled = false;
+                cbxPropietario.SelectedIndex = -1;
+            }
+            else
+            {
+                //Si fuese admin
+            }
+        }
         private void campoFechaAgenda_ValueChanged(object sender, EventArgs e)
         {
             PopularCitas();            
+        }
+
+        private void VtnCitas_Activated(object sender, EventArgs e)
+        {
+            //PopularCitas();
+        }
+
+        private void VtnCitas_Enter(object sender, EventArgs e)
+        {
+            PopularCitas();
         }
     }
 }

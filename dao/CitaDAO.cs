@@ -1,4 +1,5 @@
 ﻿using Clave1_Grupo2.entity;
+using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -14,8 +15,11 @@ namespace Clave1_Grupo2.dao
     ///Clase de Acceso a Datos de la tabla Cita
     /// </summary>
     class CitaDAO
-    {        
+    {
         private static string consulta;
+
+        public static MySqlCommand ComandoSQL { get; private set; }
+
         private static OdbcDataAdapter adaptador;
         private static OdbcDataReader lector;
         private static List<Cita> citas;
@@ -44,7 +48,7 @@ namespace Clave1_Grupo2.dao
             adaptador.InsertCommand.Parameters.Add("@motivo", OdbcType.VarChar, 250).Value = c.MotivoCita;
             adaptador.InsertCommand.Parameters.Add("@precio", OdbcType.Decimal).Value = tipoCita.PrecioCat;//El estado del usuario cliente sera activo por default
             adaptador.InsertCommand.Parameters.Add("@idreservacion", OdbcType.Int).Value = idReservacion;
-            
+
 
             //MessageBox.Show($"No se cual es el problema {adaptador.InsertCommand.CommandText}");
             try
@@ -68,7 +72,7 @@ namespace Clave1_Grupo2.dao
         //Consultar citas veterinario. Tomar en cuenta el estado.        
         public static List<Cita> GetCitas(Usuario user, DateTime fecha)
         {
-            if(user.TipoUsuario == 3)
+            if (user.TipoUsuario == 3)
             {
                 consulta = "SELECT c.id_cita, c.id_tipo_cita, c.id_mascota, c.id_veterinario, " +
                     "c.id_estado_cita, c.motivo_cita, c.sintomas_mascota, c.diagnostico, c.tratamiento, " +
@@ -79,7 +83,7 @@ namespace Clave1_Grupo2.dao
                     "WHERE m.id_propietario = ? AND dr.reservado= TRUE AND dr.dia_reservacion = ? " +
                     "ORDER BY dr.h_ini ASC";
             }
-            else if(user.TipoUsuario == 2)
+            else if (user.TipoUsuario == 2)
             {
                 consulta = "SELECT c.id_cita, c.id_tipo_cita, c.id_mascota, c.id_veterinario, " +
                     "c.id_estado_cita, c.motivo_cita, c.sintomas_mascota, c.diagnostico, c.tratamiento, " +
@@ -102,7 +106,7 @@ namespace Clave1_Grupo2.dao
                     "ORDER BY dr.h_ini ASC";
                 // O sea, que seleccione todos. Usuarios admin no se les asignan mascotas
             }
-            
+
             adaptador = new OdbcDataAdapter(consulta, ConexionBD.GetConexionBD());
             adaptador.MissingSchemaAction = MissingSchemaAction.AddWithKey;
             adaptador.SelectCommand = new OdbcCommand(consulta, ConexionBD.GetConexionBD());
@@ -119,7 +123,7 @@ namespace Clave1_Grupo2.dao
                 citas.Clear();
             }
             try
-            {               
+            {
                 ConexionBD.GetConexionBD().Open();
                 lector = adaptador.SelectCommand.ExecuteReader(); //Execute nonquery requiere una conexion valida y activa por eso se abre. Para fill no se requiere se abre y cierra sola
                 while (lector.Read())
@@ -129,9 +133,9 @@ namespace Clave1_Grupo2.dao
                     cita.IdTipoCita = lector.GetInt32(1);
                     cita.IdMascota = lector.GetInt32(2);
                     cita.IdVet = lector.GetInt32(3);
-                    cita.IdEstadoCita= lector.GetInt32(4);
+                    cita.IdEstadoCita = lector.GetInt32(4);
                     cita.MotivoCita = lector.GetString(5);
-                    
+
                     //cita.SintomasMascota = lector.GetString(6); //Si esto es nulo da excepcion y me saca del bucle
                     //cita.Diagnostico = lector.GetString(7); //Si esto es nulo da excepcion y me saca del bucle
                     //cita.Tratamiento = lector.GetString(8); //Si esto es nulo da excepcion y me saca del bucle
@@ -176,8 +180,8 @@ namespace Clave1_Grupo2.dao
             finally
             {
                 lector.Close();
-                ConexionBD.GetConexionBD().Close();                
-            }            
+                ConexionBD.GetConexionBD().Close();
+            }
         }
 
         //Consultar cita por mascota. Tomar en cuenta el estado.
@@ -265,13 +269,13 @@ namespace Clave1_Grupo2.dao
                     //cita.IdEstadoPago = lector.GetInt32(13);
 
                     Cupo reservacion = new Cupo();
-                    reservacion.IdReservacion = lector.GetInt32(14);
-                    reservacion.IdVetAsignado = lector.GetInt32(15);
-                    reservacion.FechaCupo = lector.GetDate(16);
-                    reservacion.HoraInicio = lector.GetDateTime(17);
-                    reservacion.HoraFin = lector.GetDateTime(18);
-                    reservacion.EstaReservado = lector.GetBoolean(19);
-                    cita.IdPropietario = lector.GetInt32(20);
+                    reservacion.IdReservacion = lector.GetInt32(15);
+                    reservacion.IdVetAsignado = lector.GetInt32(16);
+                    reservacion.FechaCupo = lector.GetDate(17);
+                    reservacion.HoraInicio = lector.GetDateTime(18);
+                    reservacion.HoraFin = lector.GetDateTime(19);
+                    reservacion.EstaReservado = lector.GetBoolean(20);
+                    cita.IdPropietario = lector.GetInt32(21);
                     cita.Cupo = reservacion;
                     citas.Add(cita);
                 }
@@ -424,7 +428,37 @@ namespace Clave1_Grupo2.dao
             }
         }
         //Reagendar cita.
+        public static bool ActualizarCita(Cita c,int idTipoCita,int idMascota,int idVet, string motivoCita)
+        {
+            consulta = "UPDATE cita SET id_tipo_cita=?, id_mascota=?, id_veterinario=?, motivo_cita=? " +
+                "WHERE id_cita=?";
 
+            ComandoSQL = new MySqlCommand(consulta, ConexionBD.GetConexionMySQL());
+            ComandoSQL.Parameters.Add("@idtipocita", MySqlDbType.Int32).Value = idTipoCita;
+            //ComandoSQL.Parameters.Add("@idvet", MySqlDbType.Int32).Value = idVeterinario;
+            ComandoSQL.Parameters.Add("@idmascota", MySqlDbType.Int32).Value = idMascota;
+            ComandoSQL.Parameters.Add("@idvet", MySqlDbType.Int32).Value = idVet;
+            ComandoSQL.Parameters.Add("@motivocita", MySqlDbType.VarChar).Value = motivoCita;
+            ComandoSQL.Parameters.Add("@idcita", MySqlDbType.Int32).Value = c.IdCita;
+            try
+            {
+                ConexionBD.GetConexionMySQL().Open();
+                ComandoSQL.ExecuteNonQuery();
+                //IdInsert = (int)ComandoSQL.LastInsertedId; //Devuelve un Long
+                MessageBox.Show($"Detalles de cita actualizados");
+                return true;
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show($"Ocurrió un error al actualizar detalles:\n{e.Message}\n{e.StackTrace}");
+                return false;
+            }
+            finally
+            {
+                ConexionBD.GetConexionMySQL().Close();
+            }
+        }
         //Actualizar estado de cita.
+
     }
 }
