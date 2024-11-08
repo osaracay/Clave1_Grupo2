@@ -59,9 +59,9 @@ namespace Clave1_Grupo2.gui
             this.panel1.Controls.Add(this.lblTitulo);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(235, 315);
+            this.panel1.Size = new System.Drawing.Size(176, 256);
             this.panel1.TabIndex = 0;
             // 
             // lblVetCatDog
@@ -69,9 +69,10 @@ namespace Clave1_Grupo2.gui
             this.lblVetCatDog.AutoSize = true;
             this.lblVetCatDog.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblVetCatDog.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblVetCatDog.Location = new System.Drawing.Point(108, 242);
+            this.lblVetCatDog.Location = new System.Drawing.Point(81, 197);
+            this.lblVetCatDog.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblVetCatDog.Name = "lblVetCatDog";
-            this.lblVetCatDog.Size = new System.Drawing.Size(117, 50);
+            this.lblVetCatDog.Size = new System.Drawing.Size(97, 40);
             this.lblVetCatDog.TabIndex = 9;
             this.lblVetCatDog.Text = "Veterinaria\r\nCat-Dog";
             // 
@@ -79,10 +80,9 @@ namespace Clave1_Grupo2.gui
             // 
             this.picLogo.Image = ((System.Drawing.Image)(resources.GetObject("picLogo.Image")));
             this.picLogo.InitialImage = ((System.Drawing.Image)(resources.GetObject("picLogo.InitialImage")));
-            this.picLogo.Location = new System.Drawing.Point(9, 201);
-            this.picLogo.Margin = new System.Windows.Forms.Padding(4);
+            this.picLogo.Location = new System.Drawing.Point(7, 163);
             this.picLogo.Name = "picLogo";
-            this.picLogo.Size = new System.Drawing.Size(98, 93);
+            this.picLogo.Size = new System.Drawing.Size(74, 76);
             this.picLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picLogo.TabIndex = 7;
             this.picLogo.TabStop = false;
@@ -90,9 +90,10 @@ namespace Clave1_Grupo2.gui
             // picUsuario
             // 
             this.picUsuario.Image = ((System.Drawing.Image)(resources.GetObject("picUsuario.Image")));
-            this.picUsuario.Location = new System.Drawing.Point(52, 20);
+            this.picUsuario.Location = new System.Drawing.Point(39, 16);
+            this.picUsuario.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.picUsuario.Name = "picUsuario";
-            this.picUsuario.Size = new System.Drawing.Size(121, 121);
+            this.picUsuario.Size = new System.Drawing.Size(91, 98);
             this.picUsuario.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picUsuario.TabIndex = 8;
             this.picUsuario.TabStop = false;
@@ -102,9 +103,10 @@ namespace Clave1_Grupo2.gui
             this.lblTitulo.AutoSize = true;
             this.lblTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitulo.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblTitulo.Location = new System.Drawing.Point(40, 153);
+            this.lblTitulo.Location = new System.Drawing.Point(30, 124);
+            this.lblTitulo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new System.Drawing.Size(143, 25);
+            this.lblTitulo.Size = new System.Drawing.Size(118, 20);
             this.lblTitulo.TabIndex = 1;
             this.lblTitulo.Text = "Iniciar Sesión";
             // 
@@ -113,11 +115,11 @@ namespace Clave1_Grupo2.gui
             this.txtUsuario.BackColor = System.Drawing.SystemColors.InactiveCaptionText;
             this.txtUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtUsuario.ForeColor = System.Drawing.Color.White;
-            this.txtUsuario.Location = new System.Drawing.Point(359, 66);
-            this.txtUsuario.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtUsuario.Location = new System.Drawing.Point(269, 54);
+            this.txtUsuario.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtUsuario.MaxLength = 30;
             this.txtUsuario.Name = "txtUsuario";
-            this.txtUsuario.Size = new System.Drawing.Size(325, 29);
+            this.txtUsuario.Size = new System.Drawing.Size(245, 24);
             this.txtUsuario.TabIndex = 2;
             this.txtUsuario.Text = "Usuario";
             // 
@@ -126,11 +128,11 @@ namespace Clave1_Grupo2.gui
             this.txtPassword.BackColor = System.Drawing.SystemColors.InactiveCaptionText;
             this.txtPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPassword.ForeColor = System.Drawing.Color.White;
-            this.txtPassword.Location = new System.Drawing.Point(359, 121);
-            this.txtPassword.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtPassword.Location = new System.Drawing.Point(269, 98);
+            this.txtPassword.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtPassword.MaxLength = 60;
             this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(325, 29);
+            this.txtPassword.Size = new System.Drawing.Size(245, 24);
             this.txtPassword.TabIndex = 3;
             this.txtPassword.Text = "Contraseña";
             this.txtPassword.UseSystemPasswordChar = true;
@@ -142,10 +144,10 @@ namespace Clave1_Grupo2.gui
             this.btnLogin.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogin.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnLogin.Location = new System.Drawing.Point(376, 169);
-            this.btnLogin.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnLogin.Location = new System.Drawing.Point(282, 137);
+            this.btnLogin.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(295, 44);
+            this.btnLogin.Size = new System.Drawing.Size(221, 36);
             this.btnLogin.TabIndex = 4;
             this.btnLogin.Text = "Iniciar Sesión\r\n";
             this.btnLogin.UseVisualStyleBackColor = false;
@@ -155,9 +157,10 @@ namespace Clave1_Grupo2.gui
             // 
             this.lblForgotPw.AutoSize = true;
             this.lblForgotPw.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.lblForgotPw.Location = new System.Drawing.Point(431, 234);
+            this.lblForgotPw.Location = new System.Drawing.Point(323, 190);
+            this.lblForgotPw.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblForgotPw.Name = "lblForgotPw";
-            this.lblForgotPw.Size = new System.Drawing.Size(193, 17);
+            this.lblForgotPw.Size = new System.Drawing.Size(146, 13);
             this.lblForgotPw.TabIndex = 5;
             this.lblForgotPw.TabStop = true;
             this.lblForgotPw.Text = "¿Ha olvidado su contraseña?";
@@ -168,9 +171,10 @@ namespace Clave1_Grupo2.gui
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label1.Location = new System.Drawing.Point(490, 46);
+            this.label1.Location = new System.Drawing.Point(368, 37);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(60, 18);
+            this.label1.Size = new System.Drawing.Size(50, 15);
             this.label1.TabIndex = 6;
             this.label1.Text = "Usuario";
             // 
@@ -179,9 +183,10 @@ namespace Clave1_Grupo2.gui
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label2.Location = new System.Drawing.Point(478, 101);
+            this.label2.Location = new System.Drawing.Point(358, 82);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(85, 18);
+            this.label2.Size = new System.Drawing.Size(70, 15);
             this.label2.TabIndex = 7;
             this.label2.Text = "Contraseña";
             // 
@@ -189,9 +194,10 @@ namespace Clave1_Grupo2.gui
             // 
             this.lblSignUp.AutoSize = true;
             this.lblSignUp.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.lblSignUp.Location = new System.Drawing.Point(478, 262);
+            this.lblSignUp.Location = new System.Drawing.Point(358, 213);
+            this.lblSignUp.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblSignUp.Name = "lblSignUp";
-            this.lblSignUp.Size = new System.Drawing.Size(81, 17);
+            this.lblSignUp.Size = new System.Drawing.Size(60, 13);
             this.lblSignUp.TabIndex = 8;
             this.lblSignUp.TabStop = true;
             this.lblSignUp.Text = "Registrarse";
@@ -199,10 +205,11 @@ namespace Clave1_Grupo2.gui
             // 
             // VtnIniciarSesion
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AcceptButton = this.btnLogin;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.ClientSize = new System.Drawing.Size(825, 315);
+            this.ClientSize = new System.Drawing.Size(619, 256);
             this.Controls.Add(this.lblSignUp);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -213,7 +220,7 @@ namespace Clave1_Grupo2.gui
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "VtnIniciarSesion";

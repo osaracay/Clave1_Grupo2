@@ -45,9 +45,11 @@ namespace Clave1_Grupo2.gui
             this.lblMascota = new System.Windows.Forms.Label();
             this.cbxVeterinario = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.btnAtender = new System.Windows.Forms.Button();
             this.lbxCitas = new System.Windows.Forms.ListBox();
+            this.txtMotivo = new System.Windows.Forms.RichTextBox();
+            this.btnReagendar = new System.Windows.Forms.Button();
+            this.campoFechaAgenda = new System.Windows.Forms.DateTimePicker();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbxFotoPerfil)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
@@ -66,7 +68,7 @@ namespace Clave1_Grupo2.gui
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(168, 365);
+            this.panel2.Size = new System.Drawing.Size(168, 420);
             this.panel2.TabIndex = 63;
             // 
             // btnCartillaVacunacion
@@ -80,7 +82,7 @@ namespace Clave1_Grupo2.gui
             this.btnCartillaVacunacion.Margin = new System.Windows.Forms.Padding(2);
             this.btnCartillaVacunacion.Name = "btnCartillaVacunacion";
             this.btnCartillaVacunacion.Size = new System.Drawing.Size(79, 81);
-            this.btnCartillaVacunacion.TabIndex = 65;
+            this.btnCartillaVacunacion.TabIndex = 9;
             this.btnCartillaVacunacion.Text = "Cartilla Vacunacion";
             this.btnCartillaVacunacion.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnCartillaVacunacion.UseVisualStyleBackColor = true;
@@ -96,7 +98,7 @@ namespace Clave1_Grupo2.gui
             this.btnExpedienteClinico.Margin = new System.Windows.Forms.Padding(2);
             this.btnExpedienteClinico.Name = "btnExpedienteClinico";
             this.btnExpedienteClinico.Size = new System.Drawing.Size(79, 81);
-            this.btnExpedienteClinico.TabIndex = 64;
+            this.btnExpedienteClinico.TabIndex = 8;
             this.btnExpedienteClinico.Text = "Expediente Clinico";
             this.btnExpedienteClinico.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnExpedienteClinico.UseVisualStyleBackColor = true;
@@ -154,18 +156,18 @@ namespace Clave1_Grupo2.gui
             this.cbxTipoCita.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbxTipoCita.ForeColor = System.Drawing.SystemColors.InactiveCaption;
             this.cbxTipoCita.FormattingEnabled = true;
-            this.cbxTipoCita.Location = new System.Drawing.Point(265, 66);
+            this.cbxTipoCita.Location = new System.Drawing.Point(267, 247);
             this.cbxTipoCita.Margin = new System.Windows.Forms.Padding(2);
             this.cbxTipoCita.Name = "cbxTipoCita";
             this.cbxTipoCita.Size = new System.Drawing.Size(232, 23);
-            this.cbxTipoCita.TabIndex = 99;
+            this.cbxTipoCita.TabIndex = 5;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label2.Location = new System.Drawing.Point(175, 66);
+            this.label2.Location = new System.Drawing.Point(177, 247);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(82, 17);
@@ -179,11 +181,11 @@ namespace Clave1_Grupo2.gui
             this.cbxPropietario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbxPropietario.ForeColor = System.Drawing.SystemColors.InactiveCaption;
             this.cbxPropietario.FormattingEnabled = true;
-            this.cbxPropietario.Location = new System.Drawing.Point(265, 12);
+            this.cbxPropietario.Location = new System.Drawing.Point(267, 193);
             this.cbxPropietario.Margin = new System.Windows.Forms.Padding(2);
             this.cbxPropietario.Name = "cbxPropietario";
             this.cbxPropietario.Size = new System.Drawing.Size(232, 23);
-            this.cbxPropietario.TabIndex = 101;
+            this.cbxPropietario.TabIndex = 3;
             this.cbxPropietario.SelectedIndexChanged += new System.EventHandler(this.cbxPropietario_SelectedIndexChanged);
             // 
             // lblPropietario
@@ -191,7 +193,7 @@ namespace Clave1_Grupo2.gui
             this.lblPropietario.AutoSize = true;
             this.lblPropietario.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPropietario.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblPropietario.Location = new System.Drawing.Point(175, 12);
+            this.lblPropietario.Location = new System.Drawing.Point(177, 193);
             this.lblPropietario.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblPropietario.Name = "lblPropietario";
             this.lblPropietario.Size = new System.Drawing.Size(77, 17);
@@ -205,11 +207,11 @@ namespace Clave1_Grupo2.gui
             this.cbxMascota.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbxMascota.ForeColor = System.Drawing.SystemColors.InactiveCaption;
             this.cbxMascota.FormattingEnabled = true;
-            this.cbxMascota.Location = new System.Drawing.Point(265, 39);
+            this.cbxMascota.Location = new System.Drawing.Point(267, 220);
             this.cbxMascota.Margin = new System.Windows.Forms.Padding(2);
             this.cbxMascota.Name = "cbxMascota";
             this.cbxMascota.Size = new System.Drawing.Size(232, 23);
-            this.cbxMascota.TabIndex = 103;
+            this.cbxMascota.TabIndex = 4;
             this.cbxMascota.SelectedIndexChanged += new System.EventHandler(this.cbxMascota_SelectedIndexChanged);
             // 
             // lblMascota
@@ -217,7 +219,7 @@ namespace Clave1_Grupo2.gui
             this.lblMascota.AutoSize = true;
             this.lblMascota.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMascota.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblMascota.Location = new System.Drawing.Point(175, 39);
+            this.lblMascota.Location = new System.Drawing.Point(177, 220);
             this.lblMascota.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblMascota.Name = "lblMascota";
             this.lblMascota.Size = new System.Drawing.Size(61, 17);
@@ -231,11 +233,11 @@ namespace Clave1_Grupo2.gui
             this.cbxVeterinario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbxVeterinario.ForeColor = System.Drawing.SystemColors.InactiveCaption;
             this.cbxVeterinario.FormattingEnabled = true;
-            this.cbxVeterinario.Location = new System.Drawing.Point(265, 93);
+            this.cbxVeterinario.Location = new System.Drawing.Point(267, 274);
             this.cbxVeterinario.Margin = new System.Windows.Forms.Padding(2);
             this.cbxVeterinario.Name = "cbxVeterinario";
             this.cbxVeterinario.Size = new System.Drawing.Size(232, 23);
-            this.cbxVeterinario.TabIndex = 105;
+            this.cbxVeterinario.TabIndex = 6;
             this.cbxVeterinario.SelectedIndexChanged += new System.EventHandler(this.cbxVeterinario_SelectedIndexChanged);
             // 
             // label1
@@ -243,60 +245,88 @@ namespace Clave1_Grupo2.gui
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label1.Location = new System.Drawing.Point(175, 93);
+            this.label1.Location = new System.Drawing.Point(177, 274);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(77, 17);
             this.label1.TabIndex = 106;
             this.label1.Text = "Veterinario";
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label3.Location = new System.Drawing.Point(343, 129);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(221, 51);
-            this.label3.TabIndex = 107;
-            this.label3.Text = "Quiero mostrar en un DGV \r\nfecha: horaIni - horaFin - tipo cita \r\ndonde estado se" +
-    "a agendado";
-            // 
             // btnAtender
             // 
-            this.btnAtender.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnAtender.BackgroundImage")));
             this.btnAtender.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnAtender.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAtender.ForeColor = System.Drawing.Color.Black;
-            this.btnAtender.Location = new System.Drawing.Point(510, 12);
+            this.btnAtender.Location = new System.Drawing.Point(506, 31);
             this.btnAtender.Margin = new System.Windows.Forms.Padding(2);
             this.btnAtender.Name = "btnAtender";
-            this.btnAtender.Size = new System.Drawing.Size(79, 81);
-            this.btnAtender.TabIndex = 66;
-            this.btnAtender.Text = "Atender cita";
-            this.btnAtender.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnAtender.Size = new System.Drawing.Size(100, 38);
+            this.btnAtender.TabIndex = 2;
+            this.btnAtender.Text = "ATENDER";
             this.btnAtender.UseVisualStyleBackColor = true;
             this.btnAtender.Click += new System.EventHandler(this.btnAtender_Click);
             // 
             // lbxCitas
             // 
+            this.lbxCitas.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbxCitas.FormattingEnabled = true;
-            this.lbxCitas.Location = new System.Drawing.Point(265, 191);
+            this.lbxCitas.ItemHeight = 18;
+            this.lbxCitas.Location = new System.Drawing.Point(267, 58);
             this.lbxCitas.Name = "lbxCitas";
-            this.lbxCitas.Size = new System.Drawing.Size(232, 95);
-            this.lbxCitas.TabIndex = 108;
+            this.lbxCitas.Size = new System.Drawing.Size(232, 130);
+            this.lbxCitas.TabIndex = 1;
             this.lbxCitas.SelectedIndexChanged += new System.EventHandler(this.lbxCitas_SelectedIndexChanged);
+            this.lbxCitas.KeyUp += new System.Windows.Forms.KeyEventHandler(this.lbxCitas_KeyUp);
+            // 
+            // txtMotivo
+            // 
+            this.txtMotivo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMotivo.Location = new System.Drawing.Point(180, 303);
+            this.txtMotivo.Margin = new System.Windows.Forms.Padding(2);
+            this.txtMotivo.MaxLength = 250;
+            this.txtMotivo.Name = "txtMotivo";
+            this.txtMotivo.Size = new System.Drawing.Size(424, 106);
+            this.txtMotivo.TabIndex = 7;
+            this.txtMotivo.Text = "";
+            // 
+            // btnReagendar
+            // 
+            this.btnReagendar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnReagendar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReagendar.ForeColor = System.Drawing.Color.Black;
+            this.btnReagendar.Location = new System.Drawing.Point(506, 73);
+            this.btnReagendar.Margin = new System.Windows.Forms.Padding(2);
+            this.btnReagendar.Name = "btnReagendar";
+            this.btnReagendar.Size = new System.Drawing.Size(101, 38);
+            this.btnReagendar.TabIndex = 107;
+            this.btnReagendar.Text = "REAGENDAR";
+            this.btnReagendar.UseVisualStyleBackColor = true;
+            this.btnReagendar.Click += new System.EventHandler(this.btnReagendar_Click);
+            // 
+            // campoFechaAgenda
+            // 
+            this.campoFechaAgenda.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.campoFechaAgenda.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.campoFechaAgenda.Location = new System.Drawing.Point(382, 31);
+            this.campoFechaAgenda.Margin = new System.Windows.Forms.Padding(2);
+            this.campoFechaAgenda.MaxDate = new System.DateTime(2025, 1, 18, 0, 0, 0, 0);
+            this.campoFechaAgenda.MinDate = new System.DateTime(2024, 10, 18, 0, 0, 0, 0);
+            this.campoFechaAgenda.Name = "campoFechaAgenda";
+            this.campoFechaAgenda.Size = new System.Drawing.Size(117, 22);
+            this.campoFechaAgenda.TabIndex = 108;
+            this.campoFechaAgenda.ValueChanged += new System.EventHandler(this.campoFechaAgenda_ValueChanged);
             // 
             // VtnCitas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
-            this.ClientSize = new System.Drawing.Size(600, 365);
+            this.ClientSize = new System.Drawing.Size(615, 420);
+            this.Controls.Add(this.campoFechaAgenda);
+            this.Controls.Add(this.btnReagendar);
+            this.Controls.Add(this.txtMotivo);
             this.Controls.Add(this.lbxCitas);
             this.Controls.Add(this.btnAtender);
-            this.Controls.Add(this.label3);
             this.Controls.Add(this.cbxVeterinario);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.cbxMascota);
@@ -340,8 +370,10 @@ namespace Clave1_Grupo2.gui
         private System.Windows.Forms.Label lblMascota;
         private System.Windows.Forms.ComboBox cbxVeterinario;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnAtender;
         private System.Windows.Forms.ListBox lbxCitas;
+        private System.Windows.Forms.RichTextBox txtMotivo;
+        private System.Windows.Forms.Button btnReagendar;
+        private System.Windows.Forms.DateTimePicker campoFechaAgenda;
     }
 }

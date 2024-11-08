@@ -52,32 +52,25 @@ namespace Clave1_Grupo2.gui
             }
         }
 
-        private void CargarDatos()
+        private void SetPermisosEdicion()
         {
             btnAtender.Hide();
-            //Validar que no se cargen tantas veces estas listas
-            Rellenador.CargarListaAComboBox(cbxPropietario, UsuarioDAO.GetListaUsuarios(3));            
-            Rellenador.CargarListaAComboBox(cbxVeterinario, UsuarioDAO.GetListaUsuarios(2));
-            Rellenador.CargarListaAComboBox(cbxTipoCita, CatDAO.GetTipoCitas());
-            //Valide que la lista tipo cita se crea una sola vez y luego se llama lo que se crea la primera vez que se llama
-
+            lbxCitas.Enabled = true;
             cbxTipoCita.SelectedIndex = -1;
             cbxTipoCita.Enabled = false;
             cbxVeterinario.SelectedIndex = -1;
             cbxPropietario.SelectedIndex = -1;
             cbxMascota.SelectedIndex = -1;
+            txtMotivo.Enabled = false;
             //lbxCitas.SelectedIndex = -1;
             if (UsuarioDAO.GetSesion().TipoUsuario == 2)
             {
                 btnAtender.Show();
                 cbxVeterinario.Enabled = false;
-                cbxVeterinario.SelectedValue = UsuarioDAO.GetSesion().IdUsuario;
-                listaCitas = CitaDAO.GetCitas(UsuarioDAO.GetSesion()); //Lista Citas
+                cbxVeterinario.SelectedValue = UsuarioDAO.GetSesion().IdUsuario;                
 
                 /* De todas formas */
-                cbxPropietario.Enabled = true;
-                
-
+                cbxPropietario.Enabled = true;                
             }
             else if (UsuarioDAO.GetSesion().TipoUsuario == 3)
             {
@@ -100,29 +93,25 @@ namespace Clave1_Grupo2.gui
                 */
             }
 
-            listaCitas = CitaDAO.GetCitas(UsuarioDAO.GetSesion()); //Lista Citas
-            //lbxCitas.Items.Clear();
-            lbxCitas.DataSource = listaCitas;
-            lbxCitas.SelectedItem = -1;
-            /*
-            foreach (Cita c in listaCitas)
-            {
-                MessageBox.Show($"{c.Cupo.FechaCupo} : {c.Cupo.HoraInicio} - {c.Cupo.HoraFin}\n{c.MotivoCita}");
-                                                
-            } 
-            */
+            PopularCitas();
         }
 
         private void VtnCitas_Load(object sender, EventArgs e)
         {
-            CargarDatos();
-            lbxCitas.SelectedItem = -1;
-            lbxCitas.Refresh();
+            //Validar que no se cargen tantas veces estas listas
+            this.campoFechaAgenda.MaxDate = DateTime.Today.AddMonths(3);
+            this.campoFechaAgenda.MinDate = DateTime.Today.AddDays(-3);
+            Rellenador.CargarListaAComboBox(cbxPropietario, UsuarioDAO.GetListaUsuarios(3));
+            Rellenador.CargarListaAComboBox(cbxVeterinario, UsuarioDAO.GetListaUsuarios(2));
+            Rellenador.CargarListaAComboBox(cbxTipoCita, CatDAO.GetTipoCitas());
+            //Valide que la lista tipo cita se crea una sola vez y luego se llama lo que se crea la primera vez que se llama
+            SetPermisosEdicion();
+            //lbxCitas.SelectedItem = -1; No hace nada. Porque no es SelectedIndex
+            //lbxCitas.Refresh();
         }
 
         private void cbxPropietario_SelectedIndexChanged(object sender, EventArgs e)
         {
-
             try
             {
                 if (UsuarioDAO.GetSesion().TipoUsuario != 3 && cbxPropietario.SelectedValue != null && cbxPropietario.SelectedIndex >= 0 && cbxPropietario.SelectedValue.GetType() != Type.GetType("System.Data.DataRowView"))
@@ -138,22 +127,42 @@ namespace Clave1_Grupo2.gui
             }
         }
 
-        private void lbxCitas_SelectedIndexChanged(object sender, EventArgs e)
+        private void SeleccionarCamposCita()
         {
+            cbxMascota.Enabled = false;
+            cbxMascota.SelectedIndex = -1;
+            cbxTipoCita.SelectedIndex = -1;
+            txtMotivo.Clear();
             if (lbxCitas.SelectedIndex > -1)
             {
+                Rellenador.Cita = (Cita)lbxCitas.SelectedItem;
                 cbxPropietario.SelectedValue = ((Cita)lbxCitas.SelectedItem).IdPropietario;
                 cbxMascota.SelectedValue = ((Cita)lbxCitas.SelectedItem).IdMascota;
                 cbxTipoCita.SelectedValue = ((Cita)lbxCitas.SelectedItem).IdTipoCita;
                 cbxVeterinario.SelectedValue = ((Cita)lbxCitas.SelectedItem).IdVet;
-                Rellenador.Cita = (Cita)lbxCitas.SelectedItem;
+                txtMotivo.Text = ((Cita)lbxCitas.SelectedItem).MotivoCita;
+                //Puedo ocupar tambien Rellenador.Cita.MotivoCita;
+
                 cbxMascota.Enabled = false;
+            }
+            else if (UsuarioDAO.GetSesion().TipoUsuario == 3)
+            {                
+                cbxVeterinario.SelectedIndex = -1;
+            }
+            else if (UsuarioDAO.GetSesion().TipoUsuario == 2)
+            {
+                cbxPropietario.Enabled = false;
+                cbxPropietario.SelectedIndex = -1;
             }
             else
             {
-                cbxMascota.Enabled = true;
-                cbxTipoCita.SelectedIndex = -1;
+                //Si fuese admin
             }
+        }
+
+        private void lbxCitas_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            SeleccionarCamposCita();
         }
 
         private void cbxVeterinario_SelectedIndexChanged(object sender, EventArgs e)
@@ -201,14 +210,37 @@ namespace Clave1_Grupo2.gui
             }
             */
         }
-        /*
-private void lbxCitas_KeyPress(object sender, KeyPressEventArgs e)
-{
-if (e.KeyChar == (char)Keys.Escape)
-{
-lbxCitas.SelectedItem = -1;
-}
-}
-*/
+
+        private void btnReagendar_Click(object sender, EventArgs e)
+        {
+            //lbxCitas.Enabled = false;
+        }
+
+        private void lbxCitas_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Escape)
+            {
+                lbxCitas.SelectedIndex = -1;
+            }
+        }
+
+        private void PopularCitas()
+        {
+            lbxCitas.Items.Clear();
+            listaCitas = CitaDAO.GetCitas(UsuarioDAO.GetSesion(), campoFechaAgenda.Value.Date);
+            foreach(Cita c in listaCitas)
+            {
+                lbxCitas.Items.Add(c);
+            }
+            lbxCitas.Refresh();
+            lbxCitas.Enabled = true;
+            lbxCitas.SelectedIndex = -1; //No hace nada con selectedItem
+            SeleccionarCamposCita();
+        }
+
+        private void campoFechaAgenda_ValueChanged(object sender, EventArgs e)
+        {
+            PopularCitas();            
+        }
     }
 }

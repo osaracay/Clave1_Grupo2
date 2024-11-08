@@ -66,7 +66,7 @@ namespace Clave1_Grupo2.dao
 
         //Consultar Cita cliente si la mascota no esta seleccionada. Tomar en cuenta el estado.
         //Consultar citas veterinario. Tomar en cuenta el estado.        
-        public static List<Cita> GetCitas(Usuario user)
+        public static List<Cita> GetCitas(Usuario user, DateTime fecha)
         {
             if(user.TipoUsuario == 3)
             {
@@ -76,7 +76,7 @@ namespace Clave1_Grupo2.dao
                     "c.id_reservacion, dr.id_vet, dr.dia_reservacion, dr.h_ini, dr.h_fin, dr.reservado, m.id_propietario " +
                     "FROM cita c JOIN detalle_reservacion dr ON c.id_reservacion = dr.id_reservacion " +
                     "JOIN mascota m ON c.id_mascota = m.id_mascota " +
-                    "WHERE m.id_propietario = ? AND dr.reservado= TRUE " +
+                    "WHERE m.id_propietario = ? AND dr.reservado= TRUE AND dr.dia_reservacion = ? " +
                     "ORDER BY dr.h_ini ASC";
             }
             else if(user.TipoUsuario == 2)
@@ -87,7 +87,7 @@ namespace Clave1_Grupo2.dao
                     "c.id_reservacion, dr.id_vet, dr.dia_reservacion, dr.h_ini, dr.h_fin, dr.reservado, m.id_propietario " +
                     "FROM cita c JOIN detalle_reservacion dr ON c.id_reservacion = dr.id_reservacion " +
                     "JOIN mascota m ON c.id_mascota = m.id_mascota " +
-                    "WHERE c.id_veterinario = ? AND dr.reservado= TRUE " +
+                    "WHERE c.id_veterinario = ? AND dr.reservado= TRUE AND dr.dia_reservacion = ? " +
                     "ORDER BY dr.h_ini ASC";
             }
             else if (user.TipoUsuario == 1)
@@ -98,7 +98,7 @@ namespace Clave1_Grupo2.dao
                     "c.id_reservacion, dr.id_vet, dr.dia_reservacion, dr.h_ini, dr.h_fin, dr.reservado, m.id_propietario " +
                     "FROM cita c JOIN detalle_reservacion dr ON c.id_reservacion = dr.id_reservacion " +
                     "JOIN mascota m ON c.id_mascota = m.id_mascota " +
-                    "WHERE m.id_propietario <> ? AND dr.reservado= TRUE " +
+                    "WHERE m.id_propietario <> ? AND dr.reservado= TRUE AND dr.dia_reservacion = ? " +
                     "ORDER BY dr.h_ini ASC";
                 // O sea, que seleccione todos. Usuarios admin no se les asignan mascotas
             }
@@ -107,6 +107,7 @@ namespace Clave1_Grupo2.dao
             adaptador.MissingSchemaAction = MissingSchemaAction.AddWithKey;
             adaptador.SelectCommand = new OdbcCommand(consulta, ConexionBD.GetConexionBD());
             adaptador.SelectCommand.Parameters.Add("@id_usuario", OdbcType.Int).Value = user.IdUsuario;
+            adaptador.SelectCommand.Parameters.Add("@fecha", OdbcType.Date).Value = fecha.Date;
             //adaptador.SelectCommand.Parameters.Add("@dia reservacion", OdbcType.VarChar).Value = fechacon;
             //adaptador.SelectCommand.Parameters.Add("@dia reservacion2", OdbcType.Date).Value = fechacon.AddDays(1);
             if (citas == null)

@@ -1,6 +1,4 @@
 ﻿using Clave1_Grupo2.dao;
-using Clave1_Grupo2.entity;
-using Clave1_Grupo2.gui;
 using Clave1_Grupo2.util;
 using System;
 using System.Windows.Forms;
@@ -188,6 +186,20 @@ namespace Clave1_Grupo2
             {
                 MessageBox.Show("Debes iniciar sesion como administrador para acceder a esta funcion");
                 //GestorVentanas.SolicitarInicioSesion();
+            }
+        }
+
+        private void VtnMenuPrincipal_Activated(object sender, EventArgs e)
+        {
+            if (UsuarioDAO.GetSesion() == null || UsuarioDAO.GetSesion().TipoUsuario != 1)
+            {
+                btnAsignarTurno.Hide();
+                lblAsignarTurno.Hide();
+            }
+            else
+            {
+                btnAsignarTurno.Show();
+                lblAsignarTurno.Show();
             }
         }
     }

@@ -64,7 +64,7 @@ namespace Clave1_Grupo2.gui
             this.panel2.Controls.Add(this.picLogo);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(168, 373);
             this.panel2.TabIndex = 62;
@@ -119,7 +119,7 @@ namespace Clave1_Grupo2.gui
             this.campoFechaAgenda.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.campoFechaAgenda.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.campoFechaAgenda.Location = new System.Drawing.Point(519, 7);
-            this.campoFechaAgenda.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.campoFechaAgenda.Margin = new System.Windows.Forms.Padding(2);
             this.campoFechaAgenda.MaxDate = new System.DateTime(2025, 1, 18, 0, 0, 0, 0);
             this.campoFechaAgenda.MinDate = new System.DateTime(2024, 10, 18, 0, 0, 0, 0);
             this.campoFechaAgenda.Name = "campoFechaAgenda";
@@ -133,7 +133,7 @@ namespace Clave1_Grupo2.gui
             this.lbxCupos.FormattingEnabled = true;
             this.lbxCupos.ItemHeight = 16;
             this.lbxCupos.Location = new System.Drawing.Point(519, 36);
-            this.lbxCupos.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.lbxCupos.Margin = new System.Windows.Forms.Padding(2);
             this.lbxCupos.Name = "lbxCupos";
             this.lbxCupos.Size = new System.Drawing.Size(117, 260);
             this.lbxCupos.TabIndex = 64;
@@ -146,7 +146,7 @@ namespace Clave1_Grupo2.gui
             this.cbxPropietario.ForeColor = System.Drawing.SystemColors.InactiveCaption;
             this.cbxPropietario.FormattingEnabled = true;
             this.cbxPropietario.Location = new System.Drawing.Point(280, 75);
-            this.cbxPropietario.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbxPropietario.Margin = new System.Windows.Forms.Padding(2);
             this.cbxPropietario.Name = "cbxPropietario";
             this.cbxPropietario.Size = new System.Drawing.Size(232, 23);
             this.cbxPropietario.TabIndex = 3;
@@ -172,7 +172,7 @@ namespace Clave1_Grupo2.gui
             this.cbxMascota.ForeColor = System.Drawing.SystemColors.InactiveCaption;
             this.cbxMascota.FormattingEnabled = true;
             this.cbxMascota.Location = new System.Drawing.Point(280, 105);
-            this.cbxMascota.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbxMascota.Margin = new System.Windows.Forms.Padding(2);
             this.cbxMascota.Name = "cbxMascota";
             this.cbxMascota.Size = new System.Drawing.Size(232, 23);
             this.cbxMascota.TabIndex = 4;
@@ -197,7 +197,7 @@ namespace Clave1_Grupo2.gui
             this.cbxVeterinario.ForeColor = System.Drawing.SystemColors.InactiveCaption;
             this.cbxVeterinario.FormattingEnabled = true;
             this.cbxVeterinario.Location = new System.Drawing.Point(280, 8);
-            this.cbxVeterinario.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbxVeterinario.Margin = new System.Windows.Forms.Padding(2);
             this.cbxVeterinario.Name = "cbxVeterinario";
             this.cbxVeterinario.Size = new System.Drawing.Size(232, 23);
             this.cbxVeterinario.TabIndex = 1;
@@ -223,7 +223,7 @@ namespace Clave1_Grupo2.gui
             this.cbxTipoCita.ForeColor = System.Drawing.SystemColors.InactiveCaption;
             this.cbxTipoCita.FormattingEnabled = true;
             this.cbxTipoCita.Location = new System.Drawing.Point(280, 37);
-            this.cbxTipoCita.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbxTipoCita.Margin = new System.Windows.Forms.Padding(2);
             this.cbxTipoCita.Name = "cbxTipoCita";
             this.cbxTipoCita.Size = new System.Drawing.Size(232, 23);
             this.cbxTipoCita.TabIndex = 2;
@@ -246,7 +246,7 @@ namespace Clave1_Grupo2.gui
             // 
             this.txtMotivo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMotivo.Location = new System.Drawing.Point(280, 136);
-            this.txtMotivo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtMotivo.Margin = new System.Windows.Forms.Padding(2);
             this.txtMotivo.MaxLength = 250;
             this.txtMotivo.Name = "txtMotivo";
             this.txtMotivo.Size = new System.Drawing.Size(232, 160);
@@ -268,25 +268,24 @@ namespace Clave1_Grupo2.gui
             // btnAgendar
             // 
             this.btnAgendar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnAgendar.BackgroundImage")));
-            this.btnAgendar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnAgendar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnAgendar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAgendar.Location = new System.Drawing.Point(539, 302);
-            this.btnAgendar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAgendar.Margin = new System.Windows.Forms.Padding(2);
             this.btnAgendar.Name = "btnAgendar";
             this.btnAgendar.Size = new System.Drawing.Size(80, 64);
             this.btnAgendar.TabIndex = 101;
             this.btnAgendar.Text = "AGENDAR";
-            this.btnAgendar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnAgendar.UseVisualStyleBackColor = true;
             this.btnAgendar.Click += new System.EventHandler(this.btnAgendar_Click);
             // 
             // btnGetCupos
             // 
             this.btnGetCupos.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnGetCupos.BackgroundImage")));
-            this.btnGetCupos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnGetCupos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnGetCupos.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGetCupos.Location = new System.Drawing.Point(441, 301);
-            this.btnGetCupos.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnGetCupos.Margin = new System.Windows.Forms.Padding(2);
             this.btnGetCupos.Name = "btnGetCupos";
             this.btnGetCupos.Size = new System.Drawing.Size(70, 63);
             this.btnGetCupos.TabIndex = 102;
@@ -307,10 +306,12 @@ namespace Clave1_Grupo2.gui
             // 
             // VtnAgendarCita
             // 
+            this.AcceptButton = this.btnAgendar;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.CancelButton = this.btnDeselect;
             this.ClientSize = new System.Drawing.Size(640, 373);
             this.Controls.Add(this.btnDeselect);
             this.Controls.Add(this.btnGetCupos);
@@ -329,8 +330,9 @@ namespace Clave1_Grupo2.gui
             this.Controls.Add(this.campoFechaAgenda);
             this.Controls.Add(this.panel2);
             this.DoubleBuffered = true;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "VtnAgendarCita";
