@@ -81,6 +81,7 @@
             this.btnGuardar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.label11 = new System.Windows.Forms.Label();
+            this.listView1 = new System.Windows.Forms.ListView();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -165,6 +166,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.listView1);
             this.groupBox1.Controls.Add(this.textBox2);
             this.groupBox1.Controls.Add(this.label16);
             this.groupBox1.Controls.Add(this.textBox1);
@@ -581,6 +583,15 @@
             this.label11.Text = "peso, pulso, enfermedades previas(diagnostico citas anteriores) esterilizado vali" +
     "dacion solo disponible para F al igual que partos.";
             // 
+            // listView1
+            // 
+            this.listView1.HideSelection = false;
+            this.listView1.Location = new System.Drawing.Point(197, 344);
+            this.listView1.Name = "listView1";
+            this.listView1.Size = new System.Drawing.Size(609, 93);
+            this.listView1.TabIndex = 35;
+            this.listView1.UseCompatibleStateImageBehavior = false;
+            // 
             // ExpedienteClinico
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -664,5 +675,6 @@
         private System.Windows.Forms.TextBox txtTelefono;
         private System.Windows.Forms.ComboBox cbxEsterilizado;
         private System.Windows.Forms.ComboBox cbxFinZootecnico;
+        private System.Windows.Forms.ListView listView1;
     }
 }

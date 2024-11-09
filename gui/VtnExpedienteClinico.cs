@@ -18,6 +18,7 @@ namespace Clave1_Grupo2.gui
         {
             InhabilitarCampos();
             CargarDatos();
+            VerificarGenero();
         }
 
         private void InhabilitarCampos()
@@ -35,6 +36,7 @@ namespace Clave1_Grupo2.gui
         {
             Rellenador.CargarListaAComboBox(cbxPropietario, UsuarioDAO.GetListaUsuarios(3));
             txtEmail.Text = ((Usuario)cbxPropietario.SelectedItem).Email;
+            VerificarGenero();
 
             if (UsuarioDAO.GetSesion().TipoUsuario == 3)
             {
@@ -154,6 +156,20 @@ namespace Clave1_Grupo2.gui
         private void cbxPropietario_SelectedIndexChanged(object sender, EventArgs e)
         {
             Rellenador.CargarListaAComboBox(cbxMascota, MascotaDAO.GetListaMascotasOwner((Usuario)cbxPropietario.SelectedItem));
+        }
+
+        private void VerificarGenero()
+        {
+            // Verifica si el género es masculino y deshabilita el campo "Número de Partos"
+            if (txtGenero.Text.ToUpper() == "F")
+            {
+                txtNumeroPartos.Enabled = true;
+                txtNumeroPartos.Text = ""; // Borra cualquier valor que pueda haber
+            }
+            else
+            {
+                txtNumeroPartos.Enabled = false;
+            }
         }
     }
 }
