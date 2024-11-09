@@ -504,5 +504,34 @@ namespace Clave1_Grupo2.dao
                 ConexionBD.GetConexionMySQL().Close();
             }
         }
+        public static bool CancelarReservacionCita(int idCupo)
+        {
+            //recordar que el id debe ser un usuario de tipo 2
+            //y la ventana asignar turnos llena el combo Veterinarios
+            //con usuarios tipo 2. Utilizando MySqlConnection
+            consulta = "UPDATE detalle_reservacion SET reservado = false " +
+                "WHERE id_reservacion = ?";
+
+            ComandoSQL = new MySqlCommand(consulta, ConexionBD.GetConexionMySQL());
+            
+            ComandoSQL.Parameters.Add("@idcupo", MySqlDbType.Int32).Value = idCupo;
+            try
+            {
+                ConexionBD.GetConexionMySQL().Open();
+                ComandoSQL.ExecuteNonQuery();
+                //IdInsert = (int)ComandoSQL.LastInsertedId; //Devuelve un Long
+                MessageBox.Show($"La cita ha sido cancelada");
+                return true;
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show($"Ocurrió un error al reagendar:\n{e.Message}\n{e.StackTrace}");
+                return false;
+            }
+            finally
+            {
+                ConexionBD.GetConexionMySQL().Close();
+            }
+        }
     }
 }

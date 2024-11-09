@@ -184,9 +184,11 @@ namespace Clave1_Grupo2.gui
             {
                 //lbxCitas.Enabled = false;
                 Rellenador.Cita = (Cita)lbxCitas.SelectedItem;
+                lbxCitas.Enabled = false; // De esta manera yo evito que se actualice Rellenar.Cita y me distorsione las reagendas y modificaciones
                 //Reagendar requiere: popular los cupos disponibles por fecha y veterinario
                 //Creo que deberia abrir la ventana agendar citas y si hay un idCupo en Rellenador Cita
                 GestorVentanas.AbrirAgendarCita();
+                PopularCitas();
                 //Que inhabilite los campos y solo permita seleccionar otro cupo
                 //Al momento de agendar lo unico que hara es actualizar el cupo ya existente
             }
@@ -223,9 +225,11 @@ namespace Clave1_Grupo2.gui
             cbxTipoCita.SelectedIndex = -1;
             txtMotivo.Clear();
             btnReagendar.Hide();
+            btnCancelarCita.Hide();
             if (lbxCitas.SelectedIndex > -1)
             {
                 btnReagendar.Show();
+                btnCancelarCita.Show();
                 Rellenador.Cita = null;
                 Rellenador.Cita = (Cita)lbxCitas.SelectedItem;
                 cbxPropietario.SelectedValue = ((Cita)lbxCitas.SelectedItem).IdPropietario;
@@ -263,6 +267,12 @@ namespace Clave1_Grupo2.gui
 
         private void VtnCitas_Enter(object sender, EventArgs e)
         {
+            PopularCitas();
+        }
+
+        private void btnCancelarCita_Click(object sender, EventArgs e)
+        {
+            CupoDAO.CancelarReservacionCita(Rellenador.Cita.Cupo.IdReservacion); //(Cita)lbxCitas.SelectedItem.IdCupo
             PopularCitas();
         }
     }

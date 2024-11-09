@@ -50,6 +50,7 @@ namespace Clave1_Grupo2.gui
             this.txtMotivo = new System.Windows.Forms.RichTextBox();
             this.btnReagendar = new System.Windows.Forms.Button();
             this.campoFechaAgenda = new System.Windows.Forms.DateTimePicker();
+            this.btnCancelarCita = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbxFotoPerfil)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
@@ -252,6 +253,7 @@ namespace Clave1_Grupo2.gui
             // 
             // btnAtender
             // 
+            this.btnAtender.BackColor = System.Drawing.Color.Turquoise;
             this.btnAtender.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnAtender.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAtender.ForeColor = System.Drawing.Color.Black;
@@ -261,7 +263,7 @@ namespace Clave1_Grupo2.gui
             this.btnAtender.Size = new System.Drawing.Size(133, 47);
             this.btnAtender.TabIndex = 2;
             this.btnAtender.Text = "ATENDER";
-            this.btnAtender.UseVisualStyleBackColor = true;
+            this.btnAtender.UseVisualStyleBackColor = false;
             this.btnAtender.Click += new System.EventHandler(this.btnAtender_Click);
             // 
             // lbxCitas
@@ -290,6 +292,7 @@ namespace Clave1_Grupo2.gui
             // 
             // btnReagendar
             // 
+            this.btnReagendar.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.btnReagendar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnReagendar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnReagendar.ForeColor = System.Drawing.Color.Black;
@@ -298,8 +301,8 @@ namespace Clave1_Grupo2.gui
             this.btnReagendar.Name = "btnReagendar";
             this.btnReagendar.Size = new System.Drawing.Size(135, 47);
             this.btnReagendar.TabIndex = 107;
-            this.btnReagendar.Text = "REAGENDAR";
-            this.btnReagendar.UseVisualStyleBackColor = true;
+            this.btnReagendar.Text = "RE-AGENDAR";
+            this.btnReagendar.UseVisualStyleBackColor = false;
             this.btnReagendar.Click += new System.EventHandler(this.btnReagendar_Click);
             // 
             // campoFechaAgenda
@@ -315,12 +318,28 @@ namespace Clave1_Grupo2.gui
             this.campoFechaAgenda.TabIndex = 108;
             this.campoFechaAgenda.ValueChanged += new System.EventHandler(this.campoFechaAgenda_ValueChanged);
             // 
+            // btnCancelarCita
+            // 
+            this.btnCancelarCita.BackColor = System.Drawing.Color.LightCoral;
+            this.btnCancelarCita.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnCancelarCita.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelarCita.ForeColor = System.Drawing.Color.Black;
+            this.btnCancelarCita.Location = new System.Drawing.Point(677, 141);
+            this.btnCancelarCita.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnCancelarCita.Name = "btnCancelarCita";
+            this.btnCancelarCita.Size = new System.Drawing.Size(133, 47);
+            this.btnCancelarCita.TabIndex = 109;
+            this.btnCancelarCita.Text = "CANCELAR CITA";
+            this.btnCancelarCita.UseVisualStyleBackColor = false;
+            this.btnCancelarCita.Click += new System.EventHandler(this.btnCancelarCita_Click);
+            // 
             // VtnCitas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(820, 517);
+            this.Controls.Add(this.btnCancelarCita);
             this.Controls.Add(this.campoFechaAgenda);
             this.Controls.Add(this.btnReagendar);
             this.Controls.Add(this.txtMotivo);
@@ -376,5 +395,6 @@ namespace Clave1_Grupo2.gui
         private System.Windows.Forms.RichTextBox txtMotivo;
         private System.Windows.Forms.Button btnReagendar;
         private System.Windows.Forms.DateTimePicker campoFechaAgenda;
+        private System.Windows.Forms.Button btnCancelarCita;
     }
 }

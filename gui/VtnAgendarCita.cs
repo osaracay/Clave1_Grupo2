@@ -43,12 +43,13 @@ namespace Clave1_Grupo2.gui
             Rellenador.CargarListaAComboBox(cbxPropietario, UsuarioDAO.GetListaUsuarios(3));
             Rellenador.CargarListaAComboBox(cbxVeterinario, UsuarioDAO.GetListaUsuarios(2));
             Rellenador.CargarListaAComboBox(cbxTipoCita, CatDAO.GetTipoCitas());
+            Rellenador.CargarListaAComboBox(cbxMascota, MascotaDAO.GetListaMascotasOwner((int)cbxPropietario.SelectedValue));
             SetEdicionCampos();
             if (UsuarioDAO.GetSesion().TipoUsuario == 3)
             {
                 cbxPropietario.Enabled = false;
                 cbxPropietario.SelectedValue = UsuarioDAO.GetSesion().IdUsuario;
-                Rellenador.CargarListaAComboBox(cbxMascota, MascotaDAO.GetListaMascotasOwner((Usuario)cbxPropietario.SelectedItem));
+                Rellenador.CargarListaAComboBox(cbxMascota, MascotaDAO.GetListaMascotasOwner((Usuario)cbxPropietario.SelectedItem));                
                 //GetListaMascotasOwner realiza consulta a la BD cada que se llama
                 //MI IDEA es que se cree una lista para el usuario si es nula y luego solo se llame la ya creada como con las ventanas
                 //Dicha lista se asiganra valor nulo al registrar una nueva mascota para que solo entonces se vuelva a ejecutar la consulta
