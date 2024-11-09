@@ -518,7 +518,7 @@
             this.txtNumeroPartos.Name = "txtNumeroPartos";
             this.txtNumeroPartos.Size = new System.Drawing.Size(206, 26);
             this.txtNumeroPartos.TabIndex = 15;
-            this.txtNumeroPartos.TextChanged += new System.EventHandler(this.cbxMascota_SelectedIndexChanged);
+            this.txtNumeroPartos.TextChanged += new System.EventHandler(this.txtNumeroPartos_TextChanged);
             // 
             // label10
             // 

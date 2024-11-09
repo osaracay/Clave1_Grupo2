@@ -77,6 +77,7 @@ namespace Clave1_Grupo2.gui
             txtEdad.Text = mascotaSeleccionada.GetEdad().ToString();
             txtGenero.Text = mascotaSeleccionada.GetGeneroMascota().ToString();
             txtColorMascota.Text = mascotaSeleccionada.Color;
+            VerificarGenero();
             InhabilitarCampos();
         }
      
@@ -159,6 +160,20 @@ namespace Clave1_Grupo2.gui
         private void txtNumeroPartos_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void VerificarGenero()
+        {
+            // Verifica si el género es masculino ("M") y deshabilita el campo "Número de Partos"
+            if (txtGenero.Text.ToUpper() == "M")
+            {
+                txtNumeroPartos.Enabled = false;
+                txtNumeroPartos.Text = ""; // Borra cualquier valor que pueda haber
+            }
+            else
+            {
+                txtNumeroPartos.Enabled = true;
+            }
         }
     }
 }
