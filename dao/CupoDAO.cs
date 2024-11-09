@@ -23,7 +23,7 @@ namespace Clave1_Grupo2.dao
         private static DateTime inicioJornada;
         private static DateTime finJornada;
         private static DateTime inicioCupo;
-        private static DateTime finCupo;
+        //private static DateTime finCupo;
         private static DateTime finTurno;
         ///<summary>
         ///Clase de Acceso a Datos de la tabla reservaciones
@@ -93,7 +93,7 @@ namespace Clave1_Grupo2.dao
         /// <returns></returns>
         public static List<Cupo> GetCuposReservados(DateTime fecha, Veterinario vet)
         {
-            DateTime fechacon = fecha.Date;
+            //DateTime fechacon = ;
             //string fechaMySql = $"'{fecha.Year}-{fecha.Month}-{fecha.Day}'";
             //MessageBox.Show("98 " + fechaMySql);
             try
@@ -103,8 +103,8 @@ namespace Clave1_Grupo2.dao
                 adaptador.MissingSchemaAction = MissingSchemaAction.AddWithKey;
                 adaptador.SelectCommand = new OdbcCommand(consulta, ConexionBD.GetConexionBD());
                 adaptador.SelectCommand.Parameters.Add("@id_usuario", OdbcType.Int).Value = vet.IdUsuario;
-                adaptador.SelectCommand.Parameters.Add("@dia reservacion", OdbcType.VarChar).Value = fechacon;
-                adaptador.SelectCommand.Parameters.Add("@dia reservacion2", OdbcType.Date).Value = fechacon.AddDays(1);
+                adaptador.SelectCommand.Parameters.Add("@dia reservacion", OdbcType.Date).Value = fecha.Date;
+                adaptador.SelectCommand.Parameters.Add("@dia reservacion2", OdbcType.Date).Value = fecha.Date.AddDays(1);
                 if (cuposReservados == null)
                 {
                     cuposReservados = new List<Cupo>();
@@ -128,7 +128,7 @@ namespace Clave1_Grupo2.dao
                     }
                                
                 //MessageBox.Show(fechacon.Date+consulta +adaptador.SelectCommand.CommandText);
-                MessageBox.Show($"123 Cantidad de reservaciones {cuposReservados.Count()}");
+                MessageBox.Show($"131 Cantidad de reservaciones {cuposReservados.Count()}");
                 ConexionBD.GetConexionBD().Close();
                 /*En ciertos casos no se instancia el lector y queda nulo,
                  recien luego de abrir la conexion, y en el catch no se cierra la conexion
@@ -153,7 +153,7 @@ namespace Clave1_Grupo2.dao
         }
 
         /// <summary>
-        /// EN CONSTRUCCION: Dado un veterinario, obtiene sus detalles de turno en la clinica. -bY OCSaracay
+        /// Dado un veterinario, obtiene sus detalles de turno en la clinica. -bY OCSaracay
         /// </summary>
         /// <param name="vet">Veterinario sobre quien se hace la consulta</param>
         /// <returns>true si todo salio bien, false si algo acontecio firma Oswaldo</returns>
@@ -184,13 +184,8 @@ namespace Clave1_Grupo2.dao
                     //El nombre del turno se obtiene pero no se actualiza el metodo ToString de la instancia de la clase Veterinario
                 }                
                 ConexionBD.GetConexionBD().Close();
-                //Colocandolo aqui el cerrar conexion porque al llamarlo desde VtnMascotas en selected index changed
-                //la primera vez que se selecciona un indice desde cuenta administrador dice que
-                //la base de datos no se cierra pero la ejecucion continua gracias al catch
-                //A pesar que hay un bloque Finally pero la excepcion ocurre antes del mensaje anterior
-                //Y aqui lo pongo despues del mensaje
 
-                /*Lo que ocurre es que en ciertos casos no se instancia el lector y queda nulo,
+                /*En ciertos casos no se instancia el lector y queda nulo,
                  recien luego de abrir la conexion, y en el catch no se cierra la conexion
                 y no se si deba cerrarla. Creo que si porque igual no recorre el bucle while*/
 
@@ -319,7 +314,7 @@ namespace Clave1_Grupo2.dao
                     //Comparar INICIO CUPO con INICIO DE CUPO RESERVADO                   
                     if(cupoReservado.HoraInicio == inicioCupo)
                     {
-                        //Si esto encuentra un solo cupo reservado, lo va a saltar AUNQUE HAYAN MAS VETS QUE LO PUEDAN CUBRIR
+                        //!!!!! Si esto encuentra un solo cupo reservado, lo va a saltar AUNQUE HAYAN MAS VETS QUE LO PUEDAN CUBRIR
                         //Considerar si hay un cupo apartado media hora antes si la duracion es de 60 min.
                         inicioCupo = inicioCupo.AddMinutes(tipoCita.DuracionMinutosCat);
                         //Puedo contar a ver si se sale del foreach o algo
@@ -392,7 +387,7 @@ namespace Clave1_Grupo2.dao
             //MessageBox.Show($"{inicioJornada.Date.ToString("G")}");
 
             //Aqui obtengo las reservaciones de la fecha indicada en el parametro
-            IEnumerable<Cupo> reservacionesDia = from reservacion in GetCuposReservados(fecha, vet) where reservacion.FechaCupo == fecha.Date select reservacion;
+            IEnumerable<Cupo> reservacionesDia = from reservacion in GetCuposReservados(fecha.Date, vet) where reservacion.FechaCupo == fecha.Date select reservacion;
             //se tomara en cuenta la hora de inicio y la hora de finalizacion de cada reservacion encontrada
 
             //OBTENER HORA DE INICIO, HORA FIN Y HORAS DE ALMUERZO
@@ -404,7 +399,10 @@ namespace Clave1_Grupo2.dao
                 {
                     //MessageBox.Show($"el inicio del cupo a crear es {inicioCupo}\nel cupo reservado es {cupoReservado.HoraInicio}");
                     //Comparar INICIO CUPO con INICIO DE CUPO RESERVADO                   
-                    while (cupoReservado.HoraInicio == inicioCupo || (inicioCupo > cupoReservado.HoraInicio && inicioCupo < cupoReservado.HoraFin) || (inicioCupo<cupoReservado.HoraInicio && inicioCupo.AddMinutes(tipoCita.DuracionMinutosCat)>cupoReservado.HoraInicio))
+                    while (cupoReservado.HoraInicio == inicioCupo || 
+                        (inicioCupo > cupoReservado.HoraInicio && inicioCupo < cupoReservado.HoraFin) || 
+                        (inicioCupo<cupoReservado.HoraInicio && 
+                        inicioCupo.AddMinutes(tipoCita.DuracionMinutosCat)>cupoReservado.HoraInicio))
                     {
                         //Si esto encuentra un solo cupo reservado, lo va a saltar AUNQUE HAYAN MAS VETS QUE LO PUEDAN CUBRIR
                         //Considerar si hay un cupo apartado media hora antes si la duracion es de 60 min.
@@ -423,6 +421,8 @@ namespace Clave1_Grupo2.dao
                 
 
             }
+            if (cuposDisponibles.Count == 0) MessageBox.Show("No se ha asignado un turno al veterinario. Contacta a un administrador"); 
+            
             //TOMO LA HORA DE INICIO, LE SUMO LA DURACION Y LA HORA RESULTANDO LA ASIGNO A LA HORA DE FIN
             //HASTA ENCONTRARME CON UNA HORA RESERVADA, HORA DE ALMUERZO U HORA FIN DE UN TURNO
             //PRIMERO DEBE CREARSE LA CITA PARA LUEGO CREAR Y ASIGNAR UN CUPO
@@ -463,6 +463,69 @@ namespace Clave1_Grupo2.dao
             catch (Exception e)
             {
                 MessageBox.Show($"Ocurrió un error al asignar turno:\n{e.Message}\n{e.StackTrace}");
+                return false;
+            }
+            finally
+            {
+                ConexionBD.GetConexionMySQL().Close();
+            }
+        }
+
+        public static bool ActualizarCupo(int idCupo, int idVeterinario, DateTime fechaCupo, DateTime horaInicio, DateTime horaFin)
+        {
+            //recordar que el id debe ser un usuario de tipo 2
+            //y la ventana asignar turnos llena el combo Veterinarios
+            //con usuarios tipo 2. Utilizando MySqlConnection
+            consulta = "UPDATE detalle_reservacion SET id_vet = ?, dia_reservacion = ?, h_ini = ?, h_fin = ? " +
+                "WHERE id_reservacion = ?";
+
+            ComandoSQL = new MySqlCommand(consulta, ConexionBD.GetConexionMySQL());            
+            ComandoSQL.Parameters.Add("@idvet", MySqlDbType.Int32).Value = idVeterinario;
+            //ComandoSQL.Parameters.Add("@idvet", MySqlDbType.Int32).Value = idVeterinario;
+            ComandoSQL.Parameters.Add("@fechacupo", MySqlDbType.Date).Value = fechaCupo.Date;
+            ComandoSQL.Parameters.Add("@horainicio", MySqlDbType.DateTime).Value = horaInicio;
+            ComandoSQL.Parameters.Add("@horafin", MySqlDbType.DateTime).Value = horaFin;
+            ComandoSQL.Parameters.Add("@idcupo", MySqlDbType.Int32).Value = idCupo;
+            try
+            {
+                ConexionBD.GetConexionMySQL().Open();
+                ComandoSQL.ExecuteNonQuery();
+                //IdInsert = (int)ComandoSQL.LastInsertedId; //Devuelve un Long
+                MessageBox.Show($"La cita ha sido reagendada");
+                return true;
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show($"Ocurrió un error al reagendar:\n{e.Message}\n{e.StackTrace}");
+                return false;
+            }
+            finally
+            {
+                ConexionBD.GetConexionMySQL().Close();
+            }
+        }
+        public static bool CancelarReservacionCita(int idCupo)
+        {
+            //recordar que el id debe ser un usuario de tipo 2
+            //y la ventana asignar turnos llena el combo Veterinarios
+            //con usuarios tipo 2. Utilizando MySqlConnection
+            consulta = "UPDATE detalle_reservacion SET reservado = false " +
+                "WHERE id_reservacion = ?";
+
+            ComandoSQL = new MySqlCommand(consulta, ConexionBD.GetConexionMySQL());
+            
+            ComandoSQL.Parameters.Add("@idcupo", MySqlDbType.Int32).Value = idCupo;
+            try
+            {
+                ConexionBD.GetConexionMySQL().Open();
+                ComandoSQL.ExecuteNonQuery();
+                //IdInsert = (int)ComandoSQL.LastInsertedId; //Devuelve un Long
+                MessageBox.Show($"La cita ha sido cancelada");
+                return true;
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show($"Ocurrió un error al reagendar:\n{e.Message}\n{e.StackTrace}");
                 return false;
             }
             finally

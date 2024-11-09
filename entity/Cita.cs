@@ -11,6 +11,7 @@ namespace Clave1_Grupo2.entity
         private int idCita;
         //private int idHorario;
         private int idTipoCita;
+        private double precioCita;
         private int idMascota;
         private int idVet;
         private int idEstadoCita;
@@ -35,6 +36,7 @@ namespace Clave1_Grupo2.entity
         public string Tratamiento { get => tratamiento; set => tratamiento = value; }
         public string Observaciones { get => observaciones; set => observaciones = value; }
         public int IdPropietario { get => idPropietario; set => idPropietario = value; }
+        public double PrecioCita { get => precioCita; set => precioCita = value; }
         internal Cupo Cupo { get => cupo; set => cupo = value; }
 
         public override string ToString()

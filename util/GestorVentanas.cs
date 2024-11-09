@@ -78,7 +78,7 @@ namespace Clave1_Grupo2.util
                 vtnAgendar = null;
                 vtnAgendar = new VtnAgendarCita();
             }
-            vtnAgendar.Show();
+            vtnAgendar.Show(); //Para que no se salga de la ventana mientras esta reagendando o agendando. NO USAR SHOW DIALOG. DISTORSIONA LA SELECCION DE CITAS
             vtnAgendar.Focus();
         }
         public static void AbrirInsumo()
@@ -134,7 +134,8 @@ namespace Clave1_Grupo2.util
                 vtnCitas = null;
                 vtnCitas = new VtnCitas();
             }
-            vtnCitas.Show();
+            vtnCitas.ShowDialog();
+            //El proposito de que sea show dialog es que no permita salir con una cita seleccionada a abrir la ventana agendar citas
             vtnCitas.Focus();
         }
         public static void AtenderCita()

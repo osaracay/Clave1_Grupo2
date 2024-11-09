@@ -525,7 +525,7 @@ namespace Clave1_Grupo2.dao
                 }
 
             }catch(Exception e) {
-                MessageBox.Show($"Ocurrio un error :\n{e.Message}");
+                MessageBox.Show($"Foto de perfil (no disponible) :\n{e.Message}");
                 //Buscar excepciones en conexion con bd
                 //Y al convertir a byte
                 return false;

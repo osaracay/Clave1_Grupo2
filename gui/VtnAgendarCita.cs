@@ -43,15 +43,13 @@ namespace Clave1_Grupo2.gui
             Rellenador.CargarListaAComboBox(cbxPropietario, UsuarioDAO.GetListaUsuarios(3));
             Rellenador.CargarListaAComboBox(cbxVeterinario, UsuarioDAO.GetListaUsuarios(2));
             Rellenador.CargarListaAComboBox(cbxTipoCita, CatDAO.GetTipoCitas());
-            cbxPropietario.Enabled = true;
-            cbxPropietario.SelectedIndex = -1;
-            cbxVeterinario.Enabled = true;
-            cbxVeterinario.SelectedIndex = -1;
+            Rellenador.CargarListaAComboBox(cbxMascota, MascotaDAO.GetListaMascotasOwner((int)cbxPropietario.SelectedValue));
+            SetEdicionCampos();
             if (UsuarioDAO.GetSesion().TipoUsuario == 3)
             {
                 cbxPropietario.Enabled = false;
                 cbxPropietario.SelectedValue = UsuarioDAO.GetSesion().IdUsuario;
-                Rellenador.CargarListaAComboBox(cbxMascota, MascotaDAO.GetListaMascotasOwner((Usuario)cbxPropietario.SelectedItem));
+                Rellenador.CargarListaAComboBox(cbxMascota, MascotaDAO.GetListaMascotasOwner((Usuario)cbxPropietario.SelectedItem));                
                 //GetListaMascotasOwner realiza consulta a la BD cada que se llama
                 //MI IDEA es que se cree una lista para el usuario si es nula y luego solo se llame la ya creada como con las ventanas
                 //Dicha lista se asiganra valor nulo al registrar una nueva mascota para que solo entonces se vuelva a ejecutar la consulta
@@ -60,6 +58,39 @@ namespace Clave1_Grupo2.gui
             {
                 cbxVeterinario.Enabled = false;
                 cbxVeterinario.SelectedValue = UsuarioDAO.GetSesion().IdUsuario;
+            }
+        }
+
+        private void SetEdicionCampos()
+        {
+            if (Rellenador.Cita == null)
+            {
+                cbxPropietario.Enabled = true;
+                //cbxPropietario.SelectedIndex = -1;
+                //cbxMascota.SelectedIndex = -1;
+                cbxVeterinario.Enabled = true;
+                cbxVeterinario.SelectedIndex = -1;
+                cbxTipoCita.Enabled = true;
+                //cbxTipoCita.SelectedIndex = -1;
+                txtMotivo.Enabled = true;
+                txtMotivo.Clear();
+            }
+            else
+            {
+                //REAGENDAR CITA si existe un cupo y una cita seleccionada
+                cbxPropietario.Enabled = false;
+
+                cbxMascota.Enabled = true;
+                cbxVeterinario.Enabled = true;
+
+                cbxTipoCita.Enabled = true;
+                txtMotivo.Enabled = true;
+
+                cbxVeterinario.SelectedValue = Rellenador.Cita.IdVet;
+                cbxTipoCita.SelectedValue = Rellenador.Cita.IdTipoCita;
+                cbxPropietario.SelectedValue = Rellenador.Cita.IdPropietario;
+                cbxMascota.SelectedValue = Rellenador.Cita.IdMascota;
+                txtMotivo.Text = Rellenador.Cita.MotivoCita;
             }
         }
 
@@ -75,6 +106,10 @@ namespace Clave1_Grupo2.gui
                     //MI IDEA es que se cree una lista para el usuario si es nula y luego solo se llame la ya creada como con las ventanas
                     //Dicha lista se asiganra valor nulo al registrar una nueva mascota para que solo entonces se vuelva a ejecutar la consulta
                 }
+                else
+                {
+                    //cbxMascota.Items.Clear();
+                }
             }
             catch (Exception)
             {
@@ -86,6 +121,8 @@ namespace Clave1_Grupo2.gui
 
         private void cbxVeterinario_SelectedIndexChanged(object sender, EventArgs e)
         {
+            PopularCuposDisponibles();
+            /*
             //Cuando el vet cambie se actualizan los horarios o el tipo de cita los rangos           
             try
             {
@@ -106,6 +143,7 @@ namespace Clave1_Grupo2.gui
                 //Rellenador.CargarListaPetAListBox(listaMascotas, MascotaDAO.GetListaMascotasPropietario((int)cbxPropietario.SelectedValue));
                 //Rellenador.CargarDataTableAListBox(listaMascotas, MascotaDAO.GetMascotasPorPropietario((int)cbxPropietario.SelectedValue));
             }
+            */
         }
 
         private void btnAgendar_Click(object sender, EventArgs e)
@@ -145,20 +183,36 @@ namespace Clave1_Grupo2.gui
                     $"Motivo de su visita: \n{txtMotivo.Text}");
                 Cita c = new Cita();
                 c.IdTipoCita = (int)cbxTipoCita.SelectedValue;
-                MessageBox.Show("El id de la mascota es "+ (int)cbxMascota.SelectedValue);
+                //MessageBox.Show("El id de la mascota es "+ (int)cbxMascota.SelectedValue);
                 c.IdMascota = (int)cbxMascota.SelectedValue;
                 c.IdVet = (int)cbxVeterinario.SelectedValue;
                 c.MotivoCita = txtMotivo.Text;
                 
                 seleccionado = (Cupo)lbxCupos.SelectedItem;
-                if(CupoDAO.ApartarCupo((int)cbxVeterinario.SelectedValue, new DateTime(campoFechaAgenda.Value.Year, campoFechaAgenda.Value.Month, campoFechaAgenda.Value.Day), seleccionado.HoraInicio, seleccionado.HoraFin))
+                if(Rellenador.Cita == null)
                 {
-                    int idReservacion = CupoDAO.IdInsert;
-                    //REGISTRAR CITA
-                    CitaDAO.RegistrarCita(c, (CatItem)cbxTipoCita.SelectedItem, idReservacion);
-                    cbxMascota.SelectedIndex = -1;
-                    cbxVeterinario.SelectedIndex = -1;                    
+                    if (CupoDAO.ApartarCupo((int)cbxVeterinario.SelectedValue, campoFechaAgenda.Value.Date, seleccionado.HoraInicio, seleccionado.HoraFin))
+                    {
+                        int idReservacion = CupoDAO.IdInsert;
+                        //REGISTRAR CITA
+                        CitaDAO.RegistrarCita(c, (CatItem)cbxTipoCita.SelectedItem, idReservacion);
+                        cbxMascota.SelectedIndex = -1;
+                        cbxVeterinario.SelectedIndex = -1;
+                    }
                 }
+                else
+                {
+                    CupoDAO.ActualizarCupo(Rellenador.Cita.Cupo.IdReservacion,(int)cbxVeterinario.SelectedValue, campoFechaAgenda.Value.Date, seleccionado.HoraInicio, seleccionado.HoraFin);
+                    
+                    //Actualizar cita tambien
+                    //IMPORTANTE: Si actualizo el tipo de cita tambien debo actualizar el monto
+                    CitaDAO.ActualizarCita(Rellenador.Cita, (CatItem)cbxTipoCita.SelectedItem, (int)cbxMascota.SelectedValue, (int)cbxVeterinario.SelectedValue, txtMotivo.Text);
+                    CitaDAO.ActualizarEstadoCita(Rellenador.Cita, 2); 
+                    //VERIFICAR EL ID DEL ESTADO COMPLETADO O HACER LOS INSERTS DE CATEGORIAS CON EL ID AL IMPORTAR LA BD
+                    //2 REAGENDADA
+                    this.Close();
+                }
+                
 
                 //A Partir de aqui ya toca hacer el insert a detalle_reservacion y a citas
             }
@@ -246,7 +300,8 @@ namespace Clave1_Grupo2.gui
                 foreach (Cupo c in CupoDAO.GetCuposDisponibles(campoFechaAgenda.Value, (CatItem)cbxTipoCita.SelectedItem, (Veterinario)cbxVeterinario.SelectedItem))
                 {
 
-                    if (c.FechaCupo == new DateTime(campoFechaAgenda.Value.Year, campoFechaAgenda.Value.Month, campoFechaAgenda.Value.Day))
+                    //if (c.FechaCupo == new DateTime(campoFechaAgenda.Value.Year, campoFechaAgenda.Value.Month, campoFechaAgenda.Value.Day))
+                    if (c.FechaCupo == campoFechaAgenda.Value.Date)
                     {
                         lbxCupos.Items.Add(c);
                     }
@@ -263,8 +318,9 @@ namespace Clave1_Grupo2.gui
                 foreach (Cupo c in CupoDAO.GetCuposDisponibles(campoFechaAgenda.Value,
                 (CatItem)cbxTipoCita.SelectedItem))
                 {
-
-                    if (c.FechaCupo == new DateTime(campoFechaAgenda.Value.Year, campoFechaAgenda.Value.Month, campoFechaAgenda.Value.Day))
+                    //Recien aprendiendo a ocupar fechas puedo ocupar la propiedad Date para sacar fecha con 0h0m0s
+                    //if (c.FechaCupo == new DateTime(campoFechaAgenda.Value.Year, campoFechaAgenda.Value.Month, campoFechaAgenda.Value.Day))
+                    if (c.FechaCupo == campoFechaAgenda.Value.Date)
                     {
                         lbxCupos.Items.Add(c);
                     }

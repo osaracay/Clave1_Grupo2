@@ -42,6 +42,7 @@ namespace Clave1_Grupo2
         }
         private void btnAgendar_Click(object sender, EventArgs e)
         {
+            Rellenador.Cita = null;
             if (UsuarioDAO.GetSesion() != null)
             {
                 GestorVentanas.AbrirAgendarCita();

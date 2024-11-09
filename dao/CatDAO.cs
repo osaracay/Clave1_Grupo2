@@ -240,6 +240,51 @@ namespace Clave1_Grupo2.dao
                 ConexionBD.GetConexionBD().Close();
             }
         }
+
+        public static List<CatItem> GetEstadosCita()
+        {
+            try
+            {
+                if (listaEstadosCita == null)
+                {
+                    listaEstadosCita = new List<CatItem>();
+                    consulta = "SELECT * FROM cat_estado_cita";
+                    adaptador = new OdbcDataAdapter(consulta, ConexionBD.GetConexionBD());
+                    adaptador.MissingSchemaAction = MissingSchemaAction.AddWithKey;
+                    adaptador.SelectCommand = new OdbcCommand(consulta, ConexionBD.GetConexionBD());
+                    //adaptador.SelectCommand.Parameters.Add("@id_usuario", OdbcType.Int).Value = owner;
+
+                    ConexionBD.GetConexionBD().Open();
+                    lector = adaptador.SelectCommand.ExecuteReader(); //Execute nonquery requiere una conexion valida y activa por eso se abre. Para fill no se requiere se abre y cierra sola
+                    while (lector.Read())
+                    {
+                        CatItem estadoCita = new CatItem(lector.GetInt32(0), lector.GetString(1));
+                        estadoCita.DescCat = lector.GetString(2); //Si esta nulo ver que se puede hacer
+
+                        listaEstadosCita.Add(estadoCita);
+                    }
+                }
+                //MessageBox.Show($"Número de ítems {listaEstadosPago.Count()}");
+                ConexionBD.GetConexionBD().Close();
+                //Colocandolo aqui el cerrar conexion porque al llamarlo desde VtnMascotas en selected index changed
+                //la primera vez que se selecciona un indice desde cuenta administrador dice que
+                //la base de datos no se cierra pero la ejecucion continua
+                //A pesar que hay un bloque Finally pero la excepcion ocurre antes del mensaje anterior
+                //Y aqui lo pongo despues del mensaje 
+
+                return listaEstadosCita;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return listaEstadosCita;
+            }
+            finally
+            {
+                lector.Close();
+                ConexionBD.GetConexionBD().Close();
+            }
+        }
         /*
          * DATATABLES
          */
@@ -363,6 +408,7 @@ namespace Clave1_Grupo2.dao
             }
             return insumo;
         }
+
         public static DataTable GetUsuarios()
         {
             consulta = "SELECT * FROM usuario";
