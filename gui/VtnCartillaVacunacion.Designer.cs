@@ -62,12 +62,10 @@
             this.campoFechaAgenda = new System.Windows.Forms.DateTimePicker();
             this.txtPulso = new System.Windows.Forms.TextBox();
             this.txtPeso = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
             this.listView1 = new System.Windows.Forms.ListView();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.lbxCupos = new System.Windows.Forms.ListBox();
@@ -108,6 +106,7 @@
             this.cbxPropietario.Name = "cbxPropietario";
             this.cbxPropietario.Size = new System.Drawing.Size(265, 28);
             this.cbxPropietario.TabIndex = 21;
+            this.cbxPropietario.SelectedIndexChanged += new System.EventHandler(this.cbxPropietario_SelectedIndexChanged);
             // 
             // txtEmail
             // 
@@ -180,6 +179,7 @@
             this.cbxMascota.Name = "cbxMascota";
             this.cbxMascota.Size = new System.Drawing.Size(188, 28);
             this.cbxMascota.TabIndex = 20;
+            this.cbxMascota.SelectedIndexChanged += new System.EventHandler(this.cbxMascota_SelectedIndexChanged);
             // 
             // txtColorMascota
             // 
@@ -324,12 +324,10 @@
             this.groupBox3.Controls.Add(this.campoFechaAgenda);
             this.groupBox3.Controls.Add(this.txtPulso);
             this.groupBox3.Controls.Add(this.txtPeso);
-            this.groupBox3.Controls.Add(this.comboBox1);
             this.groupBox3.Controls.Add(this.label12);
             this.groupBox3.Controls.Add(this.label11);
             this.groupBox3.Controls.Add(this.label10);
             this.groupBox3.Controls.Add(this.label9);
-            this.groupBox3.Controls.Add(this.label8);
             this.groupBox3.Location = new System.Drawing.Point(537, 114);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(506, 282);
@@ -344,7 +342,7 @@
             this.cbxTipoCita.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbxTipoCita.ForeColor = System.Drawing.SystemColors.InactiveCaption;
             this.cbxTipoCita.FormattingEnabled = true;
-            this.cbxTipoCita.Location = new System.Drawing.Point(145, 185);
+            this.cbxTipoCita.Location = new System.Drawing.Point(149, 154);
             this.cbxTipoCita.Name = "cbxTipoCita";
             this.cbxTipoCita.Size = new System.Drawing.Size(319, 30);
             this.cbxTipoCita.TabIndex = 67;
@@ -352,7 +350,7 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(22, 192);
+            this.label13.Location = new System.Drawing.Point(26, 161);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(93, 20);
             this.label13.TabIndex = 66;
@@ -360,7 +358,7 @@
             // 
             // txtVacuna
             // 
-            this.txtVacuna.Location = new System.Drawing.Point(145, 143);
+            this.txtVacuna.Location = new System.Drawing.Point(149, 112);
             this.txtVacuna.Name = "txtVacuna";
             this.txtVacuna.Size = new System.Drawing.Size(319, 26);
             this.txtVacuna.TabIndex = 8;
@@ -369,7 +367,7 @@
             // 
             this.campoFechaAgenda.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.campoFechaAgenda.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.campoFechaAgenda.Location = new System.Drawing.Point(145, 226);
+            this.campoFechaAgenda.Location = new System.Drawing.Point(149, 195);
             this.campoFechaAgenda.MaxDate = new System.DateTime(2025, 1, 18, 0, 0, 0, 0);
             this.campoFechaAgenda.MinDate = new System.DateTime(2024, 10, 18, 0, 0, 0, 0);
             this.campoFechaAgenda.Name = "campoFechaAgenda";
@@ -379,30 +377,22 @@
             // 
             // txtPulso
             // 
-            this.txtPulso.Location = new System.Drawing.Point(145, 106);
+            this.txtPulso.Location = new System.Drawing.Point(149, 75);
             this.txtPulso.Name = "txtPulso";
             this.txtPulso.Size = new System.Drawing.Size(319, 26);
             this.txtPulso.TabIndex = 7;
             // 
             // txtPeso
             // 
-            this.txtPeso.Location = new System.Drawing.Point(145, 69);
+            this.txtPeso.Location = new System.Drawing.Point(149, 38);
             this.txtPeso.Name = "txtPeso";
             this.txtPeso.Size = new System.Drawing.Size(319, 26);
             this.txtPeso.TabIndex = 6;
             // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(145, 34);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(319, 28);
-            this.comboBox1.TabIndex = 5;
-            // 
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(22, 232);
+            this.label12.Location = new System.Drawing.Point(26, 201);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(97, 20);
             this.label12.TabIndex = 4;
@@ -411,7 +401,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(22, 149);
+            this.label11.Location = new System.Drawing.Point(26, 118);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(64, 20);
             this.label11.TabIndex = 3;
@@ -420,7 +410,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(22, 112);
+            this.label10.Location = new System.Drawing.Point(26, 81);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(48, 20);
             this.label10.TabIndex = 2;
@@ -429,20 +419,11 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(22, 78);
+            this.label9.Location = new System.Drawing.Point(26, 47);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(45, 20);
             this.label9.TabIndex = 1;
             this.label9.Text = "Peso";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(22, 42);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(54, 20);
-            this.label8.TabIndex = 0;
-            this.label8.Text = "Fecha";
             // 
             // listView1
             // 
@@ -490,8 +471,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(1720, 669);
+            this.ClientSize = new System.Drawing.Size(1578, 669);
             this.Controls.Add(this.btnAgendar);
             this.Controls.Add(this.lbxCupos);
             this.Controls.Add(this.btnCancelar);
@@ -549,12 +531,10 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label8;
         private System.Windows.Forms.ListView listView1;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.ComboBox cbxMascota;
         private System.Windows.Forms.TextBox txtPeso;
-        private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.TextBox txtVacuna;
         private System.Windows.Forms.TextBox txtPulso;
         private System.Windows.Forms.ComboBox cbxPropietario;

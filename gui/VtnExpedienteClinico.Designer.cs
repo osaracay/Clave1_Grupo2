@@ -38,34 +38,49 @@
             this.txtRaza = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.label16 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.txtUltimaVisita = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.txtFechaNacimiento = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.txtPulso = new System.Windows.Forms.TextBox();
+            this.txtPeso = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
             this.cbxMascota = new System.Windows.Forms.ComboBox();
             this.txtColorMascota = new System.Windows.Forms.TextBox();
             this.color = new System.Windows.Forms.Label();
             this.txtGenero = new System.Windows.Forms.TextBox();
             this.generoMascota = new System.Windows.Forms.Label();
+            this.txtEnfermedadesPrev = new System.Windows.Forms.TextBox();
             this.txtEdad = new System.Windows.Forms.TextBox();
+            this.enfermedadesPrevias = new System.Windows.Forms.Label();
             this.edad = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label17 = new System.Windows.Forms.Label();
+            this.txtTelefono = new System.Windows.Forms.TextBox();
             this.cbxPropietario = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.cbxFinZootecnico = new System.Windows.Forms.ComboBox();
+            this.cbxEsterilizado = new System.Windows.Forms.ComboBox();
             this.txtCirugiasPrev = new System.Windows.Forms.TextBox();
             this.cirugiasPrevias = new System.Windows.Forms.Label();
             this.txtNumeroPartos = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.txtDietaALim = new System.Windows.Forms.TextBox();
-            this.txtEsteril = new System.Windows.Forms.TextBox();
             this.finZootecnico = new System.Windows.Forms.Label();
             this.estirilizado = new System.Windows.Forms.Label();
-            this.txtFinZootec = new System.Windows.Forms.TextBox();
-            this.txtEnfermedadesPrev = new System.Windows.Forms.TextBox();
             this.dietaAlimenticia = new System.Windows.Forms.Label();
-            this.enfermedadesPrevias = new System.Windows.Forms.Label();
             this.btnGuardar = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
+            this.label11 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -75,7 +90,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(387, 21);
+            this.label1.Location = new System.Drawing.Point(625, 21);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(215, 29);
             this.label1.TabIndex = 0;
@@ -150,12 +165,27 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.textBox2);
+            this.groupBox1.Controls.Add(this.label16);
+            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.label15);
+            this.groupBox1.Controls.Add(this.label14);
+            this.groupBox1.Controls.Add(this.txtUltimaVisita);
+            this.groupBox1.Controls.Add(this.label13);
+            this.groupBox1.Controls.Add(this.txtFechaNacimiento);
+            this.groupBox1.Controls.Add(this.label12);
+            this.groupBox1.Controls.Add(this.txtPulso);
+            this.groupBox1.Controls.Add(this.txtPeso);
+            this.groupBox1.Controls.Add(this.label8);
+            this.groupBox1.Controls.Add(this.label9);
             this.groupBox1.Controls.Add(this.cbxMascota);
             this.groupBox1.Controls.Add(this.txtColorMascota);
             this.groupBox1.Controls.Add(this.color);
             this.groupBox1.Controls.Add(this.txtGenero);
             this.groupBox1.Controls.Add(this.generoMascota);
+            this.groupBox1.Controls.Add(this.txtEnfermedadesPrev);
             this.groupBox1.Controls.Add(this.txtEdad);
+            this.groupBox1.Controls.Add(this.enfermedadesPrevias);
             this.groupBox1.Controls.Add(this.edad);
             this.groupBox1.Controls.Add(this.nomMascota);
             this.groupBox1.Controls.Add(this.txtRaza);
@@ -166,10 +196,115 @@
             this.groupBox1.Controls.Add(this.especie);
             this.groupBox1.Location = new System.Drawing.Point(55, 212);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(438, 379);
+            this.groupBox1.Size = new System.Drawing.Size(854, 451);
             this.groupBox1.TabIndex = 14;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos de la Mascota";
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(639, 164);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(188, 26);
+            this.textBox2.TabIndex = 34;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(450, 166);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(178, 20);
+            this.label16.TabIndex = 33;
+            this.label16.Text = "Frecuencia Respiratoria";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(639, 116);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(188, 26);
+            this.textBox1.TabIndex = 32;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(450, 118);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(164, 20);
+            this.label15.TabIndex = 31;
+            this.label15.Text = "Temperatura Corporal";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(29, 344);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(142, 20);
+            this.label14.TabIndex = 29;
+            this.label14.Text = "Ultimo Diagnostico";
+            // 
+            // txtUltimaVisita
+            // 
+            this.txtUltimaVisita.Location = new System.Drawing.Point(639, 73);
+            this.txtUltimaVisita.Name = "txtUltimaVisita";
+            this.txtUltimaVisita.Size = new System.Drawing.Size(188, 26);
+            this.txtUltimaVisita.TabIndex = 28;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(450, 75);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(146, 20);
+            this.label13.TabIndex = 27;
+            this.label13.Text = "Fecha Ultima Visita";
+            // 
+            // txtFechaNacimiento
+            // 
+            this.txtFechaNacimiento.Location = new System.Drawing.Point(639, 31);
+            this.txtFechaNacimiento.Name = "txtFechaNacimiento";
+            this.txtFechaNacimiento.Size = new System.Drawing.Size(188, 26);
+            this.txtFechaNacimiento.TabIndex = 26;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(450, 33);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(159, 20);
+            this.label12.TabIndex = 25;
+            this.label12.Text = "Fecha de Nacimiento";
+            // 
+            // txtPulso
+            // 
+            this.txtPulso.Location = new System.Drawing.Point(639, 249);
+            this.txtPulso.Name = "txtPulso";
+            this.txtPulso.Size = new System.Drawing.Size(188, 26);
+            this.txtPulso.TabIndex = 24;
+            // 
+            // txtPeso
+            // 
+            this.txtPeso.Location = new System.Drawing.Point(639, 209);
+            this.txtPeso.Name = "txtPeso";
+            this.txtPeso.Size = new System.Drawing.Size(188, 26);
+            this.txtPeso.TabIndex = 23;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(452, 253);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(48, 20);
+            this.label8.TabIndex = 22;
+            this.label8.Text = "Pulso";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(452, 215);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(45, 20);
+            this.label9.TabIndex = 21;
+            this.label9.Text = "Peso";
             // 
             // cbxMascota
             // 
@@ -182,7 +317,7 @@
             // 
             // txtColorMascota
             // 
-            this.txtColorMascota.Location = new System.Drawing.Point(197, 309);
+            this.txtColorMascota.Location = new System.Drawing.Point(197, 298);
             this.txtColorMascota.Name = "txtColorMascota";
             this.txtColorMascota.Size = new System.Drawing.Size(188, 26);
             this.txtColorMascota.TabIndex = 19;
@@ -190,7 +325,7 @@
             // color
             // 
             this.color.AutoSize = true;
-            this.color.Location = new System.Drawing.Point(30, 315);
+            this.color.Location = new System.Drawing.Point(30, 304);
             this.color.Name = "color";
             this.color.Size = new System.Drawing.Size(46, 20);
             this.color.TabIndex = 18;
@@ -198,7 +333,7 @@
             // 
             // txtGenero
             // 
-            this.txtGenero.Location = new System.Drawing.Point(197, 262);
+            this.txtGenero.Location = new System.Drawing.Point(197, 252);
             this.txtGenero.Name = "txtGenero";
             this.txtGenero.Size = new System.Drawing.Size(188, 26);
             this.txtGenero.TabIndex = 17;
@@ -206,23 +341,39 @@
             // generoMascota
             // 
             this.generoMascota.AutoSize = true;
-            this.generoMascota.Location = new System.Drawing.Point(30, 268);
+            this.generoMascota.Location = new System.Drawing.Point(30, 256);
             this.generoMascota.Name = "generoMascota";
             this.generoMascota.Size = new System.Drawing.Size(63, 20);
             this.generoMascota.TabIndex = 16;
             this.generoMascota.Text = "Genero";
             // 
+            // txtEnfermedadesPrev
+            // 
+            this.txtEnfermedadesPrev.Location = new System.Drawing.Point(639, 294);
+            this.txtEnfermedadesPrev.Name = "txtEnfermedadesPrev";
+            this.txtEnfermedadesPrev.Size = new System.Drawing.Size(188, 26);
+            this.txtEnfermedadesPrev.TabIndex = 11;
+            // 
             // txtEdad
             // 
-            this.txtEdad.Location = new System.Drawing.Point(197, 211);
+            this.txtEdad.Location = new System.Drawing.Point(197, 207);
             this.txtEdad.Name = "txtEdad";
             this.txtEdad.Size = new System.Drawing.Size(188, 26);
             this.txtEdad.TabIndex = 15;
             // 
+            // enfermedadesPrevias
+            // 
+            this.enfermedadesPrevias.AutoSize = true;
+            this.enfermedadesPrevias.Location = new System.Drawing.Point(450, 298);
+            this.enfermedadesPrevias.Name = "enfermedadesPrevias";
+            this.enfermedadesPrevias.Size = new System.Drawing.Size(168, 20);
+            this.enfermedadesPrevias.TabIndex = 10;
+            this.enfermedadesPrevias.Text = "Enfermedades previas";
+            // 
             // edad
             // 
             this.edad.AutoSize = true;
-            this.edad.Location = new System.Drawing.Point(30, 217);
+            this.edad.Location = new System.Drawing.Point(30, 211);
             this.edad.Name = "edad";
             this.edad.Size = new System.Drawing.Size(47, 20);
             this.edad.TabIndex = 14;
@@ -230,16 +381,34 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.label17);
+            this.groupBox2.Controls.Add(this.txtTelefono);
             this.groupBox2.Controls.Add(this.cbxPropietario);
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Controls.Add(this.txtEmail);
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Location = new System.Drawing.Point(54, 93);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(908, 97);
+            this.groupBox2.Size = new System.Drawing.Size(1342, 97);
             this.groupBox2.TabIndex = 15;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Datos del cliente";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(953, 48);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(71, 20);
+            this.label17.TabIndex = 23;
+            this.label17.Text = "Telefono";
+            // 
+            // txtTelefono
+            // 
+            this.txtTelefono.Location = new System.Drawing.Point(1080, 44);
+            this.txtTelefono.Name = "txtTelefono";
+            this.txtTelefono.Size = new System.Drawing.Size(221, 26);
+            this.txtTelefono.TabIndex = 22;
             // 
             // cbxPropietario
             // 
@@ -248,6 +417,7 @@
             this.cbxPropietario.Name = "cbxPropietario";
             this.cbxPropietario.Size = new System.Drawing.Size(264, 28);
             this.cbxPropietario.TabIndex = 21;
+            this.cbxPropietario.SelectedIndexChanged += new System.EventHandler(this.cbxPropietario_SelectedIndexChanged);
             // 
             // label4
             // 
@@ -276,28 +446,48 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.cbxFinZootecnico);
+            this.groupBox3.Controls.Add(this.cbxEsterilizado);
             this.groupBox3.Controls.Add(this.txtCirugiasPrev);
             this.groupBox3.Controls.Add(this.cirugiasPrevias);
             this.groupBox3.Controls.Add(this.txtNumeroPartos);
             this.groupBox3.Controls.Add(this.label10);
             this.groupBox3.Controls.Add(this.txtDietaALim);
-            this.groupBox3.Controls.Add(this.txtEsteril);
             this.groupBox3.Controls.Add(this.finZootecnico);
             this.groupBox3.Controls.Add(this.estirilizado);
-            this.groupBox3.Controls.Add(this.txtFinZootec);
-            this.groupBox3.Controls.Add(this.txtEnfermedadesPrev);
             this.groupBox3.Controls.Add(this.dietaAlimenticia);
-            this.groupBox3.Controls.Add(this.enfermedadesPrevias);
-            this.groupBox3.Location = new System.Drawing.Point(524, 212);
+            this.groupBox3.Location = new System.Drawing.Point(958, 212);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(438, 311);
             this.groupBox3.TabIndex = 20;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Ficha Zootecnica";
             // 
+            // cbxFinZootecnico
+            // 
+            this.cbxFinZootecnico.FormattingEnabled = true;
+            this.cbxFinZootecnico.Items.AddRange(new object[] {
+            "Si",
+            "No"});
+            this.cbxFinZootecnico.Location = new System.Drawing.Point(213, 26);
+            this.cbxFinZootecnico.Name = "cbxFinZootecnico";
+            this.cbxFinZootecnico.Size = new System.Drawing.Size(206, 28);
+            this.cbxFinZootecnico.TabIndex = 19;
+            // 
+            // cbxEsterilizado
+            // 
+            this.cbxEsterilizado.FormattingEnabled = true;
+            this.cbxEsterilizado.Items.AddRange(new object[] {
+            "Si",
+            "No"});
+            this.cbxEsterilizado.Location = new System.Drawing.Point(213, 119);
+            this.cbxEsterilizado.Name = "cbxEsterilizado";
+            this.cbxEsterilizado.Size = new System.Drawing.Size(206, 28);
+            this.cbxEsterilizado.TabIndex = 18;
+            // 
             // txtCirugiasPrev
             // 
-            this.txtCirugiasPrev.Location = new System.Drawing.Point(214, 262);
+            this.txtCirugiasPrev.Location = new System.Drawing.Point(214, 218);
             this.txtCirugiasPrev.Name = "txtCirugiasPrev";
             this.txtCirugiasPrev.Size = new System.Drawing.Size(206, 26);
             this.txtCirugiasPrev.TabIndex = 17;
@@ -305,7 +495,7 @@
             // cirugiasPrevias
             // 
             this.cirugiasPrevias.AutoSize = true;
-            this.cirugiasPrevias.Location = new System.Drawing.Point(30, 268);
+            this.cirugiasPrevias.Location = new System.Drawing.Point(30, 224);
             this.cirugiasPrevias.Name = "cirugiasPrevias";
             this.cirugiasPrevias.Size = new System.Drawing.Size(121, 20);
             this.cirugiasPrevias.TabIndex = 16;
@@ -313,7 +503,7 @@
             // 
             // txtNumeroPartos
             // 
-            this.txtNumeroPartos.Location = new System.Drawing.Point(214, 211);
+            this.txtNumeroPartos.Location = new System.Drawing.Point(214, 167);
             this.txtNumeroPartos.Name = "txtNumeroPartos";
             this.txtNumeroPartos.Size = new System.Drawing.Size(206, 26);
             this.txtNumeroPartos.TabIndex = 15;
@@ -321,7 +511,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(30, 217);
+            this.label10.Location = new System.Drawing.Point(30, 173);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(137, 20);
             this.label10.TabIndex = 14;
@@ -329,17 +519,10 @@
             // 
             // txtDietaALim
             // 
-            this.txtDietaALim.Location = new System.Drawing.Point(214, 67);
+            this.txtDietaALim.Location = new System.Drawing.Point(214, 70);
             this.txtDietaALim.Name = "txtDietaALim";
             this.txtDietaALim.Size = new System.Drawing.Size(206, 26);
             this.txtDietaALim.TabIndex = 9;
-            // 
-            // txtEsteril
-            // 
-            this.txtEsteril.Location = new System.Drawing.Point(214, 161);
-            this.txtEsteril.Name = "txtEsteril";
-            this.txtEsteril.Size = new System.Drawing.Size(206, 26);
-            this.txtEsteril.TabIndex = 13;
             // 
             // finZootecnico
             // 
@@ -353,25 +536,11 @@
             // estirilizado
             // 
             this.estirilizado.AutoSize = true;
-            this.estirilizado.Location = new System.Drawing.Point(30, 167);
+            this.estirilizado.Location = new System.Drawing.Point(30, 123);
             this.estirilizado.Name = "estirilizado";
             this.estirilizado.Size = new System.Drawing.Size(91, 20);
             this.estirilizado.TabIndex = 12;
             this.estirilizado.Text = "Esterilizado";
-            // 
-            // txtFinZootec
-            // 
-            this.txtFinZootec.Location = new System.Drawing.Point(214, 25);
-            this.txtFinZootec.Name = "txtFinZootec";
-            this.txtFinZootec.Size = new System.Drawing.Size(206, 26);
-            this.txtFinZootec.TabIndex = 7;
-            // 
-            // txtEnfermedadesPrev
-            // 
-            this.txtEnfermedadesPrev.Location = new System.Drawing.Point(214, 113);
-            this.txtEnfermedadesPrev.Name = "txtEnfermedadesPrev";
-            this.txtEnfermedadesPrev.Size = new System.Drawing.Size(206, 26);
-            this.txtEnfermedadesPrev.TabIndex = 11;
             // 
             // dietaAlimenticia
             // 
@@ -382,18 +551,9 @@
             this.dietaAlimenticia.TabIndex = 8;
             this.dietaAlimenticia.Text = "Dieta Alimenticia";
             // 
-            // enfermedadesPrevias
-            // 
-            this.enfermedadesPrevias.AutoSize = true;
-            this.enfermedadesPrevias.Location = new System.Drawing.Point(30, 119);
-            this.enfermedadesPrevias.Name = "enfermedadesPrevias";
-            this.enfermedadesPrevias.Size = new System.Drawing.Size(168, 20);
-            this.enfermedadesPrevias.TabIndex = 10;
-            this.enfermedadesPrevias.Text = "Enfermedades previas";
-            // 
             // btnGuardar
             // 
-            this.btnGuardar.Location = new System.Drawing.Point(570, 547);
+            this.btnGuardar.Location = new System.Drawing.Point(1020, 565);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(152, 44);
             this.btnGuardar.TabIndex = 21;
@@ -401,18 +561,9 @@
             this.btnGuardar.UseVisualStyleBackColor = true;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(810, 37);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(152, 44);
-            this.button2.TabIndex = 22;
-            this.button2.Text = "Imprimir";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(785, 547);
+            this.btnCancelar.Location = new System.Drawing.Point(1235, 565);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(143, 44);
             this.btnCancelar.TabIndex = 23;
@@ -420,13 +571,24 @@
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(50, 1);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(910, 20);
+            this.label11.TabIndex = 22;
+            this.label11.Text = "peso, pulso, enfermedades previas(diagnostico citas anteriores) esterilizado vali" +
+    "dacion solo disponible para F al igual que partos.";
+            // 
             // ExpedienteClinico
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1008, 651);
+            this.AutoSize = true;
+            this.ClientSize = new System.Drawing.Size(1444, 684);
+            this.Controls.Add(this.label11);
             this.Controls.Add(this.btnCancelar);
-            this.Controls.Add(this.button2);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
@@ -475,17 +637,32 @@
         private System.Windows.Forms.TextBox txtNumeroPartos;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox txtDietaALim;
-        private System.Windows.Forms.TextBox txtEsteril;
         private System.Windows.Forms.Label finZootecnico;
         private System.Windows.Forms.Label estirilizado;
-        private System.Windows.Forms.TextBox txtFinZootec;
         private System.Windows.Forms.TextBox txtEnfermedadesPrev;
         private System.Windows.Forms.Label dietaAlimenticia;
         private System.Windows.Forms.Label enfermedadesPrevias;
         private System.Windows.Forms.Button btnGuardar;
-        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.ComboBox cbxMascota;
         private System.Windows.Forms.ComboBox cbxPropietario;
+        private System.Windows.Forms.TextBox txtPulso;
+        private System.Windows.Forms.TextBox txtPeso;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.TextBox txtFechaNacimiento;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.TextBox txtUltimaVisita;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.TextBox txtTelefono;
+        private System.Windows.Forms.ComboBox cbxEsterilizado;
+        private System.Windows.Forms.ComboBox cbxFinZootecnico;
     }
 }

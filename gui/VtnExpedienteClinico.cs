@@ -19,6 +19,7 @@ namespace Clave1_Grupo2.gui
             InhabilitarCampos();
             CargarDatos();
         }
+
         private void InhabilitarCampos()
         {
             txtEmail.Enabled = false;
@@ -33,7 +34,7 @@ namespace Clave1_Grupo2.gui
         private void CargarDatos()
         {
             Rellenador.CargarListaAComboBox(cbxPropietario, UsuarioDAO.GetListaUsuarios(3));
-            txtEmail.Text = UsuarioDAO.GetSesion().Email;
+            txtEmail.Text = ((Usuario)cbxPropietario.SelectedItem).Email;
 
             if (UsuarioDAO.GetSesion().TipoUsuario == 3)
             {
@@ -52,15 +53,17 @@ namespace Clave1_Grupo2.gui
 
         private void LimpiarCampos()
         {
+            cbxMascota.Text = "Elija una mascota";
+            cbxFinZootecnico.Text = "Elija una opcion";
+            cbxEsterilizado.Text = "Elija una opcion";
+            nomMascota.Clear();
             txtRaza.Clear();
             txtEdad.Clear();
             txtGenero.Clear();
             txtEspecie.Clear();
             txtColorMascota.Clear();
-            txtFinZootec.Clear();
             txtDietaALim.Clear();
             txtEnfermedadesPrev.Clear();
-            txtEsteril.Clear();
             txtNumeroPartos.Clear();
             txtCirugiasPrev.Clear();
         }
@@ -90,10 +93,10 @@ namespace Clave1_Grupo2.gui
                 return; // Si no son válidos, salir del método
             }
 
-            string finZootecnico = txtFinZootec.Text;
+            string finZootecnico = cbxFinZootecnico.Text;
             string dietaAlimentaria = dietaAlimenticia.Text;
             string enfermedadesPrevias = txtEnfermedadesPrev.Text;
-            string esterilizado = txtEsteril.Text;
+            string esterilizado = cbxEsterilizado.Text;
             string numeroPartos = txtNumeroPartos.Text;
             string cirugiasPrevias = txtCirugiasPrev.Text;
 
@@ -129,10 +132,10 @@ namespace Clave1_Grupo2.gui
                 string.IsNullOrWhiteSpace(txtGenero.Text) ||
                 string.IsNullOrWhiteSpace(txtEspecie.Text) ||
                 string.IsNullOrWhiteSpace(txtColorMascota.Text) ||
-                string.IsNullOrWhiteSpace(txtFinZootec.Text) ||
+                string.IsNullOrWhiteSpace(cbxFinZootecnico.Text) ||
                 string.IsNullOrWhiteSpace(dietaAlimenticia.Text) ||
                 string.IsNullOrWhiteSpace(enfermedadesPrevias.Text) ||
-                string.IsNullOrWhiteSpace(txtEsteril.Text) ||
+                string.IsNullOrWhiteSpace(cbxEsterilizado.Text) ||
                 string.IsNullOrWhiteSpace(txtCirugiasPrev.Text))
             {
                 return false; // Un campo requerido está vacío
@@ -146,6 +149,11 @@ namespace Clave1_Grupo2.gui
                 return false;
             }
             return true; // Todos los campos son válidos
+        }
+
+        private void cbxPropietario_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Rellenador.CargarListaAComboBox(cbxMascota, MascotaDAO.GetListaMascotasOwner((Usuario)cbxPropietario.SelectedItem));
         }
     }
 }

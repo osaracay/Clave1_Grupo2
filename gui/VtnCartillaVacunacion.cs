@@ -50,9 +50,7 @@ namespace Clave1_Grupo2.gui
         {
             //Rellenador.CargarListaAComboBox(cbxMascota, CatDAO.GetEspecies());
             Rellenador.CargarListaAComboBox(cbxPropietario, UsuarioDAO.GetListaUsuarios(3));
-            txtEmail.Text = UsuarioDAO.GetSesion().Email;
-            txtNombre.Text = UsuarioDAO.GetSesion().Username;
-            Rellenador.CargarListaAComboBox(cbxMascota, MascotaDAO.GetListaMascotasOwner(UsuarioDAO.GetSesion()));
+            Rellenador.CargarListaAComboBox(cbxMascota, MascotaDAO.GetListaMascotasOwner((Usuario)cbxPropietario.SelectedItem));
 
             if (UsuarioDAO.GetSesion().TipoUsuario == 3)
             {
@@ -63,11 +61,15 @@ namespace Clave1_Grupo2.gui
             else
             {
                 cbxPropietario.Enabled = true;
+                LimpiarCampos();
             }
         }
 
+       
         private void LimpiarCampos()
         {
+            cbxMascota.Text = "Elija una mascota";
+            nomMascota.Clear();
             txtRaza.Clear();
             txtEdad.Clear();
             txtGenero.Clear();
@@ -100,7 +102,7 @@ namespace Clave1_Grupo2.gui
             }
             else
             {
-                //LimpiarCampos();
+                LimpiarCampos();
             }
         }
     
@@ -197,6 +199,14 @@ namespace Clave1_Grupo2.gui
         private void cbxTipoCita_SelectedValueChanged(object sender, EventArgs e)
         {
             //PopularCuposDisponibles();
+        }
+
+        private void cbxPropietario_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Rellenador.CargarListaAComboBox(cbxMascota, MascotaDAO.GetListaMascotasOwner((Usuario)cbxPropietario.SelectedItem));
+            txtEmail.Text = ((Usuario)cbxPropietario.SelectedItem).Email;
+            txtNombre.Text = ((Usuario)cbxPropietario.SelectedItem).Username;
+
         }
     }
 }
