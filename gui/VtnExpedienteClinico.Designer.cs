@@ -38,10 +38,10 @@
             this.txtRaza = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.listView1 = new System.Windows.Forms.ListView();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.lvwUltimoDiagnostico = new System.Windows.Forms.ListView();
+            this.txtFrecuenciaRespiratoria = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtTemperatura = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.txtUltimaVisita = new System.Windows.Forms.TextBox();
@@ -166,10 +166,10 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.listView1);
-            this.groupBox1.Controls.Add(this.textBox2);
+            this.groupBox1.Controls.Add(this.lvwUltimoDiagnostico);
+            this.groupBox1.Controls.Add(this.txtFrecuenciaRespiratoria);
             this.groupBox1.Controls.Add(this.label16);
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.txtTemperatura);
             this.groupBox1.Controls.Add(this.label15);
             this.groupBox1.Controls.Add(this.label14);
             this.groupBox1.Controls.Add(this.txtUltimaVisita);
@@ -203,21 +203,21 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos de la Mascota";
             // 
-            // listView1
+            // lvwUltimoDiagnostico
             // 
-            this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(197, 344);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(609, 93);
-            this.listView1.TabIndex = 35;
-            this.listView1.UseCompatibleStateImageBehavior = false;
+            this.lvwUltimoDiagnostico.HideSelection = false;
+            this.lvwUltimoDiagnostico.Location = new System.Drawing.Point(197, 344);
+            this.lvwUltimoDiagnostico.Name = "lvwUltimoDiagnostico";
+            this.lvwUltimoDiagnostico.Size = new System.Drawing.Size(609, 93);
+            this.lvwUltimoDiagnostico.TabIndex = 35;
+            this.lvwUltimoDiagnostico.UseCompatibleStateImageBehavior = false;
             // 
-            // textBox2
+            // txtFrecuenciaRespiratoria
             // 
-            this.textBox2.Location = new System.Drawing.Point(639, 164);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(188, 26);
-            this.textBox2.TabIndex = 34;
+            this.txtFrecuenciaRespiratoria.Location = new System.Drawing.Point(639, 164);
+            this.txtFrecuenciaRespiratoria.Name = "txtFrecuenciaRespiratoria";
+            this.txtFrecuenciaRespiratoria.Size = new System.Drawing.Size(188, 26);
+            this.txtFrecuenciaRespiratoria.TabIndex = 34;
             // 
             // label16
             // 
@@ -228,12 +228,12 @@
             this.label16.TabIndex = 33;
             this.label16.Text = "Frecuencia Respiratoria";
             // 
-            // textBox1
+            // txtTemperatura
             // 
-            this.textBox1.Location = new System.Drawing.Point(639, 116);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(188, 26);
-            this.textBox1.TabIndex = 32;
+            this.txtTemperatura.Location = new System.Drawing.Point(639, 116);
+            this.txtTemperatura.Name = "txtTemperatura";
+            this.txtTemperatura.Size = new System.Drawing.Size(188, 26);
+            this.txtTemperatura.TabIndex = 32;
             // 
             // label15
             // 
@@ -668,14 +668,14 @@
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.TextBox txtUltimaVisita;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtFrecuenciaRespiratoria;
         private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtTemperatura;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.TextBox txtTelefono;
         private System.Windows.Forms.ComboBox cbxEsterilizado;
         private System.Windows.Forms.ComboBox cbxFinZootecnico;
-        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.ListView lvwUltimoDiagnostico;
     }
 }

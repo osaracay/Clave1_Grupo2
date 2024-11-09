@@ -137,7 +137,14 @@ namespace Clave1_Grupo2.gui
                 string.IsNullOrWhiteSpace(dietaAlimenticia.Text) ||
                 string.IsNullOrWhiteSpace(enfermedadesPrevias.Text) ||
                 string.IsNullOrWhiteSpace(cbxEsterilizado.Text) ||
-                string.IsNullOrWhiteSpace(txtCirugiasPrev.Text))
+                string.IsNullOrWhiteSpace(txtCirugiasPrev.Text) ||
+                string.IsNullOrWhiteSpace(txtFechaNacimiento.Text) ||
+                string.IsNullOrWhiteSpace(txtUltimaVisita.Text) ||
+                string.IsNullOrWhiteSpace(txtPeso.Text) ||
+                string.IsNullOrWhiteSpace(txtPulso.Text))
+
+
+
             {
                 return false; // Un campo requerido está vacío
             }
