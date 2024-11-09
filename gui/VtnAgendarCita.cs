@@ -66,7 +66,8 @@ namespace Clave1_Grupo2.gui
             if (Rellenador.Cita == null)
             {
                 cbxPropietario.Enabled = true;
-                cbxPropietario.SelectedIndex = -1;
+                //cbxPropietario.SelectedIndex = -1;
+                //cbxMascota.SelectedIndex = -1;
                 cbxVeterinario.Enabled = true;
                 cbxVeterinario.SelectedIndex = -1;
                 cbxTipoCita.Enabled = true;
@@ -84,12 +85,12 @@ namespace Clave1_Grupo2.gui
 
                 cbxTipoCita.Enabled = true;
                 txtMotivo.Enabled = true;
+
                 cbxVeterinario.SelectedValue = Rellenador.Cita.IdVet;
                 cbxTipoCita.SelectedValue = Rellenador.Cita.IdTipoCita;
                 cbxPropietario.SelectedValue = Rellenador.Cita.IdPropietario;
                 cbxMascota.SelectedValue = Rellenador.Cita.IdMascota;
                 txtMotivo.Text = Rellenador.Cita.MotivoCita;
-                //PUEDE QUE REQUIERA MOSTRAR UN BOTON PARA ACTUALIZAR DATOS DE LA CITA
             }
         }
 
@@ -104,6 +105,10 @@ namespace Clave1_Grupo2.gui
                     //GetListaMascotasOwner realiza consulta a la BD cada que se llama
                     //MI IDEA es que se cree una lista para el usuario si es nula y luego solo se llame la ya creada como con las ventanas
                     //Dicha lista se asiganra valor nulo al registrar una nueva mascota para que solo entonces se vuelva a ejecutar la consulta
+                }
+                else
+                {
+                    //cbxMascota.Items.Clear();
                 }
             }
             catch (Exception)
@@ -198,8 +203,13 @@ namespace Clave1_Grupo2.gui
                 else
                 {
                     CupoDAO.ActualizarCupo(Rellenador.Cita.Cupo.IdReservacion,(int)cbxVeterinario.SelectedValue, campoFechaAgenda.Value.Date, seleccionado.HoraInicio, seleccionado.HoraFin);
+                    
                     //Actualizar cita tambien
-                    CitaDAO.ActualizarCita(Rellenador.Cita, (int)cbxTipoCita.SelectedValue, (int)cbxMascota.SelectedValue, (int)cbxVeterinario.SelectedValue, txtMotivo.Text);
+                    //IMPORTANTE: Si actualizo el tipo de cita tambien debo actualizar el monto
+                    CitaDAO.ActualizarCita(Rellenador.Cita, (CatItem)cbxTipoCita.SelectedItem, (int)cbxMascota.SelectedValue, (int)cbxVeterinario.SelectedValue, txtMotivo.Text);
+                    CitaDAO.ActualizarEstadoCita(Rellenador.Cita, 2); 
+                    //VERIFICAR EL ID DEL ESTADO COMPLETADO O HACER LOS INSERTS DE CATEGORIAS CON EL ID AL IMPORTAR LA BD
+                    //2 REAGENDADA
                     this.Close();
                 }
                 

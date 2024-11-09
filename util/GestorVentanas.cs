@@ -78,7 +78,7 @@ namespace Clave1_Grupo2.util
                 vtnAgendar = null;
                 vtnAgendar = new VtnAgendarCita();
             }
-            vtnAgendar.Show(); //Para que no se salga de la ventana mientras esta reagendando o agendando
+            vtnAgendar.Show(); //Para que no se salga de la ventana mientras esta reagendando o agendando. NO USAR SHOW DIALOG. DISTORSIONA LA SELECCION DE CITAS
             vtnAgendar.Focus();
         }
         public static void AbrirInsumo()

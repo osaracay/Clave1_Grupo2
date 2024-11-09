@@ -197,6 +197,7 @@ namespace Clave1_Grupo2.gui
 
         private void btnAgendar_Click(object sender, EventArgs e)
         {
+            Rellenador.Cita = null;
             GestorVentanas.AbrirAgendarCita();
         }
 

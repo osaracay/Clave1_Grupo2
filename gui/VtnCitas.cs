@@ -178,22 +178,6 @@ namespace Clave1_Grupo2.gui
             */
         }
 
-        private void btnReagendar_Click(object sender, EventArgs e)
-        {
-            if (lbxCitas.SelectedIndex > -1)
-            {
-                //lbxCitas.Enabled = false;
-                Rellenador.Cita = (Cita)lbxCitas.SelectedItem;
-                lbxCitas.Enabled = false; // De esta manera yo evito que se actualice Rellenar.Cita y me distorsione las reagendas y modificaciones
-                //Reagendar requiere: popular los cupos disponibles por fecha y veterinario
-                //Creo que deberia abrir la ventana agendar citas y si hay un idCupo en Rellenador Cita
-                GestorVentanas.AbrirAgendarCita();
-                PopularCitas();
-                //Que inhabilite los campos y solo permita seleccionar otro cupo
-                //Al momento de agendar lo unico que hara es actualizar el cupo ya existente
-            }
-        }
-
         private void lbxCitas_KeyUp(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Escape)
@@ -267,13 +251,44 @@ namespace Clave1_Grupo2.gui
 
         private void VtnCitas_Enter(object sender, EventArgs e)
         {
-            PopularCitas();
+            //PopularCitas();
         }
+
+        private void btnReagendar_Click(object sender, EventArgs e)
+        {
+            if (lbxCitas.SelectedIndex > -1)
+            {
+                //lbxCitas.Enabled = false;
+                Rellenador.Cita = (Cita)lbxCitas.SelectedItem;
+                //lbxCitas.Enabled = false; // De esta manera yo evito que se actualice Rellenar.Cita y me distorsione las reagendas y modificaciones
+                //Reagendar requiere: popular los cupos disponibles por fecha y veterinario
+                //Creo que deberia abrir la ventana agendar citas y si hay un idCupo en Rellenador Cita
+                GestorVentanas.AbrirAgendarCita();
+                btnCancelarCita.Hide();
+                //PopularCitas();
+                //Que inhabilite los campos y solo permita seleccionar otro cupo
+                //Al momento de agendar lo unico que hara es actualizar el cupo ya existente
+            }
+        }
+
 
         private void btnCancelarCita_Click(object sender, EventArgs e)
         {
-            CupoDAO.CancelarReservacionCita(Rellenador.Cita.Cupo.IdReservacion); //(Cita)lbxCitas.SelectedItem.IdCupo
-            PopularCitas();
+            DialogResult resultado = MessageBox.Show(
+                $"¿Esta segur@ de cancelar la cita {Rellenador.Cita.Cupo}?\nEsta acción no se puede deshacer.",
+                "Cancelar cita",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Warning);
+
+            if (resultado == DialogResult.Yes)
+            {
+                CupoDAO.CancelarReservacionCita(Rellenador.Cita.Cupo.IdReservacion); //(Cita)lbxCitas.SelectedItem.IdCupo
+                CitaDAO.ActualizarEstadoCita(Rellenador.Cita, 3);
+                //VERIFICAR EL ID DEL ESTADO COMPLETADO O HACER LOS INSERTS DE CATEGORIAS CON EL ID AL IMPORTAR LA BD
+                // 3 CANCELADA
+                PopularCitas();
+            }
+            
         }
     }
 }

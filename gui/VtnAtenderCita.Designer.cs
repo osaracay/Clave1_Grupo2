@@ -38,13 +38,17 @@ namespace Clave1_Grupo2.gui
             this.txtMotivo = new System.Windows.Forms.RichTextBox();
             this.cbxMascota = new System.Windows.Forms.ComboBox();
             this.lblMascota = new System.Windows.Forms.Label();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.txtSintomas = new System.Windows.Forms.RichTextBox();
             this.cbxTipoCita = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.richTextBox2 = new System.Windows.Forms.RichTextBox();
-            this.richTextBox3 = new System.Windows.Forms.RichTextBox();
-            this.richTextBox4 = new System.Windows.Forms.RichTextBox();
+            this.txtDiagnostico = new System.Windows.Forms.RichTextBox();
+            this.txtObservaciones = new System.Windows.Forms.RichTextBox();
+            this.txtTratamiento = new System.Windows.Forms.RichTextBox();
             this.label7 = new System.Windows.Forms.Label();
+            this.btnGuardar = new System.Windows.Forms.Button();
+            this.cbxEstadoCita = new System.Windows.Forms.ComboBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.btnCompletarCita = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -52,10 +56,9 @@ namespace Clave1_Grupo2.gui
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F);
-            this.label1.Location = new System.Drawing.Point(532, 79);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(401, 99);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(79, 20);
+            this.label1.Size = new System.Drawing.Size(66, 17);
             this.label1.TabIndex = 0;
             this.label1.Text = "Síntomas";
             // 
@@ -64,10 +67,9 @@ namespace Clave1_Grupo2.gui
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F);
-            this.label2.Location = new System.Drawing.Point(20, 299);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(17, 278);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(98, 20);
+            this.label2.Size = new System.Drawing.Size(82, 17);
             this.label2.TabIndex = 1;
             this.label2.Text = "Diagnóstico";
             // 
@@ -76,10 +78,9 @@ namespace Clave1_Grupo2.gui
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F);
-            this.label3.Location = new System.Drawing.Point(20, 526);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(17, 462);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(121, 20);
+            this.label3.Size = new System.Drawing.Size(103, 17);
             this.label3.TabIndex = 2;
             this.label3.Text = "Observaciones";
             // 
@@ -88,10 +89,9 @@ namespace Clave1_Grupo2.gui
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F);
-            this.label4.Location = new System.Drawing.Point(532, 42);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Location = new System.Drawing.Point(401, 69);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(116, 20);
+            this.label4.Size = new System.Drawing.Size(97, 17);
             this.label4.TabIndex = 3;
             this.label4.Text = "Peso Mascota";
             // 
@@ -100,21 +100,20 @@ namespace Clave1_Grupo2.gui
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F);
-            this.label5.Location = new System.Drawing.Point(29, 107);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Location = new System.Drawing.Point(24, 122);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(90, 20);
+            this.label5.Size = new System.Drawing.Size(75, 17);
             this.label5.TabIndex = 4;
             this.label5.Text = "Motivo cita";
             // 
             // txtMotivo
             // 
             this.txtMotivo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMotivo.Location = new System.Drawing.Point(24, 130);
-            this.txtMotivo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtMotivo.Location = new System.Drawing.Point(20, 141);
+            this.txtMotivo.Margin = new System.Windows.Forms.Padding(2);
             this.txtMotivo.MaxLength = 250;
             this.txtMotivo.Name = "txtMotivo";
-            this.txtMotivo.Size = new System.Drawing.Size(492, 165);
+            this.txtMotivo.Size = new System.Drawing.Size(370, 135);
             this.txtMotivo.TabIndex = 100;
             this.txtMotivo.Text = "";
             // 
@@ -125,10 +124,10 @@ namespace Clave1_Grupo2.gui
             this.cbxMascota.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbxMascota.ForeColor = System.Drawing.SystemColors.InactiveCaption;
             this.cbxMascota.FormattingEnabled = true;
-            this.cbxMascota.Location = new System.Drawing.Point(208, 34);
-            this.cbxMascota.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cbxMascota.Location = new System.Drawing.Point(158, 63);
+            this.cbxMascota.Margin = new System.Windows.Forms.Padding(2);
             this.cbxMascota.Name = "cbxMascota";
-            this.cbxMascota.Size = new System.Drawing.Size(308, 26);
+            this.cbxMascota.Size = new System.Drawing.Size(232, 23);
             this.cbxMascota.TabIndex = 105;
             // 
             // lblMascota
@@ -137,22 +136,23 @@ namespace Clave1_Grupo2.gui
             this.lblMascota.BackColor = System.Drawing.Color.Transparent;
             this.lblMascota.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMascota.ForeColor = System.Drawing.Color.Black;
-            this.lblMascota.Location = new System.Drawing.Point(29, 42);
+            this.lblMascota.Location = new System.Drawing.Point(24, 69);
+            this.lblMascota.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblMascota.Name = "lblMascota";
-            this.lblMascota.Size = new System.Drawing.Size(73, 20);
+            this.lblMascota.Size = new System.Drawing.Size(61, 17);
             this.lblMascota.TabIndex = 106;
             this.lblMascota.Text = "Mascota";
             // 
-            // richTextBox1
+            // txtSintomas
             // 
-            this.richTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.richTextBox1.Location = new System.Drawing.Point(536, 100);
-            this.richTextBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.richTextBox1.MaxLength = 350;
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(492, 196);
-            this.richTextBox1.TabIndex = 107;
-            this.richTextBox1.Text = "";
+            this.txtSintomas.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSintomas.Location = new System.Drawing.Point(404, 116);
+            this.txtSintomas.Margin = new System.Windows.Forms.Padding(2);
+            this.txtSintomas.MaxLength = 350;
+            this.txtSintomas.Name = "txtSintomas";
+            this.txtSintomas.Size = new System.Drawing.Size(370, 160);
+            this.txtSintomas.TabIndex = 107;
+            this.txtSintomas.Text = "";
             // 
             // cbxTipoCita
             // 
@@ -161,10 +161,10 @@ namespace Clave1_Grupo2.gui
             this.cbxTipoCita.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbxTipoCita.ForeColor = System.Drawing.SystemColors.InactiveCaption;
             this.cbxTipoCita.FormattingEnabled = true;
-            this.cbxTipoCita.Location = new System.Drawing.Point(208, 74);
-            this.cbxTipoCita.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cbxTipoCita.Location = new System.Drawing.Point(158, 95);
+            this.cbxTipoCita.Margin = new System.Windows.Forms.Padding(2);
             this.cbxTipoCita.Name = "cbxTipoCita";
-            this.cbxTipoCita.Size = new System.Drawing.Size(308, 26);
+            this.cbxTipoCita.Size = new System.Drawing.Size(232, 23);
             this.cbxTipoCita.TabIndex = 108;
             // 
             // label6
@@ -173,71 +173,125 @@ namespace Clave1_Grupo2.gui
             this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.Black;
-            this.label6.Location = new System.Drawing.Point(29, 81);
+            this.label6.Location = new System.Drawing.Point(24, 101);
+            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(96, 20);
+            this.label6.Size = new System.Drawing.Size(82, 17);
             this.label6.TabIndex = 109;
             this.label6.Text = "Tipo de cita";
             // 
-            // richTextBox2
+            // txtDiagnostico
             // 
-            this.richTextBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.richTextBox2.Location = new System.Drawing.Point(24, 322);
-            this.richTextBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.richTextBox2.MaxLength = 350;
-            this.richTextBox2.Name = "richTextBox2";
-            this.richTextBox2.Size = new System.Drawing.Size(492, 197);
-            this.richTextBox2.TabIndex = 110;
-            this.richTextBox2.Text = "";
+            this.txtDiagnostico.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDiagnostico.Location = new System.Drawing.Point(20, 297);
+            this.txtDiagnostico.Margin = new System.Windows.Forms.Padding(2);
+            this.txtDiagnostico.MaxLength = 350;
+            this.txtDiagnostico.Name = "txtDiagnostico";
+            this.txtDiagnostico.Size = new System.Drawing.Size(370, 161);
+            this.txtDiagnostico.TabIndex = 110;
+            this.txtDiagnostico.Text = "";
             // 
-            // richTextBox3
+            // txtObservaciones
             // 
-            this.richTextBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.richTextBox3.Location = new System.Drawing.Point(24, 549);
-            this.richTextBox3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.richTextBox3.MaxLength = 350;
-            this.richTextBox3.Name = "richTextBox3";
-            this.richTextBox3.Size = new System.Drawing.Size(1004, 91);
-            this.richTextBox3.TabIndex = 111;
-            this.richTextBox3.Text = "";
+            this.txtObservaciones.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtObservaciones.Location = new System.Drawing.Point(20, 481);
+            this.txtObservaciones.Margin = new System.Windows.Forms.Padding(2);
+            this.txtObservaciones.MaxLength = 350;
+            this.txtObservaciones.Name = "txtObservaciones";
+            this.txtObservaciones.Size = new System.Drawing.Size(754, 75);
+            this.txtObservaciones.TabIndex = 111;
+            this.txtObservaciones.Text = "";
             // 
-            // richTextBox4
+            // txtTratamiento
             // 
-            this.richTextBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.richTextBox4.Location = new System.Drawing.Point(536, 322);
-            this.richTextBox4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.richTextBox4.MaxLength = 350;
-            this.richTextBox4.Name = "richTextBox4";
-            this.richTextBox4.Size = new System.Drawing.Size(492, 197);
-            this.richTextBox4.TabIndex = 113;
-            this.richTextBox4.Text = "";
+            this.txtTratamiento.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTratamiento.Location = new System.Drawing.Point(404, 297);
+            this.txtTratamiento.Margin = new System.Windows.Forms.Padding(2);
+            this.txtTratamiento.MaxLength = 350;
+            this.txtTratamiento.Name = "txtTratamiento";
+            this.txtTratamiento.Size = new System.Drawing.Size(370, 161);
+            this.txtTratamiento.TabIndex = 113;
+            this.txtTratamiento.Text = "";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.BackColor = System.Drawing.Color.Transparent;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F);
-            this.label7.Location = new System.Drawing.Point(532, 299);
-            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label7.Location = new System.Drawing.Point(401, 278);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(98, 20);
+            this.label7.Size = new System.Drawing.Size(84, 17);
             this.label7.TabIndex = 112;
             this.label7.Text = "Tratamiento";
             // 
+            // btnGuardar
+            // 
+            this.btnGuardar.BackColor = System.Drawing.Color.Turquoise;
+            this.btnGuardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGuardar.Location = new System.Drawing.Point(283, 561);
+            this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.Size = new System.Drawing.Size(215, 43);
+            this.btnGuardar.TabIndex = 114;
+            this.btnGuardar.Text = "GUARDAR\r\nCAMBIOS";
+            this.btnGuardar.UseVisualStyleBackColor = false;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
+            // 
+            // cbxEstadoCita
+            // 
+            this.cbxEstadoCita.BackColor = System.Drawing.SystemColors.ControlText;
+            this.cbxEstadoCita.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxEstadoCita.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbxEstadoCita.ForeColor = System.Drawing.SystemColors.InactiveCaption;
+            this.cbxEstadoCita.FormattingEnabled = true;
+            this.cbxEstadoCita.Location = new System.Drawing.Point(158, 36);
+            this.cbxEstadoCita.Margin = new System.Windows.Forms.Padding(2);
+            this.cbxEstadoCita.Name = "cbxEstadoCita";
+            this.cbxEstadoCita.Size = new System.Drawing.Size(232, 23);
+            this.cbxEstadoCita.TabIndex = 115;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.BackColor = System.Drawing.Color.Transparent;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.Black;
+            this.label8.Location = new System.Drawing.Point(24, 38);
+            this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(52, 17);
+            this.label8.TabIndex = 116;
+            this.label8.Text = "Estado";
+            // 
+            // btnCompletarCita
+            // 
+            this.btnCompletarCita.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.btnCompletarCita.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCompletarCita.Location = new System.Drawing.Point(20, 561);
+            this.btnCompletarCita.Name = "btnCompletarCita";
+            this.btnCompletarCita.Size = new System.Drawing.Size(215, 43);
+            this.btnCompletarCita.TabIndex = 117;
+            this.btnCompletarCita.Text = "COMPLETAR\r\nCITA";
+            this.btnCompletarCita.UseVisualStyleBackColor = false;
+            this.btnCompletarCita.Click += new System.EventHandler(this.btnCompletarCita_Click);
+            // 
             // VtnAtenderCita
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1052, 702);
-            this.Controls.Add(this.richTextBox4);
+            this.ClientSize = new System.Drawing.Size(789, 609);
+            this.Controls.Add(this.btnCompletarCita);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.cbxEstadoCita);
+            this.Controls.Add(this.btnGuardar);
+            this.Controls.Add(this.txtTratamiento);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.richTextBox3);
-            this.Controls.Add(this.richTextBox2);
+            this.Controls.Add(this.txtObservaciones);
+            this.Controls.Add(this.txtDiagnostico);
             this.Controls.Add(this.cbxTipoCita);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.richTextBox1);
+            this.Controls.Add(this.txtSintomas);
             this.Controls.Add(this.cbxMascota);
             this.Controls.Add(this.lblMascota);
             this.Controls.Add(this.txtMotivo);
@@ -249,7 +303,6 @@ namespace Clave1_Grupo2.gui
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "VtnAtenderCita";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Atender cita";
@@ -269,12 +322,16 @@ namespace Clave1_Grupo2.gui
         private System.Windows.Forms.RichTextBox txtMotivo;
         private System.Windows.Forms.ComboBox cbxMascota;
         private System.Windows.Forms.Label lblMascota;
-        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.RichTextBox txtSintomas;
         private System.Windows.Forms.ComboBox cbxTipoCita;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.RichTextBox richTextBox2;
-        private System.Windows.Forms.RichTextBox richTextBox3;
-        private System.Windows.Forms.RichTextBox richTextBox4;
+        private System.Windows.Forms.RichTextBox txtDiagnostico;
+        private System.Windows.Forms.RichTextBox txtObservaciones;
+        private System.Windows.Forms.RichTextBox txtTratamiento;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Button btnGuardar;
+        private System.Windows.Forms.ComboBox cbxEstadoCita;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Button btnCompletarCita;
     }
 }
