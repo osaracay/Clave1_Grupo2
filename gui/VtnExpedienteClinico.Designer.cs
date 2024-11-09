@@ -38,6 +38,7 @@
             this.txtRaza = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.listView1 = new System.Windows.Forms.ListView();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -81,7 +82,6 @@
             this.btnGuardar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.label11 = new System.Windows.Forms.Label();
-            this.listView1 = new System.Windows.Forms.ListView();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -202,6 +202,15 @@
             this.groupBox1.TabIndex = 14;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos de la Mascota";
+            // 
+            // listView1
+            // 
+            this.listView1.HideSelection = false;
+            this.listView1.Location = new System.Drawing.Point(197, 344);
+            this.listView1.Name = "listView1";
+            this.listView1.Size = new System.Drawing.Size(609, 93);
+            this.listView1.TabIndex = 35;
+            this.listView1.UseCompatibleStateImageBehavior = false;
             // 
             // textBox2
             // 
@@ -509,6 +518,7 @@
             this.txtNumeroPartos.Name = "txtNumeroPartos";
             this.txtNumeroPartos.Size = new System.Drawing.Size(206, 26);
             this.txtNumeroPartos.TabIndex = 15;
+            this.txtNumeroPartos.TextChanged += new System.EventHandler(this.cbxMascota_SelectedIndexChanged);
             // 
             // label10
             // 
@@ -582,15 +592,6 @@
             this.label11.TabIndex = 22;
             this.label11.Text = "peso, pulso, enfermedades previas(diagnostico citas anteriores) esterilizado vali" +
     "dacion solo disponible para F al igual que partos.";
-            // 
-            // listView1
-            // 
-            this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(197, 344);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(609, 93);
-            this.listView1.TabIndex = 35;
-            this.listView1.UseCompatibleStateImageBehavior = false;
             // 
             // ExpedienteClinico
             // 
