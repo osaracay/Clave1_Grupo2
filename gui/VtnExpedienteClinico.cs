@@ -111,7 +111,7 @@ namespace Clave1_Grupo2.gui
             try
             {
                 // Actualizar datos de la mascota
-                MascotaDAO.ActualizarDatosMascota(mascotaSeleccionada, nomMascota.Text, (int)cbxPropietario.SelectedValue, txtRaza.Text, int.Parse(txtEdad.Text), char.Parse(txtGenero.Text.ToUpper()), txtColorMascota.Text);
+                // LOS DATOS DE LA MASCOTA SE ACTUALIZAN DESDE LA OPCION EDITAR MASCOTA. EL EXPEDIENTE CLINICO ES EXPEDIENTE CLINICO
 
                 // Refrescar la lista de mascotas
                 Rellenador.CargarListaAComboBox(cbxMascota, MascotaDAO.GetListaMascotasOwner((int)cbxPropietario.SelectedValue));
@@ -172,14 +172,15 @@ namespace Clave1_Grupo2.gui
         private void VerificarGenero()
         {
             // Verifica si el género es masculino ("M") y deshabilita el campo "Número de Partos"
-            if (txtGenero.Text.ToUpper() == "M")
+            if (txtGenero.Text.ToUpper() == "F")
             {
-                txtNumeroPartos.Enabled = false;
-                txtNumeroPartos.Text = ""; // Borra cualquier valor que pueda haber
+                txtNumeroPartos.Enabled = true;
+                
             }
             else
             {
                 txtNumeroPartos.Enabled = true;
+                txtNumeroPartos.Text = ""; // Borra cualquier valor que pueda haber
             }
         }
     }

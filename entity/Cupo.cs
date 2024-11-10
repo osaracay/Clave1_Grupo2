@@ -6,15 +6,16 @@ using System.Threading.Tasks;
 
 namespace Clave1_Grupo2.entity
 {
+    /// <summary>
+    /// Representa una instancia de cupo libre preparada para ser insertada en
+    ///la base de datos como cupo reservado. Antes de crear una instancia
+    ///cupo durante la ejecución del programa(runtime), se desea saber
+    /// que cupos ya han sido reservados por veterinario y tipo de cita.
+    /// Se generaran listas dinamicas de objetos cupo
+    /// </summary>
     class Cupo
     {
-        /// <summary>
-        /// Representa una instancia de cupo libre preparada para ser insertada en
-        ///la base de datos como cupo reservado. Antes de crear una instancia
-        ///cupo durante la ejecución del programa(runtime), se desea saber
-        /// que cupos ya han sido reservados por veterinario y tipo de cita.
-        /// Se generaran listas dinamicas de objetos cupo
-        /// </summary>
+
 
         /* Pseudocodigo o Caso de Uso
         * 1 : Consultar cantidad de cupos tomados en la fecha y hora inicial 
@@ -56,7 +57,7 @@ namespace Clave1_Grupo2.entity
         {
         }
         /// <summary>
-        /// 
+        /// Constructor de cupos con base en fecha, hora de inicio y duracion en minutos
         /// </summary>
         /// <param name="fechaCupo">Es la fecha en la que se aparta el cupo en formato DD/MM/AAAA 00:00:00</param>
         /// <param name="horaInicio">La fecha de inicio a partir de la que se calcula la hora de finalizacion</param>
@@ -69,15 +70,16 @@ namespace Clave1_Grupo2.entity
             this.duracionMinutos = duracionMinutos;
             this.HoraFin = horaInicio.AddMinutes(duracionMinutos);
         }
-
+        /* Ya resolvi limitar la fecha en el control DateTimePicker
         private static void InstanciarCamposEstaticos()
         {
-            /*Tener cuidado que esto se instanciara cada que se cree 
-             * un nuevo objeto cupo. */
-            fechaMaxAgendable = DateTime.Today.AddDays(15);
+            Tener cuidado que esto se instanciara cada que se cree 
+             * un nuevo objeto cupo. 
+        fechaMaxAgendable = DateTime.Today.AddDays(15);
             fechaMinAgendable = DateTime.Now.AddHours(2);
-            /*Ya resolvi limitar la fecha en el control DateTimePicker*/
+            
         }
+        */
 
         public override string ToString()
         {

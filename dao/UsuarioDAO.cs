@@ -22,8 +22,10 @@ namespace Clave1_Grupo2.dao
         private static OdbcDataReader lector;
 
         private static DataTable clientes;
+        /*
         private static DataTable vets;
         private static DataTable admins;
+        */
         private static List<Usuario> listaUsuarios;
         private static List<Usuario> listaClientes;
         private static List<Usuario> listaVets;
@@ -31,7 +33,7 @@ namespace Clave1_Grupo2.dao
 
         private static Usuario sesion; //Para gestionar la sesion.
 
-        //PARA CREAR Y ACCEDER AL Colaborador Sesion
+        //PARA CREAR Y ACCEDER AL Usuario Sesion
         /*
          * Al parecer no utilizare este de momento*/
         public static void SetSesion(Usuario c)
@@ -399,7 +401,7 @@ namespace Clave1_Grupo2.dao
                 ConexionBD.GetConexionBD().Close();
             }
         }
-
+        /*
         public static DataTable GetTblVets()
         {
             consulta = "SELECT * FROM usuario WHERE cat_tipo_usuario=2"; // El tipo de usuario vets corresponde al tipo 2
@@ -430,7 +432,7 @@ namespace Clave1_Grupo2.dao
             }
             return vets;
         }
-
+        SIN USAR
         public static DataTable GetTblAdmins()
         {
             consulta = "SELECT * FROM usuario WHERE cat_tipo_usuario=1"; // El tipo de usuario vets corresponde al tipo 2
@@ -461,6 +463,7 @@ namespace Clave1_Grupo2.dao
             }
             return admins;
         }
+        */
         /// <summary>
         /// Recibe un arreglo de bytes correspondiente a una imagen y lo perpetua en una cuenta de usuario.
         /// </summary>

@@ -26,7 +26,13 @@ namespace Clave1_Grupo2.dao
 
         //Aqui ocupare una instancia de mysqlconnection porque ocupo el metodo last inserted id
         //que el driver odbc no tiene
-
+        /// <summary>
+        /// Registrar cita, toma en cuenta su tipo y el id de la reservación. Se llama luego de reservar un cupo y obtener el id de la clase de acceso a datos de cupos
+        /// </summary>
+        /// <param name="c">Cita por registrar</param>
+        /// <param name="tipoCita">Tipo de cita para obtener el precio</param>
+        /// <param name="idReservacion">Id del cupo reservado previo a registrar la cita</param>
+        /// <returns></returns>
         public static bool RegistrarCita(Cita c, CatItem tipoCita, int idReservacion)
         {
             string sentenciaSQL = "INSERT INTO cita (id_tipo_cita, " +
@@ -68,8 +74,12 @@ namespace Clave1_Grupo2.dao
             }
         }
 
-        //Consultar Cita cliente si la mascota no esta seleccionada. Tomar en cuenta el estado.
-        //Consultar citas veterinario. Tomar en cuenta el estado.        
+        /// <summary>
+        /// Obtiene listado de citas reservadas por usuario y fecha. La consulta se adecúa al tipo de Usuario
+        /// </summary>
+        /// <param name="user"></param>
+        /// <param name="fecha"></param>
+        /// <returns>Lista de citas reservadas por usuario y fecha</returns>
         public static List<Cita> GetCitas(Usuario user, DateTime fecha)
         {
             if (user.TipoUsuario == 3)
@@ -184,7 +194,7 @@ namespace Clave1_Grupo2.dao
             }
         }
 
-        //Consultar cita por mascota. Tomar en cuenta el estado.
+        //SIN USAR: Consultar cita por mascota. Tomar en cuenta el estado.
         public static List<Cita> GetCitas(DateTime fecha, Mascota mascota)
         {
             consulta = "SELECT c.id_cita, c.id_tipo_cita, c.id_mascota, c.id_veterinario, " +
@@ -306,7 +316,7 @@ namespace Clave1_Grupo2.dao
             }
         }
 
-        //Consultar citas por fecha. Tomar en cuenta el estado.
+        //SIN USAR: Consultar citas por fecha. Tomar en cuenta el estado.
         public static List<Cita> GetCitas(DateTime fecha)
         {
             consulta = "SELECT c.id_cita, c.id_tipo_cita, c.id_mascota, c.id_veterinario, " +
@@ -427,7 +437,15 @@ namespace Clave1_Grupo2.dao
                 ConexionBD.GetConexionBD().Close();
             }
         }
-        //Reagendar cita.
+        /// <summary>
+        /// Reagendar y modificar cita.
+        /// </summary>
+        /// <param name="c">Cita por modificar</param>
+        /// <param name="idTipoCita">Tipo de cita seleccionada de combobox con CatItems</param>
+        /// <param name="idMascota">Id mascota. ComboBox Mascota Selected Value</param>
+        /// <param name="idVet">Id Vet. ComboBox Vet Selected Value</param>
+        /// <param name="motivoCita">Motivo de la visita obtenido de TextBox</param>
+        /// <returns></returns>
         public static bool ActualizarCita(Cita c,CatItem idTipoCita,int idMascota,int idVet, string motivoCita)
         {
             consulta = "UPDATE cita SET id_tipo_cita=?, monto_pago = ?, id_mascota=?, id_veterinario=?, motivo_cita=? " +
@@ -502,7 +520,10 @@ namespace Clave1_Grupo2.dao
         }
 
 
-        //CARGAR DETALLES AL ATENDER CITA
+        /// <summary>
+        /// CARGAR DETALLES AL ATENDER CITA
+        /// </summary>
+        /// <param name="cita"></param>
         public static void CargarDetallesAtencionCita(Cita cita)
         {
             consulta = "SELECT motivo_cita, sintomas_mascota,diagnostico,tratamiento,observaciones " +
@@ -561,7 +582,13 @@ namespace Clave1_Grupo2.dao
             }
         }
 
-        //Actualizar estado de cita.
+        /// <summary>
+        /// Actualizar estado de cita. 
+        /// Id Estado Cita : confirmar 1: agendada. 2: Reagendada. 3: Cancelada. 4: Completada
+        /// </summary>
+        /// <param name="c"></param>
+        /// <param name="idEstadoCita">Id Estado Cita : confirmar 1: agendada. 2: Reagendada. 3: Cancelada. 4: Completada</param>
+        /// <returns></returns>
         public static bool ActualizarEstadoCita(Cita c, int idEstadoCita)
         {
             consulta = "UPDATE cita SET id_estado_cita=? " +

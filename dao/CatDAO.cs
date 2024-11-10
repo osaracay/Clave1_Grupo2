@@ -11,23 +11,29 @@ using System.Windows.Forms;
 
 namespace Clave1_Grupo2.dao
 {
+    /// <summary>
+    /// Clase de acceso a dato a listas predefinidas en tablas de catálogo
+    /// </summary>
     class CatDAO
     {
         private static string consulta;
         private static OdbcDataAdapter adaptador;
         private static OdbcDataReader lector;
 
-        private static DataTable tipoUsuario;
+
         private static DataTable tipoInsumo;
+        private static DataTable insumo;
+        /*
+        private static DataTable tipoUsuario;
         private static DataTable tipoCita;
         private static DataTable especie;
         private static DataTable estado;
         private static DataTable estadoCita;
         private static DataTable estadoPago;
         private static DataTable metPago;
-        private static DataTable insumo;
+        
         private static DataTable usuario;
-
+        */
         //private static List<CatItem> listaTipoUsuarios; no creo que se ocupe esto
         //tipo Insumos es gestionado by MiltonDevAg
         private static List<CatItem> listaTipoCitas;
@@ -317,7 +323,46 @@ namespace Clave1_Grupo2.dao
                 }
             }
             return tipoInsumo;
-        }                        
+        }
+
+        public static DataTable GetInsumos()
+        {
+            consulta = "SELECT * FROM insumo";
+            if (insumo == null)
+            {
+                try
+                {
+                    adaptador = new OdbcDataAdapter(consulta, ConexionBD.GetConexionBD());
+                    insumo = new DataTable();
+
+                    //PENDIENTE Definir campos de tabla y agregar tabla al DataSet
+                    ConexionBD.GetDataSetBD().Tables.Add(insumo); //Verificar si deberia agregarlo antes del fill o despues
+
+                    using (adaptador)
+                    {
+                        ConexionBD.GetConexionBD().Open();
+                        adaptador.Fill(insumo);
+                    }
+                }
+                catch (Exception e)
+                {
+                    MessageBox.Show($"Ocurrio un error: \n{e.Message}");
+                }
+                finally
+                {
+                    ConexionBD.GetConexionBD().Close();
+                }
+            }
+            return insumo;
+        }
+
+
+
+        /*
+         * SIN USAR
+         */
+
+        /*REEMPLAZADOS DATATABLES POR LISTS
         public static DataTable GetEstadoPago()
         {
             consulta = "SELECT * FROM cat_estado_pago";
@@ -378,36 +423,7 @@ namespace Clave1_Grupo2.dao
             }
             return metPago;
         }
-        public static DataTable GetInsumos()
-        {
-            consulta = "SELECT * FROM insumo";
-            if (insumo == null)
-            {
-                try
-                {
-                    adaptador = new OdbcDataAdapter(consulta, ConexionBD.GetConexionBD());
-                    insumo = new DataTable();
 
-                    //PENDIENTE Definir campos de tabla y agregar tabla al DataSet
-                    ConexionBD.GetDataSetBD().Tables.Add(insumo); //Verificar si deberia agregarlo antes del fill o despues
-
-                    using (adaptador)
-                    {
-                        ConexionBD.GetConexionBD().Open();
-                        adaptador.Fill(insumo);
-                    }
-                }
-                catch (Exception e)
-                {
-                    MessageBox.Show($"Ocurrio un error: \n{e.Message}");
-                }
-                finally
-                {
-                    ConexionBD.GetConexionBD().Close();
-                }
-            }
-            return insumo;
-        }
 
         public static DataTable GetUsuarios()
         {
@@ -439,11 +455,6 @@ namespace Clave1_Grupo2.dao
             }
             return usuario;
         }
-
-        /*
-         * SIN USAR
-         */
-
         public static DataTable GetTipoUsuario()
         {
             consulta = "SELECT * FROM cat_tipo_usuario";
@@ -595,5 +606,6 @@ namespace Clave1_Grupo2.dao
 
             return especie;
         }
+        */
     }
 }

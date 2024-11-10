@@ -213,6 +213,7 @@ namespace Clave1_Grupo2.gui
 
                 cbxMascota.Enabled = false;
             }
+            // CREO QUE ESTOS TRES NO APORTAN. REVISAR POR EJEMPLO CUANDO TiPO es 2
             else if (UsuarioDAO.GetSesion().TipoUsuario == 3)
             {
                 cbxVeterinario.SelectedIndex = -1;
@@ -232,16 +233,6 @@ namespace Clave1_Grupo2.gui
             PopularCitas();            
         }
 
-        private void VtnCitas_Activated(object sender, EventArgs e)
-        {
-            //PopularCitas();
-        }
-
-        private void VtnCitas_Enter(object sender, EventArgs e)
-        {
-            //PopularCitas();
-        }
-
         private void btnReagendar_Click(object sender, EventArgs e)
         {
             if (lbxCitas.SelectedIndex > -1)
@@ -258,8 +249,6 @@ namespace Clave1_Grupo2.gui
                 //Al momento de agendar lo unico que hara es actualizar el cupo ya existente
             }
         }
-
-
         private void btnCancelarCita_Click(object sender, EventArgs e)
         {
             DialogResult resultado = MessageBox.Show(

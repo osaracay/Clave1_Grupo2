@@ -6,13 +6,14 @@ using System.Threading.Tasks;
 
 namespace Clave1_Grupo2.entity
 {
+    ///<summary>
+    ///Simboliza los registros de tablas de Catalogos con listas predefinidas
+    ///que por lo general poseen de 2 a 4 campos.
+    ///La idea es crear Arrays o Lists con objetos tipo CatItem
+    /// </summary>
     class CatItem
     {
-        ///<summary>
-        ///Simboliza los registros de tablas de Catalogos con listas predefinidas
-        ///que por lo general poseen de 2 a 4 campos.
-        ///La idea es crear Arrays o Lists con objetos tipo CatItem
-        /// </summary>
+        
 
         private int idCat;
         private string nomCat;

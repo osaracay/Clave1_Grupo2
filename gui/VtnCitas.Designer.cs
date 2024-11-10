@@ -361,9 +361,7 @@ namespace Clave1_Grupo2.gui
             this.Opacity = 0.95D;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Citas";
-            this.Activated += new System.EventHandler(this.VtnCitas_Activated);
             this.Load += new System.EventHandler(this.VtnCitas_Load);
-            this.Enter += new System.EventHandler(this.VtnCitas_Enter);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbxFotoPerfil)).EndInit();

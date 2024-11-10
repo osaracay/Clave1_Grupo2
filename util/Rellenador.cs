@@ -28,60 +28,56 @@ namespace Clave1_Grupo2.util
             cb.ValueMember = campoId;
             cb.SelectedIndex = -1; //0 o -1
         }
-
+        /// <summary>
+        /// Carga una Lista a una ListBox
+        /// </summary>
+        /// <param name="lb">Listbox</param>
+        /// <param name="lista">lista</param>
         public static void CargarListaPetAListBox(ListBox lb, List<Mascota> lista)
         {
             lb.DataSource = lista;
         }
+        /// <summary>
+        /// Carga una lista (predefinida) de Items catalogo a un combobox
+        /// </summary>
+        /// <param name="cb">ComboBox por rellenar</param>
+        /// <param name="lista">lista con la que se llena el ComboBox</param>
         public static void CargarListaAComboBox(ComboBox cb, List<CatItem> lista)
         {
             cb.ValueMember = "IdCat";
             cb.DisplayMember = "ToString";
             cb.DataSource = lista;
         }
+        /// <summary>
+        /// Carga una lista de turnos a un combobox
+        /// </summary>
+        /// <param name="cb">ComboBox por rellenar</param>
+        /// <param name="lista">lista con la que se llena el ComboBox</param>
         public static void CargarListaAComboBox(ComboBox cb, List<Turno> lista)
         {
             cb.ValueMember = "IdTurno";
             cb.DisplayMember = "ToString";
             cb.DataSource = lista;
         }
+        /// <summary>
+        /// Carga una lista de mascotas a un combobox. Usado mayormente en eventos de cambio de índice de ComboBox Propietarios de mascotas.
+        /// </summary>
+        /// <param name="cb">ComboBox por rellenar</param>
+        /// <param name="lista">lista con la que se llena el ComboBox</param>
         public static void CargarListaAComboBox(ComboBox cb, List<Mascota> lista)
         {
             cb.ValueMember = "IdMascota";
             cb.DisplayMember = "ToString";
             cb.DataSource = lista;
         }
+        /// <summary>
+        /// Carga una lista de Usuarios a un combobox
+        /// </summary>
+        /// <param name="cb">ComboBox por rellenar</param>
+        /// <param name="lista">lista con la que se llena el ComboBox</param>
         public static void CargarListaAComboBox(ComboBox cb, List<Usuario> lista)
         {
             //Por lo que veo, es mejor crear metodos separados que devuelvan listas del tipo requerido
-            cb.ValueMember = "IdUsuario";
-            cb.DisplayMember = "ToString"; //Wow, lo hice. Ocupe el metodo To String como DisplayMember y ahora hago uso de polimorfismo T.T
-            cb.DataSource = lista;
-        }
-        
-        /*
-         * SIN USAR
-         */
-        public static void CargarDataTableAListBox(ListBox lb, DataTable dataTable)
-        {
-            lb.DataSource = dataTable;
-        }
-
-        /*listas por tipo de usuario*/
-        public static void CargarListaAComboBox(ComboBox cb, List<Cliente> lista)
-        {
-            cb.ValueMember = "IdUsuario";
-            cb.DisplayMember = "ToString"; //Wow, lo hice. Ocupe el metodo To String como DisplayMember y ahora hago uso de polimorfismo T.T
-            cb.DataSource = lista;
-        }
-        public static void CargarListaAComboBox(ComboBox cb, List<Veterinario> lista)
-        {
-            cb.ValueMember = "IdUsuario";
-            cb.DisplayMember = "ToString"; //Wow, lo hice. Ocupe el metodo To String como DisplayMember y ahora hago uso de polimorfismo T.T
-            cb.DataSource = lista;
-        }
-        public static void CargarListaAComboBox(ComboBox cb, List<Administrador> lista)
-        {
             cb.ValueMember = "IdUsuario";
             cb.DisplayMember = "ToString"; //Wow, lo hice. Ocupe el metodo To String como DisplayMember y ahora hago uso de polimorfismo T.T
             cb.DataSource = lista;
@@ -116,5 +112,33 @@ namespace Clave1_Grupo2.util
             MessageBox.Show(flujoMemo.ToString());
             return flujoMemo.ToArray();
         }
+        /*
+         * SIN USAR
+         
+        public static void CargarDataTableAListBox(ListBox lb, DataTable dataTable)
+        {
+            lb.DataSource = dataTable;
+        }
+
+        public static void CargarListaAComboBox(ComboBox cb, List<Cliente> lista)
+        {
+            cb.ValueMember = "IdUsuario";
+            cb.DisplayMember = "ToString"; //Wow, lo hice. Ocupe el metodo To String como DisplayMember y ahora hago uso de polimorfismo T.T
+            cb.DataSource = lista;
+        }
+        public static void CargarListaAComboBox(ComboBox cb, List<Veterinario> lista)
+        {
+            cb.ValueMember = "IdUsuario";
+            cb.DisplayMember = "ToString"; //Wow, lo hice. Ocupe el metodo To String como DisplayMember y ahora hago uso de polimorfismo T.T
+            cb.DataSource = lista;
+        }
+        public static void CargarListaAComboBox(ComboBox cb, List<Administrador> lista)
+        {
+            cb.ValueMember = "IdUsuario";
+            cb.DisplayMember = "ToString"; //Wow, lo hice. Ocupe el metodo To String como DisplayMember y ahora hago uso de polimorfismo T.T
+            cb.DataSource = lista;
+        }
+        */
+
     }
 }

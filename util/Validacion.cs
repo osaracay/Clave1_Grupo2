@@ -155,9 +155,11 @@ namespace Clave1_Grupo2.util
             }
         }
 
-        //VALIDAR FECHAS PARA EVITAR FECHAS DE NACIMIENTO MENORES A 18 Años,
-        //fechas de cita no disponibles o ya pasadas
-        //Si una fecha 1 es mayor que una fecha 2, la fecha 1 es despues de la fecha 2.
+        /// <summary>
+        /// VALIDAR FECHAS PARA EVITAR FECHAS DE NACIMIENTO MENORES A 18 Años. Fechas de cita no disponibles o ya pasadas. NOTA: Si una fecha 1 es mayor que una fecha 2, la fecha 1 es despues de la fecha 2.
+        /// </summary>
+        /// <param name="fechaNacimiento">Fecha de nacimiento</param>
+        /// <returns>Devuelve verdadero si la edad calculada es mayor o igual que 18.</returns>
         public static bool EsMayorDeEdad(DateTime fechaNacimiento)
         {
             if (CalcularEdad(fechaNacimiento) >= 18)
@@ -170,6 +172,11 @@ namespace Clave1_Grupo2.util
                 return false;
             }
         }
+        /// <summary>
+        /// VALIDAR FECHAS PARA EVITAR FECHAS DE NACIMIENTO MENORES A 18 Años. Fechas de cita no disponibles o ya pasadas. NOTA: Si una fecha 1 es mayor que una fecha 2, la fecha 1 es despues de la fecha 2.
+        /// </summary>
+        /// <param name="fechaNacimiento">Fecha de nacimiento</param>
+        /// <returns>Devuelve la edad como número entero.</returns>
         public static int CalcularEdad(DateTime fechaNacimiento)
         {
             //Metodo recuperado de: https://gist.github.com/Fhernd/26d27f321ef0da4619a7
