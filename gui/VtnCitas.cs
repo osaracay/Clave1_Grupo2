@@ -56,6 +56,11 @@ namespace Clave1_Grupo2.gui
         {
             btnAtender.Hide();
             lbxCitas.Enabled = true;
+
+            /*Estaban en las tres condiciones*/
+            cbxVeterinario.Enabled = false;
+            cbxPropietario.Enabled = false;
+
             cbxTipoCita.SelectedIndex = -1;
             cbxTipoCita.Enabled = false;
             cbxVeterinario.SelectedIndex = -1;
@@ -66,31 +71,14 @@ namespace Clave1_Grupo2.gui
             if (UsuarioDAO.GetSesion().TipoUsuario == 2)
             {
                 btnAtender.Show();
-                cbxVeterinario.Enabled = false;
                 cbxVeterinario.SelectedValue = UsuarioDAO.GetSesion().IdUsuario;                
-
                 /* De todas formas */
-                cbxPropietario.Enabled = true;                
+                //cbxPropietario.Enabled = true; //Y AQUI??               
             }
             else if (UsuarioDAO.GetSesion().TipoUsuario == 3)
             {
-                cbxPropietario.SelectedValue = UsuarioDAO.GetSesion().IdUsuario;
-                cbxVeterinario.Enabled = false;
-                cbxPropietario.Enabled = false;                
+                cbxPropietario.SelectedValue = UsuarioDAO.GetSesion().IdUsuario;               
                 Rellenador.CargarListaAComboBox(cbxMascota, MascotaDAO.GetListaMascotasOwner((int)cbxPropietario.SelectedValue));
-                /*
-                cbxMascota.Enabled = true;
-                cbxMascota.SelectedIndex = -1;
-                */
-            }
-            else
-            {
-                //Siento que no tiene caso con admins
-                /*
-                cbxPropietario.Enabled = true;
-                cbxMascota.Enabled = true;
-                cbxVeterinario.Enabled = true;
-                */
             }
 
             PopularCitas();
