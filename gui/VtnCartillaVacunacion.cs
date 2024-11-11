@@ -111,5 +111,43 @@ namespace Clave1_Grupo2.gui
             ListaVacunas vacunasList = new ListaVacunas();
             vacunasList.Show();
         }
+
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+            if (!ValidarCampos())
+            {
+                MessageBox.Show("Por favor, completa todos los campos requeridos.");
+                return; // Si no son válidos, salir del método
+            }
+
+            string vacunaSeleccionada = txtVacunaSeleccionada.Text;
+            string tipoCita = cbxTipoCita.Text;
+            string Veterinario = cbxVeterinario.Text;
+
+
+            // Crear el contenido a guardar
+            string contenido = $"Vacuna Seleccionada: {vacunaSeleccionada}\n" +
+                               $"tipo Cita: {tipoCita}\n" +
+                               $"Veterinario: {Veterinario}\n";
+        }
+
+        private bool ValidarCampos()
+        {
+            // Ejemplo de validaciones básicas
+            if (string.IsNullOrWhiteSpace(txtRaza.Text) ||
+                string.IsNullOrWhiteSpace(txtEdad.Text) ||
+                string.IsNullOrWhiteSpace(txtGenero.Text) ||
+                string.IsNullOrWhiteSpace(txtEspecie.Text) ||
+                string.IsNullOrWhiteSpace(txtColorMascota.Text) ||
+                string.IsNullOrWhiteSpace(nomMascota.Text) ||
+                string.IsNullOrWhiteSpace(txtVacunaSeleccionada.Text) ||
+                string.IsNullOrWhiteSpace(cbxTipoCita.Text) ||
+                string.IsNullOrWhiteSpace(cbxVeterinario.Text))
+            {
+                return false; // Un campo requerido está vacío
+            }
+
+            return true; // Todos los campos están completos
+        }
     }
 }

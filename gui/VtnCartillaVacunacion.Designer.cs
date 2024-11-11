@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnGuardar = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.cbxPropietario = new System.Windows.Forms.ComboBox();
             this.txtEmail = new System.Windows.Forms.TextBox();
@@ -53,29 +53,30 @@
             this.especie = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.cbxVeterinario = new System.Windows.Forms.ComboBox();
+            this.cbxTipoCita = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
             this.txtVacunaSeleccionada = new System.Windows.Forms.TextBox();
             this.btnVacuna = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.fileSystemWatcher1 = new System.IO.FileSystemWatcher();
-            this.cbxVeterinario = new System.Windows.Forms.ComboBox();
-            this.cbxTipoCita = new System.Windows.Forms.ComboBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).BeginInit();
             this.SuspendLayout();
             // 
-            // button1
+            // btnGuardar
             // 
-            this.button1.Location = new System.Drawing.Point(530, 489);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(152, 45);
-            this.button1.TabIndex = 28;
-            this.button1.Text = "Guardar";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnGuardar.Location = new System.Drawing.Point(530, 489);
+            this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.Size = new System.Drawing.Size(152, 45);
+            this.btnGuardar.TabIndex = 28;
+            this.btnGuardar.Text = "Guardar";
+            this.btnGuardar.UseVisualStyleBackColor = true;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // groupBox2
             // 
@@ -305,6 +306,50 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Ingreso de Datos de Vacunas";
             // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(36, 231);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(86, 20);
+            this.label10.TabIndex = 110;
+            this.label10.Text = "Veterinario";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(36, 188);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(93, 20);
+            this.label9.TabIndex = 109;
+            this.label9.Text = "Tipo de Cita";
+            // 
+            // cbxVeterinario
+            // 
+            this.cbxVeterinario.BackColor = System.Drawing.SystemColors.ControlText;
+            this.cbxVeterinario.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxVeterinario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbxVeterinario.ForeColor = System.Drawing.SystemColors.InactiveCaption;
+            this.cbxVeterinario.FormattingEnabled = true;
+            this.cbxVeterinario.Location = new System.Drawing.Point(149, 224);
+            this.cbxVeterinario.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cbxVeterinario.Name = "cbxVeterinario";
+            this.cbxVeterinario.Size = new System.Drawing.Size(241, 30);
+            this.cbxVeterinario.TabIndex = 108;
+            // 
+            // cbxTipoCita
+            // 
+            this.cbxTipoCita.BackColor = System.Drawing.SystemColors.ControlText;
+            this.cbxTipoCita.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxTipoCita.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbxTipoCita.ForeColor = System.Drawing.SystemColors.InactiveCaption;
+            this.cbxTipoCita.FormattingEnabled = true;
+            this.cbxTipoCita.Location = new System.Drawing.Point(149, 183);
+            this.cbxTipoCita.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cbxTipoCita.Name = "cbxTipoCita";
+            this.cbxTipoCita.Size = new System.Drawing.Size(241, 30);
+            this.cbxTipoCita.TabIndex = 107;
+            // 
             // label8
             // 
             this.label8.AutoSize = true;
@@ -346,50 +391,6 @@
             this.fileSystemWatcher1.EnableRaisingEvents = true;
             this.fileSystemWatcher1.SynchronizingObject = this;
             // 
-            // cbxVeterinario
-            // 
-            this.cbxVeterinario.BackColor = System.Drawing.SystemColors.ControlText;
-            this.cbxVeterinario.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbxVeterinario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbxVeterinario.ForeColor = System.Drawing.SystemColors.InactiveCaption;
-            this.cbxVeterinario.FormattingEnabled = true;
-            this.cbxVeterinario.Location = new System.Drawing.Point(149, 224);
-            this.cbxVeterinario.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.cbxVeterinario.Name = "cbxVeterinario";
-            this.cbxVeterinario.Size = new System.Drawing.Size(241, 30);
-            this.cbxVeterinario.TabIndex = 108;
-            // 
-            // cbxTipoCita
-            // 
-            this.cbxTipoCita.BackColor = System.Drawing.SystemColors.ControlText;
-            this.cbxTipoCita.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbxTipoCita.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbxTipoCita.ForeColor = System.Drawing.SystemColors.InactiveCaption;
-            this.cbxTipoCita.FormattingEnabled = true;
-            this.cbxTipoCita.Location = new System.Drawing.Point(149, 183);
-            this.cbxTipoCita.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.cbxTipoCita.Name = "cbxTipoCita";
-            this.cbxTipoCita.Size = new System.Drawing.Size(241, 30);
-            this.cbxTipoCita.TabIndex = 107;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(36, 188);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(93, 20);
-            this.label9.TabIndex = 109;
-            this.label9.Text = "Tipo de Cita";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(36, 231);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(86, 20);
-            this.label10.TabIndex = 110;
-            this.label10.Text = "Veterinario";
-            // 
             // VtnCartillaVacunacion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -399,7 +400,7 @@
             this.ClientSize = new System.Drawing.Size(953, 588);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.groupBox3);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label1);
@@ -421,7 +422,7 @@
         }
 
         #endregion
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.Label apellido1;
