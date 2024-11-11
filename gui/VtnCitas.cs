@@ -56,6 +56,11 @@ namespace Clave1_Grupo2.gui
         {
             btnAtender.Hide();
             lbxCitas.Enabled = true;
+
+            /*Estaban en las tres condiciones*/
+            cbxVeterinario.Enabled = false;
+            cbxPropietario.Enabled = false;
+
             cbxTipoCita.SelectedIndex = -1;
             cbxTipoCita.Enabled = false;
             cbxVeterinario.SelectedIndex = -1;
@@ -66,31 +71,14 @@ namespace Clave1_Grupo2.gui
             if (UsuarioDAO.GetSesion().TipoUsuario == 2)
             {
                 btnAtender.Show();
-                cbxVeterinario.Enabled = false;
                 cbxVeterinario.SelectedValue = UsuarioDAO.GetSesion().IdUsuario;                
-
                 /* De todas formas */
-                cbxPropietario.Enabled = true;                
+                //cbxPropietario.Enabled = true; //Y AQUI??               
             }
             else if (UsuarioDAO.GetSesion().TipoUsuario == 3)
             {
-                cbxPropietario.SelectedValue = UsuarioDAO.GetSesion().IdUsuario;
-                cbxVeterinario.Enabled = false;
-                cbxPropietario.Enabled = false;                
+                cbxPropietario.SelectedValue = UsuarioDAO.GetSesion().IdUsuario;               
                 Rellenador.CargarListaAComboBox(cbxMascota, MascotaDAO.GetListaMascotasOwner((int)cbxPropietario.SelectedValue));
-                /*
-                cbxMascota.Enabled = true;
-                cbxMascota.SelectedIndex = -1;
-                */
-            }
-            else
-            {
-                //Siento que no tiene caso con admins
-                /*
-                cbxPropietario.Enabled = true;
-                cbxMascota.Enabled = true;
-                cbxVeterinario.Enabled = true;
-                */
             }
 
             PopularCitas();
@@ -225,6 +213,7 @@ namespace Clave1_Grupo2.gui
 
                 cbxMascota.Enabled = false;
             }
+            // CREO QUE ESTOS TRES NO APORTAN. REVISAR POR EJEMPLO CUANDO TiPO es 2
             else if (UsuarioDAO.GetSesion().TipoUsuario == 3)
             {
                 cbxVeterinario.SelectedIndex = -1;
@@ -244,16 +233,6 @@ namespace Clave1_Grupo2.gui
             PopularCitas();            
         }
 
-        private void VtnCitas_Activated(object sender, EventArgs e)
-        {
-            //PopularCitas();
-        }
-
-        private void VtnCitas_Enter(object sender, EventArgs e)
-        {
-            //PopularCitas();
-        }
-
         private void btnReagendar_Click(object sender, EventArgs e)
         {
             if (lbxCitas.SelectedIndex > -1)
@@ -270,8 +249,6 @@ namespace Clave1_Grupo2.gui
                 //Al momento de agendar lo unico que hara es actualizar el cupo ya existente
             }
         }
-
-
         private void btnCancelarCita_Click(object sender, EventArgs e)
         {
             DialogResult resultado = MessageBox.Show(

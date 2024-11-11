@@ -244,7 +244,9 @@ namespace Clave1_Grupo2.gui
             //Asi no hay necesidad de una propiedad en Cupo que la establezca
             //Y que tenga que averiguar como aplicarla a restricciones de cupo
             this.campoFechaAgenda.MaxDate = DateTime.Today.AddMonths(3);
-            this.campoFechaAgenda.MinDate = DateTime.Today;
+            
+            if (UsuarioDAO.GetSesion().TipoUsuario == 3) this.campoFechaAgenda.MinDate = DateTime.Today.AddDays(1);
+            else this.campoFechaAgenda.MinDate = DateTime.Today;
             //Aunque este en _Load, prevalece sobre lo que esta en Initialize
         }
 

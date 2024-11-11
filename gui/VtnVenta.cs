@@ -17,8 +17,8 @@ namespace Clave1_Grupo2.gui
         public VtnVenta()
         {
             InitializeComponent();
-            Rellenador.CargarDataTableACombo(cmbMetPago, CatDAO.GetMetPago(), "id_met_pago", "nom_met_pago");
-            Rellenador.CargarDataTableACombo(cmbEstado, CatDAO.GetEstadoPago(), "id_estado_pago", "nom_estado_pago");
+            Rellenador.CargarListaAComboBox(cmbMetPago, CatDAO.GetMetodosPago());
+            Rellenador.CargarListaAComboBox(cmbEstado, CatDAO.GetEstadosPago());
             //Rellenador.CargarDataTableACombo(cmbIdCliente, CatDAO.GetUsuarios(), "nombre", "id_usuario");
             Rellenador.CargarListaAComboBox(cmbIdCliente, UsuarioDAO.GetListaUsuarios(3));
             cmbIdCliente.SelectedIndex = -1;

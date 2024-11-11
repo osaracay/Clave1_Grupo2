@@ -37,10 +37,11 @@ namespace Clave1_Grupo2.entity
         public string NombreTurno { get => nombreTurno; set => nombreTurno = value; }
 
         public override string ToString()
-        {
-            
+        {            
             string stringVet= $"Dr. {this.Apellido}, {this.Nombre}";
-            if(this.NombreTurno=="") stringVet+= $" - {this.NombreTurno}";
+            //QUISIERA QUE INCLUYERA EL NOMBRE DEL TURNO (MATUTINO O VESPERTINO).
+            //EL NOMBRE DEL TURNO SE LLAMA EN GETDATAVETERENA EN CUPODAO, METODO UTILIZADO AL OBTENER CUPOS DISPONIBLES POR FECHA TIPO Y VET
+            //if(this.NombreTurno!="") stringVet+= $" - {this.NombreTurno}";
             return stringVet;
         }
 
