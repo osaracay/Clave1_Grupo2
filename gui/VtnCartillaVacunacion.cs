@@ -76,6 +76,9 @@ namespace Clave1_Grupo2.gui
             txtGenero.Clear();
             txtEspecie.Clear();
             txtColorMascota.Clear();
+            txtVacunaSeleccionada.Clear();
+
+
         }
 
         private void cbxMascota_SelectedIndexChanged(object sender, EventArgs e)
@@ -92,15 +95,7 @@ namespace Clave1_Grupo2.gui
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
-            DialogResult r = MessageBox.Show("Desea salir..?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (r == DialogResult.Yes)
-            {
-                this.Close();
-            }
-            else
-            {
-                LimpiarCampos();
-            }
+            LimpiarCampos();
         }
     
         private void cbxPropietario_SelectedIndexChanged(object sender, EventArgs e)
