@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lblCorrelativo = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.nomMascota = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -46,7 +46,6 @@
             this.label14 = new System.Windows.Forms.Label();
             this.txtUltimaVisita = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
-            this.txtFechaNacimiento = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.txtPulso = new System.Windows.Forms.TextBox();
             this.txtPeso = new System.Windows.Forms.TextBox();
@@ -82,6 +81,7 @@
             this.btnGuardar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.label11 = new System.Windows.Forms.Label();
+            this.campoFechaNacimiento = new System.Windows.Forms.DateTimePicker();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -97,15 +97,15 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Expediente Clinico";
             // 
-            // label2
+            // lblCorrelativo
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(50, 44);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(128, 26);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Correlativo";
+            this.lblCorrelativo.AutoSize = true;
+            this.lblCorrelativo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCorrelativo.Location = new System.Drawing.Point(50, 44);
+            this.lblCorrelativo.Name = "lblCorrelativo";
+            this.lblCorrelativo.Size = new System.Drawing.Size(128, 26);
+            this.lblCorrelativo.TabIndex = 1;
+            this.lblCorrelativo.Text = "Correlativo";
             // 
             // label5
             // 
@@ -166,6 +166,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.campoFechaNacimiento);
             this.groupBox1.Controls.Add(this.lvwUltimoDiagnostico);
             this.groupBox1.Controls.Add(this.txtFrecuenciaRespiratoria);
             this.groupBox1.Controls.Add(this.label16);
@@ -174,7 +175,6 @@
             this.groupBox1.Controls.Add(this.label14);
             this.groupBox1.Controls.Add(this.txtUltimaVisita);
             this.groupBox1.Controls.Add(this.label13);
-            this.groupBox1.Controls.Add(this.txtFechaNacimiento);
             this.groupBox1.Controls.Add(this.label12);
             this.groupBox1.Controls.Add(this.txtPulso);
             this.groupBox1.Controls.Add(this.txtPeso);
@@ -216,7 +216,7 @@
             // 
             this.txtFrecuenciaRespiratoria.Location = new System.Drawing.Point(639, 164);
             this.txtFrecuenciaRespiratoria.Name = "txtFrecuenciaRespiratoria";
-            this.txtFrecuenciaRespiratoria.Size = new System.Drawing.Size(188, 26);
+            this.txtFrecuenciaRespiratoria.Size = new System.Drawing.Size(193, 26);
             this.txtFrecuenciaRespiratoria.TabIndex = 34;
             // 
             // label16
@@ -232,7 +232,7 @@
             // 
             this.txtTemperatura.Location = new System.Drawing.Point(639, 116);
             this.txtTemperatura.Name = "txtTemperatura";
-            this.txtTemperatura.Size = new System.Drawing.Size(188, 26);
+            this.txtTemperatura.Size = new System.Drawing.Size(193, 26);
             this.txtTemperatura.TabIndex = 32;
             // 
             // label15
@@ -257,7 +257,7 @@
             // 
             this.txtUltimaVisita.Location = new System.Drawing.Point(639, 73);
             this.txtUltimaVisita.Name = "txtUltimaVisita";
-            this.txtUltimaVisita.Size = new System.Drawing.Size(188, 26);
+            this.txtUltimaVisita.Size = new System.Drawing.Size(193, 26);
             this.txtUltimaVisita.TabIndex = 28;
             // 
             // label13
@@ -268,13 +268,6 @@
             this.label13.Size = new System.Drawing.Size(146, 20);
             this.label13.TabIndex = 27;
             this.label13.Text = "Fecha Ultima Visita";
-            // 
-            // txtFechaNacimiento
-            // 
-            this.txtFechaNacimiento.Location = new System.Drawing.Point(639, 31);
-            this.txtFechaNacimiento.Name = "txtFechaNacimiento";
-            this.txtFechaNacimiento.Size = new System.Drawing.Size(188, 26);
-            this.txtFechaNacimiento.TabIndex = 26;
             // 
             // label12
             // 
@@ -289,14 +282,14 @@
             // 
             this.txtPulso.Location = new System.Drawing.Point(639, 249);
             this.txtPulso.Name = "txtPulso";
-            this.txtPulso.Size = new System.Drawing.Size(188, 26);
+            this.txtPulso.Size = new System.Drawing.Size(193, 26);
             this.txtPulso.TabIndex = 24;
             // 
             // txtPeso
             // 
             this.txtPeso.Location = new System.Drawing.Point(639, 209);
             this.txtPeso.Name = "txtPeso";
-            this.txtPeso.Size = new System.Drawing.Size(188, 26);
+            this.txtPeso.Size = new System.Drawing.Size(193, 26);
             this.txtPeso.TabIndex = 23;
             // 
             // label8
@@ -362,7 +355,7 @@
             // 
             this.txtEnfermedadesPrev.Location = new System.Drawing.Point(639, 294);
             this.txtEnfermedadesPrev.Name = "txtEnfermedadesPrev";
-            this.txtEnfermedadesPrev.Size = new System.Drawing.Size(188, 26);
+            this.txtEnfermedadesPrev.Size = new System.Drawing.Size(193, 26);
             this.txtEnfermedadesPrev.TabIndex = 11;
             // 
             // txtEdad
@@ -593,6 +586,18 @@
             this.label11.Text = "peso, pulso, enfermedades previas(diagnostico citas anteriores) esterilizado vali" +
     "dacion solo disponible para F al igual que partos.";
             // 
+            // campoFechaNacimiento
+            // 
+            this.campoFechaNacimiento.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.campoFechaNacimiento.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.campoFechaNacimiento.Location = new System.Drawing.Point(639, 31);
+            this.campoFechaNacimiento.MaxDate = new System.DateTime(2024, 11, 9, 0, 0, 0, 0);
+            this.campoFechaNacimiento.MinDate = new System.DateTime(1950, 1, 1, 0, 0, 0, 0);
+            this.campoFechaNacimiento.Name = "campoFechaNacimiento";
+            this.campoFechaNacimiento.Size = new System.Drawing.Size(193, 30);
+            this.campoFechaNacimiento.TabIndex = 66;
+            this.campoFechaNacimiento.Value = new System.DateTime(2024, 11, 9, 0, 0, 0, 0);
+            // 
             // ExpedienteClinico
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -605,7 +610,7 @@
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.lblCorrelativo);
             this.Controls.Add(this.label1);
             this.Name = "ExpedienteClinico";
             this.Text = "Expediente Clinico";
@@ -624,7 +629,7 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblCorrelativo;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox nomMascota;
         private System.Windows.Forms.Label label6;
@@ -663,7 +668,6 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox txtFechaNacimiento;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.TextBox txtUltimaVisita;
@@ -677,5 +681,6 @@
         private System.Windows.Forms.ComboBox cbxEsterilizado;
         private System.Windows.Forms.ComboBox cbxFinZootecnico;
         private System.Windows.Forms.ListView lvwUltimoDiagnostico;
+        private System.Windows.Forms.DateTimePicker campoFechaNacimiento;
     }
 }

@@ -108,20 +108,6 @@ namespace Clave1_Grupo2.gui
                                $"Esterilizado: {esterilizado}\n" +
                                $"Número de Partos: {numeroPartos}\n" +
                                $"Cirugías Previas: {cirugiasPrevias}\n";
-            try
-            {
-                // Actualizar datos de la mascota
-                MascotaDAO.ActualizarDatosMascota(mascotaSeleccionada, nomMascota.Text, (int)cbxPropietario.SelectedValue, txtRaza.Text, int.Parse(txtEdad.Text), char.Parse(txtGenero.Text.ToUpper()), txtColorMascota.Text);
-
-                // Refrescar la lista de mascotas
-                Rellenador.CargarListaAComboBox(cbxMascota, MascotaDAO.GetListaMascotasOwner((int)cbxPropietario.SelectedValue));
-                //InhabilitarCampos();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Error al guardar los datos: {ex.Message}");
-            }LimpiarCampos();
-            CargarDatos();
         }
 
 
@@ -138,13 +124,13 @@ namespace Clave1_Grupo2.gui
                 string.IsNullOrWhiteSpace(enfermedadesPrevias.Text) ||
                 string.IsNullOrWhiteSpace(cbxEsterilizado.Text) ||
                 string.IsNullOrWhiteSpace(txtCirugiasPrev.Text) ||
-                string.IsNullOrWhiteSpace(txtFechaNacimiento.Text) ||
                 string.IsNullOrWhiteSpace(txtUltimaVisita.Text) ||
                 string.IsNullOrWhiteSpace(txtPeso.Text) ||
-                string.IsNullOrWhiteSpace(txtPulso.Text))
-
-
-
+                string.IsNullOrWhiteSpace(txtPulso.Text) ||
+                string.IsNullOrWhiteSpace(txtFrecuenciaRespiratoria.Text) ||
+                string.IsNullOrWhiteSpace(txtTemperatura.Text) ||
+                string.IsNullOrWhiteSpace(txtEnfermedadesPrev.Text) ||
+                string.IsNullOrWhiteSpace(lvwUltimoDiagnostico.Text))
             {
                 return false; // Un campo requerido está vacío
             }
@@ -171,15 +157,15 @@ namespace Clave1_Grupo2.gui
 
         private void VerificarGenero()
         {
-            // Verifica si el género es masculino ("M") y deshabilita el campo "Número de Partos"
-            if (txtGenero.Text.ToUpper() == "M")
+            // Verifica si el género es femenino ("F") y deshabilita el campo "Número de Partos"
+            if (txtGenero.Text.ToUpper() == "F")
             {
-                txtNumeroPartos.Enabled = false;
+                txtNumeroPartos.Enabled = true;
                 txtNumeroPartos.Text = ""; // Borra cualquier valor que pueda haber
             }
             else
             {
-                txtNumeroPartos.Enabled = true;
+                txtNumeroPartos.Enabled = false;
             }
         }
     }

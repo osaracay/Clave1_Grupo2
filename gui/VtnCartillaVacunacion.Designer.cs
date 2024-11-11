@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(VtnCartillaVacunacion));
             this.button1 = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.cbxPropietario = new System.Windows.Forms.ComboBox();
@@ -52,32 +51,26 @@
             this.txtEspecie = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.especie = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.cbxTipoCita = new System.Windows.Forms.ComboBox();
-            this.label13 = new System.Windows.Forms.Label();
-            this.txtVacuna = new System.Windows.Forms.TextBox();
-            this.campoFechaAgenda = new System.Windows.Forms.DateTimePicker();
-            this.txtPulso = new System.Windows.Forms.TextBox();
-            this.txtPeso = new System.Windows.Forms.TextBox();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.listView1 = new System.Windows.Forms.ListView();
+            this.label8 = new System.Windows.Forms.Label();
+            this.txtVacunaSeleccionada = new System.Windows.Forms.TextBox();
+            this.btnVacuna = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
-            this.lbxCupos = new System.Windows.Forms.ListBox();
-            this.btnAgendar = new System.Windows.Forms.Button();
+            this.fileSystemWatcher1 = new System.IO.FileSystemWatcher();
+            this.cbxVeterinario = new System.Windows.Forms.ComboBox();
+            this.cbxTipoCita = new System.Windows.Forms.ComboBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(1288, 528);
+            this.button1.Location = new System.Drawing.Point(530, 489);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(152, 45);
             this.button1.TabIndex = 28;
@@ -92,7 +85,7 @@
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Controls.Add(this.txtNombre);
             this.groupBox2.Controls.Add(this.nombre1);
-            this.groupBox2.Location = new System.Drawing.Point(38, 481);
+            this.groupBox2.Location = new System.Drawing.Point(21, 433);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(438, 155);
             this.groupBox2.TabIndex = 26;
@@ -165,7 +158,7 @@
             this.groupBox1.Controls.Add(this.txtEspecie);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.especie);
-            this.groupBox1.Location = new System.Drawing.Point(38, 108);
+            this.groupBox1.Location = new System.Drawing.Point(21, 60);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(438, 352);
             this.groupBox1.TabIndex = 25;
@@ -286,54 +279,85 @@
             this.especie.TabIndex = 10;
             this.especie.Text = "Especie";
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(32, 49);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(77, 26);
-            this.label2.TabIndex = 24;
-            this.label2.Text = "Fecha";
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(632, 9);
+            this.label1.Location = new System.Drawing.Point(360, 19);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(218, 29);
             this.label1.TabIndex = 23;
             this.label1.Text = "Cartilla Vacunacion";
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(568, 66);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(301, 20);
-            this.label3.TabIndex = 30;
-            this.label3.Text = "Falta Fechas/Vacunas/Dosis/ProximaCita";
-            // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.cbxTipoCita);
-            this.groupBox3.Controls.Add(this.label13);
-            this.groupBox3.Controls.Add(this.txtVacuna);
-            this.groupBox3.Controls.Add(this.campoFechaAgenda);
-            this.groupBox3.Controls.Add(this.txtPulso);
-            this.groupBox3.Controls.Add(this.txtPeso);
-            this.groupBox3.Controls.Add(this.label12);
-            this.groupBox3.Controls.Add(this.label11);
             this.groupBox3.Controls.Add(this.label10);
             this.groupBox3.Controls.Add(this.label9);
-            this.groupBox3.Location = new System.Drawing.Point(537, 114);
+            this.groupBox3.Controls.Add(this.cbxVeterinario);
+            this.groupBox3.Controls.Add(this.cbxTipoCita);
+            this.groupBox3.Controls.Add(this.label8);
+            this.groupBox3.Controls.Add(this.txtVacunaSeleccionada);
+            this.groupBox3.Controls.Add(this.btnVacuna);
+            this.groupBox3.Location = new System.Drawing.Point(505, 78);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(506, 282);
+            this.groupBox3.Size = new System.Drawing.Size(416, 282);
             this.groupBox3.TabIndex = 31;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Ingreso de Datos de Vacunas";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(27, 98);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(164, 20);
+            this.label8.TabIndex = 70;
+            this.label8.Text = "Vacuna Seleccionada";
+            // 
+            // txtVacunaSeleccionada
+            // 
+            this.txtVacunaSeleccionada.Location = new System.Drawing.Point(28, 126);
+            this.txtVacunaSeleccionada.Name = "txtVacunaSeleccionada";
+            this.txtVacunaSeleccionada.Size = new System.Drawing.Size(338, 26);
+            this.txtVacunaSeleccionada.TabIndex = 69;
+            // 
+            // btnVacuna
+            // 
+            this.btnVacuna.Location = new System.Drawing.Point(49, 37);
+            this.btnVacuna.Name = "btnVacuna";
+            this.btnVacuna.Size = new System.Drawing.Size(317, 49);
+            this.btnVacuna.TabIndex = 68;
+            this.btnVacuna.Text = "Seleccionar Vacuna";
+            this.btnVacuna.UseVisualStyleBackColor = true;
+            this.btnVacuna.Click += new System.EventHandler(this.btnVacuna_Click);
+            // 
+            // btnCancelar
+            // 
+            this.btnCancelar.Location = new System.Drawing.Point(740, 489);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(152, 49);
+            this.btnCancelar.TabIndex = 33;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            // 
+            // fileSystemWatcher1
+            // 
+            this.fileSystemWatcher1.EnableRaisingEvents = true;
+            this.fileSystemWatcher1.SynchronizingObject = this;
+            // 
+            // cbxVeterinario
+            // 
+            this.cbxVeterinario.BackColor = System.Drawing.SystemColors.ControlText;
+            this.cbxVeterinario.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxVeterinario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbxVeterinario.ForeColor = System.Drawing.SystemColors.InactiveCaption;
+            this.cbxVeterinario.FormattingEnabled = true;
+            this.cbxVeterinario.Location = new System.Drawing.Point(149, 224);
+            this.cbxVeterinario.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cbxVeterinario.Name = "cbxVeterinario";
+            this.cbxVeterinario.Size = new System.Drawing.Size(241, 30);
+            this.cbxVeterinario.TabIndex = 108;
             // 
             // cbxTipoCita
             // 
@@ -342,130 +366,29 @@
             this.cbxTipoCita.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbxTipoCita.ForeColor = System.Drawing.SystemColors.InactiveCaption;
             this.cbxTipoCita.FormattingEnabled = true;
-            this.cbxTipoCita.Location = new System.Drawing.Point(149, 154);
+            this.cbxTipoCita.Location = new System.Drawing.Point(149, 183);
+            this.cbxTipoCita.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbxTipoCita.Name = "cbxTipoCita";
-            this.cbxTipoCita.Size = new System.Drawing.Size(319, 30);
-            this.cbxTipoCita.TabIndex = 67;
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(26, 161);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(93, 20);
-            this.label13.TabIndex = 66;
-            this.label13.Text = "Tipo de Cita";
-            // 
-            // txtVacuna
-            // 
-            this.txtVacuna.Location = new System.Drawing.Point(149, 112);
-            this.txtVacuna.Name = "txtVacuna";
-            this.txtVacuna.Size = new System.Drawing.Size(319, 26);
-            this.txtVacuna.TabIndex = 8;
-            // 
-            // campoFechaAgenda
-            // 
-            this.campoFechaAgenda.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.campoFechaAgenda.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.campoFechaAgenda.Location = new System.Drawing.Point(149, 195);
-            this.campoFechaAgenda.MaxDate = new System.DateTime(2025, 1, 18, 0, 0, 0, 0);
-            this.campoFechaAgenda.MinDate = new System.DateTime(2024, 10, 18, 0, 0, 0, 0);
-            this.campoFechaAgenda.Name = "campoFechaAgenda";
-            this.campoFechaAgenda.Size = new System.Drawing.Size(319, 30);
-            this.campoFechaAgenda.TabIndex = 65;
-            this.campoFechaAgenda.ValueChanged += new System.EventHandler(this.campoFechaAgenda_ValueChanged);
-            // 
-            // txtPulso
-            // 
-            this.txtPulso.Location = new System.Drawing.Point(149, 75);
-            this.txtPulso.Name = "txtPulso";
-            this.txtPulso.Size = new System.Drawing.Size(319, 26);
-            this.txtPulso.TabIndex = 7;
-            // 
-            // txtPeso
-            // 
-            this.txtPeso.Location = new System.Drawing.Point(149, 38);
-            this.txtPeso.Name = "txtPeso";
-            this.txtPeso.Size = new System.Drawing.Size(319, 26);
-            this.txtPeso.TabIndex = 6;
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(26, 201);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(97, 20);
-            this.label12.TabIndex = 4;
-            this.label12.Text = "Proxima Cita";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(26, 118);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(64, 20);
-            this.label11.TabIndex = 3;
-            this.label11.Text = "Vacuna";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(26, 81);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(48, 20);
-            this.label10.TabIndex = 2;
-            this.label10.Text = "Pulso";
+            this.cbxTipoCita.Size = new System.Drawing.Size(241, 30);
+            this.cbxTipoCita.TabIndex = 107;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(26, 47);
+            this.label9.Location = new System.Drawing.Point(36, 188);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(45, 20);
-            this.label9.TabIndex = 1;
-            this.label9.Text = "Peso";
+            this.label9.Size = new System.Drawing.Size(93, 20);
+            this.label9.TabIndex = 109;
+            this.label9.Text = "Tipo de Cita";
             // 
-            // listView1
+            // label10
             // 
-            this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(537, 417);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(728, 219);
-            this.listView1.TabIndex = 32;
-            this.listView1.UseCompatibleStateImageBehavior = false;
-            // 
-            // btnCancelar
-            // 
-            this.btnCancelar.Location = new System.Drawing.Point(1288, 590);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(152, 49);
-            this.btnCancelar.TabIndex = 33;
-            this.btnCancelar.Text = "Cancelar";
-            this.btnCancelar.UseVisualStyleBackColor = true;
-            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
-            // 
-            // lbxCupos
-            // 
-            this.lbxCupos.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbxCupos.FormattingEnabled = true;
-            this.lbxCupos.ItemHeight = 25;
-            this.lbxCupos.Location = new System.Drawing.Point(1091, 133);
-            this.lbxCupos.Name = "lbxCupos";
-            this.lbxCupos.Size = new System.Drawing.Size(332, 254);
-            this.lbxCupos.TabIndex = 66;
-            // 
-            // btnAgendar
-            // 
-            this.btnAgendar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnAgendar.BackgroundImage")));
-            this.btnAgendar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnAgendar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAgendar.Location = new System.Drawing.Point(1307, 417);
-            this.btnAgendar.Name = "btnAgendar";
-            this.btnAgendar.Size = new System.Drawing.Size(116, 98);
-            this.btnAgendar.TabIndex = 102;
-            this.btnAgendar.Text = "AGENDAR";
-            this.btnAgendar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnAgendar.UseVisualStyleBackColor = true;
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(36, 231);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(86, 20);
+            this.label10.TabIndex = 110;
+            this.label10.Text = "Veterinario";
             // 
             // VtnCartillaVacunacion
             // 
@@ -473,17 +396,12 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(1578, 669);
-            this.Controls.Add(this.btnAgendar);
-            this.Controls.Add(this.lbxCupos);
+            this.ClientSize = new System.Drawing.Size(953, 588);
             this.Controls.Add(this.btnCancelar);
-            this.Controls.Add(this.listView1);
             this.Controls.Add(this.groupBox3);
-            this.Controls.Add(this.label3);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "VtnCartillaVacunacion";
@@ -496,6 +414,7 @@
             this.groupBox1.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -523,25 +442,18 @@
         private System.Windows.Forms.TextBox txtEspecie;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label especie;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.ListView listView1;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.ComboBox cbxMascota;
-        private System.Windows.Forms.TextBox txtPeso;
-        private System.Windows.Forms.TextBox txtVacuna;
-        private System.Windows.Forms.TextBox txtPulso;
         private System.Windows.Forms.ComboBox cbxPropietario;
-        private System.Windows.Forms.DateTimePicker campoFechaAgenda;
-        private System.Windows.Forms.ListBox lbxCupos;
-        private System.Windows.Forms.Button btnAgendar;
-        private System.Windows.Forms.Label label13;
+        private System.IO.FileSystemWatcher fileSystemWatcher1;
+        private System.Windows.Forms.Button btnVacuna;
+        private System.Windows.Forms.Label label8;
+        public System.Windows.Forms.TextBox txtVacunaSeleccionada;
+        private System.Windows.Forms.ComboBox cbxVeterinario;
         private System.Windows.Forms.ComboBox cbxTipoCita;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label10;
     }
 }
