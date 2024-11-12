@@ -22,7 +22,7 @@ namespace Clave1_Grupo2.gui
             
             Rellenador.CargarListaAComboBox(cbxEspecie, CatDAO.GetEspecies());
             cbxEspecie.SelectedIndex = -1;
-            Rellenador.CargarDataTableACombo(cbxPropietario, UsuarioDAO.GetTblClientes(), "id_usuario", "nombre");
+            Rellenador.CargarListaAComboBox(cbxPropietario, UsuarioDAO.GetListaUsuarios(3));
             //Si el usuario es Cliente el cbxPropietario quedara deshabilitado y el cliente seleccionado
             if (UsuarioDAO.GetSesion().TipoUsuario == 3)
             {

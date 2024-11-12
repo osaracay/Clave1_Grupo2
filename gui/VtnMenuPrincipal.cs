@@ -192,15 +192,23 @@ namespace Clave1_Grupo2
 
         private void VtnMenuPrincipal_Activated(object sender, EventArgs e)
         {
-            if (UsuarioDAO.GetSesion() == null || UsuarioDAO.GetSesion().TipoUsuario != 1)
+            if (UsuarioDAO.GetSesion() == null || UsuarioDAO.GetSesion().TipoUsuario == 1)
             {
-                btnAsignarTurno.Hide();
-                lblAsignarTurno.Hide();
+                btnAsignarTurno.Enabled = true;
+                btnInsumos.Enabled = true;
+                btnCompra.Enabled = true;
+                btnVenta.Enabled = true;
+                btnVntC.Enabled = true;
+                //lblAsignarTurno.Hide();
             }
             else
             {
-                btnAsignarTurno.Show();
-                lblAsignarTurno.Show();
+                btnAsignarTurno.Enabled = false;
+                btnInsumos.Enabled = false;
+                btnCompra.Enabled = false;
+                btnVenta.Enabled = false;
+                btnVntC.Enabled = false;
+                //lblAsignarTurno.Show();
             }
         }
     }
