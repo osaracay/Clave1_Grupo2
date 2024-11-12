@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ExpedienteClinico));
             this.label1 = new System.Windows.Forms.Label();
-            this.lblCorrelativo = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.nomMascota = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -38,12 +38,11 @@
             this.txtRaza = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.lvwUltimoDiagnostico = new System.Windows.Forms.ListView();
+            this.campoFechaNacimiento = new System.Windows.Forms.DateTimePicker();
             this.txtFrecuenciaRespiratoria = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
             this.txtTemperatura = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
             this.txtUltimaVisita = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
@@ -80,8 +79,6 @@
             this.dietaAlimenticia = new System.Windows.Forms.Label();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
-            this.label11 = new System.Windows.Forms.Label();
-            this.campoFechaNacimiento = new System.Windows.Forms.DateTimePicker();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -96,16 +93,6 @@
             this.label1.Size = new System.Drawing.Size(215, 29);
             this.label1.TabIndex = 0;
             this.label1.Text = "Expediente Clinico";
-            // 
-            // lblCorrelativo
-            // 
-            this.lblCorrelativo.AutoSize = true;
-            this.lblCorrelativo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCorrelativo.Location = new System.Drawing.Point(50, 44);
-            this.lblCorrelativo.Name = "lblCorrelativo";
-            this.lblCorrelativo.Size = new System.Drawing.Size(128, 26);
-            this.lblCorrelativo.TabIndex = 1;
-            this.lblCorrelativo.Text = "Correlativo";
             // 
             // label5
             // 
@@ -166,13 +153,12 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.groupBox1.Controls.Add(this.campoFechaNacimiento);
-            this.groupBox1.Controls.Add(this.lvwUltimoDiagnostico);
             this.groupBox1.Controls.Add(this.txtFrecuenciaRespiratoria);
             this.groupBox1.Controls.Add(this.label16);
             this.groupBox1.Controls.Add(this.txtTemperatura);
             this.groupBox1.Controls.Add(this.label15);
-            this.groupBox1.Controls.Add(this.label14);
             this.groupBox1.Controls.Add(this.txtUltimaVisita);
             this.groupBox1.Controls.Add(this.label13);
             this.groupBox1.Controls.Add(this.label12);
@@ -198,19 +184,22 @@
             this.groupBox1.Controls.Add(this.especie);
             this.groupBox1.Location = new System.Drawing.Point(55, 212);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(854, 451);
+            this.groupBox1.Size = new System.Drawing.Size(854, 370);
             this.groupBox1.TabIndex = 14;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos de la Mascota";
             // 
-            // lvwUltimoDiagnostico
+            // campoFechaNacimiento
             // 
-            this.lvwUltimoDiagnostico.HideSelection = false;
-            this.lvwUltimoDiagnostico.Location = new System.Drawing.Point(197, 344);
-            this.lvwUltimoDiagnostico.Name = "lvwUltimoDiagnostico";
-            this.lvwUltimoDiagnostico.Size = new System.Drawing.Size(609, 93);
-            this.lvwUltimoDiagnostico.TabIndex = 35;
-            this.lvwUltimoDiagnostico.UseCompatibleStateImageBehavior = false;
+            this.campoFechaNacimiento.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.campoFechaNacimiento.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.campoFechaNacimiento.Location = new System.Drawing.Point(639, 31);
+            this.campoFechaNacimiento.MaxDate = new System.DateTime(2024, 11, 9, 0, 0, 0, 0);
+            this.campoFechaNacimiento.MinDate = new System.DateTime(1950, 1, 1, 0, 0, 0, 0);
+            this.campoFechaNacimiento.Name = "campoFechaNacimiento";
+            this.campoFechaNacimiento.Size = new System.Drawing.Size(193, 30);
+            this.campoFechaNacimiento.TabIndex = 66;
+            this.campoFechaNacimiento.Value = new System.DateTime(2024, 11, 9, 0, 0, 0, 0);
             // 
             // txtFrecuenciaRespiratoria
             // 
@@ -243,15 +232,6 @@
             this.label15.Size = new System.Drawing.Size(164, 20);
             this.label15.TabIndex = 31;
             this.label15.Text = "Temperatura Corporal";
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(29, 344);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(142, 20);
-            this.label14.TabIndex = 29;
-            this.label14.Text = "Ultimo Diagnostico";
             // 
             // txtUltimaVisita
             // 
@@ -385,6 +365,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.groupBox2.Controls.Add(this.label17);
             this.groupBox2.Controls.Add(this.txtTelefono);
             this.groupBox2.Controls.Add(this.cbxPropietario);
@@ -450,6 +431,7 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.groupBox3.Controls.Add(this.cbxFinZootecnico);
             this.groupBox3.Controls.Add(this.cbxEsterilizado);
             this.groupBox3.Controls.Add(this.txtCirugiasPrev);
@@ -462,7 +444,7 @@
             this.groupBox3.Controls.Add(this.dietaAlimenticia);
             this.groupBox3.Location = new System.Drawing.Point(958, 212);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(438, 311);
+            this.groupBox3.Size = new System.Drawing.Size(438, 273);
             this.groupBox3.TabIndex = 20;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Ficha Zootecnica";
@@ -558,7 +540,7 @@
             // 
             // btnGuardar
             // 
-            this.btnGuardar.Location = new System.Drawing.Point(1020, 565);
+            this.btnGuardar.Location = new System.Drawing.Point(997, 516);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(152, 44);
             this.btnGuardar.TabIndex = 21;
@@ -568,7 +550,7 @@
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(1235, 565);
+            this.btnCancelar.Location = new System.Drawing.Point(1212, 516);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(143, 44);
             this.btnCancelar.TabIndex = 23;
@@ -576,42 +558,21 @@
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(50, 1);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(910, 20);
-            this.label11.TabIndex = 22;
-            this.label11.Text = "peso, pulso, enfermedades previas(diagnostico citas anteriores) esterilizado vali" +
-    "dacion solo disponible para F al igual que partos.";
-            // 
-            // campoFechaNacimiento
-            // 
-            this.campoFechaNacimiento.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.campoFechaNacimiento.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.campoFechaNacimiento.Location = new System.Drawing.Point(639, 31);
-            this.campoFechaNacimiento.MaxDate = new System.DateTime(2024, 11, 9, 0, 0, 0, 0);
-            this.campoFechaNacimiento.MinDate = new System.DateTime(1950, 1, 1, 0, 0, 0, 0);
-            this.campoFechaNacimiento.Name = "campoFechaNacimiento";
-            this.campoFechaNacimiento.Size = new System.Drawing.Size(193, 30);
-            this.campoFechaNacimiento.TabIndex = 66;
-            this.campoFechaNacimiento.Value = new System.DateTime(2024, 11, 9, 0, 0, 0, 0);
-            // 
             // ExpedienteClinico
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(1444, 684);
-            this.Controls.Add(this.label11);
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(1444, 629);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.lblCorrelativo);
             this.Controls.Add(this.label1);
+            this.DoubleBuffered = true;
             this.Name = "ExpedienteClinico";
             this.Text = "Expediente Clinico";
             this.Load += new System.EventHandler(this.ExpedienteClinico_Load);
@@ -629,7 +590,6 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label lblCorrelativo;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox nomMascota;
         private System.Windows.Forms.Label label6;
@@ -667,9 +627,7 @@
         private System.Windows.Forms.TextBox txtPeso;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label14;
         private System.Windows.Forms.TextBox txtUltimaVisita;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.TextBox txtFrecuenciaRespiratoria;
@@ -680,7 +638,6 @@
         private System.Windows.Forms.TextBox txtTelefono;
         private System.Windows.Forms.ComboBox cbxEsterilizado;
         private System.Windows.Forms.ComboBox cbxFinZootecnico;
-        private System.Windows.Forms.ListView lvwUltimoDiagnostico;
         private System.Windows.Forms.DateTimePicker campoFechaNacimiento;
     }
 }
