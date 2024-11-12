@@ -53,6 +53,8 @@ namespace Clave1_Grupo2
             this.btnAsignarTurno = new System.Windows.Forms.Button();
             this.lblAsignarTurno = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
+            this.btnCobrar = new System.Windows.Forms.Button();
+            this.label8 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
             this.SuspendLayout();
             // 
@@ -330,6 +332,29 @@ namespace Clave1_Grupo2
             this.label9.TabIndex = 21;
             this.label9.Text = "Consultar Ventas";
             // 
+            // btnCobrar
+            // 
+            this.btnCobrar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnCobrar.BackgroundImage")));
+            this.btnCobrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnCobrar.Location = new System.Drawing.Point(454, 143);
+            this.btnCobrar.Margin = new System.Windows.Forms.Padding(2);
+            this.btnCobrar.Name = "btnCobrar";
+            this.btnCobrar.Size = new System.Drawing.Size(98, 106);
+            this.btnCobrar.TabIndex = 22;
+            this.btnCobrar.UseVisualStyleBackColor = true;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.BackColor = System.Drawing.Color.Transparent;
+            this.label8.Location = new System.Drawing.Point(473, 252);
+            this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(58, 13);
+            this.label8.TabIndex = 23;
+            this.label8.Text = "Cobrar cita";
+            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // VtnMenuPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -339,6 +364,8 @@ namespace Clave1_Grupo2
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(673, 303);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.btnCobrar);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.lblAsignarTurno);
             this.Controls.Add(this.btnAsignarTurno);
@@ -402,6 +429,8 @@ namespace Clave1_Grupo2
         private System.Windows.Forms.Button btnAsignarTurno;
         private System.Windows.Forms.Label lblAsignarTurno;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Button btnCobrar;
+        private System.Windows.Forms.Label label8;
     }
 }
 
