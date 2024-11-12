@@ -39,7 +39,7 @@
             this.dataGridViewVacunacion.Name = "dataGridViewVacunacion";
             this.dataGridViewVacunacion.RowHeadersWidth = 62;
             this.dataGridViewVacunacion.RowTemplate.Height = 28;
-            this.dataGridViewVacunacion.Size = new System.Drawing.Size(859, 497);
+            this.dataGridViewVacunacion.Size = new System.Drawing.Size(996, 477);
             this.dataGridViewVacunacion.TabIndex = 0;
             this.dataGridViewVacunacion.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewVacunacion_CellClick);
             this.dataGridViewVacunacion.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewVacunacion_CellClick);
@@ -48,15 +48,17 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(880, 513);
+            this.ClientSize = new System.Drawing.Size(1010, 495);
             this.Controls.Add(this.dataGridViewVacunacion);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ListaVacunas";
             this.ShowIcon = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ListaVacunas";
             this.Load += new System.EventHandler(this.ListaVacunas_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewVacunacion)).EndInit();
             this.ResumeLayout(false);
+
         }
 
         #endregion

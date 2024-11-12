@@ -21,28 +21,28 @@ namespace Clave1_Grupo2.gui
         private void ListaVacunas_Load(object sender, EventArgs e)
         {
             // Configuración del DataGridView
+            dataGridViewVacunacion.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
             dataGridViewVacunacion.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridViewVacunacion.MultiSelect = false;
             dataGridViewVacunacion.AllowUserToAddRows = false;
 
             // Agregar columnas
             dataGridViewVacunacion.Columns.Add("Vacuna", "Vacuna");
+            dataGridViewVacunacion.Columns.Add("Descripción", "Descripción");
             dataGridViewVacunacion.Columns.Add("Edad", "Edad");
             dataGridViewVacunacion.Columns.Add("Dosis", "Dosis");
-            dataGridViewVacunacion.Columns.Add("ViaAdministracion", "Vía de administración");
-            dataGridViewVacunacion.Columns.Add("EnfermedadPreviene", "Enfermedad que previene");
 
             // Agregar filas con los datos de la cartilla de vacunación
-            dataGridViewVacunacion.Rows.Add("BCG", "Nacimiento", "Única", "Intradérmica, región deltoidea derecha", "Tuberculosis meníngea y miliar");
-            dataGridViewVacunacion.Rows.Add("Hepatitis B", "Nacimiento", "Primera", "Intramuscular, muslo izquierdo", "Hepatitis B");
-            dataGridViewVacunacion.Rows.Add("Hexavalente acelular", "2 meses", "Primera", "Intramuscular, muslo izquierdo", "Difteria, tos ferina, tétanos, polio, hepatitis B, enfermedades por H. influenzae tipo B");
-            dataGridViewVacunacion.Rows.Add("Hexavalente acelular", "4 meses", "Segunda", "Intramuscular, muslo izquierdo", "Difteria, tos ferina, tétanos, polio, hepatitis B, enfermedades por H. influenzae tipo B");
-            dataGridViewVacunacion.Rows.Add("Hexavalente acelular", "6 meses", "Tercera", "Intramuscular, muslo izquierdo", "Difteria, tos ferina, tétanos, polio, hepatitis B, enfermedades por H. influenzae tipo B");
-            dataGridViewVacunacion.Rows.Add("Rotavirus", "2 meses", "Primera", "Oral", "Enfermedades por rotavirus");
-            dataGridViewVacunacion.Rows.Add("Rotavirus", "4 meses", "Segunda", "Oral", "Enfermedades por rotavirus");
-            dataGridViewVacunacion.Rows.Add("Neumococica conjugada", "2 meses", "Primera", "=< 18 meses de edad en musculo derecho", "Neumonia, memimgitis y otras");
-            dataGridViewVacunacion.Rows.Add("Neumococica conjugada", "4 meses", "Segunda", "=< 18 meses de edad en musculo derecho", "Neumonia, memimgitis y otras");
-            dataGridViewVacunacion.Rows.Add("Neumococica conjugada", "12 meses", "Refuerza", "=< 18 meses de edad en musculo derecho", "Neumonia, memimgitis y otras");
+            dataGridViewVacunacion.Rows.Add("Vacuna Antirrábica", "Previene la rabia", "3 meses", "Anual");
+            dataGridViewVacunacion.Rows.Add("Vacuna Parvovirus", "Protege contra el parvovirus", "6-8 semanas", "Cada 3 años");
+            dataGridViewVacunacion.Rows.Add("Vacuna Moquillo", "Protege contra el moquillo", "6-8 semanas", "Cada 3 años");
+            dataGridViewVacunacion.Rows.Add("Vacuna Leptospirosis", "Previene infecciones por leptospiras", "8-9 semanas", "Anual");
+            dataGridViewVacunacion.Rows.Add("Vacuna Bordetella", "Previene la 'tos de las perreras'", "8-12 semanas", "Cada 6 meses o anual");
+            dataGridViewVacunacion.Rows.Add("Vacuna Hepatitis", "Protege contra la hepatitis infecciosa canina", "6-8 semanas", "Cada 3 años");
+            dataGridViewVacunacion.Rows.Add("Vacuna Coronavirus", "Previene infecciones por coronavirus en cachorros", "6-8 semanas", "Anual");
+            dataGridViewVacunacion.Rows.Add("Vacuna contra Lyme", "Protege contra la enfermedad de Lyme", "12 semanas", "Anual");
+            dataGridViewVacunacion.Rows.Add("Vacuna Gripe Canina", "Previene contra el virus de la gripe canina", "12 semanas", "Anual");
+            dataGridViewVacunacion.Rows.Add("Vacuna Leucemia Felina", "Protege contra el virus de leucemia felina", "8 semanas (en gatos)", "Anual");
             // ... Agregar el resto de las filas de la tabla
         }
 

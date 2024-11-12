@@ -77,10 +77,10 @@
             this.finZootecnico = new System.Windows.Forms.Label();
             this.estirilizado = new System.Windows.Forms.Label();
             this.dietaAlimenticia = new System.Windows.Forms.Label();
-            this.btnGuardar = new System.Windows.Forms.Button();
-            this.btnCancelar = new System.Windows.Forms.Button();
             this.lblVetCatDog = new System.Windows.Forms.Label();
             this.picLogo = new System.Windows.Forms.PictureBox();
+            this.btnGuardar = new System.Windows.Forms.Button();
+            this.btnCancelar = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -541,28 +541,6 @@
             this.dietaAlimenticia.TabIndex = 8;
             this.dietaAlimenticia.Text = "Dieta Alimenticia";
             // 
-            // btnGuardar
-            // 
-            this.btnGuardar.Location = new System.Drawing.Point(966, 517);
-            this.btnGuardar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(159, 45);
-            this.btnGuardar.TabIndex = 21;
-            this.btnGuardar.Text = "Guardar";
-            this.btnGuardar.UseVisualStyleBackColor = false;
-            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
-            // 
-            // btnCancelar
-            // 
-            this.btnCancelar.Location = new System.Drawing.Point(1205, 512);
-            this.btnCancelar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(151, 50);
-            this.btnCancelar.TabIndex = 23;
-            this.btnCancelar.Text = "Cancelar";
-            this.btnCancelar.UseVisualStyleBackColor = false;
-            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
-            // 
             // lblVetCatDog
             // 
             this.lblVetCatDog.AutoSize = true;
@@ -584,6 +562,30 @@
             this.picLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picLogo.TabIndex = 107;
             this.picLogo.TabStop = false;
+            // 
+            // btnGuardar
+            // 
+            this.btnGuardar.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.btnGuardar.Location = new System.Drawing.Point(966, 517);
+            this.btnGuardar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.Size = new System.Drawing.Size(159, 45);
+            this.btnGuardar.TabIndex = 21;
+            this.btnGuardar.Text = "Guardar";
+            this.btnGuardar.UseVisualStyleBackColor = false;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
+            // 
+            // btnCancelar
+            // 
+            this.btnCancelar.BackColor = System.Drawing.Color.LightCoral;
+            this.btnCancelar.Location = new System.Drawing.Point(1205, 512);
+            this.btnCancelar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(151, 50);
+            this.btnCancelar.TabIndex = 23;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = false;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // ExpedienteClinico
             // 
@@ -650,8 +652,6 @@
         private System.Windows.Forms.TextBox txtEnfermedadesPrev;
         private System.Windows.Forms.Label dietaAlimenticia;
         private System.Windows.Forms.Label enfermedadesPrevias;
-        private System.Windows.Forms.Button btnGuardar;
-        private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.ComboBox cbxMascota;
         private System.Windows.Forms.ComboBox cbxPropietario;
         private System.Windows.Forms.TextBox txtPulso;
@@ -672,5 +672,7 @@
         private System.Windows.Forms.DateTimePicker campoFechaNacimiento;
         private System.Windows.Forms.Label lblVetCatDog;
         private System.Windows.Forms.PictureBox picLogo;
+        private System.Windows.Forms.Button btnGuardar;
+        private System.Windows.Forms.Button btnCancelar;
     }
 }
