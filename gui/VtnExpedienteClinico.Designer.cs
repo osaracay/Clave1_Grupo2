@@ -493,7 +493,6 @@
             this.txtNumeroPartos.Name = "txtNumeroPartos";
             this.txtNumeroPartos.Size = new System.Drawing.Size(206, 26);
             this.txtNumeroPartos.TabIndex = 15;
-            this.txtNumeroPartos.TextChanged += new System.EventHandler(this.txtNumeroPartos_TextChanged);
             // 
             // label10
             // 
@@ -540,9 +539,9 @@
             // 
             // btnGuardar
             // 
-            this.btnGuardar.Location = new System.Drawing.Point(997, 516);
+            this.btnGuardar.Location = new System.Drawing.Point(975, 516);
             this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(152, 44);
+            this.btnGuardar.Size = new System.Drawing.Size(174, 44);
             this.btnGuardar.TabIndex = 21;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = true;
@@ -550,9 +549,9 @@
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(1212, 516);
+            this.btnCancelar.Location = new System.Drawing.Point(1203, 516);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(143, 44);
+            this.btnCancelar.Size = new System.Drawing.Size(174, 44);
             this.btnCancelar.TabIndex = 23;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
