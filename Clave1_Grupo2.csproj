@@ -120,6 +120,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="azureclave1grupo2db.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>azureclave1grupo2db.xsd</DependentUpon>
+    </Compile>
     <Compile Include="c1g2ds.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -341,6 +346,17 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="azureclave1grupo2db.xsc">
+      <DependentUpon>azureclave1grupo2db.xsd</DependentUpon>
+    </None>
+    <None Include="azureclave1grupo2db.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>azureclave1grupo2db.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="azureclave1grupo2db.xss">
+      <DependentUpon>azureclave1grupo2db.xsd</DependentUpon>
+    </None>
     <None Include="c1g2ds.xsc">
       <DependentUpon>c1g2ds.xsd</DependentUpon>
     </None>

@@ -87,6 +87,7 @@ namespace Clave1_Grupo2.gui
                 CitaDAO.ActualizarEstadoCita(Rellenador.Cita,4);
                 //VERIFICAR EL ID DEL ESTADO COMPLETADO O HACER LOS INSERTS DE CATEGORIAS CON EL ID AL IMPORTAR LA BD
                 // 4 COMPLETADA
+                this.Close();
                 
             }
         }

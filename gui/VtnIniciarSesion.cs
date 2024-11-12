@@ -10,6 +10,9 @@ namespace Clave1_Grupo2.gui
         {
             InitializeComponent();
             txtUsuario.Focus();
+
+            //PERMITE SELECCIONAR LA BASE DE DATOS AL INICIO DEL PROGRAMA
+            ConexionBD.SeleccionarTipoConexion();
         }
 
         private void lblSignUp_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)

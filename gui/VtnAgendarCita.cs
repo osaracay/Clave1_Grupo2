@@ -200,6 +200,7 @@ namespace Clave1_Grupo2.gui
                         CitaDAO.RegistrarCita(c, (CatItem)cbxTipoCita.SelectedItem, idReservacion);
                         cbxMascota.SelectedIndex = -1;
                         cbxVeterinario.SelectedIndex = -1;
+                        txtMotivo.Clear();
                     }
                 }
                 else

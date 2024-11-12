@@ -145,8 +145,10 @@ namespace Clave1_Grupo2.dao
                 ConexionBD.GetConexionBD().Close();
             }
         }
+
         public static List<Mascota> GetListaMascotasOwner(int owner)
         {
+            // SI NO EXISTEN PROPIETARIOS DARA ERROR
             //ASEGURARARME QUE EL Usuario sea tipo cliente
             sentenciaSQL = "SELECT * FROM mascota WHERE id_propietario = ?";
             mascotasDueno = new List<Mascota>();

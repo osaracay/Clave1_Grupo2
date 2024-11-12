@@ -8,6 +8,7 @@ using System.Windows.Forms;
 
 namespace Clave1_Grupo2.dao
 {
+    /*
     class conexion
     {
         protected string server = "localhost";
@@ -15,22 +16,24 @@ namespace Clave1_Grupo2.dao
         protected string user = "root";
         protected string password = "";
     }
+    */
 
-    class ConexionMysql : conexion
+    class ConexionMysql //: conexion
     {
+        /*
         protected new string server = "localhost";
         protected new string database = "clave1_grupo2db";
         protected new string user = "root";
         protected new string password = "";
-
+        */
         private MySqlConnection conexion;
         private string cadenaConexion;
         public ConexionMysql()
         {
-            cadenaConexion = "Database=" + database +
+            cadenaConexion = ConexionBD.MySqliCs; /*"Database=" + database +
                 "; DataSource=" + server +
                 "; User Id= " + user +
-                "; Password=" + password;
+                "; Password=" + password;*/
 
             conexion = new MySqlConnection(cadenaConexion);
         }

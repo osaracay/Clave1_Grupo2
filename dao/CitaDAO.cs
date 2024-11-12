@@ -566,7 +566,7 @@ namespace Clave1_Grupo2.dao
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Ex: {ex.Message}\n{ex.StackTrace}");
+                MessageBox.Show($"No se alarme. Los campos de diagnostico estan nulos. Cuando guarde los cambios desaparece este mensaje. \nEx: {ex.Message}\n{ex.StackTrace}");
                 cita.SintomasMascota = ""; //Si esto es nulo da excepcion y me saca del bucle
                 cita.Diagnostico = ""; //Si esto es nulo da excepcion y me saca del bucle
                 cita.Tratamiento = ""; //Si esto es nulo da excepcion y me saca del bucle
