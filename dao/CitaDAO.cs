@@ -90,7 +90,7 @@ namespace Clave1_Grupo2.dao
                     "c.id_reservacion, dr.id_vet, dr.dia_reservacion, dr.h_ini, dr.h_fin, dr.reservado, m.id_propietario " +
                     "FROM cita c JOIN detalle_reservacion dr ON c.id_reservacion = dr.id_reservacion " +
                     "JOIN mascota m ON c.id_mascota = m.id_mascota " +
-                    "WHERE m.id_propietario = ? AND dr.reservado= 1 AND dr.dia_reservacion = ? " +
+                    "WHERE m.id_propietario = ? AND dr.reservado= 1 AND dr.dia_reservacion = ? AND c.id_estado_cita IN (1,2,5)" +
                     "ORDER BY dr.h_ini ASC";
             }
             else if (user.TipoUsuario == 2)
@@ -101,7 +101,7 @@ namespace Clave1_Grupo2.dao
                     "c.id_reservacion, dr.id_vet, dr.dia_reservacion, dr.h_ini, dr.h_fin, dr.reservado, m.id_propietario " +
                     "FROM cita c JOIN detalle_reservacion dr ON c.id_reservacion = dr.id_reservacion " +
                     "JOIN mascota m ON c.id_mascota = m.id_mascota " +
-                    "WHERE c.id_veterinario = ? AND dr.reservado= 1 AND dr.dia_reservacion = ? " +
+                    "WHERE c.id_veterinario = ? AND dr.reservado= 1 AND dr.dia_reservacion = ? AND c.id_estado_cita IN (1,2,5)" +
                     "ORDER BY dr.h_ini ASC";
             }
             else if (user.TipoUsuario == 1)
@@ -112,7 +112,7 @@ namespace Clave1_Grupo2.dao
                     "c.id_reservacion, dr.id_vet, dr.dia_reservacion, dr.h_ini, dr.h_fin, dr.reservado, m.id_propietario " +
                     "FROM cita c JOIN detalle_reservacion dr ON c.id_reservacion = dr.id_reservacion " +
                     "JOIN mascota m ON c.id_mascota = m.id_mascota " +
-                    "WHERE m.id_propietario <> ? AND dr.reservado= 1 AND dr.dia_reservacion = ? " +
+                    "WHERE m.id_propietario <> ? AND dr.reservado= 1 AND dr.dia_reservacion = ? AND c.id_estado_cita IN (1,2,5)" +
                     "ORDER BY dr.h_ini ASC";
                 // O sea, que seleccione todos. Usuarios admin no se les asignan mascotas
             }
@@ -203,7 +203,7 @@ namespace Clave1_Grupo2.dao
                     "c.id_reservacion, dr.id_vet, dr.dia_reservacion, dr.h_ini, dr.h_fin, dr.reservado, m.id_propietario " +
                     "FROM cita c JOIN detalle_reservacion dr ON c.id_reservacion = dr.id_reservacion " +
                     "JOIN mascota m ON c.id_mascota = m.id_mascota " +
-                    "WHERE c.id_mascota = ? AND dr.reservado= TRUE " +
+                    "WHERE c.id_mascota = ? AND dr.reservado= TRUE AND c.id_estado_cita IN (1,2,5)" +
                     "ORDER BY dr.h_ini ASC";
             //MODIFICAR
             /*
@@ -325,7 +325,7 @@ namespace Clave1_Grupo2.dao
                     "c.id_reservacion, dr.id_vet, dr.dia_reservacion, dr.h_ini, dr.h_fin, dr.reservado, m.id_propietario " +
                     "FROM cita c JOIN detalle_reservacion dr ON c.id_reservacion = dr.id_reservacion " +
                     "JOIN mascota m ON c.id_mascota = m.id_mascota " +
-                    "WHERE dr.dia_reservacion = ? AND dr.reservado= TRUE " +
+                    "WHERE dr.dia_reservacion = ? AND dr.reservado= TRUE AND c.id_estado_cita IN (1,2,5)" +
                     "ORDER BY dr.h_ini ASC";
             //MODIFICAR
             /*
