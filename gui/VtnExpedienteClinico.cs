@@ -66,6 +66,13 @@ namespace Clave1_Grupo2.gui
             txtEnfermedadesPrev.Clear();
             txtNumeroPartos.Clear();
             txtCirugiasPrev.Clear();
+            txtUltimaVisita.Clear();
+            txtTemperatura.Clear();
+            txtFrecuenciaRespiratoria.Clear();
+            txtPulso.Clear();
+            txtEnfermedadesPrev.Clear();
+            txtPeso.Clear();
+            txtTelefono.Clear();
         }
 
         private void cbxMascota_SelectedIndexChanged(object sender, EventArgs e)
