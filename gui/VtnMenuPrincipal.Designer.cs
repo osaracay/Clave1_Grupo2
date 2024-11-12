@@ -76,7 +76,7 @@ namespace Clave1_Grupo2
             // 
             this.btnAgendar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnAgendar.BackgroundImage")));
             this.btnAgendar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnAgendar.Location = new System.Drawing.Point(148, 143);
+            this.btnAgendar.Location = new System.Drawing.Point(148, 159);
             this.btnAgendar.Margin = new System.Windows.Forms.Padding(2);
             this.btnAgendar.Name = "btnAgendar";
             this.btnAgendar.Size = new System.Drawing.Size(98, 106);
@@ -150,7 +150,7 @@ namespace Clave1_Grupo2
             // 
             this.btnCitas.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnCitas.BackgroundImage")));
             this.btnCitas.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnCitas.Location = new System.Drawing.Point(250, 143);
+            this.btnCitas.Location = new System.Drawing.Point(250, 159);
             this.btnCitas.Margin = new System.Windows.Forms.Padding(2);
             this.btnCitas.Name = "btnCitas";
             this.btnCitas.Size = new System.Drawing.Size(98, 106);
@@ -162,7 +162,7 @@ namespace Clave1_Grupo2
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Location = new System.Drawing.Point(155, 118);
+            this.label1.Location = new System.Drawing.Point(155, 125);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(88, 13);
@@ -173,7 +173,7 @@ namespace Clave1_Grupo2
             // 
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Location = new System.Drawing.Point(267, 118);
+            this.label2.Location = new System.Drawing.Point(264, 125);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(72, 13);
@@ -184,7 +184,7 @@ namespace Clave1_Grupo2
             // 
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Location = new System.Drawing.Point(166, 251);
+            this.label3.Location = new System.Drawing.Point(163, 272);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(68, 13);
@@ -195,7 +195,7 @@ namespace Clave1_Grupo2
             // 
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Location = new System.Drawing.Point(285, 251);
+            this.label4.Location = new System.Drawing.Point(285, 272);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(30, 13);
@@ -218,7 +218,7 @@ namespace Clave1_Grupo2
             // 
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Location = new System.Drawing.Point(381, 119);
+            this.label5.Location = new System.Drawing.Point(380, 125);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(46, 13);
@@ -289,7 +289,7 @@ namespace Clave1_Grupo2
             // 
             this.btnVntC.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnVntC.BackgroundImage")));
             this.btnVntC.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnVntC.Location = new System.Drawing.Point(556, 143);
+            this.btnVntC.Location = new System.Drawing.Point(556, 159);
             this.btnVntC.Margin = new System.Windows.Forms.Padding(2);
             this.btnVntC.Name = "btnVntC";
             this.btnVntC.Size = new System.Drawing.Size(98, 106);
@@ -301,7 +301,7 @@ namespace Clave1_Grupo2
             // 
             this.btnAsignarTurno.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnAsignarTurno.BackgroundImage")));
             this.btnAsignarTurno.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnAsignarTurno.Location = new System.Drawing.Point(352, 143);
+            this.btnAsignarTurno.Location = new System.Drawing.Point(352, 159);
             this.btnAsignarTurno.Margin = new System.Windows.Forms.Padding(2);
             this.btnAsignarTurno.Name = "btnAsignarTurno";
             this.btnAsignarTurno.Size = new System.Drawing.Size(98, 106);
@@ -313,7 +313,7 @@ namespace Clave1_Grupo2
             // 
             this.lblAsignarTurno.AutoSize = true;
             this.lblAsignarTurno.BackColor = System.Drawing.Color.Transparent;
-            this.lblAsignarTurno.Location = new System.Drawing.Point(364, 251);
+            this.lblAsignarTurno.Location = new System.Drawing.Point(364, 272);
             this.lblAsignarTurno.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblAsignarTurno.Name = "lblAsignarTurno";
             this.lblAsignarTurno.Size = new System.Drawing.Size(72, 26);
@@ -325,7 +325,7 @@ namespace Clave1_Grupo2
             // 
             this.label9.AutoSize = true;
             this.label9.BackColor = System.Drawing.Color.Transparent;
-            this.label9.Location = new System.Drawing.Point(567, 264);
+            this.label9.Location = new System.Drawing.Point(564, 275);
             this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(87, 13);
@@ -336,7 +336,7 @@ namespace Clave1_Grupo2
             // 
             this.btnCobrar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnCobrar.BackgroundImage")));
             this.btnCobrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnCobrar.Location = new System.Drawing.Point(454, 143);
+            this.btnCobrar.Location = new System.Drawing.Point(454, 159);
             this.btnCobrar.Margin = new System.Windows.Forms.Padding(2);
             this.btnCobrar.Name = "btnCobrar";
             this.btnCobrar.Size = new System.Drawing.Size(98, 106);
@@ -347,7 +347,7 @@ namespace Clave1_Grupo2
             // 
             this.label8.AutoSize = true;
             this.label8.BackColor = System.Drawing.Color.Transparent;
-            this.label8.Location = new System.Drawing.Point(473, 252);
+            this.label8.Location = new System.Drawing.Point(476, 273);
             this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(58, 13);
