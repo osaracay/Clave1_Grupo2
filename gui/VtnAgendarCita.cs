@@ -15,9 +15,11 @@ namespace Clave1_Grupo2.gui
 {
     public partial class VtnAgendarCita : Form
     {
+        /*SIN USAR
         private List<Cliente> clientes;
         private List<Veterinario> veterinarios;
         private List<Cupo> cuposDisponibles;
+        */
         private static Cupo seleccionado;
         private int duracionTipoCita;
         public VtnAgendarCita()

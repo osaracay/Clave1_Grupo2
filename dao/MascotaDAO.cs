@@ -61,7 +61,7 @@ namespace Clave1_Grupo2.dao
             }
         }
 
-        //Update mascotas por propietario en caso el usuario sea vet o admin
+        /*SIN USARUpdate mascotas por propietario en caso el usuario sea vet o admin
         public static DataTable GetMascotasPorPropietario(int propietario)
         {
             //ASEGURARARME QUE EL Usuario sea tipo cliente
@@ -91,6 +91,7 @@ namespace Clave1_Grupo2.dao
                 ConexionBD.GetConexionBD().Close();
             }            
         }
+        */
         public static List<Mascota> GetListaMascotasOwner(Usuario owner)
         {
             //ASEGURARARME QUE EL Usuario sea tipo cliente

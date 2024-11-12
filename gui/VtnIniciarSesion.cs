@@ -52,17 +52,17 @@ namespace Clave1_Grupo2.gui
         private void lblForgotPw_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             insistente++;
-            if (insistente <= 5)
+            if (insistente <= 2)
             {
-                MessageBox.Show("Acuérdese");
+                MessageBox.Show($"Acuérdese ({insistente})");
             }
-            else if (insistente==6)
+            else if (insistente==3)
             {
                 MessageBox.Show(CyberSec.Saracay(UsuarioDAO.Olvidaste(txtUsuario.Text.Trim())));
             }
             else
             {
-                MessageBox.Show("ignorando ...");
+                MessageBox.Show("No la repetiré ...");
             }            
         }
         private void txtPassword_KeyPress(object sender, KeyPressEventArgs e)

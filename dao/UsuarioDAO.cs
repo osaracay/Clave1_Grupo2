@@ -247,68 +247,6 @@ namespace Clave1_Grupo2.dao
                 ConexionBD.GetConexionBD().Close();
             }
         }
-
-        public static DataTable GetTblClientes()
-        {
-            //CONSIDERAR QUE ESTE METODO REGRESE UNA LISTA DE CLIENTES O CREAR UN NUEVO METODO GetListaClientes
-            //O UTILIZAR LINQ PARA HACER CONSULTAS A LOS DATATABLE
-            consulta = "SELECT * FROM usuario WHERE tipo_usuario=3"; // El tipo de usuario clientes corresponde al tipo 3
-            if (clientes == null)
-            {
-                try
-                {
-                    adaptador = new OdbcDataAdapter(consulta, ConexionBD.GetConexionBD());
-                    clientes = new DataTable();
-
-                    //PENDIENTE Definir campos de tabla y agregar tabla al DataSet
-                    ConexionBD.GetDataSetBD().Tables.Add(clientes); 
-
-                    using (adaptador)
-                    {
-                        ConexionBD.GetConexionBD().Open();
-                        adaptador.Fill(clientes);
-                    }
-                }
-                catch (Exception e)
-                {
-                    MessageBox.Show($"Ocurrio un error: \n{e.Message}");
-                }
-                finally
-                {
-                    ConexionBD.GetConexionBD().Close();
-                }
-            }
-            return clientes;
-        }
-
-        public static DataTable UpdateTblClientes()
-        {
-            consulta = "SELECT * FROM usuario WHERE tipo_usuario=3"; // El tipo de usuario clientes corresponde al tipo 3
-                try
-                {
-                    adaptador = new OdbcDataAdapter(consulta, ConexionBD.GetConexionBD());
-                    clientes = new DataTable();
-
-                    //PENDIENTE Definir campos de tabla y agregar tabla al DataSet
-                    ConexionBD.GetDataSetBD().Tables.Add(clientes);
-
-                    using (adaptador)
-                    {
-                        ConexionBD.GetConexionBD().Open();
-                        adaptador.Fill(clientes);
-                    }
-                }
-                catch (Exception e)
-                {
-                    MessageBox.Show($"Ocurrio un error: \n{e.Message}");
-                }
-                finally
-                {
-                    ConexionBD.GetConexionBD().Close();
-                }
-            return clientes;
-        }
-
         //QUIERO CREAR LISTAS DE USUARIOS PARA LLENAR COMBOBOXES O LISTBOXES
         public static List<Usuario> GetListaUsuarios(int tipoUsuario)
         {
@@ -317,12 +255,12 @@ namespace Clave1_Grupo2.dao
             adaptador.MissingSchemaAction = MissingSchemaAction.AddWithKey;
             adaptador.SelectCommand = new OdbcCommand(consulta, ConexionBD.GetConexionBD());
             adaptador.SelectCommand.Parameters.Add("@tipo_usuario", OdbcType.Int).Value = tipoUsuario;
-            
+
             try
             {
                 ConexionBD.GetConexionBD().Open();
                 lector = adaptador.SelectCommand.ExecuteReader(); //Execute nonquery requiere una conexion valida y activa por eso se abre. Para fill no se requiere se abre y cierra sola
-                
+
                 //PODRIA HABER OCUPADO UN SWITCH CASE
                 if (tipoUsuario == 3) //Aqui puede suceder un relajo si le paso un Usuario de tipo distinto de 3
                 {
@@ -350,7 +288,7 @@ namespace Clave1_Grupo2.dao
                     listaVets = new List<Usuario>(); // Suponiendo que esto limpia la lista
                     while (lector.Read())
                     {
-                        
+
                         Veterinario m = new Veterinario(); //Puede ser un cliente, Admin o Vet
                         m.IdUsuario = lector.GetInt32(0); //int
                         m.Nombre = lector.GetString(1);
@@ -389,7 +327,7 @@ namespace Clave1_Grupo2.dao
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"No se encontraron usuarios del tipo indicado u otro error: \n{ex.Message}");                
+                MessageBox.Show($"No se encontraron usuarios del tipo indicado u otro error: \n{ex.Message}");
                 return null;
             }
             finally
@@ -401,6 +339,68 @@ namespace Clave1_Grupo2.dao
                 ConexionBD.GetConexionBD().Close();
             }
         }
+        /*
+        public static DataTable GetTblClientes()
+        {
+            //CONSIDERAR QUE ESTE METODO REGRESE UNA LISTA DE CLIENTES O CREAR UN NUEVO METODO GetListaClientes
+            //O UTILIZAR LINQ PARA HACER CONSULTAS A LOS DATATABLE
+            consulta = "SELECT * FROM usuario WHERE tipo_usuario=3"; // El tipo de usuario clientes corresponde al tipo 3
+            if (clientes == null)
+            {
+                try
+                {
+                    adaptador = new OdbcDataAdapter(consulta, ConexionBD.GetConexionBD());
+                    clientes = new DataTable();
+
+                    //PENDIENTE Definir campos de tabla y agregar tabla al DataSet
+                    ConexionBD.GetDataSetBD().Tables.Add(clientes); 
+
+                    using (adaptador)
+                    {
+                        ConexionBD.GetConexionBD().Open();
+                        adaptador.Fill(clientes);
+                    }
+                }
+                catch (Exception e)
+                {
+                    MessageBox.Show($"Ocurrio un error: \n{e.Message}");
+                }
+                finally
+                {
+                    ConexionBD.GetConexionBD().Close();
+                }
+            }
+            return clientes;
+        }
+        */
+        public static DataTable UpdateTblClientes()
+        {
+            consulta = "SELECT * FROM usuario WHERE tipo_usuario=3"; // El tipo de usuario clientes corresponde al tipo 3
+                try
+                {
+                    adaptador = new OdbcDataAdapter(consulta, ConexionBD.GetConexionBD());
+                    clientes = new DataTable();
+
+                    //PENDIENTE Definir campos de tabla y agregar tabla al DataSet
+                    ConexionBD.GetDataSetBD().Tables.Add(clientes);
+
+                    using (adaptador)
+                    {
+                        ConexionBD.GetConexionBD().Open();
+                        adaptador.Fill(clientes);
+                    }
+                }
+                catch (Exception e)
+                {
+                    MessageBox.Show($"Ocurrio un error: \n{e.Message}");
+                }
+                finally
+                {
+                    ConexionBD.GetConexionBD().Close();
+                }
+            return clientes;
+        }
+
         /*
         public static DataTable GetTblVets()
         {
