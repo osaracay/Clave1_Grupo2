@@ -49,6 +49,9 @@ namespace Clave1_Grupo2.gui
             this.cbxEstadoCita = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
             this.btnCompletarCita = new System.Windows.Forms.Button();
+            this.lblVetCatDog = new System.Windows.Forms.Label();
+            this.picLogo = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -274,6 +277,30 @@ namespace Clave1_Grupo2.gui
             this.btnCompletarCita.UseVisualStyleBackColor = false;
             this.btnCompletarCita.Click += new System.EventHandler(this.btnCompletarCita_Click);
             // 
+            // lblVetCatDog
+            // 
+            this.lblVetCatDog.AutoSize = true;
+            this.lblVetCatDog.BackColor = System.Drawing.Color.Transparent;
+            this.lblVetCatDog.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblVetCatDog.Location = new System.Drawing.Point(544, 3);
+            this.lblVetCatDog.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblVetCatDog.Name = "lblVetCatDog";
+            this.lblVetCatDog.Size = new System.Drawing.Size(128, 52);
+            this.lblVetCatDog.TabIndex = 119;
+            this.lblVetCatDog.Text = "Veterinaria\r\nCat-Dog";
+            // 
+            // picLogo
+            // 
+            this.picLogo.BackColor = System.Drawing.Color.Transparent;
+            this.picLogo.Image = ((System.Drawing.Image)(resources.GetObject("picLogo.Image")));
+            this.picLogo.Location = new System.Drawing.Point(676, 6);
+            this.picLogo.Margin = new System.Windows.Forms.Padding(2);
+            this.picLogo.Name = "picLogo";
+            this.picLogo.Size = new System.Drawing.Size(98, 106);
+            this.picLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picLogo.TabIndex = 118;
+            this.picLogo.TabStop = false;
+            // 
             // VtnAtenderCita
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -281,6 +308,8 @@ namespace Clave1_Grupo2.gui
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(789, 609);
+            this.Controls.Add(this.lblVetCatDog);
+            this.Controls.Add(this.picLogo);
             this.Controls.Add(this.btnCompletarCita);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.cbxEstadoCita);
@@ -307,6 +336,7 @@ namespace Clave1_Grupo2.gui
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Atender cita";
             this.Load += new System.EventHandler(this.VtnAtenderCita_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.picLogo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -333,5 +363,7 @@ namespace Clave1_Grupo2.gui
         private System.Windows.Forms.ComboBox cbxEstadoCita;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button btnCompletarCita;
+        private System.Windows.Forms.Label lblVetCatDog;
+        private System.Windows.Forms.PictureBox picLogo;
     }
 }

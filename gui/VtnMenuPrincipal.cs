@@ -199,6 +199,7 @@ namespace Clave1_Grupo2
                 btnCompra.Enabled = true;
                 btnVenta.Enabled = true;
                 btnVntC.Enabled = true;
+                btnCobrar.Enabled = true;
                 //lblAsignarTurno.Hide();
             }
             else
@@ -208,6 +209,7 @@ namespace Clave1_Grupo2
                 btnCompra.Enabled = false;
                 btnVenta.Enabled = false;
                 btnVntC.Enabled = false;
+                btnCobrar.Enabled = false;
                 //lblAsignarTurno.Show();
             }
         }

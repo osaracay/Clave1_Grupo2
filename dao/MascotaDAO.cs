@@ -190,7 +190,7 @@ namespace Clave1_Grupo2.dao
             }
             finally
             {
-                lector.Close();
+                //lector.Close();
                 
                 ConexionBD.GetConexionBD().Close();
             }
