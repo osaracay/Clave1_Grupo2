@@ -63,21 +63,26 @@
             this.btnVacuna = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.fileSystemWatcher1 = new System.IO.FileSystemWatcher();
+            this.lblVetCatDog = new System.Windows.Forms.Label();
+            this.picLogo = new System.Windows.Forms.PictureBox();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
             this.SuspendLayout();
             // 
             // btnGuardar
             // 
-            this.btnGuardar.Location = new System.Drawing.Point(353, 318);
-            this.btnGuardar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnGuardar.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.btnGuardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGuardar.Location = new System.Drawing.Point(337, 240);
+            this.btnGuardar.Margin = new System.Windows.Forms.Padding(2);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(101, 29);
             this.btnGuardar.TabIndex = 28;
             this.btnGuardar.Text = "Guardar";
-            this.btnGuardar.UseVisualStyleBackColor = true;
+            this.btnGuardar.UseVisualStyleBackColor = false;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // groupBox2
@@ -90,9 +95,9 @@
             this.groupBox2.Controls.Add(this.txtNombre);
             this.groupBox2.Controls.Add(this.nombre1);
             this.groupBox2.Location = new System.Drawing.Point(14, 281);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox2.Size = new System.Drawing.Size(292, 101);
             this.groupBox2.TabIndex = 26;
             this.groupBox2.TabStop = false;
@@ -102,7 +107,7 @@
             // 
             this.cbxPropietario.FormattingEnabled = true;
             this.cbxPropietario.Location = new System.Drawing.Point(100, 22);
-            this.cbxPropietario.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbxPropietario.Margin = new System.Windows.Forms.Padding(2);
             this.cbxPropietario.Name = "cbxPropietario";
             this.cbxPropietario.Size = new System.Drawing.Size(178, 21);
             this.cbxPropietario.TabIndex = 21;
@@ -111,7 +116,7 @@
             // txtEmail
             // 
             this.txtEmail.Location = new System.Drawing.Point(100, 75);
-            this.txtEmail.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtEmail.Margin = new System.Windows.Forms.Padding(2);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(178, 20);
             this.txtEmail.TabIndex = 11;
@@ -139,7 +144,7 @@
             // txtNombre
             // 
             this.txtNombre.Location = new System.Drawing.Point(100, 47);
-            this.txtNombre.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtNombre.Margin = new System.Windows.Forms.Padding(2);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(178, 20);
             this.txtNombre.TabIndex = 7;
@@ -172,9 +177,9 @@
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.especie);
             this.groupBox1.Location = new System.Drawing.Point(14, 39);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox1.Size = new System.Drawing.Size(292, 229);
             this.groupBox1.TabIndex = 25;
             this.groupBox1.TabStop = false;
@@ -184,7 +189,7 @@
             // 
             this.cbxMascota.FormattingEnabled = true;
             this.cbxMascota.Location = new System.Drawing.Point(131, 20);
-            this.cbxMascota.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbxMascota.Margin = new System.Windows.Forms.Padding(2);
             this.cbxMascota.Name = "cbxMascota";
             this.cbxMascota.Size = new System.Drawing.Size(127, 21);
             this.cbxMascota.TabIndex = 20;
@@ -193,7 +198,7 @@
             // txtColorMascota
             // 
             this.txtColorMascota.Location = new System.Drawing.Point(131, 201);
-            this.txtColorMascota.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtColorMascota.Margin = new System.Windows.Forms.Padding(2);
             this.txtColorMascota.Name = "txtColorMascota";
             this.txtColorMascota.Size = new System.Drawing.Size(127, 20);
             this.txtColorMascota.TabIndex = 19;
@@ -211,7 +216,7 @@
             // txtGenero
             // 
             this.txtGenero.Location = new System.Drawing.Point(131, 170);
-            this.txtGenero.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtGenero.Margin = new System.Windows.Forms.Padding(2);
             this.txtGenero.Name = "txtGenero";
             this.txtGenero.Size = new System.Drawing.Size(127, 20);
             this.txtGenero.TabIndex = 17;
@@ -229,7 +234,7 @@
             // txtEdad
             // 
             this.txtEdad.Location = new System.Drawing.Point(131, 137);
-            this.txtEdad.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtEdad.Margin = new System.Windows.Forms.Padding(2);
             this.txtEdad.Name = "txtEdad";
             this.txtEdad.Size = new System.Drawing.Size(127, 20);
             this.txtEdad.TabIndex = 15;
@@ -247,7 +252,7 @@
             // nomMascota
             // 
             this.nomMascota.Location = new System.Drawing.Point(131, 44);
-            this.nomMascota.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.nomMascota.Margin = new System.Windows.Forms.Padding(2);
             this.nomMascota.Name = "nomMascota";
             this.nomMascota.Size = new System.Drawing.Size(127, 20);
             this.nomMascota.TabIndex = 9;
@@ -255,7 +260,7 @@
             // txtRaza
             // 
             this.txtRaza.Location = new System.Drawing.Point(131, 105);
-            this.txtRaza.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtRaza.Margin = new System.Windows.Forms.Padding(2);
             this.txtRaza.Name = "txtRaza";
             this.txtRaza.Size = new System.Drawing.Size(127, 20);
             this.txtRaza.TabIndex = 13;
@@ -283,7 +288,7 @@
             // txtEspecie
             // 
             this.txtEspecie.Location = new System.Drawing.Point(131, 73);
-            this.txtEspecie.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtEspecie.Margin = new System.Windows.Forms.Padding(2);
             this.txtEspecie.Name = "txtEspecie";
             this.txtEspecie.Size = new System.Drawing.Size(127, 20);
             this.txtEspecie.TabIndex = 11;
@@ -331,9 +336,9 @@
             this.groupBox3.Controls.Add(this.txtVacunaSeleccionada);
             this.groupBox3.Controls.Add(this.btnVacuna);
             this.groupBox3.Location = new System.Drawing.Point(337, 51);
-            this.groupBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox3.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox3.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox3.Size = new System.Drawing.Size(277, 183);
             this.groupBox3.TabIndex = 31;
             this.groupBox3.TabStop = false;
@@ -398,7 +403,7 @@
             // txtVacunaSeleccionada
             // 
             this.txtVacunaSeleccionada.Location = new System.Drawing.Point(19, 82);
-            this.txtVacunaSeleccionada.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtVacunaSeleccionada.Margin = new System.Windows.Forms.Padding(2);
             this.txtVacunaSeleccionada.Name = "txtVacunaSeleccionada";
             this.txtVacunaSeleccionada.Size = new System.Drawing.Size(227, 20);
             this.txtVacunaSeleccionada.TabIndex = 69;
@@ -406,7 +411,7 @@
             // btnVacuna
             // 
             this.btnVacuna.Location = new System.Drawing.Point(33, 24);
-            this.btnVacuna.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnVacuna.Margin = new System.Windows.Forms.Padding(2);
             this.btnVacuna.Name = "btnVacuna";
             this.btnVacuna.Size = new System.Drawing.Size(211, 32);
             this.btnVacuna.TabIndex = 68;
@@ -416,19 +421,45 @@
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(493, 318);
-            this.btnCancelar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnCancelar.BackColor = System.Drawing.Color.LightCoral;
+            this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelar.Location = new System.Drawing.Point(337, 273);
+            this.btnCancelar.Margin = new System.Windows.Forms.Padding(2);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(101, 32);
             this.btnCancelar.TabIndex = 33;
             this.btnCancelar.Text = "Cancelar";
-            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.UseVisualStyleBackColor = false;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // fileSystemWatcher1
             // 
             this.fileSystemWatcher1.EnableRaisingEvents = true;
             this.fileSystemWatcher1.SynchronizingObject = this;
+            // 
+            // lblVetCatDog
+            // 
+            this.lblVetCatDog.AutoSize = true;
+            this.lblVetCatDog.BackColor = System.Drawing.Color.Transparent;
+            this.lblVetCatDog.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblVetCatDog.Location = new System.Drawing.Point(384, 321);
+            this.lblVetCatDog.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblVetCatDog.Name = "lblVetCatDog";
+            this.lblVetCatDog.Size = new System.Drawing.Size(128, 52);
+            this.lblVetCatDog.TabIndex = 108;
+            this.lblVetCatDog.Text = "Veterinaria\r\nCat-Dog";
+            // 
+            // picLogo
+            // 
+            this.picLogo.BackColor = System.Drawing.Color.Transparent;
+            this.picLogo.Image = ((System.Drawing.Image)(resources.GetObject("picLogo.Image")));
+            this.picLogo.Location = new System.Drawing.Point(516, 265);
+            this.picLogo.Margin = new System.Windows.Forms.Padding(2);
+            this.picLogo.Name = "picLogo";
+            this.picLogo.Size = new System.Drawing.Size(98, 106);
+            this.picLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picLogo.TabIndex = 107;
+            this.picLogo.TabStop = false;
             // 
             // VtnCartillaVacunacion
             // 
@@ -439,6 +470,8 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(635, 382);
+            this.Controls.Add(this.lblVetCatDog);
+            this.Controls.Add(this.picLogo);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.btnGuardar);
@@ -447,7 +480,7 @@
             this.Controls.Add(this.label1);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "VtnCartillaVacunacion";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CartillaVacunación";
@@ -459,6 +492,7 @@
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picLogo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -499,5 +533,7 @@
         private System.Windows.Forms.ComboBox cbxTipoCita;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label lblVetCatDog;
+        private System.Windows.Forms.PictureBox picLogo;
     }
 }

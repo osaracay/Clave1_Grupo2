@@ -79,9 +79,12 @@
             this.dietaAlimenticia = new System.Windows.Forms.Label();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
+            this.lblVetCatDog = new System.Windows.Forms.Label();
+            this.picLogo = new System.Windows.Forms.PictureBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -109,7 +112,7 @@
             // nomMascota
             // 
             this.nomMascota.Location = new System.Drawing.Point(131, 44);
-            this.nomMascota.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.nomMascota.Margin = new System.Windows.Forms.Padding(2);
             this.nomMascota.Name = "nomMascota";
             this.nomMascota.Size = new System.Drawing.Size(127, 20);
             this.nomMascota.TabIndex = 9;
@@ -127,7 +130,7 @@
             // txtEspecie
             // 
             this.txtEspecie.Location = new System.Drawing.Point(131, 73);
-            this.txtEspecie.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtEspecie.Margin = new System.Windows.Forms.Padding(2);
             this.txtEspecie.Name = "txtEspecie";
             this.txtEspecie.Size = new System.Drawing.Size(127, 20);
             this.txtEspecie.TabIndex = 11;
@@ -145,7 +148,7 @@
             // txtRaza
             // 
             this.txtRaza.Location = new System.Drawing.Point(131, 105);
-            this.txtRaza.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtRaza.Margin = new System.Windows.Forms.Padding(2);
             this.txtRaza.Name = "txtRaza";
             this.txtRaza.Size = new System.Drawing.Size(127, 20);
             this.txtRaza.TabIndex = 13;
@@ -192,9 +195,9 @@
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.especie);
             this.groupBox1.Location = new System.Drawing.Point(37, 138);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox1.Size = new System.Drawing.Size(569, 240);
             this.groupBox1.TabIndex = 14;
             this.groupBox1.TabStop = false;
@@ -205,7 +208,7 @@
             this.campoFechaNacimiento.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.campoFechaNacimiento.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.campoFechaNacimiento.Location = new System.Drawing.Point(426, 20);
-            this.campoFechaNacimiento.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.campoFechaNacimiento.Margin = new System.Windows.Forms.Padding(2);
             this.campoFechaNacimiento.MaxDate = new System.DateTime(2024, 11, 9, 0, 0, 0, 0);
             this.campoFechaNacimiento.MinDate = new System.DateTime(1950, 1, 1, 0, 0, 0, 0);
             this.campoFechaNacimiento.Name = "campoFechaNacimiento";
@@ -216,7 +219,7 @@
             // txtFrecuenciaRespiratoria
             // 
             this.txtFrecuenciaRespiratoria.Location = new System.Drawing.Point(426, 107);
-            this.txtFrecuenciaRespiratoria.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtFrecuenciaRespiratoria.Margin = new System.Windows.Forms.Padding(2);
             this.txtFrecuenciaRespiratoria.Name = "txtFrecuenciaRespiratoria";
             this.txtFrecuenciaRespiratoria.Size = new System.Drawing.Size(130, 20);
             this.txtFrecuenciaRespiratoria.TabIndex = 34;
@@ -234,7 +237,7 @@
             // txtTemperatura
             // 
             this.txtTemperatura.Location = new System.Drawing.Point(426, 75);
-            this.txtTemperatura.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtTemperatura.Margin = new System.Windows.Forms.Padding(2);
             this.txtTemperatura.Name = "txtTemperatura";
             this.txtTemperatura.Size = new System.Drawing.Size(130, 20);
             this.txtTemperatura.TabIndex = 32;
@@ -252,7 +255,7 @@
             // txtUltimaVisita
             // 
             this.txtUltimaVisita.Location = new System.Drawing.Point(426, 47);
-            this.txtUltimaVisita.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtUltimaVisita.Margin = new System.Windows.Forms.Padding(2);
             this.txtUltimaVisita.Name = "txtUltimaVisita";
             this.txtUltimaVisita.Size = new System.Drawing.Size(130, 20);
             this.txtUltimaVisita.TabIndex = 28;
@@ -280,7 +283,7 @@
             // txtPulso
             // 
             this.txtPulso.Location = new System.Drawing.Point(426, 162);
-            this.txtPulso.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtPulso.Margin = new System.Windows.Forms.Padding(2);
             this.txtPulso.Name = "txtPulso";
             this.txtPulso.Size = new System.Drawing.Size(130, 20);
             this.txtPulso.TabIndex = 24;
@@ -288,7 +291,7 @@
             // txtPeso
             // 
             this.txtPeso.Location = new System.Drawing.Point(426, 136);
-            this.txtPeso.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtPeso.Margin = new System.Windows.Forms.Padding(2);
             this.txtPeso.Name = "txtPeso";
             this.txtPeso.Size = new System.Drawing.Size(130, 20);
             this.txtPeso.TabIndex = 23;
@@ -317,7 +320,7 @@
             // 
             this.cbxMascota.FormattingEnabled = true;
             this.cbxMascota.Location = new System.Drawing.Point(131, 15);
-            this.cbxMascota.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbxMascota.Margin = new System.Windows.Forms.Padding(2);
             this.cbxMascota.Name = "cbxMascota";
             this.cbxMascota.Size = new System.Drawing.Size(126, 21);
             this.cbxMascota.TabIndex = 20;
@@ -326,7 +329,7 @@
             // txtColorMascota
             // 
             this.txtColorMascota.Location = new System.Drawing.Point(131, 194);
-            this.txtColorMascota.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtColorMascota.Margin = new System.Windows.Forms.Padding(2);
             this.txtColorMascota.Name = "txtColorMascota";
             this.txtColorMascota.Size = new System.Drawing.Size(127, 20);
             this.txtColorMascota.TabIndex = 19;
@@ -344,7 +347,7 @@
             // txtGenero
             // 
             this.txtGenero.Location = new System.Drawing.Point(131, 164);
-            this.txtGenero.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtGenero.Margin = new System.Windows.Forms.Padding(2);
             this.txtGenero.Name = "txtGenero";
             this.txtGenero.Size = new System.Drawing.Size(127, 20);
             this.txtGenero.TabIndex = 17;
@@ -362,7 +365,7 @@
             // txtEnfermedadesPrev
             // 
             this.txtEnfermedadesPrev.Location = new System.Drawing.Point(426, 191);
-            this.txtEnfermedadesPrev.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtEnfermedadesPrev.Margin = new System.Windows.Forms.Padding(2);
             this.txtEnfermedadesPrev.Name = "txtEnfermedadesPrev";
             this.txtEnfermedadesPrev.Size = new System.Drawing.Size(130, 20);
             this.txtEnfermedadesPrev.TabIndex = 11;
@@ -370,7 +373,7 @@
             // txtEdad
             // 
             this.txtEdad.Location = new System.Drawing.Point(131, 135);
-            this.txtEdad.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtEdad.Margin = new System.Windows.Forms.Padding(2);
             this.txtEdad.Name = "txtEdad";
             this.txtEdad.Size = new System.Drawing.Size(127, 20);
             this.txtEdad.TabIndex = 15;
@@ -404,10 +407,10 @@
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Controls.Add(this.txtEmail);
             this.groupBox2.Controls.Add(this.label3);
-            this.groupBox2.Location = new System.Drawing.Point(36, 60);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox2.Location = new System.Drawing.Point(36, 68);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox2.Size = new System.Drawing.Size(895, 63);
             this.groupBox2.TabIndex = 15;
             this.groupBox2.TabStop = false;
@@ -426,7 +429,7 @@
             // txtTelefono
             // 
             this.txtTelefono.Location = new System.Drawing.Point(720, 29);
-            this.txtTelefono.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtTelefono.Margin = new System.Windows.Forms.Padding(2);
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.Size = new System.Drawing.Size(149, 20);
             this.txtTelefono.TabIndex = 22;
@@ -435,7 +438,7 @@
             // 
             this.cbxPropietario.FormattingEnabled = true;
             this.cbxPropietario.Location = new System.Drawing.Point(81, 29);
-            this.cbxPropietario.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbxPropietario.Margin = new System.Windows.Forms.Padding(2);
             this.cbxPropietario.Name = "cbxPropietario";
             this.cbxPropietario.Size = new System.Drawing.Size(177, 21);
             this.cbxPropietario.TabIndex = 21;
@@ -454,7 +457,7 @@
             // txtEmail
             // 
             this.txtEmail.Location = new System.Drawing.Point(395, 31);
-            this.txtEmail.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtEmail.Margin = new System.Windows.Forms.Padding(2);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(200, 20);
             this.txtEmail.TabIndex = 7;
@@ -483,9 +486,9 @@
             this.groupBox3.Controls.Add(this.estirilizado);
             this.groupBox3.Controls.Add(this.dietaAlimenticia);
             this.groupBox3.Location = new System.Drawing.Point(639, 138);
-            this.groupBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox3.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox3.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox3.Size = new System.Drawing.Size(292, 177);
             this.groupBox3.TabIndex = 20;
             this.groupBox3.TabStop = false;
@@ -498,7 +501,7 @@
             "Si",
             "No"});
             this.cbxFinZootecnico.Location = new System.Drawing.Point(142, 17);
-            this.cbxFinZootecnico.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbxFinZootecnico.Margin = new System.Windows.Forms.Padding(2);
             this.cbxFinZootecnico.Name = "cbxFinZootecnico";
             this.cbxFinZootecnico.Size = new System.Drawing.Size(139, 21);
             this.cbxFinZootecnico.TabIndex = 19;
@@ -510,7 +513,7 @@
             "Si",
             "No"});
             this.cbxEsterilizado.Location = new System.Drawing.Point(142, 77);
-            this.cbxEsterilizado.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbxEsterilizado.Margin = new System.Windows.Forms.Padding(2);
             this.cbxEsterilizado.Name = "cbxEsterilizado";
             this.cbxEsterilizado.Size = new System.Drawing.Size(139, 21);
             this.cbxEsterilizado.TabIndex = 18;
@@ -518,7 +521,7 @@
             // txtCirugiasPrev
             // 
             this.txtCirugiasPrev.Location = new System.Drawing.Point(143, 142);
-            this.txtCirugiasPrev.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtCirugiasPrev.Margin = new System.Windows.Forms.Padding(2);
             this.txtCirugiasPrev.Name = "txtCirugiasPrev";
             this.txtCirugiasPrev.Size = new System.Drawing.Size(139, 20);
             this.txtCirugiasPrev.TabIndex = 17;
@@ -536,7 +539,7 @@
             // txtNumeroPartos
             // 
             this.txtNumeroPartos.Location = new System.Drawing.Point(143, 109);
-            this.txtNumeroPartos.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtNumeroPartos.Margin = new System.Windows.Forms.Padding(2);
             this.txtNumeroPartos.Name = "txtNumeroPartos";
             this.txtNumeroPartos.Size = new System.Drawing.Size(139, 20);
             this.txtNumeroPartos.TabIndex = 15;
@@ -555,7 +558,7 @@
             // txtDietaALim
             // 
             this.txtDietaALim.Location = new System.Drawing.Point(143, 45);
-            this.txtDietaALim.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtDietaALim.Margin = new System.Windows.Forms.Padding(2);
             this.txtDietaALim.Name = "txtDietaALim";
             this.txtDietaALim.Size = new System.Drawing.Size(139, 20);
             this.txtDietaALim.TabIndex = 9;
@@ -592,25 +595,53 @@
             // 
             // btnGuardar
             // 
+            this.btnGuardar.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.btnGuardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGuardar.Location = new System.Drawing.Point(665, 335);
-            this.btnGuardar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnGuardar.Margin = new System.Windows.Forms.Padding(2);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(101, 29);
             this.btnGuardar.TabIndex = 21;
             this.btnGuardar.Text = "Guardar";
-            this.btnGuardar.UseVisualStyleBackColor = true;
+            this.btnGuardar.UseVisualStyleBackColor = false;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // btnCancelar
             // 
+            this.btnCancelar.BackColor = System.Drawing.Color.LightCoral;
+            this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelar.Location = new System.Drawing.Point(808, 335);
-            this.btnCancelar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnCancelar.Margin = new System.Windows.Forms.Padding(2);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(95, 29);
             this.btnCancelar.TabIndex = 23;
             this.btnCancelar.Text = "Cancelar";
-            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.UseVisualStyleBackColor = false;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            // 
+            // lblVetCatDog
+            // 
+            this.lblVetCatDog.AutoSize = true;
+            this.lblVetCatDog.BackColor = System.Drawing.Color.Transparent;
+            this.lblVetCatDog.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblVetCatDog.Location = new System.Drawing.Point(99, 3);
+            this.lblVetCatDog.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblVetCatDog.Name = "lblVetCatDog";
+            this.lblVetCatDog.Size = new System.Drawing.Size(128, 52);
+            this.lblVetCatDog.TabIndex = 108;
+            this.lblVetCatDog.Text = "Veterinaria\r\nCat-Dog";
+            // 
+            // picLogo
+            // 
+            this.picLogo.BackColor = System.Drawing.Color.Transparent;
+            this.picLogo.Image = ((System.Drawing.Image)(resources.GetObject("picLogo.Image")));
+            this.picLogo.Location = new System.Drawing.Point(37, 3);
+            this.picLogo.Margin = new System.Windows.Forms.Padding(2);
+            this.picLogo.Name = "picLogo";
+            this.picLogo.Size = new System.Drawing.Size(58, 58);
+            this.picLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picLogo.TabIndex = 107;
+            this.picLogo.TabStop = false;
             // 
             // ExpedienteClinico
             // 
@@ -620,6 +651,8 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(963, 409);
+            this.Controls.Add(this.lblVetCatDog);
+            this.Controls.Add(this.picLogo);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.groupBox3);
@@ -627,7 +660,7 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label1);
             this.DoubleBuffered = true;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "ExpedienteClinico";
             this.Text = "Expediente Clinico";
             this.Load += new System.EventHandler(this.ExpedienteClinico_Load);
@@ -637,6 +670,7 @@
             this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picLogo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -694,5 +728,7 @@
         private System.Windows.Forms.ComboBox cbxEsterilizado;
         private System.Windows.Forms.ComboBox cbxFinZootecnico;
         private System.Windows.Forms.DateTimePicker campoFechaNacimiento;
+        private System.Windows.Forms.Label lblVetCatDog;
+        private System.Windows.Forms.PictureBox picLogo;
     }
 }
