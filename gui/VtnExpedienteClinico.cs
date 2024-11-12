@@ -129,8 +129,7 @@ namespace Clave1_Grupo2.gui
                 string.IsNullOrWhiteSpace(txtPulso.Text) ||
                 string.IsNullOrWhiteSpace(txtFrecuenciaRespiratoria.Text) ||
                 string.IsNullOrWhiteSpace(txtTemperatura.Text) ||
-                string.IsNullOrWhiteSpace(txtEnfermedadesPrev.Text) ||
-                string.IsNullOrWhiteSpace(lvwUltimoDiagnostico.Text))
+                string.IsNullOrWhiteSpace(txtEnfermedadesPrev.Text))
             {
                 return false; // Un campo requerido está vacío
             }
