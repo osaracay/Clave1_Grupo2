@@ -194,6 +194,96 @@ namespace Clave1_Grupo2.dao
             }
         }
 
+        /// <summary>
+        /// Obtiene la lista de citas que ya han sido completadas (4) por propietario
+        /// </summary>        
+        /// <param name="propietario">Propietario</param>
+        /// <returns>Lista de citas pendientes de pago</returns>
+        public static List<Cita> GetCitasCompletadas(Usuario propietario)
+        {
+            consulta = "SELECT c.id_cita, c.id_tipo_cita, c.id_mascota, c.id_veterinario, " +
+                    "c.id_estado_cita, c.motivo_cita, c.sintomas_mascota, c.diagnostico, c.tratamiento, " +
+                    "c.observaciones, c.monto_pago, c.fecha_pago, c.id_met_pago, c.id_estado_pago, " +
+                    "c.id_reservacion, dr.id_vet, dr.dia_reservacion, dr.h_ini, dr.h_fin, dr.reservado, m.id_propietario, c.monto_pagado " +
+                    "FROM cita c JOIN detalle_reservacion dr ON c.id_reservacion = dr.id_reservacion " +
+                    "JOIN mascota m ON c.id_mascota = m.id_mascota " +
+                    "WHERE m.id_propietario = ? AND c.id_estado_cita = 4 AND c.id_estado_pago <> 3 " +
+                    "ORDER BY dr.h_ini ASC";            
+            
+            adaptador = new OdbcDataAdapter(consulta, ConexionBD.GetConexionBD());
+            adaptador.MissingSchemaAction = MissingSchemaAction.AddWithKey;
+            adaptador.SelectCommand = new OdbcCommand(consulta, ConexionBD.GetConexionBD());
+            adaptador.SelectCommand.Parameters.Add("@idpropietario", OdbcType.Int).Value = propietario.IdUsuario;
+            //adaptador.SelectCommand.Parameters.Add("@dia reservacion", OdbcType.VarChar).Value = fechacon;
+            //adaptador.SelectCommand.Parameters.Add("@dia reservacion2", OdbcType.Date).Value = fechacon.AddDays(1);
+            if (citas == null)
+            {
+                citas = new List<Cita>();
+            }
+            else
+            {
+                citas.Clear();
+            }
+            try
+            {
+                ConexionBD.GetConexionBD().Open();
+                lector = adaptador.SelectCommand.ExecuteReader(); //Execute nonquery requiere una conexion valida y activa por eso se abre. Para fill no se requiere se abre y cierra sola
+                while (lector.Read())
+                {
+                    Cita cita = new Cita();
+                    cita.IdCita = lector.GetInt32(0);
+                    cita.IdTipoCita = lector.GetInt32(1);
+                    cita.IdMascota = lector.GetInt32(2);
+                    cita.IdVet = lector.GetInt32(3);
+                    cita.IdEstadoCita = lector.GetInt32(4);
+                    cita.MotivoCita = lector.GetString(5);
+                    //cita.SintomasMascota = lector.GetString(6); //Si esto es nulo da excepcion y me saca del bucle
+                    //cita.Diagnostico = lector.GetString(7); //Si esto es nulo da excepcion y me saca del bucle
+                    //cita.Tratamiento = lector.GetString(8); //Si esto es nulo da excepcion y me saca del bucle
+                    //cita.Observaciones = lector.GetString(9); //Si esto es nulo da excepcion y me saca del bucle
+                    cita.PrecioCita = lector.GetDouble(10); //Si esto es nulo da excepcion y me saca del bucle
+                    //cita.FechaPago = lector.GetDate(11);
+                    cita.MetodoPago = lector.GetInt32(12); 
+                    cita.IdEstadoPago = lector.GetInt32(13);
+
+                    Cupo reservacion = new Cupo();
+                    reservacion.IdReservacion = lector.GetInt32(14);
+                    reservacion.IdVetAsignado = lector.GetInt32(15);
+                    reservacion.FechaCupo = lector.GetDate(16);
+                    reservacion.HoraInicio = lector.GetDateTime(17);
+                    reservacion.HoraFin = lector.GetDateTime(18); //ME ESTA DANDO ERROR
+                    reservacion.EstaReservado = lector.GetBoolean(19);
+                    cita.IdPropietario = lector.GetInt32(20);
+                    cita.Cupo = reservacion;
+                    citas.Add(cita);
+                }
+
+                //MessageBox.Show(fechacon.Date+consulta +adaptador.SelectCommand.CommandText);
+                MessageBox.Show($"277 Cantidad de reservaciones {citas.Count()}");
+                ConexionBD.GetConexionBD().Close();
+                /*En ciertos casos no se instancia el lector y queda nulo,
+                 recien luego de abrir la conexion, y en el catch no se cierra la conexion
+                y no se si deba cerrarla. Creo que si porque igual no recorre el bucle while*/
+
+                return citas;
+            }
+            catch (NullReferenceException ex)
+            {
+                MessageBox.Show($"NullRefEx: {ex.Message}\n{ex.StackTrace}");
+                return citas;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Ex: {ex.Message}\n{ex.StackTrace}");
+                return citas;
+            }
+            finally
+            {
+                //lector.Close();
+                ConexionBD.GetConexionBD().Close();
+            }
+        }
+
         //SIN USAR: Consultar cita por mascota. Tomar en cuenta el estado.
         public static List<Cita> GetCitas(DateTime fecha, Mascota mascota)
         {

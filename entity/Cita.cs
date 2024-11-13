@@ -24,6 +24,10 @@ namespace Clave1_Grupo2.entity
         private string observaciones;
         private int idPropietario;
 
+        // Propiedades de pago
+        private int idEstadoPago;
+        private int metodoPago;
+
         public int IdCita { get => idCita; set => idCita = value; }
         public int IdTipoCita { get => idTipoCita; set => idTipoCita = value; }
         public int IdMascota { get => idMascota; set => idMascota = value; }
@@ -37,6 +41,8 @@ namespace Clave1_Grupo2.entity
         public string Observaciones { get => observaciones; set => observaciones = value; }
         public int IdPropietario { get => idPropietario; set => idPropietario = value; }
         public double PrecioCita { get => precioCita; set => precioCita = value; }
+        public int IdEstadoPago { get => idEstadoPago; set => idEstadoPago = value; }
+        public int MetodoPago { get => metodoPago; set => metodoPago = value; }
         internal Cupo Cupo { get => cupo; set => cupo = value; }
 
         public override string ToString()

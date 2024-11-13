@@ -169,6 +169,12 @@
     <Compile Include="gui\VtnAtenderCita.Designer.cs">
       <DependentUpon>VtnAtenderCita.cs</DependentUpon>
     </Compile>
+    <Compile Include="gui\VtnCobrarCita.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="gui\VtnCobrarCita.Designer.cs">
+      <DependentUpon>VtnCobrarCita.cs</DependentUpon>
+    </Compile>
     <Compile Include="gui\VtnExpedienteClinico.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -285,6 +291,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="gui\VtnAtenderCita.resx">
       <DependentUpon>VtnAtenderCita.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="gui\VtnCobrarCita.resx">
+      <DependentUpon>VtnCobrarCita.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="gui\VtnExpedienteClinico.resx">
       <DependentUpon>VtnExpedienteClinico.cs</DependentUpon>

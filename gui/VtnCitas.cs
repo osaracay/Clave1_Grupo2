@@ -118,53 +118,7 @@ namespace Clave1_Grupo2.gui
         private void lbxCitas_SelectedIndexChanged(object sender, EventArgs e)
         {
             SeleccionarCamposCita();
-        }
-
-        private void cbxVeterinario_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            /*
-            try
-            {
-                if (cbxVeterinario.SelectedIndex >= 0 && cbxVeterinario.SelectedValue.GetType() != Type.GetType("System.Data.DataRowView"))
-                {
-                    //lbxCitas.Items.Clear();
-                    lbxCitas.Refresh();
-                    lbxCitas.DataSource = CitaDAO.GetCitas((Usuario)cbxVeterinario.SelectedItem);
-                    lbxCitas.Refresh();
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Excepcion cbxVet : \n{ex.Message} \n{ex.StackTrace}");
-                //ACA ME DA ERROR EL SELECTED VALUE TIPO ENTERO 
-                //Rellenador.CargarListaPetAListBox(listaMascotas, MascotaDAO.GetListaMascotasPropietario((int)cbxPropietario.SelectedValue));
-                //Rellenador.CargarDataTableAListBox(listaMascotas, MascotaDAO.GetMascotasPorPropietario((int)cbxPropietario.SelectedValue));
-            }
-            */
-        }
-
-        private void cbxMascota_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            /*
-            try
-            {
-                if (cbxMascota.SelectedIndex >= 0 && cbxMascota.SelectedValue.GetType() != Type.GetType("System.Data.DataRowView"))
-                {
-                    //lbxCitas.Items.Clear();
-                    lbxCitas.Refresh();
-                    lbxCitas.DataSource = CitaDAO.GetCitas((Mascota)cbxMascota.SelectedItem);
-                    lbxCitas.Refresh();
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Excepcion cbxMascota: \n{ex.Message} \n{ex.StackTrace}");
-                //ACA ME DA ERROR EL SELECTED VALUE TIPO ENTERO 
-                //Rellenador.CargarListaPetAListBox(listaMascotas, MascotaDAO.GetListaMascotasPropietario((int)cbxPropietario.SelectedValue));
-                //Rellenador.CargarDataTableAListBox(listaMascotas, MascotaDAO.GetMascotasPorPropietario((int)cbxPropietario.SelectedValue));
-            }
-            */
-        }
+        }       
 
         private void lbxCitas_KeyUp(object sender, KeyEventArgs e)
         {
@@ -264,8 +218,52 @@ namespace Clave1_Grupo2.gui
                 //VERIFICAR EL ID DEL ESTADO COMPLETADO O HACER LOS INSERTS DE CATEGORIAS CON EL ID AL IMPORTAR LA BD
                 // 3 CANCELADA
                 PopularCitas();
+            }            
+        }
+        private void cbxVeterinario_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            /*
+            try
+            {
+                if (cbxVeterinario.SelectedIndex >= 0 && cbxVeterinario.SelectedValue.GetType() != Type.GetType("System.Data.DataRowView"))
+                {
+                    //lbxCitas.Items.Clear();
+                    lbxCitas.Refresh();
+                    lbxCitas.DataSource = CitaDAO.GetCitas((Usuario)cbxVeterinario.SelectedItem);
+                    lbxCitas.Refresh();
+                }
             }
-            
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Excepcion cbxVet : \n{ex.Message} \n{ex.StackTrace}");
+                //ACA ME DA ERROR EL SELECTED VALUE TIPO ENTERO 
+                //Rellenador.CargarListaPetAListBox(listaMascotas, MascotaDAO.GetListaMascotasPropietario((int)cbxPropietario.SelectedValue));
+                //Rellenador.CargarDataTableAListBox(listaMascotas, MascotaDAO.GetMascotasPorPropietario((int)cbxPropietario.SelectedValue));
+            }
+            */
+        }
+
+        private void cbxMascota_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            /*
+            try
+            {
+                if (cbxMascota.SelectedIndex >= 0 && cbxMascota.SelectedValue.GetType() != Type.GetType("System.Data.DataRowView"))
+                {
+                    //lbxCitas.Items.Clear();
+                    lbxCitas.Refresh();
+                    lbxCitas.DataSource = CitaDAO.GetCitas((Mascota)cbxMascota.SelectedItem);
+                    lbxCitas.Refresh();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Excepcion cbxMascota: \n{ex.Message} \n{ex.StackTrace}");
+                //ACA ME DA ERROR EL SELECTED VALUE TIPO ENTERO 
+                //Rellenador.CargarListaPetAListBox(listaMascotas, MascotaDAO.GetListaMascotasPropietario((int)cbxPropietario.SelectedValue));
+                //Rellenador.CargarDataTableAListBox(listaMascotas, MascotaDAO.GetMascotasPorPropietario((int)cbxPropietario.SelectedValue));
+            }
+            */
         }
     }
 }

@@ -22,6 +22,7 @@ namespace Clave1_Grupo2.util
         private static VtnAgendarCita vtnAgendar;
         private static VtnCitas vtnCitas;
         private static VtnAtenderCita vtnAtender;
+        private static VtnCobrarCita vtnCobro;
         private static VtnInsumo vtnInsumo;
         private static VtnCompra vntCompra;
         private static VtnVenta vntVenta;
@@ -144,6 +145,18 @@ namespace Clave1_Grupo2.util
             vtnAtender = new VtnAtenderCita();                         
             vtnAtender.ShowDialog();
             vtnAtender.Focus();
+        }
+
+        public static void CobrarCita()
+        {
+            //SI NO EXISTE EL OBJETO SESION GLOBAL
+            if (vtnCobro == null || vtnCobro.IsDisposed)
+            {
+                vtnCobro = null;
+                vtnCobro = new VtnCobrarCita();
+            }
+            vtnCobro.Show();          
+            vtnCobro.Focus();
         }
 
         public static void AbrirMiPerfil()
