@@ -77,8 +77,6 @@ namespace Clave1_Grupo2.gui
             txtEspecie.Clear();
             txtColorMascota.Clear();
             txtVacunaSeleccionada.Clear();
-
-
         }
 
         private void cbxMascota_SelectedIndexChanged(object sender, EventArgs e)
@@ -122,19 +120,35 @@ namespace Clave1_Grupo2.gui
 
             string vacunaSeleccionada = txtVacunaSeleccionada.Text;
             string tipoCita = cbxTipoCita.Text;
-            string Veterinario = cbxVeterinario.Text;
-
+            string veterinario = cbxVeterinario.Text;
 
             // Crear el contenido a guardar
             string contenido = $"Vacuna Seleccionada: {vacunaSeleccionada}\n" +
-                               $"tipo Cita: {tipoCita}\n" +
-                               $"Veterinario: {Veterinario}\n";
+                               $"Tipo de Cita: {tipoCita}\n" +
+                               $"Veterinario: {veterinario}\n";
+
+            // Simulación de guardado (reemplaza esto con la lógica real de guardado)
+            // Aquí iría el código para guardar los datos en una base de datos, archivo, etc.
+            // Por ahora, simplemente mostraremos un mensaje de confirmación
+
+            MessageBox.Show("Datos guardados correctamente.");
+
+            LimpiarCampos();
+            // Limpiar los campos
+            //txtVacunaSeleccionada.Text = "";
+            //cbxTipoCita.SelectedIndex = -1;
+            //cbxVeterinario.SelectedIndex = -1;
+
+
         }
+
+
 
         private bool ValidarCampos()
         {
             // Ejemplo de validaciones básicas
-            if (string.IsNullOrWhiteSpace(txtRaza.Text) ||
+            if (cbxMascota.SelectedIndex <= 0 ||
+                string.IsNullOrWhiteSpace(txtRaza.Text) ||
                 string.IsNullOrWhiteSpace(txtEdad.Text) ||
                 string.IsNullOrWhiteSpace(txtGenero.Text) ||
                 string.IsNullOrWhiteSpace(txtEspecie.Text) ||

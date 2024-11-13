@@ -66,6 +66,13 @@ namespace Clave1_Grupo2.gui
             txtEnfermedadesPrev.Clear();
             txtNumeroPartos.Clear();
             txtCirugiasPrev.Clear();
+            txtUltimaVisita.Clear();
+            txtTemperatura.Clear();
+            txtFrecuenciaRespiratoria.Clear();
+            txtPulso.Clear();
+            txtEnfermedadesPrev.Clear();
+            txtPeso.Clear();
+            txtTelefono.Clear();
         }
 
         private void cbxMascota_SelectedIndexChanged(object sender, EventArgs e)
@@ -100,25 +107,38 @@ namespace Clave1_Grupo2.gui
             string esterilizado = cbxEsterilizado.Text;
             string numeroPartos = txtNumeroPartos.Text;
             string cirugiasPrevias = txtCirugiasPrev.Text;
+            string fechaNacimiento = campoFechaNacimiento.Text;
+            string fechaUltimaVisita = txtUltimaVisita.Text;
+            string temperatura = txtTemperatura.Text;
+            string respiracion = txtFrecuenciaRespiratoria.Text;    
+            string peso = txtPeso.Text;
+            string pulso = txtPulso.Text;
+            string telefono = txtTelefono.Text;
 
             // Crear el contenido a guardar
-            string contenido = $"Fin Zootecnico: {finZootecnico}\n" +
+            string contenido = $"Telefono: {telefono}\n" +
+                               $"Fin Zootecnico: {finZootecnico}\n" +
                                $"Dieta Alimentaria: {dietaAlimentaria}\n" +
                                $"Enfermedades Previas: {enfermedadesPrevias}\n" +
                                $"Esterilizado: {esterilizado}\n" +
                                $"Número de Partos: {numeroPartos}\n" +
-                               $"Cirugías Previas: {cirugiasPrevias}\n";
-        }
+                               $"Cirugías Previas: {cirugiasPrevias}\n" +
+                               $"Fecha de Nacimiento: {fechaNacimiento}\n" +
+                               $"Ultima Visita: {fechaUltimaVisita}\n" +
+                               $"Temperatura: {temperatura}\n" +
+                               $"Frecuencia Respiratoria: {respiracion}\n" +
+                               $"Peso: {peso}\n" +
+                               $"Pulso: {pulso}\n ";
 
+            MessageBox.Show("Datos guardados correctamente.");
+
+            LimpiarCampos();
+        }
 
         private bool ValidarCampos()
         {
             // Ejemplo de validaciones básicas
-            if (string.IsNullOrWhiteSpace(txtRaza.Text) ||
-                string.IsNullOrWhiteSpace(txtEdad.Text) ||
-                string.IsNullOrWhiteSpace(txtGenero.Text) ||
-                string.IsNullOrWhiteSpace(txtEspecie.Text) ||
-                string.IsNullOrWhiteSpace(txtColorMascota.Text) ||
+            if (string.IsNullOrEmpty(txtTelefono.Text) ||
                 string.IsNullOrWhiteSpace(cbxFinZootecnico.Text) ||
                 string.IsNullOrWhiteSpace(dietaAlimenticia.Text) ||
                 string.IsNullOrWhiteSpace(enfermedadesPrevias.Text) ||
@@ -134,24 +154,12 @@ namespace Clave1_Grupo2.gui
                 return false; // Un campo requerido está vacío
             }
 
-            // Validar que la edad sea un número
-            if (!int.TryParse(txtEdad.Text, out _) ||
-                string.IsNullOrWhiteSpace(txtNumeroPartos.Text))
-            {
-                MessageBox.Show("Los partos deben ser un número.");
-                return false;
-            }
-            return true; // Todos los campos son válidos
+            return true; // Todos los campos están completos
         }
 
         private void cbxPropietario_SelectedIndexChanged(object sender, EventArgs e)
         {
             Rellenador.CargarListaAComboBox(cbxMascota, MascotaDAO.GetListaMascotasOwner((Usuario)cbxPropietario.SelectedItem));
-        }
-
-        private void txtNumeroPartos_TextChanged(object sender, EventArgs e)
-        {
-
         }
 
         private void VerificarGenero()
