@@ -418,7 +418,15 @@ namespace Clave1_Grupo2.dao
                 ConexionBD.GetConexionMySQL().Close();
             }
         }
-
+        /// <summary>
+        /// Actualiza los detalles de un cupo ya reservado
+        /// </summary>
+        /// <param name="idCupo">Id del cupo a reservar</param>
+        /// <param name="idVeterinario">Id del veterinario que atiende</param>
+        /// <param name="fechaCupo">Fecha de la reservacion</param>
+        /// <param name="horaInicio">Hora inicio de la reservacion</param>
+        /// <param name="horaFin">Hora final de la reservacion</param>
+        /// <returns>Verdadero si se actualiza el cupo reservado correctamente.</returns>
         public static bool ActualizarCupo(int idCupo, int idVeterinario, DateTime fechaCupo, DateTime horaInicio, DateTime horaFin)
         {
             //recordar que el id debe ser un usuario de tipo 2

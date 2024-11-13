@@ -272,11 +272,7 @@ namespace Clave1_Grupo2.dao
                 }
                 //MessageBox.Show($"Número de ítems {listaEstadosPago.Count()}");
                 ConexionBD.GetConexionBD().Close();
-                //Colocandolo aqui el cerrar conexion porque al llamarlo desde VtnMascotas en selected index changed
-                //la primera vez que se selecciona un indice desde cuenta administrador dice que
-                //la base de datos no se cierra pero la ejecucion continua
-                //A pesar que hay un bloque Finally pero la excepcion ocurre antes del mensaje anterior
-                //Y aqui lo pongo despues del mensaje 
+
 
                 return listaEstadosCita;
             }

@@ -46,6 +46,7 @@ namespace Clave1_Grupo2.gui
         private void CargarDatos()
         {
             CitaDAO.CargarDetallesAtencionCita(Rellenador.Cita);
+            lblNombreVet.Text = $"Dr. {UsuarioDAO.GetSesion().Apellido}, {UsuarioDAO.GetSesion().Nombre}";
             txtSintomas.Text = Rellenador.Cita.SintomasMascota;
             txtDiagnostico.Text = Rellenador.Cita.Diagnostico;
             txtTratamiento.Text = Rellenador.Cita.Tratamiento;

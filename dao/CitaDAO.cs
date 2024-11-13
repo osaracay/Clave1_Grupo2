@@ -207,9 +207,9 @@ namespace Clave1_Grupo2.dao
                     "c.id_reservacion, dr.id_vet, dr.dia_reservacion, dr.h_ini, dr.h_fin, dr.reservado, m.id_propietario, c.monto_pagado " +
                     "FROM cita c JOIN detalle_reservacion dr ON c.id_reservacion = dr.id_reservacion " +
                     "JOIN mascota m ON c.id_mascota = m.id_mascota " +
-                    "WHERE m.id_propietario = ? AND c.id_estado_cita = 4 AND c.id_estado_pago <> 3 " +
-                    "ORDER BY dr.h_ini ASC";            
-            
+                    "WHERE m.id_propietario = ? AND c.id_estado_cita = 4 " +
+                    "ORDER BY dr.h_ini ASC";
+            //AND c.id_estado_pago <> 3 PENSANDOLO BIEN, QUIERO VER CUANDO UNA CITA YA ESTE PAGADA
             adaptador = new OdbcDataAdapter(consulta, ConexionBD.GetConexionBD());
             adaptador.MissingSchemaAction = MissingSchemaAction.AddWithKey;
             adaptador.SelectCommand = new OdbcCommand(consulta, ConexionBD.GetConexionBD());
@@ -254,12 +254,13 @@ namespace Clave1_Grupo2.dao
                     reservacion.HoraFin = lector.GetDateTime(18); //ME ESTA DANDO ERROR
                     reservacion.EstaReservado = lector.GetBoolean(19);
                     cita.IdPropietario = lector.GetInt32(20);
+                    cita.Pagado = lector.GetDouble(21);
                     cita.Cupo = reservacion;
                     citas.Add(cita);
                 }
 
                 //MessageBox.Show(fechacon.Date+consulta +adaptador.SelectCommand.CommandText);
-                MessageBox.Show($"277 Cantidad de reservaciones {citas.Count()}");
+                MessageBox.Show($"262 Cantidad de citas {citas.Count()}");
                 ConexionBD.GetConexionBD().Close();
                 /*En ciertos casos no se instancia el lector y queda nulo,
                  recien luego de abrir la conexion, y en el catch no se cierra la conexion
@@ -284,7 +285,7 @@ namespace Clave1_Grupo2.dao
             }
         }
 
-        //SIN USAR: Consultar cita por mascota. Tomar en cuenta el estado.
+        /*SIN USAR: Consultar cita por mascota. Tomar en cuenta el estado.
         public static List<Cita> GetCitas(DateTime fecha, Mascota mascota)
         {
             consulta = "SELECT c.id_cita, c.id_tipo_cita, c.id_mascota, c.id_veterinario, " +
@@ -296,7 +297,7 @@ namespace Clave1_Grupo2.dao
                     "WHERE c.id_mascota = ? AND dr.reservado= TRUE AND c.id_estado_cita IN (1,2,5)" +
                     "ORDER BY dr.h_ini ASC";
             //MODIFICAR
-            /*
+            
             if (user.TipoUsuario == 3)
             {
                 consulta = "SELECT c.id_cita, c.id_tipo_cita, c.id_mascota, c.id_veterinario, " +
@@ -331,8 +332,8 @@ namespace Clave1_Grupo2.dao
                     "ORDER BY dr.h_ini ASC";
                 // O sea, que seleccione todos. Usuarios admin no se les asignan mascotas
             }
-            */
-            adaptador = new OdbcDataAdapter(consulta, ConexionBD.GetConexionBD());
+            
+        adaptador = new OdbcDataAdapter(consulta, ConexionBD.GetConexionBD());
             adaptador.MissingSchemaAction = MissingSchemaAction.AddWithKey;
             adaptador.SelectCommand = new OdbcCommand(consulta, ConexionBD.GetConexionBD());
             adaptador.SelectCommand.Parameters.Add("@id_mascota", OdbcType.Int).Value = mascota.IdMascota;
@@ -385,7 +386,7 @@ namespace Clave1_Grupo2.dao
                 ConexionBD.GetConexionBD().Close();
                 /*En ciertos casos no se instancia el lector y queda nulo,
                  recien luego de abrir la conexion, y en el catch no se cierra la conexion
-                y no se si deba cerrarla. Creo que si porque igual no recorre el bucle while*/
+                y no se si deba cerrarla. Creo que si porque igual no recorre el bucle while
 
                 return citas;
             }
@@ -453,7 +454,7 @@ namespace Clave1_Grupo2.dao
                     "ORDER BY dr.h_ini ASC";
                 // O sea, que seleccione todos. Usuarios admin no se les asignan mascotas
             }
-            */
+            
             adaptador = new OdbcDataAdapter(consulta, ConexionBD.GetConexionBD());
             adaptador.MissingSchemaAction = MissingSchemaAction.AddWithKey;
             adaptador.SelectCommand = new OdbcCommand(consulta, ConexionBD.GetConexionBD());
@@ -507,7 +508,7 @@ namespace Clave1_Grupo2.dao
                 ConexionBD.GetConexionBD().Close();
                 /*En ciertos casos no se instancia el lector y queda nulo,
                  recien luego de abrir la conexion, y en el catch no se cierra la conexion
-                y no se si deba cerrarla. Creo que si porque igual no recorre el bucle while*/
+                y no se si deba cerrarla. Creo que si porque igual no recorre el bucle while
 
                 return citas;
             }
@@ -527,6 +528,8 @@ namespace Clave1_Grupo2.dao
                 ConexionBD.GetConexionBD().Close();
             }
         }
+        */
+
         /// <summary>
         /// Reagendar y modificar cita.
         /// </summary>
@@ -536,7 +539,7 @@ namespace Clave1_Grupo2.dao
         /// <param name="idVet">Id Vet. ComboBox Vet Selected Value</param>
         /// <param name="motivoCita">Motivo de la visita obtenido de TextBox</param>
         /// <returns></returns>
-        public static bool ActualizarCita(Cita c,CatItem idTipoCita,int idMascota,int idVet, string motivoCita)
+public static bool ActualizarCita(Cita c,CatItem idTipoCita,int idMascota,int idVet, string motivoCita)
         {
             consulta = "UPDATE cita SET id_tipo_cita=?, monto_pago = ?, id_mascota=?, id_veterinario=?, motivo_cita=? " +
                 "WHERE id_cita=?";
@@ -656,7 +659,7 @@ namespace Clave1_Grupo2.dao
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"No se alarme. Los campos de diagnostico estan nulos. Cuando guarde los cambios desaparece este mensaje. \nEx: {ex.Message}\n{ex.StackTrace}");
+                MessageBox.Show($"No se alarme. Los campos de diagnostico estan nulos. Cuando guarde los cambios desaparece este mensaje. \nEx: {ex.Message}"); //\n{ex.StackTrace}
                 cita.SintomasMascota = ""; //Si esto es nulo da excepcion y me saca del bucle
                 cita.Diagnostico = ""; //Si esto es nulo da excepcion y me saca del bucle
                 cita.Tratamiento = ""; //Si esto es nulo da excepcion y me saca del bucle
@@ -704,6 +707,37 @@ namespace Clave1_Grupo2.dao
             {
                 ConexionBD.GetConexionMySQL().Close();
             }
+        }
+
+        public static bool PagarCita(Cita c, double montoPago, CatItem metPago, int estadoPago)
+        {
+            consulta = "UPDATE cita SET monto_pagado=?, id_met_pago=?, id_estado_pago=?, fecha_pago=? " +
+            "WHERE id_cita=?";
+
+            ComandoSQL = new MySqlCommand(consulta, ConexionBD.GetConexionMySQL());
+            ComandoSQL.Parameters.Add("@montopagado", MySqlDbType.Double).Value = montoPago;
+            ComandoSQL.Parameters.Add("@metpago", MySqlDbType.Int32).Value = metPago.IdCat;
+            ComandoSQL.Parameters.Add("@estadopago", MySqlDbType.Int32).Value = estadoPago;
+            ComandoSQL.Parameters.Add("@fechapago", MySqlDbType.DateTime).Value = DateTime.Now;
+            ComandoSQL.Parameters.Add("@idCita", MySqlDbType.Int32).Value = c.IdCita;
+
+            try
+            {
+                ConexionBD.GetConexionMySQL().Open();
+                ComandoSQL.ExecuteNonQuery();
+                //IdInsert = (int)ComandoSQL.LastInsertedId; //Devuelve un Long
+                MessageBox.Show($"Se ha pagado la cita");
+                return true;
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show($"Ocurrió un error al registrar el pago:\n{e.Message}\n{e.StackTrace}");
+                return false;
+            }
+            finally
+            {
+                ConexionBD.GetConexionMySQL().Close();
+            }            
         }
     }
 }

@@ -174,11 +174,36 @@ namespace Clave1_Grupo2.gui
                 decimal precio = decimal.Parse(txtPrecio.Text);
                 int cantidad = int.Parse(txtCantidad.Text);
                 decimal subtotal = precio * cantidad;
-
-                dgvRegistros.Rows.Add(n, id, nombre, unidad, precio, cantidad, subtotal);
-
-                ActualizarTotales();
-                nuevoProducto();
+                if (Validacion.CampoLleno(txtInsumo) && int.Parse(txtCantidad.Text) > 0)
+                {
+                    //VALIDAR QUE NO ESTE AGREGADO EL INSUMO YA
+                    foreach(DataGridViewRow fila in dgvRegistros.Rows)
+                    {
+                        if ((string)fila.Cells["Id"].Value == id && (cantidad + (int)fila.Cells["cantidad"].Value) <= int.Parse(txtStock.Text))
+                        {
+                            MessageBox.Show("El insumo ya fue agregado. Actualizando cantidad del insumo");
+                            cantidad = (cantidad + (int)fila.Cells["cantidad"].Value);
+                            fila.Cells["cantidad"].Value = cantidad;
+                            fila.Cells["total"].Value = cantidad * precio;
+                            ActualizarTotales();
+                            nuevoProducto();
+                            return;
+                        }
+                        else if((string)fila.Cells["Id"].Value == id && (cantidad + (int)fila.Cells["cantidad"].Value) > int.Parse(txtStock.Text))
+                        {
+                            MessageBox.Show($"Stock Insuficiente. Solo hay {double.Parse(txtStock.Text)} unidades disponibles.", "Venta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            //nuevoProducto();
+                            return;
+                        }
+                    }
+                    dgvRegistros.Rows.Add(n, id, nombre, unidad, precio, cantidad, subtotal);
+                    ActualizarTotales();
+                    nuevoProducto();
+                }
+                else
+                {
+                    MessageBox.Show("Debe seleccionar un insumo y cantidad mayor a cero");
+                }
             }
             catch (Exception ex)
             {
@@ -195,20 +220,20 @@ namespace Clave1_Grupo2.gui
                 return false;
             }
             // Validar si la cantidad solicitada es negativa
-            if (double.Parse(txtStock.Text) < 0)
+            if (Validacion.CampoLleno(txtStock) && double.Parse(txtStock.Text) < 0)
             {
                 MessageBox.Show("Cantidad no puede ser negativa. Por favor, ingrese un valor válido.", "Venta", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
             // Validar si no hay stock suficiente
-            if (double.Parse(txtStock.Text) == 0)
+            if (Validacion.CampoLleno(txtStock) && double.Parse(txtStock.Text) == 0)
             {
                 MessageBox.Show("No hay stock disponible para este Items.", "Venta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
 
             // Validar si la cantidad solicitada supera el stock disponible
-            if (double.Parse(txtCantidad.Text) > double.Parse(txtStock.Text))
+            if (Validacion.CampoLleno(txtStock) && double.Parse(txtCantidad.Text) > double.Parse(txtStock.Text))
             {
                 MessageBox.Show($"Stock Insuficiente. Solo hay {double.Parse(txtStock.Text)} unidades disponibles.", "Venta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
@@ -370,6 +395,10 @@ namespace Clave1_Grupo2.gui
             if (cmbEstado.Text.Trim().Equals(""))
             {
                 MessageBox.Show("Seleccione una Condicion.", "Datos", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            if (dgvRegistros.RowCount < 1) {
+                MessageBox.Show("Agregue insumos a la venta", "Insumos", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
             return true;

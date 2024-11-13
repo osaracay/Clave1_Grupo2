@@ -51,6 +51,7 @@ namespace Clave1_Grupo2.gui
             this.btnCompletarCita = new System.Windows.Forms.Button();
             this.lblVetCatDog = new System.Windows.Forms.Label();
             this.picLogo = new System.Windows.Forms.PictureBox();
+            this.lblNombreVet = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
             this.SuspendLayout();
             // 
@@ -301,6 +302,19 @@ namespace Clave1_Grupo2.gui
             this.picLogo.TabIndex = 118;
             this.picLogo.TabStop = false;
             // 
+            // lblNombreVet
+            // 
+            this.lblNombreVet.AutoSize = true;
+            this.lblNombreVet.BackColor = System.Drawing.Color.Transparent;
+            this.lblNombreVet.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNombreVet.ForeColor = System.Drawing.Color.Black;
+            this.lblNombreVet.Location = new System.Drawing.Point(25, 9);
+            this.lblNombreVet.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblNombreVet.Name = "lblNombreVet";
+            this.lblNombreVet.Size = new System.Drawing.Size(74, 24);
+            this.lblNombreVet.TabIndex = 120;
+            this.lblNombreVet.Text = "Estado";
+            // 
             // VtnAtenderCita
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -308,6 +322,7 @@ namespace Clave1_Grupo2.gui
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(789, 609);
+            this.Controls.Add(this.lblNombreVet);
             this.Controls.Add(this.lblVetCatDog);
             this.Controls.Add(this.picLogo);
             this.Controls.Add(this.btnCompletarCita);
@@ -365,5 +380,6 @@ namespace Clave1_Grupo2.gui
         private System.Windows.Forms.Button btnCompletarCita;
         private System.Windows.Forms.Label lblVetCatDog;
         private System.Windows.Forms.PictureBox picLogo;
+        private System.Windows.Forms.Label lblNombreVet;
     }
 }

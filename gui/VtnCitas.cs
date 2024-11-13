@@ -265,5 +265,10 @@ namespace Clave1_Grupo2.gui
             }
             */
         }
+
+        private void VtnCitas_Enter(object sender, EventArgs e)
+        {
+            PopularCitas();
+        }
     }
 }
